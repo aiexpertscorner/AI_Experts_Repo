@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string;
+  icon: string;
+  title: string;
+  text: string;
+  label?: string;
+}
+
+const { href, icon, title, text, label } = Astro.props;
+---
+
+<a href={href} class="topic-card">
+  <div class="topic-card__icon">{icon}</div>
+  <strong>{title}</strong>
+  <p style="margin: 8px 0 0; color: var(--text-muted);">{text}</p>
+  {label && <span class="topic-card__label">{label}</span>}
+</a>

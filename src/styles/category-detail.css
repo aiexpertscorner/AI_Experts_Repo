@@ -1,0 +1,27 @@
+.category-hero-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+  padding: 30px;
+}
+
+.category-hero-card__eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.category-hero-card h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.category-hero-card__lead {
+  margin: 16px 0 18px;
+  color: var(--muted);
+  max-width: 760px;
+  font-size: 1.02rem;
+}

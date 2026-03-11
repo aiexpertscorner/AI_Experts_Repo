@@ -1,0 +1,110 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/site/Header.astro";
+import Footer from "@/components/site/Footer.astro";
+import ToolCard from "@/components/cards/ToolCard.astro";
+import slugData from "@/data/build/category-paths.json";
+import mapData from "@/data/build/category-map.json";
+
+export function getStaticPaths() {
+  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const entry = (mapData as any)[slug!];
+if (!entry) return Astro.redirect('/ai-tools');
+
+const { name, tools=[], count, description, seo_title, seo_description } = entry;
+const freeCount = tools.filter((t:any) => (t.pricing_tier||"").toLowerCase() === "free").length;
+const freemiumCount = tools.filter((t:any) => (t.pricing_tier||"").toLowerCase() === "freemium").length;
+---
+<BaseLayout
+  title={seo_title ?? `Best ${name} Tools in 2025`}
+  description={seo_description ?? `Discover the ${count} best ${name.toLowerCase()} tools. Compare pricing, features and find the right fit.`}
+>
+  <Header slot="header"/>
+
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <a href="/ai-tools">AI Tools</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span>{name}</span>
+    </nav>
+
+    <!-- Page header -->
+    <div class="cat-header">
+      <div class="cat-badge">📁 Category</div>
+      <h1>{seo_title ?? `Best ${name} Tools`}</h1>
+      <p class="cat-desc">{description ?? `Discover and compare the top AI tools for ${name}.`}</p>
+
+      <div class="cat-stats">
+        <div class="cat-stat">
+          <strong>{count ?? tools.length}</strong>
+          <span>Tools</span>
+        </div>
+        {freeCount > 0 && (
+          <div class="cat-stat">
+            <strong class="stat-free">{freeCount}</strong>
+            <span>Free</span>
+          </div>
+        )}
+        {freemiumCount > 0 && (
+          <div class="cat-stat">
+            <strong class="stat-frm">{freemiumCount}</strong>
+            <span>Freemium</span>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Tools grid -->
+    {tools.length > 0 ? (
+      <div class="grid-tools">
+        {tools.slice(0, 48).map((t:any, i:number) => <ToolCard tool={t} rank={i+1}/>)}
+      </div>
+    ) : (
+      <p class="empty">No tools found for this category.</p>
+    )}
+
+    <!-- Related browsing -->
+    <div class="related-browse">
+      <h2>Browse Related</h2>
+      <div class="rb-links">
+        <a href="/ai-tools" class="filter-chip">← All AI Tools</a>
+        <a href="/ai-tools/pricing/free" class="filter-chip">🆓 Free Tools</a>
+        <a href="/ai-tools/pricing/freemium" class="filter-chip">🔓 Freemium</a>
+        <a href={`/best/${slug}`} class="filter-chip">🏆 Best of {name}</a>
+        <a href="/vs" class="filter-chip">⚔️ Compare Tools</a>
+      </div>
+    </div>
+
+  </div>
+
+  <Footer slot="footer"/>
+</BaseLayout>
+
+<style>
+.breadcrumb{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--text-xs);color:var(--c-text-3);padding:var(--sp-6) 0 0;margin-bottom:var(--sp-6)}
+.breadcrumb a{color:var(--c-text-3);text-decoration:none;transition:color var(--t-fast)}
+.breadcrumb a:hover{color:var(--c-brand-light)}
+
+.cat-header{margin-bottom:var(--sp-10)}
+.cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-brand-light);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);padding:4px 12px;border-radius:var(--r-full);margin-bottom:var(--sp-4)}
+.cat-header h1{font-size:clamp(var(--text-2xl),4vw,var(--text-4xl));margin-bottom:var(--sp-3)}
+.cat-desc{font-size:var(--text-base);color:var(--c-text-2);max-width:600px;margin-bottom:var(--sp-6)}
+.cat-stats{display:flex;gap:var(--sp-6);flex-wrap:wrap}
+.cat-stat{display:flex;flex-direction:column;gap:2px}
+.cat-stat strong{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;color:var(--c-text)}
+.cat-stat span{font-size:var(--text-xs);color:var(--c-text-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.stat-free{color:var(--c-free) !important}
+.stat-frm{color:var(--c-freemium) !important}
+
+.empty{text-align:center;color:var(--c-text-3);padding:4rem 0;font-size:var(--text-base)}
+
+.related-browse{margin-top:var(--sp-16);padding-top:var(--sp-8);border-top:1px solid var(--c-border);margin-bottom:var(--sp-16)}
+.related-browse h2{font-size:var(--text-lg);margin-bottom:var(--sp-4)}
+.rb-links{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+</style>

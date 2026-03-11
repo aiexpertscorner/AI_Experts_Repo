@@ -1,0 +1,84 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/site/Header.astro";
+import Footer from "@/components/site/Footer.astro";
+import Breadcrumbs from "@/components/site/Breadcrumbs.astro";
+import comparePairs from "@/data/build/compare-pairs.json";
+import toolMap from "@/data/build/tool-map.json";
+
+export function getStaticPaths() {
+  return (comparePairs as any[]).map(p => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const pair = (comparePairs as any[]).find(p => p.slug === slug);
+if (!pair) return Astro.redirect('/ai-tools');
+
+const toolA = (toolMap as any)[pair.a];
+const toolB = (toolMap as any)[pair.b];
+if (!toolA || !toolB) return Astro.redirect('/ai-tools');
+
+const pricingLabel: Record<string,string> = { free:"Free", freemium:"Freemium", paid:"Paid" };
+const pricingClass: Record<string,string>  = { free:"badge-free", freemium:"badge-freemium", paid:"badge-paid" };
+
+function renderTool(t: any) {
+  const tier = (t.pricing_tier ?? "unknown").toLowerCase();
+  const logo = t.logo_domain ? `https://logo.clearbit.com/${t.logo_domain}?size=64` : null;
+  return { ...t, tier, logo, pricingLabel: pricingLabel[tier]??t.pricing_tier, pricingClass: pricingClass[tier]??"badge-unknown" };
+}
+const A = renderTool(toolA);
+const B2 = renderTool(toolB);
+
+const FEATURES = ["has_api","has_mobile","has_chrome_ext","is_open_source"];
+const FEATURE_LABELS: Record<string,string> = { has_api:"API Access", has_mobile:"Mobile App", has_chrome_ext:"Chrome Extension", is_open_source:"Open Source" };
+---
+<BaseLayout title={`${A.name} vs ${B2.name} — Which AI Tool is Better?`}
+  description={`Compare ${A.name} and ${B2.name} side by side. Features, pricing, use cases and more.`}>
+  <Header slot="header"/>
+  <div class="container">
+    <Breadcrumbs crumbs={[{label:"Compare", href:"/vs"}, {label:`${A.name} vs ${B2.name}`}]}/>
+    <div class="vs-header">
+      <h1>{A.name} <span class="vs-label">vs</span> {B2.name}</h1>
+      <p>Side-by-side comparison of features, pricing and use cases.</p>
+    </div>
+    <div class="vs-grid">
+      {[A, B2].map(t => (
+        <div class="vs-col">
+          {t.logo && <img src={t.logo} alt={t.name} width="56" height="56" class="tool-logo tool-logo-lg" loading="lazy" onerror="this.style.display='none'"/>}
+          <h2 class="vs-name">{t.name}</h2>
+          <span class:list={["badge", t.pricingClass]}>{t.pricingLabel}</span>
+          <p class="vs-desc">{t.tagline ?? t.description ?? ""}</p>
+          <a href={t.affiliate_url ?? t.website_url ?? `/ai-tools/${t.handle}`} class="btn btn-primary" target="_blank" rel="noopener">
+            Visit {t.name} →
+          </a>
+          <div class="vs-features">
+            {FEATURES.map(f => (
+              <div class:list={["vs-feat", { "feat-yes": t[f], "feat-no": !t[f] }]}>
+                <span class="feat-icon">{t[f] ? "✓" : "✗"}</span>
+                {FEATURE_LABELS[f]}
+              </div>
+            ))}
+          </div>
+          {(t.feature_tags ?? []).slice(0,6).map((tag:string) => <span class="tag">{tag}</span>)}
+        </div>
+      ))}
+    </div>
+  </div>
+  <Footer slot="footer"/>
+</BaseLayout>
+<style>
+.vs-header { padding:var(--sp-10) 0 var(--sp-8);text-align:center }
+.vs-header h1 { margin-bottom:var(--sp-3) }
+.vs-label { color:var(--c-text-3);font-weight:400;margin:0 var(--sp-3) }
+.vs-header p { color:var(--c-text-2) }
+.vs-grid { display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-8);margin-bottom:var(--sp-16) }
+@media(max-width:700px){ .vs-grid { grid-template-columns:1fr } }
+.vs-col { background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:var(--sp-8);display:flex;flex-direction:column;gap:var(--sp-4) }
+.vs-name { font-size:var(--text-2xl) }
+.vs-desc { color:var(--c-text-2);font-size:var(--text-sm) }
+.vs-features { display:flex;flex-direction:column;gap:var(--sp-2);margin-top:var(--sp-2) }
+.vs-feat { display:flex;align-items:center;gap:var(--sp-2);font-size:var(--text-sm);color:var(--c-text-3) }
+.feat-yes { color:var(--c-text-2) }
+.feat-yes .feat-icon { color:var(--c-free);font-weight:700 }
+.feat-no  .feat-icon { color:var(--c-text-3) }
+</style>

@@ -1,0 +1,26 @@
+<section class="nl-section">
+  <div class="container">
+    <div class="nl-card">
+      <div class="nl-content">
+        <div class="nl-badge">Weekly AI Digest</div>
+        <h2>Stay ahead of the AI curve</h2>
+        <p>Get the best new AI tools, deep-dives and workflow tips every week. Join 12,000+ AI professionals.</p>
+      </div>
+      <form class="nl-form" action="#" method="post" onsubmit="return false;">
+        <input class="input" type="email" name="email" placeholder="your@email.com" required/>
+        <button class="btn btn-primary" type="submit">Subscribe Free</button>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+.nl-section { padding:var(--sp-16) 0 }
+.nl-card { background:linear-gradient(135deg,var(--c-bg-3) 0%,var(--c-bg-4) 100%);border:1px solid var(--c-border-brand);border-radius:var(--r-xl);padding:clamp(2rem,5vw,3.5rem);display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-10);align-items:center;position:relative;overflow:hidden }
+.nl-card::before { content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;background:var(--c-brand-glow);border-radius:50%;filter:blur(80px);pointer-events:none }
+@media(max-width:700px){ .nl-card { grid-template-columns:1fr } }
+.nl-badge { display:inline-block;font-size:var(--text-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-brand-light);margin-bottom:var(--sp-3) }
+.nl-content h2 { font-size:clamp(var(--text-xl),3vw,var(--text-3xl));margin-bottom:var(--sp-3) }
+.nl-content p { color:var(--c-text-2);max-width:380px }
+.nl-form { display:flex;flex-direction:column;gap:var(--sp-3) }
+.nl-form .btn { align-self:flex-start }
+</style>

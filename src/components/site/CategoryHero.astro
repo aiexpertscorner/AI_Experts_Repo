@@ -1,0 +1,23 @@
+---
+interface Props {
+  category: string;
+  toolCount: number;
+}
+
+const { category, toolCount } = Astro.props;
+---
+
+<div class="category-hero-card">
+  <p class="category-hero-card__eyebrow">AI Tool Category</p>
+  <h1>{category}</h1>
+
+  <p class="category-hero-card__lead">
+    Browse {toolCount.toLocaleString()} tools in the <strong>{category}</strong> category.
+    Discover platforms, compare options and click through to individual tool pages.
+  </p>
+
+  <div class="badges">
+    <span class="badge badge--tag">{toolCount.toLocaleString()} tools</span>
+    <span class="badge badge--tag">Updated from directory data</span>
+  </div>
+</div>

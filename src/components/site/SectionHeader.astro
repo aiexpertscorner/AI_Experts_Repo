@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  linkHref?: string;
+  linkLabel?: string;
+}
+
+const { title, subtitle, linkHref, linkLabel } = Astro.props;
+---
+
+<div class="section-header">
+  <div>
+    <h2>{title}</h2>
+    {subtitle && <p>{subtitle}</p>}
+  </div>
+
+  {linkHref && linkLabel && (
+    <a href={linkHref} class="section-link">{linkLabel}</a>
+  )}
+</div>

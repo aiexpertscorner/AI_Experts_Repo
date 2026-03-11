@@ -1,0 +1,19 @@
+---
+import CategoryCard from "@/components/cards/CategoryCard.astro";
+interface Cat { name:string; slug:string; count:number; description?:string }
+interface Props { categories: Cat[]; limit?:number; showAll?:boolean }
+const { categories, limit=12, showAll=false } = Astro.props;
+const shown = showAll ? categories : categories.slice(0, limit);
+---
+<div class="cat-grid">
+  {shown.map(c => <CategoryCard name={c.name} slug={c.slug} count={c.count} description={c.description}/>)}
+</div>
+{!showAll && categories.length > limit && (
+  <div class="cat-more">
+    <a href="/ai-tools" class="btn btn-ghost">Browse all {categories.length} categories →</a>
+  </div>
+)}
+<style>
+.cat-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--sp-3) }
+.cat-more { margin-top:var(--sp-8);text-align:center }
+</style>

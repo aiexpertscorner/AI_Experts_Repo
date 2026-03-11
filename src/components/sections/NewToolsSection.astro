@@ -1,0 +1,22 @@
+---
+import ToolCard from "@/components/cards/ToolCard.astro";
+interface Props { tools: any[] }
+const { tools } = Astro.props;
+if (!tools?.length) return;
+---
+<section class="nts">
+  <div class="section-header">
+    <div>
+      <h2>New This Week</h2>
+      <p class="nts-sub">Recently added AI tools</p>
+    </div>
+    <a href="/ai-tools" class="see-all">Browse all →</a>
+  </div>
+  <div class="grid-tools">
+    {tools.slice(0,6).map((t:any) => <ToolCard tool={t}/>)}
+  </div>
+</section>
+<style>
+.nts{margin-bottom:var(--sp-16)}
+.nts-sub{font-size:var(--text-sm);color:var(--c-text-3);margin-top:4px}
+</style>

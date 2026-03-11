@@ -1,0 +1,30 @@
+---
+type Tool = {
+  handle: string;
+  name: string;
+  url: string;
+  short?: string;
+  desc?: string;
+  cat?: string;
+  pricing?: string;
+  tags?: string[];
+  e?: string;
+};
+
+interface Props {
+  tool: Tool;
+}
+
+const { tool } = Astro.props;
+---
+
+<aside class="tool-facts-card">
+  <h3>Quick facts</h3>
+
+  <ul>
+    <li><strong>Name:</strong> {tool.name}</li>
+    <li><strong>Pricing:</strong> {tool.pricing || "Unknown"}</li>
+    <li><strong>Category:</strong> {tool.cat || "Other"}</li>
+    <li><strong>Type:</strong> Web-based AI tool</li>
+  </ul>
+</aside>

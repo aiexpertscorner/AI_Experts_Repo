@@ -1,0 +1,30 @@
+---
+import { getCategoryIconBySlug } from "@/data/categoryIcons";
+interface Props { name:string; slug:string; count:number; description?:string }
+const { name, slug, count, description } = Astro.props;
+const icon = getCategoryIconBySlug(slug);
+---
+<a href={`/ai-tools/category/${slug}`} class="cc">
+  <div class="cc-icon" set:html={icon}/>
+  <div class="cc-body">
+    <strong class="cc-name">{name}</strong>
+    <span class="cc-count">{count.toLocaleString()} tools</span>
+    {description && <p class="cc-desc">{description}</p>}
+  </div>
+  <svg class="cc-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+</a>
+
+<style>
+.cc{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-4) var(--sp-5);border-radius:var(--r-lg);background:var(--c-bg-2);border:1px solid var(--c-border);text-decoration:none;transition:all var(--t-base);position:relative;overflow:hidden}
+.cc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c-brand-glow-s) 0%,transparent 60%);opacity:0;transition:opacity var(--t-base)}
+.cc:hover{border-color:var(--c-border-hover);transform:translateY(-2px);box-shadow:0 4px 20px rgba(99,102,241,.1)}
+.cc:hover::before{opacity:1}
+.cc-icon{width:38px;height:38px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--c-bg-4);border-radius:var(--r-md);border:1px solid var(--c-border)}
+.cc-icon :global(svg){width:22px;height:22px}
+.cc-body{flex:1;min-width:0}
+.cc-name{display:block;font-size:var(--text-sm);font-weight:700;font-family:var(--font-display);color:var(--c-text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc-count{display:block;font-size:var(--text-xs);color:var(--c-brand-light);font-weight:600}
+.cc-desc{font-size:10px;color:var(--c-text-3);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc-arr{color:var(--c-text-3);flex-shrink:0;transition:transform var(--t-fast),color var(--t-fast)}
+.cc:hover .cc-arr{transform:translateX(2px);color:var(--c-brand-light)}
+</style>

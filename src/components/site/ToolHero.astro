@@ -1,0 +1,71 @@
+---
+type Tool = {
+  handle: string;
+  name: string;
+  url: string;
+  short?: string;
+  desc?: string;
+  cat?: string;
+  pricing?: string;
+  tags?: string[];
+  e?: string;
+};
+
+interface Props {
+  tool: Tool;
+  categoryHref?: string;
+}
+
+const { tool, categoryHref } = Astro.props as Props;
+
+if (!tool) {
+  throw new Error("ToolHero requires a valid 'tool' prop.");
+}
+
+const pricingLabel = tool.pricing || "Unknown";
+const pricingClass =
+  pricingLabel.toLowerCase() === "free"
+    ? "badge--free"
+    : pricingLabel.toLowerCase() === "freemium"
+    ? "badge--freemium"
+    : pricingLabel.toLowerCase() === "paid"
+    ? "badge--paid"
+    : "badge--tag";
+---
+
+<div class="tool-hero-card">
+  <div class="tool-hero-card__icon">{tool.e || "✦"}</div>
+
+  <div class="tool-hero-card__content">
+    <p class="tool-hero-card__eyebrow">{tool.cat || "AI Tool"}</p>
+    <h1>{tool.name}</h1>
+    <p class="tool-hero-card__lead">{tool.short || tool.desc}</p>
+
+    <div class="badges">
+      <span class={`badge ${pricingClass}`}>{pricingLabel}</span>
+
+      {tool.cat && <span class="badge badge--tag">{tool.cat}</span>}
+
+      {tool.tags?.slice(0, 4).map((tag) => (
+        <span class="badge badge--tag">{tag}</span>
+      ))}
+    </div>
+
+    <div class="tool-hero-card__actions">
+      <a
+        href={tool.url}
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="btn btn--primary"
+      >
+        Visit Tool
+      </a>
+
+      {categoryHref ? (
+        <a href={categoryHref} class="btn btn--secondary">View Category</a>
+      ) : (
+        <a href="/ai-tools" class="btn btn--secondary">Browse More Tools</a>
+      )}
+    </div>
+  </div>
+</div>

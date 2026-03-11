@@ -1,0 +1,228 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/site/Header.astro";
+import Footer from "@/components/site/Footer.astro";
+import CategoryGrid from "@/components/sections/CategoryGrid.astro";
+import FeaturedToolsSection from "@/components/sections/FeaturedToolsSection.astro";
+import TrendingTopicsSection from "@/components/sections/TrendingTopicsSection.astro";
+import AudienceSection from "@/components/sections/AudienceSection.astro";
+import NewToolsSection from "@/components/sections/NewToolsSection.astro";
+
+import catMap from "@/data/build/category-map.json";
+import featuredData from "@/data/build/featured-tools.json";
+import homepageData from "@/data/build/homepage-data.json";
+
+const categories = Object.values(catMap as any).sort((a:any,b:any) => b.count - a.count);
+const featuredTools = (featuredData as any)?.global_top ?? [];
+const newTools = (homepageData as any)?.new_tools ?? [];
+const totalTools = (homepageData as any)?.total_tools ?? 19066;
+const pricingDist = (homepageData as any)?.pricing_dist ?? {};
+---
+<BaseLayout
+  title="AI Tools Directory — Find the Best AI Tools for Any Workflow"
+  description={`Browse ${totalTools.toLocaleString()}+ AI tools across 23 categories. Compare pricing, features and alternatives — all in one place.`}
+>
+  <Header slot="header"/>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        The #1 AI Tools Directory
+      </div>
+      <h1>Find the <span class="text-gradient">perfect AI tool</span><br/>for any workflow</h1>
+      <p class="hero-sub">
+        Browse <strong>{totalTools.toLocaleString()}+</strong> AI tools across <strong>23</strong> categories.
+        Compare pricing, features and alternatives — all in one place.
+      </p>
+
+      <!-- Search -->
+      <div class="hero-search">
+        <svg class="hs-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input class="hs-input" type="text" placeholder="Search 19,000+ AI tools..." aria-label="Search AI tools"
+          onfocus="window.location.href='/ai-tools'" readonly/>
+        <a href="/ai-tools" class="btn btn-primary hs-btn">Search</a>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="hero-stats">
+        <div class="hs-stat">
+          <strong>{totalTools.toLocaleString()}+</strong>
+          <span>AI Tools</span>
+        </div>
+        <div class="hs-div"></div>
+        <div class="hs-stat">
+          <strong>23</strong>
+          <span>Categories</span>
+        </div>
+        <div class="hs-div"></div>
+        <div class="hs-stat">
+          <strong class="stat-free">Free</strong>
+          <span>to use</span>
+        </div>
+        <div class="hs-div"></div>
+        <div class="hs-stat">
+          <strong class="stat-daily">Daily</strong>
+          <span>updates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container page-body">
+
+    <!-- ── CATEGORIES ── -->
+    <section class="section-sm">
+      <div class="section-header">
+        <div>
+          <h2>Browse by Category</h2>
+          <p class="sh-sub">23 categories covering every AI use case</p>
+        </div>
+        <a href="/ai-tools" class="see-all">All categories →</a>
+      </div>
+      <CategoryGrid categories={categories as any} limit={12}/>
+    </section>
+
+    <hr class="divider"/>
+
+    <!-- ── FEATURED TOOLS ── -->
+    {featuredTools.length > 0 && (
+      <FeaturedToolsSection
+        tools={featuredTools.slice(0,6)}
+        title="Top AI Tools Right Now"
+        subtitle="Highest-rated tools across all categories"
+        showRank={true}
+      />
+    )}
+
+    <!-- ── TRENDING TOPICS ── -->
+    <TrendingTopicsSection/>
+
+    <!-- ── BY AUDIENCE ── -->
+    <AudienceSection/>
+
+    <!-- ── BEST-OF LINKS ── -->
+    <section class="bestof-strip">
+      <h2 class="bestof-title">Best AI Tools For…</h2>
+      <div class="bestof-grid">
+        {[
+          ["Writing blog posts", "/best/write-blog-posts-and-articles-with-ai"],
+          ["Building chatbots", "/best/build-ai-chatbots-and-assistants-with"],
+          ["Generating images", "/ai-tools/category/image-generation"],
+          ["Coding & development", "/ai-tools/category/coding-and-dev"],
+          ["Social media content", "/ai-tools/tag/social-media"],
+          ["SEO & keyword research", "/ai-tools/tag/seo-and-keywords"],
+          ["Video creation", "/ai-tools/tag/video-creation"],
+          ["Data & analytics", "/ai-tools/category/data-and-analytics"],
+          ["Customer support", "/ai-tools/tag/customer-support"],
+          ["HR & recruiting", "/ai-tools/category/hr-and-recruiting"],
+          ["Finance & legal", "/ai-tools/category/legal-and-finance"],
+          ["Education & research", "/ai-tools/category/research-and-education"],
+        ].map(([label, href]) => (
+          <a href={href} class="bestof-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            {label}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <!-- ── NEW TOOLS ── -->
+    {newTools.length > 0 && <NewToolsSection tools={newTools}/>}
+
+    <!-- ── NEWSLETTER ── -->
+    <section class="nl-section">
+      <div class="nl-card">
+        <div class="nl-content">
+          <div class="nl-badge">📬 Newsletter</div>
+          <h2>Stay ahead with AI</h2>
+          <p>Get the best new AI tools, guides and comparisons in your inbox. No spam, unsubscribe anytime.</p>
+          <form class="nl-form" onsubmit="return false">
+            <input type="email" placeholder="you@example.com" class="input nl-email" aria-label="Email address"/>
+            <button type="submit" class="btn btn-primary">Subscribe Free</button>
+          </form>
+          <p class="nl-note">Join 10,000+ AI enthusiasts · Free · Unsubscribe anytime</p>
+        </div>
+        <div class="nl-deco" aria-hidden="true">
+          <div class="nl-orb nl-orb-1"></div>
+          <div class="nl-orb nl-orb-2"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <Footer slot="footer"/>
+</BaseLayout>
+
+<style>
+/* ── Hero ── */
+.hero{padding:clamp(5rem,12vw,8rem) 0 clamp(3rem,7vw,5rem);text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
+.hero-glow-1{width:700px;height:500px;top:-15%;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(99,102,241,.5) 0%,transparent 70%)}
+.hero-glow-2{width:400px;height:300px;top:20%;right:10%;background:radial-gradient(ellipse,rgba(34,211,238,.2) 0%,transparent 70%)}
+.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-6)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-brand-light);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);padding:6px 14px;border-radius:var(--r-full)}
+.hero-badge svg{color:var(--c-paid)}
+h1.text-gradient{line-height:1.08}
+.hero-sub{font-size:clamp(var(--text-base),2.2vw,var(--text-lg));color:var(--c-text-2);max-width:540px;line-height:1.6}
+.hero-sub strong{color:var(--c-text);font-family:var(--font-display)}
+
+/* Search */
+.hero-search{display:flex;align-items:center;background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:6px 6px 6px 16px;gap:var(--sp-3);width:100%;max-width:540px;box-shadow:0 0 0 1px rgba(99,102,241,.1),0 8px 32px rgba(0,0,0,.3);transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.hero-search:focus-within{border-color:var(--c-border-brand);box-shadow:0 0 0 1px rgba(99,102,241,.3),0 8px 32px rgba(99,102,241,.15)}
+.hs-icon{color:var(--c-text-3);flex-shrink:0}
+.hs-input{flex:1;background:none;border:none;outline:none;font-family:var(--font-body);font-size:var(--text-sm);color:var(--c-text);cursor:pointer}
+.hs-input::placeholder{color:var(--c-text-3)}
+.hs-btn{flex-shrink:0;padding:9px 20px}
+
+/* Stats */
+.hero-stats{display:flex;align-items:center;gap:var(--sp-5);flex-wrap:wrap;justify-content:center;padding:var(--sp-4) var(--sp-6);background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-xl)}
+.hs-stat{display:flex;flex-direction:column;align-items:center;gap:2px}
+.hs-stat strong{font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;color:var(--c-text)}
+.hs-stat span{font-size:10px;color:var(--c-text-3);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.stat-free{color:var(--c-free) !important}
+.stat-daily{color:var(--c-brand-light) !important}
+.hs-div{width:1px;height:28px;background:var(--c-border)}
+
+/* Page body */
+.page-body{padding-top:var(--sp-16)}
+.sh-sub{font-size:var(--text-sm);color:var(--c-text-3);margin-top:4px}
+
+/* Best-of strip */
+.bestof-strip{margin-bottom:var(--sp-16)}
+.bestof-title{font-size:clamp(var(--text-xl),2.5vw,var(--text-2xl));margin-bottom:var(--sp-6)}
+.bestof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--sp-2)}
+.bestof-link{display:flex;align-items:center;gap:var(--sp-2);padding:10px 14px;background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-md);font-size:var(--text-sm);color:var(--c-text-2);text-decoration:none;font-weight:500;transition:all var(--t-fast)}
+.bestof-link:hover{background:var(--c-bg-3);border-color:var(--c-border-hover);color:var(--c-text)}
+.bestof-link svg{color:var(--c-text-3);flex-shrink:0}
+
+/* Newsletter */
+.nl-section{margin-bottom:var(--sp-16)}
+.nl-card{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--c-bg-2) 0%,var(--c-bg-3) 100%);border:1px solid var(--c-border-brand);border-radius:var(--r-xl);padding:clamp(var(--sp-8),6vw,var(--sp-16));text-align:center}
+.nl-content{position:relative;z-index:1;max-width:500px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:var(--sp-4)}
+.nl-badge{font-size:var(--text-sm);font-weight:600;color:var(--c-brand-light)}
+.nl-card h2{font-size:clamp(var(--text-2xl),3vw,var(--text-3xl))}
+.nl-card p{font-size:var(--text-sm);color:var(--c-text-2);max-width:360px}
+.nl-form{display:flex;gap:var(--sp-2);width:100%;max-width:400px}
+.nl-email{flex:1}
+.nl-note{font-size:var(--text-xs);color:var(--c-text-3)}
+.nl-deco{position:absolute;inset:0;pointer-events:none}
+.nl-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.2}
+.nl-orb-1{width:300px;height:300px;top:-50%;right:-5%;background:var(--c-brand)}
+.nl-orb-2{width:200px;height:200px;bottom:-30%;left:5%;background:var(--c-brand-cyan)}
+
+@media(max-width:600px){
+  .hero-search{max-width:100%}
+  .hero-stats{gap:var(--sp-3)}
+  .nl-form{flex-direction:column}
+}
+</style>

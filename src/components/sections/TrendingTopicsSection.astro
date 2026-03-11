@@ -1,0 +1,40 @@
+---
+const topics = [
+  { label: "AI Agents", href: "/ai-tools/category/ai-agents", emoji: "🤖", hot: true },
+  { label: "AI Video", href: "/ai-tools/category/video-generation", emoji: "🎬", hot: true },
+  { label: "Chatbots & LLMs", href: "/ai-tools/category/chatbots-and-llms", emoji: "💬" },
+  { label: "Coding & Dev", href: "/ai-tools/category/coding-and-dev", emoji: "⚡" },
+  { label: "Writing & Content", href: "/ai-tools/category/writing-and-content", emoji: "✍️" },
+  { label: "Image Generation", href: "/ai-tools/category/image-generation", emoji: "🎨" },
+  { label: "SEO & Marketing", href: "/ai-tools/category/seo-and-marketing", emoji: "📈" },
+  { label: "Data & Analytics", href: "/ai-tools/category/data-and-analytics", emoji: "📊" },
+  { label: "Prompt Engineering", href: "/ai-tools/tag/prompt-engineering", emoji: "🧠" },
+  { label: "No-Code Tools", href: "/ai-tools/feature/no-code", emoji: "🧩" },
+  { label: "Open Source", href: "/ai-tools/feature/open-source", emoji: "🔓" },
+  { label: "Free AI Tools", href: "/ai-tools/pricing/free", emoji: "🆓" },
+];
+---
+<section class="tts">
+  <div class="section-header">
+    <h2>Trending Topics</h2>
+    <a href="/ai-tools" class="see-all">All categories →</a>
+  </div>
+  <div class="tts-grid">
+    {topics.map(t => (
+      <a href={t.href} class="tts-chip">
+        <span class="tts-em">{t.emoji}</span>
+        <span class="tts-label">{t.label}</span>
+        {t.hot && <span class="tts-hot">HOT</span>}
+      </a>
+    ))}
+  </div>
+</section>
+<style>
+.tts{margin-bottom:var(--sp-16)}
+.tts-grid{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.tts-chip{display:inline-flex;align-items:center;gap:var(--sp-2);padding:8px 16px;border-radius:var(--r-full);background:var(--c-bg-2);border:1px solid var(--c-border);font-size:var(--text-sm);font-weight:500;font-family:var(--font-display);color:var(--c-text-2);text-decoration:none;transition:all var(--t-fast)}
+.tts-chip:hover{background:var(--c-bg-3);border-color:var(--c-border-hover);color:var(--c-text)}
+.tts-em{font-size:14px}
+.tts-label{line-height:1}
+.tts-hot{font-size:9px;font-weight:700;letter-spacing:.06em;color:#f43f5e;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.25);padding:1px 5px;border-radius:var(--r-full)}
+</style>

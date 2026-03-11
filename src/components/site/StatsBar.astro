@@ -1,0 +1,36 @@
+---
+interface Props {
+  totalTools: number;
+  freeTools: number;
+  categoryCount: number;
+  updatesLabel?: string;
+}
+
+const {
+  totalTools,
+  freeTools,
+  categoryCount,
+  updatesLabel = "Daily updates"
+} = Astro.props;
+---
+
+<div class="container">
+  <div class="statsbar">
+    <div class="stat-card">
+      <strong>{totalTools.toLocaleString()}</strong>
+      <span>AI tools indexed</span>
+    </div>
+    <div class="stat-card">
+      <strong>{freeTools.toLocaleString()}</strong>
+      <span>Free tools</span>
+    </div>
+    <div class="stat-card">
+      <strong>{categoryCount}</strong>
+      <span>Categories</span>
+    </div>
+    <div class="stat-card">
+      <strong>{updatesLabel}</strong>
+      <span>Fresh content and discoveries</span>
+    </div>
+  </div>
+</div>

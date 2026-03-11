@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/site/Header.astro";
+import Footer from "@/components/site/Footer.astro";
+---
+<BaseLayout title="AI News | AIExpertsCorner" description="Daily AI news, tool launches and research updates — coming soon.">
+  <Header slot="header"/>
+  <div class="container">
+    <div class="coming-soon">
+      <div class="cs-icon">📰</div>
+      <h1>AI News</h1>
+      <p>Daily AI news, tool launches and research updates — coming soon.</p>
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+    </div>
+  </div>
+  <Footer slot="footer"/>
+</BaseLayout>
+<style>
+.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }
+.cs-icon { font-size:4rem }
+h1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }
+p  { color:var(--c-text-2);max-width:480px;font-size:var(--text-lg) }
+</style>

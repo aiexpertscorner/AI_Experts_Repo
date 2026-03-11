@@ -1,0 +1,38 @@
+---
+interface Tool {
+  handle: string;
+  name: string;
+  cat?: string;
+  pricing?: string;
+}
+
+interface Props {
+  tools: Tool[];
+}
+
+const { tools } = Astro.props;
+---
+
+<section class="featured-rail">
+  <div class="container">
+    <div class="featured-rail__header">
+      <div>
+        <h2>Featured tools</h2>
+        <p>Fast entry points into high-interest tools and categories.</p>
+      </div>
+      <a href="/best/ai-tools-for-marketing" class="section-link">See best pages</a>
+    </div>
+
+    <div class="featured-rail__track">
+      {tools.map((tool) => (
+        <a href={`/tools/${tool.handle}`} class="featured-rail__card">
+          <div class="featured-rail__title">{tool.name}</div>
+          <div class="featured-rail__meta">
+            <span>{tool.cat || "Other"}</span>
+            <span>{tool.pricing || "Unknown"}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

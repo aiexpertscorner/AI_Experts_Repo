@@ -1,0 +1,22 @@
+---
+interface Props { placeholder?:string; action?:string; value?:string }
+const { placeholder="Search 19,000+ AI tools...", action="/ai-tools", value="" } = Astro.props;
+---
+<div class="sh-wrap">
+  <form class="sh" action={action} method="get" role="search">
+    <svg class="sh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input class="sh-input" type="search" name="q" placeholder={placeholder} value={value} autocomplete="off" spellcheck="false"/>
+    <button class="btn btn-primary btn-sm sh-btn" type="submit">Search</button>
+  </form>
+</div>
+<style>
+.sh-wrap { max-width:680px }
+.sh { display:flex;align-items:center;background:var(--c-bg-3);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:6px 6px 6px 16px;gap:var(--sp-2);transition:border-color var(--t-fast),box-shadow var(--t-fast) }
+.sh:focus-within { border-color:var(--c-brand);box-shadow:0 0 0 3px var(--c-brand-glow) }
+.sh-icon { color:var(--c-text-3);flex-shrink:0 }
+.sh-input { flex:1;background:none;border:none;outline:none;font-size:var(--text-base);font-family:var(--font-body);color:var(--c-text);padding:4px 0 }
+.sh-input::placeholder { color:var(--c-text-3) }
+.sh-btn { border-radius:var(--r-lg);flex-shrink:0 }
+</style>

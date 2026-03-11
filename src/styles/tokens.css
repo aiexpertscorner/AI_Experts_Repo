@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+:root {
+  /* Background scale */
+  --c-bg:    #080d1a;
+  --c-bg-2:  #0d1526;
+  --c-bg-3:  #111d35;
+  --c-bg-4:  #162040;
+  --c-bg-5:  #1e2d50;
+
+  /* Brand — matches logo gradient (cyan→indigo→violet) */
+  --c-brand:        #6366f1;
+  --c-brand-light:  #818cf8;
+  --c-brand-cyan:   #22d3ee;
+  --c-brand-violet: #7c3aed;
+  --c-brand-dim:    #4338ca;
+  --c-brand-glow:   rgba(99,102,241,.18);
+  --c-brand-glow-s: rgba(99,102,241,.08);
+
+  /* Text */
+  --c-text:   #f1f5f9;
+  --c-text-2: #94a3b8;
+  --c-text-3: #64748b;
+
+  /* Borders */
+  --c-border:       rgba(148,163,184,.10);
+  --c-border-hover: rgba(99,102,241,.35);
+  --c-border-brand: rgba(99,102,241,.50);
+
+  /* Pricing */
+  --c-free:     #10b981;
+  --c-freemium: #6366f1;
+  --c-paid:     #f59e0b;
+  --c-unknown:  #64748b;
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Type scale */
+  --text-xs:   .75rem;
+  --text-sm:   .875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  /* Spacing */
+  --sp-1:.25rem; --sp-2:.5rem;  --sp-3:.75rem; --sp-4:1rem;
+  --sp-5:1.25rem;--sp-6:1.5rem; --sp-8:2rem;   --sp-10:2.5rem;
+  --sp-12:3rem;  --sp-16:4rem;  --sp-20:5rem;  --sp-24:6rem;
+
+  /* Layout */
+  --max-w:    1280px;
+  --gutter:   clamp(1rem, 4vw, 2rem);
+  --header-h: 64px;
+
+  /* Radius */
+  --r-sm:   4px;
+  --r-md:   10px;
+  --r-lg:   14px;
+  --r-xl:   20px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-card:  0 2px 16px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+  --shadow-brand: 0 0 0 1px var(--c-border-brand), 0 4px 24px var(--c-brand-glow);
+
+  /* Transitions */
+  --t-fast: 150ms ease;
+  --t-base: 220ms ease;
+  --t-slow: 350ms ease;
+}

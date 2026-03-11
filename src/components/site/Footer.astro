@@ -1,0 +1,47 @@
+---
+import { SITE_NAME, FOOTER_LINKS } from "@/data/homeConfig";
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="ft-logo">
+          <img src="/logos/logo_dark.png" alt={SITE_NAME} width="160" height="44" loading="lazy"/>
+        </a>
+        <p>The most complete AI tools directory. Find, compare and discover the best AI tools for every workflow.</p>
+        <p class="ft-stats"><strong>19,000+</strong> tools &nbsp;·&nbsp; <strong>23</strong> categories &nbsp;·&nbsp; updated daily</p>
+      </div>
+      {Object.entries(FOOTER_LINKS).map(([col, links]) => (
+        <div class="ft-col">
+          <h4>{col}</h4>
+          <ul>
+            {links.map(l => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="ft-bottom">
+      <p>© {year} {SITE_NAME}. All rights reserved.</p>
+      <p class="ft-disc">AI tool data is collected and maintained independently. Affiliate links may be present.</p>
+    </div>
+  </div>
+</footer>
+<style>
+.site-footer { background:var(--c-bg-2);border-top:1px solid var(--c-border);margin-top:var(--sp-20);padding:var(--sp-16) 0 var(--sp-8) }
+.ft-grid { display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--sp-10);margin-bottom:var(--sp-12) }
+@media(max-width:900px){ .ft-grid { grid-template-columns:1fr 1fr } }
+@media(max-width:540px){ .ft-grid { grid-template-columns:1fr } }
+.ft-brand p { font-size:var(--text-sm);color:var(--c-text-3);margin-top:var(--sp-4);max-width:280px }
+.ft-stats { font-size:var(--text-xs) !important;margin-top:var(--sp-3) !important }
+.ft-stats strong { color:var(--c-brand-light) }
+.ft-logo img { max-width:180px;margin-bottom:var(--sp-3) }
+.ft-col h4 { font-family:var(--font-display);font-size:var(--text-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-text-3);margin-bottom:var(--sp-4) }
+.ft-col ul { list-style:none;display:flex;flex-direction:column;gap:var(--sp-2) }
+.ft-col a  { font-size:var(--text-sm);color:var(--c-text-3);transition:color var(--t-fast) }
+.ft-col a:hover { color:var(--c-brand-light) }
+.ft-bottom { border-top:1px solid var(--c-border);padding-top:var(--sp-6);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--sp-3) }
+.ft-bottom p { font-size:var(--text-xs);color:var(--c-text-3) }
+.ft-disc { max-width:420px;text-align:right }
+@media(max-width:600px){ .ft-disc { text-align:left } }
+</style>

@@ -1,0 +1,58 @@
+---
+interface Props {
+  totalTools: number;
+  categoryCount: number;
+  freeCount: number;
+  freemiumCount: number;
+}
+
+const { totalTools, categoryCount, freeCount, freemiumCount } = Astro.props;
+---
+
+<section class="tools-hero section">
+  <div class="container">
+    <div class="tools-hero__panel">
+      <div class="tools-hero__eyebrow">AI Tools Directory</div>
+
+      <h1>
+        Search, filter and compare <span>{totalTools.toLocaleString()} AI tools</span>
+      </h1>
+
+      <p>
+        The main discovery page for AI Experts Corner. Find tools by category, pricing and use case,
+        then click through to tool pages, alternatives and comparisons.
+      </p>
+
+      <div class="tools-search">
+        <span class="tools-search__icon">⌕</span>
+        <input
+          id="tools-search-input"
+          type="search"
+          placeholder={`Search ${totalTools.toLocaleString()} AI tools...`}
+          autocomplete="off"
+          aria-label="Search AI tools"
+        />
+        <span class="tools-search__kbd">Live</span>
+      </div>
+
+      <div class="tools-hero__stats">
+        <div class="tools-hero__stat">
+          <strong>{totalTools.toLocaleString()}</strong>
+          <span>Tools</span>
+        </div>
+        <div class="tools-hero__stat">
+          <strong>{categoryCount}</strong>
+          <span>Categories</span>
+        </div>
+        <div class="tools-hero__stat">
+          <strong>{freeCount.toLocaleString()}</strong>
+          <span>Free</span>
+        </div>
+        <div class="tools-hero__stat">
+          <strong>{freemiumCount.toLocaleString()}</strong>
+          <span>Freemium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

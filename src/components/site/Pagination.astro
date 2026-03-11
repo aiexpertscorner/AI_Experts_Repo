@@ -1,0 +1,26 @@
+---
+interface Props { page:number; totalPages:number; baseUrl:string }
+const { page, totalPages, baseUrl } = Astro.props;
+if (totalPages <= 1) return;
+const prev = page > 1 ? `${baseUrl}?page=${page-1}` : null;
+const next = page < totalPages ? `${baseUrl}?page=${page+1}` : null;
+const pages = Array.from({length:totalPages},(_,i)=>i+1).filter(p=> Math.abs(p-page)<=2||p===1||p===totalPages);
+---
+<nav class="pgn" aria-label="Pagination">
+  {prev && <a href={prev} class="pgn-btn" aria-label="Previous">← Prev</a>}
+  {pages.map((p, i) => {
+    const prev2 = pages[i-1];
+    return (<>
+      {prev2 && p - prev2 > 1 && <span class="pgn-gap">…</span>}
+      <a href={`${baseUrl}?page=${p}`} class:list={["pgn-num", {active: p===page}]} aria-current={p===page?"page":undefined}>{p}</a>
+    </>);
+  })}
+  {next && <a href={next} class="pgn-btn" aria-label="Next">Next →</a>}
+</nav>
+<style>
+.pgn { display:flex;align-items:center;justify-content:center;gap:var(--sp-2);margin-top:var(--sp-10);flex-wrap:wrap }
+.pgn-btn,.pgn-num { padding:7px 14px;border-radius:var(--r-md);font-size:var(--text-sm);font-family:var(--font-display);font-weight:600;color:var(--c-text-2);background:var(--c-bg-2);border:1px solid var(--c-border);text-decoration:none;transition:all var(--t-fast) }
+.pgn-btn:hover,.pgn-num:hover { color:var(--c-text);border-color:var(--c-border-hover);background:var(--c-bg-3) }
+.pgn-num.active { color:#fff;background:var(--c-brand);border-color:var(--c-brand) }
+.pgn-gap { color:var(--c-text-3);padding:0 4px }
+</style>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/site/Header.astro";
+import Footer from "@/components/site/Footer.astro";
+import Breadcrumbs from "@/components/site/Breadcrumbs.astro";
+import ToolCard from "@/components/cards/ToolCard.astro";
+import slugData from "@/data/build/tag-paths.json";
+import mapData from "@/data/build/tag-map.json";
+
+export function getStaticPaths() {
+  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const entry = (mapData as any)[slug!];
+if (!entry) return Astro.redirect('/ai-tools');
+const { name, tools=[], count, description, seo_title, seo_description } = entry;
+---
+<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>
+  <Header slot="header"/>
+  <div class="container">
+    <Breadcrumbs crumbs={[{label:"AI Tools", href:"/ai-tools"}, {label:name}]}/>
+    <div class="dim-header">
+      <span class="badge badge-unknown" style="margin-bottom:1rem">🏷️ Tag</span>
+      <h1>{seo_title ?? `Best AI Tools for ${name}`}</h1>
+      <p>{description ?? `Discover and compare the top AI tools for ${name}.`}</p>
+      <div class="dim-meta">
+        <div class="dim-meta-item"><strong>{count ?? tools.length}</strong> tools</div>
+      </div>
+    </div>
+    <div class="grid-tools">
+      {tools.slice(0, 48).map((t:any, i:number) => <ToolCard tool={t} rank={i+1}/>)}
+    </div>
+    {tools.length === 0 && <p style="color:var(--c-text-3);text-align:center;padding:3rem 0">No tools found for this tag.</p>}
+  </div>
+  <Footer slot="footer"/>
+</BaseLayout>
+<style is:global>
+@import "@/styles/dimension-page.css";
+</style>
