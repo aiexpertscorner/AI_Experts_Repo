@@ -114394,5 +114394,27 @@
     "free-tools-provider",
     "rlama",
     "tiptap-editor-3-0-beta"
-  ]
+  ],
+  "chatgpt": [],
+  "google-gemini": [],
+  "claude": [],
+  "microsoft-copilot": [],
+  "github-copilot": [],
+  "canva-ai": [],
+  "notebooklm": [],
+  "dall-e-3": [],
+  "ideogram": [],
+  "opusclip": [],
+  "pika-labs": [],
+  "elevenlabs": [],
+  "gamma": [],
+  "codeium": [],
+  "claude-code": [],
+  "n8n": [],
+  "semrush": [],
+  "brandwatch-ai": [],
+  "zoom-ai-companion": [],
+  "asana-ai": [],
+  "salesforce-einstein": [],
+  "shopify-magic": []
 }

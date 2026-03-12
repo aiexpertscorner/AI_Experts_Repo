@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-03-12T01:07:59.911Z",
+  "generated_at": "2026-03-12T20:55:45.399Z",
   "version": "v3",
-  "tool_count": 19066,
+  "tool_count": 19088,
   "category_count": 23,
-  "tag_count": 30,
+  "tag_count": 37,
   "industry_count": 14,
   "feature_count": 11,
   "use_case_count": 2,
   "compare_pairs": 73216,
   "best_of_pages": 95,
-  "sitemap_urls": 24188,
+  "sitemap_urls": 24210,
   "skipped": 399,
   "duplicates": 1
 }

@@ -4833,8 +4833,155 @@
   "chatbots-and-llms": {
     "slug": "chatbots-and-llms",
     "name": "Chatbots & LLMs",
-    "count": 1714,
+    "count": 1718,
     "tools": [
+      {
+        "handle": "chatgpt",
+        "name": "ChatGPT",
+        "tagline": "ChatGPT — AI Chatbot by OpenAI",
+        "description": "ChatGPT is OpenAI's conversational AI assistant used by millions for writing, coding, research, and more.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://chatgpt.com",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "chatbot",
+          "llm",
+          "writing",
+          "coding",
+          "research"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99999,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "ChatGPT — AI Chatbot by OpenAI",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99999,
+        "prompt_score": 0
+      },
+      {
+        "handle": "google-gemini",
+        "name": "Google Gemini",
+        "tagline": "Google Gemini — AI Assistant by Google",
+        "description": "Google Gemini is Google's multimodal AI assistant, deeply integrated with Google Workspace and Search.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://gemini.google.com",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "chatbot",
+          "llm",
+          "multimodal",
+          "google"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99998,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Google Gemini — AI Assistant by Google",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99998,
+        "prompt_score": 0
+      },
+      {
+        "handle": "claude",
+        "name": "Claude",
+        "tagline": "Claude — AI Assistant by Anthropic",
+        "description": "Claude is Anthropic's AI assistant, known for nuanced reasoning, long context windows, and safety-focused design.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://claude.ai",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "chatbot",
+          "llm",
+          "writing",
+          "safety",
+          "reasoning"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99997,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Claude — AI Assistant by Anthropic",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99997,
+        "prompt_score": 0
+      },
+      {
+        "handle": "microsoft-copilot",
+        "name": "Microsoft Copilot",
+        "tagline": "Microsoft Copilot — AI Assistant by Microsoft",
+        "description": "Microsoft Copilot is an AI assistant built into Windows, Edge, and Microsoft 365, powered by OpenAI models.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://copilot.microsoft.com",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "chatbot",
+          "productivity",
+          "microsoft",
+          "windows",
+          "office"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99996,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Microsoft Copilot — AI Assistant by Microsoft",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99996,
+        "prompt_score": 0
+      },
       {
         "handle": "presbot",
         "name": "Presbot",
@@ -7068,213 +7215,10 @@
         "commercial_score": 28,
         "homepage_score": 55,
         "prompt_score": 56
-      },
-      {
-        "handle": "gnorman-ai",
-        "name": "Gnorman Ai",
-        "tagline": "Gnorman Ai — AI Chatbot",
-        "description": "Gardening advice website providing personalized tips using GPT-4.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "gnorman.ai",
-        "website_url": "https://www.gnorman.ai",
-        "affiliate_url": "",
-        "category": "Chatbots & LLMs",
-        "category_slug": "chatbots-and-llms",
-        "feature_tags": [
-          "Chat / Q&A",
-          "Text Generation"
-        ],
-        "use_cases": [
-          "Create and optimise ad campaigns with Gnorman Ai",
-          "Build and deploy AI chatbots with Gnorman Ai"
-        ],
-        "industries": [],
-        "display_score": 54,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "alice",
-          "ambit-ai",
-          "assisterr",
-          "auto-gmail-chatgpt-for-email",
-          "awan-llm",
-          "chatglm-cn"
-        ],
-        "compare_targets": [
-          "200-chatgpt-mega-prompts-for-business",
-          "ai-chief-strategy-officer",
-          "alice",
-          "angel-ai"
-        ],
-        "seo_title": "Gnorman Ai — AI Chatbot",
-        "seo_description": "Gnorman Ai: Gardening advice website providing personalized tips using GPT-4. Create and optimise ad campaigns with Gnorman Ai. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Creation",
-        "commercial_score": 28,
-        "homepage_score": 55,
-        "prompt_score": 56
-      },
-      {
-        "handle": "gorgias",
-        "name": "Gorgias",
-        "tagline": "Gorgias — AI Chatbot",
-        "description": "Conversational AI platform for ecommerce, automating support and driving sales.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "gorgias.com",
-        "website_url": "https://www.gorgias.com",
-        "affiliate_url": "",
-        "category": "Chatbots & LLMs",
-        "category_slug": "chatbots-and-llms",
-        "feature_tags": [
-          "Chat / Q&A",
-          "E-Commerce"
-        ],
-        "use_cases": [
-          "Automate sales outreach and lead gen with Gorgias",
-          "Write product descriptions at scale with Gorgias",
-          "Build and deploy AI chatbots with Gorgias"
-        ],
-        "industries": [
-          "E-Commerce",
-          "Sales",
-          "Customer Success"
-        ],
-        "display_score": 54,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "allganize-ai",
-          "chatfuel",
-          "frequently-ai",
-          "kore-ai",
-          "logistify-ai",
-          "novatalks"
-        ],
-        "compare_targets": [
-          "aissistant",
-          "allganize-ai",
-          "frequently-ai",
-          "kore-ai"
-        ],
-        "seo_title": "Gorgias — AI Chatbot",
-        "seo_description": "Gorgias: Conversational AI platform for ecommerce, automating support and driving sales. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Sales Professionals",
-        "workflow_stage": "Creation",
-        "commercial_score": 35,
-        "homepage_score": 54,
-        "prompt_score": 46
-      },
-      {
-        "handle": "gpt-4o-click-to-start",
-        "name": "Gpt 4o Click To Start",
-        "tagline": "Gpt 4o Click To Start — AI Chatbot",
-        "description": "OpenAI's GPT-4o is an advanced AI model with real-time multimodal processing and emotion detection.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "gpt-4o.click",
-        "website_url": "https://www.gpt-4o.click",
-        "affiliate_url": "",
-        "category": "Chatbots & LLMs",
-        "category_slug": "chatbots-and-llms",
-        "feature_tags": [
-          "Chat / Q&A",
-          "Text Generation"
-        ],
-        "use_cases": [
-          "Create and optimise ad campaigns with Gpt 4o Click To Start",
-          "Build and deploy AI chatbots with Gpt 4o Click To Start"
-        ],
-        "industries": [],
-        "display_score": 54,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "alice",
-          "ambit-ai",
-          "assisterr",
-          "auto-gmail-chatgpt-for-email",
-          "awan-llm",
-          "chatglm-cn"
-        ],
-        "compare_targets": [
-          "200-chatgpt-mega-prompts-for-business",
-          "ai-chief-strategy-officer",
-          "alice",
-          "angel-ai"
-        ],
-        "seo_title": "Gpt 4o Click To Start — AI Chatbot",
-        "seo_description": "Gpt 4o Click To Start: OpenAI's GPT-4o is an advanced AI model with real-time multimodal processing and emotion detection. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Creation",
-        "commercial_score": 28,
-        "homepage_score": 55,
-        "prompt_score": 56
-      },
-      {
-        "handle": "gpt-prompter",
-        "name": "Gpt Prompter",
-        "tagline": "Gpt Prompter — AI Chatbot",
-        "description": "Chrome extension for easy access to GPT-3/4 and ChatGPT API.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "gptprompter.com",
-        "website_url": "https://gptprompter.com",
-        "affiliate_url": "",
-        "category": "Chatbots & LLMs",
-        "category_slug": "chatbots-and-llms",
-        "feature_tags": [
-          "Chat / Q&A",
-          "Text Generation"
-        ],
-        "use_cases": [
-          "Build and deploy AI chatbots with Gpt Prompter",
-          "Build AI chatbots and assistants with Gpt Prompter"
-        ],
-        "industries": [
-          "HR & Recruiting"
-        ],
-        "display_score": 54,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "aioai",
-          "crawl-ai",
-          "lm-kit-net",
-          "macbeth-ai",
-          "open-agent-cloud-antler-f24",
-          "promptlayer"
-        ],
-        "compare_targets": [
-          "bland-ai",
-          "crawl-ai",
-          "lm-kit-net",
-          "promptlayer"
-        ],
-        "seo_title": "Gpt Prompter — AI Chatbot",
-        "seo_description": "Gpt Prompter: Chrome extension for easy access to GPT-3/4 and ChatGPT API. Build and deploy AI chatbots with Gpt Prompter. Free plan available.",
-        "complexity": "Intermediate",
-        "target_audience": "Developers",
-        "workflow_stage": "Creation",
-        "commercial_score": 20,
-        "homepage_score": 55,
-        "prompt_score": 56
       }
     ],
     "seo_title": "Best Chatbots & LLMs Tools — Top AI Tools for Chatbots & LLMs",
-    "description": "Discover the 1714 best chatbots & llms tools. Compare pricing, features and alternatives."
+    "description": "Discover the 1718 best chatbots & llms tools. Compare pricing, features and alternatives."
   },
   "3d-and-ar": {
     "slug": "3d-and-ar",
@@ -9602,8 +9546,44 @@
   "design-and-ui": {
     "slug": "design-and-ui",
     "name": "Design & UI",
-    "count": 1273,
+    "count": 1274,
     "tools": [
+      {
+        "handle": "canva-ai",
+        "name": "Canva AI",
+        "tagline": "Canva AI — AI Design Tools by Canva",
+        "description": "Canva AI brings powerful AI features to Canva's design platform — generate images, write copy, and create presentations.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://www.canva.com/ai-image-generator/",
+        "affiliate_url": "",
+        "category": "Design & UI",
+        "category_slug": "design-and-ui",
+        "feature_tags": [
+          "design",
+          "image-generation",
+          "presentations",
+          "marketing"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99994,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Canva AI — AI Design Tools by Canva",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99994,
+        "prompt_score": 0
+      },
       {
         "handle": "financial-flow",
         "name": "Financial Flow",
@@ -12021,67 +12001,127 @@
         "commercial_score": 20,
         "homepage_score": 45,
         "prompt_score": 34
-      },
-      {
-        "handle": "ai-infographics",
-        "name": "Ai Infographics",
-        "tagline": "Ai Infographics — AI Design Tool",
-        "description": "AI tool to transform content into professional, customizable infographics for various platforms.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "infographics.so",
-        "website_url": "https://infographics.so",
-        "affiliate_url": "",
-        "category": "Design & UI",
-        "category_slug": "design-and-ui",
-        "feature_tags": [
-          "Image Editing",
-          "Productivity"
-        ],
-        "use_cases": [
-          "Write blog posts and articles with Ai Infographics",
-          "Generate images from text prompts with Ai Infographics"
-        ],
-        "industries": [
-          "Design & Creative"
-        ],
-        "display_score": 43,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "lensai-shoppable-and-contextual",
-          "phraser",
-          "3dlogoai",
-          "alphactr",
-          "arcadium",
-          "bannergate-ai"
-        ],
-        "compare_targets": [
-          "ceeya-ai",
-          "deeply-cz",
-          "lolify",
-          "phraser"
-        ],
-        "seo_title": "Ai Infographics — AI Design Tool",
-        "seo_description": "Ai Infographics: AI tool to transform content into professional, customizable infographics for various platforms. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Designers",
-        "workflow_stage": "Editing",
-        "commercial_score": 20,
-        "homepage_score": 43,
-        "prompt_score": 32
       }
     ],
     "seo_title": "Best Design & UI Tools — Top AI Tools for Design & UI",
-    "description": "Discover the 1273 best design & ui tools. Compare pricing, features and alternatives."
+    "description": "Discover the 1274 best design & ui tools. Compare pricing, features and alternatives."
   },
   "coding-and-dev": {
     "slug": "coding-and-dev",
     "name": "Coding & Dev",
-    "count": 1019,
+    "count": 1022,
     "tools": [
+      {
+        "handle": "github-copilot",
+        "name": "GitHub Copilot",
+        "tagline": "GitHub Copilot — AI Code Assistant by GitHub",
+        "description": "GitHub Copilot is an AI pair programmer that suggests code completions and entire functions directly in your editor.",
+        "pricing_tier": "paid",
+        "logo_domain": "",
+        "website_url": "https://github.com/features/copilot",
+        "affiliate_url": "",
+        "category": "Coding & Dev",
+        "category_slug": "coding-and-dev",
+        "feature_tags": [
+          "coding",
+          "developer",
+          "autocomplete",
+          "github",
+          "vscode"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99995,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "GitHub Copilot — AI Code Assistant by GitHub",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99995,
+        "prompt_score": 0
+      },
+      {
+        "handle": "codeium",
+        "name": "Codeium",
+        "tagline": "Codeium — Free AI Code Assistant",
+        "description": "Codeium is a free AI coding assistant with autocomplete, chat, and search — supporting 70+ programming languages.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://codeium.com",
+        "affiliate_url": "",
+        "category": "Coding & Dev",
+        "category_slug": "coding-and-dev",
+        "feature_tags": [
+          "coding",
+          "autocomplete",
+          "developer",
+          "free",
+          "ide"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99986,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Codeium — Free AI Code Assistant",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99986,
+        "prompt_score": 0
+      },
+      {
+        "handle": "claude-code",
+        "name": "Claude Code",
+        "tagline": "Claude Code — Agentic AI Coding by Anthropic",
+        "description": "Claude Code is Anthropic's agentic coding tool that works in the terminal to write, edit, and run code autonomously.",
+        "pricing_tier": "paid",
+        "logo_domain": "",
+        "website_url": "https://claude.ai/code",
+        "affiliate_url": "",
+        "category": "Coding & Dev",
+        "category_slug": "coding-and-dev",
+        "feature_tags": [
+          "coding",
+          "agents",
+          "terminal",
+          "developer",
+          "anthropic"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99985,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Claude Code — Agentic AI Coding by Anthropic",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99985,
+        "prompt_score": 0
+      },
       {
         "handle": "chatcody",
         "name": "Chatcody",
@@ -14329,165 +14369,53 @@
         "commercial_score": 35,
         "homepage_score": 50,
         "prompt_score": 32
-      },
-      {
-        "handle": "hoji-ai",
-        "name": "Hoji Ai",
-        "tagline": "Hoji Ai — AI Coding Assistant",
-        "description": "HOJI AI automates code reviews with AI, providing fast, accurate, and unbiased feedback.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "hoji.ai",
-        "website_url": "https://hoji.ai",
-        "affiliate_url": "",
-        "category": "Coding & Dev",
-        "category_slug": "coding-and-dev",
-        "feature_tags": [
-          "Code Assistant"
-        ],
-        "use_cases": [
-          "Generate, review and debug code with Hoji Ai",
-          "Speed up development cycles with Hoji Ai"
-        ],
-        "industries": [
-          "Software Dev"
-        ],
-        "display_score": 49,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "actionize-ai",
-          "ai-scribe-pro",
-          "anvenssa-com",
-          "autify-com",
-          "belva",
-          "blackbox-ai-1"
-        ],
-        "compare_targets": [
-          "actionize-ai",
-          "ai-scribe-pro",
-          "anvenssa-com",
-          "autify-com"
-        ],
-        "seo_title": "Hoji Ai — AI Coding Assistant",
-        "seo_description": "Hoji Ai: HOJI AI automates code reviews with AI, providing fast, accurate, and unbiased feedback. Free plan available.",
-        "complexity": "Intermediate",
-        "target_audience": "Developers",
-        "workflow_stage": "Automation",
-        "commercial_score": 20,
-        "homepage_score": 50,
-        "prompt_score": 34
-      },
-      {
-        "handle": "inductor",
-        "name": "Inductor",
-        "tagline": "Inductor — AI Coding Assistant",
-        "description": "A developer tool for LLM application quality and AI agents for commerce.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "inductor.ai",
-        "website_url": "https://inductor.ai",
-        "affiliate_url": "",
-        "category": "Coding & Dev",
-        "category_slug": "coding-and-dev",
-        "feature_tags": [
-          "Code Assistant",
-          "Agents & Automation"
-        ],
-        "use_cases": [
-          "Generate, review and debug code with Inductor",
-          "Speed up development cycles with Inductor"
-        ],
-        "industries": [],
-        "display_score": 49,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "anvenssa-com",
-          "blackbox-ai-1",
-          "metagpt-mgx",
-          "virtuoso-qa",
-          "actionize-ai",
-          "ai-scribe-pro"
-        ],
-        "compare_targets": [
-          "anvenssa-com",
-          "blackbox-ai-1",
-          "metagpt-mgx",
-          "virtuoso-qa"
-        ],
-        "seo_title": "Inductor — AI Coding Assistant",
-        "seo_description": "Inductor: A developer tool for LLM application quality and AI agents for commerce. Generate, review and debug code with Inductor. Free plan available.",
-        "complexity": "Intermediate",
-        "target_audience": "Developers",
-        "workflow_stage": "Creation",
-        "commercial_score": 20,
-        "homepage_score": 49,
-        "prompt_score": 34
-      },
-      {
-        "handle": "lushbinary",
-        "name": "Lushbinary",
-        "tagline": "Lushbinary — AI Coding Assistant",
-        "description": "Software development agency offering custom web, mobile, and enterprise solutions with AI/ML.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "lushbinary.com",
-        "website_url": "https://lushbinary.com",
-        "affiliate_url": "",
-        "category": "Coding & Dev",
-        "category_slug": "coding-and-dev",
-        "feature_tags": [
-          "Code Assistant"
-        ],
-        "use_cases": [
-          "Generate, review and debug code with Lushbinary",
-          "Speed up development cycles with Lushbinary"
-        ],
-        "industries": [
-          "Software Dev"
-        ],
-        "display_score": 49,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "actionize-ai",
-          "ai-scribe-pro",
-          "anvenssa-com",
-          "autify-com",
-          "belva",
-          "blackbox-ai-1"
-        ],
-        "compare_targets": [
-          "actionize-ai",
-          "ai-scribe-pro",
-          "anvenssa-com",
-          "autify-com"
-        ],
-        "seo_title": "Lushbinary — AI Coding Assistant",
-        "seo_description": "Lushbinary: Software development agency offering custom web, mobile, and enterprise solutions with AI/ML. Free plan available.",
-        "complexity": "Intermediate",
-        "target_audience": "Developers",
-        "workflow_stage": "Creation",
-        "commercial_score": 25,
-        "homepage_score": 50,
-        "prompt_score": 34
       }
     ],
     "seo_title": "Best Coding & Dev Tools — Top AI Tools for Coding & Dev",
-    "description": "Discover the 1019 best coding & dev tools. Compare pricing, features and alternatives."
+    "description": "Discover the 1022 best coding & dev tools. Compare pricing, features and alternatives."
   },
   "research-and-education": {
     "slug": "research-and-education",
     "name": "Research & Education",
-    "count": 968,
+    "count": 969,
     "tools": [
+      {
+        "handle": "notebooklm",
+        "name": "NotebookLM",
+        "tagline": "NotebookLM — AI Research Tool by Google",
+        "description": "NotebookLM is Google's AI-powered research tool that lets you ask questions and generate summaries from your own documents.",
+        "pricing_tier": "free",
+        "logo_domain": "",
+        "website_url": "https://notebooklm.google.com",
+        "affiliate_url": "",
+        "category": "Research & Education",
+        "category_slug": "research-and-education",
+        "feature_tags": [
+          "research",
+          "documents",
+          "summarization",
+          "google",
+          "education"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99993,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "NotebookLM — AI Research Tool by Google",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99993,
+        "prompt_score": 0
+      },
       {
         "handle": "analyzr",
         "name": "Analyzr",
@@ -16906,66 +16834,53 @@
         "commercial_score": 20,
         "homepage_score": 45,
         "prompt_score": 34
-      },
-      {
-        "handle": "doclin",
-        "name": "Doclin",
-        "tagline": "Doclin — AI Research Tool",
-        "description": "Doclin is a real-time code discussion tool that builds a code knowledge base.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "doclin.dev",
-        "website_url": "https://doclin.dev",
-        "affiliate_url": "",
-        "category": "Research & Education",
-        "category_slug": "research-and-education",
-        "feature_tags": [
-          "Research Tools"
-        ],
-        "use_cases": [
-          "Generate, review and debug code with Doclin",
-          "Speed up research and fact-checking with Doclin"
-        ],
-        "industries": [
-          "Education"
-        ],
-        "display_score": 45,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "am-i-gay-quiz",
-          "bloomnote",
-          "dr-oracle",
-          "falcon",
-          "genai-courses",
-          "learnrithm-ai"
-        ],
-        "compare_targets": [
-          "promptengineering-org",
-          "am-i-gay-quiz",
-          "apex-vision-ai-homework-quiz-answering-ai",
-          "bloomnote"
-        ],
-        "seo_title": "Doclin — AI Research Tool",
-        "seo_description": "Doclin: Doclin is a real-time code discussion tool that builds a code knowledge base. Generate, review and debug code with Doclin. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Developers",
-        "workflow_stage": "Research",
-        "commercial_score": 20,
-        "homepage_score": 45,
-        "prompt_score": 34
       }
     ],
     "seo_title": "Best Research & Education Tools — Top AI Tools for Research & Education",
-    "description": "Discover the 968 best research & education tools. Compare pricing, features and alternatives."
+    "description": "Discover the 969 best research & education tools. Compare pricing, features and alternatives."
   },
   "audio-and-music": {
     "slug": "audio-and-music",
     "name": "Audio & Music",
-    "count": 939,
+    "count": 940,
     "tools": [
+      {
+        "handle": "elevenlabs",
+        "name": "ElevenLabs",
+        "tagline": "ElevenLabs — AI Voice Generator & Voice Cloning",
+        "description": "ElevenLabs creates ultra-realistic AI voices for voiceovers, audiobooks, dubbing, and voice cloning.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://elevenlabs.io",
+        "affiliate_url": "",
+        "category": "Audio & Music",
+        "category_slug": "audio-and-music",
+        "feature_tags": [
+          "voice",
+          "text-to-speech",
+          "voice-cloning",
+          "audio",
+          "dubbing"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99988,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "ElevenLabs — AI Voice Generator & Voice Cloning",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99988,
+        "prompt_score": 0
+      },
       {
         "handle": "social-tooling",
         "name": "Social Tooling",
@@ -19380,62 +19295,10 @@
         "commercial_score": 20,
         "homepage_score": 46,
         "prompt_score": 42
-      },
-      {
-        "handle": "voicegenie",
-        "name": "Voicegenie",
-        "tagline": "Voicegenie — AI Audio Tool",
-        "description": "AI voice bot platform for sales and support automation.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "voicegenie.ai",
-        "website_url": "https://voicegenie.ai/",
-        "affiliate_url": "",
-        "category": "Audio & Music",
-        "category_slug": "audio-and-music",
-        "feature_tags": [
-          "Voice & Speech"
-        ],
-        "use_cases": [
-          "Transcribe audio and video files with Voicegenie",
-          "Automate sales outreach and lead gen with Voicegenie",
-          "Generate AI voiceovers and narrations with Voicegenie"
-        ],
-        "industries": [
-          "Sales",
-          "Customer Success"
-        ],
-        "display_score": 46,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "aqx",
-          "attention",
-          "laxis",
-          "omakase-voice-ai",
-          "your-business-ai",
-          "008"
-        ],
-        "compare_targets": [
-          "aqx",
-          "attention",
-          "omakase-voice-ai",
-          "your-business-ai"
-        ],
-        "seo_title": "Voicegenie — AI Audio Tool",
-        "seo_description": "Voicegenie: AI voice bot platform for sales and support automation. Transcribe audio and video files with Voicegenie. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Sales Professionals",
-        "workflow_stage": "Creation",
-        "commercial_score": 35,
-        "homepage_score": 47,
-        "prompt_score": 24
       }
     ],
     "seo_title": "Best Audio & Music Tools — Top AI Tools for Audio & Music",
-    "description": "Discover the 939 best audio & music tools. Compare pricing, features and alternatives."
+    "description": "Discover the 940 best audio & music tools. Compare pricing, features and alternatives."
   },
   "data-and-analytics": {
     "slug": "data-and-analytics",
@@ -24252,8 +24115,80 @@
   "seo-and-marketing": {
     "slug": "seo-and-marketing",
     "name": "SEO & Marketing",
-    "count": 717,
+    "count": 719,
     "tools": [
+      {
+        "handle": "semrush",
+        "name": "Semrush",
+        "tagline": "Semrush — AI-Powered SEO & Marketing Platform",
+        "description": "Semrush is an all-in-one SEO and marketing platform with AI-powered tools for keyword research, competitor analysis, and content optimization.",
+        "pricing_tier": "paid",
+        "logo_domain": "",
+        "website_url": "https://www.semrush.com",
+        "affiliate_url": "",
+        "category": "SEO & Marketing",
+        "category_slug": "seo-and-marketing",
+        "feature_tags": [
+          "seo",
+          "marketing",
+          "keyword-research",
+          "competitor-analysis"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99983,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Semrush — AI-Powered SEO & Marketing Platform",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99983,
+        "prompt_score": 0
+      },
+      {
+        "handle": "brandwatch-ai",
+        "name": "Brandwatch AI",
+        "tagline": "Brandwatch AI — Social Listening & Market Intelligence",
+        "description": "Brandwatch AI provides social listening, consumer intelligence, and AI-powered market research for brands and agencies.",
+        "pricing_tier": "paid",
+        "logo_domain": "",
+        "website_url": "https://www.brandwatch.com",
+        "affiliate_url": "",
+        "category": "SEO & Marketing",
+        "category_slug": "seo-and-marketing",
+        "feature_tags": [
+          "social-listening",
+          "marketing",
+          "analytics",
+          "brand"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99982,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Brandwatch AI — Social Listening & Market Intelligence",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99982,
+        "prompt_score": 0
+      },
       {
         "handle": "humanic-ai",
         "name": "Humanic Ai",
@@ -26698,121 +26633,53 @@
         "commercial_score": 50,
         "homepage_score": 56,
         "prompt_score": 64
-      },
-      {
-        "handle": "callio",
-        "name": "Callio",
-        "tagline": "Callio — AI Marketing Tool",
-        "description": "AI-powered content marketing platform for planning, creating, and publishing content across channels.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "callio.com",
-        "website_url": "https://callio.com",
-        "affiliate_url": "",
-        "category": "SEO & Marketing",
-        "category_slug": "seo-and-marketing",
-        "feature_tags": [
-          "SEO & Keywords",
-          "Social Media"
-        ],
-        "use_cases": [
-          "Write blog posts and articles with Callio",
-          "Improve SEO content rankings with Callio",
-          "Generate social media content with Callio"
-        ],
-        "industries": [
-          "Marketing",
-          "Media & Publishing"
-        ],
-        "display_score": 55,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "autotext-ai",
-          "boostrbot",
-          "posterstudio",
-          "30characters",
-          "adcopy-ai",
-          "adcreative-ai"
-        ],
-        "compare_targets": [
-          "autotext-ai",
-          "boostrbot",
-          "posterstudio",
-          "speedy"
-        ],
-        "seo_title": "Callio — AI Marketing Tool",
-        "seo_description": "Callio: AI-powered content marketing platform for planning, creating, and publishing content across channels. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Marketers",
-        "workflow_stage": "Publishing",
-        "commercial_score": 35,
-        "homepage_score": 55,
-        "prompt_score": 72
-      },
-      {
-        "handle": "convertlyio",
-        "name": "Convertlyio",
-        "tagline": "Convertlyio — AI Marketing Tool",
-        "description": "AI-powered lead generation quiz funnel builder for capturing high-intent leads.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "convertlyio.com",
-        "website_url": "http://convertlyio.com",
-        "affiliate_url": "",
-        "category": "SEO & Marketing",
-        "category_slug": "seo-and-marketing",
-        "feature_tags": [
-          "Sales & CRM"
-        ],
-        "use_cases": [
-          "Improve SEO content rankings with Convertlyio",
-          "Create and optimise ad campaigns with Convertlyio",
-          "Automate sales outreach and lead gen with Convertlyio"
-        ],
-        "industries": [
-          "Marketing",
-          "Sales"
-        ],
-        "display_score": 55,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "groweasy",
-          "perq-com",
-          "adcreative-ai",
-          "adgeneratorpro",
-          "adgpt-com",
-          "adspawn"
-        ],
-        "compare_targets": [
-          "adcreative-ai",
-          "adgeneratorpro",
-          "adgpt-com",
-          "adspawn"
-        ],
-        "seo_title": "Convertlyio — AI Marketing Tool",
-        "seo_description": "Convertlyio: AI-powered lead generation quiz funnel builder for capturing high-intent leads. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Marketers",
-        "workflow_stage": "Creation",
-        "commercial_score": 50,
-        "homepage_score": 57,
-        "prompt_score": 64
       }
     ],
     "seo_title": "Best SEO & Marketing Tools — Top AI Tools for SEO & Marketing",
-    "description": "Discover the 717 best seo & marketing tools. Compare pricing, features and alternatives."
+    "description": "Discover the 719 best seo & marketing tools. Compare pricing, features and alternatives."
   },
   "ai-agents": {
     "slug": "ai-agents",
     "name": "AI Agents",
-    "count": 687,
+    "count": 688,
     "tools": [
+      {
+        "handle": "n8n",
+        "name": "n8n",
+        "tagline": "n8n — Open Source AI Workflow Automation",
+        "description": "n8n is an open-source workflow automation tool that connects apps and services — with powerful AI agent capabilities.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://n8n.io",
+        "affiliate_url": "",
+        "category": "AI Agents",
+        "category_slug": "ai-agents",
+        "feature_tags": [
+          "automation",
+          "workflow",
+          "no-code",
+          "agents",
+          "open-source"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99984,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "n8n — Open Source AI Workflow Automation",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99984,
+        "prompt_score": 0
+      },
       {
         "handle": "200-chatgpt-mega-prompts-for-seo",
         "name": "200 Chatgpt Mega Prompts For Seo",
@@ -29179,66 +29046,88 @@
         "commercial_score": 35,
         "homepage_score": 51,
         "prompt_score": 24
-      },
-      {
-        "handle": "voicexd",
-        "name": "Voicexd",
-        "tagline": "Voicexd — AI Agent",
-        "description": "Collaborative no-code platform for designing and deploying AI-powered chat and voice assistants.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "voicexd.com",
-        "website_url": "https://www.voicexd.com",
-        "affiliate_url": "",
-        "category": "AI Agents",
-        "category_slug": "ai-agents",
-        "feature_tags": [
-          "Voice & Speech"
-        ],
-        "use_cases": [
-          "Generate, review and debug code with Voicexd",
-          "Generate AI voiceovers and narrations with Voicexd"
-        ],
-        "industries": [
-          "Design & Creative"
-        ],
-        "display_score": 50,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "agent-one",
-          "agentx",
-          "chaindesk-ai",
-          "epsilla",
-          "flowhunt-io",
-          "genfuse-ai"
-        ],
-        "compare_targets": [
-          "agentx",
-          "chaindesk-ai",
-          "flowhunt-io",
-          "glideapps-com"
-        ],
-        "seo_title": "Voicexd — AI Agent",
-        "seo_description": "Voicexd: Collaborative no-code platform for designing and deploying AI-powered chat and voice assistants. Free plan available.",
-        "complexity": "Intermediate",
-        "target_audience": "Developers",
-        "workflow_stage": "Automation",
-        "commercial_score": 20,
-        "homepage_score": 50,
-        "prompt_score": 24
       }
     ],
     "seo_title": "Best AI Agents Tools — Top AI Tools for AI Agents",
-    "description": "Discover the 687 best ai agents tools. Compare pricing, features and alternatives."
+    "description": "Discover the 688 best ai agents tools. Compare pricing, features and alternatives."
   },
   "image-generation": {
     "slug": "image-generation",
     "name": "Image Generation",
-    "count": 652,
+    "count": 654,
     "tools": [
+      {
+        "handle": "dall-e-3",
+        "name": "DALL-E 3",
+        "tagline": "DALL-E 3 — AI Image Generator by OpenAI",
+        "description": "DALL-E 3 is OpenAI's text-to-image model, capable of generating highly detailed and creative images from natural language prompts.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://openai.com/dall-e-3",
+        "affiliate_url": "",
+        "category": "Image Generation",
+        "category_slug": "image-generation",
+        "feature_tags": [
+          "image-generation",
+          "text-to-image",
+          "openai",
+          "creative"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99992,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "DALL-E 3 — AI Image Generator by OpenAI",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99992,
+        "prompt_score": 0
+      },
+      {
+        "handle": "ideogram",
+        "name": "Ideogram",
+        "tagline": "Ideogram — AI Image Generator with Text Rendering",
+        "description": "Ideogram is an AI image generator specializing in accurate text rendering within images — ideal for logos, posters, and social media.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://ideogram.ai",
+        "affiliate_url": "",
+        "category": "Image Generation",
+        "category_slug": "image-generation",
+        "feature_tags": [
+          "image-generation",
+          "text-in-image",
+          "logo",
+          "design"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99991,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Ideogram — AI Image Generator with Text Rendering",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99991,
+        "prompt_score": 0
+      },
       {
         "handle": "arvow",
         "name": "Arvow",
@@ -31535,114 +31424,53 @@
         "commercial_score": 35,
         "homepage_score": 50,
         "prompt_score": 40
-      },
-      {
-        "handle": "imagga",
-        "name": "Imagga",
-        "tagline": "Imagga — AI Image Generator",
-        "description": "AI-powered image recognition API for tagging, categorization, visual search, and content moderation.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "imagga.com",
-        "website_url": "http://imagga.com",
-        "affiliate_url": "",
-        "category": "Image Generation",
-        "category_slug": "image-generation",
-        "feature_tags": [
-          "Image Generation"
-        ],
-        "use_cases": [
-          "Write blog posts and articles with Imagga",
-          "Generate images from text prompts with Imagga"
-        ],
-        "industries": [
-          "Design & Creative"
-        ],
-        "display_score": 48,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "imgartfis-creator",
-          "ai-thriving",
-          "automate-your-image-with-bannerify",
-          "background-removal",
-          "clevopyai",
-          "dall-e-cli"
-        ],
-        "compare_targets": [
-          "automate-your-image-with-bannerify",
-          "dazzle-ai",
-          "kie-ai-affordable-and-reliable-4o-image-api-the-latest-released",
-          "midjourney-art-ai-generator"
-        ],
-        "seo_title": "Imagga — AI Image Generator",
-        "seo_description": "Imagga: AI-powered image recognition API for tagging, categorization, visual search, and content moderation. Free plan available.",
-        "complexity": "Intermediate",
-        "target_audience": "Developers",
-        "workflow_stage": "Creation",
-        "commercial_score": 25,
-        "homepage_score": 48,
-        "prompt_score": 32
-      },
-      {
-        "handle": "infinite-adversaries",
-        "name": "Infinite Adversaries",
-        "tagline": "Infinite Adversaries — AI Image Generator",
-        "description": "A ChatGPT and DALL-E powered procedural game with infinite random encounters.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "infiniteadversaries.com",
-        "website_url": "https://infiniteadversaries.com",
-        "affiliate_url": "",
-        "category": "Image Generation",
-        "category_slug": "image-generation",
-        "feature_tags": [
-          "Image Generation"
-        ],
-        "use_cases": [
-          "Create and optimise ad campaigns with Infinite Adversaries",
-          "Generate images from text prompts with Infinite Adversaries"
-        ],
-        "industries": [],
-        "display_score": 48,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "ai-anime-girlfriend",
-          "ai-art-generator-by-enhance-ai",
-          "ai-hentai-generator",
-          "ai-image-upscaler",
-          "ai-picasso-ai-dance",
-          "ai2image"
-        ],
-        "compare_targets": [
-          "ai-anime-generator",
-          "ai-anime-girlfriend",
-          "ai-art-generator-by-enhance-ai",
-          "ai-hentai-generator"
-        ],
-        "seo_title": "Infinite Adversaries — AI Image Generator",
-        "seo_description": "Infinite Adversaries: A ChatGPT and DALL-E powered procedural game with infinite random encounters. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Creation",
-        "commercial_score": 28,
-        "homepage_score": 50,
-        "prompt_score": 24
       }
     ],
     "seo_title": "Best Image Generation Tools — Top AI Tools for Image Generation",
-    "description": "Discover the 652 best image generation tools. Compare pricing, features and alternatives."
+    "description": "Discover the 654 best image generation tools. Compare pricing, features and alternatives."
   },
   "sales-and-crm": {
     "slug": "sales-and-crm",
     "name": "Sales & CRM",
-    "count": 481,
+    "count": 482,
     "tools": [
+      {
+        "handle": "salesforce-einstein",
+        "name": "Salesforce Einstein",
+        "tagline": "Salesforce Einstein — AI CRM by Salesforce",
+        "description": "Salesforce Einstein is an AI layer built into Salesforce CRM, delivering predictive analytics, automation, and AI-powered insights.",
+        "pricing_tier": "paid",
+        "logo_domain": "",
+        "website_url": "https://www.salesforce.com/products/einstein/",
+        "affiliate_url": "",
+        "category": "Sales & CRM",
+        "category_slug": "sales-and-crm",
+        "feature_tags": [
+          "crm",
+          "sales",
+          "automation",
+          "analytics",
+          "enterprise"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99978,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Salesforce Einstein — AI CRM by Salesforce",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99978,
+        "prompt_score": 0
+      },
       {
         "handle": "agent-ai-chat-bot-powered-by-openai-and-anthropic",
         "name": "Agent Ai Chat Bot",
@@ -34140,64 +33968,10 @@
         "commercial_score": 50,
         "homepage_score": 50,
         "prompt_score": 32
-      },
-      {
-        "handle": "interworky",
-        "name": "Interworky",
-        "tagline": "Interworky — AI Sales Tool",
-        "description": "AI voice chatbot platform for website customer service and lead generation.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "interworky.com",
-        "website_url": "https://interworky.com",
-        "affiliate_url": "",
-        "category": "Sales & CRM",
-        "category_slug": "sales-and-crm",
-        "feature_tags": [
-          "Voice & Speech",
-          "Chat / Q&A",
-          "Sales & CRM"
-        ],
-        "use_cases": [
-          "Create and optimise ad campaigns with Interworky",
-          "Automate sales outreach and lead gen with Interworky",
-          "Generate AI voiceovers and narrations with Interworky",
-          "Build and deploy AI chatbots with Interworky"
-        ],
-        "industries": [
-          "Sales"
-        ],
-        "display_score": 49,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "droxy-ai",
-          "elephant-ai",
-          "instabot-io",
-          "smoove-call",
-          "xobot",
-          "monetize-chatbots"
-        ],
-        "compare_targets": [
-          "smoove-call",
-          "xobot",
-          "carambola-com",
-          "droxy-ai"
-        ],
-        "seo_title": "Interworky — AI Sales Tool",
-        "seo_description": "Interworky: AI voice chatbot platform for website customer service and lead generation. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Sales Professionals",
-        "workflow_stage": "Automation",
-        "commercial_score": 35,
-        "homepage_score": 49,
-        "prompt_score": 34
       }
     ],
     "seo_title": "Best Sales & CRM Tools — Top AI Tools for Sales & CRM",
-    "description": "Discover the 481 best sales & crm tools. Compare pricing, features and alternatives."
+    "description": "Discover the 482 best sales & crm tools. Compare pricing, features and alternatives."
   },
   "legal-and-finance": {
     "slug": "legal-and-finance",
@@ -39139,8 +38913,80 @@
   "video-generation": {
     "slug": "video-generation",
     "name": "Video Generation",
-    "count": 429,
+    "count": 431,
     "tools": [
+      {
+        "handle": "opusclip",
+        "name": "OpusClip",
+        "tagline": "OpusClip — AI Video Clipping Tool",
+        "description": "OpusClip uses AI to automatically clip long videos into viral short-form content for TikTok, Reels, and YouTube Shorts.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://www.opus.pro",
+        "affiliate_url": "",
+        "category": "Video Generation",
+        "category_slug": "video-generation",
+        "feature_tags": [
+          "video",
+          "social-media",
+          "shorts",
+          "reels",
+          "repurposing"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99990,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "OpusClip — AI Video Clipping Tool",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99990,
+        "prompt_score": 0
+      },
+      {
+        "handle": "pika-labs",
+        "name": "Pika Labs",
+        "tagline": "Pika Labs — AI Video Generator",
+        "description": "Pika is an AI video generation platform that transforms text and images into cinematic video clips.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://pika.art",
+        "affiliate_url": "",
+        "category": "Video Generation",
+        "category_slug": "video-generation",
+        "feature_tags": [
+          "video-generation",
+          "text-to-video",
+          "creative"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99989,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Pika Labs — AI Video Generator",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99989,
+        "prompt_score": 0
+      },
       {
         "handle": "reelfarm",
         "name": "Reelfarm",
@@ -41465,109 +41311,10 @@
         "commercial_score": 35,
         "homepage_score": 51,
         "prompt_score": 54
-      },
-      {
-        "handle": "whatmore-live",
-        "name": "Whatmore Live",
-        "tagline": "Whatmore Live — AI Video Generator",
-        "description": "Video marketing solution with AI product video creation and shoppable video integration.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "partnerjam.com",
-        "website_url": "https://app.partnerjam.com/install",
-        "affiliate_url": "",
-        "category": "Video Generation",
-        "category_slug": "video-generation",
-        "feature_tags": [
-          "Video Creation"
-        ],
-        "use_cases": [
-          "Write and produce video scripts with Whatmore Live",
-          "Create short-form video content with Whatmore Live"
-        ],
-        "industries": [
-          "Marketing"
-        ],
-        "display_score": 50,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "arcads",
-          "jogg-ai",
-          "promo-ai-video-maker",
-          "sprello",
-          "steve-ai",
-          "vidau"
-        ],
-        "compare_targets": [
-          "arcads",
-          "glato-ai-beta",
-          "preemedia-ai-ugc-ads",
-          "promo-ai-video-maker"
-        ],
-        "seo_title": "Whatmore Live — AI Video Generator",
-        "seo_description": "Whatmore Live: Video marketing solution with AI product video creation and shoppable video integration. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Marketers",
-        "workflow_stage": "Creation",
-        "commercial_score": 35,
-        "homepage_score": 51,
-        "prompt_score": 54
-      },
-      {
-        "handle": "ai-chat-all-top-ai-models-in-one-app",
-        "name": "Ai Chat All Top Ai Models In One",
-        "tagline": "Ai Chat All Top Ai Models In One — AI Video Generator",
-        "description": "AI Chat integrates multiple AI models into one app for text, image, and video generation.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "aichat.fm",
-        "website_url": "https://aichat.fm",
-        "affiliate_url": "",
-        "category": "Video Generation",
-        "category_slug": "video-generation",
-        "feature_tags": [
-          "Video Creation",
-          "Chat / Q&A"
-        ],
-        "use_cases": [
-          "Write and produce video scripts with Ai Chat All Top Ai Models In One",
-          "Generate images from text prompts with Ai Chat All Top Ai Models In One"
-        ],
-        "industries": [],
-        "display_score": 49,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "d-id",
-          "descript",
-          "mypipio-com",
-          "showhype",
-          "sync-so",
-          "synclabs-so"
-        ],
-        "compare_targets": [
-          "sync-so",
-          "2vid",
-          "ai-sora-online-create-video-from-text",
-          "aimagicstudio"
-        ],
-        "seo_title": "Ai Chat All Top Ai Models In One — AI Video Generator",
-        "seo_description": "Ai Chat All Top Ai Models In One: AI Chat integrates multiple AI models into one app for text, image, and video generation. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Content Creators",
-        "workflow_stage": "Creation",
-        "commercial_score": 20,
-        "homepage_score": 49,
-        "prompt_score": 64
       }
     ],
     "seo_title": "Best Video Generation Tools — Top AI Tools for Video Generation",
-    "description": "Discover the 429 best video generation tools. Compare pricing, features and alternatives."
+    "description": "Discover the 431 best video generation tools. Compare pricing, features and alternatives."
   },
   "translation": {
     "slug": "translation",
@@ -43988,8 +43735,44 @@
   "e-commerce": {
     "slug": "e-commerce",
     "name": "E-Commerce",
-    "count": 381,
+    "count": 382,
     "tools": [
+      {
+        "handle": "shopify-magic",
+        "name": "Shopify Magic",
+        "tagline": "Shopify Magic — AI Tools for E-Commerce",
+        "description": "Shopify Magic is Shopify's suite of AI tools that helps merchants write product descriptions, automate workflows, and grow their store.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://www.shopify.com/magic",
+        "affiliate_url": "",
+        "category": "E-Commerce",
+        "category_slug": "e-commerce",
+        "feature_tags": [
+          "e-commerce",
+          "shopify",
+          "product-descriptions",
+          "automation"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99977,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Shopify Magic — AI Tools for E-Commerce",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99977,
+        "prompt_score": 0
+      },
       {
         "handle": "open-text-ai",
         "name": "Open Text Ai",
@@ -46408,66 +46191,125 @@
         "commercial_score": 28,
         "homepage_score": 44,
         "prompt_score": 34
-      },
-      {
-        "handle": "producks-ai",
-        "name": "Producks Ai",
-        "tagline": "Producks Ai — AI Ecommerce Tool",
-        "description": "AI tool that generates product descriptions from photos.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "producks.ai",
-        "website_url": "https://producks.ai",
-        "affiliate_url": "",
-        "category": "E-Commerce",
-        "category_slug": "e-commerce",
-        "feature_tags": [
-          "E-Commerce"
-        ],
-        "use_cases": [
-          "Write and produce video scripts with Producks Ai",
-          "Write product descriptions at scale with Producks Ai"
-        ],
-        "industries": [
-          "E-Commerce"
-        ],
-        "display_score": 43,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "ai-product-tools",
-          "claid-ai-scene-creation",
-          "data-analyst-ai",
-          "descrb",
-          "e-commerce-ai",
-          "jsrates-custom-shipping-rates"
-        ],
-        "compare_targets": [
-          "ai-product-tools",
-          "jsrates-custom-shipping-rates",
-          "pagepilot-ai",
-          "rankpress-io"
-        ],
-        "seo_title": "Producks Ai — AI Ecommerce Tool",
-        "seo_description": "Producks Ai: AI tool that generates product descriptions from photos. Write and produce video scripts with Producks Ai. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Creation",
-        "commercial_score": 28,
-        "homepage_score": 45,
-        "prompt_score": 44
       }
     ],
     "seo_title": "Best E-Commerce Tools — Top AI Tools for E-Commerce",
-    "description": "Discover the 381 best e-commerce tools. Compare pricing, features and alternatives."
+    "description": "Discover the 382 best e-commerce tools. Compare pricing, features and alternatives."
   },
   "productivity": {
     "slug": "productivity",
     "name": "Productivity",
-    "count": 354,
+    "count": 357,
     "tools": [
+      {
+        "handle": "gamma",
+        "name": "Gamma",
+        "tagline": "Gamma — AI Presentation & Document Builder",
+        "description": "Gamma is an AI-powered presentation and document tool that creates beautiful slides and pages from a simple text prompt.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://gamma.app",
+        "affiliate_url": "",
+        "category": "Productivity",
+        "category_slug": "productivity",
+        "feature_tags": [
+          "presentations",
+          "slides",
+          "productivity",
+          "design",
+          "documents"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99987,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Gamma — AI Presentation & Document Builder",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99987,
+        "prompt_score": 0
+      },
+      {
+        "handle": "zoom-ai-companion",
+        "name": "Zoom AI Companion",
+        "tagline": "Zoom AI Companion — AI Meeting Assistant",
+        "description": "Zoom AI Companion helps you summarize meetings, compose messages, and stay productive — built into your Zoom workspace.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://www.zoom.com/en/ai-assistant/",
+        "affiliate_url": "",
+        "category": "Productivity",
+        "category_slug": "productivity",
+        "feature_tags": [
+          "meetings",
+          "productivity",
+          "transcription",
+          "summarization"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99980,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Zoom AI Companion — AI Meeting Assistant",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99980,
+        "prompt_score": 0
+      },
+      {
+        "handle": "asana-ai",
+        "name": "Asana AI",
+        "tagline": "Asana AI — AI-Powered Project Management",
+        "description": "Asana AI brings intelligent automation and AI-powered project management features to the popular Asana work management platform.",
+        "pricing_tier": "freemium",
+        "logo_domain": "",
+        "website_url": "https://asana.com/product/ai",
+        "affiliate_url": "",
+        "category": "Productivity",
+        "category_slug": "productivity",
+        "feature_tags": [
+          "project-management",
+          "productivity",
+          "automation",
+          "teams"
+        ],
+        "use_cases": [],
+        "industries": [],
+        "display_score": 99979,
+        "is_featured": true,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [],
+        "compare_targets": [],
+        "seo_title": "Asana AI — AI-Powered Project Management",
+        "seo_description": "",
+        "complexity": "",
+        "target_audience": "",
+        "workflow_stage": "",
+        "commercial_score": 0,
+        "homepage_score": 99979,
+        "prompt_score": 0
+      },
       {
         "handle": "ddevi-com",
         "name": "Ddevi",
@@ -48701,157 +48543,10 @@
         "commercial_score": 20,
         "homepage_score": 43,
         "prompt_score": 34
-      },
-      {
-        "handle": "goodnotes",
-        "name": "Goodnotes",
-        "tagline": "Goodnotes — AI Productivity Tool",
-        "description": "A multi-platform note-taking app with AI handwriting features.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "goodnotes.com",
-        "website_url": "https://goodnotes.com",
-        "affiliate_url": "",
-        "category": "Productivity",
-        "category_slug": "productivity",
-        "feature_tags": [
-          "Productivity",
-          "Agents & Automation"
-        ],
-        "use_cases": [
-          "Take and summarise meeting notes with Goodnotes",
-          "Organise and automate daily tasks with Goodnotes"
-        ],
-        "industries": [],
-        "display_score": 43,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "aigenie",
-          "arcanotes",
-          "assista-ai",
-          "autodoc",
-          "blend-ed",
-          "bundleiq-com"
-        ],
-        "compare_targets": [
-          "aigenie",
-          "arcanotes",
-          "assista-ai",
-          "autodoc"
-        ],
-        "seo_title": "Goodnotes — AI Productivity Tool",
-        "seo_description": "Goodnotes: A multi-platform note-taking app with AI handwriting features. Take and summarise meeting notes with Goodnotes. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Automation",
-        "commercial_score": 28,
-        "homepage_score": 44,
-        "prompt_score": 24
-      },
-      {
-        "handle": "grain",
-        "name": "Grain",
-        "tagline": "Grain — AI Productivity Tool",
-        "description": "AI notetaker for meeting summaries, insights, and coaching suggestions.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "grain.com",
-        "website_url": "https://grain.com",
-        "affiliate_url": "",
-        "category": "Productivity",
-        "category_slug": "productivity",
-        "feature_tags": [
-          "Productivity",
-          "Agents & Automation"
-        ],
-        "use_cases": [
-          "Take and summarise meeting notes with Grain",
-          "Organise and automate daily tasks with Grain"
-        ],
-        "industries": [],
-        "display_score": 43,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "aigenie",
-          "arcanotes",
-          "assista-ai",
-          "autodoc",
-          "blend-ed",
-          "bundleiq-com"
-        ],
-        "compare_targets": [
-          "aigenie",
-          "arcanotes",
-          "assista-ai",
-          "autodoc"
-        ],
-        "seo_title": "Grain — AI Productivity Tool",
-        "seo_description": "Grain: AI notetaker for meeting summaries, insights, and coaching suggestions. Take and summarise meeting notes with Grain. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Analysis",
-        "commercial_score": 28,
-        "homepage_score": 44,
-        "prompt_score": 24
-      },
-      {
-        "handle": "hyprnote",
-        "name": "Hyprnote",
-        "tagline": "Hyprnote — AI Productivity Tool",
-        "description": "AI note-taking app that combines notes with audio context for enhanced summaries.",
-        "pricing_tier": "Freemium",
-        "logo_domain": "hyprnote.com",
-        "website_url": "https://hyprnote.com",
-        "affiliate_url": "",
-        "category": "Productivity",
-        "category_slug": "productivity",
-        "feature_tags": [
-          "Productivity",
-          "Agents & Automation"
-        ],
-        "use_cases": [
-          "Transcribe audio and video files with Hyprnote",
-          "Take and summarise meeting notes with Hyprnote"
-        ],
-        "industries": [],
-        "display_score": 43,
-        "is_featured": false,
-        "has_api": false,
-        "has_mobile": false,
-        "has_chrome_ext": false,
-        "is_open_source": false,
-        "related_tools": [
-          "aigenie",
-          "arcanotes",
-          "assista-ai",
-          "autodoc",
-          "blend-ed",
-          "bundleiq-com"
-        ],
-        "compare_targets": [
-          "aigenie",
-          "arcanotes",
-          "assista-ai",
-          "autodoc"
-        ],
-        "seo_title": "Hyprnote — AI Productivity Tool",
-        "seo_description": "Hyprnote: AI note-taking app that combines notes with audio context for enhanced summaries. Free plan available.",
-        "complexity": "Beginner",
-        "target_audience": "Business Owners",
-        "workflow_stage": "Automation",
-        "commercial_score": 28,
-        "homepage_score": 44,
-        "prompt_score": 24
       }
     ],
     "seo_title": "Best Productivity Tools — Top AI Tools for Productivity",
-    "description": "Discover the 354 best productivity tools. Compare pricing, features and alternatives."
+    "description": "Discover the 357 best productivity tools. Compare pricing, features and alternatives."
   },
   "health-and-wellness": {
     "slug": "health-and-wellness",

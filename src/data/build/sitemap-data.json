@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T01:07:59.870Z",
+  "generated_at": "2026-03-12T20:55:45.353Z",
   "urls": [
     {
       "path": "/",
@@ -135,6 +135,116 @@
       "path": "/ai-tools/category/photo-editing",
       "priority": 0.8,
       "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-tools/chatgpt",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/google-gemini",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/claude",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/microsoft-copilot",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/github-copilot",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/canva-ai",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/notebooklm",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/dall-e-3",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/ideogram",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/opusclip",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/pika-labs",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/elevenlabs",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/gamma",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/codeium",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/claude-code",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/n8n",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/semrush",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/brandwatch-ai",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/zoom-ai-companion",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/asana-ai",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/salesforce-einstein",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-tools/shopify-magic",
+      "priority": 0.7,
+      "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/presbot",
@@ -2528,112 +2638,112 @@
     },
     {
       "path": "/ai-tools/gemini-apk-for-android-and-ios",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gemini-gemini-advanced",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gemini-gpt-ai",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/getgenie-ai",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gethookd",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gettrove-co",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/giantcampaign",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/glato-ai-beta",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/goless-extension-automation",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gpt4sales",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gptexcel",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/gptsave",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/hamster-iq",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/helper",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/highintent",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/hireyay",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/hollyfy",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/hostyai",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/humanly-io",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/humming-ai",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/hyperhrt-instant-serverless-finetuning",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
       "path": "/ai-tools/inlinks",
-      "priority": 0.7,
+      "priority": 0.5,
       "changefreq": "monthly"
     },
     {
