@@ -1,36 +1,35 @@
 ---
 const topics = [
-  { label: "AI Agents",           href: "/ai-tools/category/ai-agents",           emoji: "🤖", hot: true  },
-  { label: "AI Video",            href: "/ai-tools/category/video-generation",     emoji: "🎬", hot: true  },
-  { label: "Chatbots & LLMs",     href: "/ai-tools/category/chatbots-and-llms",    emoji: "💬"             },
-  { label: "Coding & Dev",        href: "/ai-tools/category/coding-and-dev",       emoji: "⚡"             },
-  { label: "Writing & Content",   href: "/ai-tools/category/writing-and-content",  emoji: "✍️"             },
-  { label: "Image Generation",    href: "/ai-tools/category/image-generation",     emoji: "🎨"             },
-  { label: "SEO & Marketing",     href: "/ai-tools/category/seo-and-marketing",    emoji: "📈"             },
-  { label: "Data & Analytics",    href: "/ai-tools/category/data-and-analytics",   emoji: "📊"             },
-  { label: "Prompt Engineering",  href: "/ai-tools/tag/prompt-engineering",        emoji: "🧠"             },
-  { label: "No-Code Tools",       href: "/ai-tools/feature/no-code",              emoji: "🧩"             },
-  { label: "Open Source",         href: "/ai-tools/feature/open-source",           emoji: "🔓"             },
-  { label: "Free AI Tools",       href: "/ai-tools/pricing/free",                  emoji: "🆓"             },
+  { label: "AI Agents",           href: "/ai-tools/category/ai-agents",          hot: true  },
+  { label: "AI Video",            href: "/ai-tools/category/video-generation",    hot: true  },
+  { label: "Chatbots & LLMs",     href: "/ai-tools/category/chatbots-and-llms"               },
+  { label: "Coding & Dev",        href: "/ai-tools/category/coding-and-dev"                  },
+  { label: "Writing & Content",   href: "/ai-tools/category/writing-and-content"              },
+  { label: "Image Generation",    href: "/ai-tools/category/image-generation"                 },
+  { label: "SEO & Marketing",     href: "/ai-tools/category/seo-and-marketing"                },
+  { label: "Data & Analytics",    href: "/ai-tools/category/data-and-analytics"               },
+  { label: "Prompt Engineering",  href: "/ai-tools/tag/prompt-engineering"                    },
+  { label: "No-Code Tools",       href: "/ai-tools/feature/no-code"                          },
+  { label: "Open Source",         href: "/ai-tools/feature/open-source"                       },
+  { label: "Free AI Tools",       href: "/ai-tools/pricing/free"                              },
 ];
 ---
 <section class="tts">
   <div class="section-header">
     <div>
       <span class="section-eyebrow">Explore</span>
-      <h2>Trending Topics</h2>
+      <h2>Browse by Topic</h2>
     </div>
     <a href="/ai-tools" class="see-all">
       All categories
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
-  <div class="tts-grid">
+  <div class="tts-row">
     {topics.map(t => (
       <a href={t.href} class="tts-chip">
-        <span class="tts-em">{t.emoji}</span>
         <span class="tts-label">{t.label}</span>
-        {t.hot && <span class="tts-hot">HOT</span>}
+        {t.hot && <span class="tts-hot" aria-label="Trending">HOT</span>}
       </a>
     ))}
   </div>
@@ -38,45 +37,48 @@ const topics = [
 
 <style>
 .tts { margin-bottom: var(--sp-20) }
-.tts-grid {
+
+.tts-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-2);
 }
+
 .tts-chip {
   display: inline-flex;
   align-items: center;
-  gap: var(--sp-2);
-  padding: 9px 16px;
+  gap: 6px;
+  padding: 8px 16px;
   border-radius: var(--r-full);
   background: var(--c-bg-2);
   border: 1px solid var(--c-border);
+  font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 600;
-  font-family: var(--font-display);
   color: var(--c-text-2);
-  text-decoration: none;
   letter-spacing: -.01em;
-  transition: all var(--t-fast);
+  text-decoration: none;
+  transition: background var(--t-fast), border-color var(--t-fast),
+              color var(--t-fast), transform var(--t-fast);
   white-space: nowrap;
 }
 .tts-chip:hover {
-  background: var(--c-brand-glow);
-  border-color: var(--c-border-brand);
+  background: var(--glow-brand);
+  border-color: var(--c-border-hover);
   color: var(--c-text);
   transform: translateY(-1px);
 }
-.tts-em    { font-size: 14px; line-height: 1 }
 .tts-label { line-height: 1 }
 .tts-hot {
   font-size: 9px;
   font-weight: 800;
   letter-spacing: .07em;
   text-transform: uppercase;
-  color: #f43f5e;
-  background: rgba(244,63,94,.1);
-  border: 1px solid rgba(244,63,94,.25);
+  color: var(--c-hot);
+  background: rgba(244,63,94,.09);
+  border: 1px solid rgba(244,63,94,.22);
   padding: 2px 6px;
   border-radius: var(--r-full);
+  line-height: 1.5;
 }
 </style>

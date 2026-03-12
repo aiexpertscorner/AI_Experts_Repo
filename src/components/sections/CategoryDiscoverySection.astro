@@ -1,0 +1,248 @@
+---
+/**
+ * CategoryDiscoverySection
+ * Premium category grid. Each card shows category name, description, and
+ * logos of the top 3 tools in that category.
+ * Data comes from category-map.json and featured-tools.json.
+ */
+import { getCategoryIconBySlug } from "@/data/categoryIcons";
+
+interface Tool {
+  handle: string;
+  name?: string;
+  display_name?: string;
+  logo_url?: string;
+  logo_domain?: string;
+  [key: string]: any;
+}
+interface Category {
+  name: string;
+  slug: string;
+  count: number;
+  description?: string;
+  top_tools?: Tool[];
+}
+interface Props {
+  categories: Category[];
+  limit?: number;
+}
+
+const { categories, limit = 9 } = Astro.props;
+const shown = categories.slice(0, limit);
+---
+
+<section class="cds">
+  <div class="section-header">
+    <div>
+      <span class="section-eyebrow">Discover</span>
+      <h2>Browse by Category</h2>
+    </div>
+    <a href="/ai-tools" class="see-all">
+      All 23 categories
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="cds-grid">
+    {shown.map((cat: Category) => {
+      const icon     = getCategoryIconBySlug(cat.slug);
+      const topTools = (cat.top_tools || []).slice(0, 3);
+      const count    = cat.count >= 1000 ? `${(cat.count/1000).toFixed(1)}k` : String(cat.count);
+
+      return (
+        <a href={`/ai-tools/category/${cat.slug}`} class="cdc">
+          {/* Card head */}
+          <div class="cdc-head">
+            <div class="cdc-icon" set:html={icon} aria-hidden="true"/>
+            <svg class="cdc-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+
+          {/* Name + count */}
+          <div class="cdc-meta">
+            <strong class="cdc-name">{cat.name}</strong>
+            <span class="cdc-count">{count} tools</span>
+          </div>
+
+          {/* Description */}
+          {cat.description && (
+            <p class="cdc-desc">{cat.description.slice(0, 72)}{cat.description.length > 72 ? "…" : ""}</p>
+          )}
+
+          {/* Top tool logos */}
+          {topTools.length > 0 && (
+            <div class="cdc-tools">
+              {topTools.map((t: Tool) => {
+                const n       = t.display_name || t.name || t.handle;
+                const logoSrc = t.logo_url || (t.logo_domain ? `https://logo.clearbit.com/${t.logo_domain}?size=32` : null);
+                const fb      = (n || "A").charAt(0).toUpperCase();
+                return (
+                  <div class="cdc-tool-logo" title={n}>
+                    {logoSrc ? (
+                      <img
+                        src={logoSrc}
+                        alt=""
+                        width="26"
+                        height="26"
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'"
+                      />
+                    ) : null}
+                    <span class="cdc-tool-fb" style={logoSrc ? "display:none" : ""}>{fb}</span>
+                  </div>
+                );
+              })}
+              {topTools.length > 0 && (
+                <span class="cdc-tool-names">
+                  {topTools.map((t: Tool) => t.display_name || t.name || t.handle).join(", ")}
+                </span>
+              )}
+            </div>
+          )}
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="cds-more">
+    <a href="/ai-tools" class="btn btn-ghost">
+      Explore all 23 categories
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<style>
+.cds { margin-bottom: var(--sp-20) }
+
+.cds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+@media (max-width: 900px) { .cds-grid { grid-template-columns: repeat(2, 1fr) } }
+@media (max-width: 560px) { .cds-grid { grid-template-columns: 1fr } }
+
+/* Card */
+.cdc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  text-decoration: none;
+  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
+  position: relative;
+  overflow: hidden;
+}
+.cdc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 65% 55% at 0% 0%, var(--glow-brand-xs) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity var(--t-base);
+}
+.cdc:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-hover-shadow);
+  transform: var(--card-hover-lift);
+}
+.cdc:hover::before { opacity: 3 }
+
+/* Head */
+.cdc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cdc-icon {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(79,110,247,.08);
+  border: 1px solid rgba(79,110,247,.14);
+  border-radius: var(--r-md);
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+.cdc:hover .cdc-icon { background: rgba(79,110,247,.15); border-color: rgba(79,110,247,.28) }
+.cdc-icon :global(svg) { width: 18px; height: 18px }
+
+.cdc-arr {
+  color: var(--c-text-4);
+  transition: transform var(--t-fast), color var(--t-fast);
+}
+.cdc:hover .cdc-arr { transform: translate(2px, -2px); color: var(--c-brand-light) }
+
+/* Meta */
+.cdc-meta { display: flex; align-items: baseline; gap: var(--sp-2) }
+.cdc-name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--c-text);
+  letter-spacing: -.015em;
+}
+.cdc-count {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--c-brand-light);
+  font-weight: 600;
+  opacity: .65;
+}
+
+/* Description */
+.cdc-desc {
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+  line-height: var(--lh-snug);
+  margin: 0;
+  flex: 1;
+}
+
+/* Tool logos row */
+.cdc-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--c-border-subtle);
+  margin-top: auto;
+}
+.cdc-tool-logo {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  background: var(--c-bg-4);
+  border: 1px solid var(--c-border-subtle);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color var(--t-fast);
+}
+.cdc:hover .cdc-tool-logo { border-color: var(--c-border) }
+.cdc-tool-logo img { width: 26px; height: 26px; object-fit: contain }
+.cdc-tool-fb {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 800;
+  color: var(--c-brand-light);
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px;
+}
+.cdc-tool-names {
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+  flex: 1; min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* More button */
+.cds-more {
+  margin-top: var(--sp-8);
+  display: flex;
+  justify-content: center;
+}
+</style>

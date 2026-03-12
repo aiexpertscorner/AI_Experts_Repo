@@ -1,68 +1,81 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/site/Header.astro";
-import Footer from "@/components/site/Footer.astro";
-import CategoryGrid from "@/components/sections/CategoryGrid.astro";
-import FeaturedToolsSection from "@/components/sections/FeaturedToolsSection.astro";
-import TrendingTopicsSection from "@/components/sections/TrendingTopicsSection.astro";
-import AudienceSection from "@/components/sections/AudienceSection.astro";
-import NewToolsSection from "@/components/sections/NewToolsSection.astro";
+import BaseLayout      from "@/layouts/BaseLayout.astro";
+import Header          from "@/components/site/Header.astro";
+import Footer          from "@/components/site/Footer.astro";
+import FlagshipToolsSection   from "@/components/sections/FlagshipToolsSection.astro";
+import HubNavSection          from "@/components/sections/HubNavSection.astro";
+import CategoryDiscoverySection from "@/components/sections/CategoryDiscoverySection.astro";
+import TrendingTopicsSection  from "@/components/sections/TrendingTopicsSection.astro";
+import AudienceSection        from "@/components/sections/AudienceSection.astro";
+import ToolCard               from "@/components/cards/ToolCard.astro";
+import "@/styles/homepage.css";
 
-import catMap from "@/data/build/category-map.json";
+import catMap       from "@/data/build/category-map.json";
 import featuredData from "@/data/build/featured-tools.json";
 import homepageData from "@/data/build/homepage-data.json";
 
-const categories = Object.values(catMap as any).sort((a:any, b:any) => b.count - a.count);
-const featuredTools = (featuredData as any)?.global_top ?? [];
-const newTools = (homepageData as any)?.new_tools ?? [];
-const totalTools = (homepageData as any)?.total_tools ?? 19066;
+// ─── Data ──────────────────────────────────────────────────────────────────
+const allTools   = (featuredData as any)?.global_top    ?? [];
+const newTools   = (homepageData as any)?.new_tools      ?? [];
+const totalTools = (homepageData as any)?.total_tools    ?? 19488;
+const totalCats  = 23;
 
+// Categories: sorted by count, with top_tools injected where available
+const categoryTopTools: Record<string, any[]> =
+  (featuredData as any)?.by_category ?? {};
+
+const categories = Object.values(catMap as any)
+  .sort((a: any, b: any) => b.count - a.count)
+  .map((c: any) => ({
+    ...c,
+    top_tools: categoryTopTools[c.slug] ?? [],
+  }));
+
+// Trust logos (static editorial — brand recognition anchors)
 const trustedBrands = [
-  { name: "OpenAI",    icon: "⬡" },
-  { name: "Anthropic", icon: "◈" },
-  { name: "Google AI", icon: "◉" },
-  { name: "NVIDIA",    icon: "▣" },
-  { name: "Microsoft", icon: "⊞" },
+  { name: "OpenAI"    },
+  { name: "Anthropic" },
+  { name: "Google AI" },
+  { name: "Microsoft" },
+  { name: "NVIDIA"    },
+  { name: "Meta AI"   },
 ];
 
-const highlights = [
-  {
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
-    title: "Top AI Tools",
-    desc: "Curated tools for every workflow, platform and budget.",
-    chips: ["All platforms", "Ranked"],
-    href: "/ai-tools",
-  },
-  {
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
-    title: "Powerful Workflows",
-    desc: "Step-by-step AI workflows for professionals and teams.",
-    chips: ["Automations", "Templates"],
-    href: "/ai-workflows",
-    soon: true,
-  },
-  {
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
-    title: "Expert Insights",
-    desc: "In-depth guides, comparisons and AI news for every level.",
-    chips: ["Guides", "AI News"],
-    href: "/learn-ai",
-    soon: true,
-  },
+// Blog posts (editorial — will be data-driven when blog is live)
+const blogPosts = [
+  { tag: "Guide",      title: "Top 10 Must-Have AI Tools in 2025",          slug: "top-10-ai-tools-2025",        grad: "from-blue"   },
+  { tag: "Tutorial",   title: "Mastering Midjourney: The Ultimate Guide",   slug: "mastering-midjourney-guide",  grad: "from-violet" },
+  { tag: "Comparison", title: "ChatGPT vs Claude vs Gemini: Full Breakdown",slug: "chatgpt-vs-claude-vs-gemini", grad: "from-cyan"   },
 ];
+
+// Best-of intent links
+const bestOf = [
+  ["Writing blog posts",        "/best/write-blog-posts-and-articles-with-ai"],
+  ["Building chatbots",         "/best/build-ai-chatbots-and-assistants-with"],
+  ["Generating images",         "/ai-tools/category/image-generation"],
+  ["Coding & development",      "/ai-tools/category/coding-and-dev"],
+  ["Social media content",      "/ai-tools/tag/social-media"],
+  ["SEO & keyword research",    "/ai-tools/tag/seo-and-keywords"],
+  ["Creating videos",           "/ai-tools/tag/video-creation"],
+  ["Data & analytics",          "/ai-tools/category/data-and-analytics"],
+  ["Customer support",          "/ai-tools/tag/customer-support"],
+  ["HR & recruiting",           "/ai-tools/category/hr-and-recruiting"],
+  ["Finance & legal work",      "/ai-tools/category/legal-and-finance"],
+  ["Education & research",      "/ai-tools/category/research-and-education"],
+] as const;
 ---
 <BaseLayout
   title="AI Tools Directory — Find the Best AI Tools for Any Workflow"
-  description={`Browse ${totalTools.toLocaleString()}+ AI tools across 23 categories. Compare pricing, features and alternatives — all in one place.`}
+  description={`Browse ${totalTools.toLocaleString()}+ AI tools across ${totalCats} categories. Compare pricing, features and alternatives — all in one place.`}
 >
   <Header slot="header"/>
 
-  <!-- ═══════════════════════════════════════════════════
-       HERO
-  ════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════
+       1. HERO
+  ════════════════════════════════════════════════════════════ -->
   <section class="hero">
 
-    <!-- Ambient background -->
+    <!-- Ambient layers -->
     <div class="hero-bg" aria-hidden="true">
       <div class="hero-orb hero-orb-1"></div>
       <div class="hero-orb hero-orb-2"></div>
@@ -72,27 +85,53 @@ const highlights = [
 
     <div class="container hero-inner">
 
-      <!-- ── LEFT: copy ─────────────────────────── -->
+      <!-- LEFT ───────────────────────────────── -->
       <div class="hero-left">
 
         <div class="hero-badge">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           The #1 AI Tools Directory
         </div>
 
-        <h1>Unlock the<br/><span class="text-gradient">Power of AI</span></h1>
+        <h1>
+          Discover the Best<br/>
+          <span class="text-gradient">AI Tools</span> for Any Workflow
+        </h1>
 
         <p class="hero-sub">
-          Your hub for the best AI tools, workflows,
-          prompts, and expert insights.
+          Browse {totalTools.toLocaleString()}+ AI tools, compare pricing and alternatives,
+          and find exactly what you need — for free.
         </p>
 
-        <!-- Search bar -->
+        <!-- Search bar (links to /ai-tools) -->
         <a href="/ai-tools" class="hero-search" aria-label="Search AI tools">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
           <span class="hs-placeholder">Search {totalTools.toLocaleString()}+ AI tools…</span>
-          <span class="btn btn-primary hs-btn">Explore Free</span>
+          <span class="btn btn-primary hs-cta-btn">Explore Free</span>
         </a>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>{totalTools.toLocaleString()}+</strong>
+            <span>AI Tools</span>
+          </div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <strong>{totalCats}</strong>
+            <span>Categories</span>
+          </div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <strong>Daily</strong>
+            <span>Updated</span>
+          </div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <strong>Free</strong>
+            <span>Forever</span>
+          </div>
+        </div>
 
         <!-- Trust row -->
         <div class="trust-row">
@@ -104,35 +143,33 @@ const highlights = [
           </div>
         </div>
 
-      </div>
+      </div><!-- /hero-left -->
 
-      <!-- ── RIGHT: pure CSS visual ─────────────── -->
+      <!-- RIGHT: orbital CSS visual ──────────── -->
       <div class="hero-right" aria-hidden="true">
         <div class="hv-scene">
 
-          <!-- Central glow core -->
+          <!-- Rings -->
           <div class="hv-core">
             <div class="hv-core-ring hv-ring-1"></div>
             <div class="hv-core-ring hv-ring-2"></div>
             <div class="hv-core-ring hv-ring-3"></div>
             <div class="hv-core-center">
-              <!-- AI monogram -->
-              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                <text x="5" y="38" font-family="'Plus Jakarta Sans',sans-serif" font-size="36" font-weight="800" fill="url(#hg)">AI</text>
-                <defs>
-                  <linearGradient id="hg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#7b93ff"/>
-                    <stop offset="100%" stop-color="#06b6d4"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img
+                src="/logos/Logo_icon_dark.png"
+                alt=""
+                width="44"
+                height="44"
+                loading="eager"
+                decoding="sync"
+              />
             </div>
           </div>
 
           <!-- Orbiting nodes -->
           <div class="hv-orbit hv-orbit-1">
             <div class="hv-node hv-node-a">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
           </div>
           <div class="hv-orbit hv-orbit-2">
@@ -142,596 +179,212 @@ const highlights = [
           </div>
           <div class="hv-orbit hv-orbit-3">
             <div class="hv-node hv-node-c">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             </div>
           </div>
           <div class="hv-orbit hv-orbit-4">
             <div class="hv-node hv-node-d">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
             </div>
           </div>
 
-          <!-- Floating data cards -->
+          <!-- Floating stat cards -->
           <div class="hv-card hv-card-1">
             <span class="hvc-num">{totalTools.toLocaleString()}+</span>
             <span class="hvc-lbl">AI Tools</span>
           </div>
           <div class="hv-card hv-card-2">
-            <div class="hvc-row">
-              <span class="hvc-dot" style="background:var(--c-free)"></span>
-              <span class="hvc-tag">Free</span>
-            </div>
-            <div class="hvc-row">
-              <span class="hvc-dot" style="background:var(--c-freemium)"></span>
-              <span class="hvc-tag">Freemium</span>
-            </div>
-            <div class="hvc-row">
-              <span class="hvc-dot" style="background:var(--c-paid)"></span>
-              <span class="hvc-tag">Paid</span>
-            </div>
+            <div class="hvc-row"><span class="hvc-dot" style="background:var(--c-free)"></span><span class="hvc-tag">Free</span></div>
+            <div class="hvc-row"><span class="hvc-dot" style="background:var(--c-freemium)"></span><span class="hvc-tag">Freemium</span></div>
+            <div class="hvc-row"><span class="hvc-dot" style="background:var(--c-paid)"></span><span class="hvc-tag">Paid</span></div>
           </div>
           <div class="hv-card hv-card-3">
-            <span class="hvc-num">23</span>
+            <span class="hvc-num">{totalCats}</span>
             <span class="hvc-lbl">Categories</span>
           </div>
 
         </div>
-      </div>
+      </div><!-- /hero-right -->
 
     </div>
-  </section>
+  </section><!-- /hero -->
 
-  <!-- ═══════════════════════════════════════════════════
-       HIGHLIGHTS — 3 feature blocks
-  ════════════════════════════════════════════════════ -->
-  <section class="hl-section">
-    <div class="container">
-      <div class="hl-grid">
-        {highlights.map(h => (
-          <div class="hl-card">
-            <div class="hl-icon" set:html={h.icon}/>
-            <div class="hl-body">
-              <strong class="hl-title">
-                {h.title}
-                {h.soon && <span class="hub-soon">Soon</span>}
-              </strong>
-              <p class="hl-desc">{h.desc}</p>
-              <div class="hl-chips">
-                {h.chips.map(c => <span class="filter-chip">{c}</span>)}
-                {!h.soon && (
-                  <a href={h.href} class="hl-more">
-                    Explore
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-                  </a>
-                )}
-              </div>
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE BODY
+  ════════════════════════════════════════════════════════════ -->
+  <div class="hp-body">
+
+    <!-- ─────────────────────────────────────────────────────────
+         2. TOP MAINSTREAM TOOLS (authority anchor)
+    ──────────────────────────────────────────────────────────── -->
+    <div class="container hp-section">
+      <FlagshipToolsSection tools={allTools}/>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         3. PLATFORM HUBS (main navigation)
+    ──────────────────────────────────────────────────────────── -->
+    <div class="hp-wide">
+      <div class="container hp-section">
+        <HubNavSection/>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         4. CATEGORY DISCOVERY
+    ──────────────────────────────────────────────────────────── -->
+    <div class="container hp-section">
+      <CategoryDiscoverySection categories={categories as any} limit={9}/>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         5. POPULAR AI TOOLS
+    ──────────────────────────────────────────────────────────── -->
+    {allTools.length > 5 && (
+      <div class="hp-wide">
+        <div class="container hp-section">
+          <div class="section-header">
+            <div>
+              <span class="section-eyebrow">Top Ranked</span>
+              <h2>Popular AI Tools</h2>
             </div>
+            <a href="/ai-tools" class="see-all">
+              View all tools
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <div class="container page-content">
-
-    <!-- ═══════════════════════════════════════════════════
-         CATEGORIES
-    ════════════════════════════════════════════════════ -->
-    <section class="content-section">
-      <div class="section-header">
-        <div>
-          <span class="section-eyebrow">Discover</span>
-          <h2>Browse by Category</h2>
-        </div>
-        <a href="/ai-tools" class="see-all">
-          All 23 categories
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <CategoryGrid categories={categories as any} limit={12}/>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
-         POPULAR AI TOOLS
-    ════════════════════════════════════════════════════ -->
-    {featuredTools.length > 0 && (
-      <section class="content-section">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Top Rated</span>
-            <h2>Popular AI Tools</h2>
+          <div class="grid-tools">
+            {allTools.slice(5, 11).map((t: any, i: number) => (
+              <ToolCard tool={t} rank={i + 6}/>
+            ))}
           </div>
-          <a href="/ai-tools" class="see-all">
-            View All Tools
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
         </div>
-        <FeaturedToolsSection tools={featuredTools.slice(0, 6)} showRank={true}/>
-      </section>
+      </div>
     )}
 
-    <!-- ═══════════════════════════════════════════════════
-         TRENDING TOPICS
-    ════════════════════════════════════════════════════ -->
-    <TrendingTopicsSection/>
+    <!-- ─────────────────────────────────────────────────────────
+         6. TRENDING TOPICS
+    ──────────────────────────────────────────────────────────── -->
+    <div class="container hp-section">
+      <TrendingTopicsSection/>
+    </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         BY ROLE
-    ════════════════════════════════════════════════════ -->
-    <AudienceSection/>
+    <!-- ─────────────────────────────────────────────────────────
+         7. BY PROFESSIONAL ROLE
+    ──────────────────────────────────────────────────────────── -->
+    <div class="container hp-section">
+      <AudienceSection/>
+    </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         BEST-OF
-    ════════════════════════════════════════════════════ -->
-    <section class="content-section">
+    <!-- ─────────────────────────────────────────────────────────
+         8. BEST AI TOOLS FOR… (SEO intent links)
+    ──────────────────────────────────────────────────────────── -->
+    <div class="container hp-section">
       <div class="section-header">
         <div>
           <span class="section-eyebrow">Curated lists</span>
           <h2>Best AI Tools For…</h2>
         </div>
-      </div>
-      <div class="bestof-grid">
-        {[
-          ["✍️", "Writing blog posts",      "/best/write-blog-posts-and-articles-with-ai"],
-          ["🤖", "Building chatbots",        "/best/build-ai-chatbots-and-assistants-with"],
-          ["🎨", "Generating images",        "/ai-tools/category/image-generation"],
-          ["⚡", "Coding & development",     "/ai-tools/category/coding-and-dev"],
-          ["📱", "Social media content",     "/ai-tools/tag/social-media"],
-          ["📈", "SEO & keyword research",   "/ai-tools/tag/seo-and-keywords"],
-          ["🎬", "Video creation",           "/ai-tools/tag/video-creation"],
-          ["📊", "Data & analytics",         "/ai-tools/category/data-and-analytics"],
-          ["🎧", "Customer support",         "/ai-tools/tag/customer-support"],
-          ["👥", "HR & recruiting",          "/ai-tools/category/hr-and-recruiting"],
-          ["⚖️", "Finance & legal",          "/ai-tools/category/legal-and-finance"],
-          ["🎓", "Education & research",     "/ai-tools/category/research-and-education"],
-        ].map(([em, label, href]) => (
-          <a href={href} class="bestof-link">
-            <span class="bestof-em">{em}</span>
-            <span class="bestof-txt">{label}</span>
-            <svg class="bestof-arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
-         FROM THE BLOG (placeholder)
-    ════════════════════════════════════════════════════ -->
-    <section class="content-section">
-      <div class="section-header">
-        <div>
-          <span class="section-eyebrow">Guides & News</span>
-          <h2>From the Blog</h2>
-        </div>
-        <a href="/ai-news" class="see-all">
-          View All
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="/best" class="see-all">
+          All lists
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-      <div class="blog-grid">
-        {[
-          { tag: "Guide",      title: "Top 10 Must-Have AI Tools in 2025",          slug: "top-10-ai-tools-2025",           grad: "from-blue" },
-          { tag: "Tutorial",   title: "Mastering Midjourney: The Ultimate Guide",    slug: "mastering-midjourney-guide",     grad: "from-violet" },
-          { tag: "Comparison", title: "ChatGPT vs Claude vs Gemini: Full Breakdown", slug: "chatgpt-vs-claude-vs-gemini",    grad: "from-cyan" },
-        ].map(post => (
-          <a href={`/ai-news/${post.slug}`} class:list={["blog-card", post.grad]}>
-            <div class="blog-card-body">
-              <span class="blog-tag">{post.tag}</span>
-              <h3 class="blog-title">{post.title}</h3>
-            </div>
+      <div class="bestof-grid">
+        {bestOf.map(([label, href]) => (
+          <a href={href} class="bestof-link">
+            <span class="bestof-txt">{label}</span>
+            <svg class="bestof-arr" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </a>
         ))}
       </div>
-    </section>
+    </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         NEWSLETTER
-    ════════════════════════════════════════════════════ -->
-    <section class="nl-section content-section">
+    <!-- ─────────────────────────────────────────────────────────
+         9. BLOG / GUIDES (editorial)
+    ──────────────────────────────────────────────────────────── -->
+    <div class="hp-wide">
+      <div class="container hp-section">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Guides & Insights</span>
+            <h2>From the Blog</h2>
+          </div>
+          <a href="/ai-news" class="see-all">
+            View all
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="blog-grid">
+          {blogPosts.map(post => (
+            <a href={`/ai-news/${post.slug}`} class:list={["blog-card", post.grad]}>
+              <div class="blog-card-body">
+                <span class="blog-tag">{post.tag}</span>
+                <h3 class="blog-title">{post.title}</h3>
+                <span class="blog-read">Read article →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         10. NEWSLETTER CTA
+    ──────────────────────────────────────────────────────────── -->
+    <div class="container hp-section hp-section--last">
       <div class="nl-card">
         <div class="nl-orb nl-orb-1" aria-hidden="true"></div>
         <div class="nl-orb nl-orb-2" aria-hidden="true"></div>
         <div class="nl-content">
-          <span class="section-eyebrow" style="text-align:center">Newsletter</span>
-          <h2>Stay ahead with AI</h2>
-          <p>Get the best new AI tools, guides and comparisons in your inbox. No spam, unsubscribe anytime.</p>
+          <span class="section-eyebrow">Newsletter</span>
+          <h2>Stay Ahead with AI</h2>
+          <p>Weekly digest: the best new tools, expert comparisons and AI news.<br/>No spam. Unsubscribe anytime.</p>
           <form class="nl-form" onsubmit="return false">
-            <input type="email" placeholder="Enter your email" class="input nl-email" aria-label="Email address"/>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              class="input nl-email"
+              aria-label="Email for newsletter"
+            />
             <button type="submit" class="btn btn-primary">Subscribe Free</button>
           </form>
-          <p class="nl-note">Join 10,000+ AI enthusiasts · Free forever · Unsubscribe anytime</p>
+          <p class="nl-note">Join 10,000+ AI enthusiasts · Always free</p>
         </div>
       </div>
-    </section>
+    </div>
 
-  </div>
+  </div><!-- /hp-body -->
 
   <Footer slot="footer"/>
 </BaseLayout>
 
 <style>
-/* ══════════════════════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════════════════════ */
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+
+/* ──────────────────────────────────────────────────────────────
+   PAGE WRAPPER
+   ────────────────────────────────────────────────────────────── */
+.hp-body {
+  padding-top: var(--sp-4);
 }
 
-/* ── Ambient background ── */
-.hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0 }
-.hero-orb { position: absolute; border-radius: 50%; filter: blur(90px) }
-.hero-orb-1 {
-  width: 55vw; height: 55vw; max-width: 700px; max-height: 700px;
-  top: -30%; left: 30%;
-  background: radial-gradient(ellipse, rgba(79,110,247,.18) 0%, transparent 70%);
+/* Section spacing */
+.hp-section {
+  padding-top:    var(--sp-16);
+  padding-bottom: var(--sp-16);
 }
-.hero-orb-2 {
-  width: 35vw; height: 35vw; max-width: 420px; max-height: 420px;
-  top: 5%; right: 2%;
-  background: radial-gradient(ellipse, rgba(124,58,237,.12) 0%, transparent 70%);
-}
-.hero-orb-3 {
-  width: 25vw; height: 25vw; max-width: 300px; max-height: 300px;
-  bottom: -10%; left: 5%;
-  background: radial-gradient(ellipse, rgba(6,182,212,.08) 0%, transparent 70%);
-}
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(79,110,247,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(79,110,247,.035) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 75% 75% at 55% 40%, black 20%, transparent 80%);
+.hp-section--last {
+  padding-bottom: var(--sp-8);
 }
 
-/* ── Layout ── */
-.hero-inner {
-  position: relative; z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-12);
-  align-items: center;
-}
-@media (max-width: 860px) {
-  .hero-inner            { grid-template-columns: 1fr }
-  .hero-right            { display: none }
-}
-
-/* ── Left: copy ── */
-.hero-left { display: flex; flex-direction: column; gap: var(--sp-6) }
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--c-brand-light);
-  background: rgba(79,110,247,.08);
-  border: 1px solid rgba(79,110,247,.22);
-  padding: 6px 14px;
-  border-radius: var(--r-full);
-  width: fit-content;
-}
-.hero-badge svg { color: var(--c-paid); flex-shrink: 0 }
-
-.hero-sub {
-  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
-  color: var(--c-text-2);
-  line-height: 1.65;
-  max-width: 440px;
-}
-
-/* ── Search bar (link) ── */
-.hero-search {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  background: rgba(15,22,38,.8);
-  border: 1px solid var(--c-border-strong);
-  border-radius: var(--r-xl);
-  padding: 6px 6px 6px 16px;
-  max-width: 460px;
-  text-decoration: none;
-  box-shadow: 0 0 0 1px rgba(79,110,247,.08), 0 10px 40px rgba(0,0,0,.5);
-  transition: border-color var(--t-base), box-shadow var(--t-base);
-  backdrop-filter: blur(8px);
-}
-.hero-search:hover {
-  border-color: rgba(79,110,247,.35);
-  box-shadow: 0 0 0 1px rgba(79,110,247,.18), 0 10px 48px rgba(79,110,247,.12);
-}
-.hero-search svg { color: var(--c-text-3); flex-shrink: 0 }
-.hs-placeholder {
-  flex: 1;
-  font-size: var(--text-sm);
-  color: var(--c-text-3);
-  font-family: var(--font-body);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.hs-btn { flex-shrink: 0 }
-
-/* ── Trust row ── */
-.trust-row  { display: flex; flex-direction: column; gap: var(--sp-3) }
-.trust-label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .09em;
-  color: var(--c-text-4);
-}
-.trust-logos { display: flex; flex-wrap: wrap; gap: 6px }
-.trust-chip {
-  font-size: 11px;
-  font-weight: 600;
-  font-family: var(--font-display);
-  color: var(--c-text-3);
-  background: var(--c-bg-3);
-  border: 1px solid var(--c-border-subtle);
-  padding: 4px 11px;
-  border-radius: var(--r-full);
-  white-space: nowrap;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   HERO RIGHT — pure CSS orbital visual
-══════════════════════════════════════════════════════════════ */
-.hero-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hv-scene {
-  position: relative;
-  width: 340px;
-  height: 340px;
-}
-
-/* ── Core ring system ── */
-.hv-core {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hv-core-center {
-  position: relative;
-  z-index: 10;
-  width: 80px; height: 80px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(79,110,247,.25) 0%, rgba(124,58,237,.25) 100%);
-  border: 1px solid rgba(79,110,247,.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 0 0 1px rgba(79,110,247,.15),
-    0 0 40px rgba(79,110,247,.3),
-    inset 0 1px 0 rgba(255,255,255,.08);
-  backdrop-filter: blur(8px);
-}
-
-.hv-core-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid transparent;
-}
-.hv-ring-1 {
-  width: 140px; height: 140px;
-  border-color: rgba(79,110,247,.18);
-  background: radial-gradient(ellipse, rgba(79,110,247,.06) 0%, transparent 70%);
-}
-.hv-ring-2 {
-  width: 220px; height: 220px;
-  border-color: rgba(79,110,247,.1);
-  border-style: dashed;
-  animation: ring-spin 30s linear infinite;
-}
-.hv-ring-3 {
-  width: 310px; height: 310px;
-  border-color: rgba(124,58,237,.07);
-  border-style: dashed;
-  animation: ring-spin 50s linear infinite reverse;
-}
-@keyframes ring-spin {
-  to { transform: rotate(360deg) }
-}
-
-/* ── Orbiting icon nodes ── */
-.hv-orbit {
-  position: absolute;
-  top: 50%; left: 50%;
-  border-radius: 50%;
-}
-/* Each orbit rotates; the node counter-rotates to stay upright */
-.hv-orbit-1 {
-  width: 140px; height: 140px;
-  margin: -70px 0 0 -70px;
-  animation: orbit-cw 12s linear infinite;
-}
-.hv-orbit-2 {
-  width: 220px; height: 220px;
-  margin: -110px 0 0 -110px;
-  animation: orbit-ccw 18s linear infinite;
-}
-.hv-orbit-3 {
-  width: 220px; height: 220px;
-  margin: -110px 0 0 -110px;
-  animation: orbit-cw 22s linear infinite;
-  animation-delay: -7s;
-}
-.hv-orbit-4 {
-  width: 310px; height: 310px;
-  margin: -155px 0 0 -155px;
-  animation: orbit-ccw 28s linear infinite;
-  animation-delay: -10s;
-}
-@keyframes orbit-cw  { to { transform: rotate( 360deg) } }
-@keyframes orbit-ccw { to { transform: rotate(-360deg) } }
-
-.hv-node {
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 34px; height: 34px;
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(8px);
-}
-/* Counter-rotate each node to keep icon upright */
-.hv-orbit-1 .hv-node { animation: orbit-ccw 12s linear infinite }
-.hv-orbit-2 .hv-node { animation: orbit-cw  18s linear infinite }
-.hv-orbit-3 .hv-node { animation: orbit-ccw 22s linear infinite; animation-delay: -7s }
-.hv-orbit-4 .hv-node { animation: orbit-cw  28s linear infinite; animation-delay: -10s }
-
-.hv-node-a { background: rgba(79,110,247,.18); border: 1px solid rgba(79,110,247,.3); color: #7b93ff }
-.hv-node-b { background: rgba(6,182,212,.15);  border: 1px solid rgba(6,182,212,.25);  color: #22d3ee }
-.hv-node-c { background: rgba(124,58,237,.15); border: 1px solid rgba(124,58,237,.25); color: #a78bfa }
-.hv-node-d { background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.22); color: #34d399 }
-
-/* ── Floating data cards ── */
-.hv-card {
-  position: absolute;
-  background: rgba(10,16,28,.88);
-  border: 1px solid var(--c-border-strong);
-  border-radius: var(--r-lg);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 4px 24px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04);
-}
-
-/* Top-left: tool count */
-.hv-card-1 {
-  top: 10%; left: -2%;
-  padding: 10px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-/* Bottom-right: pricing dots */
-.hv-card-2 {
-  bottom: 8%; right: -2%;
-  padding: 10px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-/* Top-right: category count */
-.hv-card-3 {
-  top: 10%; right: 2%;
-  padding: 10px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.hvc-num {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 800;
-  color: var(--c-text);
-  line-height: 1;
-  letter-spacing: -.03em;
-}
-.hvc-lbl {
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--c-text-3);
-  text-transform: uppercase;
-  letter-spacing: .07em;
-}
-.hvc-row {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.hvc-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.hvc-tag {
-  font-size: 11px;
-  font-weight: 600;
-  font-family: var(--font-display);
-  color: var(--c-text-2);
-}
-
-/* ── Highlights strip ──────────────────────────────────────── */
-.hl-section {
-  padding: var(--sp-3) 0 var(--sp-12);
-  position: relative;
-}
-.hl-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-4);
-}
-@media (max-width: 700px) { .hl-grid { grid-template-columns: 1fr } }
-
-.hl-card {
-  display: flex;
-  gap: var(--sp-4);
-  padding: var(--sp-5) var(--sp-6);
+/* Full-width tinted stripe sections */
+.hp-wide {
   background: var(--c-bg-2);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-xl);
-  transition: border-color var(--t-base);
+  border-top:    1px solid var(--c-border-subtle);
+  border-bottom: 1px solid var(--c-border-subtle);
 }
-.hl-card:hover { border-color: var(--c-border-hover) }
-.hl-icon {
-  width: 40px; height: 40px;
-  flex-shrink: 0;
-  background: var(--c-brand-glow-s);
-  border: 1px solid rgba(79,110,247,.15);
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-brand-light);
-}
-.hl-body { display: flex; flex-direction: column; gap: var(--sp-2) }
-.hl-title {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  font-family: var(--font-display);
-  color: var(--c-text);
-  letter-spacing: -.01em;
-}
-.hl-desc { font-size: var(--text-xs); color: var(--c-text-3); line-height: 1.5 }
-.hl-chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center }
-.hl-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  font-size: var(--text-xs);
-  font-weight: 600;
-  font-family: var(--font-display);
-  color: var(--c-brand-light);
-  text-decoration: none;
-  transition: gap var(--t-fast);
-}
-.hl-more:hover { gap: 6px; color: var(--c-text) }
 
-/* ── Page content ──────────────────────────────────────────── */
-.page-content { padding-top: var(--sp-4) }
-.content-section { margin-bottom: var(--sp-20) }
-
-/* ── Best-of grid ──────────────────────────────────────────── */
+/* ── Best-of grid ─────────────────────────────────────────── */
 .bestof-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -741,29 +394,28 @@ const highlights = [
   display: flex;
   align-items: center;
   gap: var(--sp-3);
-  padding: 11px 14px;
+  padding: 11px 15px;
   background: var(--c-bg-2);
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
-  font-size: var(--text-sm);
-  color: var(--c-text-2);
-  text-decoration: none;
-  font-weight: 500;
   font-family: var(--font-display);
-  transition: all var(--t-fast);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--c-text-2);
   letter-spacing: -.01em;
+  text-decoration: none;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
 }
 .bestof-link:hover {
   background: var(--c-bg-3);
   border-color: var(--c-border-hover);
   color: var(--c-text);
 }
-.bestof-em  { font-size: 15px; flex-shrink: 0 }
 .bestof-txt { flex: 1 }
-.bestof-arr { color: var(--c-text-4); flex-shrink: 0; transition: transform var(--t-fast) }
+.bestof-arr { color: var(--c-text-4); flex-shrink: 0; transition: transform var(--t-fast), color var(--t-fast) }
 .bestof-link:hover .bestof-arr { transform: translateX(2px); color: var(--c-brand-light) }
 
-/* ── Blog cards ────────────────────────────────────────────── */
+/* ── Blog cards ───────────────────────────────────────────── */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -772,7 +424,7 @@ const highlights = [
 .blog-card {
   display: flex;
   align-items: flex-end;
-  min-height: 180px;
+  min-height: 200px;
   border-radius: var(--r-xl);
   border: 1px solid var(--c-border);
   text-decoration: none;
@@ -786,70 +438,69 @@ const highlights = [
   content: '';
   position: absolute;
   inset: 0;
-  opacity: .9;
   transition: opacity var(--t-base);
 }
-.blog-card:hover::before { opacity: 1 }
-.from-blue::before   { background: linear-gradient(135deg, #0c1220 0%, rgba(79,110,247,.5) 100%) }
-.from-violet::before { background: linear-gradient(135deg, #0c1220 0%, rgba(124,58,237,.5) 100%) }
-.from-cyan::before   { background: linear-gradient(135deg, #0c1220 0%, rgba(6,182,212,.4) 100%) }
+.from-blue::before   { background: linear-gradient(150deg, var(--c-bg) 0%, rgba(79,110,247,.50) 100%) }
+.from-violet::before { background: linear-gradient(150deg, var(--c-bg) 0%, rgba(124,58,237,.50) 100%) }
+.from-cyan::before   { background: linear-gradient(150deg, var(--c-bg) 0%, rgba(6,182,212,.42) 100%) }
 .blog-card-body {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: var(--sp-2);
 }
 .blog-tag {
-  font-size: 10px;
+  font-family: var(--font-display);
+  font-size: var(--text-2xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .07em;
+  letter-spacing: .09em;
   color: var(--c-brand-light);
-  font-family: var(--font-display);
 }
 .blog-title {
   font-size: var(--text-lg);
   font-weight: 700;
   color: var(--c-text);
-  line-height: 1.3;
-  letter-spacing: -.02em;
+  line-height: var(--lh-snug);
+  letter-spacing: -.025em;
 }
+.blog-read {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--c-brand-light);
+  opacity: 0;
+  transition: opacity var(--t-fast);
+  margin-top: 2px;
+}
+.blog-card:hover .blog-read { opacity: 1 }
 
-/* ── Newsletter ────────────────────────────────────────────── */
-.nl-section { margin-bottom: var(--sp-8) }
+/* ── Newsletter ───────────────────────────────────────────── */
 .nl-card {
   position: relative;
   overflow: hidden;
   background: var(--c-bg-2);
   border: 1px solid var(--c-border-brand);
   border-radius: var(--r-2xl);
-  padding: clamp(var(--sp-10), 7vw, var(--sp-20));
+  padding: clamp(var(--sp-10), 7vw, var(--sp-16));
   text-align: center;
 }
 .nl-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: .25;
+  filter: blur(72px);
   pointer-events: none;
 }
-.nl-orb-1 { width: 350px; height: 350px; top: -30%; right: 5%;  background: var(--c-brand) }
-.nl-orb-2 { width: 250px; height: 250px; bottom: -30%; left: 5%; background: var(--c-brand-cyan) }
+.nl-orb-1 { width: 380px; height: 380px; top: -40%; right: 5%;  background: var(--c-brand);  opacity: .10 }
+.nl-orb-2 { width: 280px; height: 280px; bottom: -40%; left: 5%; background: var(--c-cyan);   opacity: .08 }
 .nl-content {
-  position: relative;
-  z-index: 1;
-  max-width: 480px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-4);
+  position: relative; z-index: 1;
+  max-width: 500px; margin: 0 auto;
+  display: flex; flex-direction: column;
+  align-items: center; gap: var(--sp-5);
 }
-.nl-card h2 { font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl)) }
-.nl-card > .nl-content > p { font-size: var(--text-sm); max-width: 380px }
-.nl-form { display: flex; gap: var(--sp-2); width: 100%; max-width: 420px }
-.nl-email { flex: 1 }
-.nl-note  { font-size: 11px; color: var(--c-text-3) }
+.nl-card h2 { font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl)); letter-spacing: -.03em }
+.nl-card p  { font-size: var(--text-sm); color: var(--c-text-2); max-width: 400px; margin: 0; line-height: var(--lh-base) }
+.nl-form    { display: flex; gap: var(--sp-2); width: 100%; max-width: 440px }
+.nl-email   { flex: 1 }
+.nl-note    { font-size: 11px; color: var(--c-text-3) }
 @media (max-width: 500px) { .nl-form { flex-direction: column } }
 </style>

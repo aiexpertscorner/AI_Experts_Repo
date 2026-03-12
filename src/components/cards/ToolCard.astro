@@ -1,54 +1,68 @@
 ---
 interface Props {
-  tool: any;
-  rank?: number;
+  tool:    any;
+  rank?:   number;
   compact?: boolean;
+  featured?: boolean;
 }
-const { tool, rank, compact = false } = Astro.props;
+const { tool, rank, compact = false, featured = false } = Astro.props;
+
 const {
-  name = "", handle = "", tagline = "", description = "",
-  pricing_tier = "unknown", logo_domain = "", feature_tags = [],
-  category = "", category_slug = "", is_featured = false,
-  affiliate_url = "", website_url = ""
+  name          = "",
+  handle        = "",
+  tagline       = "",
+  description   = "",
+  pricing_tier  = "unknown",
+  logo_domain   = "",
+  feature_tags  = [],
+  category      = "",
+  category_slug = "",
+  is_featured   = false,
+  affiliate_url = "",
+  website_url   = "",
+  logo_url      = "",
 } = tool;
 
-const pricingClass: Record<string, string> = {
-  free: "badge-free", freemium: "badge-freemium", paid: "badge-paid"
-};
-const pricingLabel: Record<string, string> = {
+const pricingLabel: Record<string,string> = {
   free: "Free", freemium: "Freemium", paid: "Paid"
 };
-const tier = (pricing_tier || "unknown").toLowerCase();
-const logoSrc = logo_domain ? `https://logo.clearbit.com/${logo_domain}?size=64` : null;
-const fallback = (name || "A").charAt(0).toUpperCase();
-const tags = (Array.isArray(feature_tags) ? feature_tags : []).slice(0, 3);
-const href = affiliate_url || `/ai-tools/${handle}`;
-const isAffiliate = !!affiliate_url;
-const catSlug = category_slug || (category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
-const desc = (tagline || description || "").slice(0, 110);
+const tier      = (pricing_tier || "unknown").toLowerCase();
+const logoSrc   = logo_url || (logo_domain ? `https://logo.clearbit.com/${logo_domain}?size=64` : null);
+const fallback  = (name || "A").charAt(0).toUpperCase();
+const tags      = (Array.isArray(feature_tags) ? feature_tags : []).slice(0, 3);
+const href      = affiliate_url || `/ai-tools/${handle}`;
+const isAff     = !!affiliate_url;
+const catSlug   = category_slug || (category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const desc      = (tagline || description || "").slice(0, 108);
+const showFeat  = is_featured || featured;
 ---
-<article class:list={["tc", { compact }]}>
+<article class:list={["tc", { "tc--compact": compact, "tc--featured": showFeat }]}>
   {rank && <span class="tc-rank">#{rank}</span>}
+
   <a
     href={href}
-    class="tc-a"
-    target={isAffiliate ? "_blank" : undefined}
-    rel={isAffiliate ? "noopener sponsored" : undefined}
+    class="tc-link"
+    target={isAff ? "_blank" : undefined}
+    rel={isAff ? "noopener sponsored" : undefined}
   >
+    <!-- Top row: logo + name + pricing -->
     <div class="tc-top">
-      <div class="tc-logo-wrap">
-        {logoSrc && (
+      <div class="tc-logo">
+        {logoSrc ? (
           <img
             src={logoSrc}
             alt=""
-            width="40" height="40"
+            width="44"
+            height="44"
             loading="lazy"
+            decoding="async"
             class="tc-logo-img"
             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'"
           />
-        )}
-        <span class="tc-fallback" style={logoSrc ? "display:none" : ""}>{fallback}</span>
+        ) : null}
+        <span class="tc-logo-fallback" style={logoSrc ? "display:none" : ""}>{fallback}</span>
       </div>
+
       <div class="tc-info">
         <strong class="tc-name">{name}</strong>
         {category && (
@@ -59,74 +73,95 @@ const desc = (tagline || description || "").slice(0, 110);
           >{category}</a>
         )}
       </div>
-      <span class:list={["badge", pricingClass[tier] || "badge-unknown"]}>
+
+      <span class:list={["badge", `badge-${tier}`]}>
         {pricingLabel[tier] || pricing_tier}
       </span>
     </div>
 
-    {!compact && desc && <p class="tc-desc">{desc}{desc.length >= 110 ? "…" : ""}</p>}
+    <!-- Description -->
+    {!compact && desc && (
+      <p class="tc-desc">{desc}{desc.length >= 108 ? "…" : ""}</p>
+    )}
 
+    <!-- Tags -->
     {!compact && tags.length > 0 && (
       <div class="tc-tags">
         {tags.map((t: string) => <span class="tag">{t}</span>)}
       </div>
     )}
 
+    <!-- Footer -->
     <div class="tc-foot">
       <span class="tc-cta">
         Visit {name}
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </span>
-      {is_featured && <span class="tc-feat-badge">⭐ Featured</span>}
+      {showFeat && <span class="tc-featured-dot" title="Featured" aria-label="Featured tool"></span>}
     </div>
   </a>
 </article>
 
 <style>
+/* ── Base card ─────────────────────────────────────────────────*/
 .tc {
   position: relative;
-  background: var(--c-bg-2);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-xl);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
   overflow: hidden;
-  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
   display: flex;
   flex-direction: column;
+  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
 }
+
+/* Ambient glow — always present, subtle */
 .tc::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--c-brand-glow-xs) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--t-base);
+  background: radial-gradient(ellipse 70% 55% at 10% 0%, var(--glow-brand-xs) 0%, transparent 65%);
   pointer-events: none;
   border-radius: inherit;
+  transition: opacity var(--t-base);
+  opacity: 1;
 }
+
+/* Hover state */
 .tc:hover {
-  border-color: var(--c-border-hover);
-  box-shadow: 0 0 0 1px rgba(79,110,247,.2), 0 8px 32px rgba(79,110,247,.1);
-  transform: translateY(-2px);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-hover-shadow);
+  transform: var(--card-hover-lift);
 }
-.tc:hover::before { opacity: 1 }
+.tc:hover::before { opacity: 2.5 }
+
+/* Featured variant — slightly more prominent border */
+.tc--featured {
+  border-color: rgba(79,110,247,.20);
+}
+.tc--featured::before {
+  background: radial-gradient(ellipse 70% 55% at 10% 0%, rgba(79,110,247,.08) 0%, transparent 65%);
+}
 
 /* Rank badge */
 .tc-rank {
   position: absolute;
   top: 10px; right: 10px;
+  z-index: 2;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  color: var(--c-text-3);
+  letter-spacing: .03em;
+  color: var(--c-text-4);
   background: var(--c-bg-4);
+  border: 1px solid var(--c-border);
   padding: 2px 7px;
   border-radius: var(--r-full);
-  border: 1px solid var(--c-border);
-  z-index: 1;
+  line-height: 1.5;
 }
 
-/* Link wrapper */
-.tc-a {
+/* ── Inner link ────────────────────────────────────────────────*/
+.tc-link {
   padding: var(--sp-5);
   display: flex;
   flex-direction: column;
@@ -135,110 +170,124 @@ const desc = (tagline || description || "").slice(0, 110);
   flex: 1;
 }
 
-/* Top row */
+/* ── Top row ───────────────────────────────────────────────────*/
 .tc-top {
   display: flex;
   align-items: flex-start;
-  gap: var(--sp-3);
+  gap: 12px;
 }
 
-/* Logo */
-.tc-logo-wrap {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+/* ── Logo ──────────────────────────────────────────────────────*/
+.tc-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-sm);
   flex-shrink: 0;
   background: var(--c-bg-4);
-  border: 1px solid var(--c-border);
+  border: 1px solid var(--c-border-subtle);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color var(--t-fast);
 }
-.tc-logo-img { width: 40px; height: 40px; object-fit: contain }
-.tc-fallback {
-  width: 40px;
-  height: 40px;
+.tc:hover .tc-logo { border-color: var(--c-border) }
+.tc-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.tc-logo-fallback {
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   font-family: var(--font-display);
   color: var(--c-brand-light);
-  background: linear-gradient(135deg, var(--c-brand-glow) 0%, var(--c-violet-glow) 100%);
+  background: linear-gradient(135deg, var(--glow-brand) 0%, var(--glow-violet) 100%);
 }
 
-/* Name + cat */
-.tc-info { flex: 1; min-width: 0 }
+/* ── Name + category ───────────────────────────────────────────*/
+.tc-info   { flex: 1; min-width: 0 }
 .tc-name {
   display: block;
+  font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 700;
-  font-family: var(--font-display);
   color: var(--c-text);
+  letter-spacing: -.015em;
+  line-height: 1.3;
   margin-bottom: 3px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  letter-spacing: -.01em;
+  white-space: nowrap;
 }
 .tc-cat {
   display: block;
-  font-size: 10px;
-  color: var(--c-text-3);
+  font-family: var(--font-display);
+  font-size: var(--text-2xs);
   font-weight: 600;
+  color: var(--c-text-4);
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .06em;
   text-decoration: none;
-  transition: color var(--t-fast);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: color var(--t-fast);
 }
 .tc-cat:hover { color: var(--c-brand-light) }
 
-/* Description */
+/* ── Description ───────────────────────────────────────────────*/
 .tc-desc {
   font-size: var(--text-sm);
   color: var(--c-text-2);
-  line-height: 1.55;
+  line-height: var(--lh-snug);
   flex: 1;
+  margin: 0;
 }
 
-/* Tags */
+/* ── Tags ──────────────────────────────────────────────────────*/
 .tc-tags { display: flex; flex-wrap: wrap; gap: 4px }
 
-/* Footer */
+/* ── Footer ────────────────────────────────────────────────────*/
 .tc-foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--sp-2);
+  padding-top: var(--sp-3);
   border-top: 1px solid var(--c-border-subtle);
   margin-top: auto;
 }
+
 .tc-cta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
+  font-family: var(--font-display);
   font-size: var(--text-xs);
   font-weight: 600;
-  font-family: var(--font-display);
   color: var(--c-brand-light);
   opacity: 0;
-  transition: opacity var(--t-fast);
+  transition: opacity var(--t-fast), gap var(--t-fast);
   letter-spacing: .01em;
 }
 .tc:hover .tc-cta { opacity: 1 }
-.tc-feat-badge {
-  font-size: 10px;
-  color: var(--c-paid);
-  font-weight: 600;
-  font-family: var(--font-display);
+.tc:hover .tc-cta svg { transform: translate(1px, -1px) }
+
+.tc-featured-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-brand);
+  box-shadow: 0 0 6px rgba(79,110,247,.6);
+  flex-shrink: 0;
 }
 
-/* Compact variant */
-.tc.compact .tc-a { padding: var(--sp-3) var(--sp-4); gap: var(--sp-2) }
-.tc.compact .tc-foot { display: none }
+/* ── Compact variant ───────────────────────────────────────────*/
+.tc--compact .tc-link { padding: var(--sp-3) var(--sp-4); gap: var(--sp-2) }
+.tc--compact .tc-foot { display: none }
 </style>
