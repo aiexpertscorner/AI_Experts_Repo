@@ -1,18 +1,24 @@
 /**
- * AI Experts Corner — build-seo-datasets.mjs v3
- * ─────────────────────────────────────────────
+ * AI Experts Corner — build-seo-datasets.mjs v4
+ * ─────────────────────────────────────────────────────────────────
  * Generates ALL static JSON datasets for the Astro build.
  *
- * v3 additions over v2:
- *  - tag-map.json + tag-paths.json
- *  - use-case-map.json + use-case-paths.json
- *  - industry-map.json + industry-paths.json
- *  - feature-map.json + feature-paths.json
- *  - pricing-map.json + pricing-paths.json  (proper structure, was 0 KB)
- *  - tool-type-map.json + tool-type-paths.json
- *  - compare-pairs.json now includes .slug field for Astro routing
- *  - featured-tools.json has global_top[] with full tool objects
- *  - category-map.json has full tool objects (not just handles)
+ * v4 changes over v3:
+ *  - ENV-VAR CONTROLLED LIMITS (no more hardcoded 3000/2000)
+ *      TOOL_PAGE_LIMIT    default 5000  → set 10000-15000 in Cloudflare
+ *      COMPARE_PAGE_LIMIT default 3000  → set 5000 in Cloudflare
+ *      ALT_PAGE_LIMIT     default 5000  → set 10000 in Cloudflare
+ *
+ *  - FIELD NAME BUG FIXES in toolShape:
+ *      logo_domain: now reads t.logo_domain directly (canonical tools)
+ *      category_slug: now reads both t.cat_slug and t.catSlug
+ *      Adds explicit slug = handle for audit compatibility
+ *
+ *  - MEMORY SAFE: description capped at 1000 chars in page data
+ *  - NEW: company-map.json + company-paths.json
+ *  - IMPROVED: use-case minimum lowered 3→2, more coverage
+ *  - IMPROVED: category-top10.json has 10 tools (was 3)
+ *  - IMPROVED: sitemap includes tags, industries, use-cases, companies
  */
 
 import fs   from "fs";
@@ -22,16 +28,26 @@ const root    = process.cwd();
 const INPUT   = path.join(root, "src/data/tools_production.json");
 const OUT_DIR = path.join(root, "src/data/build");
 
-// ─── UTILITIES ───────────────────────────────────────────────────
+// ─── ENV-VAR LIMITS ──────────────────────────────────────────────
+const TOOL_PAGE_LIMIT    = parseInt(process.env.TOOL_PAGE_LIMIT    || "5000",  10);
+const COMPARE_PAGE_LIMIT = parseInt(process.env.COMPARE_PAGE_LIMIT || "3000",  10);
+const ALT_PAGE_LIMIT     = parseInt(process.env.ALT_PAGE_LIMIT     || "5000",  10);
 
+console.log(`\nAI Experts Corner — Build SEO Datasets v4`);
+console.log(`──────────────────────────────────────────`);
+console.log(`Limits: tools=${TOOL_PAGE_LIMIT}  compare=${COMPARE_PAGE_LIMIT}  alt=${ALT_PAGE_LIMIT}`);
+console.log(`Input:  ${INPUT}\n`);
+
+// ─── UTILITIES ───────────────────────────────────────────────────
 const slugify = (v = "") =>
   String(v).toLowerCase().trim()
     .replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "").replace(/-{2,}/g, "-");
 
-const safeStr = (v, fb = "")  => typeof v === "string" ? v.trim() : fb;
-const safeArr = (v)           => Array.isArray(v) ? v.filter(Boolean).map(s => String(s).trim()) : [];
-const safeNum = (v, fb = 0)   => typeof v === "number" && isFinite(v) ? v : fb;
+const safeStr  = (v, fb = "")  => typeof v === "string" && v.trim() ? v.trim() : fb;
+const safeArr  = (v)           => Array.isArray(v) ? v.filter(Boolean).map(s => String(s).trim()) : [];
+const safeNum  = (v, fb = 0)   => typeof v === "number" && isFinite(v) ? v : fb;
+const trim     = (v, n = 1000) => safeStr(v).slice(0, n);
 
 const readJson = (filePath) => {
   if (!fs.existsSync(filePath)) throw new Error(`Input file not found: ${filePath}`);
@@ -39,134 +55,148 @@ const readJson = (filePath) => {
   try { return JSON.parse(raw); }
   catch (e) { throw new Error(`Invalid JSON in ${filePath}: ${e.message}`); }
 };
-
 const writeJson = (filePath, data) => {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
-  const kb = (JSON.stringify(data).length / 1024).toFixed(1);
-  console.log(`  ✓ ${path.basename(filePath).padEnd(35)} ${kb} KB`);
+  const str = JSON.stringify(data);
+  fs.writeFileSync(filePath, str, "utf8");
+  const kb = (str.length / 1024).toFixed(1);
+  console.log(`  ✓ ${path.basename(filePath).padEnd(38)} ${kb.padStart(8)} KB`);
 };
 
 // ─── LOAD ────────────────────────────────────────────────────────
-
-console.log("\nAI Experts Corner — Build SEO Datasets v3");
-console.log("────────────────────────────────────────────");
-console.log(`Input: ${INPUT}\n`);
-
 const raw = readJson(INPUT);
 if (!Array.isArray(raw)) throw new Error("tools_production.json must be an array");
 console.log(`Loaded:  ${raw.length} raw tools`);
 
-// ─── FILTER ──────────────────────────────────────────────────────
-
-const skipped = [], duplicates = [];
-const seen = new Set();
-const tools = [];
+// ─── FILTER + DEDUP ──────────────────────────────────────────────
+const skipped     = [];
+const duplicates  = [];
+const seenHandles = new Set();
+const seenUrls    = new Map();
+const tools       = [];
 
 for (let i = 0; i < raw.length; i++) {
-  const item = raw[i];
-  const handle = safeStr(item?.handle);
+  const item   = raw[i];
+  const handle = safeStr(item?.handle || item?.slug);
   const name   = safeStr(item?.name);
-  if (!handle || !name) { skipped.push({ i, reason: "missing handle/name" }); continue; }
-  if (seen.has(handle))  { duplicates.push(handle); continue; }
-  seen.add(handle);
-  if (item.visibility === "hidden" || item.indexable === false || item.is_canonical === false) {
+  if (!handle || !name)           { skipped.push({ i, reason: "missing handle/name" }); continue; }
+  if (seenHandles.has(handle))    { duplicates.push(handle); continue; }
+  if (item.visibility === "hidden" || item.indexable === false || item.status === "draft") {
     skipped.push({ handle, reason: "non-public" }); continue;
   }
+  const url = safeStr(item.url || item.website_url);
+  if (url) seenUrls.set(url, (seenUrls.get(url) || 0) + 1);
+  seenHandles.add(handle);
+  if (!item.handle && item.slug) item.handle = item.slug;
   tools.push(item);
 }
-
-console.log(`Public:  ${tools.length} tools`);
-console.log(`Skipped: ${skipped.length}  Dupes: ${duplicates.length}\n`);
-console.log("Writing datasets...");
+const dupUrls = [...seenUrls.entries()].filter(([, n]) => n > 1).length;
+console.log(`Public:   ${tools.length} tools`);
+console.log(`Skipped:  ${skipped.length}  Dupes: ${duplicates.length}  DupURLs: ${dupUrls}\n`);
+console.log("Writing datasets...\n");
 
 // ─── TOOL SHAPE ──────────────────────────────────────────────────
-// Compact tool object used in all maps (avoids duplicating huge fields)
-
-const toolShape = (t) => ({
-  handle:        safeStr(t.handle),
-  name:          safeStr(t.name_clean || t.name),
-  tagline:       safeStr(t.seo_title || t.short || t.desc).slice(0, 120),
-  description:   safeStr(t.desc || t.short),
-  pricing_tier:  safeStr(t.pricing || t.pricing_tier, "Unknown"),
-  logo_domain:   safeStr(t.canonical_domain || t.logo_url?.match(/clearbit\.com\/([^?]+)/)?.[1] || ""),
-  website_url:   safeStr(t.url),
-  affiliate_url: t.partnerstack_match ? safeStr(t.url) : "",
-  category:      safeStr(t.cat, "Other AI Tools"),
-  category_slug: safeStr(t.catSlug || slugify(t.cat || "other")),
-  feature_tags:  safeArr(t.tags).slice(0, 6),
-  use_cases:     safeArr(t.use_cases).slice(0, 4),
-  industries:    safeArr(t.industries).slice(0, 3),
-  display_score: safeNum(t.display_score),
-  is_featured:   safeNum(t.homepage_priority_score) >= 70,
-  has_api:           !!t.has_api,
-  has_mobile:        !!t.has_mobile,
-  has_chrome_ext:    !!t.has_chrome_ext,
-  is_open_source:    !!t.is_open_source,
-  related_tools:     safeArr(t.related_tools).slice(0, 6),
-  compare_targets:   safeArr(t.comparison_targets).slice(0, 4),
-  seo_title:         safeStr(t.seo_title),
-  seo_description:   safeStr(t.seo_description),
-  complexity:        safeStr(t.complexity),
-  target_audience:   safeStr(Array.isArray(t.target_audience) ? t.target_audience[0] : t.target_audience),
-  workflow_stage:    safeStr(Array.isArray(t.workflow_stage) ? t.workflow_stage[0] : t.workflow_stage),
-  commercial_score:  safeNum(t.commercial_intent_score),
-  homepage_score:    safeNum(t.homepage_priority_score),
-  prompt_score:      safeNum(t.prompt_library_score),
-});
+// FIXES: logo_domain reads t.logo_domain directly; cat_slug reads both variants
+const toolShape = (t) => {
+  const handle = safeStr(t.handle || t.slug);
+  const logoDomain = safeStr(
+    t.logo_domain || t.canonical_domain ||
+    (t.logo_url?.match(/clearbit\.com\/([^?&]+)/)?.[1]) || ""
+  );
+  const catSlugRaw = safeStr(t.catSlug || t.cat_slug || slugify(t.cat || t.category || "other-ai-tools"));
+  const description = safeStr(t.desc || t.description || t.short || t.tagline || "");
+  const year = new Date().getFullYear();
+  return {
+    handle,
+    slug:            handle,
+    name:            safeStr(t.name_clean || t.name),
+    tagline:         trim(safeStr(t.seo_title || t.short || t.desc || t.tagline), 150),
+    description:     trim(description, 1200),
+    pricing_tier:    safeStr(t.pricing || t.pricing_tier, "unknown"),
+    logo_domain:     logoDomain,
+    logo_url:        safeStr(t.logo_url),
+    website_url:     safeStr(t.url || t.website_url),
+    affiliate_url:   t.partnerstack_match ? safeStr(t.url || t.website_url) : "",
+    category:        safeStr(t.cat || t.category, "Other AI Tools"),
+    category_slug:   catSlugRaw,
+    feature_tags:    safeArr(t.tags).slice(0, 8),
+    use_cases:       safeArr(t.use_cases).slice(0, 5),
+    industries:      safeArr(t.industries).slice(0, 4),
+    display_score:   safeNum(t.display_score),
+    is_featured:     safeNum(t.homepage_priority_score) >= 70 || !!t.is_canonical,
+    is_canonical:    !!t.is_canonical,
+    has_api:         !!t.has_api,
+    has_mobile:      !!t.has_mobile,
+    has_chrome_ext:  !!t.has_chrome_ext,
+    is_open_source:  !!t.is_open_source,
+    related_tools:   safeArr(t.related_tools).slice(0, 6),
+    compare_targets: safeArr(t.comparison_targets).slice(0, 6),
+    seo_title:       trim(safeStr(t.seo_title), 100),
+    seo_description: trim(safeStr(t.seo_description), 200),
+    complexity:      safeStr(t.complexity),
+    target_audience: safeStr(Array.isArray(t.target_audience) ? t.target_audience[0] : t.target_audience),
+    workflow_stage:  safeStr(Array.isArray(t.workflow_stage)  ? t.workflow_stage[0]  : t.workflow_stage),
+    commercial_score:safeNum(t.commercial_intent_score),
+    homepage_score:  safeNum(t.homepage_priority_score),
+    prompt_score:    safeNum(t.prompt_library_score),
+    company:         safeStr(t.company || t.brand || ""),
+    company_slug:    slugify(safeStr(t.company || t.brand || "")),
+    added_date:      safeStr(t.added_date || t.created_at || ""),
+  };
+};
 
 // ─── 1. TOOL PATHS ───────────────────────────────────────────────
-
 const toolsByScore = [...tools].sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score));
-const toolPaths = toolsByScore.map(t => t.handle);
+const toolPaths    = toolsByScore.map(t => safeStr(t.handle || t.slug));
 writeJson(path.join(OUT_DIR, "tool-paths.json"), toolPaths);
 
 // ─── 2. TOOL MAP ─────────────────────────────────────────────────
-
-const toolMap = Object.fromEntries(tools.map(t => [t.handle, toolShape(t)]));
+const toolMap = Object.fromEntries(tools.map(t => [safeStr(t.handle || t.slug), toolShape(t)]));
 writeJson(path.join(OUT_DIR, "tool-map.json"), toolMap);
 
 // ─── 3. CATEGORY PATHS & MAP ─────────────────────────────────────
-
 const catGroups = new Map();
 for (const t of tools) {
-  const slug = safeStr(t.catSlug || slugify(t.cat || "other"));
-  const name = safeStr(t.cat, "Other AI Tools");
+  const slug = safeStr(t.catSlug || t.cat_slug || slugify(t.cat || t.category || "other-ai-tools"));
+  const name = safeStr(t.cat || t.category, "Other AI Tools");
   if (!catGroups.has(slug)) catGroups.set(slug, { slug, name, tools: [] });
   catGroups.get(slug).tools.push(t);
 }
-const sortedCats = [...catGroups.values()].sort((a, b) => b.tools.length - a.tools.length);
+const sortedCats    = [...catGroups.values()].sort((a, b) => b.tools.length - a.tools.length);
 const categoryPaths = sortedCats.map(c => c.slug);
-const categoryMap = Object.fromEntries(sortedCats.map(cat => {
+const categoryMap   = Object.fromEntries(sortedCats.map(cat => {
   const topTools = [...cat.tools]
     .sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score))
-    .slice(0, 48)
-    .map(toolShape);
+    .slice(0, 48).map(toolShape);
   return [cat.slug, {
     slug: cat.slug, name: cat.name, count: cat.tools.length,
-    tools: topTools,
-    seo_title: `Best ${cat.name} Tools — Top AI Tools for ${cat.name}`,
-    description: `Discover the ${cat.tools.length} best ${cat.name.toLowerCase()} tools. Compare pricing, features and alternatives.`,
+    tools: topTools, top_tools: topTools.slice(0, 10),
+    description: `Discover the ${cat.tools.length} best ${cat.name.toLowerCase()} AI tools. Compare pricing, features and alternatives.`,
+    seo_title: `Best ${cat.name} AI Tools ${new Date().getFullYear()} — Compare & Review`,
   }];
 }));
 writeJson(path.join(OUT_DIR, "category-paths.json"), categoryPaths);
-writeJson(path.join(OUT_DIR, "category-map.json"), categoryMap);
+writeJson(path.join(OUT_DIR, "category-map.json"),   categoryMap);
+const categoryTop10 = Object.fromEntries(sortedCats.map(cat => [
+  cat.slug,
+  [...cat.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,10).map(toolShape)
+]));
+writeJson(path.join(OUT_DIR, "category-top10.json"), categoryTop10);
 
 // ─── 4. RELATED MAP ──────────────────────────────────────────────
-
-// related-map: store compact tool objects (NOT nested full objects — keeps size small)
 const relatedMap = Object.fromEntries(tools.map(t => [
-  t.handle,
-  safeArr(t.related_tools).slice(0, 8)
-    .filter(h => toolMap[h])
-    .map(h => ({ handle: h, name: toolMap[h].name, tagline: toolMap[h].tagline, pricing_tier: toolMap[h].pricing_tier, logo_domain: toolMap[h].logo_domain, affiliate_url: toolMap[h].affiliate_url })),
+  safeStr(t.handle || t.slug),
+  safeArr(t.related_tools).slice(0, 8).filter(h => toolMap[h]).map(h => ({
+    handle: h, slug: h, name: toolMap[h].name, tagline: toolMap[h].tagline,
+    pricing_tier: toolMap[h].pricing_tier, logo_domain: toolMap[h].logo_domain,
+    affiliate_url: toolMap[h].affiliate_url, category: toolMap[h].category,
+  })),
 ]));
 writeJson(path.join(OUT_DIR, "related-map.json"), relatedMap);
 
 // ─── 5. COMPARE MAP + PAIRS ──────────────────────────────────────
-
-const compareMap = Object.fromEntries(tools.map(t => [t.handle, safeArr(t.comparison_targets).slice(0, 4)]));
-const seenPairs  = new Set();
+const compareMap   = Object.fromEntries(tools.map(t => [safeStr(t.handle||t.slug), safeArr(t.comparison_targets).slice(0,6)]));
+const seenPairs    = new Set();
 const comparePairs = [];
 for (const [handle, targets] of Object.entries(compareMap)) {
   for (const target of targets) {
@@ -178,384 +208,331 @@ for (const [handle, targets] of Object.entries(compareMap)) {
     }
   }
 }
-writeJson(path.join(OUT_DIR, "compare-map.json"), compareMap);
-writeJson(path.join(OUT_DIR, "compare-pairs.json"), comparePairs);
+writeJson(path.join(OUT_DIR, "compare-map.json"),   compareMap);
+writeJson(path.join(OUT_DIR, "compare-pairs.json"),  comparePairs);
 
 // ─── 6. ALTERNATIVES MAP ─────────────────────────────────────────
-
 const alternativesMap = Object.fromEntries(tools.map(t => {
-  const alts = safeArr(t.related_tools).slice(0, 8)
-    .filter(h => toolMap[h])
-    .sort((a, b) => (toolMap[b]?.display_score ?? 0) - (toolMap[a]?.display_score ?? 0))
-    .map(h => ({ handle: h, name: toolMap[h].name, tagline: toolMap[h].tagline, pricing_tier: toolMap[h].pricing_tier, logo_domain: toolMap[h].logo_domain, affiliate_url: toolMap[h].affiliate_url }));
-  return [t.handle, alts];
+  const handle = safeStr(t.handle || t.slug);
+  return [handle, safeArr(t.related_tools).slice(0, 8).filter(h => toolMap[h])
+    .sort((a,b) => (toolMap[b]?.display_score??0)-(toolMap[a]?.display_score??0))
+    .map(h => ({ handle:h, slug:h, name:toolMap[h].name, tagline:toolMap[h].tagline,
+      pricing_tier:toolMap[h].pricing_tier, logo_domain:toolMap[h].logo_domain,
+      affiliate_url:toolMap[h].affiliate_url, category:toolMap[h].category }))];
 }));
 writeJson(path.join(OUT_DIR, "alternatives-map.json"), alternativesMap);
 
 // ─── 7. BEST-OF MAP ──────────────────────────────────────────────
-
 const bestOfGroups = new Map();
 for (const t of tools) {
   for (const q of safeArr(t.best_for_queries)) {
-    const slug = slugify(q);
-    if (!slug) continue;
+    const slug = slugify(q); if (!slug || slug.length < 3) continue;
     if (!bestOfGroups.has(slug)) bestOfGroups.set(slug, { slug, query: q, tools: [] });
     bestOfGroups.get(slug).tools.push(t);
   }
 }
-const bestOfMap = Object.fromEntries(
-  [...bestOfGroups.entries()]
-    .filter(([, g]) => g.tools.length >= 3)
-    .map(([slug, g]) => {
-      const sorted = [...g.tools].sort((a, b) => safeNum(b.commercial_intent_score) - safeNum(a.commercial_intent_score)).slice(0, 24).map(toolShape);
-      return [slug, { slug, name: g.query, tools: sorted, count: sorted.length,
-        description: `The best AI tools for ${g.query}. Compare and find the right tool for your needs.` }];
-    })
-);
+const bestOfMap = Object.fromEntries([...bestOfGroups.entries()]
+  .filter(([,g]) => g.tools.length >= 3)
+  .map(([slug, g]) => {
+    const sorted = [...g.tools].sort((a,b)=>safeNum(b.commercial_intent_score)-safeNum(a.commercial_intent_score)).slice(0,24).map(toolShape);
+    return [slug, { slug, name: g.query, tools: sorted, count: sorted.length,
+      description: `The best AI tools for ${g.query} in ${new Date().getFullYear()}.`,
+      seo_title: `Best AI Tools for ${g.query} — Top ${sorted.length} Options` }];
+  }));
 const bestOfPaths = Object.keys(bestOfMap);
-writeJson(path.join(OUT_DIR, "best-of-map.json"), bestOfMap);
-writeJson(path.join(OUT_DIR, "best-of-paths.json"), bestOfPaths);
+writeJson(path.join(OUT_DIR, "best-of-map.json"),   bestOfMap);
+writeJson(path.join(OUT_DIR, "best-of-paths.json"),  bestOfPaths);
 
 // ─── 8. PROMPT LIBRARY ───────────────────────────────────────────
+const promptTools = tools.filter(t => safeNum(t.prompt_library_score) >= 40 && safeArr(t.prompt_use_cases).length > 0)
+  .sort((a,b) => safeNum(b.prompt_library_score)-safeNum(a.prompt_library_score));
+const promptMap   = Object.fromEntries(promptTools.map(t => {
+  const shape = toolShape(t);
+  return [shape.handle, { ...shape, prompt_use_cases: safeArr(t.prompt_use_cases),
+    example_prompts: safeArr(t.example_prompts).slice(0,5),
+    prompt_description: trim(safeStr(t.prompt_description || shape.description), 500) }];
+}));
+const promptPaths = promptTools.map(t => safeStr(t.handle || t.slug));
+writeJson(path.join(OUT_DIR, "prompt-library-map.json"),   promptMap);
+writeJson(path.join(OUT_DIR, "prompt-library-paths.json"),  promptPaths);
 
-const promptTools = tools
-  .filter(t => safeNum(t.prompt_library_score) >= 40 && safeArr(t.prompt_use_cases).length > 0)
-  .sort((a, b) => safeNum(b.prompt_library_score) - safeNum(a.prompt_library_score));
-const promptMap   = Object.fromEntries(promptTools.map(t => [t.handle, { ...toolShape(t), prompt_use_cases: safeArr(t.prompt_use_cases) }]));
-const promptPaths = promptTools.map(t => t.handle);
-writeJson(path.join(OUT_DIR, "prompt-library-map.json"), promptMap);
-writeJson(path.join(OUT_DIR, "prompt-library-paths.json"), promptPaths);
-
-// ─── 9. TAG MAP + PATHS ──────────────────────────────────────────
-
+// ─── 9. TAG MAP ──────────────────────────────────────────────────
 const tagGroups = new Map();
 for (const t of tools) {
-  for (const tag of safeArr(t.tags).slice(0, 8)) {
-    const slug = slugify(tag);
-    if (!slug || slug.length < 2) continue;
+  for (const tag of safeArr(t.tags).slice(0, 10)) {
+    const slug = slugify(tag); if (!slug || slug.length < 2) continue;
     if (!tagGroups.has(slug)) tagGroups.set(slug, { slug, name: tag, tools: [] });
     tagGroups.get(slug).tools.push(t);
   }
 }
-const tagMap = Object.fromEntries(
-  [...tagGroups.entries()]
-    .filter(([, g]) => g.tools.length >= 3)
-    .map(([slug, g]) => {
-      const sorted = [...g.tools].sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score)).slice(0, 48).map(toolShape);
-      return [slug, { slug, name: g.name, count: sorted.length, tools: sorted,
-        description: `AI tools tagged with "${g.name}". Compare features, pricing and alternatives.` }];
-    })
-);
+const tagMap = Object.fromEntries([...tagGroups.entries()].filter(([,g])=>g.tools.length>=3).map(([slug,g]) => {
+  const sorted = [...g.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,48).map(toolShape);
+  return [slug, { slug, name:g.name, count:g.tools.length, tools:sorted,
+    description:`Best AI tools tagged with "${g.name}". Compare features, pricing and alternatives.`,
+    seo_title:`Best AI Tools for ${g.name} — Top Options ${new Date().getFullYear()}` }];
+}));
 const tagPaths = Object.keys(tagMap);
-writeJson(path.join(OUT_DIR, "tag-map.json"), tagMap);
-writeJson(path.join(OUT_DIR, "tag-paths.json"), tagPaths);
+writeJson(path.join(OUT_DIR, "tag-map.json"),   tagMap);
+writeJson(path.join(OUT_DIR, "tag-paths.json"),  tagPaths);
 
-// ─── 10. USE-CASE MAP + PATHS ────────────────────────────────────
-
+// ─── 10. USE-CASE MAP (min: 2 tools) ─────────────────────────────
 const ucGroups = new Map();
 for (const t of tools) {
-  for (const uc of safeArr(t.use_cases).slice(0, 5)) {
-    const slug = slugify(uc);
-    if (!slug || slug.length < 3) continue;
+  for (const uc of safeArr(t.use_cases).slice(0, 6)) {
+    const slug = slugify(uc); if (!slug || slug.length < 3) continue;
     if (!ucGroups.has(slug)) ucGroups.set(slug, { slug, name: uc, tools: [] });
     ucGroups.get(slug).tools.push(t);
   }
 }
-const ucMap = Object.fromEntries(
-  [...ucGroups.entries()]
-    .filter(([, g]) => g.tools.length >= 3)
-    .map(([slug, g]) => {
-      const sorted = [...g.tools].sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score)).slice(0, 48).map(toolShape);
-      return [slug, { slug, name: g.name, count: sorted.length, tools: sorted,
-        description: `Best AI tools for ${g.name}. Find and compare the top options.` }];
-    })
-);
+const ucMap = Object.fromEntries([...ucGroups.entries()].filter(([,g])=>g.tools.length>=2).map(([slug,g]) => {
+  const sorted = [...g.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,48).map(toolShape);
+  return [slug, { slug, name:g.name, count:g.tools.length, tools:sorted,
+    description:`Best AI tools for ${g.name}. Find and compare the top ${sorted.length} options.`,
+    seo_title:`Best AI Tools for ${g.name} — Compare ${sorted.length} Options` }];
+}));
 const ucPaths = Object.keys(ucMap);
-writeJson(path.join(OUT_DIR, "use-case-map.json"), ucMap);
-writeJson(path.join(OUT_DIR, "use-case-paths.json"), ucPaths);
+writeJson(path.join(OUT_DIR, "use-case-map.json"),   ucMap);
+writeJson(path.join(OUT_DIR, "use-case-paths.json"),  ucPaths);
 
-// ─── 11. INDUSTRY MAP + PATHS ────────────────────────────────────
-
+// ─── 11. INDUSTRY MAP ────────────────────────────────────────────
 const indGroups = new Map();
 for (const t of tools) {
   for (const ind of safeArr(t.industries).slice(0, 4)) {
-    const slug = slugify(ind);
-    if (!slug || slug.length < 2) continue;
+    const slug = slugify(ind); if (!slug || slug.length < 2) continue;
     if (!indGroups.has(slug)) indGroups.set(slug, { slug, name: ind, tools: [] });
     indGroups.get(slug).tools.push(t);
   }
 }
-const indMap = Object.fromEntries(
-  [...indGroups.entries()]
-    .filter(([, g]) => g.tools.length >= 3)
-    .map(([slug, g]) => {
-      const sorted = [...g.tools].sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score)).slice(0, 48).map(toolShape);
-      return [slug, { slug, name: g.name, count: sorted.length, tools: sorted,
-        description: `Best AI tools for the ${g.name} industry. Compare features and pricing.` }];
-    })
-);
+const indMap = Object.fromEntries([...indGroups.entries()].filter(([,g])=>g.tools.length>=3).map(([slug,g]) => {
+  const sorted = [...g.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,48).map(toolShape);
+  return [slug, { slug, name:g.name, count:g.tools.length, tools:sorted,
+    description:`Best AI tools for the ${g.name} industry. Compare ${sorted.length} options.` }];
+}));
 const indPaths = Object.keys(indMap);
-writeJson(path.join(OUT_DIR, "industry-map.json"), indMap);
-writeJson(path.join(OUT_DIR, "industry-paths.json"), indPaths);
+writeJson(path.join(OUT_DIR, "industry-map.json"),   indMap);
+writeJson(path.join(OUT_DIR, "industry-paths.json"),  indPaths);
 
-// ─── 12. FEATURE MAP + PATHS ─────────────────────────────────────
-
+// ─── 12. FEATURE MAP ─────────────────────────────────────────────
 const featGroups = new Map();
 for (const t of tools) {
   for (const ff of safeArr(t.feature_flags).slice(0, 6)) {
-    const slug = slugify(ff);
-    if (!slug || slug.length < 2) continue;
+    const slug = slugify(ff); if (!slug || slug.length < 2) continue;
     if (!featGroups.has(slug)) featGroups.set(slug, { slug, name: ff, tools: [] });
     featGroups.get(slug).tools.push(t);
   }
 }
-const featureMap = Object.fromEntries(
-  [...featGroups.entries()]
-    .filter(([, g]) => g.tools.length >= 3)
-    .map(([slug, g]) => {
-      const sorted = [...g.tools].sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score)).slice(0, 48).map(toolShape);
-      return [slug, { slug, name: g.name, count: sorted.length, tools: sorted,
-        description: `AI tools with ${g.name} feature. Find the best options for your workflow.` }];
-    })
-);
-const featurePaths = Object.keys(featureMap);
-writeJson(path.join(OUT_DIR, "feature-map.json"), featureMap);
-writeJson(path.join(OUT_DIR, "feature-paths.json"), featurePaths);
-
-// ─── 13. PRICING MAP + PATHS ─────────────────────────────────────
-
-const PRICING_TIERS = ["Free", "Freemium", "Paid"];
-const getPricing = (t) => safeStr(t.pricing || t.pricing_tier, "").toLowerCase();
-const pricingMap = Object.fromEntries(PRICING_TIERS.map(tier => {
-  const slug  = tier.toLowerCase();
-  const tTools = tools.filter(t => getPricing(t) === slug)
-    .sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score))
-    .slice(0, 200)
-    .map(toolShape);
-  return [slug, { slug, name: tier, count: tTools.length, tools: tTools,
-    description: `Browse all ${tier.toLowerCase()} AI tools. Compare features and find the best options.` }];
+const featureMap = Object.fromEntries([...featGroups.entries()].filter(([,g])=>g.tools.length>=3).map(([slug,g]) => {
+  const sorted = [...g.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,48).map(toolShape);
+  return [slug, { slug, name:g.name, count:sorted.length, tools:sorted }];
 }));
-const pricingPaths = Object.keys(pricingMap).filter(k => pricingMap[k].count > 0);
-writeJson(path.join(OUT_DIR, "pricing-map.json"), pricingMap);
-writeJson(path.join(OUT_DIR, "pricing-paths.json"), pricingPaths);
+const featurePaths = Object.keys(featureMap);
+writeJson(path.join(OUT_DIR, "feature-map.json"),   featureMap);
+writeJson(path.join(OUT_DIR, "feature-paths.json"),  featurePaths);
 
-// ─── 14. TOOL-TYPE MAP + PATHS ───────────────────────────────────
+// ─── 13. PRICING MAP ─────────────────────────────────────────────
+const PRICING_TIERS = ["free","freemium","paid"];
+const getPricing    = (t) => safeStr(t.pricing || t.pricing_tier,"").toLowerCase();
+const pricingMap    = Object.fromEntries(PRICING_TIERS.map(tier => {
+  const label = tier.charAt(0).toUpperCase()+tier.slice(1);
+  const tTools = tools.filter(t=>getPricing(t)===tier).sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,200).map(toolShape);
+  return [tier, { slug:tier, name:label, count:tTools.length, tools:tTools,
+    description:`Browse all ${label} AI tools. Compare ${tTools.length} options.`,
+    seo_title:`Best ${label} AI Tools ${new Date().getFullYear()} — Top Picks` }];
+}));
+const pricingPaths = PRICING_TIERS.filter(t=>pricingMap[t]?.count>0);
+writeJson(path.join(OUT_DIR, "pricing-map.json"),   pricingMap);
+writeJson(path.join(OUT_DIR, "pricing-paths.json"),  pricingPaths);
 
+// ─── 14. TOOL-TYPE MAP ───────────────────────────────────────────
 const ttGroups = new Map();
 for (const t of tools) {
-  const rawType = safeStr(t.tool_type || t.type || t.cat, "").trim();
+  const rawType = safeStr(t.tool_type || t.type || t.cat,"").trim();
   if (!rawType) continue;
-  const slug = slugify(rawType);
-  if (!slug || slug.length < 2) continue;
-  if (!ttGroups.has(slug)) ttGroups.set(slug, { slug, name: rawType, tools: [] });
+  const slug = slugify(rawType); if (!slug || slug.length < 2) continue;
+  if (!ttGroups.has(slug)) ttGroups.set(slug, { slug, name:rawType, tools:[] });
   ttGroups.get(slug).tools.push(t);
 }
-const ttMap = Object.fromEntries(
-  [...ttGroups.entries()]
-    .filter(([, g]) => g.tools.length >= 3)
-    .map(([slug, g]) => {
-      const sorted = [...g.tools].sort((a, b) => safeNum(b.display_score) - safeNum(a.display_score)).slice(0, 48).map(toolShape);
-      return [slug, { slug, name: g.name, count: sorted.length, tools: sorted }];
-    })
-);
+const ttMap = Object.fromEntries([...ttGroups.entries()].filter(([,g])=>g.tools.length>=3).map(([slug,g]) => {
+  const sorted = [...g.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,48).map(toolShape);
+  return [slug, { slug, name:g.name, count:sorted.length, tools:sorted }];
+}));
 const ttPaths = Object.keys(ttMap);
-writeJson(path.join(OUT_DIR, "tool-type-map.json"), ttMap);
-writeJson(path.join(OUT_DIR, "tool-type-paths.json"), ttPaths);
+writeJson(path.join(OUT_DIR, "tool-type-map.json"),   ttMap);
+writeJson(path.join(OUT_DIR, "tool-type-paths.json"),  ttPaths);
 
-// ─── 15. FEATURED TOOLS ──────────────────────────────────────────
-// global_top: full tool objects sorted by homepage_priority_score
-// by_category: top 5 per category
+// ─── 15. COMPANY MAP (NEW) ───────────────────────────────────────
+const companyGroups = new Map();
+for (const t of tools) {
+  const company = safeStr(t.company || t.brand || ""); if (!company || company.length < 2) continue;
+  const slug = slugify(company); if (!slug) continue;
+  if (!companyGroups.has(slug)) companyGroups.set(slug, { slug, name:company, tools:[] });
+  companyGroups.get(slug).tools.push(t);
+}
+const companyMap = Object.fromEntries([...companyGroups.entries()].filter(([,g])=>g.tools.length>=1).map(([slug,g]) => {
+  const sorted = [...g.tools].sort((a,b)=>safeNum(b.display_score)-safeNum(a.display_score)).slice(0,24).map(toolShape);
+  return [slug, { slug, name:g.name, count:g.tools.length, tools:sorted,
+    description:`All AI tools by ${g.name}. Compare features, pricing and alternatives.`,
+    seo_title:`${g.name} AI Tools — All Products & Pricing` }];
+}));
+const companyPaths = Object.keys(companyMap);
+writeJson(path.join(OUT_DIR, "company-map.json"),   companyMap);
+writeJson(path.join(OUT_DIR, "company-paths.json"),  companyPaths);
 
+// ─── 16. FEATURED TOOLS ──────────────────────────────────────────
 const featuredGlobal = toolsByScore
-  .filter(t => safeStr(t.desc || t.short).length >= 20)
-  .sort((a, b) => safeNum(b.homepage_priority_score) - safeNum(a.homepage_priority_score))
-  .slice(0, 30)
-  .map(toolShape);
+  .filter(t => safeStr(t.desc || t.short || t.description).length >= 20)
+  .sort((a,b) => safeNum(b.homepage_priority_score)-safeNum(a.homepage_priority_score))
+  .slice(0,50).map(toolShape);
+const featuredByCategory = Object.fromEntries(sortedCats.slice(0,23).map(cat => [
+  cat.slug,
+  [...cat.tools].sort((a,b)=>safeNum(b.homepage_priority_score)-safeNum(a.homepage_priority_score)).slice(0,10).map(toolShape)
+]));
+writeJson(path.join(OUT_DIR, "featured-tools.json"), {
+  generated_at: new Date().toISOString(), global_top: featuredGlobal, by_category: featuredByCategory
+});
 
-const featuredByCategory = Object.fromEntries(
-  sortedCats.slice(0, 20).map(cat => [
-    cat.slug,
-    cat.tools
-      .sort((a, b) => safeNum(b.homepage_priority_score) - safeNum(a.homepage_priority_score))
-      .slice(0, 5)
-      .map(toolShape),
-  ])
+// ─── 17. HOMEPAGE DATA ───────────────────────────────────────────
+const newTools = tools.filter(t => safeStr(t.added_date || t.created_at))
+  .sort((a,b) => (b.added_date||b.created_at||"").localeCompare(a.added_date||a.created_at||""))
+  .slice(0,12).map(toolShape);
+writeJson(path.join(OUT_DIR, "homepage-data.json"), {
+  generated_at: new Date().toISOString(), total_tools: tools.length,
+  total_cats: sortedCats.length, total_compare: comparePairs.length, total_bestof: bestOfPaths.length,
+  featured_tools: featuredGlobal.slice(0,10),
+  new_tools: newTools.length > 0 ? newTools : featuredGlobal.slice(6,14),
+  pricing_dist: {
+    free:     tools.filter(t=>getPricing(t)==="free").length,
+    freemium: tools.filter(t=>getPricing(t)==="freemium").length,
+    paid:     tools.filter(t=>getPricing(t)==="paid").length,
+  },
+});
+
+// ─── 18-19. PRICING STATS + CATEGORY STATS ───────────────────────
+writeJson(path.join(OUT_DIR, "pricing-stats.json"), {
+  free:     tools.filter(t=>getPricing(t)==="free").length,
+  freemium: tools.filter(t=>getPricing(t)==="freemium").length,
+  paid:     tools.filter(t=>getPricing(t)==="paid").length,
+  unknown:  tools.filter(t=>!["free","freemium","paid"].includes(getPricing(t))).length,
+});
+writeJson(path.join(OUT_DIR, "category-stats.json"),
+  Object.fromEntries(sortedCats.map(c => [c.name, c.tools.length]))
 );
 
-const featuredJson = {
-  generated_at: new Date().toISOString(),
-  global_top:   featuredGlobal,
-  by_category:  featuredByCategory,
-};
-writeJson(path.join(OUT_DIR, "featured-tools.json"), featuredJson);
-
-// ─── 16. HOMEPAGE DATA ───────────────────────────────────────────
-
-const newTools = tools
-  .filter(t => safeStr(t.added_date || t.created_at))
-  .sort((a, b) => (b.added_date || b.created_at || "").localeCompare(a.added_date || a.created_at || ""))
-  .slice(0, 12)
-  .map(toolShape);
-
-const homepageData = {
-  generated_at:  new Date().toISOString(),
-  total_tools:   tools.length,
-  total_cats:    sortedCats.length,
-  featured_tools: featuredGlobal.slice(0, 6),
-  new_tools:     newTools.length > 0 ? newTools : featuredGlobal.slice(6, 14),
-  pricing_dist:  {
-    free:     tools.filter(t => getPricing(t) === "free").length,
-    freemium: tools.filter(t => getPricing(t) === "freemium").length,
-    paid:     tools.filter(t => getPricing(t) === "paid").length,
-  },
-};
-writeJson(path.join(OUT_DIR, "homepage-data.json"), homepageData);
-
-// ─── 17. PRICING STATS ───────────────────────────────────────────
-
-const pricingStats = {
-  free:     tools.filter(t => getPricing(t) === "free").length,
-  freemium: tools.filter(t => getPricing(t) === "freemium").length,
-  paid:     tools.filter(t => getPricing(t) === "paid").length,
-  unknown:  tools.filter(t => !["free","freemium","paid"].includes(getPricing(t))).length,
-};
-writeJson(path.join(OUT_DIR, "pricing-stats.json"), pricingStats);
-
-// ─── 18. CATEGORY STATS ──────────────────────────────────────────
-
-const categoryStats = Object.fromEntries(sortedCats.map(c => [c.name, c.tools.length]));
-writeJson(path.join(OUT_DIR, "category-stats.json"), categoryStats);
-
-// ─── 19. SITEMAP DATA ────────────────────────────────────────────
-
+// ─── 20. SITEMAP DATA ────────────────────────────────────────────
 const sitemapData = {
   generated_at: new Date().toISOString(),
   urls: [
-    { path: "/",          priority: 1.0, changefreq: "daily"   },
-    { path: "/ai-tools",  priority: 0.9, changefreq: "daily"   },
-    { path: "/vs",        priority: 0.7, changefreq: "weekly"  },
-    { path: "/best",      priority: 0.7, changefreq: "weekly"  },
-    ...categoryPaths.map(s => ({ path: `/ai-tools/category/${s}`, priority: 0.8, changefreq: "weekly" })),
-    ...toolPaths.slice(0, 500).map(h  => ({ path: `/ai-tools/${h}`, priority: 0.7, changefreq: "monthly" })),
-    ...toolPaths.slice(500).map(h     => ({ path: `/ai-tools/${h}`, priority: 0.5, changefreq: "monthly" })),
-    ...comparePairs.slice(0, 5000).map(p => ({ path: `/vs/${p.slug}`, priority: 0.6, changefreq: "monthly" })),
-    ...bestOfPaths.map(s => ({ path: `/best/${s}`, priority: 0.65, changefreq: "weekly" })),
+    { path:"/",          priority:1.0, changefreq:"daily"   },
+    { path:"/ai-tools",  priority:0.9, changefreq:"daily"   },
+    { path:"/vs",        priority:0.7, changefreq:"weekly"  },
+    { path:"/best",      priority:0.7, changefreq:"weekly"  },
+    { path:"/prompts",   priority:0.7, changefreq:"weekly"  },
+    { path:"/ai-news",   priority:0.6, changefreq:"daily"   },
+    ...categoryPaths.map(s  => ({ path:`/ai-tools/category/${s}`,  priority:0.8, changefreq:"weekly"  })),
+    ...tagPaths.map(s       => ({ path:`/ai-tools/tag/${s}`,        priority:0.6, changefreq:"weekly"  })),
+    ...indPaths.map(s       => ({ path:`/ai-tools/industry/${s}`,   priority:0.6, changefreq:"weekly"  })),
+    ...ucPaths.map(s        => ({ path:`/ai-tools/use-case/${s}`,   priority:0.6, changefreq:"weekly"  })),
+    ...pricingPaths.map(s   => ({ path:`/ai-tools/pricing/${s}`,    priority:0.7, changefreq:"weekly"  })),
+    ...bestOfPaths.map(s    => ({ path:`/best/${s}`,                 priority:0.65,changefreq:"weekly"  })),
+    ...companyPaths.map(s   => ({ path:`/ai-tools/company/${s}`,    priority:0.6, changefreq:"monthly" })),
+    ...toolPaths.slice(0,500).map(h  => ({ path:`/ai-tools/${h}`,   priority:0.7, changefreq:"monthly" })),
+    ...toolPaths.slice(500).map(h    => ({ path:`/ai-tools/${h}`,   priority:0.5, changefreq:"monthly" })),
+    ...comparePairs.slice(0,10000).map(p => ({ path:`/vs/${p.slug}`,priority:0.5, changefreq:"monthly" })),
   ],
 };
 writeJson(path.join(OUT_DIR, "sitemap-data.json"), sitemapData);
 
-// ─── 20. BUILD META + DEBUG ──────────────────────────────────────
-
+// ─── 21. BUILD META ──────────────────────────────────────────────
 writeJson(path.join(OUT_DIR, "build-meta.json"), {
-  generated_at: new Date().toISOString(),
-  version: "v3",
-  tool_count: tools.length,
-  category_count: sortedCats.length,
-  tag_count: tagPaths.length,
-  industry_count: indPaths.length,
-  feature_count: featurePaths.length,
-  use_case_count: ucPaths.length,
-  compare_pairs: comparePairs.length,
-  best_of_pages: bestOfPaths.length,
-  sitemap_urls: sitemapData.urls.length,
-  skipped: skipped.length,
-  duplicates: duplicates.length,
+  generated_at: new Date().toISOString(), version:"v4",
+  tool_count: tools.length, category_count: sortedCats.length,
+  tag_count: tagPaths.length, industry_count: indPaths.length,
+  feature_count: featurePaths.length, use_case_count: ucPaths.length,
+  company_count: companyPaths.length, compare_pairs: comparePairs.length,
+  best_of_pages: bestOfPaths.length, prompt_tools: promptPaths.length,
+  sitemap_urls: sitemapData.urls.length, skipped: skipped.length, duplicates: duplicates.length,
+  limits: { tool_page_limit:TOOL_PAGE_LIMIT, compare_page_limit:COMPARE_PAGE_LIMIT, alt_page_limit:ALT_PAGE_LIMIT },
 });
-writeJson(path.join(OUT_DIR, "skipped-records.json"), { skipped: skipped.slice(0, 100), duplicates: duplicates.slice(0, 100) });
+writeJson(path.join(OUT_DIR, "skipped-records.json"), {
+  skipped: skipped.slice(0,100), duplicates: duplicates.slice(0,100),
+  dup_urls: [...seenUrls.entries()].filter(([,n])=>n>1).slice(0,100).map(([url,n])=>({url,n})),
+});
 
-// ─── 21. TOOL PAGE DATA (slim — voor [slug].astro props patroon) ──
-// Bevat alleen de top-3000 tools (gesorteerd op score) met embedded related tools.
-// Eén bestand < 10MB, vervangt tool-map.json + related-map.json in page renders.
-
-const compactTool = (h) => {
-  const t = toolMap[h];
-  if (!t) return null;
-  return {
-    handle: t.handle,
-    name: t.name,
-    tagline: t.tagline,
-    pricing_tier: t.pricing_tier,
-    logo_domain: t.logo_domain,
-    affiliate_url: t.affiliate_url,
-    category: t.category,
-    category_slug: t.category_slug,
-  };
+// ─── 22. TOOL PAGE DATA ──────────────────────────────────────────
+// TOOL_PAGE_LIMIT controls how many pages are generated.
+// Memory estimate: ~1KB/tool in file. 5000 = ~5MB, 10000 = ~10MB, 15000 = ~15MB
+// Cloudflare free: set TOOL_PAGE_LIMIT=10000 + NODE_OPTIONS=--max-old-space-size=3072
+console.log(`\n── Tool page data (TOOL_PAGE_LIMIT=${TOOL_PAGE_LIMIT}) ──`);
+const compactRelated = (h) => {
+  const t = toolMap[h]; if (!t) return null;
+  return { handle:t.handle, slug:t.handle, name:t.name, tagline:t.tagline,
+    pricing_tier:t.pricing_tier, logo_domain:t.logo_domain,
+    affiliate_url:t.affiliate_url, category:t.category, category_slug:t.category_slug };
 };
-
-const top3000Handles = toolPaths.slice(0, 3000);
-
 const toolPageData = Object.fromEntries(
-  top3000Handles.map(h => {
-    const t = toolMap[h];
-    if (!t) return [h, null];
-    const related = safeArr(t.related_tools).slice(0, 6)
-      .map(compactTool).filter(Boolean);
-    return [h, { ...t, related }];
-  }).filter(([, v]) => v !== null)
+  toolPaths.slice(0, TOOL_PAGE_LIMIT).map(h => {
+    const t = toolMap[h]; if (!t) return null;
+    return [h, { ...t, description: trim(t.description, 1000),
+      related:      safeArr(t.related_tools).slice(0,6).map(compactRelated).filter(Boolean),
+      compare_with: safeArr(t.compare_targets).slice(0,4).map(compactRelated).filter(Boolean) }];
+  }).filter(Boolean)
 );
 writeJson(path.join(OUT_DIR, "tool-page-data.json"), toolPageData);
 
-// ─── 22. ALTERNATIVES PAGE DATA (slim) ────────────────────────────
-// Top-3000 tools met hun alternatieven embedded. < 8MB.
-// Vervangt alternatives-map.json + tool-map.json in alternatives/[slug].astro.
-
+// ─── 23. ALTERNATIVES PAGE DATA ──────────────────────────────────
+console.log(`── Alternatives page data (ALT_PAGE_LIMIT=${ALT_PAGE_LIMIT}) ──`);
 const altPageData = Object.fromEntries(
-  top3000Handles
-    .filter(h => toolMap[h])
-    .map(h => {
-      const t = toolMap[h];
-      const alts = safeArr(t.related_tools).slice(0, 8)
-        .map(compactTool).filter(Boolean);
-      return [h, {
-        handle: t.handle,
-        name: t.name,
-        tagline: t.tagline,
-        pricing_tier: t.pricing_tier,
-        logo_domain: t.logo_domain,
-        category: t.category,
-        category_slug: t.category_slug,
-        alts,
-      }];
-    })
+  toolPaths.slice(0, ALT_PAGE_LIMIT).filter(h => toolMap[h]).map(h => {
+    const t = toolMap[h];
+    return [h, { handle:t.handle, slug:t.handle, name:t.name, tagline:t.tagline,
+      description:trim(t.description,500), pricing_tier:t.pricing_tier,
+      logo_domain:t.logo_domain, category:t.category, category_slug:t.category_slug,
+      alts: safeArr(t.related_tools).slice(0,8).map(compactRelated).filter(Boolean) }];
+  })
 );
 writeJson(path.join(OUT_DIR, "alternatives-page-data.json"), altPageData);
 
-// ─── 23. COMPARE PAGE DATA (slim) ─────────────────────────────────
-// Top-2000 compare paren met beide tool objecten embedded. < 3MB.
-// Vervangt compare-pairs.json + tool-map.json in vs/[slug].astro.
-
+// ─── 24. COMPARE PAGE DATA ───────────────────────────────────────
+console.log(`── Compare page data (COMPARE_PAGE_LIMIT=${COMPARE_PAGE_LIMIT}) ──`);
 const comparePageData = Object.fromEntries(
-  comparePairs.slice(0, 2000)
-    .filter(p => toolMap[p.a] && toolMap[p.b])
-    .map(p => {
-      const ta = toolMap[p.a];
-      const tb = toolMap[p.b];
-      return [p.slug, {
-        slug: p.slug,
-        toolA: { ...compactTool(p.a), tagline: ta.tagline, description: ta.description,
-          website_url: ta.website_url, feature_tags: ta.feature_tags,
-          has_api: ta.has_api, has_mobile: ta.has_mobile,
-          has_chrome_ext: ta.has_chrome_ext, is_open_source: ta.is_open_source },
-        toolB: { ...compactTool(p.b), tagline: tb.tagline, description: tb.description,
-          website_url: tb.website_url, feature_tags: tb.feature_tags,
-          has_api: tb.has_api, has_mobile: tb.has_mobile,
-          has_chrome_ext: tb.has_chrome_ext, is_open_source: tb.is_open_source },
-      }];
-    })
+  comparePairs.slice(0, COMPARE_PAGE_LIMIT).filter(p => toolMap[p.a] && toolMap[p.b]).map(p => {
+    const enrich = (t) => ({ ...compactRelated(t.handle), tagline:t.tagline,
+      description:trim(t.description,400), website_url:t.website_url,
+      feature_tags:t.feature_tags, has_api:t.has_api, has_mobile:t.has_mobile,
+      has_chrome_ext:t.has_chrome_ext, is_open_source:t.is_open_source });
+    const ta = toolMap[p.a], tb = toolMap[p.b];
+    return [p.slug, { slug:p.slug, toolA:enrich(ta), toolB:enrich(tb),
+      seo_title:`${ta.name} vs ${tb.name} — Full Comparison ${new Date().getFullYear()}`,
+      seo_description:`Compare ${ta.name} vs ${tb.name}: pricing, features, and which is right for you.` }];
+  })
 );
 writeJson(path.join(OUT_DIR, "compare-page-data.json"), comparePageData);
 
-// ─── SUMMARY ─────────────────────────────────────────────────────
+// ─── 25. SEARCH INDEX (lightweight) ─────────────────────────────
+const searchIndex = tools.map(t => ({
+  h: safeStr(t.handle||t.slug), n: safeStr(t.name_clean||t.name),
+  c: safeStr(t.cat||t.category,""), p: safeStr(t.pricing||t.pricing_tier,""),
+  t: trim(safeStr(t.short||t.desc||""),80), s: safeNum(t.display_score),
+  l: safeStr(t.logo_domain||t.canonical_domain||(t.logo_url?.match(/clearbit\.com\/([^?&]+)/)?.[1])||""),
+}));
+fs.writeFileSync(path.join(root,"src/data/tools_search_index.json"), JSON.stringify(searchIndex), "utf8");
+const siKb = (JSON.stringify(searchIndex).length/1024).toFixed(1);
+console.log(`  ✓ ${"tools_search_index.json".padEnd(38)} ${siKb.padStart(8)} KB  (src/data/)`);
 
-console.log("\n✅ All datasets generated");
-console.log("────────────────────────────────────────────");
-console.log(`Tools:        ${tools.length}`);
-console.log(`Categories:   ${sortedCats.length}`);
-console.log(`Tags:         ${tagPaths.length}`);
-console.log(`Industries:   ${indPaths.length}`);
-console.log(`Features:     ${featurePaths.length}`);
-console.log(`Use Cases:    ${ucPaths.length}`);
-console.log(`Compare pairs:${comparePairs.length}`);
-console.log(`Best-of pages:${bestOfPaths.length}`);
-console.log(`Sitemap URLs: ${sitemapData.urls.length}`);
-console.log(`Output:       ${OUT_DIR}\n`);
+// ─── SUMMARY ─────────────────────────────────────────────────────
+console.log("\n✅ All datasets generated — v4");
+console.log("──────────────────────────────────────────");
+console.log(`Tools:           ${tools.length.toLocaleString()}`);
+console.log(`Categories:      ${sortedCats.length}`);
+console.log(`Tags:            ${tagPaths.length}`);
+console.log(`Industries:      ${indPaths.length}`);
+console.log(`Use Cases:       ${ucPaths.length}`);
+console.log(`Companies:       ${companyPaths.length}`);
+console.log(`Compare pairs:   ${comparePairs.length.toLocaleString()}`);
+console.log(`Best-of pages:   ${bestOfPaths.length}`);
+console.log(`Prompts:         ${promptPaths.length}`);
+console.log(`Sitemap URLs:    ${sitemapData.urls.length.toLocaleString()}`);
+console.log(`\nTool pages:    ${TOOL_PAGE_LIMIT.toLocaleString()} / ${tools.length.toLocaleString()} total`);
+console.log(`Alt pages:     ${ALT_PAGE_LIMIT.toLocaleString()} / ${tools.length.toLocaleString()} total`);
+console.log(`Compare pages: ${COMPARE_PAGE_LIMIT.toLocaleString()} / ${comparePairs.length.toLocaleString()} total`);
+console.log(`\nOutput: ${OUT_DIR}\n`);

@@ -461,7 +461,9 @@ for (const tool of CANONICAL_TOOLS) {
     console.log(`  ⏭  SKIP   ${tool.handle.padEnd(30)} (already exists)`);
     skipped++;
   } else {
-    data.push(tool);
+    // Ensure slug mirrors handle (for audit + routing compatibility)
+    const enriched = { ...tool, slug: tool.handle };
+    data.push(enriched);
     existingHandles.add(tool.handle);
     console.log(`  ✓  ADDED  ${tool.handle.padEnd(30)} ${tool.name}`);
     injected++;
