@@ -463,6 +463,88 @@ writeJson(path.join(OUT_DIR, "build-meta.json"), {
 });
 writeJson(path.join(OUT_DIR, "skipped-records.json"), { skipped: skipped.slice(0, 100), duplicates: duplicates.slice(0, 100) });
 
+// ─── 21. TOOL PAGE DATA (slim — voor [slug].astro props patroon) ──
+// Bevat alleen de top-3000 tools (gesorteerd op score) met embedded related tools.
+// Eén bestand < 10MB, vervangt tool-map.json + related-map.json in page renders.
+
+const compactTool = (h) => {
+  const t = toolMap[h];
+  if (!t) return null;
+  return {
+    handle: t.handle,
+    name: t.name,
+    tagline: t.tagline,
+    pricing_tier: t.pricing_tier,
+    logo_domain: t.logo_domain,
+    affiliate_url: t.affiliate_url,
+    category: t.category,
+    category_slug: t.category_slug,
+  };
+};
+
+const top3000Handles = toolPaths.slice(0, 3000);
+
+const toolPageData = Object.fromEntries(
+  top3000Handles.map(h => {
+    const t = toolMap[h];
+    if (!t) return [h, null];
+    const related = safeArr(t.related_tools).slice(0, 6)
+      .map(compactTool).filter(Boolean);
+    return [h, { ...t, related }];
+  }).filter(([, v]) => v !== null)
+);
+writeJson(path.join(OUT_DIR, "tool-page-data.json"), toolPageData);
+
+// ─── 22. ALTERNATIVES PAGE DATA (slim) ────────────────────────────
+// Top-3000 tools met hun alternatieven embedded. < 8MB.
+// Vervangt alternatives-map.json + tool-map.json in alternatives/[slug].astro.
+
+const altPageData = Object.fromEntries(
+  top3000Handles
+    .filter(h => toolMap[h])
+    .map(h => {
+      const t = toolMap[h];
+      const alts = safeArr(t.related_tools).slice(0, 8)
+        .map(compactTool).filter(Boolean);
+      return [h, {
+        handle: t.handle,
+        name: t.name,
+        tagline: t.tagline,
+        pricing_tier: t.pricing_tier,
+        logo_domain: t.logo_domain,
+        category: t.category,
+        category_slug: t.category_slug,
+        alts,
+      }];
+    })
+);
+writeJson(path.join(OUT_DIR, "alternatives-page-data.json"), altPageData);
+
+// ─── 23. COMPARE PAGE DATA (slim) ─────────────────────────────────
+// Top-2000 compare paren met beide tool objecten embedded. < 3MB.
+// Vervangt compare-pairs.json + tool-map.json in vs/[slug].astro.
+
+const comparePageData = Object.fromEntries(
+  comparePairs.slice(0, 2000)
+    .filter(p => toolMap[p.a] && toolMap[p.b])
+    .map(p => {
+      const ta = toolMap[p.a];
+      const tb = toolMap[p.b];
+      return [p.slug, {
+        slug: p.slug,
+        toolA: { ...compactTool(p.a), tagline: ta.tagline, description: ta.description,
+          website_url: ta.website_url, feature_tags: ta.feature_tags,
+          has_api: ta.has_api, has_mobile: ta.has_mobile,
+          has_chrome_ext: ta.has_chrome_ext, is_open_source: ta.is_open_source },
+        toolB: { ...compactTool(p.b), tagline: tb.tagline, description: tb.description,
+          website_url: tb.website_url, feature_tags: tb.feature_tags,
+          has_api: tb.has_api, has_mobile: tb.has_mobile,
+          has_chrome_ext: tb.has_chrome_ext, is_open_source: tb.is_open_source },
+      }];
+    })
+);
+writeJson(path.join(OUT_DIR, "compare-page-data.json"), comparePageData);
+
 // ─── SUMMARY ─────────────────────────────────────────────────────
 
 console.log("\n✅ All datasets generated");
