@@ -1,0 +1,307 @@
+{
+  "build-ai-chatbots-and-assistants-with": {
+    "slug": "build-ai-chatbots-and-assistants-with",
+    "name": "Build AI chatbots and assistants with 文心一言",
+    "count": 3,
+    "tools": [
+      {
+        "handle": "文心一言",
+        "name": "文心一言",
+        "tagline": "文心一言 — AI Chatbot",
+        "description": "文心一言 is an AI assistant for chatting, answering questions, and helping with work and study.",
+        "pricing_tier": "Freemium",
+        "logo_domain": "baidu.com",
+        "website_url": "https://yiyan.baidu.com/",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "Chat / Q&A",
+          "Text Generation"
+        ],
+        "use_cases": [
+          "Build and deploy AI chatbots with 文心一言",
+          "Build AI chatbots and assistants with 文心一言"
+        ],
+        "industries": [],
+        "display_score": 49,
+        "is_featured": false,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [
+          "alphawatch-ai-chatbot-for-hedge-funds",
+          "cpa-pilot",
+          "aioai",
+          "alice",
+          "allganize-ai",
+          "ambit-ai"
+        ],
+        "compare_targets": [
+          "deep-research",
+          "cpa-pilot",
+          "200-chatgpt-mega-prompts-for-business",
+          "ai-bookkeeping"
+        ],
+        "seo_title": "文心一言 — AI Chatbot",
+        "seo_description": "文心一言: 文心一言 is an AI assistant for chatting, answering questions, and helping with work and study. Free plan available.",
+        "complexity": "Beginner",
+        "target_audience": "Students",
+        "workflow_stage": "Creation",
+        "commercial_score": 20,
+        "homepage_score": 50,
+        "prompt_score": 56
+      },
+      {
+        "handle": "次元通讯",
+        "name": "次元通讯",
+        "tagline": "次元通讯 — AI Chatbot",
+        "description": "A platform to create and share AI characters and chat with them.",
+        "pricing_tier": "Freemium",
+        "logo_domain": "dcall.chat",
+        "website_url": "https://dcall.chat",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "Chat / Q&A"
+        ],
+        "use_cases": [
+          "Build and deploy AI chatbots with 次元通讯",
+          "Build AI chatbots and assistants with 次元通讯"
+        ],
+        "industries": [],
+        "display_score": 49,
+        "is_featured": false,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [
+          "200-chatgpt-mega-prompts-for-business",
+          "ai-chief-strategy-officer",
+          "alice",
+          "ambit-ai",
+          "archie-ai",
+          "assisterr"
+        ],
+        "compare_targets": [
+          "200-chatgpt-mega-prompts-for-business",
+          "ai-chief-strategy-officer",
+          "alice",
+          "angel-ai"
+        ],
+        "seo_title": "次元通讯 — AI Chatbot",
+        "seo_description": "次元通讯: A platform to create and share AI characters and chat with them. Build and deploy AI chatbots with 次元通讯. Free plan available.",
+        "complexity": "Beginner",
+        "target_audience": "Business Owners",
+        "workflow_stage": "Creation",
+        "commercial_score": 28,
+        "homepage_score": 50,
+        "prompt_score": 56
+      },
+      {
+        "handle": "旅行脑袋",
+        "name": "旅行脑袋",
+        "tagline": "旅行脑袋 — AI Chatbot",
+        "description": "AI travel itinerary planning assistant.",
+        "pricing_tier": "Freemium",
+        "logo_domain": "tripbrain.cn",
+        "website_url": "https://www.tripbrain.cn",
+        "affiliate_url": "",
+        "category": "Chatbots & LLMs",
+        "category_slug": "chatbots-and-llms",
+        "feature_tags": [
+          "Productivity"
+        ],
+        "use_cases": [
+          "Build AI chatbots and assistants with 旅行脑袋"
+        ],
+        "industries": [],
+        "display_score": 44,
+        "is_featured": false,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [
+          "angel-ai",
+          "beesly-ai",
+          "chatpods",
+          "gupshup-io",
+          "jobo-the-ai-auto-apply-bot",
+          "laila"
+        ],
+        "compare_targets": [
+          "200-chatgpt-mega-prompts-for-business",
+          "ai-chief-strategy-officer",
+          "alice",
+          "angel-ai"
+        ],
+        "seo_title": "旅行脑袋 — AI Chatbot",
+        "seo_description": "旅行脑袋: AI travel itinerary planning assistant. Build AI chatbots and assistants with 旅行脑袋. Free plan available.",
+        "complexity": "Beginner",
+        "target_audience": "Business Owners",
+        "workflow_stage": "Creation",
+        "commercial_score": 28,
+        "homepage_score": 46,
+        "prompt_score": 46
+      }
+    ],
+    "description": "Best AI tools for Build AI chatbots and assistants with 文心一言. Find and compare the top options."
+  },
+  "write-blog-posts-and-articles-with-ai": {
+    "slug": "write-blog-posts-and-articles-with-ai",
+    "name": "Write blog posts and articles with 包阅ai 免费读文档 翻译 改写",
+    "count": 3,
+    "tools": [
+      {
+        "handle": "包阅ai-免费读文档-翻译-改写",
+        "name": "包阅ai 免费读文档 翻译 改写",
+        "tagline": "包阅ai 免费读文档 翻译 改写 — AI Writing Tool",
+        "description": "Intelligent AI reading assistant for summarization, Q&A, and translation.",
+        "pricing_tier": "Freemium",
+        "logo_domain": "baoyueai.com",
+        "website_url": "https://baoyueai.com/",
+        "affiliate_url": "",
+        "category": "Writing & Content",
+        "category_slug": "writing-and-content",
+        "feature_tags": [
+          "Summarization",
+          "Translation"
+        ],
+        "use_cases": [
+          "Write blog posts and articles with 包阅ai 免费读文档 翻译 改写",
+          "Create and optimise ad campaigns with 包阅ai 免费读文档 翻译 改写"
+        ],
+        "industries": [],
+        "display_score": 45,
+        "is_featured": false,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [
+          "magickpen",
+          "200-chatgpt-mega-prompts-for-marketing",
+          "adcopy",
+          "addlly-ai",
+          "adpilot-by-picsart",
+          "ai-content-idea-generator"
+        ],
+        "compare_targets": [
+          "ai-wrytr",
+          "aipakistani",
+          "arconar",
+          "basedlabs"
+        ],
+        "seo_title": "包阅ai 免费读文档 翻译 改写 — AI Writing Tool",
+        "seo_description": "包阅ai 免费读文档 翻译 改写: Intelligent AI reading assistant for summarization, Q&A, and translation. Free plan available.",
+        "complexity": "Beginner",
+        "target_audience": "Content Creators",
+        "workflow_stage": "Creation",
+        "commercial_score": 20,
+        "homepage_score": 46,
+        "prompt_score": 54
+      },
+      {
+        "handle": "笔尖ai-十分钟生成毕业论文",
+        "name": "笔尖ai 十分钟生成毕业论文",
+        "tagline": "笔尖ai 十分钟生成毕业论文 — AI Writing Tool",
+        "description": "AI-powered tool for thesis writing, plagiarism checking, and content optimization.",
+        "pricing_tier": "Freemium",
+        "logo_domain": "cheerup.vip",
+        "website_url": "https://bklw.cheerup.vip/pc",
+        "affiliate_url": "",
+        "category": "Writing & Content",
+        "category_slug": "writing-and-content",
+        "feature_tags": [
+          "Writing Assistant"
+        ],
+        "use_cases": [
+          "Write blog posts and articles with 笔尖ai 十分钟生成毕业论文",
+          "Create written content faster with 笔尖ai 十分钟生成毕业论文"
+        ],
+        "industries": [],
+        "display_score": 45,
+        "is_featured": false,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [
+          "200-chatgpt-mega-prompts-for-marketing",
+          "ai-content-idea-generator",
+          "ai-thingy",
+          "ai-writing-assistant",
+          "ai-wrytr",
+          "aipakistani"
+        ],
+        "compare_targets": [
+          "ai-wrytr",
+          "aipakistani",
+          "arconar",
+          "basedlabs"
+        ],
+        "seo_title": "笔尖ai 十分钟生成毕业论文 — AI Writing Tool",
+        "seo_description": "笔尖ai 十分钟生成毕业论文: AI-powered tool for thesis writing, plagiarism checking, and content optimization. Free plan available.",
+        "complexity": "Beginner",
+        "target_audience": "Content Creators",
+        "workflow_stage": "Creation",
+        "commercial_score": 20,
+        "homepage_score": 45,
+        "prompt_score": 54
+      },
+      {
+        "handle": "多种草ai",
+        "name": "多种草ai",
+        "tagline": "多种草ai — Free AI Writing Tool",
+        "description": "Free online Xiaohongshu AI creation tool for bloggers.",
+        "pricing_tier": "Free",
+        "logo_domain": "duozhongcao.com",
+        "website_url": "https://duozhongcao.com",
+        "affiliate_url": "",
+        "category": "Writing & Content",
+        "category_slug": "writing-and-content",
+        "feature_tags": [
+          "Productivity"
+        ],
+        "use_cases": [
+          "Write blog posts and articles with 多种草ai",
+          "Create written content faster with 多种草ai"
+        ],
+        "industries": [],
+        "display_score": 40,
+        "is_featured": false,
+        "has_api": false,
+        "has_mobile": false,
+        "has_chrome_ext": false,
+        "is_open_source": false,
+        "related_tools": [
+          "contentbot-ai",
+          "copyly",
+          "copymatic",
+          "copypage",
+          "copywriterpro",
+          "jiandikie"
+        ],
+        "compare_targets": [
+          "aifreebox-free-ai-tools",
+          "ai-wrytr",
+          "aipakistani",
+          "arconar"
+        ],
+        "seo_title": "多种草ai — Free AI Writing Tool",
+        "seo_description": "多种草ai: Free online Xiaohongshu AI creation tool for bloggers. Write blog posts and articles with 多种草ai. Free to use.",
+        "complexity": "Beginner",
+        "target_audience": "Content Creators",
+        "workflow_stage": "Creation",
+        "commercial_score": 6,
+        "homepage_score": 41,
+        "prompt_score": 54
+      }
+    ],
+    "description": "Best AI tools for Write blog posts and articles with 包阅ai 免费读文档 翻译 改写. Find and compare the top options."
+  }
+}

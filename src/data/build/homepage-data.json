@@ -1,0 +1,766 @@
+{
+  "generated_at": "2026-03-12T00:19:30.056Z",
+  "total_tools": 19066,
+  "total_cats": 23,
+  "featured_tools": [
+    {
+      "handle": "presbot",
+      "name": "Presbot",
+      "tagline": "Presbot — AI Chatbot",
+      "description": "ChatGPT-powered chatbot platform for lead generation and customer engagement.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "presbot.com",
+      "website_url": "https://www.presbot.com",
+      "affiliate_url": "",
+      "category": "Chatbots & LLMs",
+      "category_slug": "chatbots-and-llms",
+      "feature_tags": [
+        "Chat / Q&A",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Presbot",
+        "Create and optimise ad campaigns with Presbot",
+        "Automate sales outreach and lead gen with Presbot",
+        "Build and deploy AI chatbots with Presbot"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 60,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "chatfuel",
+        "aioai",
+        "allganize-ai",
+        "cpa-pilot",
+        "frequently-ai",
+        "gorgias"
+      ],
+      "compare_targets": [
+        "chatfuel",
+        "askcory-ai",
+        "cherrytree-ai",
+        "cpa-pilot"
+      ],
+      "seo_title": "Presbot — AI Chatbot",
+      "seo_description": "Presbot: ChatGPT-powered chatbot platform for lead generation and customer engagement. Improve SEO content rankings with Presbot. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 61,
+      "prompt_score": 54
+    },
+    {
+      "handle": "humanic-ai",
+      "name": "Humanic Ai",
+      "tagline": "Humanic Ai — AI Marketing Tool",
+      "description": "PLG CRM and Agentic Email Marketing Platform for tailored content and activation.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "humanic.ai",
+      "website_url": "https://humanic.ai",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Email Automation",
+        "Sales & CRM",
+        "Agents & Automation"
+      ],
+      "use_cases": [
+        "Write blog posts and articles with Humanic Ai",
+        "Improve SEO content rankings with Humanic Ai",
+        "Automate sales outreach and lead gen with Humanic Ai",
+        "Write and automate email campaigns with Humanic Ai"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 59,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "blobr",
+        "getresponse-fr",
+        "groweasy",
+        "perq-com",
+        "autotext-ai",
+        "boostrbot"
+      ],
+      "compare_targets": [
+        "autotext-ai",
+        "boostrbot",
+        "collider-ai",
+        "posterstudio"
+      ],
+      "seo_title": "Humanic Ai — AI Marketing Tool",
+      "seo_description": "Humanic Ai: PLG CRM and Agentic Email Marketing Platform for tailored content and activation. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 60,
+      "prompt_score": 72
+    },
+    {
+      "handle": "learn-prompting-pro",
+      "name": "Learn Prompting Pro",
+      "tagline": "Learn Prompting Pro — AI Chatbot",
+      "description": "Learn AI Prompting to supercharge content, SEO, and marketing with GPT-4.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "learnprompting.pro",
+      "website_url": "https://learnprompting.pro",
+      "affiliate_url": "",
+      "category": "Chatbots & LLMs",
+      "category_slug": "chatbots-and-llms",
+      "feature_tags": [
+        "Chat / Q&A",
+        "Text Generation"
+      ],
+      "use_cases": [
+        "Write blog posts and articles with Learn Prompting Pro",
+        "Improve SEO content rankings with Learn Prompting Pro",
+        "Build and deploy AI chatbots with Learn Prompting Pro"
+      ],
+      "industries": [
+        "Marketing"
+      ],
+      "display_score": 59,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "aioai",
+        "cpa-pilot",
+        "koah",
+        "macbeth-ai",
+        "alice",
+        "allganize-ai"
+      ],
+      "compare_targets": [
+        "cherrytree-ai",
+        "go-charlie",
+        "askcory-ai",
+        "chatfuel"
+      ],
+      "seo_title": "Learn Prompting Pro — AI Chatbot",
+      "seo_description": "Learn Prompting Pro: Learn AI Prompting to supercharge content, SEO, and marketing with GPT-4. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 35,
+      "homepage_score": 60,
+      "prompt_score": 72
+    },
+    {
+      "handle": "yourleads",
+      "name": "Yourleads",
+      "tagline": "Yourleads — AI Marketing Tool",
+      "description": "YourLeads AI automates B2B cold email lead generation with AI-powered personalization and multilingual support.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "yourleads.ai",
+      "website_url": "https://yourleads.ai",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Translation",
+        "Email Automation",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Yourleads",
+        "Create and optimise ad campaigns with Yourleads",
+        "Automate sales outreach and lead gen with Yourleads",
+        "Write and automate email campaigns with Yourleads"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales",
+        "Customer Success"
+      ],
+      "display_score": 59,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "groweasy",
+        "perq-com",
+        "birdseye",
+        "getresponse-fr",
+        "tribearc",
+        "agentprod"
+      ],
+      "compare_targets": [
+        "adlas-io",
+        "agentprod",
+        "appai",
+        "collider-ai"
+      ],
+      "seo_title": "Yourleads — AI Marketing Tool",
+      "seo_description": "Yourleads: YourLeads AI automates B2B cold email lead generation with AI-powered personalization and multilingual support. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Automation",
+      "commercial_score": 50,
+      "homepage_score": 60,
+      "prompt_score": 64
+    },
+    {
+      "handle": "blogbud-ai",
+      "name": "Blogbud Ai",
+      "tagline": "Blogbud Ai — AI Chatbot",
+      "description": "AI platform to generate SEO-optimized articles at scale using GPT-4o.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "blogbud.ai",
+      "website_url": "https://blogbud.ai",
+      "affiliate_url": "",
+      "category": "Chatbots & LLMs",
+      "category_slug": "chatbots-and-llms",
+      "feature_tags": [
+        "Chat / Q&A",
+        "Text Generation"
+      ],
+      "use_cases": [
+        "Write blog posts and articles with Blogbud Ai",
+        "Improve SEO content rankings with Blogbud Ai",
+        "Build and deploy AI chatbots with Blogbud Ai"
+      ],
+      "industries": [
+        "Marketing"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "aioai",
+        "cpa-pilot",
+        "koah",
+        "learn-prompting-pro",
+        "alice",
+        "allganize-ai"
+      ],
+      "compare_targets": [
+        "askcory-ai",
+        "chatfuel",
+        "cherrytree-ai",
+        "cpa-pilot"
+      ],
+      "seo_title": "Blogbud Ai — AI Chatbot",
+      "seo_description": "Blogbud Ai: AI platform to generate SEO-optimized articles at scale using GPT-4o. Write blog posts and articles with Blogbud Ai. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 35,
+      "homepage_score": 59,
+      "prompt_score": 64
+    },
+    {
+      "handle": "leadgensheet",
+      "name": "Leadgensheet",
+      "tagline": "Leadgensheet — AI Marketing Tool",
+      "description": "AI Google Sheet Add-on for lead generation, enrichment, and email automation.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "leadgensheet.com",
+      "website_url": "http://leadgensheet.com",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Email Automation",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Leadgensheet",
+        "Create and optimise ad campaigns with Leadgensheet",
+        "Automate sales outreach and lead gen with Leadgensheet",
+        "Write and automate email campaigns with Leadgensheet"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "groweasy",
+        "perq-com",
+        "birdseye",
+        "getresponse-fr",
+        "tribearc",
+        "agentprod"
+      ],
+      "compare_targets": [
+        "agentprod",
+        "collider-ai",
+        "groweasy",
+        "markey-ai"
+      ],
+      "seo_title": "Leadgensheet — AI Marketing Tool",
+      "seo_description": "Leadgensheet: AI Google Sheet Add-on for lead generation, enrichment, and email automation. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 59,
+      "prompt_score": 64
+    }
+  ],
+  "new_tools": [
+    {
+      "handle": "neurologic-com-br",
+      "name": "Neurologic Com Br",
+      "tagline": "Neurologic Com Br — AI Marketing Tool",
+      "description": "Leadster is a chatbot for marketing to increase qualified lead generation on websites.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "neurologic.com.br",
+      "website_url": "https://neurologic.com.br",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Chat / Q&A",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Neurologic Com Br",
+        "Create and optimise ad campaigns with Neurologic Com Br",
+        "Automate sales outreach and lead gen with Neurologic Com Br",
+        "Build and deploy AI chatbots with Neurologic Com Br"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "groweasy",
+        "perq-com",
+        "agentprod",
+        "collider-ai",
+        "markey-ai",
+        "typeflowai"
+      ],
+      "compare_targets": [
+        "adlas-io",
+        "agentprod",
+        "appai",
+        "collider-ai"
+      ],
+      "seo_title": "Neurologic Com Br — AI Marketing Tool",
+      "seo_description": "Neurologic Com Br: Leadster is a chatbot for marketing to increase qualified lead generation on websites. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 59,
+      "prompt_score": 64
+    },
+    {
+      "handle": "rdmc-ai-digital-marketing-agency",
+      "name": "Rdmc Ai Digital Marketing Agency",
+      "tagline": "Rdmc Ai Digital Marketing Agency — AI Marketing Tool",
+      "description": "AI-powered digital marketing assistant for SEO, automation, lead generation, and campaign planning.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "rdmc.ai",
+      "website_url": "https://rdmc.ai",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Rdmc Ai Digital Marketing Agency",
+        "Create and optimise ad campaigns with Rdmc Ai Digital Marketing Agency",
+        "Automate sales outreach and lead gen with Rdmc Ai Digital Marketing Agency"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "groweasy",
+        "perq-com",
+        "adsync-ai-digital-marketing-solutions",
+        "agentprod",
+        "collider-ai",
+        "dittto"
+      ],
+      "compare_targets": [
+        "agentprod",
+        "collider-ai",
+        "dittto",
+        "groweasy"
+      ],
+      "seo_title": "Rdmc Ai Digital Marketing Agency — AI Marketing Tool",
+      "seo_description": "Rdmc Ai Digital Marketing Agency: AI-powered digital marketing assistant for SEO, automation, lead generation, and campaign planning. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 59,
+      "prompt_score": 64
+    },
+    {
+      "handle": "voxwave-ai",
+      "name": "Voxwave Ai",
+      "tagline": "Voxwave Ai — AI Marketing Tool",
+      "description": "AI-driven lead generation platform adding voice to email campaigns for higher response rates.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "voxwaveai.com",
+      "website_url": "https://www.voxwaveai.com",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Email Automation",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Voxwave Ai",
+        "Create and optimise ad campaigns with Voxwave Ai",
+        "Automate sales outreach and lead gen with Voxwave Ai",
+        "Generate AI voiceovers and narrations with Voxwave Ai"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "groweasy",
+        "perq-com",
+        "birdseye",
+        "getresponse-fr",
+        "tribearc",
+        "agentprod"
+      ],
+      "compare_targets": [
+        "agentprod",
+        "collider-ai",
+        "dynamicads",
+        "groweasy"
+      ],
+      "seo_title": "Voxwave Ai — AI Marketing Tool",
+      "seo_description": "Voxwave Ai: AI-driven lead generation platform adding voice to email campaigns for higher response rates. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 59,
+      "prompt_score": 64
+    },
+    {
+      "handle": "zarla-com",
+      "name": "Zarla",
+      "tagline": "Zarla — AI Marketing Tool",
+      "description": "AI-powered website builder for small businesses, optimized for SEO and lead generation.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "zarla.com",
+      "website_url": "https://zarla.com",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "SEO & Keywords",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Zarla",
+        "Create and optimise ad campaigns with Zarla",
+        "Automate sales outreach and lead gen with Zarla"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "adcreative-ai",
+        "adgeneratorpro",
+        "adspawn",
+        "asset-creatives-ai",
+        "dicer-ai",
+        "ezra-ads"
+      ],
+      "compare_targets": [
+        "imgpt",
+        "adcreative-ai",
+        "adgeneratorpro",
+        "adlas-io"
+      ],
+      "seo_title": "Zarla — AI Marketing Tool",
+      "seo_description": "Zarla: AI-powered website builder for small businesses, optimized for SEO and lead generation. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 58,
+      "homepage_score": 59,
+      "prompt_score": 64
+    },
+    {
+      "handle": "atonce",
+      "name": "Atonce",
+      "tagline": "Atonce — AI Marketing Tool",
+      "description": "B2B & SaaS SEO agency specializing in AI-powered content creation and lead generation.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "atonce.com",
+      "website_url": "https://atonce.com",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "SEO & Keywords",
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Write blog posts and articles with Atonce",
+        "Improve SEO content rankings with Atonce",
+        "Create and optimise ad campaigns with Atonce",
+        "Automate sales outreach and lead gen with Atonce"
+      ],
+      "industries": [
+        "Marketing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "saaspedia",
+        "adsync-ai-digital-marketing-solutions",
+        "autotext-ai",
+        "boostrbot",
+        "dittto",
+        "keywordsearch-com"
+      ],
+      "compare_targets": [
+        "autotext-ai",
+        "boostrbot",
+        "collider-ai",
+        "dittto"
+      ],
+      "seo_title": "Atonce — AI Marketing Tool",
+      "seo_description": "Atonce: B2B & SaaS SEO agency specializing in AI-powered content creation and lead generation. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 58,
+      "prompt_score": 72
+    },
+    {
+      "handle": "backlink-management",
+      "name": "Backlink Management",
+      "tagline": "Backlink Management — AI Marketing Tool",
+      "description": "All-in-one link building tool to increase organic traffic through automated outreach and monitoring.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "backlinkmanagement.io",
+      "website_url": "https://backlinkmanagement.io",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "SEO & Keywords",
+        "Social Media"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Backlink Management",
+        "Generate social media content with Backlink Management",
+        "Automate sales outreach and lead gen with Backlink Management"
+      ],
+      "industries": [
+        "Marketing",
+        "Media & Publishing",
+        "HR & Recruiting"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "quantplus",
+        "adcreative-ai",
+        "adgeneratorpro",
+        "adspawn",
+        "asset-creatives-ai",
+        "dicer-ai"
+      ],
+      "compare_targets": [
+        "adcreative-ai",
+        "adgeneratorpro",
+        "adspawn",
+        "asset-creatives-ai"
+      ],
+      "seo_title": "Backlink Management — AI Marketing Tool",
+      "seo_description": "Backlink Management: All-in-one link building tool to increase organic traffic through automated outreach and monitoring. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 43,
+      "homepage_score": 58,
+      "prompt_score": 64
+    },
+    {
+      "handle": "igleads",
+      "name": "Igleads",
+      "tagline": "Igleads — AI Marketing Tool",
+      "description": "No-code email scraping platform for lead generation from social media and websites.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "igleads.io",
+      "website_url": "https://igleads.io/",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "Sales & CRM"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Igleads",
+        "Create and optimise ad campaigns with Igleads",
+        "Generate social media content with Igleads",
+        "Generate, review and debug code with Igleads"
+      ],
+      "industries": [
+        "Marketing",
+        "Media & Publishing",
+        "Sales"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "groweasy",
+        "perq-com",
+        "agentprod",
+        "collider-ai",
+        "markey-ai",
+        "typeflowai"
+      ],
+      "compare_targets": [
+        "adlas-io",
+        "agentprod",
+        "appai",
+        "collider-ai"
+      ],
+      "seo_title": "Igleads — AI Marketing Tool",
+      "seo_description": "Igleads: No-code email scraping platform for lead generation from social media and websites. Free plan available.",
+      "complexity": "Intermediate",
+      "target_audience": "Developers",
+      "workflow_stage": "Creation",
+      "commercial_score": 50,
+      "homepage_score": 58,
+      "prompt_score": 64
+    },
+    {
+      "handle": "vplate-video-ads-chat-gpt-plugin",
+      "name": "Vplate Video Ads Chat Gpt Plugin",
+      "tagline": "Vplate Video Ads Chat Gpt Plugin — AI Marketing Tool",
+      "description": "AI-powered short-form video ad creation and marketing platform.",
+      "pricing_tier": "Freemium",
+      "logo_domain": "vplate.io",
+      "website_url": "https://vplate.io",
+      "affiliate_url": "",
+      "category": "SEO & Marketing",
+      "category_slug": "seo-and-marketing",
+      "feature_tags": [
+        "SEO & Keywords",
+        "Social Media"
+      ],
+      "use_cases": [
+        "Improve SEO content rankings with Vplate Video Ads Chat Gpt Plugin",
+        "Create and optimise ad campaigns with Vplate Video Ads Chat Gpt Plugin",
+        "Generate social media content with Vplate Video Ads Chat Gpt Plugin",
+        "Write and produce video scripts with Vplate Video Ads Chat Gpt Plugin"
+      ],
+      "industries": [
+        "Marketing",
+        "Media & Publishing"
+      ],
+      "display_score": 58,
+      "is_featured": false,
+      "has_api": false,
+      "has_mobile": false,
+      "has_chrome_ext": false,
+      "is_open_source": false,
+      "related_tools": [
+        "airpost",
+        "creatify",
+        "quickads",
+        "30characters",
+        "adcopy-ai",
+        "adcreative-ai"
+      ],
+      "compare_targets": [
+        "airpost",
+        "creatify",
+        "quickads",
+        "showstop"
+      ],
+      "seo_title": "Vplate Video Ads Chat Gpt Plugin — AI Marketing Tool",
+      "seo_description": "Vplate Video Ads Chat Gpt Plugin: AI-powered short-form video ad creation and marketing platform. Free plan available.",
+      "complexity": "Beginner",
+      "target_audience": "Marketers",
+      "workflow_stage": "Creation",
+      "commercial_score": 35,
+      "homepage_score": 58,
+      "prompt_score": 64
+    }
+  ],
+  "pricing_dist": {
+    "free": 785,
+    "freemium": 18281,
+    "paid": 0
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "skipped": [
+    {
+      "handle": "inlinks-net",
+      "reason": "non-public"
+    },
+    {
+      "handle": "adcopy-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "contents-com",
+      "reason": "non-public"
+    },
+    {
+      "handle": "flux-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "writify-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "chatmate-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "muku-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "arsturn",
+      "reason": "non-public"
+    },
+    {
+      "handle": "drippi",
+      "reason": "non-public"
+    },
+    {
+      "handle": "gpt",
+      "reason": "non-public"
+    },
+    {
+      "handle": "niddam",
+      "reason": "non-public"
+    },
+    {
+      "handle": "oliv",
+      "reason": "non-public"
+    },
+    {
+      "handle": "pdf-to-brainrot",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ugc-ads",
+      "reason": "non-public"
+    },
+    {
+      "handle": "woxo-tech-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-cowriter",
+      "reason": "non-public"
+    },
+    {
+      "handle": "apex",
+      "reason": "non-public"
+    },
+    {
+      "handle": "blackbox-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "email-outreach-platform",
+      "reason": "non-public"
+    },
+    {
+      "handle": "junia-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "openchat",
+      "reason": "non-public"
+    },
+    {
+      "handle": "quickchat-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "spicychat-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "teamsmart-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "verse-io",
+      "reason": "non-public"
+    },
+    {
+      "handle": "writebot",
+      "reason": "non-public"
+    },
+    {
+      "handle": "alice-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "cococlip-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "flux-ai-lab",
+      "reason": "non-public"
+    },
+    {
+      "handle": "imagga-com",
+      "reason": "non-public"
+    },
+    {
+      "handle": "nsfw-ai-chat",
+      "reason": "non-public"
+    },
+    {
+      "handle": "paraphraser-io",
+      "reason": "non-public"
+    },
+    {
+      "handle": "renderfire",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ultimateai-app",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-buddy",
+      "reason": "non-public"
+    },
+    {
+      "handle": "beam",
+      "reason": "non-public"
+    },
+    {
+      "handle": "captions-app",
+      "reason": "non-public"
+    },
+    {
+      "handle": "chattube",
+      "reason": "non-public"
+    },
+    {
+      "handle": "clipzap",
+      "reason": "non-public"
+    },
+    {
+      "handle": "codemate",
+      "reason": "non-public"
+    },
+    {
+      "handle": "lore-com",
+      "reason": "non-public"
+    },
+    {
+      "handle": "midjourney-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "shortcutsgpt-v2",
+      "reason": "non-public"
+    },
+    {
+      "handle": "wave",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-flux-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-pdf-summarizer-by-pdf-guru",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-shorts-generator",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-writer",
+      "reason": "non-public"
+    },
+    {
+      "handle": "dittin-ai-v2",
+      "reason": "non-public"
+    },
+    {
+      "handle": "dream-machine",
+      "reason": "non-public"
+    },
+    {
+      "handle": "essayai-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "essaywriter",
+      "reason": "non-public"
+    },
+    {
+      "handle": "feedhive-io",
+      "reason": "non-public"
+    },
+    {
+      "handle": "frame-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "insights-by-ayraa",
+      "reason": "non-public"
+    },
+    {
+      "handle": "liner-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "luma-ai-video-generator-free-online-powered-by-dream-machine",
+      "reason": "non-public"
+    },
+    {
+      "handle": "midjourney-api-by-apiframe",
+      "reason": "non-public"
+    },
+    {
+      "handle": "modelslab",
+      "reason": "non-public"
+    },
+    {
+      "handle": "octiai-v2",
+      "reason": "non-public"
+    },
+    {
+      "handle": "octoparse",
+      "reason": "non-public"
+    },
+    {
+      "handle": "paraphrasing-tool-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "rewriteit",
+      "reason": "non-public"
+    },
+    {
+      "handle": "scripe-io",
+      "reason": "non-public"
+    },
+    {
+      "handle": "subeasy-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "templify",
+      "reason": "non-public"
+    },
+    {
+      "handle": "veo-3-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "wondershare-net",
+      "reason": "non-public"
+    },
+    {
+      "handle": "aitubo-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "apply-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "claude-3",
+      "reason": "non-public"
+    },
+    {
+      "handle": "dreamery",
+      "reason": "non-public"
+    },
+    {
+      "handle": "essayflow",
+      "reason": "non-public"
+    },
+    {
+      "handle": "essayget-com",
+      "reason": "non-public"
+    },
+    {
+      "handle": "humanize-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "monic-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "pollo-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "polybuzz-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "reworkd-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "rizz-app",
+      "reason": "non-public"
+    },
+    {
+      "handle": "scout-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "scrip-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "taxgpt-com",
+      "reason": "non-public"
+    },
+    {
+      "handle": "viva-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "writego",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-art-generator-by-enhance-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ai-headshot-generators-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "alfred-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "amy",
+      "reason": "non-public"
+    },
+    {
+      "handle": "creato",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ecango",
+      "reason": "non-public"
+    },
+    {
+      "handle": "everlyn-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "flux-1-ai-1",
+      "reason": "non-public"
+    },
+    {
+      "handle": "flux-image-ai",
+      "reason": "non-public"
+    },
+    {
+      "handle": "ghostwriter-ai-com",
+      "reason": "non-public"
+    },
+    {
+      "handle": "headshot-generator",
+      "reason": "non-public"
+    },
+    {
+      "handle": "image-to-caption-tool",
+      "reason": "non-public"
+    },
+    {
+      "handle": "liro-ai-image-generator-tool",
+      "reason": "non-public"
+    },
+    {
+      "handle": "mimicpc",
+      "reason": "non-public"
+    },
+    {
+      "handle": "nex-ai",
+      "reason": "non-public"
+    }
+  ],
+  "duplicates": [
+    "exie"
+  ]
+}

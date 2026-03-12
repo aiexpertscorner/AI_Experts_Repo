@@ -1,0 +1,832 @@
+{
+  "generated_at": "2026-03-10T20:34:51.353Z",
+  "script_version": "v6",
+  "source_file": "E:\\2026_AI_EXPERT\\src\\data\\tools_source.json",
+  "output_file": "E:\\2026_AI_EXPERT\\src\\data\\tools_production.json",
+  "search_index_file": "E:\\2026_AI_EXPERT\\src\\data\\tools_search_index.json",
+  "total_tools": 19466,
+  "public_tools": 19067,
+  "hidden_tools": 399,
+  "active_tools": 19466,
+  "inactive_tools": 0,
+  "canonical_tools": 19068,
+  "duplicate_tools": 1475,
+  "non_canonical_duplicates": 398,
+  "ready_tools": 18511,
+  "needs_review_tools": 556,
+  "thin_tools": 1,
+  "dead_tools": 0,
+  "invalid_tools": 0,
+  "partnerstack_matches": 0,
+  "prompt_library_candidates": 5646,
+  "news_relevant_tools": 3018,
+  "other_ai_tools_public_count": 2299,
+  "productivity_public_count": 354,
+  "poor_data_health_count": 1,
+  "fair_data_health_count": 899,
+  "good_data_health_count": 18334,
+  "strong_data_health_count": 232,
+  "category_distribution": {
+    "Other AI Tools": 2299,
+    "Writing & Content": 1758,
+    "Chatbots & LLMs": 1714,
+    "3D & AR": 1509,
+    "Design & UI": 1273,
+    "Coding & Dev": 1019,
+    "Research & Education": 968,
+    "Audio & Music": 939,
+    "Data & Analytics": 883,
+    "HR & Recruiting": 720,
+    "SEO & Marketing": 717,
+    "AI Agents": 687,
+    "Image Generation": 652,
+    "Sales & CRM": 481,
+    "Social Media": 447,
+    "Legal & Finance": 447,
+    "Video Generation": 429,
+    "Translation": 429,
+    "E-Commerce": 381,
+    "Productivity": 354,
+    "Health & Wellness": 337,
+    "Customer Service": 320,
+    "Photo Editing": 304
+  },
+  "average_display_score": 42,
+  "average_prompt_library_score": 35,
+  "average_news_relevance_score": 16,
+  "top_tools": [
+    {
+      "handle": "presbot",
+      "name": "Presbot",
+      "name_clean": "Presbot",
+      "cat": "Chatbots & LLMs",
+      "catSlug": "chatbots-and-llms",
+      "pricing": "Freemium",
+      "display_score": 60,
+      "homepage_priority_score": 61,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "humanic-ai",
+      "name": "Humanic Ai",
+      "name_clean": "Humanic Ai",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 59,
+      "homepage_priority_score": 60,
+      "editorial_priority_score": 59,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "learn-prompting-pro",
+      "name": "Learn Prompting Pro",
+      "name_clean": "Learn Prompting Pro",
+      "cat": "Chatbots & LLMs",
+      "catSlug": "chatbots-and-llms",
+      "pricing": "Freemium",
+      "display_score": 59,
+      "homepage_priority_score": 60,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 35,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "yourleads",
+      "name": "Yourleads",
+      "name_clean": "Yourleads",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 59,
+      "homepage_priority_score": 60,
+      "editorial_priority_score": 59,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "atonce",
+      "name": "Atonce",
+      "name_clean": "Atonce",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "backlink-management",
+      "name": "Backlink Management",
+      "name_clean": "Backlink Management",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 58,
+      "commercial_intent_score": 43,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "blogbud-ai",
+      "name": "Blogbud Ai",
+      "name_clean": "Blogbud Ai",
+      "cat": "Chatbots & LLMs",
+      "catSlug": "chatbots-and-llms",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 59,
+      "editorial_priority_score": 55,
+      "commercial_intent_score": 35,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "igleads",
+      "name": "Igleads",
+      "name_clean": "Igleads",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "leadgensheet",
+      "name": "Leadgensheet",
+      "name_clean": "Leadgensheet",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 59,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "neurologic-com-br",
+      "name": "Neurologic Com Br",
+      "name_clean": "Neurologic Com Br",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 59,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "rdmc-ai-digital-marketing-agency",
+      "name": "Rdmc Ai Digital Marketing Agency",
+      "name_clean": "Rdmc Ai Digital Marketing Agency",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 59,
+      "editorial_priority_score": 58,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "voxwave-ai",
+      "name": "Voxwave Ai",
+      "name_clean": "Voxwave Ai",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 59,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "vplate-video-ads-chat-gpt-plugin",
+      "name": "Vplate Video Ads Chat Gpt Plugin",
+      "name_clean": "Vplate Video Ads Chat Gpt Plugin",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 55,
+      "commercial_intent_score": 35,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "zarla-com",
+      "name": "Zarla",
+      "name_clean": "Zarla",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 58,
+      "homepage_priority_score": 59,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "10xbeast",
+      "name": "10xbeast",
+      "name_clean": "10xbeast",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "botdistrikt",
+      "name": "Botdistrikt",
+      "name_clean": "Botdistrikt",
+      "cat": "Chatbots & LLMs",
+      "catSlug": "chatbots-and-llms",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 43,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "coachingleads-io",
+      "name": "Coachingleads",
+      "name_clean": "Coachingleads",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "collider-ai",
+      "name": "Collider Ai",
+      "name_clean": "Collider Ai",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "conversion-blitz",
+      "name": "Conversion Blitz",
+      "name_clean": "Conversion Blitz",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "emailflow-ai-b2b-lead-generation",
+      "name": "Emailflow Ai B2b Lead Generation",
+      "name_clean": "Emailflow Ai B2b Lead Generation",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "latent-workers",
+      "name": "Latent Workers",
+      "name_clean": "Latent Workers",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "leadsgenerator-ai",
+      "name": "Leadsgenerator Ai",
+      "name_clean": "Leadsgenerator Ai",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 55,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "leedgen",
+      "name": "Leedgen",
+      "name_clean": "Leedgen",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 55,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "mailgo",
+      "name": "Mailgo",
+      "name_clean": "Mailgo",
+      "cat": "SEO & Marketing",
+      "catSlug": "seo-and-marketing",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 57,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "notbot",
+      "name": "Notbot",
+      "name_clean": "Notbot",
+      "cat": "Chatbots & LLMs",
+      "catSlug": "chatbots-and-llms",
+      "pricing": "Freemium",
+      "display_score": 57,
+      "homepage_priority_score": 58,
+      "editorial_priority_score": 56,
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    }
+  ],
+  "top_affiliate_candidates": [
+    {
+      "handle": "zarla-com",
+      "name": "Zarla",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "voolt",
+      "name": "Voolt",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "eserto-com",
+      "name": "Eserto",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "ghostie",
+      "name": "Ghostie",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "buzzleads-io",
+      "name": "Buzzleads",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "bytient",
+      "name": "Bytient",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "univw-ai",
+      "name": "Univw Ai",
+      "pricing": "Freemium",
+      "commercial_intent_score": 58,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "luminouscrm-com",
+      "name": "Luminouscrm",
+      "pricing": "Freemium",
+      "commercial_intent_score": 55,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "smbleads",
+      "name": "Smbleads",
+      "pricing": "Freemium",
+      "commercial_intent_score": 51,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "presbot",
+      "name": "Presbot",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "humanic-ai",
+      "name": "Humanic Ai",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "yourleads",
+      "name": "Yourleads",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "atonce",
+      "name": "Atonce",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "igleads",
+      "name": "Igleads",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "leadgensheet",
+      "name": "Leadgensheet",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "neurologic-com-br",
+      "name": "Neurologic Com Br",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "rdmc-ai-digital-marketing-agency",
+      "name": "Rdmc Ai Digital Marketing Agency",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "voxwave-ai",
+      "name": "Voxwave Ai",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "10xbeast",
+      "name": "10xbeast",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    },
+    {
+      "handle": "coachingleads-io",
+      "name": "Coachingleads",
+      "pricing": "Freemium",
+      "commercial_intent_score": 50,
+      "partnerstack_match": false
+    }
+  ],
+  "top_prompt_candidates": [
+    {
+      "handle": "humanic-ai",
+      "name": "Humanic Ai",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "learn-prompting-pro",
+      "name": "Learn Prompting Pro",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "atonce",
+      "name": "Atonce",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "coachingleads-io",
+      "name": "Coachingleads",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "collider-ai",
+      "name": "Collider Ai",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "latent-workers",
+      "name": "Latent Workers",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "leedgen",
+      "name": "Leedgen",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "arcane",
+      "name": "Arcane",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "gpt-4-ai-content-creator",
+      "name": "Gpt 4 Ai Content Creator",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "letterdrop",
+      "name": "Letterdrop",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "posterstudio",
+      "name": "Posterstudio",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "themartec-com",
+      "name": "Themartec",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "aigency-labs",
+      "name": "Aigency Labs",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "autotext-ai",
+      "name": "Autotext Ai",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "beebzi-ai",
+      "name": "Beebzi Ai",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "blogfast",
+      "name": "Blogfast",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "callio",
+      "name": "Callio",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "emplibot",
+      "name": "Emplibot",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "fancy-tech",
+      "name": "Fancy Tech",
+      "prompt_library_score": 72
+    },
+    {
+      "handle": "fyli",
+      "name": "Fyli",
+      "prompt_library_score": 72
+    }
+  ],
+  "top_news_candidates": [
+    {
+      "handle": "postlog",
+      "name": "Postlog",
+      "news_relevance_score": 67
+    },
+    {
+      "handle": "visiomera",
+      "name": "Visiomera",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "logistify-ai",
+      "name": "Logistify Ai",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "orionox",
+      "name": "Orionox",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "goless-extension-automation",
+      "name": "Goless Extension Automation",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "humanly-io",
+      "name": "Humanly",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "lumenvox-com",
+      "name": "Lumenvox",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "promptpoint",
+      "name": "Promptpoint",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "legal-assist-ai-2-0",
+      "name": "Legal Assist Ai 2 0",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "maxychat",
+      "name": "Maxychat",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "seedley",
+      "name": "Seedley",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "awhy-it",
+      "name": "Awhy It",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "botsify",
+      "name": "Botsify",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "hellomybot-io",
+      "name": "Hellomybot",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "live-minder",
+      "name": "Live Minder",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "podulateai",
+      "name": "Podulateai",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "testnut",
+      "name": "Testnut",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "usechatgpt-ai",
+      "name": "Usechatgpt Ai",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "lunabot",
+      "name": "Lunabot",
+      "news_relevance_score": 59
+    },
+    {
+      "handle": "replyio-com",
+      "name": "Replyio",
+      "news_relevance_score": 59
+    }
+  ],
+  "top_duplicate_groups": [
+    {
+      "duplicate_group": "flux",
+      "count": 5,
+      "canonical_handle": "flux-ai-ai"
+    },
+    {
+      "duplicate_group": "face swap",
+      "count": 5,
+      "canonical_handle": "face-swap-by-deepany-ai"
+    },
+    {
+      "duplicate_group": "humanize",
+      "count": 5,
+      "canonical_handle": "ai-humanize-ai"
+    },
+    {
+      "duplicate_group": "humanizer",
+      "count": 5,
+      "canonical_handle": "ai-humanizer-by-hummanizerpro"
+    },
+    {
+      "duplicate_group": "undress",
+      "count": 4,
+      "canonical_handle": "undress-ai-app"
+    },
+    {
+      "duplicate_group": "humanize text",
+      "count": 4,
+      "canonical_handle": "humanize-ai-text"
+    },
+    {
+      "duplicate_group": "scout",
+      "count": 3,
+      "canonical_handle": "scout"
+    },
+    {
+      "duplicate_group": "genie",
+      "count": 3,
+      "canonical_handle": "genie-ai"
+    },
+    {
+      "duplicate_group": "viva",
+      "count": 3,
+      "canonical_handle": "viva-labs"
+    },
+    {
+      "duplicate_group": "cowriter",
+      "count": 3,
+      "canonical_handle": "cowriter-ai"
+    },
+    {
+      "duplicate_group": "veo 3",
+      "count": 3,
+      "canonical_handle": "veo-3-ai-2"
+    },
+    {
+      "duplicate_group": "poly",
+      "count": 3,
+      "canonical_handle": "poly-ai-ai"
+    },
+    {
+      "duplicate_group": "reply",
+      "count": 3,
+      "canonical_handle": "reply-io"
+    },
+    {
+      "duplicate_group": "vidu studio",
+      "count": 3,
+      "canonical_handle": "vidu-studio"
+    },
+    {
+      "duplicate_group": "hug",
+      "count": 3,
+      "canonical_handle": "ai-hug"
+    },
+    {
+      "duplicate_group": "anime generator",
+      "count": 3,
+      "canonical_handle": "ai-anime-generator"
+    },
+    {
+      "duplicate_group": "socratic",
+      "count": 3,
+      "canonical_handle": "socratic-by-google"
+    },
+    {
+      "duplicate_group": "math solver",
+      "count": 3,
+      "canonical_handle": "ai-math-solver-by-gpt-4o-free-online"
+    },
+    {
+      "duplicate_group": "deepseek",
+      "count": 3,
+      "canonical_handle": "deepseek-v3"
+    },
+    {
+      "duplicate_group": "minimax",
+      "count": 3,
+      "canonical_handle": "minimax-ai"
+    }
+  ]
+}
