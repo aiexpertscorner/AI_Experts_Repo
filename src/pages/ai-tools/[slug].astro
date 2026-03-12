@@ -8,7 +8,7 @@ import toolMap from "@/data/build/tool-map.json";
 import relatedMap from "@/data/build/related-map.json";
 
 export function getStaticPaths() {
-  return (toolPaths as string[]).map(handle => ({ params: { slug: handle } }));
+  return (toolPaths as string[]).slice(0, 3000).map(handle => ({ params: { slug: handle } }));
 }
 
 const { slug } = Astro.params;

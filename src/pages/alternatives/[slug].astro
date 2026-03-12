@@ -9,7 +9,7 @@ import toolPaths from "@/data/build/tool-paths.json";
 import toolMap from "@/data/build/tool-map.json";
 
 export function getStaticPaths() {
-  return (toolPaths as string[]).filter(h => (altMap as any)[h]).map(h => ({ params: { slug: h } }));
+  return (toolPaths as string[]).slice(0, 3000).filter(h => (altMap as any)[h]).map(h => ({ params: { slug: h } }));
 }
 
 const { slug } = Astro.params;

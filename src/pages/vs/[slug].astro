@@ -7,7 +7,7 @@ import comparePairs from "@/data/build/compare-pairs.json";
 import toolMap from "@/data/build/tool-map.json";
 
 export function getStaticPaths() {
-  return (comparePairs as any[]).map(p => ({ params: { slug: p.slug } }));
+  return (comparePairs as any[]).slice(0, 2000).map(p => ({ params: { slug: p.slug } }));
 }
 
 const { slug } = Astro.params;
