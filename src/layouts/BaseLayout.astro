@@ -2,12 +2,12 @@
 import { SITE_NAME, SITE_URL, SITE_DESC } from "@/data/homeConfig";
 import "@/styles/base.css";
 interface Props {
-  title?:string; description?:string; canonical?:string;
-  ogImage?:string; noindex?:boolean;
+  title?: string; description?: string; canonical?: string;
+  ogImage?: string; noindex?: boolean;
 }
 const {
-  title, description=SITE_DESC, canonical,
-  ogImage="/logos/logo_dark.png", noindex=false
+  title, description = SITE_DESC, canonical,
+  ogImage = "/logos/logo_dark.png", noindex = false
 } = Astro.props;
 const pageTitle    = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — AI Tools Directory`;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).href;
@@ -17,11 +17,13 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).href;
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="theme-color" content="#080d1a"/>
+  <meta name="theme-color" content="#070c18"/>
   <title>{pageTitle}</title>
   <meta name="description" content={description}/>
   {noindex && <meta name="robots" content="noindex,nofollow"/>}
   <link rel="canonical" href={canonicalUrl}/>
+
+  <!-- OG / Twitter -->
   <meta property="og:type"        content="website"/>
   <meta property="og:title"       content={pageTitle}/>
   <meta property="og:description" content={description}/>
@@ -32,10 +34,17 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).href;
   <meta name="twitter:title"       content={pageTitle}/>
   <meta name="twitter:description" content={description}/>
   <meta name="twitter:image"       content={new URL(ogImage, SITE_URL).href}/>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png"/>
+
+  <!-- Fonts: preconnect then load -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"/>
+
+  <!-- Extra head slot (structured data, etc.) -->
+  <slot name="head"/>
 </head>
 <body>
   <slot name="header"/>

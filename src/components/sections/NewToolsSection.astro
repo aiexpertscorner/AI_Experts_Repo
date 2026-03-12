@@ -7,16 +7,19 @@ if (!tools?.length) return;
 <section class="nts">
   <div class="section-header">
     <div>
+      <span class="section-eyebrow">Just Added</span>
       <h2>New This Week</h2>
-      <p class="nts-sub">Recently added AI tools</p>
     </div>
-    <a href="/ai-tools" class="see-all">Browse all →</a>
+    <a href="/ai-tools" class="see-all">
+      Browse all
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
   <div class="grid-tools">
-    {tools.slice(0,6).map((t:any) => <ToolCard tool={t}/>)}
+    {tools.slice(0, 6).map((t: any) => <ToolCard tool={t}/>)}
   </div>
 </section>
+
 <style>
-.nts{margin-bottom:var(--sp-16)}
-.nts-sub{font-size:var(--text-sm);color:var(--c-text-3);margin-top:4px}
+.nts { margin-bottom: var(--sp-20) }
 </style>

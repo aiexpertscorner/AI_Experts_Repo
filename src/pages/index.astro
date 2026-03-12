@@ -12,11 +12,44 @@ import catMap from "@/data/build/category-map.json";
 import featuredData from "@/data/build/featured-tools.json";
 import homepageData from "@/data/build/homepage-data.json";
 
-const categories = Object.values(catMap as any).sort((a:any,b:any) => b.count - a.count);
+const categories = Object.values(catMap as any).sort((a:any, b:any) => b.count - a.count);
 const featuredTools = (featuredData as any)?.global_top ?? [];
 const newTools = (homepageData as any)?.new_tools ?? [];
 const totalTools = (homepageData as any)?.total_tools ?? 19066;
-const pricingDist = (homepageData as any)?.pricing_dist ?? {};
+
+const trustedBrands = [
+  { name: "OpenAI",    icon: "⬡" },
+  { name: "Anthropic", icon: "◈" },
+  { name: "Google AI", icon: "◉" },
+  { name: "NVIDIA",    icon: "▣" },
+  { name: "Microsoft", icon: "⊞" },
+];
+
+const highlights = [
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+    title: "Top AI Tools",
+    desc: "Curated tools for every workflow, platform and budget.",
+    chips: ["All platforms", "Ranked"],
+    href: "/ai-tools",
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+    title: "Powerful Workflows",
+    desc: "Step-by-step AI workflows for professionals and teams.",
+    chips: ["Automations", "Templates"],
+    href: "/ai-workflows",
+    soon: true,
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
+    title: "Expert Insights",
+    desc: "In-depth guides, comparisons and AI news for every level.",
+    chips: ["Guides", "AI News"],
+    href: "/learn-ai",
+    soon: true,
+  },
+];
 ---
 <BaseLayout
   title="AI Tools Directory — Find the Best AI Tools for Any Workflow"
@@ -24,135 +57,289 @@ const pricingDist = (homepageData as any)?.pricing_dist ?? {};
 >
   <Header slot="header"/>
 
-  <!-- ── HERO ── -->
+  <!-- ═══════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════════ -->
   <section class="hero">
+
+    <!-- Ambient background -->
     <div class="hero-bg" aria-hidden="true">
-      <div class="hero-glow hero-glow-1"></div>
-      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid"></div>
     </div>
+
     <div class="container hero-inner">
-      <div class="hero-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        The #1 AI Tools Directory
-      </div>
-      <h1>Find the <span class="text-gradient">perfect AI tool</span><br/>for any workflow</h1>
-      <p class="hero-sub">
-        Browse <strong>{totalTools.toLocaleString()}+</strong> AI tools across <strong>23</strong> categories.
-        Compare pricing, features and alternatives — all in one place.
-      </p>
 
-      <!-- Search -->
-      <div class="hero-search">
-        <svg class="hs-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input class="hs-input" type="text" placeholder="Search 19,000+ AI tools..." aria-label="Search AI tools"
-          onfocus="window.location.href='/ai-tools'" readonly/>
-        <a href="/ai-tools" class="btn btn-primary hs-btn">Search</a>
+      <!-- ── LEFT: copy ─────────────────────────── -->
+      <div class="hero-left">
+
+        <div class="hero-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          The #1 AI Tools Directory
+        </div>
+
+        <h1>Unlock the<br/><span class="text-gradient">Power of AI</span></h1>
+
+        <p class="hero-sub">
+          Your hub for the best AI tools, workflows,
+          prompts, and expert insights.
+        </p>
+
+        <!-- Search bar -->
+        <a href="/ai-tools" class="hero-search" aria-label="Search AI tools">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <span class="hs-placeholder">Search {totalTools.toLocaleString()}+ AI tools…</span>
+          <span class="btn btn-primary hs-btn">Explore Free</span>
+        </a>
+
+        <!-- Trust row -->
+        <div class="trust-row">
+          <span class="trust-label">Covering tools from</span>
+          <div class="trust-logos">
+            {trustedBrands.map(b => (
+              <span class="trust-chip">{b.name}</span>
+            ))}
+          </div>
+        </div>
+
       </div>
 
-      <!-- Stats bar -->
-      <div class="hero-stats">
-        <div class="hs-stat">
-          <strong>{totalTools.toLocaleString()}+</strong>
-          <span>AI Tools</span>
+      <!-- ── RIGHT: pure CSS visual ─────────────── -->
+      <div class="hero-right" aria-hidden="true">
+        <div class="hv-scene">
+
+          <!-- Central glow core -->
+          <div class="hv-core">
+            <div class="hv-core-ring hv-ring-1"></div>
+            <div class="hv-core-ring hv-ring-2"></div>
+            <div class="hv-core-ring hv-ring-3"></div>
+            <div class="hv-core-center">
+              <!-- AI monogram -->
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <text x="5" y="38" font-family="'Plus Jakarta Sans',sans-serif" font-size="36" font-weight="800" fill="url(#hg)">AI</text>
+                <defs>
+                  <linearGradient id="hg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7b93ff"/>
+                    <stop offset="100%" stop-color="#06b6d4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Orbiting nodes -->
+          <div class="hv-orbit hv-orbit-1">
+            <div class="hv-node hv-node-a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+          </div>
+          <div class="hv-orbit hv-orbit-2">
+            <div class="hv-node hv-node-b">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+          </div>
+          <div class="hv-orbit hv-orbit-3">
+            <div class="hv-node hv-node-c">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+          </div>
+          <div class="hv-orbit hv-orbit-4">
+            <div class="hv-node hv-node-d">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </div>
+
+          <!-- Floating data cards -->
+          <div class="hv-card hv-card-1">
+            <span class="hvc-num">{totalTools.toLocaleString()}+</span>
+            <span class="hvc-lbl">AI Tools</span>
+          </div>
+          <div class="hv-card hv-card-2">
+            <div class="hvc-row">
+              <span class="hvc-dot" style="background:var(--c-free)"></span>
+              <span class="hvc-tag">Free</span>
+            </div>
+            <div class="hvc-row">
+              <span class="hvc-dot" style="background:var(--c-freemium)"></span>
+              <span class="hvc-tag">Freemium</span>
+            </div>
+            <div class="hvc-row">
+              <span class="hvc-dot" style="background:var(--c-paid)"></span>
+              <span class="hvc-tag">Paid</span>
+            </div>
+          </div>
+          <div class="hv-card hv-card-3">
+            <span class="hvc-num">23</span>
+            <span class="hvc-lbl">Categories</span>
+          </div>
+
         </div>
-        <div class="hs-div"></div>
-        <div class="hs-stat">
-          <strong>23</strong>
-          <span>Categories</span>
-        </div>
-        <div class="hs-div"></div>
-        <div class="hs-stat">
-          <strong class="stat-free">Free</strong>
-          <span>to use</span>
-        </div>
-        <div class="hs-div"></div>
-        <div class="hs-stat">
-          <strong class="stat-daily">Daily</strong>
-          <span>updates</span>
-        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       HIGHLIGHTS — 3 feature blocks
+  ════════════════════════════════════════════════════ -->
+  <section class="hl-section">
+    <div class="container">
+      <div class="hl-grid">
+        {highlights.map(h => (
+          <div class="hl-card">
+            <div class="hl-icon" set:html={h.icon}/>
+            <div class="hl-body">
+              <strong class="hl-title">
+                {h.title}
+                {h.soon && <span class="hub-soon">Soon</span>}
+              </strong>
+              <p class="hl-desc">{h.desc}</p>
+              <div class="hl-chips">
+                {h.chips.map(c => <span class="filter-chip">{c}</span>)}
+                {!h.soon && (
+                  <a href={h.href} class="hl-more">
+                    Explore
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <div class="container page-body">
+  <div class="container page-content">
 
-    <!-- ── CATEGORIES ── -->
-    <section class="section-sm">
+    <!-- ═══════════════════════════════════════════════════
+         CATEGORIES
+    ════════════════════════════════════════════════════ -->
+    <section class="content-section">
       <div class="section-header">
         <div>
+          <span class="section-eyebrow">Discover</span>
           <h2>Browse by Category</h2>
-          <p class="sh-sub">23 categories covering every AI use case</p>
         </div>
-        <a href="/ai-tools" class="see-all">All categories →</a>
+        <a href="/ai-tools" class="see-all">
+          All 23 categories
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
       <CategoryGrid categories={categories as any} limit={12}/>
     </section>
 
-    <hr class="divider"/>
-
-    <!-- ── FEATURED TOOLS ── -->
+    <!-- ═══════════════════════════════════════════════════
+         POPULAR AI TOOLS
+    ════════════════════════════════════════════════════ -->
     {featuredTools.length > 0 && (
-      <FeaturedToolsSection
-        tools={featuredTools.slice(0,6)}
-        title="Top AI Tools Right Now"
-        subtitle="Highest-rated tools across all categories"
-        showRank={true}
-      />
+      <section class="content-section">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Top Rated</span>
+            <h2>Popular AI Tools</h2>
+          </div>
+          <a href="/ai-tools" class="see-all">
+            View All Tools
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <FeaturedToolsSection tools={featuredTools.slice(0, 6)} showRank={true}/>
+      </section>
     )}
 
-    <!-- ── TRENDING TOPICS ── -->
+    <!-- ═══════════════════════════════════════════════════
+         TRENDING TOPICS
+    ════════════════════════════════════════════════════ -->
     <TrendingTopicsSection/>
 
-    <!-- ── BY AUDIENCE ── -->
+    <!-- ═══════════════════════════════════════════════════
+         BY ROLE
+    ════════════════════════════════════════════════════ -->
     <AudienceSection/>
 
-    <!-- ── BEST-OF LINKS ── -->
-    <section class="bestof-strip">
-      <h2 class="bestof-title">Best AI Tools For…</h2>
+    <!-- ═══════════════════════════════════════════════════
+         BEST-OF
+    ════════════════════════════════════════════════════ -->
+    <section class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Curated lists</span>
+          <h2>Best AI Tools For…</h2>
+        </div>
+      </div>
       <div class="bestof-grid">
         {[
-          ["Writing blog posts", "/best/write-blog-posts-and-articles-with-ai"],
-          ["Building chatbots", "/best/build-ai-chatbots-and-assistants-with"],
-          ["Generating images", "/ai-tools/category/image-generation"],
-          ["Coding & development", "/ai-tools/category/coding-and-dev"],
-          ["Social media content", "/ai-tools/tag/social-media"],
-          ["SEO & keyword research", "/ai-tools/tag/seo-and-keywords"],
-          ["Video creation", "/ai-tools/tag/video-creation"],
-          ["Data & analytics", "/ai-tools/category/data-and-analytics"],
-          ["Customer support", "/ai-tools/tag/customer-support"],
-          ["HR & recruiting", "/ai-tools/category/hr-and-recruiting"],
-          ["Finance & legal", "/ai-tools/category/legal-and-finance"],
-          ["Education & research", "/ai-tools/category/research-and-education"],
-        ].map(([label, href]) => (
+          ["✍️", "Writing blog posts",      "/best/write-blog-posts-and-articles-with-ai"],
+          ["🤖", "Building chatbots",        "/best/build-ai-chatbots-and-assistants-with"],
+          ["🎨", "Generating images",        "/ai-tools/category/image-generation"],
+          ["⚡", "Coding & development",     "/ai-tools/category/coding-and-dev"],
+          ["📱", "Social media content",     "/ai-tools/tag/social-media"],
+          ["📈", "SEO & keyword research",   "/ai-tools/tag/seo-and-keywords"],
+          ["🎬", "Video creation",           "/ai-tools/tag/video-creation"],
+          ["📊", "Data & analytics",         "/ai-tools/category/data-and-analytics"],
+          ["🎧", "Customer support",         "/ai-tools/tag/customer-support"],
+          ["👥", "HR & recruiting",          "/ai-tools/category/hr-and-recruiting"],
+          ["⚖️", "Finance & legal",          "/ai-tools/category/legal-and-finance"],
+          ["🎓", "Education & research",     "/ai-tools/category/research-and-education"],
+        ].map(([em, label, href]) => (
           <a href={href} class="bestof-link">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-            {label}
+            <span class="bestof-em">{em}</span>
+            <span class="bestof-txt">{label}</span>
+            <svg class="bestof-arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
           </a>
         ))}
       </div>
     </section>
 
-    <hr class="divider"/>
+    <!-- ═══════════════════════════════════════════════════
+         FROM THE BLOG (placeholder)
+    ════════════════════════════════════════════════════ -->
+    <section class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Guides & News</span>
+          <h2>From the Blog</h2>
+        </div>
+        <a href="/ai-news" class="see-all">
+          View All
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="blog-grid">
+        {[
+          { tag: "Guide",      title: "Top 10 Must-Have AI Tools in 2025",          slug: "top-10-ai-tools-2025",           grad: "from-blue" },
+          { tag: "Tutorial",   title: "Mastering Midjourney: The Ultimate Guide",    slug: "mastering-midjourney-guide",     grad: "from-violet" },
+          { tag: "Comparison", title: "ChatGPT vs Claude vs Gemini: Full Breakdown", slug: "chatgpt-vs-claude-vs-gemini",    grad: "from-cyan" },
+        ].map(post => (
+          <a href={`/ai-news/${post.slug}`} class:list={["blog-card", post.grad]}>
+            <div class="blog-card-body">
+              <span class="blog-tag">{post.tag}</span>
+              <h3 class="blog-title">{post.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
 
-    <!-- ── NEW TOOLS ── -->
-    {newTools.length > 0 && <NewToolsSection tools={newTools}/>}
-
-    <!-- ── NEWSLETTER ── -->
-    <section class="nl-section">
+    <!-- ═══════════════════════════════════════════════════
+         NEWSLETTER
+    ════════════════════════════════════════════════════ -->
+    <section class="nl-section content-section">
       <div class="nl-card">
+        <div class="nl-orb nl-orb-1" aria-hidden="true"></div>
+        <div class="nl-orb nl-orb-2" aria-hidden="true"></div>
         <div class="nl-content">
-          <div class="nl-badge">📬 Newsletter</div>
+          <span class="section-eyebrow" style="text-align:center">Newsletter</span>
           <h2>Stay ahead with AI</h2>
           <p>Get the best new AI tools, guides and comparisons in your inbox. No spam, unsubscribe anytime.</p>
           <form class="nl-form" onsubmit="return false">
-            <input type="email" placeholder="you@example.com" class="input nl-email" aria-label="Email address"/>
+            <input type="email" placeholder="Enter your email" class="input nl-email" aria-label="Email address"/>
             <button type="submit" class="btn btn-primary">Subscribe Free</button>
           </form>
-          <p class="nl-note">Join 10,000+ AI enthusiasts · Free · Unsubscribe anytime</p>
-        </div>
-        <div class="nl-deco" aria-hidden="true">
-          <div class="nl-orb nl-orb-1"></div>
-          <div class="nl-orb nl-orb-2"></div>
+          <p class="nl-note">Join 10,000+ AI enthusiasts · Free forever · Unsubscribe anytime</p>
         </div>
       </div>
     </section>
@@ -163,66 +350,506 @@ const pricingDist = (homepageData as any)?.pricing_dist ?? {};
 </BaseLayout>
 
 <style>
-/* ── Hero ── */
-.hero{padding:clamp(5rem,12vw,8rem) 0 clamp(3rem,7vw,5rem);text-align:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
-.hero-glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
-.hero-glow-1{width:700px;height:500px;top:-15%;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(99,102,241,.5) 0%,transparent 70%)}
-.hero-glow-2{width:400px;height:300px;top:20%;right:10%;background:radial-gradient(ellipse,rgba(34,211,238,.2) 0%,transparent 70%)}
-.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-6)}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-brand-light);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);padding:6px 14px;border-radius:var(--r-full)}
-.hero-badge svg{color:var(--c-paid)}
-h1.text-gradient{line-height:1.08}
-.hero-sub{font-size:clamp(var(--text-base),2.2vw,var(--text-lg));color:var(--c-text-2);max-width:540px;line-height:1.6}
-.hero-sub strong{color:var(--c-text);font-family:var(--font-display)}
-
-/* Search */
-.hero-search{display:flex;align-items:center;background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:6px 6px 6px 16px;gap:var(--sp-3);width:100%;max-width:540px;box-shadow:0 0 0 1px rgba(99,102,241,.1),0 8px 32px rgba(0,0,0,.3);transition:border-color var(--t-fast),box-shadow var(--t-fast)}
-.hero-search:focus-within{border-color:var(--c-border-brand);box-shadow:0 0 0 1px rgba(99,102,241,.3),0 8px 32px rgba(99,102,241,.15)}
-.hs-icon{color:var(--c-text-3);flex-shrink:0}
-.hs-input{flex:1;background:none;border:none;outline:none;font-family:var(--font-body);font-size:var(--text-sm);color:var(--c-text);cursor:pointer}
-.hs-input::placeholder{color:var(--c-text-3)}
-.hs-btn{flex-shrink:0;padding:9px 20px}
-
-/* Stats */
-.hero-stats{display:flex;align-items:center;gap:var(--sp-5);flex-wrap:wrap;justify-content:center;padding:var(--sp-4) var(--sp-6);background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-xl)}
-.hs-stat{display:flex;flex-direction:column;align-items:center;gap:2px}
-.hs-stat strong{font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;color:var(--c-text)}
-.hs-stat span{font-size:10px;color:var(--c-text-3);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
-.stat-free{color:var(--c-free) !important}
-.stat-daily{color:var(--c-brand-light) !important}
-.hs-div{width:1px;height:28px;background:var(--c-border)}
-
-/* Page body */
-.page-body{padding-top:var(--sp-16)}
-.sh-sub{font-size:var(--text-sm);color:var(--c-text-3);margin-top:4px}
-
-/* Best-of strip */
-.bestof-strip{margin-bottom:var(--sp-16)}
-.bestof-title{font-size:clamp(var(--text-xl),2.5vw,var(--text-2xl));margin-bottom:var(--sp-6)}
-.bestof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--sp-2)}
-.bestof-link{display:flex;align-items:center;gap:var(--sp-2);padding:10px 14px;background:var(--c-bg-2);border:1px solid var(--c-border);border-radius:var(--r-md);font-size:var(--text-sm);color:var(--c-text-2);text-decoration:none;font-weight:500;transition:all var(--t-fast)}
-.bestof-link:hover{background:var(--c-bg-3);border-color:var(--c-border-hover);color:var(--c-text)}
-.bestof-link svg{color:var(--c-text-3);flex-shrink:0}
-
-/* Newsletter */
-.nl-section{margin-bottom:var(--sp-16)}
-.nl-card{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--c-bg-2) 0%,var(--c-bg-3) 100%);border:1px solid var(--c-border-brand);border-radius:var(--r-xl);padding:clamp(var(--sp-8),6vw,var(--sp-16));text-align:center}
-.nl-content{position:relative;z-index:1;max-width:500px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:var(--sp-4)}
-.nl-badge{font-size:var(--text-sm);font-weight:600;color:var(--c-brand-light)}
-.nl-card h2{font-size:clamp(var(--text-2xl),3vw,var(--text-3xl))}
-.nl-card p{font-size:var(--text-sm);color:var(--c-text-2);max-width:360px}
-.nl-form{display:flex;gap:var(--sp-2);width:100%;max-width:400px}
-.nl-email{flex:1}
-.nl-note{font-size:var(--text-xs);color:var(--c-text-3)}
-.nl-deco{position:absolute;inset:0;pointer-events:none}
-.nl-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.2}
-.nl-orb-1{width:300px;height:300px;top:-50%;right:-5%;background:var(--c-brand)}
-.nl-orb-2{width:200px;height:200px;bottom:-30%;left:5%;background:var(--c-brand-cyan)}
-
-@media(max-width:600px){
-  .hero-search{max-width:100%}
-  .hero-stats{gap:var(--sp-3)}
-  .nl-form{flex-direction:column}
+/* ══════════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(3rem, 6vw, 4.5rem);
 }
+
+/* ── Ambient background ── */
+.hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0 }
+.hero-orb { position: absolute; border-radius: 50%; filter: blur(90px) }
+.hero-orb-1 {
+  width: 55vw; height: 55vw; max-width: 700px; max-height: 700px;
+  top: -30%; left: 30%;
+  background: radial-gradient(ellipse, rgba(79,110,247,.18) 0%, transparent 70%);
+}
+.hero-orb-2 {
+  width: 35vw; height: 35vw; max-width: 420px; max-height: 420px;
+  top: 5%; right: 2%;
+  background: radial-gradient(ellipse, rgba(124,58,237,.12) 0%, transparent 70%);
+}
+.hero-orb-3 {
+  width: 25vw; height: 25vw; max-width: 300px; max-height: 300px;
+  bottom: -10%; left: 5%;
+  background: radial-gradient(ellipse, rgba(6,182,212,.08) 0%, transparent 70%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(79,110,247,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,110,247,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 75% at 55% 40%, black 20%, transparent 80%);
+}
+
+/* ── Layout ── */
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .hero-inner            { grid-template-columns: 1fr }
+  .hero-right            { display: none }
+}
+
+/* ── Left: copy ── */
+.hero-left { display: flex; flex-direction: column; gap: var(--sp-6) }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--c-brand-light);
+  background: rgba(79,110,247,.08);
+  border: 1px solid rgba(79,110,247,.22);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  width: fit-content;
+}
+.hero-badge svg { color: var(--c-paid); flex-shrink: 0 }
+
+.hero-sub {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: var(--c-text-2);
+  line-height: 1.65;
+  max-width: 440px;
+}
+
+/* ── Search bar (link) ── */
+.hero-search {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  background: rgba(15,22,38,.8);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-xl);
+  padding: 6px 6px 6px 16px;
+  max-width: 460px;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(79,110,247,.08), 0 10px 40px rgba(0,0,0,.5);
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+  backdrop-filter: blur(8px);
+}
+.hero-search:hover {
+  border-color: rgba(79,110,247,.35);
+  box-shadow: 0 0 0 1px rgba(79,110,247,.18), 0 10px 48px rgba(79,110,247,.12);
+}
+.hero-search svg { color: var(--c-text-3); flex-shrink: 0 }
+.hs-placeholder {
+  flex: 1;
+  font-size: var(--text-sm);
+  color: var(--c-text-3);
+  font-family: var(--font-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hs-btn { flex-shrink: 0 }
+
+/* ── Trust row ── */
+.trust-row  { display: flex; flex-direction: column; gap: var(--sp-3) }
+.trust-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--c-text-4);
+}
+.trust-logos { display: flex; flex-wrap: wrap; gap: 6px }
+.trust-chip {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--c-text-3);
+  background: var(--c-bg-3);
+  border: 1px solid var(--c-border-subtle);
+  padding: 4px 11px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO RIGHT — pure CSS orbital visual
+══════════════════════════════════════════════════════════════ */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-scene {
+  position: relative;
+  width: 340px;
+  height: 340px;
+}
+
+/* ── Core ring system ── */
+.hv-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-core-center {
+  position: relative;
+  z-index: 10;
+  width: 80px; height: 80px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(79,110,247,.25) 0%, rgba(124,58,237,.25) 100%);
+  border: 1px solid rgba(79,110,247,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 0 1px rgba(79,110,247,.15),
+    0 0 40px rgba(79,110,247,.3),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+}
+
+.hv-core-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+.hv-ring-1 {
+  width: 140px; height: 140px;
+  border-color: rgba(79,110,247,.18);
+  background: radial-gradient(ellipse, rgba(79,110,247,.06) 0%, transparent 70%);
+}
+.hv-ring-2 {
+  width: 220px; height: 220px;
+  border-color: rgba(79,110,247,.1);
+  border-style: dashed;
+  animation: ring-spin 30s linear infinite;
+}
+.hv-ring-3 {
+  width: 310px; height: 310px;
+  border-color: rgba(124,58,237,.07);
+  border-style: dashed;
+  animation: ring-spin 50s linear infinite reverse;
+}
+@keyframes ring-spin {
+  to { transform: rotate(360deg) }
+}
+
+/* ── Orbiting icon nodes ── */
+.hv-orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+}
+/* Each orbit rotates; the node counter-rotates to stay upright */
+.hv-orbit-1 {
+  width: 140px; height: 140px;
+  margin: -70px 0 0 -70px;
+  animation: orbit-cw 12s linear infinite;
+}
+.hv-orbit-2 {
+  width: 220px; height: 220px;
+  margin: -110px 0 0 -110px;
+  animation: orbit-ccw 18s linear infinite;
+}
+.hv-orbit-3 {
+  width: 220px; height: 220px;
+  margin: -110px 0 0 -110px;
+  animation: orbit-cw 22s linear infinite;
+  animation-delay: -7s;
+}
+.hv-orbit-4 {
+  width: 310px; height: 310px;
+  margin: -155px 0 0 -155px;
+  animation: orbit-ccw 28s linear infinite;
+  animation-delay: -10s;
+}
+@keyframes orbit-cw  { to { transform: rotate( 360deg) } }
+@keyframes orbit-ccw { to { transform: rotate(-360deg) } }
+
+.hv-node {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 34px; height: 34px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+/* Counter-rotate each node to keep icon upright */
+.hv-orbit-1 .hv-node { animation: orbit-ccw 12s linear infinite }
+.hv-orbit-2 .hv-node { animation: orbit-cw  18s linear infinite }
+.hv-orbit-3 .hv-node { animation: orbit-ccw 22s linear infinite; animation-delay: -7s }
+.hv-orbit-4 .hv-node { animation: orbit-cw  28s linear infinite; animation-delay: -10s }
+
+.hv-node-a { background: rgba(79,110,247,.18); border: 1px solid rgba(79,110,247,.3); color: #7b93ff }
+.hv-node-b { background: rgba(6,182,212,.15);  border: 1px solid rgba(6,182,212,.25);  color: #22d3ee }
+.hv-node-c { background: rgba(124,58,237,.15); border: 1px solid rgba(124,58,237,.25); color: #a78bfa }
+.hv-node-d { background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.22); color: #34d399 }
+
+/* ── Floating data cards ── */
+.hv-card {
+  position: absolute;
+  background: rgba(10,16,28,.88);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* Top-left: tool count */
+.hv-card-1 {
+  top: 10%; left: -2%;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+/* Bottom-right: pricing dots */
+.hv-card-2 {
+  bottom: 8%; right: -2%;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* Top-right: category count */
+.hv-card-3 {
+  top: 10%; right: 2%;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hvc-num {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.hvc-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--c-text-3);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.hvc-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hvc-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hvc-tag {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--c-text-2);
+}
+
+/* ── Highlights strip ──────────────────────────────────────── */
+.hl-section {
+  padding: var(--sp-3) 0 var(--sp-12);
+  position: relative;
+}
+.hl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+@media (max-width: 700px) { .hl-grid { grid-template-columns: 1fr } }
+
+.hl-card {
+  display: flex;
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  transition: border-color var(--t-base);
+}
+.hl-card:hover { border-color: var(--c-border-hover) }
+.hl-icon {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  background: var(--c-brand-glow-s);
+  border: 1px solid rgba(79,110,247,.15);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-brand-light);
+}
+.hl-body { display: flex; flex-direction: column; gap: var(--sp-2) }
+.hl-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--c-text);
+  letter-spacing: -.01em;
+}
+.hl-desc { font-size: var(--text-xs); color: var(--c-text-3); line-height: 1.5 }
+.hl-chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center }
+.hl-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--c-brand-light);
+  text-decoration: none;
+  transition: gap var(--t-fast);
+}
+.hl-more:hover { gap: 6px; color: var(--c-text) }
+
+/* ── Page content ──────────────────────────────────────────── */
+.page-content { padding-top: var(--sp-4) }
+.content-section { margin-bottom: var(--sp-20) }
+
+/* ── Best-of grid ──────────────────────────────────────────── */
+.bestof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--sp-2);
+}
+.bestof-link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 11px 14px;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  font-size: var(--text-sm);
+  color: var(--c-text-2);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-display);
+  transition: all var(--t-fast);
+  letter-spacing: -.01em;
+}
+.bestof-link:hover {
+  background: var(--c-bg-3);
+  border-color: var(--c-border-hover);
+  color: var(--c-text);
+}
+.bestof-em  { font-size: 15px; flex-shrink: 0 }
+.bestof-txt { flex: 1 }
+.bestof-arr { color: var(--c-text-4); flex-shrink: 0; transition: transform var(--t-fast) }
+.bestof-link:hover .bestof-arr { transform: translateX(2px); color: var(--c-brand-light) }
+
+/* ── Blog cards ────────────────────────────────────────────── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-4);
+}
+.blog-card {
+  display: flex;
+  align-items: flex-end;
+  min-height: 180px;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--c-border);
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  transition: border-color var(--t-base), transform var(--t-base);
+  padding: var(--sp-6);
+}
+.blog-card:hover { border-color: var(--c-border-hover); transform: translateY(-2px) }
+.blog-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .9;
+  transition: opacity var(--t-base);
+}
+.blog-card:hover::before { opacity: 1 }
+.from-blue::before   { background: linear-gradient(135deg, #0c1220 0%, rgba(79,110,247,.5) 100%) }
+.from-violet::before { background: linear-gradient(135deg, #0c1220 0%, rgba(124,58,237,.5) 100%) }
+.from-cyan::before   { background: linear-gradient(135deg, #0c1220 0%, rgba(6,182,212,.4) 100%) }
+.blog-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.blog-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--c-brand-light);
+  font-family: var(--font-display);
+}
+.blog-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--c-text);
+  line-height: 1.3;
+  letter-spacing: -.02em;
+}
+
+/* ── Newsletter ────────────────────────────────────────────── */
+.nl-section { margin-bottom: var(--sp-8) }
+.nl-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border-brand);
+  border-radius: var(--r-2xl);
+  padding: clamp(var(--sp-10), 7vw, var(--sp-20));
+  text-align: center;
+}
+.nl-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: .25;
+  pointer-events: none;
+}
+.nl-orb-1 { width: 350px; height: 350px; top: -30%; right: 5%;  background: var(--c-brand) }
+.nl-orb-2 { width: 250px; height: 250px; bottom: -30%; left: 5%; background: var(--c-brand-cyan) }
+.nl-content {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+.nl-card h2 { font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl)) }
+.nl-card > .nl-content > p { font-size: var(--text-sm); max-width: 380px }
+.nl-form { display: flex; gap: var(--sp-2); width: 100%; max-width: 420px }
+.nl-email { flex: 1 }
+.nl-note  { font-size: 11px; color: var(--c-text-3) }
+@media (max-width: 500px) { .nl-form { flex-direction: column } }
 </style>

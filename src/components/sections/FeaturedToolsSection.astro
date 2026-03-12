@@ -1,22 +1,11 @@
 ---
 import ToolCard from "@/components/cards/ToolCard.astro";
-interface Props { tools:any[]; title?:string; subtitle?:string; showRank?:boolean; viewAllHref?:string }
-const { tools, title="Top AI Tools", subtitle, showRank=false, viewAllHref="/ai-tools" } = Astro.props;
+interface Props { tools: any[]; showRank?: boolean }
+const { tools, showRank = false } = Astro.props;
 if (!tools?.length) return;
 ---
-<section class="fts">
-  <div class="section-header">
-    <div>
-      <h2>{title}</h2>
-      {subtitle && <p class="fts-sub">{subtitle}</p>}
-    </div>
-    <a href={viewAllHref} class="see-all">View all tools →</a>
-  </div>
-  <div class="grid-tools">
-    {tools.map((t:any, i:number) => <ToolCard tool={t} rank={showRank ? i+1 : undefined}/>)}
-  </div>
-</section>
-<style>
-.fts{margin-bottom:var(--sp-16)}
-.fts-sub{font-size:var(--text-sm);color:var(--c-text-3);margin-top:4px}
-</style>
+<div class="grid-tools">
+  {tools.map((t: any, i: number) => (
+    <ToolCard tool={t} rank={showRank ? i + 1 : undefined}/>
+  ))}
+</div>
