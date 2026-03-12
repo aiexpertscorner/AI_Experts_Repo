@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev":          "astro dev",
-    "build":        "astro build",
+    "build":        "node --max-old-space-size=4096 ./node_modules/.bin/astro build",
     "preview":      "astro preview",
-    "enrich":       "node scripts/enrich-tools-v6.mjs --skip-http",
-    "enrich:full":  "node scripts/enrich-tools-v6.mjs",
-    "datasets":     "node scripts/build-seo-datasets.mjs",
+    "enrich":       "node --max-old-space-size=8192 scripts/enrich-tools-v6.mjs --skip-http",
+    "enrich:full":  "node --max-old-space-size=8192 scripts/enrich-tools-v6.mjs",
+    "datasets":     "node --max-old-space-size=8192 scripts/build-seo-datasets.mjs",
     "featured":     "node scripts/build-featured.mjs",
-    "pipeline":     "node scripts/enrich-tools-v6.mjs --skip-http && node scripts/build-seo-datasets.mjs && node scripts/build-featured.mjs"
+    "pipeline":     "node --max-old-space-size=8192 scripts/enrich-tools-v6.mjs --skip-http && node --max-old-space-size=8192 scripts/build-seo-datasets.mjs && node scripts/build-featured.mjs"
   },
   "dependencies":    { "astro": "^4.16.0" },
   "devDependencies": { "@astrojs/tailwind": "^5.1.0", "tailwindcss": "^3.4.0" }
