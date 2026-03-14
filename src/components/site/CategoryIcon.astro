@@ -1,0 +1,15 @@
+---
+import { getCategoryIconMarkup } from "@/data/categoryIcons";
+
+interface Props {
+  slug?: string;
+  category?: string;
+  class?: string;
+}
+
+const props = Astro.props as Props;
+const markup = getCategoryIconMarkup(props.slug || props.category || "");
+const className = ["category-icon", props.class].filter(Boolean).join(" ");
+---
+
+<span class={className} aria-hidden="true" set:html={markup}></span>

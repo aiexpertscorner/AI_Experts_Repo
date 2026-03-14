@@ -1,0 +1,297 @@
+{
+  "project": "Astro Project Audit",
+  "timestamp": "2026-03-14T02:07:16.885Z",
+  "structure": {},
+  "components": [
+    {
+      "name": "AuthorityToolCard.astro",
+      "path": "src\\components\\cards\\AuthorityToolCard.astro",
+      "content": "```astro\n---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\n\ninterface Props {\n  tool: any;\n  rank?: number;\n  compact?: boolean;\n  featured?: boolean;\n}\n\nconst { tool, rank, compact = false, featured = false } = Astro.props;\n\nconst mergedTool = {\n  ...tool,\n  is_featured: tool?.is_featured || featured,\n};\n---\n\n<ToolCard\n  tool={mergedTool}\n  rank={rank}\n  compact={compact}\n  variant=\"authority\"\n  showDescription={true}\n  showPricing={true}\n  showCategory={true}\n  showCTA={true}\n/>\n```\n\n---\n\n# 3) Vervang volledig: `src/components/cards/ToolRow.astro`\n\nOok dit wordt nu een wrapper.\n\n```astro\n---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\n\ninterface Props {\n  tool: any;\n  rank?: number;\n}\n\nconst { tool, rank } = Astro.props;\n---\n\n<ToolCard\n  tool={tool}\n  rank={rank}\n  variant=\"row\"\n  compact={false}\n  showDescription={false}\n  showPricing={true}\n  showCategory={false}\n  showCTA={false}\n/>\n```"
+    },
+    {
+      "name": "CategoryCard.astro",
+      "path": "src\\components\\cards\\CategoryCard.astro",
+      "content": "---\nimport CategoryIcon from \"@/components/site/CategoryIcon.astro\";\n\ninterface Props {\n  category: {\n    slug: string;\n    name: string;\n    count?: number;\n    description?: string;\n  };\n}\n\nconst { category } = Astro.props;\n---\n\n<a href={`/ai-tools/category/${category.slug}`} class=\"category-spotlight-card\">\n  <div class=\"category-spotlight-card__top\">\n    <CategoryIcon slug={category.slug} class=\"category-icon--lg\" />\n    <span class=\"category-spotlight-card__count\">{Number(category.count || 0).toLocaleString()} tools</span>\n  </div>\n  <h3 class=\"category-spotlight-card__title\">{category.name}</h3>\n  <p class=\"category-spotlight-card__description\">{category.description || `Explore ${category.name.toLowerCase()} tools and related discovery paths.`}</p>\n  <span class=\"category-spotlight-card__cta\">Open category</span>\n</a>\n"
+    },
+    {
+      "name": "ToolCard.astro",
+      "path": "src\\components\\cards\\ToolCard.astro",
+      "content": "---\ninterface ToolShape {\n  name?: string;\n  handle?: string;\n  slug?: string;\n  tagline?: string;\n  short?: string;\n  desc?: string;\n  description?: string;\n  pricing_tier?: string;\n  pricing?: string;\n  logo_domain?: string;\n  logo_url?: string;\n  feature_tags?: string[];\n  tags?: string[];\n  category?: string;\n  category_slug?: string;\n  is_featured?: boolean;\n  affiliate_url?: string;\n  website_url?: string;\n}\n\ninterface Props {\n  tool: ToolShape;\n  rank?: number;\n  compact?: boolean;\n  variant?: \"default\" | \"authority\" | \"row\";\n  showDescription?: boolean;\n  showPricing?: boolean;\n  showCategory?: boolean;\n  showCTA?: boolean;\n}\n\nconst {\n  tool,\n  rank,\n  compact = false,\n  variant = \"default\",\n  showDescription = true,\n  showPricing = true,\n  showCategory = true,\n  showCTA = false,\n} = Astro.props;\n\nconst resolvedHandle = tool?.handle || tool?.slug || \"tool\";\nconst resolvedName = tool?.name || resolvedHandle;\nconst resolvedPricing = String(tool?.pricing_tier || tool?.pricing || \""
+    },
+    {
+      "name": "ToolRow.astro",
+      "path": "src\\components\\cards\\ToolRow.astro",
+      "content": "```astro\n---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\n\ninterface Props {\n  tool: any;\n  rank?: number;\n}\n\nconst { tool, rank } = Astro.props;\n---\n\n<ToolCard\n  tool={tool}\n  rank={rank}\n  variant=\"row\"\n  compact={false}\n  showDescription={false}\n  showPricing={true}\n  showCategory={false}\n  showCTA={false}\n/>\n```"
+    },
+    {
+      "name": "TopicCard.astro",
+      "path": "src\\components\\cards\\TopicCard.astro",
+      "content": "---\r\ninterface Props {\r\n  href: string;\r\n  icon: string;\r\n  title: string;\r\n  text: string;\r\n  label?: string;\r\n}\r\n\r\nconst { href, icon, title, text, label } = Astro.props;\r\n---\r\n\r\n<a href={href} class=\"topic-card\">\r\n  <div class=\"topic-card__icon\">{icon}</div>\r\n  <strong>{title}</strong>\r\n  <p style=\"margin: 8px 0 0; color: var(--text-muted);\">{text}</p>\r\n  {label && <span class=\"topic-card__label\">{label}</span>}\r\n</a>"
+    },
+    {
+      "name": "AudienceSection.astro",
+      "path": "src\\components\\sections\\AudienceSection.astro",
+      "content": "---\nconst audiences = [\n  { title: \"Marketers & Growth\",      emoji: \"📈\", desc: \"AI for SEO, content, ads, social media and lead generation.\", href: \"/ai-tools/industry/marketing\" },\n  { title: \"Developers\",              emoji: \"⚡\", desc: \"Code assistants, API tools, testing and DevOps automation.\", href: \"/ai-tools/category/coding-and-dev\" },\n  { title: \"Content Creators\",        emoji: \"✍️\", desc: \"Writing, video, images, podcasts and creative workflows.\", href: \"/ai-tools/category/writing-and-content\" },\n  { title: \"Business & Sales\",        emoji: \"💼\", desc: \"CRM, outreach, proposals, contracts and analytics.\", href: \"/ai-tools/industry/sales\" },\n  { title: \"Designers\",               emoji: \"🎨\", desc: \"Image generation, UI design, branding and creative tools.\", href: \"/ai-tools/category/design-and-ui\" },\n  { title: \"Researchers & Educators\", emoji: \"🧠\", desc: \"Research assistants, summarization, learning and tutoring.\", href: \"/ai-tools/category/research-and-education\" },\n];\n--"
+    },
+    {
+      "name": "BestOfSection.astro",
+      "path": "src\\components\\sections\\BestOfSection.astro",
+      "content": "---\ninterface Props { links: { label: string; href: string }[]; }\nconst { links = [] } = Astro.props;\n---\n\n<section class=\"home-block\">\n  <div class=\"container\">\n    <div class=\"home-section-head\">\n      <div>\n        <span class=\"home-section-head__eyebrow\">Best Of</span>\n        <h2 class=\"home-section-head__title\">High-Intent Discovery Paths</h2>\n        <p class=\"home-section-head__description\">These curated routes support both users and search visibility by linking into valuable best-of, pricing and taxonomy pages.</p>\n      </div>\n      <a href=\"/best\" class=\"btn btn--link\">Open best-of hub<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a>\n    </div>\n    <div class=\"bestof-v2-grid\">\n      {links.map((item) => <a href={item.href} class=\"bestof-v2-card\"><span class=\"bestof-v2-card__label\">{item.label}</span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stro"
+    },
+    {
+      "name": "CategoryDiscoverySection.astro",
+      "path": "src\\components\\sections\\CategoryDiscoverySection.astro",
+      "content": "---\nimport CategoryCard from \"@/components/cards/CategoryCard.astro\";\ninterface Props { categories: any[]; }\nconst { categories = [] } = Astro.props;\n---\n\n<section class=\"home-block\">\n  <div class=\"container\">\n    <div class=\"home-section-head\">\n      <div>\n        <span class=\"home-section-head__eyebrow\">Taxonomy Explorer</span>\n        <h2 class=\"home-section-head__title\">Explore the Main AI Tool Categories</h2>\n        <p class=\"home-section-head__description\">Navigate the directory through category hubs built for scalable discovery, stronger internal linking and better search visibility.</p>\n      </div>\n      <a href=\"/ai-tools\" class=\"btn btn--link\">Browse all categories<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a>\n    </div>\n    <div class=\"category-spotlight-grid\">\n      {categories.map((category) => <CategoryCard category={category} />)}\n    </div>\n  </div>\n</"
+    },
+    {
+      "name": "CategoryGrid.astro",
+      "path": "src\\components\\sections\\CategoryGrid.astro",
+      "content": "---\nimport CategoryCard from \"@/components/cards/CategoryCard.astro\";\ninterface Cat { name: string; slug: string; count: number; description?: string }\ninterface Props { categories: Cat[]; limit?: number; showAll?: boolean }\nconst { categories, limit = 12, showAll = false } = Astro.props;\nconst shown = showAll ? categories : categories.slice(0, limit);\n---\n<div class=\"cat-grid\">\n  {shown.map(c => (\n    <CategoryCard name={c.name} slug={c.slug} count={c.count} description={c.description}/>\n  ))}\n</div>\n{!showAll && categories.length > limit && (\n  <div class=\"cat-more\">\n    <a href=\"/ai-tools\" class=\"btn btn-ghost\">Browse all {categories.length} categories →</a>\n  </div>\n)}\n<style>\n.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: var(--sp-3) }\n.cat-more { margin-top: var(--sp-8); text-align: center }\n</style>\n"
+    },
+    {
+      "name": "FeaturedToolsRail.astro",
+      "path": "src\\components\\sections\\FeaturedToolsRail.astro",
+      "content": "---\r\ninterface Tool {\r\n  handle: string;\r\n  name: string;\r\n  cat?: string;\r\n  pricing?: string;\r\n}\r\n\r\ninterface Props {\r\n  tools: Tool[];\r\n}\r\n\r\nconst { tools } = Astro.props;\r\n---\r\n\r\n<section class=\"featured-rail\">\r\n  <div class=\"container\">\r\n    <div class=\"featured-rail__header\">\r\n      <div>\r\n        <h2>Featured tools</h2>\r\n        <p>Fast entry points into high-interest tools and categories.</p>\r\n      </div>\r\n      <a href=\"/best/ai-tools-for-marketing\" class=\"section-link\">See best pages</a>\r\n    </div>\r\n\r\n    <div class=\"featured-rail__track\">\r\n      {tools.map((tool) => (\r\n        <a href={`/tools/${tool.handle}`} class=\"featured-rail__card\">\r\n          <div class=\"featured-rail__title\">{tool.name}</div>\r\n          <div class=\"featured-rail__meta\">\r\n            <span>{tool.cat || \"Other\"}</span>\r\n            <span>{tool.pricing || \"Unknown\"}</span>\r\n          </div>\r\n        </a>\r\n      ))}\r\n    </div>\r\n  </div>\r\n</section>"
+    },
+    {
+      "name": "FeaturedToolsSection.astro",
+      "path": "src\\components\\sections\\FeaturedToolsSection.astro",
+      "content": "```astro\n---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\n\ninterface Props {\n  tools: any[];\n  showRank?: boolean;\n}\n\nconst { tools = [], showRank = false } = Astro.props;\n\nif (!tools?.length) return null;\n---\n\n<div class=\"grid-tools\">\n  {tools.map((tool: any, i: number) => (\n    <ToolCard\n      tool={tool}\n      rank={showRank ? i + 1 : undefined}\n      variant=\"default\"\n      showDescription={true}\n      showPricing={true}\n      showCategory={true}\n      showCTA={false}\n    />\n  ))}\n</div>"
+    },
+    {
+      "name": "FlagshipToolsSection.astro",
+      "path": "src\\components\\sections\\FlagshipToolsSection.astro",
+      "content": "---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\n\ninterface Props { tools: any[]; }\nconst { tools = [] } = Astro.props;\n\nconst curatedHandles = [\"chatgpt\", \"claude\", \"google-gemini\", \"midjourney\", \"microsoft-copilot\", \"notion-ai\"];\nconst fallback: Record<string, any> = {\n  chatgpt: { handle: \"chatgpt\", name: \"ChatGPT\", tagline: \"The leading AI assistant for writing, coding and general productivity.\", pricing_tier: \"freemium\", category: \"AI Automation & Agents\", category_slug: \"ai-automation-agents\", logo_domain: \"openai.com\", website_url: \"https://openai.com\", is_featured: true },\n  claude: { handle: \"claude\", name: \"Claude\", tagline: \"A strong AI assistant for analysis, long-form reasoning and workflow support.\", pricing_tier: \"freemium\", category: \"AI Automation & Agents\", category_slug: \"ai-automation-agents\", logo_domain: \"anthropic.com\", website_url: \"https://anthropic.com\", is_featured: true },\n  \"google-gemini\": { handle: \"google-gemini\", name: \"Google Gemini\", tagl"
+    },
+    {
+      "name": "HeroSection.astro",
+      "path": "src\\components\\sections\\HeroSection.astro",
+      "content": "---\ninterface Props {\n  totalToolsCount: number;\n  totalCatsCount: number;\n  trustedBrands: string[];\n}\n\nconst { totalToolsCount = 19088, totalCatsCount = 15, trustedBrands = [] } = Astro.props;\n---\n\n<section class=\"hero-v2\">\n  <div class=\"hero-v2__bg\" aria-hidden=\"true\">\n    <div class=\"hero-v2__glow hero-v2__glow--one\"></div>\n    <div class=\"hero-v2__glow hero-v2__glow--two\"></div>\n    <div class=\"hero-v2__grid\"></div>\n  </div>\n\n  <div class=\"container hero-v2__inner\">\n    <div class=\"hero-v2__content\">\n      <div class=\"hero-v2__eyebrow\">AI tools directory for builders, marketers and modern teams</div>\n      <h1 class=\"hero-v2__title\">Discover the Best <span class=\"text-gradient-ai\">AI Tools</span> for Any Workflow</h1>\n      <p class=\"hero-v2__description\">\n        Browse {totalToolsCount.toLocaleString()}+ AI tools, compare pricing, explore alternatives, and discover the right products for content, automation, development, design and growth.\n      </p>\n      <div class=\"hero-v2__a"
+    },
+    {
+      "name": "HomeEditorialSection.astro",
+      "path": "src\\components\\sections\\HomeEditorialSection.astro",
+      "content": "---\ninterface Props { posts: { tag: string; title: string; href: string; excerpt: string }[]; }\nconst { posts = [] } = Astro.props;\n---\n\n<section class=\"home-block home-block--editorial\">\n  <div class=\"container\">\n    <div class=\"home-section-head\">\n      <div>\n        <span class=\"home-section-head__eyebrow\">Guides & Insights</span>\n        <h2 class=\"home-section-head__title\">Editorial Content Built for Discovery</h2>\n        <p class=\"home-section-head__description\">Strong supporting content helps users evaluate tools, understand workflows and navigate deeper into the site.</p>\n      </div>\n      <a href=\"/ai-news\" class=\"btn btn--link\">View all articles<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a>\n    </div>\n    <div class=\"editorial-v2-grid\">\n      {posts.map((post) => <a href={post.href} class=\"editorial-v2-card\"><span class=\"editorial-v2-card__tag\">{post.tag}</s"
+    },
+    {
+      "name": "HubNavigator.astro",
+      "path": "src\\components\\sections\\HubNavigator.astro",
+      "content": "﻿---\n// HubNavigator.astro â€” Homepage hub grid (8 hubs with coming-soon badges)\n// PLACEHOLDER\n---\n<section><!-- PLACEHOLDER --></section>\r\n"
+    },
+    {
+      "name": "HubNavSection.astro",
+      "path": "src\\components\\sections\\HubNavSection.astro",
+      "content": "---\n/**\n * HubNavSection — 6 platform hub cards\n * Primary internal navigation block for the homepage.\n */\nimport { MAIN_NAV } from \"@/data/homeConfig\";\n\nconst hubs = [\n  {\n    title:   \"AI Tools\",\n    href:    \"/ai-tools\",\n    soon:    false,\n    stat:    \"19,000+ tools\",\n    desc:    \"Browse, filter and compare tools across 23 categories.\",\n    icon:    `<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>`,\n    accent:  \"brand\",\n  },\n  {\n    title:   \"Prompts\",\n    href:    \"/prompts\",\n    soon:    true,\n    stat:    \"Coming soon\",\n    desc:    \"Curated prompts for ChatGPT, Claude, Midjourney and more.\",\n    icon:    `<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z\"/></svg>`,\n    accent:  \"violet\",\n  },\n  {\n    title:   \"Workflows\",\n    href:    \"/ai-workflows\",\n    soo"
+    },
+    {
+      "name": "NewsletterSection.astro",
+      "path": "src\\components\\sections\\NewsletterSection.astro",
+      "content": "---\n---\n<section class=\"home-block home-block--last\">\n  <div class=\"container\">\n    <div class=\"newsletter-v2\">\n      <div class=\"newsletter-v2__glow newsletter-v2__glow--one\" aria-hidden=\"true\"></div>\n      <div class=\"newsletter-v2__glow newsletter-v2__glow--two\" aria-hidden=\"true\"></div>\n      <div class=\"newsletter-v2__content\">\n        <span class=\"home-section-head__eyebrow\">Newsletter</span>\n        <h2 class=\"home-section-head__title\">Stay Ahead with AI</h2>\n        <p class=\"home-section-head__description\">Get regular updates with strong AI tools, comparisons, discovery links and workflow ideas.</p>\n        <form class=\"newsletter-v2__form\" onsubmit=\"return false\">\n          <input type=\"email\" class=\"newsletter-v2__input\" placeholder=\"your@email.com\" aria-label=\"Email address\" />\n          <button type=\"submit\" class=\"btn btn--primary\">Subscribe Free</button>\n        </form>\n        <p class=\"newsletter-v2__note\">Built for users who want to keep up with the AI tools landscape"
+    },
+    {
+      "name": "NewToolsSection.astro",
+      "path": "src\\components\\sections\\NewToolsSection.astro",
+      "content": "---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\ninterface Props { tools: any[] }\nconst { tools } = Astro.props;\nif (!tools?.length) return;\n---\n<section class=\"nts\">\n  <div class=\"section-header\">\n    <div>\n      <span class=\"section-eyebrow\">Just Added</span>\n      <h2>New This Week</h2>\n    </div>\n    <a href=\"/ai-tools\" class=\"see-all\">\n      Browse all\n      <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>\n    </a>\n  </div>\n  <div class=\"grid-tools\">\n    {tools.slice(0, 6).map((t: any) => <ToolCard tool={t}/>)}\n  </div>\n</section>\n\n<style>\n.nts { margin-bottom: var(--sp-20) }\n</style>\n"
+    },
+    {
+      "name": "PopularToolsSection.astro",
+      "path": "src\\components\\sections\\PopularToolsSection.astro",
+      "content": "---\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\ninterface Props { title?: string; eyebrow?: string; description?: string; tools: any[]; totalCompareCount?: number; totalBestOfCount?: number; ctaHref?: string; ctaLabel?: string; compact?: boolean; }\nconst { title = \"Popular AI Tools\", eyebrow = \"Top Ranked\", description = \"Explore some of the most visible and frequently visited tools in the directory.\", tools = [], totalCompareCount, totalBestOfCount, ctaHref = \"/ai-tools\", ctaLabel = \"View all tools\", compact = false } = Astro.props;\n---\n\n<section class=\"home-block home-block--subtle\">\n  <div class=\"container\">\n    <div class=\"home-section-head\">\n      <div>\n        <span class=\"home-section-head__eyebrow\">{eyebrow}</span>\n        <h2 class=\"home-section-head__title\">{title}</h2>\n        <p class=\"home-section-head__description\">{description}</p>\n      </div>\n      <a href={ctaHref} class=\"btn btn--link\">{ctaLabel}<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\""
+    },
+    {
+      "name": "TrendingTopicsSection.astro",
+      "path": "src\\components\\sections\\TrendingTopicsSection.astro",
+      "content": "---\nconst topics = [\n  { label: \"AI Agents\",           href: \"/ai-tools/category/ai-agents\",          hot: true  },\n  { label: \"AI Video\",            href: \"/ai-tools/category/video-generation\",    hot: true  },\n  { label: \"Chatbots & LLMs\",     href: \"/ai-tools/category/chatbots-and-llms\"               },\n  { label: \"Coding & Dev\",        href: \"/ai-tools/category/coding-and-dev\"                  },\n  { label: \"Writing & Content\",   href: \"/ai-tools/category/writing-and-content\"              },\n  { label: \"Image Generation\",    href: \"/ai-tools/category/image-generation\"                 },\n  { label: \"SEO & Marketing\",     href: \"/ai-tools/category/seo-and-marketing\"                },\n  { label: \"Data & Analytics\",    href: \"/ai-tools/category/data-and-analytics\"               },\n  { label: \"Prompt Engineering\",  href: \"/ai-tools/tag/prompt-engineering\"                    },\n  { label: \"No-Code Tools\",       href: \"/ai-tools/feature/no-code\"                          },\n  { label: \"Ope"
+    },
+    {
+      "name": "Breadcrumbs.astro",
+      "path": "src\\components\\site\\Breadcrumbs.astro",
+      "content": "---\ninterface Crumb { label:string; href?:string }\ninterface Props { crumbs: Crumb[] }\nconst { crumbs } = Astro.props;\n---\n<nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">\n  <ol>\n    <li><a href=\"/\">Home</a></li>\n    {crumbs.map((c, i) => (\n      <li aria-current={i === crumbs.length - 1 ? \"page\" : undefined}>\n        {c.href && i < crumbs.length - 1\n          ? <a href={c.href}>{c.label}</a>\n          : <span>{c.label}</span>}\n      </li>\n    ))}\n  </ol>\n</nav>\n<style>\n.breadcrumbs { margin-bottom:var(--sp-5) }\nol { list-style:none;display:flex;align-items:center;flex-wrap:wrap;gap:4px;font-size:var(--text-xs) }\nli { display:flex;align-items:center;gap:4px;color:var(--c-text-3) }\nli+li::before { content:'/';color:var(--c-text-3);opacity:.4 }\na { color:var(--c-text-3);transition:color var(--t-fast) }\na:hover { color:var(--c-brand-light) }\nspan { color:var(--c-text-2) }\n</style>\n"
+    },
+    {
+      "name": "CategoryHero.astro",
+      "path": "src\\components\\site\\CategoryHero.astro",
+      "content": "---\r\ninterface Props {\r\n  category: string;\r\n  toolCount: number;\r\n}\r\n\r\nconst { category, toolCount } = Astro.props;\r\n---\r\n\r\n<div class=\"category-hero-card\">\r\n  <p class=\"category-hero-card__eyebrow\">AI Tool Category</p>\r\n  <h1>{category}</h1>\r\n\r\n  <p class=\"category-hero-card__lead\">\r\n    Browse {toolCount.toLocaleString()} tools in the <strong>{category}</strong> category.\r\n    Discover platforms, compare options and click through to individual tool pages.\r\n  </p>\r\n\r\n  <div class=\"badges\">\r\n    <span class=\"badge badge--tag\">{toolCount.toLocaleString()} tools</span>\r\n    <span class=\"badge badge--tag\">Updated from directory data</span>\r\n  </div>\r\n</div>"
+    },
+    {
+      "name": "CategoryIcon.astro",
+      "path": "src\\components\\site\\CategoryIcon.astro",
+      "content": "---\nimport { getCategoryIconMarkup } from \"@/data/categoryIcons\";\n\ninterface Props {\n  slug?: string;\n  category?: string;\n  class?: string;\n}\n\nconst props = Astro.props as Props;\nconst markup = getCategoryIconMarkup(props.slug || props.category || \"\");\nconst className = [\"category-icon\", props.class].filter(Boolean).join(\" \");\n---\n\n<span class={className} aria-hidden=\"true\" set:html={markup}></span>\n"
+    },
+    {
+      "name": "FilterStrip.astro",
+      "path": "src\\components\\site\\FilterStrip.astro",
+      "content": ""
+    },
+    {
+      "name": "Footer.astro",
+      "path": "src\\components\\site\\Footer.astro",
+      "content": "---\nimport { FOOTER_LINKS, SITE_DESC, SITE_NAME } from \"@/data/homeConfig\";\n---\n\n<footer class=\"footer site-footer\">\n  <div class=\"container footer__grid\">\n    <div class=\"footer__brand\">\n      <a href=\"/\" class=\"header__logo\" aria-label={`${SITE_NAME} home`}>\n        <span class=\"header__logo-icon\">\n          <img src=\"/logos/Logo_icon_dark.png\" alt=\"\" width=\"22\" height=\"22\" loading=\"lazy\" decoding=\"async\" />\n        </span>\n        <span class=\"header__logo-text\"><span class=\"text-gradient-ai\">AI</span>ExpertsCorner<span class=\"text-muted\">.com</span></span>\n      </a>\n      <p>{SITE_DESC}</p>\n    </div>\n\n    {Object.entries(FOOTER_LINKS).map(([title, links]) => (\n      <div>\n        <h3 class=\"footer__title\">{title}</h3>\n        <ul class=\"footer__nav\">\n          {links.map((link) => (\n            <li><a href={link.href} class=\"footer__link\">{link.label}</a></li>\n          ))}\n        </ul>\n      </div>\n    ))}\n  </div>\n\n  <div class=\"container footer__bottom\">\n    <span>© {new Date"
+    },
+    {
+      "name": "Header.astro",
+      "path": "src\\components\\site\\Header.astro",
+      "content": "---\nimport { MAIN_NAV, SITE_NAME } from \"@/data/homeConfig\";\nconst pathname = Astro.url.pathname;\n---\n\n<header class=\"header\" id=\"site-header\">\n  <div class=\"container header__inner\">\n    <a href=\"/\" class=\"header__logo\" aria-label={`${SITE_NAME} home`}>\n      <span class=\"header__logo-icon\">\n        <img src=\"/logos/Logo_icon_dark.png\" alt=\"\" width=\"22\" height=\"22\" loading=\"eager\" decoding=\"async\" />\n      </span>\n      <span class=\"header__logo-text\"><span class=\"text-gradient-ai\">AI</span>ExpertsCorner<span class=\"text-muted\">.com</span></span>\n    </a>\n\n    <nav class=\"header__nav\" aria-label=\"Main navigation\">\n      <ul class=\"header__nav-list\">\n        {MAIN_NAV.map((item) => {\n          const active = item.href === \"/\" ? pathname === \"/\" : pathname.startsWith(item.href);\n          return (\n            <li>\n              <a\n                href={item.soon ? \"#\" : item.href}\n                class:list={[\"header__nav-link\", { \"is-active\": active, \"is-disabled\": item.soon }]}\n      "
+    },
+    {
+      "name": "NewsletterCard.astro",
+      "path": "src\\components\\site\\NewsletterCard.astro",
+      "content": "<section class=\"nl-section\">\n  <div class=\"container\">\n    <div class=\"nl-card\">\n      <div class=\"nl-content\">\n        <div class=\"nl-badge\">Weekly AI Digest</div>\n        <h2>Stay ahead of the AI curve</h2>\n        <p>Get the best new AI tools, deep-dives and workflow tips every week. Join 12,000+ AI professionals.</p>\n      </div>\n      <form class=\"nl-form\" action=\"#\" method=\"post\" onsubmit=\"return false;\">\n        <input class=\"input\" type=\"email\" name=\"email\" placeholder=\"your@email.com\" required/>\n        <button class=\"btn btn-primary\" type=\"submit\">Subscribe Free</button>\n      </form>\n    </div>\n  </div>\n</section>\n<style>\n.nl-section { padding:var(--sp-16) 0 }\n.nl-card { background:linear-gradient(135deg,var(--c-bg-3) 0%,var(--c-bg-4) 100%);border:1px solid var(--c-border-brand);border-radius:var(--r-xl);padding:clamp(2rem,5vw,3.5rem);display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-10);align-items:center;position:relative;overflow:hidden }\n.nl-card::before { content:"
+    },
+    {
+      "name": "Pagination.astro",
+      "path": "src\\components\\site\\Pagination.astro",
+      "content": "---\ninterface Props { page:number; totalPages:number; baseUrl:string }\nconst { page, totalPages, baseUrl } = Astro.props;\nif (totalPages <= 1) return;\nconst prev = page > 1 ? `${baseUrl}?page=${page-1}` : null;\nconst next = page < totalPages ? `${baseUrl}?page=${page+1}` : null;\nconst pages = Array.from({length:totalPages},(_,i)=>i+1).filter(p=> Math.abs(p-page)<=2||p===1||p===totalPages);\n---\n<nav class=\"pgn\" aria-label=\"Pagination\">\n  {prev && <a href={prev} class=\"pgn-btn\" aria-label=\"Previous\">← Prev</a>}\n  {pages.map((p, i) => {\n    const prev2 = pages[i-1];\n    return (<>\n      {prev2 && p - prev2 > 1 && <span class=\"pgn-gap\">…</span>}\n      <a href={`${baseUrl}?page=${p}`} class:list={[\"pgn-num\", {active: p===page}]} aria-current={p===page?\"page\":undefined}>{p}</a>\n    </>);\n  })}\n  {next && <a href={next} class=\"pgn-btn\" aria-label=\"Next\">Next →</a>}\n</nav>\n<style>\n.pgn { display:flex;align-items:center;justify-content:center;gap:var(--sp-2);margin-top:var(--sp-10);flex-wrap:wr"
+    },
+    {
+      "name": "SearchHero.astro",
+      "path": "src\\components\\site\\SearchHero.astro",
+      "content": "---\ninterface Props { placeholder?:string; action?:string; value?:string }\nconst { placeholder=\"Search 19,000+ AI tools...\", action=\"/ai-tools\", value=\"\" } = Astro.props;\n---\n<div class=\"sh-wrap\">\n  <form class=\"sh\" action={action} method=\"get\" role=\"search\">\n    <svg class=\"sh-icon\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n      <circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.35-4.35\"/>\n    </svg>\n    <input class=\"sh-input\" type=\"search\" name=\"q\" placeholder={placeholder} value={value} autocomplete=\"off\" spellcheck=\"false\"/>\n    <button class=\"btn btn-primary btn-sm sh-btn\" type=\"submit\">Search</button>\n  </form>\n</div>\n<style>\n.sh-wrap { max-width:680px }\n.sh { display:flex;align-items:center;background:var(--c-bg-3);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:6px 6px 6px 16px;gap:var(--sp-2);transition:border-color var(--t-fast),box-shadow var(--t-fast) }\n.sh:focus-within { border-color:var(--c-brand);box"
+    },
+    {
+      "name": "SectionHeader.astro",
+      "path": "src\\components\\site\\SectionHeader.astro",
+      "content": "---\r\ninterface Props {\r\n  title: string;\r\n  subtitle?: string;\r\n  linkHref?: string;\r\n  linkLabel?: string;\r\n}\r\n\r\nconst { title, subtitle, linkHref, linkLabel } = Astro.props;\r\n---\r\n\r\n<div class=\"section-header\">\r\n  <div>\r\n    <h2>{title}</h2>\r\n    {subtitle && <p>{subtitle}</p>}\r\n  </div>\r\n\r\n  {linkHref && linkLabel && (\r\n    <a href={linkHref} class=\"section-link\">{linkLabel}</a>\r\n  )}\r\n</div>"
+    },
+    {
+      "name": "StatsBar.astro",
+      "path": "src\\components\\site\\StatsBar.astro",
+      "content": "---\r\ninterface Props {\r\n  totalTools: number;\r\n  freeTools: number;\r\n  categoryCount: number;\r\n  updatesLabel?: string;\r\n}\r\n\r\nconst {\r\n  totalTools,\r\n  freeTools,\r\n  categoryCount,\r\n  updatesLabel = \"Daily updates\"\r\n} = Astro.props;\r\n---\r\n\r\n<div class=\"container\">\r\n  <div class=\"statsbar\">\r\n    <div class=\"stat-card\">\r\n      <strong>{totalTools.toLocaleString()}</strong>\r\n      <span>AI tools indexed</span>\r\n    </div>\r\n    <div class=\"stat-card\">\r\n      <strong>{freeTools.toLocaleString()}</strong>\r\n      <span>Free tools</span>\r\n    </div>\r\n    <div class=\"stat-card\">\r\n      <strong>{categoryCount}</strong>\r\n      <span>Categories</span>\r\n    </div>\r\n    <div class=\"stat-card\">\r\n      <strong>{updatesLabel}</strong>\r\n      <span>Fresh content and discoveries</span>\r\n    </div>\r\n  </div>\r\n</div>"
+    },
+    {
+      "name": "ToolHero.astro",
+      "path": "src\\components\\site\\ToolHero.astro",
+      "content": "---\r\ntype Tool = {\r\n  handle: string;\r\n  name: string;\r\n  url: string;\r\n  short?: string;\r\n  desc?: string;\r\n  cat?: string;\r\n  pricing?: string;\r\n  tags?: string[];\r\n  e?: string;\r\n};\r\n\r\ninterface Props {\r\n  tool: Tool;\r\n  categoryHref?: string;\r\n}\r\n\r\nconst { tool, categoryHref } = Astro.props as Props;\r\n\r\nif (!tool) {\r\n  throw new Error(\"ToolHero requires a valid 'tool' prop.\");\r\n}\r\n\r\nconst pricingLabel = tool.pricing || \"Unknown\";\r\nconst pricingClass =\r\n  pricingLabel.toLowerCase() === \"free\"\r\n    ? \"badge--free\"\r\n    : pricingLabel.toLowerCase() === \"freemium\"\r\n    ? \"badge--freemium\"\r\n    : pricingLabel.toLowerCase() === \"paid\"\r\n    ? \"badge--paid\"\r\n    : \"badge--tag\";\r\n---\r\n\r\n<div class=\"tool-hero-card\">\r\n  <div class=\"tool-hero-card__icon\">{tool.e || \"✦\"}</div>\r\n\r\n  <div class=\"tool-hero-card__content\">\r\n    <p class=\"tool-hero-card__eyebrow\">{tool.cat || \"AI Tool\"}</p>\r\n    <h1>{tool.name}</h1>\r\n    <p class=\"tool-hero-card__lead\">{tool.short || tool.desc}</p>\r\n\r\n    <div class"
+    },
+    {
+      "name": "ToolQuickFacts.astro",
+      "path": "src\\components\\site\\ToolQuickFacts.astro",
+      "content": "---\r\ntype Tool = {\r\n  handle: string;\r\n  name: string;\r\n  url: string;\r\n  short?: string;\r\n  desc?: string;\r\n  cat?: string;\r\n  pricing?: string;\r\n  tags?: string[];\r\n  e?: string;\r\n};\r\n\r\ninterface Props {\r\n  tool: Tool;\r\n}\r\n\r\nconst { tool } = Astro.props;\r\n---\r\n\r\n<aside class=\"tool-facts-card\">\r\n  <h3>Quick facts</h3>\r\n\r\n  <ul>\r\n    <li><strong>Name:</strong> {tool.name}</li>\r\n    <li><strong>Pricing:</strong> {tool.pricing || \"Unknown\"}</li>\r\n    <li><strong>Category:</strong> {tool.cat || \"Other\"}</li>\r\n    <li><strong>Type:</strong> Web-based AI tool</li>\r\n  </ul>\r\n</aside>"
+    },
+    {
+      "name": "ToolsFilters.astro",
+      "path": "src\\components\\site\\ToolsFilters.astro",
+      "content": "---\r\ninterface Props {\r\n  totalTools: number;\r\n  categories: string[];\r\n  catCounts: Record<string, number>;\r\n  pricingCounts: {\r\n    all: number;\r\n    free: number;\r\n    freemium: number;\r\n    paid: number;\r\n    unknown: number;\r\n  };\r\n}\r\n\r\nconst { totalTools, categories, catCounts, pricingCounts } = Astro.props;\r\n---\r\n\r\n<aside class=\"tools-sidebar\">\r\n  <div class=\"tools-panel\">\r\n    <div class=\"tools-panel__head\">\r\n      <h3>Filters</h3>\r\n      <button id=\"filters-reset\" type=\"button\">Reset</button>\r\n    </div>\r\n\r\n    <div class=\"tools-filter-group\">\r\n      <label for=\"category-filter\">Category</label>\r\n      <select id=\"category-filter\">\r\n        <option value=\"all\">All categories ({totalTools.toLocaleString()})</option>\r\n        {categories.map((cat) => (\r\n          <option value={cat}>{cat} ({(catCounts[cat] || 0).toLocaleString()})</option>\r\n        ))}\r\n      </select>\r\n    </div>\r\n\r\n    <div class=\"tools-filter-group\">\r\n      <label for=\"pricing-filter\">Pricing</label>\r\n      <"
+    },
+    {
+      "name": "ToolsHero.astro",
+      "path": "src\\components\\site\\ToolsHero.astro",
+      "content": "---\r\ninterface Props {\r\n  totalTools: number;\r\n  categoryCount: number;\r\n  freeCount: number;\r\n  freemiumCount: number;\r\n}\r\n\r\nconst { totalTools, categoryCount, freeCount, freemiumCount } = Astro.props;\r\n---\r\n\r\n<section class=\"tools-hero section\">\r\n  <div class=\"container\">\r\n    <div class=\"tools-hero__panel\">\r\n      <div class=\"tools-hero__eyebrow\">AI Tools Directory</div>\r\n\r\n      <h1>\r\n        Search, filter and compare <span>{totalTools.toLocaleString()} AI tools</span>\r\n      </h1>\r\n\r\n      <p>\r\n        The main discovery page for AI Experts Corner. Find tools by category, pricing and use case,\r\n        then click through to tool pages, alternatives and comparisons.\r\n      </p>\r\n\r\n      <div class=\"tools-search\">\r\n        <span class=\"tools-search__icon\">⌕</span>\r\n        <input\r\n          id=\"tools-search-input\"\r\n          type=\"search\"\r\n          placeholder={`Search ${totalTools.toLocaleString()} AI tools...`}\r\n          autocomplete=\"off\"\r\n          aria-label=\"Search AI tools"
+    },
+    {
+      "name": "ToolsToolbar.astro",
+      "path": "src\\components\\site\\ToolsToolbar.astro",
+      "content": "<div class=\"tools-toolbar tools-panel\">\r\n  <div class=\"tools-toolbar__left\">\r\n    <h2>All AI tools</h2>\r\n    <p id=\"results-summary\">Showing tools from the directory</p>\r\n  </div>\r\n\r\n  <div class=\"tools-toolbar__right\">\r\n    <div id=\"active-filters\" class=\"active-filters\"></div>\r\n  </div>\r\n</div>\r\n\r\n<div id=\"pagefind-status\" class=\"pagefind-status\" hidden></div>"
+    },
+    {
+      "name": "BaseLayout.astro",
+      "path": "src\\layouts\\BaseLayout.astro",
+      "content": "---\nimport \"../styles/tokens.css\";\nimport \"../styles/base.css\";\nimport \"../styles/layout.css\";\nimport \"../styles/components.css\";\n\ninterface Props {\n  title?: string;\n  description?: string;\n  noindex?: boolean;\n}\n\nconst props = Astro.props as Props;\nconst siteName = \"AI Experts Corner\";\nconst pageTitle = props.title ?? siteName;\nconst description = props.description ?? \"Discover the best AI tools, compare pricing, explore alternatives, and find the right products for every workflow.\";\nconst noindex = props.noindex ?? false;\nconst fullTitle = pageTitle === siteName ? siteName : `${pageTitle} | ${siteName}`;\nconst canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;\n---\n\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta name=\"description\" content={description} />\n    <meta name=\"generator\" content={Astro.generator} />\n    <meta name=\"theme-color\" "
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\ai-news\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\n---\n<BaseLayout title=\"AI News | AIExpertsCorner\" description=\"Daily AI news, tool launches and research updates — coming soon.\">\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <div class=\"coming-soon\">\n      <div class=\"cs-icon\">📰</div>\n      <h1>AI News</h1>\n      <p>Daily AI news, tool launches and research updates — coming soon.</p>\n      <a href=\"/\" class=\"btn btn-primary\">← Back to Home</a>\n    </div>\n  </div>\n  <Footer slot=\"footer\"/>\n</BaseLayout>\n<style>\n.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }\n.cs-icon { font-size:4rem }\nh1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }\np  { color:var(--c-text-2);max-width:480px;font-size:var(--text-lg) }\n</style>\n"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\category\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/category-paths.json\";\nimport mapData from \"@/data/build/category-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\n\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\nconst freeCount = tools.filter((t:any) => (t.pricing_tier||\"\").toLowerCase() === \"free\").length;\nconst freemiumCount = tools.filter((t:any) => (t.pricing_tier||\"\").toLowerCase() === \"freemium\").length;\n---\n<BaseLayout\n  title={seo_title ?? `Best ${name} Tools in 2025`}\n  description={seo_description ?? `Discover the ${count} best ${name.toLo"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\feature\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/feature-paths.json\";\nimport mapData from \"@/data/build/feature-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\n---\n<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"AI Tools\", href:\"/ai-tools\"}, {label:name"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\ai-tools\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport CategoryGrid from \"@/components/sections/CategoryGrid.astro\";\nimport FeaturedToolsSection from \"@/components/sections/FeaturedToolsSection.astro\";\n\nimport catMap from \"@/data/build/category-map.json\";\nimport featuredData from \"@/data/build/featured-tools.json\";\nimport homepageData from \"@/data/build/homepage-data.json\";\n\nconst categories = Object.values(catMap as any).sort((a: any, b: any) => b.count - a.count);\nconst featuredTools = (featuredData as any)?.global_top ?? [];\nconst totalTools = (homepageData as any)?.total_tools ?? 19066;\n\nconst dims = [\n  { label: \"🆓 Free Tools\",        href: \"/ai-tools/pricing/free\" },\n  { label: \"⚡ Freemium\",          href: \"/ai-tools/pricing/freemium\" },\n  { label: \"🧩 No-Code\",           href: \"/ai-tools/feature/no-code\" },\n  { label: \"🔌 API Access\",        href: \"/ai-tools/featur"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\industry\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/industry-paths.json\";\nimport mapData from \"@/data/build/industry-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\n---\n<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"AI Tools\", href:\"/ai-tools\"}, {label:na"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\pricing\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/pricing-paths.json\";\nimport mapData from \"@/data/build/pricing-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\n---\n<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"AI Tools\", href:\"/ai-tools\"}, {label:name"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\tag\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/tag-paths.json\";\nimport mapData from \"@/data/build/tag-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\n---\n<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"AI Tools\", href:\"/ai-tools\"}, {label:name}]}/>\n  "
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\tool-type\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/tool-type-paths.json\";\nimport mapData from \"@/data/build/tool-type-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\n---\n<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"AI Tools\", href:\"/ai-tools\"}, {label:"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\use-case\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport slugData from \"@/data/build/use-case-paths.json\";\nimport mapData from \"@/data/build/use-case-map.json\";\n\nexport function getStaticPaths() {\n  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (mapData as any)[slug!];\nif (!entry) return Astro.redirect('/ai-tools');\nconst { name, tools=[], count, description, seo_title, seo_description } = entry;\n---\n<BaseLayout title={seo_title ?? `Best AI Tools for ${name}`} description={seo_description ?? description ?? `Discover the best AI tools for ${name}.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"AI Tools\", href:\"/ai-tools\"}, {label:na"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\ai-tools\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport toolPageData from \"@/data/build/tool-page-data.json\";\n\n// ── Props patroon: data eenmalig geladen in getStaticPaths,\n//    per tool doorgegeven als prop → V8 kan grote map GC'en ──\nexport function getStaticPaths() {\n  return Object.values(toolPageData as Record<string,any>).map((tool: any) => ({\n    params: { slug: tool.handle },\n    props:  { tool },\n  }));\n}\n\ninterface Props { tool: any }\nconst { tool } = Astro.props;\nif (!tool) return Astro.redirect('/ai-tools');\n\nconst {\n  handle=\"\", name=\"\", tagline=\"\", description=\"\", pricing_tier=\"unknown\",\n  logo_domain=\"\", website_url=\"\", affiliate_url=\"\",\n  category=\"\", category_slug=\"\", feature_tags=[], use_cases=[],\n  industries=[], seo_title=\"\", seo_description=\"\",\n  has_api=false, has_mobile=false, has_chrome_ext=f"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\ai-workflows\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\n---\n<BaseLayout title=\"AI Workflows | AIExpertsCorner\" description=\"Ready-made AI workflow templates for every use case — coming soon.\">\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <div class=\"coming-soon\">\n      <div class=\"cs-icon\">⚡</div>\n      <h1>AI Workflows</h1>\n      <p>Ready-made AI workflow templates for every use case — coming soon.</p>\n      <a href=\"/\" class=\"btn btn-primary\">← Back to Home</a>\n    </div>\n  </div>\n  <Footer slot=\"footer\"/>\n</BaseLayout>\n<style>\n.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }\n.cs-icon { font-size:4rem }\nh1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }\np  { color:var(--c-text-2);max-width:480px;font-size:var(--text-lg) }\n</style>\n"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\alternatives\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport altPageData from \"@/data/build/alternatives-page-data.json\";\n\n// ── Props patroon: één slim bestand (<8MB), data per tool als prop ──\nexport function getStaticPaths() {\n  return Object.values(altPageData as Record<string,any>).map((entry: any) => ({\n    params: { slug: entry.handle },\n    props:  { entry },\n  }));\n}\n\ninterface Props { entry: any }\nconst { entry } = Astro.props;\nif (!entry) return Astro.redirect('/ai-tools');\n\nconst { handle, name, tagline, pricing_tier=\"unknown\", category=\"\", category_slug=\"\", alts=[] } = entry;\nconst catSlug = category_slug || category.toLowerCase().replace(/[^a-z0-9]+/g,\"-\");\n---\n<BaseLayout\n  title={`Best Alternatives to ${name} in ${new Date().getFullYear()}`}\n  description={`Looking for alternatives to ${name}? Discover ${a"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\best\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport Breadcrumbs from \"@/components/site/Breadcrumbs.astro\";\nimport ToolCard from \"@/components/cards/ToolCard.astro\";\nimport bestMap from \"@/data/build/best-of-map.json\";\nimport bestPaths from \"@/data/build/best-of-paths.json\";\n\nexport function getStaticPaths() {\n  return (bestPaths as string[]).map(slug => ({ params: { slug } }));\n}\n\nconst { slug } = Astro.params;\nconst entry = (bestMap as any)[slug!];\nif (!entry) return Astro.redirect('/best');\nconst { name, tools=[], description, count } = entry;\n---\n<BaseLayout title={`Best ${name} — Top AI Tools`} description={description ?? `The best AI tools for ${name}, ranked and reviewed.`}>\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <Breadcrumbs crumbs={[{label:\"Best Of\", href:\"/best\"}, {label:`Best ${name}`}]}/>\n    <div class=\"dim-header\">\n      <span class=\"badge"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport HeroSection from \"@/components/sections/HeroSection.astro\";\nimport FlagshipToolsSection from \"@/components/sections/FlagshipToolsSection.astro\";\nimport CategoryDiscoverySection from \"@/components/sections/CategoryDiscoverySection.astro\";\nimport PopularToolsSection from \"@/components/sections/PopularToolsSection.astro\";\nimport BestOfSection from \"@/components/sections/BestOfSection.astro\";\nimport HomeEditorialSection from \"@/components/sections/HomeEditorialSection.astro\";\nimport NewsletterSection from \"@/components/sections/NewsletterSection.astro\";\nimport \"@/styles/homepage.css\";\n\nimport categoryMap from \"@/data/build/category-map.json\";\nimport featuredData from \"@/data/build/featured-tools.json\";\nimport homepageData from \"@/data/build/homepage-data.json\";\n\nconst allTools = (featuredData as any)?.global_top ?? [];\ncon"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\learn-ai\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\n---\n<BaseLayout title=\"Learn AI | AIExpertsCorner\" description=\"Courses, guides and resources to level up your AI skills — coming soon.\">\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <div class=\"coming-soon\">\n      <div class=\"cs-icon\">🎓</div>\n      <h1>Learn AI</h1>\n      <p>Courses, guides and resources to level up your AI skills — coming soon.</p>\n      <a href=\"/\" class=\"btn btn-primary\">← Back to Home</a>\n    </div>\n  </div>\n  <Footer slot=\"footer\"/>\n</BaseLayout>\n<style>\n.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }\n.cs-icon { font-size:4rem }\nh1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }\np  { color:var(--c-text-2);max-width:480px;font-size:var(--text-lg) }\n</style>\n"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\prompts\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\n---\n<BaseLayout title=\"Prompt Library | AIExpertsCorner\" description=\"Browse 1000+ hand-crafted prompts for ChatGPT, Claude and more — coming soon.\">\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <div class=\"coming-soon\">\n      <div class=\"cs-icon\">💬</div>\n      <h1>Prompt Library</h1>\n      <p>Browse 1000+ hand-crafted prompts for ChatGPT, Claude and more — coming soon.</p>\n      <a href=\"/\" class=\"btn btn-primary\">← Back to Home</a>\n    </div>\n  </div>\n  <Footer slot=\"footer\"/>\n</BaseLayout>\n<style>\n.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }\n.cs-icon { font-size:4rem }\nh1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }\np  { color:var(--c-text-2);max-width:480px;font-size:var(--text-"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\resources\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\n---\n<BaseLayout title=\"AI Resources | AIExpertsCorner\" description=\"Curated AI resources, research papers and tools guides — coming soon.\">\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <div class=\"coming-soon\">\n      <div class=\"cs-icon\">📚</div>\n      <h1>AI Resources</h1>\n      <p>Curated AI resources, research papers and tools guides — coming soon.</p>\n      <a href=\"/\" class=\"btn btn-primary\">← Back to Home</a>\n    </div>\n  </div>\n  <Footer slot=\"footer\"/>\n</BaseLayout>\n<style>\n.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }\n.cs-icon { font-size:4rem }\nh1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }\np  { color:var(--c-text-2);max-width:480px;font-size:var(--text-lg) }\n</style>\n"
+    },
+    {
+      "name": "index.astro",
+      "path": "src\\pages\\submit-tool\\index.astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\n---\n<BaseLayout title=\"Submit a Tool | AIExpertsCorner\" description=\"Know an AI tool we haven't listed? Submit it here.\">\n  <Header slot=\"header\"/>\n  <div class=\"container\">\n    <div class=\"coming-soon\">\n      <div class=\"cs-icon\">🚀</div>\n      <h1>Submit a Tool</h1>\n      <p>Know an AI tool we haven't listed? Submit it here.</p>\n      <a href=\"/\" class=\"btn btn-primary\">← Back to Home</a>\n    </div>\n  </div>\n  <Footer slot=\"footer\"/>\n</BaseLayout>\n<style>\n.coming-soon { min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--sp-5);padding:var(--sp-16) 0 }\n.cs-icon { font-size:4rem }\nh1 { font-size:clamp(var(--text-2xl),4vw,var(--text-4xl)) }\np  { color:var(--c-text-2);max-width:480px;font-size:var(--text-lg) }\n</style>\n"
+    },
+    {
+      "name": "[slug].astro",
+      "path": "src\\pages\\vs\\[slug].astro",
+      "content": "---\nimport BaseLayout from \"@/layouts/BaseLayout.astro\";\nimport Header from \"@/components/site/Header.astro\";\nimport Footer from \"@/components/site/Footer.astro\";\nimport comparePageData from \"@/data/build/compare-page-data.json\";\n\n// ── Props patroon: één slim bestand (<3MB), data per paar als prop ──\nexport function getStaticPaths() {\n  return Object.values(comparePageData as Record<string,any>).map((entry: any) => ({\n    params: { slug: entry.slug },\n    props:  { entry },\n  }));\n}\n\ninterface Props { entry: any }\nconst { entry } = Astro.props;\nif (!entry) return Astro.redirect('/ai-tools');\n\nconst { toolA: A, toolB: B } = entry;\nconst pricingLabel: Record<string,string> = { free:\"Free\", freemium:\"Freemium\", paid:\"Paid\" };\nconst pricingClass: Record<string,string>  = { free:\"badge-free\", freemium:\"badge-freemium\", paid:\"badge-paid\" };\nconst FEATURES = [\"has_api\",\"has_mobile\",\"has_chrome_ext\",\"is_open_source\"];\nconst FEATURE_LABELS: Record<string,string> = {\n  has_api:\"API Access\", has"
+    }
+  ],
+  "styles": {
+    "tailwindConfig": null,
+    "globalCss": null
+  },
+  "dependencies": {
+    "astro": "4.16.19",
+    "@astrojs/tailwind": "5.1.5",
+    "cross-env": "10.1.0",
+    "tailwindcss": "3.4.19"
+  }
+}

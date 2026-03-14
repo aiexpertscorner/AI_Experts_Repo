@@ -1,316 +1,60 @@
 ---
-import { SITE_NAME, MAIN_NAV } from "@/data/homeConfig";
-const path = Astro.url.pathname;
+import { MAIN_NAV, SITE_NAME } from "@/data/homeConfig";
+const pathname = Astro.url.pathname;
 ---
-<header class="site-header" id="site-header">
-  <div class="container hdr">
 
-    <!-- Logo -->
-    <a href="/" class="hdr-logo" aria-label={`${SITE_NAME} — Home`}>
-      <div class="hdr-logo-icon" aria-hidden="true">
-        <img src="/logos/Logo_icon_dark.png" alt="" width="20" height="20" loading="eager" decoding="async"/>
+<header class="sticky top-0 z-50 w-full bg-[#0B0F19]/80 backdrop-blur-xl border-b border-[#1E293B]" id="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center group transition-transform hover:scale-[1.02]" aria-label={`${SITE_NAME} home`}>
+          <div class="relative flex items-center justify-center w-10 h-10 mr-3 rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] p-[1px]">
+            <div class="flex items-center justify-center w-full h-full bg-[#0B0F19] rounded-[11px]">
+              <img src="/logos/Logo_icon_dark.png" alt="" width="24" height="24" class="relative z-10" loading="eager" />
+            </div>
+            <div class="absolute inset-0 bg-[#3B82F6]/20 blur-lg group-hover:bg-[#3B82F6]/40 transition-colors rounded-full"></div>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-[#F8FAFC]">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#22D3EE]">AI</span>ExpertsCorner<span class="text-[#64748B] text-sm font-medium">.com</span>
+          </span>
+        </a>
       </div>
-      <span class="hdr-logo-text">
-        <span class="logo-ai">AI</span><span class="logo-experts">Experts</span><span class="logo-corner">Corner</span><span class="logo-tld">.com</span>
-      </span>
-    </a>
 
-    <!-- Desktop nav -->
-    <nav class="hdr-nav" aria-label="Main navigation">
-      {MAIN_NAV.map(n => {
-        const isActive = n.href !== "/" && path.startsWith(n.href);
-        return (
-          <a
-            href={n.soon ? undefined : n.href}
-            class:list={["hnl", { active: isActive, soon: n.soon }]}
-            aria-disabled={n.soon ? "true" : undefined}
-            aria-current={isActive ? "page" : undefined}
-          >
-            {n.label}
-            {n.soon && <span class="hub-soon">Soon</span>}
-          </a>
-        );
-      })}
-    </nav>
+      <nav class="hidden md:flex items-center space-x-1" aria-label="Main navigation">
+        {MAIN_NAV.map((item) => {
+          const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+          return (
+            <a
+              href={item.soon ? "#" : item.href}
+              class:list={[
+                "relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg group",
+                active ? "text-[#3B82F6] bg-[#3B82F6]/10" : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#1E293B]",
+                item.soon ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
+              ]}
+            >
+              {item.label}
+              {item.soon && (
+                <span class="ml-2 text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded bg-[#1A2233] text-[#64748B] border border-[#334155]">Soon</span>
+              )}
+              {active && (
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#3B82F6] rounded-full shadow-[0_0_8px_#3B82F6]"></span>
+              )}
+            </a>
+          );
+        })}
+      </nav>
 
-    <!-- Right actions -->
-    <div class="hdr-right">
-      <a href="/ai-tools" class="hdr-search" aria-label="Search AI tools">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <span class="hdr-search-text">Search tools…</span>
-        <span class="hdr-search-kbd">
-          <kbd class="kbd">⌘</kbd><kbd class="kbd">K</kbd>
-        </span>
-      </a>
-      <a href="/submit-tool" class="btn btn-primary btn-sm">Submit Tool</a>
-      <button class="hdr-mbtn" id="hdr-mbtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="hdr-mobile-nav">
-        <span class="hdr-mbtn-bar"></span>
-        <span class="hdr-mbtn-bar"></span>
-        <span class="hdr-mbtn-bar"></span>
-      </button>
-    </div>
-
-  </div>
-
-  <!-- Mobile nav -->
-  <nav class="hdr-mobile" id="hdr-mobile-nav" aria-label="Mobile navigation" hidden>
-    <div class="container hdr-mobile-inner">
-      {MAIN_NAV.map(n => (
-        <a
-          href={n.soon ? undefined : n.href}
-          class:list={["hmnl", { active: path.startsWith(n.href) }]}
+      <div class="flex items-center space-x-4">
+        <a 
+          href="/submit-tool" 
+          class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] rounded-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
         >
-          {n.label}
-          {n.soon && <span class="hub-soon">Soon</span>}
+          Submit Tool
         </a>
-      ))}
-      <div class="hdr-mobile-ctas">
-        <a href="/ai-tools" class="btn btn-secondary btn-sm" style="flex:1">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-          Search
-        </a>
-        <a href="/submit-tool" class="btn btn-primary btn-sm" style="flex:1">Submit Tool</a>
+        <button class="md:hidden p-2 text-[#94A3B8] hover:text-[#F8FAFC]" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </div>
     </div>
-  </nav>
+  </div>
 </header>
-
-<style>
-/* ── Shell ─────────────────────────────────────────────────────*/
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-header);
-  /* Gradient top accent line */
-  border-top: 1px solid transparent;
-  background-image:
-    linear-gradient(var(--c-bg-glass), var(--c-bg-glass)),
-    linear-gradient(90deg, transparent 0%, rgba(79,110,247,.38) 30%, rgba(124,58,237,.28) 70%, transparent 100%);
-  background-origin: padding-box, border-box;
-  background-clip: padding-box, border-box;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid var(--c-border-subtle);
-}
-
-/* Scrolled state — slightly more opaque */
-.site-header.scrolled {
-  background-image:
-    linear-gradient(rgba(11,20,34,.92), rgba(11,20,34,.92)),
-    linear-gradient(90deg, transparent 0%, rgba(79,110,247,.38) 30%, rgba(124,58,237,.28) 70%, transparent 100%);
-}
-
-/* ── Row ───────────────────────────────────────────────────────*/
-.hdr {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-4);
-  height: var(--header-h);
-}
-
-/* ── Logo ──────────────────────────────────────────────────────*/
-.hdr-logo {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: opacity var(--t-fast);
-}
-.hdr-logo:hover { opacity: .82 }
-
-.hdr-logo-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: var(--r-sm);
-  background: linear-gradient(135deg, rgba(79,110,247,.18) 0%, rgba(124,58,237,.12) 100%);
-  border: 1px solid rgba(79,110,247,.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.hdr-logo-icon img { width: 20px; height: 20px; object-fit: contain }
-
-.hdr-logo-text {
-  font-family: var(--font-display);
-  font-size: .9375rem;
-  font-weight: 400;
-  letter-spacing: -.022em;
-  line-height: 1;
-}
-.logo-ai      { font-weight: 800; color: var(--c-brand-light) }
-.logo-experts { font-weight: 700; color: var(--c-text)        }
-.logo-corner  { font-weight: 500; color: var(--c-text-2)      }
-.logo-tld     { font-weight: 400; color: var(--c-text-3)      }
-
-/* ── Desktop nav ───────────────────────────────────────────────*/
-.hdr-nav {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  flex: 1;
-}
-.hnl {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--c-text-3);
-  padding: 6px 11px;
-  border-radius: var(--r-md);
-  text-decoration: none;
-  transition: color var(--t-fast), background var(--t-fast);
-  letter-spacing: -.01em;
-  white-space: nowrap;
-}
-.hnl:hover { color: var(--c-text-2); background: rgba(255,255,255,.04) }
-.hnl.active { color: var(--c-text) }
-
-/* Active indicator dot */
-.hnl.active::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--c-brand-light);
-}
-.hnl.soon { opacity: .38; cursor: default; pointer-events: none }
-
-/* ── Search button ─────────────────────────────────────────────*/
-.hdr-right {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-.hdr-search {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--c-text-4);
-  background: var(--c-bg-3);
-  border: 1px solid var(--c-border);
-  padding: 7px 10px 7px 12px;
-  border-radius: var(--r-full);
-  text-decoration: none;
-  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
-  white-space: nowrap;
-}
-.hdr-search:hover {
-  border-color: var(--c-border-strong);
-  color: var(--c-text-3);
-  background: var(--c-bg-4);
-  color: var(--c-text-3);
-}
-.hdr-search svg { flex-shrink: 0; color: var(--c-text-3) }
-.hdr-search-text { color: var(--c-text-3) }
-.hdr-search-kbd { display: flex; align-items: center; gap: 2px; margin-left: 4px }
-
-/* ── Hamburger ─────────────────────────────────────────────────*/
-.hdr-mbtn {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  width: 34px;
-  height: 34px;
-  background: none;
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-md);
-  cursor: pointer;
-  transition: border-color var(--t-fast);
-  padding: 0;
-}
-.hdr-mbtn:hover { border-color: var(--c-border-strong) }
-.hdr-mbtn-bar {
-  display: block;
-  width: 14px;
-  height: 1.5px;
-  background: var(--c-text-2);
-  border-radius: 1px;
-  transition: opacity var(--t-fast), transform var(--t-fast);
-}
-.hdr-mbtn[aria-expanded="true"] .hdr-mbtn-bar:nth-child(1) { transform: translateY(5.5px) rotate(45deg) }
-.hdr-mbtn[aria-expanded="true"] .hdr-mbtn-bar:nth-child(2) { opacity: 0 }
-.hdr-mbtn[aria-expanded="true"] .hdr-mbtn-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg) }
-
-/* ── Mobile nav ────────────────────────────────────────────────*/
-.hdr-mobile {
-  border-top: 1px solid var(--c-border-subtle);
-  background: var(--c-bg-2);
-}
-.hdr-mobile-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: var(--sp-3) 0 var(--sp-4);
-}
-.hmnl {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px var(--sp-2);
-  color: var(--c-text-2);
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: var(--r-md);
-  transition: background var(--t-fast), color var(--t-fast);
-}
-.hmnl:hover  { background: var(--c-bg-3); color: var(--c-text) }
-.hmnl.active { color: var(--c-text) }
-.hdr-mobile-ctas { display: flex; gap: var(--sp-3); padding-top: var(--sp-3) }
-
-/* ── Responsive ────────────────────────────────────────────────*/
-@media (max-width: 960px) {
-  .hdr-nav { display: none }
-}
-@media (max-width: 820px) {
-  .hdr-search-text { display: none }
-  .hdr-search-kbd  { display: none }
-  .hdr-search { padding: 8px 10px; border-radius: var(--r-md) }
-  .hdr-mbtn   { display: flex }
-}
-@media (max-width: 480px) {
-  .hdr-search { display: none }
-}
-</style>
-
-<script>
-const btn = document.getElementById('hdr-mbtn');
-const nav = document.getElementById('hdr-mobile-nav');
-btn?.addEventListener('click', () => {
-  const open = nav?.hasAttribute('hidden');
-  open ? nav?.removeAttribute('hidden') : nav?.setAttribute('hidden', '');
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
-
-// Scrolled state for slightly more opaque header
-const header = document.getElementById('site-header');
-let ticking = false;
-const onScroll = () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      header?.classList.toggle('scrolled', window.scrollY > 20);
-      ticking = false;
-    });
-    ticking = true;
-  }
-};
-window.addEventListener('scroll', onScroll, { passive: true });
-</script>

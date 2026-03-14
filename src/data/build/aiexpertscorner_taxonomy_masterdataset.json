@@ -1,0 +1,1314 @@
+{
+  "version": "1.0.0",
+  "project": "AIExpertsCorner",
+  "description": "Master taxonomy dataset for AI tool classification, SEO cluster generation, workflow linking, and monetization architecture.",
+  "top_level_entities": [
+    "categories",
+    "subcategories",
+    "microcategories",
+    "tags",
+    "use_cases",
+    "capabilities",
+    "industries",
+    "ai_models",
+    "integrations",
+    "agent_types",
+    "workflows",
+    "automation_recipes",
+    "stacks",
+    "toolkits",
+    "playbooks",
+    "platforms",
+    "pricing_models",
+    "skill_levels",
+    "content_types"
+  ],
+  "categories": [
+    {
+      "slug": "ai-writing",
+      "name": "AI Writing",
+      "description": "Tools for generating, editing, optimizing, and repurposing written content.",
+      "subcategories": [
+        {
+          "slug": "blog-writers",
+          "name": "Blog Writers",
+          "microcategories": [
+            "seo-blog-writers",
+            "long-form-writers",
+            "affiliate-content-writers"
+          ]
+        },
+        {
+          "slug": "copywriting",
+          "name": "Copywriting",
+          "microcategories": [
+            "ad-copy-generators",
+            "landing-page-copy",
+            "sales-copy-tools"
+          ]
+        },
+        {
+          "slug": "email-writers",
+          "name": "Email Writers",
+          "microcategories": [
+            "cold-email-writers",
+            "newsletter-writers",
+            "sales-email-tools"
+          ]
+        },
+        {
+          "slug": "seo-writing",
+          "name": "SEO Writing",
+          "microcategories": [
+            "keyword-optimized-writers",
+            "topical-authority-tools",
+            "content-brief-generators"
+          ]
+        },
+        {
+          "slug": "social-media-writing",
+          "name": "Social Media Writing",
+          "microcategories": [
+            "linkedin-post-writers",
+            "twitter-thread-tools",
+            "instagram-caption-tools"
+          ]
+        },
+        {
+          "slug": "script-writing",
+          "name": "Script Writing",
+          "microcategories": [
+            "youtube-script-writers",
+            "podcast-script-tools",
+            "video-ad-scripts"
+          ]
+        },
+        {
+          "slug": "product-description-writing",
+          "name": "Product Description Writing",
+          "microcategories": [
+            "ecommerce-descriptions",
+            "marketplace-listing-copy",
+            "catalog-copy-tools"
+          ]
+        },
+        {
+          "slug": "rewriting-editing",
+          "name": "Rewriting & Editing",
+          "microcategories": [
+            "paraphrasers",
+            "grammar-enhancers",
+            "tone-adjusters"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-image-generation",
+      "name": "AI Image Generation",
+      "description": "Tools for creating, editing, enhancing, and transforming images using AI.",
+      "subcategories": [
+        {
+          "slug": "text-to-image",
+          "name": "Text-to-Image",
+          "microcategories": [
+            "concept-art-generators",
+            "marketing-visual-tools",
+            "photorealistic-generators"
+          ]
+        },
+        {
+          "slug": "image-editing",
+          "name": "Image Editing",
+          "microcategories": [
+            "background-removers",
+            "inpainting-tools",
+            "retouching-tools"
+          ]
+        },
+        {
+          "slug": "avatar-generators",
+          "name": "Avatar Generators",
+          "microcategories": [
+            "profile-avatar-tools",
+            "ai-headshots",
+            "gaming-avatar-creators"
+          ]
+        },
+        {
+          "slug": "logo-branding",
+          "name": "Logo & Branding",
+          "microcategories": [
+            "logo-generators",
+            "brand-kit-tools",
+            "icon-generators"
+          ]
+        },
+        {
+          "slug": "design-assets",
+          "name": "Design Assets",
+          "microcategories": [
+            "mockup-generators",
+            "icon-pack-tools",
+            "pattern-generators"
+          ]
+        },
+        {
+          "slug": "upscalers-enhancers",
+          "name": "Upscalers & Enhancers",
+          "microcategories": [
+            "photo-upscalers",
+            "face-enhancers",
+            "restoration-tools"
+          ]
+        },
+        {
+          "slug": "product-photography",
+          "name": "Product Photography",
+          "microcategories": [
+            "ecommerce-packshots",
+            "lifestyle-product-scenes",
+            "catalog-image-tools"
+          ]
+        },
+        {
+          "slug": "interior-fashion-visualizers",
+          "name": "Interior & Fashion Visualizers",
+          "microcategories": [
+            "room-staging-tools",
+            "fashion-try-on-tools",
+            "outfit-generators"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-video",
+      "name": "AI Video",
+      "description": "Tools for generating, editing, translating, and automating video creation workflows.",
+      "subcategories": [
+        {
+          "slug": "text-to-video",
+          "name": "Text-to-Video",
+          "microcategories": [
+            "cinematic-video-generators",
+            "ad-video-tools",
+            "social-video-generators"
+          ]
+        },
+        {
+          "slug": "video-editing",
+          "name": "Video Editing",
+          "microcategories": [
+            "auto-editors",
+            "highlight-generators",
+            "captioning-tools"
+          ]
+        },
+        {
+          "slug": "avatar-videos",
+          "name": "Avatar Videos",
+          "microcategories": [
+            "presenter-videos",
+            "training-videos",
+            "localized-avatar-videos"
+          ]
+        },
+        {
+          "slug": "short-form-video",
+          "name": "Short-form Video",
+          "microcategories": [
+            "tiktok-video-tools",
+            "reels-generators",
+            "youtube-shorts-tools"
+          ]
+        },
+        {
+          "slug": "video-translation",
+          "name": "Video Translation",
+          "microcategories": [
+            "dubbing-tools",
+            "subtitle-translators",
+            "lip-sync-tools"
+          ]
+        },
+        {
+          "slug": "screen-recording",
+          "name": "Screen Recording",
+          "microcategories": [
+            "async-video-tools",
+            "demo-video-creators",
+            "tutorial-recorders"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-audio-voice",
+      "name": "AI Audio & Voice",
+      "description": "Speech, voice cloning, music, dubbing, and audio enhancement tools.",
+      "subcategories": [
+        {
+          "slug": "text-to-speech",
+          "name": "Text-to-Speech",
+          "microcategories": [
+            "natural-voice-generators",
+            "narration-tools",
+            "multilingual-tts"
+          ]
+        },
+        {
+          "slug": "voice-cloning",
+          "name": "Voice Cloning",
+          "microcategories": [
+            "brand-voice-cloning",
+            "character-voice-tools",
+            "creator-voice-tools"
+          ]
+        },
+        {
+          "slug": "speech-to-text",
+          "name": "Speech-to-Text",
+          "microcategories": [
+            "meeting-transcription",
+            "podcast-transcription",
+            "medical-transcription"
+          ]
+        },
+        {
+          "slug": "music-generation",
+          "name": "Music Generation",
+          "microcategories": [
+            "song-generators",
+            "background-music-tools",
+            "jingle-creators"
+          ]
+        },
+        {
+          "slug": "audio-editing",
+          "name": "Audio Editing",
+          "microcategories": [
+            "noise-removers",
+            "mastering-tools",
+            "podcast-cleanup-tools"
+          ]
+        },
+        {
+          "slug": "dubbing-localization",
+          "name": "Dubbing & Localization",
+          "microcategories": [
+            "video-dubbing",
+            "voiceover-localization",
+            "audio-translation-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-coding",
+      "name": "AI Coding",
+      "description": "Coding assistants, code generation, debugging, testing, and developer productivity tools.",
+      "subcategories": [
+        {
+          "slug": "code-completion",
+          "name": "Code Completion",
+          "microcategories": [
+            "ide-copilots",
+            "autocomplete-tools",
+            "pair-programming-ai"
+          ]
+        },
+        {
+          "slug": "app-builders",
+          "name": "App Builders",
+          "microcategories": [
+            "no-code-builders",
+            "full-stack-generators",
+            "prototype-builders"
+          ]
+        },
+        {
+          "slug": "debugging",
+          "name": "Debugging",
+          "microcategories": [
+            "bug-finders",
+            "error-explainers",
+            "stack-trace-tools"
+          ]
+        },
+        {
+          "slug": "testing-qa",
+          "name": "Testing & QA",
+          "microcategories": [
+            "test-case-generators",
+            "ui-testing-tools",
+            "regression-testing-ai"
+          ]
+        },
+        {
+          "slug": "sql-data-dev",
+          "name": "SQL & Data Dev",
+          "microcategories": [
+            "sql-generators",
+            "query-optimizers",
+            "db-assistants"
+          ]
+        },
+        {
+          "slug": "documentation",
+          "name": "Documentation",
+          "microcategories": [
+            "api-doc-generators",
+            "readme-writers",
+            "changelog-tools"
+          ]
+        },
+        {
+          "slug": "devops-cloud",
+          "name": "DevOps & Cloud",
+          "microcategories": [
+            "infra-assistants",
+            "deployment-copilots",
+            "cloud-cost-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-productivity",
+      "name": "AI Productivity",
+      "description": "General-purpose assistants for daily work, organization, summarization, and task management.",
+      "subcategories": [
+        {
+          "slug": "note-taking",
+          "name": "Note Taking",
+          "microcategories": [
+            "meeting-notes",
+            "knowledge-capture",
+            "smart-notebooks"
+          ]
+        },
+        {
+          "slug": "calendar-scheduling",
+          "name": "Calendar & Scheduling",
+          "microcategories": [
+            "meeting-schedulers",
+            "time-blocking-tools",
+            "calendar-assistants"
+          ]
+        },
+        {
+          "slug": "summarization",
+          "name": "Summarization",
+          "microcategories": [
+            "document-summarizers",
+            "meeting-summary-tools",
+            "video-summary-tools"
+          ]
+        },
+        {
+          "slug": "task-management",
+          "name": "Task Management",
+          "microcategories": [
+            "project-planning-ai",
+            "todo-assistants",
+            "team-productivity-tools"
+          ]
+        },
+        {
+          "slug": "search-knowledge",
+          "name": "Search & Knowledge",
+          "microcategories": [
+            "enterprise-search",
+            "knowledge-bots",
+            "personal-search-tools"
+          ]
+        },
+        {
+          "slug": "presentation-tools",
+          "name": "Presentation Tools",
+          "microcategories": [
+            "slide-generators",
+            "deck-outlining-tools",
+            "pitch-deck-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-marketing",
+      "name": "AI Marketing",
+      "description": "AI tools for acquisition, content marketing, ads, SEO, social media, and CRO.",
+      "subcategories": [
+        {
+          "slug": "seo-tools",
+          "name": "SEO Tools",
+          "microcategories": [
+            "keyword-tools",
+            "content-optimizer-tools",
+            "topical-map-generators"
+          ]
+        },
+        {
+          "slug": "paid-ads",
+          "name": "Paid Ads",
+          "microcategories": [
+            "ad-creative-tools",
+            "ppc-optimization",
+            "campaign-copy-tools"
+          ]
+        },
+        {
+          "slug": "social-media",
+          "name": "Social Media",
+          "microcategories": [
+            "content-calendars",
+            "social-post-generators",
+            "social-analytics-ai"
+          ]
+        },
+        {
+          "slug": "email-marketing",
+          "name": "Email Marketing",
+          "microcategories": [
+            "email-sequencing",
+            "newsletter-optimization",
+            "subject-line-tools"
+          ]
+        },
+        {
+          "slug": "cro-landing-pages",
+          "name": "CRO & Landing Pages",
+          "microcategories": [
+            "landing-page-generators",
+            "conversion-copy-tools",
+            "heatmap-analysis-ai"
+          ]
+        },
+        {
+          "slug": "brand-strategy",
+          "name": "Brand Strategy",
+          "microcategories": [
+            "positioning-tools",
+            "messaging-frameworks",
+            "persona-generators"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-sales",
+      "name": "AI Sales",
+      "description": "Prospecting, outreach, call intelligence, CRM enrichment, and proposal automation tools.",
+      "subcategories": [
+        {
+          "slug": "lead-generation",
+          "name": "Lead Generation",
+          "microcategories": [
+            "contact-finders",
+            "account-research-tools",
+            "intent-data-tools"
+          ]
+        },
+        {
+          "slug": "outreach",
+          "name": "Outreach",
+          "microcategories": [
+            "cold-email-tools",
+            "linkedin-outreach-tools",
+            "sales-sequence-tools"
+          ]
+        },
+        {
+          "slug": "call-intelligence",
+          "name": "Call Intelligence",
+          "microcategories": [
+            "call-summary-tools",
+            "objection-analysis",
+            "coaching-tools"
+          ]
+        },
+        {
+          "slug": "crm-enrichment",
+          "name": "CRM Enrichment",
+          "microcategories": [
+            "deal-updates",
+            "contact-enrichment",
+            "pipeline-analysis"
+          ]
+        },
+        {
+          "slug": "proposal-quoting",
+          "name": "Proposal & Quoting",
+          "microcategories": [
+            "proposal-writers",
+            "quote-generators",
+            "sales-doc-automation"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-customer-support",
+      "name": "AI Customer Support",
+      "description": "AI chatbots, helpdesk automation, knowledge assistants, and support QA tools.",
+      "subcategories": [
+        {
+          "slug": "support-chatbots",
+          "name": "Support Chatbots",
+          "microcategories": [
+            "website-chatbots",
+            "help-center-bots",
+            "multilingual-support-bots"
+          ]
+        },
+        {
+          "slug": "ticket-automation",
+          "name": "Ticket Automation",
+          "microcategories": [
+            "auto-routing-tools",
+            "response-suggestion-tools",
+            "ticket-summarizers"
+          ]
+        },
+        {
+          "slug": "knowledge-bases",
+          "name": "Knowledge Bases",
+          "microcategories": [
+            "faq-generators",
+            "help-center-builders",
+            "support-search-ai"
+          ]
+        },
+        {
+          "slug": "support-qa",
+          "name": "Support QA",
+          "microcategories": [
+            "csat-analysis",
+            "qa-scorecards",
+            "agent-performance-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-research",
+      "name": "AI Research",
+      "description": "Tools for search, fact-finding, literature review, insights extraction, and analysis.",
+      "subcategories": [
+        {
+          "slug": "ai-search-engines",
+          "name": "AI Search Engines",
+          "microcategories": [
+            "answer-engines",
+            "web-research-tools",
+            "citation-based-search"
+          ]
+        },
+        {
+          "slug": "academic-research",
+          "name": "Academic Research",
+          "microcategories": [
+            "paper-summarizers",
+            "citation-tools",
+            "literature-review-tools"
+          ]
+        },
+        {
+          "slug": "market-research",
+          "name": "Market Research",
+          "microcategories": [
+            "competitor-analysis",
+            "trend-analysis",
+            "consumer-insights-tools"
+          ]
+        },
+        {
+          "slug": "document-analysis",
+          "name": "Document Analysis",
+          "microcategories": [
+            "pdf-qa-tools",
+            "contract-analysis",
+            "report-insights-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-design",
+      "name": "AI Design",
+      "description": "Design copilots and creative tools for UI, branding, assets, and visual ideation.",
+      "subcategories": [
+        {
+          "slug": "ui-ux-design",
+          "name": "UI/UX Design",
+          "microcategories": [
+            "wireframe-generators",
+            "design-system-tools",
+            "ux-research-ai"
+          ]
+        },
+        {
+          "slug": "graphic-design",
+          "name": "Graphic Design",
+          "microcategories": [
+            "poster-generators",
+            "social-design-tools",
+            "brand-visual-tools"
+          ]
+        },
+        {
+          "slug": "mockups",
+          "name": "Mockups",
+          "microcategories": [
+            "device-mockups",
+            "merch-mockups",
+            "product-display-tools"
+          ]
+        },
+        {
+          "slug": "presentation-design",
+          "name": "Presentation Design",
+          "microcategories": [
+            "pitch-deck-design",
+            "slide-layout-tools",
+            "business-deck-generators"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-business-operations",
+      "name": "AI Business Operations",
+      "description": "Automation and intelligence tools for finance, HR, legal, and internal processes.",
+      "subcategories": [
+        {
+          "slug": "finance-accounting",
+          "name": "Finance & Accounting",
+          "microcategories": [
+            "invoice-automation",
+            "expense-analysis",
+            "forecasting-tools"
+          ]
+        },
+        {
+          "slug": "hr-recruiting",
+          "name": "HR & Recruiting",
+          "microcategories": [
+            "resume-screeners",
+            "job-description-tools",
+            "interview-assistants"
+          ]
+        },
+        {
+          "slug": "legal",
+          "name": "Legal",
+          "microcategories": [
+            "contract-review",
+            "policy-generators",
+            "compliance-tools"
+          ]
+        },
+        {
+          "slug": "operations-automation",
+          "name": "Operations Automation",
+          "microcategories": [
+            "process-documentation",
+            "sop-generators",
+            "workflow-ops-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-automation-agents",
+      "name": "AI Automation & Agents",
+      "description": "Agent builders, orchestration tools, no-code automation, and autonomous workflows.",
+      "subcategories": [
+        {
+          "slug": "agent-builders",
+          "name": "Agent Builders",
+          "microcategories": [
+            "multi-agent-builders",
+            "autonomous-agent-tools",
+            "custom-agent-platforms"
+          ]
+        },
+        {
+          "slug": "no-code-automation",
+          "name": "No-code Automation",
+          "microcategories": [
+            "workflow-builders",
+            "trigger-action-tools",
+            "business-automation-ai"
+          ]
+        },
+        {
+          "slug": "ai-orchestration",
+          "name": "AI Orchestration",
+          "microcategories": [
+            "prompt-chaining-tools",
+            "llm-pipeline-tools",
+            "agent-memory-platforms"
+          ]
+        },
+        {
+          "slug": "browser-agents",
+          "name": "Browser Agents",
+          "microcategories": [
+            "web-task-agents",
+            "rpa-browser-tools",
+            "data-entry-agents"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-data-analytics",
+      "name": "AI Data & Analytics",
+      "description": "Analytics assistants, BI copilots, forecasting tools, and data exploration platforms.",
+      "subcategories": [
+        {
+          "slug": "bi-copilots",
+          "name": "BI Copilots",
+          "microcategories": [
+            "dashboard-assistants",
+            "nlq-analytics",
+            "insight-generators"
+          ]
+        },
+        {
+          "slug": "forecasting",
+          "name": "Forecasting",
+          "microcategories": [
+            "sales-forecasting",
+            "demand-planning",
+            "scenario-modeling"
+          ]
+        },
+        {
+          "slug": "data-cleaning",
+          "name": "Data Cleaning",
+          "microcategories": [
+            "spreadsheet-cleaning",
+            "deduplication-tools",
+            "data-enrichment-tools"
+          ]
+        },
+        {
+          "slug": "customer-analytics",
+          "name": "Customer Analytics",
+          "microcategories": [
+            "churn-prediction",
+            "segmentation-tools",
+            "funnel-analysis-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-education-learning",
+      "name": "AI Education & Learning",
+      "description": "Tutors, quiz generators, course builders, and personalized learning tools.",
+      "subcategories": [
+        {
+          "slug": "ai-tutors",
+          "name": "AI Tutors",
+          "microcategories": [
+            "language-tutors",
+            "math-tutors",
+            "coding-tutors"
+          ]
+        },
+        {
+          "slug": "course-creation",
+          "name": "Course Creation",
+          "microcategories": [
+            "lesson-plan-generators",
+            "quiz-generators",
+            "microlearning-tools"
+          ]
+        },
+        {
+          "slug": "study-assistants",
+          "name": "Study Assistants",
+          "microcategories": [
+            "flashcard-tools",
+            "exam-prep-ai",
+            "study-summary-tools"
+          ]
+        },
+        {
+          "slug": "school-admin",
+          "name": "School Administration",
+          "microcategories": [
+            "grading-tools",
+            "feedback-generators",
+            "classroom-ai"
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    "text generation",
+    "rewriting",
+    "translation",
+    "summarization",
+    "keyword clustering",
+    "image generation",
+    "image editing",
+    "image upscaling",
+    "background removal",
+    "video generation",
+    "video editing",
+    "subtitle generation",
+    "video dubbing",
+    "voice synthesis",
+    "voice cloning",
+    "speech recognition",
+    "music generation",
+    "code generation",
+    "code completion",
+    "debugging",
+    "test generation",
+    "search",
+    "question answering",
+    "knowledge retrieval",
+    "document parsing",
+    "automation",
+    "agent execution",
+    "browser automation",
+    "workflow orchestration",
+    "data analysis",
+    "forecasting",
+    "nlq analytics",
+    "dashboard generation",
+    "presentation generation",
+    "ui generation",
+    "logo creation",
+    "brand ideation",
+    "crm enrichment",
+    "lead scoring",
+    "outreach generation",
+    "call summarization",
+    "ticket routing",
+    "response suggestions",
+    "contract analysis",
+    "policy drafting"
+  ],
+  "use_cases": [
+    "write blog posts",
+    "write seo articles",
+    "write affiliate content",
+    "write sales copy",
+    "write cold emails",
+    "generate newsletters",
+    "create product descriptions",
+    "generate linkedin posts",
+    "generate youtube scripts",
+    "write ad copy",
+    "generate social media calendars",
+    "create marketing funnels",
+    "build landing pages",
+    "create product images",
+    "design logos",
+    "generate mockups",
+    "create ad creatives",
+    "generate youtube videos",
+    "create tiktok videos",
+    "create training videos",
+    "translate videos",
+    "clone brand voice",
+    "create podcast intros",
+    "transcribe meetings",
+    "summarize calls",
+    "generate code",
+    "debug code",
+    "write unit tests",
+    "build full-stack apps",
+    "generate sql queries",
+    "document apis",
+    "summarize pdfs",
+    "search internal docs",
+    "research competitors",
+    "review contracts",
+    "analyze spreadsheets",
+    "forecast sales",
+    "clean datasets",
+    "prepare dashboards",
+    "schedule meetings",
+    "summarize meetings",
+    "manage tasks",
+    "generate presentations",
+    "build website chatbot",
+    "automate customer support",
+    "route support tickets",
+    "prospect leads",
+    "enrich crm data",
+    "coach sales calls",
+    "write proposals",
+    "screen resumes",
+    "write job descriptions",
+    "create lesson plans",
+    "build quizzes",
+    "tutor students",
+    "learn languages",
+    "automate browser tasks",
+    "build ai agents",
+    "orchestrate multi-step workflows",
+    "automate social posting",
+    "repurpose content"
+  ],
+  "industries": [
+    "marketing",
+    "advertising",
+    "sales",
+    "customer support",
+    "ecommerce",
+    "saas",
+    "software development",
+    "education",
+    "healthcare",
+    "legal",
+    "finance",
+    "hr",
+    "real estate",
+    "media",
+    "publishing",
+    "gaming",
+    "design",
+    "consulting",
+    "manufacturing",
+    "logistics",
+    "travel",
+    "hospitality",
+    "nonprofit",
+    "creator economy"
+  ],
+  "ai_models": [
+    "gpt-4",
+    "gpt-4.1",
+    "gpt-4o",
+    "gpt-5",
+    "claude-3",
+    "claude-3.5",
+    "claude-3.7",
+    "gemini-1.5",
+    "gemini-2.0",
+    "llama-3",
+    "llama-3.1",
+    "mistral",
+    "mixtral",
+    "stable-diffusion",
+    "flux",
+    "sdxl",
+    "dall-e",
+    "whisper",
+    "elevenlabs",
+    "deepseek"
+  ],
+  "integrations": [
+    "zapier",
+    "make",
+    "slack",
+    "notion",
+    "google docs",
+    "google sheets",
+    "google drive",
+    "dropbox",
+    "microsoft teams",
+    "outlook",
+    "hubspot",
+    "salesforce",
+    "airtable",
+    "wordpress",
+    "shopify",
+    "webflow",
+    "figma",
+    "canva",
+    "github",
+    "gitlab",
+    "jira",
+    "trello",
+    "asana",
+    "clickup",
+    "monday.com",
+    "discord",
+    "whatsapp"
+  ],
+  "agent_types": [
+    "research agent",
+    "marketing agent",
+    "coding agent",
+    "support agent",
+    "sales agent",
+    "browser agent",
+    "data analyst agent",
+    "content agent",
+    "recruiting agent",
+    "finance agent",
+    "operations agent",
+    "personal assistant agent"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android",
+    "windows",
+    "mac",
+    "linux",
+    "chrome-extension",
+    "api"
+  ],
+  "pricing_models": [
+    "free",
+    "freemium",
+    "paid",
+    "subscription",
+    "usage-based",
+    "enterprise",
+    "open-source"
+  ],
+  "skill_levels": [
+    "beginner",
+    "intermediate",
+    "advanced",
+    "team",
+    "enterprise"
+  ],
+  "content_types": [
+    "text",
+    "image",
+    "video",
+    "audio",
+    "code",
+    "documents",
+    "data",
+    "presentations"
+  ],
+  "workflows": [
+    {
+      "slug": "blog-content-workflow",
+      "name": "Blog Content Workflow",
+      "description": "Keyword to brief to draft to optimization to publishing workflow."
+    },
+    {
+      "slug": "youtube-video-workflow",
+      "name": "YouTube Video Workflow",
+      "description": "Idea to script to voiceover to visuals to editing workflow."
+    },
+    {
+      "slug": "social-media-repurposing",
+      "name": "Social Media Repurposing",
+      "description": "Repurpose long-form content into multiple social posts."
+    },
+    {
+      "slug": "seo-article-pipeline",
+      "name": "SEO Article Pipeline",
+      "description": "Research, outline, drafting, optimization and internal linking workflow."
+    },
+    {
+      "slug": "newsletter-production",
+      "name": "Newsletter Production",
+      "description": "Curate sources, summarize insights, generate draft, and optimize subject lines."
+    },
+    {
+      "slug": "customer-support-automation",
+      "name": "Customer Support Automation",
+      "description": "Knowledge ingestion, chatbot answering, escalation and QA monitoring."
+    },
+    {
+      "slug": "sales-outreach-engine",
+      "name": "Sales Outreach Engine",
+      "description": "Lead sourcing, enrichment, personalization and sequence automation."
+    },
+    {
+      "slug": "product-launch-stack",
+      "name": "Product Launch Stack",
+      "description": "Landing page, ads, emails, creative and social campaign workflow."
+    },
+    {
+      "slug": "ai-research-assistant",
+      "name": "AI Research Assistant",
+      "description": "Search, summarize, source extraction, and insight memo workflow."
+    },
+    {
+      "slug": "meeting-intelligence-flow",
+      "name": "Meeting Intelligence Flow",
+      "description": "Transcription, summarization, task extraction, and CRM sync workflow."
+    },
+    {
+      "slug": "ecommerce-content-pipeline",
+      "name": "Ecommerce Content Pipeline",
+      "description": "Product photos, descriptions, ad creatives and catalog enrichment."
+    },
+    {
+      "slug": "ai-agent-ops",
+      "name": "AI Agent Ops",
+      "description": "Build, test, monitor and improve multi-agent automation systems."
+    }
+  ],
+  "automation_recipes": [
+    "auto-generate blog posts",
+    "auto-publish social media posts",
+    "auto-create email sequences",
+    "auto-summarize meetings",
+    "auto-enrich crm contacts",
+    "auto-generate product descriptions",
+    "auto-generate ad creatives",
+    "auto-translate video content",
+    "auto-score support tickets",
+    "auto-create weekly reports",
+    "auto-build competitor snapshots",
+    "auto-produce youtube shorts"
+  ],
+  "stacks": [
+    "ai stack for startups",
+    "ai stack for marketers",
+    "ai stack for bloggers",
+    "ai stack for ecommerce brands",
+    "ai stack for agencies",
+    "ai stack for developers",
+    "ai stack for sales teams",
+    "ai stack for support teams",
+    "ai stack for educators",
+    "ai stack for creators"
+  ],
+  "toolkits": [
+    "toolkit for seo content teams",
+    "toolkit for youtube creators",
+    "toolkit for ecommerce growth",
+    "toolkit for cold outreach",
+    "toolkit for internal knowledge management",
+    "toolkit for startup operations",
+    "toolkit for ai prototyping",
+    "toolkit for course creation"
+  ],
+  "playbooks": [
+    "how to build an ai marketing funnel",
+    "how to automate content production",
+    "how to build a website support chatbot",
+    "how to create a faceless youtube channel with ai",
+    "how to build an ai sales engine",
+    "how to create a topical authority content machine",
+    "how to launch a product with ai tools",
+    "how to automate internal reporting with ai"
+  ],
+  "tags": [
+    "academic",
+    "agency",
+    "agents",
+    "amazon listings",
+    "analytics",
+    "api",
+    "automation",
+    "bi",
+    "branding",
+    "browser automation",
+    "browser-based",
+    "call intelligence",
+    "chatbot",
+    "chrome extension",
+    "citations",
+    "claude",
+    "compliance",
+    "content marketing",
+    "copywriting",
+    "creator economy",
+    "crm",
+    "dall-e",
+    "dashboards",
+    "data cleaning",
+    "design",
+    "developers",
+    "devops",
+    "documentation",
+    "ecommerce",
+    "education",
+    "email marketing",
+    "enterprise",
+    "faq",
+    "finance",
+    "flux",
+    "forecasting",
+    "gemini",
+    "gpt",
+    "helpdesk",
+    "hr",
+    "javascript",
+    "knowledge base",
+    "language learning",
+    "lead generation",
+    "legal",
+    "lesson plans",
+    "llama",
+    "localization",
+    "logo design",
+    "low code",
+    "marketing",
+    "mobile app",
+    "mockups",
+    "multi-agent",
+    "no code",
+    "open source",
+    "operations",
+    "outreach",
+    "pdf",
+    "podcast",
+    "presentations",
+    "privacy",
+    "product descriptions",
+    "product photography",
+    "prospecting",
+    "python",
+    "quizzes",
+    "research",
+    "rpa",
+    "sales",
+    "security",
+    "seo",
+    "shopify",
+    "social media",
+    "spreadsheets",
+    "sql",
+    "stable diffusion",
+    "startup",
+    "study tools",
+    "summaries",
+    "support",
+    "team collaboration",
+    "testing",
+    "ticketing",
+    "tiktok",
+    "translation",
+    "ui ux",
+    "video creation",
+    "voiceover",
+    "web search",
+    "whisper",
+    "workflows",
+    "youtube"
+  ],
+  "counts": {
+    "categories": 15,
+    "subcategories": 80,
+    "microcategories": 240,
+    "capabilities": 45,
+    "use_cases": 61,
+    "industries": 24,
+    "ai_models": 20,
+    "integrations": 27,
+    "agent_types": 12,
+    "platforms": 8,
+    "pricing_models": 7,
+    "skill_levels": 5,
+    "content_types": 8,
+    "workflows": 12,
+    "automation_recipes": 12,
+    "stacks": 10,
+    "toolkits": 8,
+    "playbooks": 8,
+    "tags": 93
+  }
+}

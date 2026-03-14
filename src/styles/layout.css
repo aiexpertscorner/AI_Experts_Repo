@@ -1,0 +1,8 @@
+.home-page { position: relative; }
+.home-block { padding: 5rem 0; }
+.home-block--last { padding-bottom: 3.5rem; }
+.home-block--subtle {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.05), transparent 35%), rgba(255, 255, 255, 0.012);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}

@@ -1,70 +1,83 @@
 ---
-import { SITE_NAME, SITE_URL, SITE_DESC } from "@/data/homeConfig";
-import "@/styles/base.css";
+// src/layouts/BaseLayout.astro
+
+// BELANGRIJK: Importeer hier je CSS-bestanden!
+// De volgorde is cruciaal: eerst de tokens, dan de rest.
+import "../styles/tokens.css";
+import "../styles/homepage.css"; 
 
 interface Props {
-  title?:       string;
+  title?: string;
   description?: string;
-  canonical?:   string;
-  ogImage?:     string;
-  noindex?:     boolean;
-  lang?:        string;
+  noindex?: boolean;
 }
+
 const {
-  title,
-  description = SITE_DESC,
-  canonical,
-  ogImage      = "/logos/logo_dark.png",
-  noindex      = false,
-  lang         = "en",
+  title = "AIExpertsCorner — Leading AI Tools Discovery Engine",
+  description = "Discover 19,000+ AI tools, compare pricing, and master automated workflows.",
+  noindex = false,
 } = Astro.props;
 
-const pageTitle    = title
-  ? `${title} | ${SITE_NAME}`
-  : `${SITE_NAME} — AI Tools Directory`;
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).href;
-const ogImageUrl   = new URL(ogImage, SITE_URL).href;
+const siteName = "AIExpertsCorner";
+const formattedTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://aiexpertscorner.com");
 ---
-<!DOCTYPE html>
-<html lang={lang}>
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="theme-color" content="#070d18"/>
 
-  <title>{pageTitle}</title>
-  <meta name="description" content={description}/>
-  {noindex && <meta name="robots" content="noindex,nofollow"/>}
-  <link rel="canonical" href={canonicalUrl}/>
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website"/>
-  <meta property="og:title"       content={pageTitle}/>
-  <meta property="og:description" content={description}/>
-  <meta property="og:url"         content={canonicalUrl}/>
-  <meta property="og:image"       content={ogImageUrl}/>
-  <meta property="og:site_name"   content={SITE_NAME}/>
+    <!-- Primary Meta Tags -->
+    <title>{formattedTitle}</title>
+    <meta name="title" content={formattedTitle} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card"        content="summary_large_image"/>
-  <meta name="twitter:title"       content={pageTitle}/>
-  <meta name="twitter:description" content={description}/>
-  <meta name="twitter:image"       content={ogImageUrl}/>
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/favicon.png"/>
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <!-- Gebruik hier de AI-klassen uit je Tailwind config -->
+  <body class="bg-ai-dark text-ai-text-primary font-sans antialiased min-h-screen flex flex-col">
+    
+    <!-- Premium Visual Overlays -->
+    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+      <!-- Gebruik de AI-kleuren voor de glows zodat alles matcht -->
+      <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-ai-primary/10 blur-[120px] rounded-full"></div>
+      <div class="absolute -bottom-[5%] -right-[5%] w-[35%] h-[35%] bg-ai-accent/10 blur-[120px] rounded-full"></div>
+      
+      <!-- De Grid Pattern uit je Tailwind config (utilities layer) -->
+      <div class="hero-v2__grid absolute inset-0 opacity-30"></div>
+    </div>
 
-  <!-- Font preconnect + load -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Inter:wght@400;500;600&display=swap"/>
+    <slot name="header" />
 
-  <!-- Structured data / extra head slot -->
-  <slot name="head"/>
-</head>
-<body>
-  <slot name="header"/>
-  <main id="main" tabindex="-1"><slot/></main>
-  <slot name="footer"/>
-</body>
+    <main id="main-content" class="flex-grow w-full relative">
+      <slot />
+    </main>
+
+    <slot name="footer" />
+
+    <script>
+      // Keyboard shortcut voor zoeken (Ctrl/Cmd + K)
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          const searchInput = document.querySelector('input[type="search"], #tools-search-input');
+          if (searchInput) (searchInput as HTMLInputElement).focus();
+        }
+      });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,862 @@
+{
+  "generated_at": "2026-03-13T21:14:13.412Z",
+  "input_tools_file": "src/data/tools_production.json",
+  "input_master_file": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\aiexpertscorner_taxonomy_masterdataset.json",
+  "output_file": "src/data/build/tools-master-mapped.json",
+  "total_tools": 19488,
+  "coverage": {
+    "master_category": 19453,
+    "master_subcategory": 15706,
+    "master_microcategory": 5870,
+    "master_capabilities": 19485,
+    "master_use_cases": 19482,
+    "master_industries": 12186,
+    "master_ai_models": 629,
+    "master_integrations": 18683,
+    "master_agent_types": 19246,
+    "master_platforms": 18934,
+    "master_pricing_models": 19488,
+    "master_skill_levels": 19468,
+    "master_content_types": 13255,
+    "master_tags": 19487,
+    "master_workflows": 8927
+  },
+  "distinct_primary_counts": {
+    "categories": 14,
+    "subcategories": 70,
+    "microcategories": 121
+  },
+  "low_confidence_primary_counts": {
+    "category": 2506,
+    "subcategory": 10936,
+    "microcategory": 5739
+  },
+  "top_primary_categories": [
+    {
+      "key": "ai-design",
+      "count": 2916
+    },
+    {
+      "key": "ai-image-generation",
+      "count": 2549
+    },
+    {
+      "key": "ai-automation-agents",
+      "count": 2430
+    },
+    {
+      "key": "ai-writing",
+      "count": 1786
+    },
+    {
+      "key": "ai-business-operations",
+      "count": 1556
+    },
+    {
+      "key": "ai-marketing",
+      "count": 1532
+    },
+    {
+      "key": "ai-audio-voice",
+      "count": 1374
+    },
+    {
+      "key": "ai-coding",
+      "count": 1173
+    },
+    {
+      "key": "ai-research",
+      "count": 1024
+    },
+    {
+      "key": "ai-video",
+      "count": 904
+    },
+    {
+      "key": "ai-data-analytics",
+      "count": 898
+    },
+    {
+      "key": "ai-sales",
+      "count": 558
+    },
+    {
+      "key": "ai-productivity",
+      "count": 388
+    },
+    {
+      "key": "ai-customer-support",
+      "count": 365
+    }
+  ],
+  "top_primary_subcategories": [
+    {
+      "key": "graphic-design",
+      "count": 1444
+    },
+    {
+      "key": "ai-orchestration",
+      "count": 1439
+    },
+    {
+      "key": "blog-writers",
+      "count": 1323
+    },
+    {
+      "key": "debugging",
+      "count": 989
+    },
+    {
+      "key": "text-to-image",
+      "count": 932
+    },
+    {
+      "key": "customer-analytics",
+      "count": 867
+    },
+    {
+      "key": "academic-research",
+      "count": 838
+    },
+    {
+      "key": "music-generation",
+      "count": 817
+    },
+    {
+      "key": "agent-builders",
+      "count": 805
+    },
+    {
+      "key": "hr-recruiting",
+      "count": 740
+    },
+    {
+      "key": "social-media",
+      "count": 594
+    },
+    {
+      "key": "image-editing",
+      "count": 459
+    },
+    {
+      "key": "legal",
+      "count": 457
+    },
+    {
+      "key": "outreach",
+      "count": 432
+    },
+    {
+      "key": "support-chatbots",
+      "count": 345
+    },
+    {
+      "key": "email-marketing",
+      "count": 331
+    },
+    {
+      "key": "seo-tools",
+      "count": 287
+    },
+    {
+      "key": "rewriting-editing",
+      "count": 277
+    },
+    {
+      "key": "text-to-video",
+      "count": 264
+    },
+    {
+      "key": "short-form-video",
+      "count": 216
+    },
+    {
+      "key": "no-code-automation",
+      "count": 175
+    },
+    {
+      "key": "lead-generation",
+      "count": 121
+    },
+    {
+      "key": "code-completion",
+      "count": 113
+    },
+    {
+      "key": "task-management",
+      "count": 107
+    },
+    {
+      "key": "text-to-speech",
+      "count": 100
+    },
+    {
+      "key": "copywriting",
+      "count": 97
+    },
+    {
+      "key": "calendar-scheduling",
+      "count": 94
+    },
+    {
+      "key": "ai-search-engines",
+      "count": 89
+    },
+    {
+      "key": "speech-to-text",
+      "count": 72
+    },
+    {
+      "key": "document-analysis",
+      "count": 71
+    },
+    {
+      "key": "audio-editing",
+      "count": 70
+    },
+    {
+      "key": "design-assets",
+      "count": 60
+    },
+    {
+      "key": "cro-landing-pages",
+      "count": 52
+    },
+    {
+      "key": "presentation-design",
+      "count": 47
+    },
+    {
+      "key": "script-writing",
+      "count": 40
+    },
+    {
+      "key": "dubbing-localization",
+      "count": 36
+    },
+    {
+      "key": "avatar-videos",
+      "count": 33
+    },
+    {
+      "key": "presentation-tools",
+      "count": 33
+    },
+    {
+      "key": "finance-accounting",
+      "count": 32
+    },
+    {
+      "key": "video-editing",
+      "count": 32
+    },
+    {
+      "key": "search-knowledge",
+      "count": 30
+    },
+    {
+      "key": "operations-automation",
+      "count": 28
+    },
+    {
+      "key": "voice-cloning",
+      "count": 28
+    },
+    {
+      "key": "note-taking",
+      "count": 27
+    },
+    {
+      "key": "ui-ux-design",
+      "count": 24
+    },
+    {
+      "key": "product-photography",
+      "count": 23
+    },
+    {
+      "key": "market-research",
+      "count": 21
+    },
+    {
+      "key": "social-media-writing",
+      "count": 21
+    },
+    {
+      "key": "video-translation",
+      "count": 17
+    },
+    {
+      "key": "brand-strategy",
+      "count": 16
+    },
+    {
+      "key": "data-cleaning",
+      "count": 16
+    },
+    {
+      "key": "email-writers",
+      "count": 15
+    },
+    {
+      "key": "browser-agents",
+      "count": 11
+    },
+    {
+      "key": "knowledge-bases",
+      "count": 11
+    },
+    {
+      "key": "testing-qa",
+      "count": 10
+    },
+    {
+      "key": "mockups",
+      "count": 9
+    },
+    {
+      "key": "seo-writing",
+      "count": 9
+    },
+    {
+      "key": "summarization",
+      "count": 9
+    },
+    {
+      "key": "bi-copilots",
+      "count": 8
+    },
+    {
+      "key": "forecasting",
+      "count": 7
+    },
+    {
+      "key": "documentation",
+      "count": 6
+    },
+    {
+      "key": "interior-fashion-visualizers",
+      "count": 6
+    },
+    {
+      "key": "app-builders",
+      "count": 5
+    },
+    {
+      "key": "crm-enrichment",
+      "count": 5
+    },
+    {
+      "key": "product-description-writing",
+      "count": 4
+    },
+    {
+      "key": "screen-recording",
+      "count": 4
+    },
+    {
+      "key": "support-qa",
+      "count": 2
+    },
+    {
+      "key": "ticket-automation",
+      "count": 2
+    },
+    {
+      "key": "logo-branding",
+      "count": 1
+    },
+    {
+      "key": "paid-ads",
+      "count": 1
+    }
+  ],
+  "top_primary_microcategories": [
+    {
+      "key": "seo-blog-writers",
+      "count": 1173
+    },
+    {
+      "key": "funnel-analysis-ai",
+      "count": 808
+    },
+    {
+      "key": "content-calendars",
+      "count": 566
+    },
+    {
+      "key": "citation-tools",
+      "count": 420
+    },
+    {
+      "key": "contract-review",
+      "count": 362
+    },
+    {
+      "key": "workflow-builders",
+      "count": 144
+    },
+    {
+      "key": "social-design-tools",
+      "count": 139
+    },
+    {
+      "key": "inpainting-tools",
+      "count": 130
+    },
+    {
+      "key": "long-form-writers",
+      "count": 128
+    },
+    {
+      "key": "interview-assistants",
+      "count": 119
+    },
+    {
+      "key": "website-chatbots",
+      "count": 103
+    },
+    {
+      "key": "resume-screeners",
+      "count": 96
+    },
+    {
+      "key": "compliance-tools",
+      "count": 95
+    },
+    {
+      "key": "web-research-tools",
+      "count": 87
+    },
+    {
+      "key": "email-sequencing",
+      "count": 70
+    },
+    {
+      "key": "autonomous-agent-tools",
+      "count": 67
+    },
+    {
+      "key": "jingle-creators",
+      "count": 65
+    },
+    {
+      "key": "ad-copy-generators",
+      "count": 60
+    },
+    {
+      "key": "ad-video-tools",
+      "count": 55
+    },
+    {
+      "key": "keyword-tools",
+      "count": 54
+    },
+    {
+      "key": "project-planning-ai",
+      "count": 49
+    },
+    {
+      "key": "contract-analysis",
+      "count": 47
+    },
+    {
+      "key": "background-removers",
+      "count": 42
+    },
+    {
+      "key": "prompt-chaining-tools",
+      "count": 41
+    },
+    {
+      "key": "background-music-tools",
+      "count": 40
+    },
+    {
+      "key": "cold-email-tools",
+      "count": 35
+    },
+    {
+      "key": "presenter-videos",
+      "count": 30
+    },
+    {
+      "key": "brand-voice-cloning",
+      "count": 28
+    },
+    {
+      "key": "custom-agent-platforms",
+      "count": 28
+    },
+    {
+      "key": "social-video-generators",
+      "count": 28
+    },
+    {
+      "key": "video-ad-scripts",
+      "count": 28
+    },
+    {
+      "key": "calendar-assistants",
+      "count": 27
+    },
+    {
+      "key": "social-analytics-ai",
+      "count": 27
+    },
+    {
+      "key": "linkedin-outreach-tools",
+      "count": 26
+    },
+    {
+      "key": "forecasting-tools",
+      "count": 25
+    },
+    {
+      "key": "knowledge-bots",
+      "count": 25
+    },
+    {
+      "key": "ux-research-ai",
+      "count": 23
+    },
+    {
+      "key": "competitor-analysis",
+      "count": 21
+    },
+    {
+      "key": "instagram-caption-tools",
+      "count": 21
+    },
+    {
+      "key": "meeting-notes",
+      "count": 21
+    },
+    {
+      "key": "content-optimizer-tools",
+      "count": 20
+    },
+    {
+      "key": "voiceover-localization",
+      "count": 20
+    },
+    {
+      "key": "heatmap-analysis-ai",
+      "count": 19
+    },
+    {
+      "key": "captioning-tools",
+      "count": 17
+    },
+    {
+      "key": "grammar-enhancers",
+      "count": 17
+    },
+    {
+      "key": "newsletter-optimization",
+      "count": 15
+    },
+    {
+      "key": "song-generators",
+      "count": 15
+    },
+    {
+      "key": "business-automation-ai",
+      "count": 14
+    },
+    {
+      "key": "literature-review-tools",
+      "count": 14
+    },
+    {
+      "key": "landing-page-generators",
+      "count": 13
+    },
+    {
+      "key": "natural-voice-generators",
+      "count": 13
+    },
+    {
+      "key": "photorealistic-generators",
+      "count": 13
+    },
+    {
+      "key": "video-dubbing",
+      "count": 13
+    },
+    {
+      "key": "brand-visual-tools",
+      "count": 12
+    },
+    {
+      "key": "data-enrichment-tools",
+      "count": 12
+    },
+    {
+      "key": "medical-transcription",
+      "count": 12
+    },
+    {
+      "key": "poster-generators",
+      "count": 12
+    },
+    {
+      "key": "tiktok-video-tools",
+      "count": 12
+    },
+    {
+      "key": "job-description-tools",
+      "count": 11
+    },
+    {
+      "key": "meeting-schedulers",
+      "count": 10
+    },
+    {
+      "key": "regression-testing-ai",
+      "count": 10
+    },
+    {
+      "key": "web-task-agents",
+      "count": 10
+    },
+    {
+      "key": "autocomplete-tools",
+      "count": 9
+    },
+    {
+      "key": "multilingual-support-bots",
+      "count": 9
+    },
+    {
+      "key": "team-productivity-tools",
+      "count": 9
+    },
+    {
+      "key": "device-mockups",
+      "count": 8
+    },
+    {
+      "key": "multi-agent-builders",
+      "count": 8
+    },
+    {
+      "key": "nlq-analytics",
+      "count": 8
+    },
+    {
+      "key": "bug-finders",
+      "count": 7
+    },
+    {
+      "key": "conversion-copy-tools",
+      "count": 7
+    },
+    {
+      "key": "multilingual-tts",
+      "count": 7
+    },
+    {
+      "key": "affiliate-content-writers",
+      "count": 6
+    },
+    {
+      "key": "dubbing-tools",
+      "count": 6
+    },
+    {
+      "key": "fashion-try-on-tools",
+      "count": 6
+    },
+    {
+      "key": "retouching-tools",
+      "count": 6
+    },
+    {
+      "key": "sales-forecasting",
+      "count": 6
+    },
+    {
+      "key": "changelog-tools",
+      "count": 5
+    },
+    {
+      "key": "enterprise-search",
+      "count": 5
+    },
+    {
+      "key": "churn-prediction",
+      "count": 4
+    },
+    {
+      "key": "document-summarizers",
+      "count": 4
+    },
+    {
+      "key": "expense-analysis",
+      "count": 4
+    },
+    {
+      "key": "help-center-bots",
+      "count": 4
+    },
+    {
+      "key": "keyword-optimized-writers",
+      "count": 4
+    },
+    {
+      "key": "lip-sync-tools",
+      "count": 4
+    },
+    {
+      "key": "mastering-tools",
+      "count": 4
+    },
+    {
+      "key": "paper-summarizers",
+      "count": 4
+    },
+    {
+      "key": "sales-copy-tools",
+      "count": 4
+    },
+    {
+      "key": "spreadsheet-cleaning",
+      "count": 4
+    },
+    {
+      "key": "support-search-ai",
+      "count": 4
+    },
+    {
+      "key": "async-video-tools",
+      "count": 3
+    },
+    {
+      "key": "audio-translation-tools",
+      "count": 3
+    },
+    {
+      "key": "cinematic-video-generators",
+      "count": 3
+    },
+    {
+      "key": "contact-finders",
+      "count": 3
+    },
+    {
+      "key": "error-explainers",
+      "count": 3
+    },
+    {
+      "key": "localized-avatar-videos",
+      "count": 3
+    },
+    {
+      "key": "narration-tools",
+      "count": 3
+    },
+    {
+      "key": "paraphrasers",
+      "count": 3
+    },
+    {
+      "key": "pipeline-analysis",
+      "count": 3
+    },
+    {
+      "key": "pitch-deck-design",
+      "count": 3
+    },
+    {
+      "key": "knowledge-capture",
+      "count": 2
+    },
+    {
+      "key": "qa-scorecards",
+      "count": 2
+    },
+    {
+      "key": "subtitle-translators",
+      "count": 2
+    },
+    {
+      "key": "ticket-summarizers",
+      "count": 2
+    },
+    {
+      "key": "todo-assistants",
+      "count": 2
+    },
+    {
+      "key": "brand-kit-tools",
+      "count": 1
+    },
+    {
+      "key": "business-deck-generators",
+      "count": 1
+    },
+    {
+      "key": "contact-enrichment",
+      "count": 1
+    },
+    {
+      "key": "data-entry-agents",
+      "count": 1
+    },
+    {
+      "key": "demand-planning",
+      "count": 1
+    },
+    {
+      "key": "design-system-tools",
+      "count": 1
+    },
+    {
+      "key": "ide-copilots",
+      "count": 1
+    },
+    {
+      "key": "intent-data-tools",
+      "count": 1
+    },
+    {
+      "key": "landing-page-copy",
+      "count": 1
+    },
+    {
+      "key": "llm-pipeline-tools",
+      "count": 1
+    },
+    {
+      "key": "meeting-summary-tools",
+      "count": 1
+    },
+    {
+      "key": "meeting-transcription",
+      "count": 1
+    },
+    {
+      "key": "merch-mockups",
+      "count": 1
+    },
+    {
+      "key": "pair-programming-ai",
+      "count": 1
+    },
+    {
+      "key": "reels-generators",
+      "count": 1
+    },
+    {
+      "key": "segmentation-tools",
+      "count": 1
+    }
+  ],
+  "notes": [
+    "This mapping layer is additive and does not yet replace existing build inputs.",
+    "The master taxonomy is now treated as target taxonomy.",
+    "Legacy cat/catSlug remain present for backward compatibility during migration.",
+    "Next step is to update build-seo-datasets.mjs so category pages and future hubs can read master_category/master_subcategory/master_microcategory."
+  ]
+}

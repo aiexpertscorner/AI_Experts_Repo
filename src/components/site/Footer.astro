@@ -1,261 +1,62 @@
 ---
-import { SITE_NAME, FOOTER_LINKS } from "@/data/homeConfig";
-const year = new Date().getFullYear();
+import { FOOTER_LINKS, SITE_DESC, SITE_NAME } from "@/data/homeConfig";
 ---
-<footer class="site-footer">
-  <div class="ft-top-glow" aria-hidden="true"></div>
 
-  <div class="container">
-
-    <!-- Newsletter row -->
-    <div class="ft-nl">
-      <div class="ft-nl-text">
-        <strong>Stay ahead with AI</strong>
-        <p>Weekly digest of the best new tools, guides and AI news.</p>
-      </div>
-      <form class="ft-nl-form" onsubmit="return false">
-        <input
-          type="email"
-          placeholder="your@email.com"
-          class="input ft-nl-input"
-          aria-label="Email for newsletter"
-        />
-        <button type="submit" class="btn btn-primary btn-sm">Subscribe Free</button>
-      </form>
-    </div>
-
-    <div class="ft-divider" aria-hidden="true"></div>
-
-    <!-- Main grid -->
-    <div class="ft-grid">
-
-      <!-- Brand column -->
-      <div class="ft-brand">
-        <a href="/" class="ft-logo" aria-label={SITE_NAME}>
-          <div class="ft-logo-icon" aria-hidden="true">
-            <img src="/logos/Logo_icon_dark.png" alt="" width="18" height="18" loading="lazy"/>
-          </div>
-          <span class="ft-logo-text">
-            <span class="logo-ai">AI</span><span class="logo-experts">Experts</span><span class="logo-corner">Corner</span>
+<footer class="bg-[#0B0F19] border-t border-[#1E293B] pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-20">
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center mb-6" aria-label={`${SITE_NAME} home`}>
+          <span class="text-2xl font-bold tracking-tight text-[#F8FAFC]">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#22D3EE]">AI</span>ExpertsCorner<span class="text-[#64748B] text-lg font-medium">.com</span>
           </span>
         </a>
-
-        <p class="ft-tagline">The most complete AI tools directory. Find, compare and discover the best AI tools for every workflow.</p>
-
-        <div class="ft-stats">
-          <div class="ft-stat">
-            <strong>19,000+</strong>
-            <span>AI Tools</span>
-          </div>
-          <div class="ft-stat">
-            <strong>23</strong>
-            <span>Categories</span>
-          </div>
-          <div class="ft-stat">
-            <strong>Daily</strong>
-            <span>Updates</span>
-          </div>
+        <p class="text-[#94A3B8] text-base leading-relaxed max-w-sm mb-8">
+          {SITE_DESC}
+        </p>
+        <div class="flex space-x-4">
+          {[1, 2, 3, 4].map((i) => (
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-[#121826] border border-[#1E293B] text-[#94A3B8] hover:text-[#3B82F6] hover:border-[#3B82F6] transition-all duration-300">
+              <span class="sr-only">Social Link {i}</span>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+          ))}
         </div>
       </div>
 
-      <!-- Link columns -->
-      {Object.entries(FOOTER_LINKS).map(([col, links]) => (
-        <div class="ft-col">
-          <h4 class="ft-col-head">{col}</h4>
-          <ul>
-            {links.map(l => (
-              <li><a href={l.href}>{l.label}</a></li>
+      {Object.entries(FOOTER_LINKS).map(([title, links]) => (
+        <div class="lg:col-span-1">
+          <h3 class="text-[#F8FAFC] font-semibold tracking-wider text-sm uppercase mb-6">
+            {title}
+          </h3>
+          <ul class="space-y-4">
+            {links.map((link) => (
+              <li>
+                <a href={link.href} class="text-[#94A3B8] hover:text-[#3B82F6] text-sm transition-colors duration-200 flex items-center group">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6] opacity-0 group-hover:opacity-100 transition-opacity mr-2"></span>
+                  {link.label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
       ))}
-
     </div>
 
-    <!-- Bottom bar -->
-    <div class="ft-bottom">
-      <p>© {year} {SITE_NAME}. All rights reserved.</p>
-      <p class="ft-disc">Affiliate links may be present. Tool data maintained independently.</p>
+    <div class="pt-10 border-t border-[#1E293B] flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-col items-center md:items-start">
+        <p class="text-[#64748B] text-sm">
+          © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+        </p>
+        <p class="text-[#64748B] text-xs mt-1">
+          Discovering the future of productivity through artificial intelligence.
+        </p>
+      </div>
+      <div class="flex items-center space-x-8">
+        <a href="/privacy" class="text-[#64748B] hover:text-[#F8FAFC] text-xs transition-colors">Privacy Policy</a>
+        <a href="/terms" class="text-[#64748B] hover:text-[#F8FAFC] text-xs transition-colors">Terms of Service</a>
+        <a href="/sitemap-index.xml" class="text-[#64748B] hover:text-[#F8FAFC] text-xs transition-colors">Sitemap</a>
+      </div>
     </div>
-
   </div>
 </footer>
-
-<style>
-/* ── Shell ─────────────────────────────────────────────────────*/
-.site-footer {
-  position: relative;
-  background: var(--c-bg-2);
-  border-top: 1px solid var(--c-border-subtle);
-  margin-top: var(--sp-24);
-  padding: var(--sp-12) 0 var(--sp-8);
-  overflow: hidden;
-}
-
-/* Ambient top glow from border */
-.ft-top-glow {
-  position: absolute;
-  top: -1px; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(79,110,247,.40) 35%, rgba(124,58,237,.30) 65%, transparent);
-  pointer-events: none;
-}
-
-/* ── Newsletter row ────────────────────────────────────────────*/
-.ft-nl {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-8);
-  padding: var(--sp-8) var(--sp-8);
-  background: var(--c-bg-3);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-xl);
-  margin-bottom: var(--sp-10);
-}
-.ft-nl-text strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 700;
-  color: var(--c-text);
-  margin-bottom: 4px;
-}
-.ft-nl-text p { font-size: var(--text-sm); color: var(--c-text-3); margin: 0 }
-.ft-nl-form {
-  display: flex;
-  gap: var(--sp-2);
-  flex-shrink: 0;
-  align-items: center;
-}
-.ft-nl-input {
-  width: 220px;
-  padding: 8px 14px;
-  font-size: var(--text-sm);
-  border-radius: var(--r-lg);
-}
-
-/* ── Divider ───────────────────────────────────────────────────*/
-.ft-divider {
-  height: 1px;
-  background: var(--c-border-subtle);
-  margin-bottom: var(--sp-10);
-}
-
-/* ── Main grid ─────────────────────────────────────────────────*/
-.ft-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--sp-10);
-  margin-bottom: var(--sp-10);
-}
-
-/* ── Brand column ──────────────────────────────────────────────*/
-.ft-brand { display: flex; flex-direction: column; gap: var(--sp-4) }
-
-.ft-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  text-decoration: none;
-  transition: opacity var(--t-fast);
-}
-.ft-logo:hover { opacity: .8 }
-.ft-logo-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: var(--r-sm);
-  background: linear-gradient(135deg, rgba(79,110,247,.15) 0%, rgba(124,58,237,.10) 100%);
-  border: 1px solid rgba(79,110,247,.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.ft-logo-icon img { width: 18px; height: 18px }
-.ft-logo-text {
-  font-family: var(--font-display);
-  font-size: .875rem;
-  font-weight: 400;
-  letter-spacing: -.02em;
-  line-height: 1;
-}
-.ft-logo-text .logo-ai      { font-weight: 800; color: var(--c-brand-light) }
-.ft-logo-text .logo-experts { font-weight: 700; color: var(--c-text) }
-.ft-logo-text .logo-corner  { font-weight: 500; color: var(--c-text-3) }
-
-.ft-tagline {
-  font-size: var(--text-sm);
-  color: var(--c-text-3);
-  max-width: 250px;
-  line-height: var(--lh-base);
-  margin: 0;
-}
-
-.ft-stats { display: flex; gap: var(--sp-5) }
-.ft-stat  { display: flex; flex-direction: column; gap: 2px }
-.ft-stat strong {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 800;
-  color: var(--c-brand-light);
-  letter-spacing: -.02em;
-}
-.ft-stat span {
-  font-size: var(--text-2xs);
-  color: var(--c-text-4);
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-weight: 600;
-}
-
-/* ── Link columns ──────────────────────────────────────────────*/
-.ft-col-head {
-  font-family: var(--font-display);
-  font-size: var(--text-2xs);
-  font-weight: 700;
-  letter-spacing: .10em;
-  text-transform: uppercase;
-  color: var(--c-text-3);
-  margin-bottom: var(--sp-4);
-}
-.ft-col ul { display: flex; flex-direction: column; gap: var(--sp-3) }
-.ft-col a {
-  font-size: var(--text-sm);
-  color: var(--c-text-3);
-  text-decoration: none;
-  transition: color var(--t-fast);
-}
-.ft-col a:hover { color: var(--c-text-2) }
-
-/* ── Bottom bar ────────────────────────────────────────────────*/
-.ft-bottom {
-  border-top: 1px solid var(--c-border-subtle);
-  padding-top: var(--sp-6);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-}
-.ft-bottom p { font-size: var(--text-xs); color: var(--c-text-4); margin: 0 }
-.ft-disc     { max-width: 380px; text-align: right }
-
-/* ── Responsive ────────────────────────────────────────────────*/
-@media (max-width: 1000px) {
-  .ft-grid { grid-template-columns: 1.5fr 1fr 1fr }
-  .ft-col:last-child { display: none }
-}
-@media (max-width: 720px) {
-  .ft-grid { grid-template-columns: 1fr 1fr }
-  .ft-nl { flex-direction: column; align-items: flex-start; gap: var(--sp-5) }
-  .ft-nl-input { width: 180px }
-}
-@media (max-width: 500px) {
-  .ft-grid { grid-template-columns: 1fr }
-  .ft-disc { text-align: left }
-  .ft-nl-form { flex-direction: column; width: 100% }
-  .ft-nl-input { width: 100% }
-  .ft-nl-form .btn { width: 100%; justify-content: center }
-}
-</style>

@@ -1,35 +1,57 @@
-export const CATEGORY_ICONS: Record<string,string> = {
-  "Chatbots & LLMs":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#94a3b8"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke="#6366f1" stroke-width="2"/></svg>`,
-  "Writing & Content":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#94a3b8"/><path d="M14 2v6h6" stroke="#94a3b8"/><path d="M16 13H8M16 17H8M10 9H8" stroke="#6366f1"/></svg>`,
-  "Image Generation":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#94a3b8"/><circle cx="8.5" cy="8.5" r="1.5" stroke="#6366f1"/><path d="M21 15l-5-5L5 21" stroke="#6366f1"/></svg>`,
-  "Video Generation":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#94a3b8"/><path d="M10 9l5 3-5 3V9z" fill="#6366f1" stroke="#6366f1"/></svg>`,
-  "Audio & Music":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13" stroke="#94a3b8"/><circle cx="6" cy="18" r="3" stroke="#6366f1"/><circle cx="18" cy="16" r="3" stroke="#6366f1"/></svg>`,
-  "Coding & Dev":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="#94a3b8"/><path d="M14 4l-4 16" stroke="#6366f1"/></svg>`,
-  "SEO & Marketing":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" stroke="#94a3b8"/><path d="M7 16l4-4 4 4 6-6" stroke="#6366f1"/></svg>`,
-  "Design & UI":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke="#94a3b8"/><circle cx="12" cy="12" r="3" stroke="#6366f1"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#6366f1"/></svg>`,
-  "Productivity":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="#94a3b8"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#94a3b8"/><path d="M9 14l2 2 4-4" stroke="#6366f1"/></svg>`,
-  "Research & Education":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="#94a3b8"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="#94a3b8"/><path d="M6 8h2M6 12h2M16 8h2M16 12h2" stroke="#6366f1"/></svg>`,
-  "Data & Analytics":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="9" rx="1" stroke="#6366f1"/><rect x="10" y="7" width="4" height="14" rx="1" stroke="#94a3b8"/><rect x="17" y="3" width="4" height="18" rx="1" stroke="#6366f1"/></svg>`,
-  "Customer Service":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 .84h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 15z" stroke="#94a3b8"/><path d="M14.5 2A5.5 5.5 0 0 1 20 7.5" stroke="#6366f1"/><path d="M14.5 5.5A2 2 0 0 1 16.5 7.5" stroke="#6366f1"/></svg>`,
-  "HR & Recruiting":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#94a3b8"/><circle cx="9" cy="7" r="4" stroke="#94a3b8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#6366f1"/></svg>`,
-  "Legal & Finance":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#94a3b8"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#6366f1"/></svg>`,
-  "Health & Wellness":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#94a3b8"/><path d="M9 12h2l1.5-3 2 6 1.5-3H18" stroke="#6366f1"/></svg>`,
-  "Sales & CRM":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="#94a3b8"/><polyline points="16 7 22 7 22 13" stroke="#6366f1"/></svg>`,
-  "Translation":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6" stroke="#94a3b8"/></svg>`,
-  "AI Agents":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="3" stroke="#94a3b8"/><path d="M12 8V5M10 5h4" stroke="#6366f1"/><circle cx="9" cy="13" r="1" fill="#6366f1"/><circle cx="15" cy="13" r="1" fill="#6366f1"/><path d="M9 17c0-1.66 1.34-2 3-2s3 .34 3 2" stroke="#6366f1"/></svg>`,
-  "Photo Editing":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="#94a3b8"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#6366f1"/></svg>`,
-  "3D & AR":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="#94a3b8"/><path d="M12 21v-9M20 7.5l-8 4.5M4 7.5l8 4.5" stroke="#6366f1"/></svg>`,
-  "E-Commerce":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1" stroke="#6366f1"/><circle cx="20" cy="21" r="1" stroke="#6366f1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="#94a3b8"/></svg>`,
-  "Social Media":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3" stroke="#6366f1"/><circle cx="6" cy="12" r="3" stroke="#94a3b8"/><circle cx="18" cy="19" r="3" stroke="#6366f1"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="#94a3b8"/></svg>`,
-  "Other AI Tools":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" stroke="#6366f1"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="#94a3b8"/></svg>`,
+const svg = (paths: string) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+
+const ICONS: Record<string, string> = {
+  "ai-automation-agents": svg(`<rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 8V5M10 5h4"/><circle cx="9" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1" fill="currentColor" stroke="none"/>`),
+  "ai-writing": svg(`<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6M8 9h2"/>`),
+  "ai-image-generation": svg(`<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>`),
+  "ai-video": svg(`<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/>`),
+  "ai-audio-voice": svg(`<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>`),
+  "ai-coding": svg(`<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/><path d="M14 4l-4 16"/>`),
+  "ai-marketing": svg(`<path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 6-6"/>`),
+  "ai-design": svg(`<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>`),
+  "ai-productivity": svg(`<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/>`),
+  "ai-research": svg(`<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>`),
+  "ai-data-analytics": svg(`<rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/>`),
+  "ai-customer-support": svg(`<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 .84h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 15z"/>`),
+  "ai-business-operations": svg(`<path d="M4 20V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12"/><path d="M9 20v-6h6v6"/><path d="M8 10h.01M12 10h.01M16 10h.01"/>`),
+  "ai-sales": svg(`<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`),
+  "other-ai-tools": svg(`<circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/>`),
 };
 
-export function getCategoryIcon(name: string): string {
-  return CATEGORY_ICONS[name] ?? CATEGORY_ICONS["Other AI Tools"];
+const ALIASES: Record<string, string> = {
+  "ai automation and agents": "ai-automation-agents",
+  "ai automation agents": "ai-automation-agents",
+  "ai writing": "ai-writing",
+  "ai image generation": "ai-image-generation",
+  "ai video": "ai-video",
+  "ai audio voice": "ai-audio-voice",
+  "ai coding": "ai-coding",
+  "ai marketing": "ai-marketing",
+  "ai design": "ai-design",
+  "ai productivity": "ai-productivity",
+  "ai research": "ai-research",
+  "ai data analytics": "ai-data-analytics",
+  "ai customer support": "ai-customer-support",
+  "ai business operations": "ai-business-operations",
+  "ai sales": "ai-sales",
+};
+
+const normalize = (value: string) =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+
+export function resolveCategoryIconSlug(value: string): string {
+  const slugish = String(value || "").toLowerCase().trim();
+  if (ICONS[slugish]) return slugish;
+  const alias = ALIASES[normalize(value)];
+  return alias || "other-ai-tools";
 }
-export function getCategoryIconBySlug(slug: string): string {
-  const toSlug = (s: string) =>
-    s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").replace(/-{2,}/g, "-");
-  const entry = Object.entries(CATEGORY_ICONS).find(([k]) => toSlug(k) === slug);
-  return entry?.[1] ?? CATEGORY_ICONS["Other AI Tools"];
+
+export function getCategoryIconMarkup(value: string): string {
+  return ICONS[resolveCategoryIconSlug(value)] || ICONS["other-ai-tools"];
 }

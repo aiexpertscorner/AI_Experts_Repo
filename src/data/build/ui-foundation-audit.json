@@ -1,0 +1,316 @@
+{
+  "generated_at": "2026-03-13T23:43:49.234Z",
+  "summary": {
+    "files": 62,
+    "astro": 51,
+    "css": 9,
+    "inlineStyleHits": 18,
+    "classListHits": 10,
+    "objectTagHits": 0,
+    "hardcodedColorHits": 194,
+    "dataBuildRefs": 0,
+    "toolsProductionRefs": 0
+  },
+  "top_inline_style_files": [
+    {
+      "file": "src\\pages\\ai-tools\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 4,
+      "classListCount": 2,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 12417
+    },
+    {
+      "file": "src\\pages\\ai-tools\\feature\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 2,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1772
+    },
+    {
+      "file": "src\\pages\\ai-tools\\industry\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 2,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1777
+    },
+    {
+      "file": "src\\pages\\ai-tools\\pricing\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 2,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1778
+    },
+    {
+      "file": "src\\pages\\ai-tools\\tag\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 2,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1758
+    },
+    {
+      "file": "src\\pages\\ai-tools\\tool-type\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 2,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1781
+    },
+    {
+      "file": "src\\pages\\ai-tools\\use-case\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 2,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1777
+    },
+    {
+      "file": "src\\components\\cards\\TopicCard.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 1,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 0,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 424
+    },
+    {
+      "file": "src\\components\\sections\\CategoryDiscoverySection.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 1,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 4,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 7318
+    }
+  ],
+  "top_hardcoded_color_files": [
+    {
+      "file": "src\\styles\\components.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 45,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 16054
+    },
+    {
+      "file": "src\\styles\\tools-index.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 36,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 9259
+    },
+    {
+      "file": "src\\styles\\tokens.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 34,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 20664
+    },
+    {
+      "file": "src\\styles\\homepage.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 32,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 14225
+    },
+    {
+      "file": "src\\components\\sections\\HubNavSection.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 2,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 12,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 7016
+    },
+    {
+      "file": "src\\styles\\dimension-page.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 6,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 3778
+    },
+    {
+      "file": "src\\components\\site\\Footer.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 5,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 7306
+    },
+    {
+      "file": "src\\components\\cards\\CategoryCard.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 4,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 3226
+    },
+    {
+      "file": "src\\components\\sections\\CategoryDiscoverySection.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 1,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 4,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 7318
+    },
+    {
+      "file": "src\\components\\sections\\AudienceSection.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 3601
+    },
+    {
+      "file": "src\\components\\sections\\TrendingTopicsSection.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 2922
+    },
+    {
+      "file": "src\\pages\\ai-tools\\category\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 4823
+    },
+    {
+      "file": "src\\pages\\alternatives\\[slug].astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 3616
+    },
+    {
+      "file": "src\\styles\\base.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1062
+    },
+    {
+      "file": "src\\styles\\category-detail.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 589
+    },
+    {
+      "file": "src\\styles\\tool-detail.css",
+      "ext": ".css",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 2,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 3946
+    },
+    {
+      "file": "src\\components\\site\\Pagination.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 1,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 1,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 1530
+    },
+    {
+      "file": "src\\layouts\\BaseLayout.astro",
+      "ext": ".astro",
+      "inlineStyleCount": 0,
+      "classListCount": 0,
+      "objectTagCount": 0,
+      "hardcodedColorCount": 1,
+      "dataBuildRefs": 0,
+      "toolsProductionRefs": 0,
+      "size": 2407
+    }
+  ],
+  "top_data_reference_files": []
+}

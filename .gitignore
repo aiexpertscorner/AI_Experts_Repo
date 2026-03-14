@@ -4,3 +4,5 @@ dist/
 .astro/
 src/data/tools_production.json
 src/data/tools_search_index.json
+src/data/build/tools-master-mapped.json
+src/data/build/tools-normalized.json

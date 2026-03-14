@@ -1,0 +1,1423 @@
+{
+  "generatedAt": "2026-03-13T20:04:16.067Z",
+  "root": "E:\\2026_Github\\AI_Experts_Repo",
+  "summary": {
+    "counts": {
+      "scripts": 11,
+      "pages": 21,
+      "components": 31,
+      "jsonFiles": 44,
+      "chains": 0,
+      "orphanJson": 0,
+      "buildOutputs": 1,
+      "pageDataJson": 23
+    },
+    "orphanJson": [],
+    "buildOutputs": [
+      "src/data/tools_search_index.json"
+    ],
+    "pageDataJson": [
+      "src/data/build/alternatives-page-data.json",
+      "src/data/build/best-of-map.json",
+      "src/data/build/best-of-paths.json",
+      "src/data/build/category-map.json",
+      "src/data/build/category-paths.json",
+      "src/data/build/compare-page-data.json",
+      "src/data/build/compare-pairs.json",
+      "src/data/build/feature-map.json",
+      "src/data/build/feature-paths.json",
+      "src/data/build/featured-tools.json",
+      "src/data/build/homepage-data.json",
+      "src/data/build/industry-map.json",
+      "src/data/build/industry-paths.json",
+      "src/data/build/pricing-map.json",
+      "src/data/build/pricing-paths.json",
+      "src/data/build/tag-map.json",
+      "src/data/build/tag-paths.json",
+      "src/data/build/tool-page-data.json",
+      "src/data/build/tool-paths.json",
+      "src/data/build/tool-type-map.json",
+      "src/data/build/tool-type-paths.json",
+      "src/data/build/use-case-map.json",
+      "src/data/build/use-case-paths.json"
+    ]
+  },
+  "jsonFiles": [
+    "src/data/build/alternatives-map.json",
+    "src/data/build/alternatives-page-data.json",
+    "src/data/build/authority-tool-map.json",
+    "src/data/build/best-of-map.json",
+    "src/data/build/best-of-paths.json",
+    "src/data/build/build-meta.json",
+    "src/data/build/category-map.json",
+    "src/data/build/category-paths.json",
+    "src/data/build/category-stats.json",
+    "src/data/build/category-top10.json",
+    "src/data/build/company-map.json",
+    "src/data/build/company-paths.json",
+    "src/data/build/compare-map.json",
+    "src/data/build/compare-page-data.json",
+    "src/data/build/compare-pairs.json",
+    "src/data/build/feature-map.json",
+    "src/data/build/feature-paths.json",
+    "src/data/build/featured-tools.json",
+    "src/data/build/global-top100.json",
+    "src/data/build/homepage-data.json",
+    "src/data/build/industry-map.json",
+    "src/data/build/industry-paths.json",
+    "src/data/build/pricing-map.json",
+    "src/data/build/pricing-paths.json",
+    "src/data/build/pricing-stats.json",
+    "src/data/build/prompt-library-map.json",
+    "src/data/build/prompt-library-paths.json",
+    "src/data/build/related-map.json",
+    "src/data/build/sitemap-data.json",
+    "src/data/build/skipped-records.json",
+    "src/data/build/tag-map.json",
+    "src/data/build/tag-paths.json",
+    "src/data/build/tool-enrichment-report.json",
+    "src/data/build/tool-map.json",
+    "src/data/build/tool-page-data.json",
+    "src/data/build/tool-paths.json",
+    "src/data/build/tool-type-map.json",
+    "src/data/build/tool-type-paths.json",
+    "src/data/build/tools-audit-report.json",
+    "src/data/build/use-case-map.json",
+    "src/data/build/use-case-paths.json",
+    "src/data/tools_production.json",
+    "src/data/tools_search_index.json",
+    "src/data/tools_source.json"
+  ],
+  "fileAnalyses": [
+    {
+      "file": "scripts/audit-current-data-flow.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/tools_production.json",
+        "src/data/build/authority-tool-map.json",
+        "src/data/build/category-top10.json",
+        "src/data/build/global-top100.json",
+        "src/data/tools_source.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": [
+        "src/data/build/authority-tool-map.json",
+        "src/data/build/category-top10.json",
+        "src/data/build/global-top100.json",
+        "src/data/build/tool-map.json",
+        "src/data/tools_production.json",
+        "src/data/tools_source.json"
+      ]
+    },
+    {
+      "file": "scripts/audit-site-structure.mjs",
+      "type": "script",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "scripts/audit-tools-production.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/build/industry-map.json",
+        "src/data/build/industry-paths.json",
+        "src/data/tools_production.json",
+        "src/data/build/tools-audit-report.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": [
+        "src/data/build/industry-map.json",
+        "src/data/build/industry-paths.json",
+        "src/data/build/tools-audit-report.json",
+        "src/data/tools_production.json"
+      ]
+    },
+    {
+      "file": "scripts/build-authority-datasets.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/tools_production.json",
+        "src/data/build/authority-tool-map.json",
+        "src/data/build/category-top10.json",
+        "src/data/build/global-top100.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": [
+        "src/data/build/authority-tool-map.json",
+        "src/data/build/category-top10.json",
+        "src/data/build/global-top100.json",
+        "src/data/build/tool-map.json",
+        "src/data/tools_production.json"
+      ]
+    },
+    {
+      "file": "scripts/build-seo-datasets.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/tools_production.json",
+        "src/data/tools_search_index.json",
+        "src/data/build/category-top10.json",
+        "src/data/build/company-map.json",
+        "src/data/build/company-paths.json",
+        "src/data/build/alternatives-map.json",
+        "src/data/build/alternatives-page-data.json",
+        "src/data/build/best-of-map.json",
+        "src/data/build/best-of-paths.json",
+        "src/data/build/build-meta.json",
+        "src/data/build/category-map.json",
+        "src/data/build/category-paths.json",
+        "src/data/build/category-stats.json",
+        "src/data/build/compare-map.json",
+        "src/data/build/compare-page-data.json",
+        "src/data/build/compare-pairs.json",
+        "src/data/build/feature-map.json",
+        "src/data/build/feature-paths.json",
+        "src/data/build/featured-tools.json",
+        "src/data/build/homepage-data.json",
+        "src/data/build/industry-map.json",
+        "src/data/build/industry-paths.json",
+        "src/data/build/pricing-map.json",
+        "src/data/build/pricing-paths.json",
+        "src/data/build/pricing-stats.json",
+        "src/data/build/prompt-library-map.json",
+        "src/data/build/prompt-library-paths.json",
+        "src/data/build/related-map.json",
+        "src/data/build/sitemap-data.json",
+        "src/data/build/skipped-records.json",
+        "src/data/build/tag-map.json",
+        "src/data/build/tag-paths.json",
+        "src/data/build/tool-map.json",
+        "src/data/build/tool-page-data.json",
+        "src/data/build/tool-paths.json",
+        "src/data/build/tool-type-map.json",
+        "src/data/build/tool-type-paths.json",
+        "src/data/build/use-case-map.json",
+        "src/data/build/use-case-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [
+        "src/data/tools_search_index.json"
+      ],
+      "unknownJson": [
+        "src/data/build/alternatives-map.json",
+        "src/data/build/alternatives-page-data.json",
+        "src/data/build/best-of-map.json",
+        "src/data/build/best-of-paths.json",
+        "src/data/build/build-meta.json",
+        "src/data/build/category-map.json",
+        "src/data/build/category-paths.json",
+        "src/data/build/category-stats.json",
+        "src/data/build/category-top10.json",
+        "src/data/build/company-map.json",
+        "src/data/build/company-paths.json",
+        "src/data/build/compare-map.json",
+        "src/data/build/compare-page-data.json",
+        "src/data/build/compare-pairs.json",
+        "src/data/build/feature-map.json",
+        "src/data/build/feature-paths.json",
+        "src/data/build/featured-tools.json",
+        "src/data/build/homepage-data.json",
+        "src/data/build/industry-map.json",
+        "src/data/build/industry-paths.json",
+        "src/data/build/pricing-map.json",
+        "src/data/build/pricing-paths.json",
+        "src/data/build/pricing-stats.json",
+        "src/data/build/prompt-library-map.json",
+        "src/data/build/prompt-library-paths.json",
+        "src/data/build/related-map.json",
+        "src/data/build/sitemap-data.json",
+        "src/data/build/skipped-records.json",
+        "src/data/build/tag-map.json",
+        "src/data/build/tag-paths.json",
+        "src/data/build/tool-map.json",
+        "src/data/build/tool-page-data.json",
+        "src/data/build/tool-paths.json",
+        "src/data/build/tool-type-map.json",
+        "src/data/build/tool-type-paths.json",
+        "src/data/build/use-case-map.json",
+        "src/data/build/use-case-paths.json",
+        "src/data/tools_production.json"
+      ]
+    },
+    {
+      "file": "scripts/deep-audit-site.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/tools_production.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": [
+        "src/data/tools_production.json"
+      ]
+    },
+    {
+      "file": "scripts/enrich-descriptions.mjs",
+      "type": "script",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "scripts/enrich-tools-v6.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/build/tool-enrichment-report.json",
+        "src/data/tools_production.json",
+        "src/data/tools_search_index.json",
+        "src/data/tools_source.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": [
+        "src/data/build/tool-enrichment-report.json",
+        "src/data/tools_production.json",
+        "src/data/tools_search_index.json",
+        "src/data/tools_source.json"
+      ]
+    },
+    {
+      "file": "scripts/export-audit-json.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/tools_production.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": [
+        "src/data/tools_production.json"
+      ]
+    },
+    {
+      "file": "scripts/inject-canonical-tools.mjs",
+      "type": "script",
+      "mentions": [
+        "src/data/tools_production.json"
+      ],
+      "readJson": [
+        "src/data/tools_production.json"
+      ],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "scripts/inspect-build-logic.mjs",
+      "type": "script",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/cards/AuthorityToolCard.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/cards/CategoryCard.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/cards/ToolCard.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/cards/ToolRow.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/cards/TopicCard.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/AudienceSection.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/AuthorityToolCard.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/CategoryDiscoverySection.astro",
+      "type": "component",
+      "mentions": [
+        "src/data/build/category-map.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/CategoryGrid.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/FeaturedToolsRail.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/FeaturedToolsSection.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/FlagshipToolsSection.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/HubNavigator.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/HubNavSection.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/NewToolsSection.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/sections/TrendingTopicsSection.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/Breadcrumbs.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/CategoryHero.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/FilterStrip.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/Footer.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/Header.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/NewsletterCard.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/Pagination.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/SearchHero.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/SectionHeader.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/StatsBar.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/ToolHero.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/ToolQuickFacts.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/ToolsFilters.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/ToolsHero.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/components/site/ToolsToolbar.astro",
+      "type": "component",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-news/index.astro",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/tool-page-data.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/category/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/category-map.json",
+        "src/data/build/category-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/feature/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/feature-map.json",
+        "src/data/build/feature-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/index.astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/category-map.json",
+        "src/data/build/featured-tools.json",
+        "src/data/build/homepage-data.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/industry/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/industry-map.json",
+        "src/data/build/industry-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/pricing/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/pricing-map.json",
+        "src/data/build/pricing-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/tag/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/tag-map.json",
+        "src/data/build/tag-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/tool-type/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/tool-type-map.json",
+        "src/data/build/tool-type-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-tools/use-case/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/use-case-map.json",
+        "src/data/build/use-case-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/ai-workflows/index.astro",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/alternatives/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/alternatives-page-data.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/best/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/best-of-map.json",
+        "src/data/build/best-of-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/index.astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/category-map.json",
+        "src/data/build/featured-tools.json",
+        "src/data/build/homepage-data.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/learn-ai/index.astro",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/prompts/index.astro",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/resources/index.astro",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/robots.txt.ts",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/sitemap.xml.ts",
+      "type": "page",
+      "mentions": [
+        "src/data/build/category-paths.json",
+        "src/data/build/compare-pairs.json",
+        "src/data/build/tool-paths.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/submit-tool/index.astro",
+      "type": "page",
+      "mentions": [],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    },
+    {
+      "file": "src/pages/vs/[slug].astro",
+      "type": "page",
+      "mentions": [
+        "src/data/build/compare-page-data.json"
+      ],
+      "readJson": [],
+      "writeJson": [],
+      "unknownJson": []
+    }
+  ],
+  "jsonReferences": {
+    "src/data/build/alternatives-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/alternatives-page-data.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/alternatives/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/alternatives/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/authority-tool-map.json": {
+      "referencedBy": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/build-authority-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/build-authority-datasets.mjs"
+      ]
+    },
+    "src/data/build/best-of-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/best/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/best/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/best-of-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/best/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/best/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/build-meta.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/category-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/components/sections/CategoryDiscoverySection.astro",
+        "src/pages/ai-tools/category/[slug].astro",
+        "src/pages/ai-tools/index.astro",
+        "src/pages/index.astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/category/[slug].astro",
+        "src/pages/ai-tools/index.astro",
+        "src/pages/index.astro"
+      ],
+      "componentsUsing": [
+        "src/components/sections/CategoryDiscoverySection.astro"
+      ],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/category-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/category/[slug].astro",
+        "src/pages/sitemap.xml.ts"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/category/[slug].astro",
+        "src/pages/sitemap.xml.ts"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/category-stats.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/category-top10.json": {
+      "referencedBy": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/build-authority-datasets.mjs",
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/build-authority-datasets.mjs",
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/company-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/company-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/compare-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/compare-page-data.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/vs/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/vs/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/compare-pairs.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/sitemap.xml.ts"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/sitemap.xml.ts"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/feature-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/feature/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/feature/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/feature-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/feature/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/feature/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/featured-tools.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/index.astro",
+        "src/pages/index.astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/index.astro",
+        "src/pages/index.astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/global-top100.json": {
+      "referencedBy": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/build-authority-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/build-authority-datasets.mjs"
+      ]
+    },
+    "src/data/build/homepage-data.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/index.astro",
+        "src/pages/index.astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/index.astro",
+        "src/pages/index.astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/industry-map.json": {
+      "referencedBy": [
+        "scripts/audit-tools-production.mjs",
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/industry/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/industry/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-tools-production.mjs",
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/industry-paths.json": {
+      "referencedBy": [
+        "scripts/audit-tools-production.mjs",
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/industry/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/industry/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-tools-production.mjs",
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/pricing-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/pricing/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/pricing/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/pricing-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/pricing/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/pricing/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/pricing-stats.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/prompt-library-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/prompt-library-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/related-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/sitemap-data.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/skipped-records.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tag-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/tag/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/tag/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tag-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/tag/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/tag/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tool-enrichment-report.json": {
+      "referencedBy": [
+        "scripts/enrich-tools-v6.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/enrich-tools-v6.mjs"
+      ]
+    },
+    "src/data/build/tool-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tool-page-data.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tool-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/sitemap.xml.ts"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/sitemap.xml.ts"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tool-type-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/tool-type/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/tool-type/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tool-type-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/tool-type/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/tool-type/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/tools-audit-report.json": {
+      "referencedBy": [
+        "scripts/audit-tools-production.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-tools-production.mjs"
+      ]
+    },
+    "src/data/build/use-case-map.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/use-case/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/use-case/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/build/use-case-paths.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "src/pages/ai-tools/use-case/[slug].astro"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [
+        "src/pages/ai-tools/use-case/[slug].astro"
+      ],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/build-seo-datasets.mjs"
+      ]
+    },
+    "src/data/tools_production.json": {
+      "referencedBy": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/audit-tools-production.mjs",
+        "scripts/build-authority-datasets.mjs",
+        "scripts/build-seo-datasets.mjs",
+        "scripts/deep-audit-site.mjs",
+        "scripts/enrich-tools-v6.mjs",
+        "scripts/export-audit-json.mjs",
+        "scripts/inject-canonical-tools.mjs"
+      ],
+      "scriptsReading": [
+        "scripts/inject-canonical-tools.mjs"
+      ],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/audit-tools-production.mjs",
+        "scripts/build-authority-datasets.mjs",
+        "scripts/build-seo-datasets.mjs",
+        "scripts/deep-audit-site.mjs",
+        "scripts/enrich-tools-v6.mjs",
+        "scripts/export-audit-json.mjs"
+      ]
+    },
+    "src/data/tools_search_index.json": {
+      "referencedBy": [
+        "scripts/build-seo-datasets.mjs",
+        "scripts/enrich-tools-v6.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [
+        "scripts/build-seo-datasets.mjs"
+      ],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/enrich-tools-v6.mjs"
+      ]
+    },
+    "src/data/tools_source.json": {
+      "referencedBy": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/enrich-tools-v6.mjs"
+      ],
+      "scriptsReading": [],
+      "scriptsWriting": [],
+      "pagesUsing": [],
+      "componentsUsing": [],
+      "unknownUsage": [
+        "scripts/audit-current-data-flow.mjs",
+        "scripts/enrich-tools-v6.mjs"
+      ]
+    }
+  },
+  "chains": []
+}

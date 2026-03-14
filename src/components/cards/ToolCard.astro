@@ -1,293 +1,119 @@
 ---
-interface Props {
-  tool:    any;
-  rank?:   number;
-  compact?: boolean;
-  featured?: boolean;
+interface ToolShape {
+  name?: string;
+  handle?: string;
+  slug?: string;
+  tagline?: string;
+  short?: string;
+  desc?: string;
+  description?: string;
+  pricing_tier?: string;
+  pricing?: string;
+  logo_domain?: string;
+  logo_url?: string;
+  feature_tags?: string[];
+  tags?: string[];
+  category?: string;
+  category_slug?: string;
+  is_featured?: boolean;
+  affiliate_url?: string;
+  website_url?: string;
 }
-const { tool, rank, compact = false, featured = false } = Astro.props;
+
+interface Props {
+  tool: ToolShape;
+  rank?: number;
+  compact?: boolean;
+  variant?: "default" | "authority" | "row";
+  showDescription?: boolean;
+  showPricing?: boolean;
+  showCategory?: boolean;
+  showCTA?: boolean;
+}
 
 const {
-  name          = "",
-  handle        = "",
-  tagline       = "",
-  description   = "",
-  pricing_tier  = "unknown",
-  logo_domain   = "",
-  feature_tags  = [],
-  category      = "",
-  category_slug = "",
-  is_featured   = false,
-  affiliate_url = "",
-  website_url   = "",
-  logo_url      = "",
-} = tool;
+  tool,
+  rank,
+  compact = false,
+  variant = "default",
+  showDescription = true,
+  showPricing = true,
+  showCategory = true,
+  showCTA = false,
+} = Astro.props;
 
-const pricingLabel: Record<string,string> = {
-  free: "Free", freemium: "Freemium", paid: "Paid"
+const resolvedHandle = tool?.handle || tool?.slug || "tool";
+const resolvedName = tool?.name || resolvedHandle;
+const resolvedPricing = String(tool?.pricing_tier || tool?.pricing || "unknown").toLowerCase();
+const resolvedTags = (Array.isArray(tool?.feature_tags) && tool.feature_tags.length ? tool.feature_tags : tool?.tags || []).slice(0, 3);
+const resolvedDescription = String(tool?.tagline || tool?.short || tool?.desc || tool?.description || "").slice(0, 120);
+const categorySlug = tool?.category_slug || String(tool?.category || "other-ai-tools").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const href = tool?.affiliate_url || `/ai-tools/${resolvedHandle}`;
+const isAffiliate = !!tool?.affiliate_url;
+
+let logoSrc = tool?.logo_url || "";
+if (!logoSrc && tool?.logo_domain) {
+  logoSrc = `https://www.google.com/s2/favicons?domain=${tool.logo_domain}&sz=128`;
+}
+
+const classes = [
+  "tool-card",
+  `tool-card--${variant}`,
+  compact ? "tool-card--compact" : "",
+  tool?.is_featured ? "tool-card--featured" : "",
+].filter(Boolean).join(" ");
+
+const pricingLabel: Record<string, string> = {
+  free: "Free",
+  freemium: "Freemium",
+  paid: "Paid",
+  unknown: "Unknown",
 };
-const tier      = (pricing_tier || "unknown").toLowerCase();
-const logoSrc   = logo_url || (logo_domain ? `https://logo.clearbit.com/${logo_domain}?size=64` : null);
-const fallback  = (name || "A").charAt(0).toUpperCase();
-const tags      = (Array.isArray(feature_tags) ? feature_tags : []).slice(0, 3);
-const href      = affiliate_url || `/ai-tools/${handle}`;
-const isAff     = !!affiliate_url;
-const catSlug   = category_slug || (category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
-const desc      = (tagline || description || "").slice(0, 108);
-const showFeat  = is_featured || featured;
 ---
-<article class:list={["tc", { "tc--compact": compact, "tc--featured": showFeat }]}>
-  {rank && <span class="tc-rank">#{rank}</span>}
 
-  <a
-    href={href}
-    class="tc-link"
-    target={isAff ? "_blank" : undefined}
-    rel={isAff ? "noopener sponsored" : undefined}
-  >
-    <!-- Top row: logo + name + pricing -->
-    <div class="tc-top">
-      <div class="tc-logo">
+<article class={classes}>
+  {typeof rank === "number" ? <span class="tool-card__rank">#{rank}</span> : null}
+
+  <a href={href} class="tool-card__link" target={isAffiliate ? "_blank" : undefined} rel={isAffiliate ? "noopener sponsored" : undefined}>
+    <header class="tool-card__header">
+      <div class="tool-card__logo-wrapper">
         {logoSrc ? (
-          <img
-            src={logoSrc}
-            alt=""
-            width="44"
-            height="44"
-            loading="lazy"
-            decoding="async"
-            class="tc-logo-img"
-            onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'"
-          />
-        ) : null}
-        <span class="tc-logo-fallback" style={logoSrc ? "display:none" : ""}>{fallback}</span>
-      </div>
-
-      <div class="tc-info">
-        <strong class="tc-name">{name}</strong>
-        {category && (
-          <a
-            href={`/ai-tools/category/${catSlug}`}
-            class="tc-cat"
-            onclick="event.stopPropagation()"
-          >{category}</a>
+          <>
+            <img src={logoSrc} alt={`${resolvedName} logo`} width="48" height="48" loading="lazy" decoding="async" class="tool-card__logo-img" onerror="this.remove(); this.nextElementSibling?.classList.remove('is-hidden');" />
+            <span class="tool-card__logo-fallback is-hidden">{resolvedName.charAt(0).toUpperCase()}</span>
+          </>
+        ) : (
+          <span class="tool-card__logo-fallback">{resolvedName.charAt(0).toUpperCase()}</span>
         )}
       </div>
 
-      <span class:list={["badge", `badge-${tier}`]}>
-        {pricingLabel[tier] || pricing_tier}
-      </span>
-    </div>
-
-    <!-- Description -->
-    {!compact && desc && (
-      <p class="tc-desc">{desc}{desc.length >= 108 ? "…" : ""}</p>
-    )}
-
-    <!-- Tags -->
-    {!compact && tags.length > 0 && (
-      <div class="tc-tags">
-        {tags.map((t: string) => <span class="tag">{t}</span>)}
+      <div class="tool-card__info">
+        <h3 class="tool-card__name">{resolvedName}</h3>
+        {showCategory && tool?.category ? <span class="tool-card__category">{tool.category}</span> : null}
       </div>
-    )}
 
-    <!-- Footer -->
-    <div class="tc-foot">
-      <span class="tc-cta">
-        Visit {name}
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-      </span>
-      {showFeat && <span class="tc-featured-dot" title="Featured" aria-label="Featured tool"></span>}
-    </div>
+      {showPricing ? <span class={`badge badge--${resolvedPricing}`}>{pricingLabel[resolvedPricing] || "Unknown"}</span> : null}
+    </header>
+
+    {showDescription && resolvedDescription && variant !== "row" ? (
+      <p class="tool-card__desc">{resolvedDescription}{resolvedDescription.length >= 120 ? "…" : ""}</p>
+    ) : null}
+
+    {variant !== "row" && !compact && resolvedTags.length > 0 ? (
+      <div class="tool-card__tags">
+        {resolvedTags.map((tag) => <span class="tag">{tag}</span>)}
+      </div>
+    ) : null}
+
+    <footer class="tool-card__footer">
+      <div class="tool-card__footer-left">
+        {showCTA ? (
+          <span class="tool-card__cta">Visit {resolvedName}</span>
+        ) : (
+          <span class="tool-card__hint">{tool?.category ? <a href={`/ai-tools/category/${categorySlug}`} class="tool-card__category-link">Open category</a> : "View details"}</span>
+        )}
+      </div>
+      {tool?.is_featured ? <span class="tool-card__featured-dot"></span> : null}
+    </footer>
   </a>
 </article>
-
-<style>
-/* ── Base card ─────────────────────────────────────────────────*/
-.tc {
-  position: relative;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
-}
-
-/* Ambient glow — always present, subtle */
-.tc::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 55% at 10% 0%, var(--glow-brand-xs) 0%, transparent 65%);
-  pointer-events: none;
-  border-radius: inherit;
-  transition: opacity var(--t-base);
-  opacity: 1;
-}
-
-/* Hover state */
-.tc:hover {
-  border-color: var(--card-hover-border);
-  box-shadow: var(--card-hover-shadow);
-  transform: var(--card-hover-lift);
-}
-.tc:hover::before { opacity: 2.5 }
-
-/* Featured variant — slightly more prominent border */
-.tc--featured {
-  border-color: rgba(79,110,247,.20);
-}
-.tc--featured::before {
-  background: radial-gradient(ellipse 70% 55% at 10% 0%, rgba(79,110,247,.08) 0%, transparent 65%);
-}
-
-/* Rank badge */
-.tc-rank {
-  position: absolute;
-  top: 10px; right: 10px;
-  z-index: 2;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .03em;
-  color: var(--c-text-4);
-  background: var(--c-bg-4);
-  border: 1px solid var(--c-border);
-  padding: 2px 7px;
-  border-radius: var(--r-full);
-  line-height: 1.5;
-}
-
-/* ── Inner link ────────────────────────────────────────────────*/
-.tc-link {
-  padding: var(--sp-5);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-  text-decoration: none;
-  flex: 1;
-}
-
-/* ── Top row ───────────────────────────────────────────────────*/
-.tc-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-/* ── Logo ──────────────────────────────────────────────────────*/
-.tc-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--r-sm);
-  flex-shrink: 0;
-  background: var(--c-bg-4);
-  border: 1px solid var(--c-border-subtle);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color var(--t-fast);
-}
-.tc:hover .tc-logo { border-color: var(--c-border) }
-.tc-logo-img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-}
-.tc-logo-fallback {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 800;
-  font-family: var(--font-display);
-  color: var(--c-brand-light);
-  background: linear-gradient(135deg, var(--glow-brand) 0%, var(--glow-violet) 100%);
-}
-
-/* ── Name + category ───────────────────────────────────────────*/
-.tc-info   { flex: 1; min-width: 0 }
-.tc-name {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--c-text);
-  letter-spacing: -.015em;
-  line-height: 1.3;
-  margin-bottom: 3px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.tc-cat {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  color: var(--c-text-4);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color var(--t-fast);
-}
-.tc-cat:hover { color: var(--c-brand-light) }
-
-/* ── Description ───────────────────────────────────────────────*/
-.tc-desc {
-  font-size: var(--text-sm);
-  color: var(--c-text-2);
-  line-height: var(--lh-snug);
-  flex: 1;
-  margin: 0;
-}
-
-/* ── Tags ──────────────────────────────────────────────────────*/
-.tc-tags { display: flex; flex-wrap: wrap; gap: 4px }
-
-/* ── Footer ────────────────────────────────────────────────────*/
-.tc-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--sp-3);
-  border-top: 1px solid var(--c-border-subtle);
-  margin-top: auto;
-}
-
-.tc-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--c-brand-light);
-  opacity: 0;
-  transition: opacity var(--t-fast), gap var(--t-fast);
-  letter-spacing: .01em;
-}
-.tc:hover .tc-cta { opacity: 1 }
-.tc:hover .tc-cta svg { transform: translate(1px, -1px) }
-
-.tc-featured-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--c-brand);
-  box-shadow: 0 0 6px rgba(79,110,247,.6);
-  flex-shrink: 0;
-}
-
-/* ── Compact variant ───────────────────────────────────────────*/
-.tc--compact .tc-link { padding: var(--sp-3) var(--sp-4); gap: var(--sp-2) }
-.tc--compact .tc-foot { display: none }
-</style>

@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-03-14T00:29:54.607Z",
+  "total_files_scanned": 68,
+  "hits": [
+    {
+      "file": "src\\components\\cards\\AuthorityToolCard.astro",
+      "check": "markdown_code_fence",
+      "count": 4
+    },
+    {
+      "file": "src\\components\\cards\\CategoryCard.astro",
+      "check": "dangerous_set_html",
+      "count": 1
+    },
+    {
+      "file": "src\\components\\cards\\ToolCard.astro",
+      "check": "literal_rank",
+      "count": 1
+    },
+    {
+      "file": "src\\components\\cards\\ToolCard.astro",
+      "check": "markdown_code_fence",
+      "count": 2
+    },
+    {
+      "file": "src\\components\\cards\\ToolRow.astro",
+      "check": "markdown_code_fence",
+      "count": 2
+    },
+    {
+      "file": "src\\components\\cards\\TopicCard.astro",
+      "check": "inline_style_attr",
+      "count": 1
+    },
+    {
+      "file": "src\\components\\sections\\FeaturedToolsSection.astro",
+      "check": "markdown_code_fence",
+      "count": 1
+    },
+    {
+      "file": "src\\components\\sections\\HubNavSection.astro",
+      "check": "dangerous_set_html",
+      "count": 1
+    },
+    {
+      "file": "src\\components\\site\\CategoryIcon.astro",
+      "check": "dangerous_set_html",
+      "count": 1
+    },
+    {
+      "file": "src\\pages\\ai-tools\\feature\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\ai-tools\\industry\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\ai-tools\\pricing\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\ai-tools\\tag\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\ai-tools\\tool-type\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\ai-tools\\use-case\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\ai-tools\\[slug].astro",
+      "check": "inline_style_attr",
+      "count": 4
+    },
+    {
+      "file": "src\\pages\\ai-tools\\[slug].astro",
+      "check": "dangerous_set_html",
+      "count": 1
+    },
+    {
+      "file": "src\\pages\\ai-tools\\[slug].astro",
+      "check": "clearbit_logo",
+      "count": 1
+    },
+    {
+      "file": "src\\pages\\vs\\[slug].astro",
+      "check": "clearbit_logo",
+      "count": 1
+    },
+    {
+      "file": "src\\styles\\tokens.css",
+      "check": "markdown_code_fence",
+      "count": 1
+    }
+  ]
+}

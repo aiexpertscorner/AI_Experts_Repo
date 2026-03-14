@@ -1,26 +1,44 @@
 {
   "name": "aiexpertscorner",
-  "type": "module",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev":              "astro dev",
-    "build":            "astro build",
-    "preview":          "astro preview",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
 
-    "enrich":           "node scripts/enrich-tools-v6.mjs --skip-http",
-    "enrich:full":      "node scripts/enrich-tools-v6.mjs",
-    "inject":           "node scripts/inject-canonical-tools.mjs",
-    "authority":        "node scripts/build-authority-datasets.mjs",
-    "featured":         "node scripts/build-featured.mjs",
+    "inspect:build": "node scripts/inspect-build-logic.mjs",
+    "audit:current-data-flow": "node scripts/audit-current-data-flow.mjs",
+    "audit:tools": "node scripts/audit-tools-production.mjs",
+    "audit:site": "node scripts/audit-site-structure.mjs",
+    "audit:deep": "node scripts/deep-audit-site.mjs",
 
-    "datasets":         "node scripts/build-seo-datasets.mjs",
-    "datasets:medium":  "TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
-    "datasets:full":    "TOOL_PAGE_LIMIT=19088 COMPARE_PAGE_LIMIT=10000 ALT_PAGE_LIMIT=19088 node scripts/build-seo-datasets.mjs",
+    "enrich": "node scripts/enrich-tools-v6.mjs --skip-http",
+    "enrich:full": "node scripts/enrich-tools-v6.mjs",
+    "inject": "node scripts/inject-canonical-tools.mjs",
+    "taxonomy": "node scripts/build-tools-taxonomy-overlay.mjs",
+    "authority": "node scripts/build-authority-datasets.mjs",
+    "taxonomy:master": "node scripts/map-tools-to-master-taxonomy.mjs",
 
-    "pipeline":         "node scripts/inject-canonical-tools.mjs && node scripts/build-seo-datasets.mjs && node scripts/build-authority-datasets.mjs",
-    "pipeline:medium":  "node scripts/inject-canonical-tools.mjs && npm run datasets:medium && node scripts/build-authority-datasets.mjs",
-    "pipeline:full":    "node scripts/inject-canonical-tools.mjs && npm run datasets:full && node scripts/build-authority-datasets.mjs"
+    "datasets": "node scripts/build-seo-datasets.mjs",
+    "datasets:medium": "cross-env TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
+    "datasets:full": "cross-env TOOL_PAGE_LIMIT=19088 COMPARE_PAGE_LIMIT=10000 ALT_PAGE_LIMIT=19088 node scripts/build-seo-datasets.mjs",
+
+    "pipeline": "npm run inject && npm run datasets && npm run authority",
+    "pipeline:medium": "npm run inject && npm run datasets:medium && npm run authority",
+    "pipeline:full": "npm run inject && npm run datasets:full && npm run authority",
+
+    "pipeline:taxonomy": "npm run inject && npm run taxonomy",
+    "pipeline:taxonomy:medium": "npm run inject && npm run taxonomy && npm run datasets:medium && npm run authority",
+    "pipeline:taxonomy:full": "npm run inject && npm run taxonomy && npm run datasets:full && npm run authority"
   },
-  "dependencies":    { "astro": "^4.16.0" },
-  "devDependencies": { "@astrojs/tailwind": "^5.1.0", "tailwindcss": "^3.4.0" }
+  "dependencies": {
+    "astro": "4.16.19"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "5.1.5",
+    "cross-env": "10.1.0",
+    "tailwindcss": "3.4.19"
+  }
 }

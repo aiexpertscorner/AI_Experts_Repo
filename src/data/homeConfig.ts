@@ -1,49 +1,38 @@
-export const SITE_NAME = "AIExpertsCorner";
-export const SITE_URL  = "https://aiexpertscorner.com";
-export const SITE_DESC = "The most complete AI tools directory. Browse 19,000+ AI tools, compare pricing and find the best tool for any workflow.";
+export const SITE_NAME = "AI Experts Corner";
+export const SITE_URL = "https://aiexpertscorner.com";
+export const SITE_DESC =
+  "Discover the best AI tools, compare pricing, explore alternatives, and find the right products for every workflow.";
 
 export const MAIN_NAV = [
-  { label:"AI Tools",  href:"/ai-tools",    soon:false },
-  { label:"Compare",   href:"/vs",           soon:false },
-  { label:"Best Of",   href:"/best",         soon:false },
-  { label:"Workflows", href:"/ai-workflows", soon:true  },
-  { label:"Learn AI",  href:"/learn-ai",     soon:true  },
-  { label:"AI News",   href:"/ai-news",      soon:true  },
-];
+  { label: "AI Tools", href: "/ai-tools", soon: false },
+  { label: "Compare", href: "/vs", soon: false },
+  { label: "Best Of", href: "/best", soon: false },
+  { label: "Workflows", href: "/ai-workflows", soon: true },
+  { label: "Learn AI", href: "/learn-ai", soon: true },
+  { label: "AI News", href: "/ai-news", soon: true },
+] as const;
 
-export const FOOTER_LINKS: Record<string,{label:string;href:string}[]> = {
-  "AI Tools": [
-    { label:"All AI Tools",        href:"/ai-tools" },
-    { label:"Free AI Tools",       href:"/ai-tools/pricing/free" },
-    { label:"Freemium Tools",      href:"/ai-tools/pricing/freemium" },
-    { label:"AI Agents",           href:"/ai-tools/category/ai-agents" },
-    { label:"AI Writing Tools",    href:"/ai-tools/category/writing-and-content" },
-    { label:"AI Image Generators", href:"/ai-tools/category/image-generation" },
-    { label:"Submit a Tool",       href:"/submit-tool" },
+export const FOOTER_LINKS = {
+  Directory: [
+    { label: "All AI Tools", href: "/ai-tools" },
+    { label: "Free AI Tools", href: "/ai-tools/pricing/free" },
+    { label: "Freemium Tools", href: "/ai-tools/pricing/freemium" },
+    { label: "AI Automation & Agents", href: "/ai-tools/category/ai-automation-agents" },
+    { label: "AI Writing", href: "/ai-tools/category/ai-writing" },
+    { label: "AI Image Generation", href: "/ai-tools/category/ai-image-generation" },
   ],
-  "Explore": [
-    { label:"Compare Tools",       href:"/vs" },
-    { label:"Alternatives",        href:"/alternatives" },
-    { label:"Best Of Lists",       href:"/best" },
-    { label:"Prompt Library",      href:"/prompts" },
-    { label:"By Industry",         href:"/ai-tools/industry" },
-    { label:"By Use Case",         href:"/ai-tools/use-case" },
+  Explore: [
+    { label: "Compare Tools", href: "/vs" },
+    { label: "Alternatives", href: "/alternatives" },
+    { label: "Best Of", href: "/best" },
+    { label: "Use Cases", href: "/ai-tools/use-case" },
+    { label: "Industries", href: "/ai-tools/industry" },
+    { label: "Submit Tool", href: "/submit-tool" },
   ],
-  "Company": [
-    { label:"About",               href:"/about" },
-    { label:"Privacy Policy",      href:"/privacy" },
-    { label:"Terms of Service",    href:"/terms" },
-    { label:"Contact",             href:"/contact" },
+  Company: [
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
   ],
-};
-
-export const CAT_EMOJI: Record<string,string> = {
-  "Chatbots & LLMs":"💬","Writing & Content":"✍️","Image Generation":"🎨",
-  "Video Generation":"🎬","Audio & Music":"🎵","Coding & Dev":"💻",
-  "SEO & Marketing":"📈","Design & UI":"🖌️","Productivity":"⚡",
-  "Research & Education":"🎓","Data & Analytics":"📊","Customer Service":"🎧",
-  "HR & Recruiting":"👥","Legal & Finance":"⚖️","Health & Wellness":"❤️",
-  "Sales & CRM":"💼","Translation":"🌍","AI Agents":"🤖",
-  "Photo Editing":"📸","3D & AR":"🧊","E-Commerce":"🛒",
-  "Social Media":"📱","Other AI Tools":"🔧",
-};
+} as const;

@@ -1,0 +1,1235 @@
+{
+  "generated_at": "2026-03-13T20:27:50.758Z",
+  "input_file": "src/data/tools_production.json",
+  "output_file": "src/data/build/tools-normalized.json",
+  "total_tools": 19488,
+  "field_coverage": {
+    "normalized_category": 19488,
+    "normalized_tool_type": 19488,
+    "normalized_company": 19465,
+    "normalized_pricing_tier": 19488,
+    "normalized_complexity": 19466,
+    "normalized_primary_use_case": 19466,
+    "normalized_workflow_stages": 19466,
+    "normalized_target_audiences": 19466,
+    "normalized_use_cases": 14200,
+    "normalized_prompt_use_cases": 19466,
+    "normalized_industries": 7297,
+    "normalized_feature_flags": 19466,
+    "normalized_tags": 19488,
+    "normalized_platforms": 19466,
+    "normalized_input_types": 7440,
+    "normalized_output_types": 12619,
+    "normalized_search_intents": 13047,
+    "normalized_monetization_paths": 19466,
+    "normalized_capabilities": 19488
+  },
+  "distinct_counts": {
+    "categories": 23,
+    "tool_types": 23,
+    "companies": 19044,
+    "use_cases": 24233,
+    "industries": 14,
+    "feature_flags": 12,
+    "workflow_stages": 8,
+    "target_audiences": 12,
+    "platforms": 9,
+    "input_types": 9,
+    "output_types": 11,
+    "search_intents": 11,
+    "monetization_paths": 7,
+    "capabilities": 47195
+  },
+  "top_values": {
+    "categories": [
+      {
+        "key": "other-ai-tools",
+        "count": 2370
+      },
+      {
+        "key": "writing-and-content",
+        "count": 1794
+      },
+      {
+        "key": "chatbots-and-llms",
+        "count": 1737
+      },
+      {
+        "key": "3d-and-ar",
+        "count": 1555
+      },
+      {
+        "key": "design-and-ui",
+        "count": 1307
+      },
+      {
+        "key": "coding-and-dev",
+        "count": 1034
+      },
+      {
+        "key": "research-and-education",
+        "count": 988
+      },
+      {
+        "key": "audio-and-music",
+        "count": 968
+      },
+      {
+        "key": "data-and-analytics",
+        "count": 896
+      },
+      {
+        "key": "hr-and-recruiting",
+        "count": 728
+      },
+      {
+        "key": "seo-and-marketing",
+        "count": 726
+      },
+      {
+        "key": "ai-agents",
+        "count": 702
+      },
+      {
+        "key": "image-generation",
+        "count": 674
+      },
+      {
+        "key": "sales-and-crm",
+        "count": 490
+      },
+      {
+        "key": "social-media",
+        "count": 454
+      },
+      {
+        "key": "legal-and-finance",
+        "count": 449
+      },
+      {
+        "key": "video-generation",
+        "count": 445
+      },
+      {
+        "key": "translation",
+        "count": 436
+      },
+      {
+        "key": "e-commerce",
+        "count": 385
+      },
+      {
+        "key": "productivity",
+        "count": 366
+      },
+      {
+        "key": "health-and-wellness",
+        "count": 341
+      },
+      {
+        "key": "customer-service",
+        "count": 324
+      },
+      {
+        "key": "photo-editing",
+        "count": 319
+      }
+    ],
+    "tool_types": [
+      {
+        "key": "other-ai-tools",
+        "count": 2370
+      },
+      {
+        "key": "writing-and-content",
+        "count": 1794
+      },
+      {
+        "key": "chatbots-and-llms",
+        "count": 1737
+      },
+      {
+        "key": "3d-and-ar",
+        "count": 1555
+      },
+      {
+        "key": "design-and-ui",
+        "count": 1307
+      },
+      {
+        "key": "coding-and-dev",
+        "count": 1034
+      },
+      {
+        "key": "research-and-education",
+        "count": 988
+      },
+      {
+        "key": "audio-and-music",
+        "count": 968
+      },
+      {
+        "key": "data-and-analytics",
+        "count": 896
+      },
+      {
+        "key": "hr-and-recruiting",
+        "count": 728
+      },
+      {
+        "key": "seo-and-marketing",
+        "count": 726
+      },
+      {
+        "key": "ai-agents",
+        "count": 702
+      },
+      {
+        "key": "image-generation",
+        "count": 674
+      },
+      {
+        "key": "sales-and-crm",
+        "count": 490
+      },
+      {
+        "key": "social-media",
+        "count": 454
+      },
+      {
+        "key": "legal-and-finance",
+        "count": 449
+      },
+      {
+        "key": "video-generation",
+        "count": 445
+      },
+      {
+        "key": "translation",
+        "count": 436
+      },
+      {
+        "key": "e-commerce",
+        "count": 385
+      },
+      {
+        "key": "productivity",
+        "count": 366
+      },
+      {
+        "key": "health-and-wellness",
+        "count": 341
+      },
+      {
+        "key": "customer-service",
+        "count": 324
+      },
+      {
+        "key": "photo-editing",
+        "count": 319
+      }
+    ],
+    "companies": [
+      {
+        "key": "face-swap",
+        "count": 5
+      },
+      {
+        "key": "flux",
+        "count": 5
+      },
+      {
+        "key": "humanize",
+        "count": 5
+      },
+      {
+        "key": "humanizer",
+        "count": 5
+      },
+      {
+        "key": "humanize-text",
+        "count": 4
+      },
+      {
+        "key": "undress",
+        "count": 4
+      },
+      {
+        "key": "alfred",
+        "count": 3
+      },
+      {
+        "key": "anime-generator",
+        "count": 3
+      },
+      {
+        "key": "apex",
+        "count": 3
+      },
+      {
+        "key": "avatar",
+        "count": 3
+      },
+      {
+        "key": "cowriter",
+        "count": 3
+      },
+      {
+        "key": "deepseek",
+        "count": 3
+      },
+      {
+        "key": "genie",
+        "count": 3
+      },
+      {
+        "key": "gpt",
+        "count": 3
+      },
+      {
+        "key": "hug",
+        "count": 3
+      },
+      {
+        "key": "image-generator",
+        "count": 3
+      },
+      {
+        "key": "landing",
+        "count": 3
+      },
+      {
+        "key": "logo-maker",
+        "count": 3
+      },
+      {
+        "key": "math-solver",
+        "count": 3
+      },
+      {
+        "key": "minimax",
+        "count": 3
+      },
+      {
+        "key": "paragraph-generator",
+        "count": 3
+      },
+      {
+        "key": "poly",
+        "count": 3
+      },
+      {
+        "key": "remove-bg",
+        "count": 3
+      },
+      {
+        "key": "reply",
+        "count": 3
+      },
+      {
+        "key": "rizz",
+        "count": 3
+      },
+      {
+        "key": "scout",
+        "count": 3
+      },
+      {
+        "key": "socratic",
+        "count": 3
+      },
+      {
+        "key": "suno",
+        "count": 3
+      },
+      {
+        "key": "suno-music-generator",
+        "count": 3
+      },
+      {
+        "key": "veo-3",
+        "count": 3
+      },
+      {
+        "key": "vidu-studio",
+        "count": 3
+      },
+      {
+        "key": "viva",
+        "count": 3
+      },
+      {
+        "key": "1px-the-world-s-most-advanced",
+        "count": 2
+      },
+      {
+        "key": "a1-art",
+        "count": 2
+      },
+      {
+        "key": "adcopy",
+        "count": 2
+      },
+      {
+        "key": "agents",
+        "count": 2
+      },
+      {
+        "key": "aihouse",
+        "count": 2
+      },
+      {
+        "key": "aihumanize",
+        "count": 2
+      },
+      {
+        "key": "aimath",
+        "count": 2
+      },
+      {
+        "key": "aippt",
+        "count": 2
+      },
+      {
+        "key": "airbrush",
+        "count": 2
+      },
+      {
+        "key": "aitubo",
+        "count": 2
+      },
+      {
+        "key": "alice",
+        "count": 2
+      },
+      {
+        "key": "alter",
+        "count": 2
+      },
+      {
+        "key": "altindex",
+        "count": 2
+      },
+      {
+        "key": "amy",
+        "count": 2
+      },
+      {
+        "key": "apply",
+        "count": 2
+      },
+      {
+        "key": "archie",
+        "count": 2
+      },
+      {
+        "key": "arsturn",
+        "count": 2
+      },
+      {
+        "key": "art-generator",
+        "count": 2
+      }
+    ],
+    "use_cases": [
+      {
+        "key": "build-ai-chatbots-and-assistants-with",
+        "count": 3
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-undress-ai",
+        "count": 3
+      },
+      {
+        "key": "write-and-produce-video-scripts-with-face-swap",
+        "count": 3
+      },
+      {
+        "key": "write-and-produce-video-scripts-with-veo-3-ai",
+        "count": 3
+      },
+      {
+        "key": "write-blog-posts-and-articles-with-ai",
+        "count": 3
+      },
+      {
+        "key": "accelerate-research-and-study-with-image-to-text-converter",
+        "count": 2
+      },
+      {
+        "key": "accelerate-research-and-study-with-knowt",
+        "count": 2
+      },
+      {
+        "key": "accelerate-research-and-study-with-magicschool-ai",
+        "count": 2
+      },
+      {
+        "key": "accelerate-research-and-study-with-monic-ai",
+        "count": 2
+      },
+      {
+        "key": "analyse-data-and-generate-insights-with-scenario",
+        "count": 2
+      },
+      {
+        "key": "automate-sales-outreach-and-lead-gen-with-email-outreach",
+        "count": 2
+      },
+      {
+        "key": "automate-sales-outreach-and-lead-gen-with-salescloser-ai",
+        "count": 2
+      },
+      {
+        "key": "automate-sales-outreach-and-lead-gen-with-sellesta",
+        "count": 2
+      },
+      {
+        "key": "build-ai-chatbots-and-assistants-with-shortcutsgpt",
+        "count": 2
+      },
+      {
+        "key": "build-and-deploy-ai-chatbots-with",
+        "count": 2
+      },
+      {
+        "key": "build-and-deploy-ai-chatbots-with-gpt",
+        "count": 2
+      },
+      {
+        "key": "build-and-deploy-ai-chatbots-with-hubtype",
+        "count": 2
+      },
+      {
+        "key": "create-and-optimise-ad-campaigns-with-1px-ai-the-world-s-most-advanced-ai",
+        "count": 2
+      },
+      {
+        "key": "create-and-optimise-ad-campaigns-with-ai",
+        "count": 2
+      },
+      {
+        "key": "create-and-optimise-ad-campaigns-with-charades-ai",
+        "count": 2
+      },
+      {
+        "key": "create-and-optimise-ad-campaigns-with-email-outreach",
+        "count": 2
+      },
+      {
+        "key": "create-and-optimise-ad-campaigns-with-muku-ai",
+        "count": 2
+      },
+      {
+        "key": "create-compelling-presentations-with-salescloser-ai",
+        "count": 2
+      },
+      {
+        "key": "create-written-content-faster-with-ai",
+        "count": 2
+      },
+      {
+        "key": "create-written-content-faster-with-essayai-ai",
+        "count": 2
+      },
+      {
+        "key": "create-written-content-faster-with-essayget",
+        "count": 2
+      },
+      {
+        "key": "create-written-content-faster-with-passme-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-ai-voiceovers-and-narrations-with-ecango",
+        "count": 2
+      },
+      {
+        "key": "generate-ai-voiceovers-and-narrations-with-f5-tts",
+        "count": 2
+      },
+      {
+        "key": "generate-custom-image-assets-with-a1-art",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-a1-art",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-ai-art-generator",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-dittin-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-erase-bg",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-flux-1-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-funfun-art",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-image-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-image-to-caption",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-image-to-text-converter",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-imagga",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-midjourney-api",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-pollo-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-images-from-text-prompts-with-remove-bg",
+        "count": 2
+      },
+      {
+        "key": "generate-review-and-debug-code-with-blackbox-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-social-media-content-with-captions",
+        "count": 2
+      },
+      {
+        "key": "generate-social-media-content-with-cococlip-ai",
+        "count": 2
+      },
+      {
+        "key": "generate-social-media-content-with-feedhive",
+        "count": 2
+      },
+      {
+        "key": "generate-social-media-content-with-image-to-caption",
+        "count": 2
+      },
+      {
+        "key": "improve-seo-content-rankings-with-inlinks",
+        "count": 2
+      },
+      {
+        "key": "improve-seo-content-rankings-with-junia-ai",
+        "count": 2
+      }
+    ],
+    "industries": [
+      {
+        "key": "marketing",
+        "count": 1438
+      },
+      {
+        "key": "design-and-creative",
+        "count": 1233
+      },
+      {
+        "key": "media-and-publishing",
+        "count": 1117
+      },
+      {
+        "key": "hr-and-recruiting",
+        "count": 942
+      },
+      {
+        "key": "education",
+        "count": 787
+      },
+      {
+        "key": "sales",
+        "count": 773
+      },
+      {
+        "key": "customer-success",
+        "count": 755
+      },
+      {
+        "key": "finance",
+        "count": 594
+      },
+      {
+        "key": "legal",
+        "count": 434
+      },
+      {
+        "key": "healthcare",
+        "count": 333
+      },
+      {
+        "key": "e-commerce",
+        "count": 163
+      },
+      {
+        "key": "real-estate",
+        "count": 157
+      },
+      {
+        "key": "security",
+        "count": 136
+      },
+      {
+        "key": "software-dev",
+        "count": 126
+      }
+    ],
+    "feature_flags": [
+      {
+        "key": "self-serve",
+        "count": 19466
+      },
+      {
+        "key": "browser-based",
+        "count": 18388
+      },
+      {
+        "key": "automation",
+        "count": 2382
+      },
+      {
+        "key": "team-features",
+        "count": 558
+      },
+      {
+        "key": "no-code",
+        "count": 432
+      },
+      {
+        "key": "enterprise",
+        "count": 264
+      },
+      {
+        "key": "open-source",
+        "count": 235
+      },
+      {
+        "key": "api-access",
+        "count": 222
+      },
+      {
+        "key": "templates",
+        "count": 153
+      },
+      {
+        "key": "mobile-app",
+        "count": 94
+      },
+      {
+        "key": "desktop-app",
+        "count": 55
+      },
+      {
+        "key": "free-trial",
+        "count": 3
+      }
+    ],
+    "workflow_stages": [
+      {
+        "key": "creation",
+        "count": 12962
+      },
+      {
+        "key": "automation",
+        "count": 3088
+      },
+      {
+        "key": "analysis",
+        "count": 2680
+      },
+      {
+        "key": "editing",
+        "count": 2608
+      },
+      {
+        "key": "research",
+        "count": 1298
+      },
+      {
+        "key": "publishing",
+        "count": 999
+      },
+      {
+        "key": "collaboration",
+        "count": 671
+      },
+      {
+        "key": "ideation",
+        "count": 289
+      }
+    ],
+    "target_audiences": [
+      {
+        "key": "business-owners",
+        "count": 8702
+      },
+      {
+        "key": "designers",
+        "count": 3542
+      },
+      {
+        "key": "content-creators",
+        "count": 3115
+      },
+      {
+        "key": "marketers",
+        "count": 2170
+      },
+      {
+        "key": "developers",
+        "count": 1765
+      },
+      {
+        "key": "hr-teams",
+        "count": 1104
+      },
+      {
+        "key": "students",
+        "count": 1102
+      },
+      {
+        "key": "sales-professionals",
+        "count": 985
+      },
+      {
+        "key": "educators",
+        "count": 663
+      },
+      {
+        "key": "executives",
+        "count": 398
+      },
+      {
+        "key": "freelancers",
+        "count": 57
+      },
+      {
+        "key": "agencies",
+        "count": 54
+      }
+    ],
+    "platforms": [
+      {
+        "key": "web",
+        "count": 18260
+      },
+      {
+        "key": "no-code",
+        "count": 427
+      },
+      {
+        "key": "api",
+        "count": 209
+      },
+      {
+        "key": "extension",
+        "count": 206
+      },
+      {
+        "key": "open-source",
+        "count": 200
+      },
+      {
+        "key": "mobile",
+        "count": 94
+      },
+      {
+        "key": "desktop",
+        "count": 55
+      },
+      {
+        "key": "bot",
+        "count": 40
+      },
+      {
+        "key": "ide-plugin",
+        "count": 14
+      }
+    ],
+    "input_types": [
+      {
+        "key": "text-prompt",
+        "count": 4301
+      },
+      {
+        "key": "code",
+        "count": 1007
+      },
+      {
+        "key": "audio-voice",
+        "count": 943
+      },
+      {
+        "key": "url-website",
+        "count": 700
+      },
+      {
+        "key": "document",
+        "count": 502
+      },
+      {
+        "key": "pdf",
+        "count": 179
+      },
+      {
+        "key": "spreadsheet",
+        "count": 113
+      },
+      {
+        "key": "image",
+        "count": 60
+      },
+      {
+        "key": "video",
+        "count": 12
+      }
+    ],
+    "output_types": [
+      {
+        "key": "text-copy",
+        "count": 6132
+      },
+      {
+        "key": "report-data",
+        "count": 2528
+      },
+      {
+        "key": "image",
+        "count": 1519
+      },
+      {
+        "key": "summary",
+        "count": 1258
+      },
+      {
+        "key": "code",
+        "count": 1183
+      },
+      {
+        "key": "audio-music",
+        "count": 1049
+      },
+      {
+        "key": "voiceover",
+        "count": 557
+      },
+      {
+        "key": "video",
+        "count": 468
+      },
+      {
+        "key": "avatar",
+        "count": 212
+      },
+      {
+        "key": "3d-model",
+        "count": 199
+      },
+      {
+        "key": "presentation",
+        "count": 135
+      }
+    ],
+    "search_intents": [
+      {
+        "key": "create",
+        "count": 5390
+      },
+      {
+        "key": "chat",
+        "count": 4065
+      },
+      {
+        "key": "design",
+        "count": 2730
+      },
+      {
+        "key": "edit",
+        "count": 2630
+      },
+      {
+        "key": "automate",
+        "count": 2447
+      },
+      {
+        "key": "analyze",
+        "count": 2165
+      },
+      {
+        "key": "translate",
+        "count": 563
+      },
+      {
+        "key": "prompt",
+        "count": 559
+      },
+      {
+        "key": "summarize",
+        "count": 287
+      },
+      {
+        "key": "compare",
+        "count": 84
+      },
+      {
+        "key": "transcribe",
+        "count": 54
+      }
+    ],
+    "monetization_paths": [
+      {
+        "key": "prompt-library",
+        "count": 19466
+      },
+      {
+        "key": "tool-pages",
+        "count": 19466
+      },
+      {
+        "key": "commercial-intent-pages",
+        "count": 18656
+      },
+      {
+        "key": "best-of-pages",
+        "count": 5390
+      },
+      {
+        "key": "use-case-pages",
+        "count": 4065
+      },
+      {
+        "key": "news",
+        "count": 474
+      },
+      {
+        "key": "comparison-pages",
+        "count": 84
+      }
+    ],
+    "capabilities": [
+      {
+        "key": "self-serve",
+        "count": 19466
+      },
+      {
+        "key": "browser-based",
+        "count": 18388
+      },
+      {
+        "key": "productivity",
+        "count": 9965
+      },
+      {
+        "key": "automation",
+        "count": 2386
+      },
+      {
+        "key": "chat-q-and-a",
+        "count": 1453
+      },
+      {
+        "key": "text-generation",
+        "count": 1386
+      },
+      {
+        "key": "agents-and-automation",
+        "count": 790
+      },
+      {
+        "key": "writing-assistant",
+        "count": 703
+      },
+      {
+        "key": "image-generation",
+        "count": 679
+      },
+      {
+        "key": "education",
+        "count": 579
+      },
+      {
+        "key": "image-editing",
+        "count": 569
+      },
+      {
+        "key": "team-features",
+        "count": 558
+      },
+      {
+        "key": "translation",
+        "count": 511
+      },
+      {
+        "key": "voice-and-speech",
+        "count": 502
+      },
+      {
+        "key": "e-commerce",
+        "count": 500
+      },
+      {
+        "key": "research-tools",
+        "count": 499
+      },
+      {
+        "key": "social-media",
+        "count": 488
+      },
+      {
+        "key": "no-code",
+        "count": 433
+      },
+      {
+        "key": "sales-and-crm",
+        "count": 424
+      },
+      {
+        "key": "video-creation",
+        "count": 400
+      },
+      {
+        "key": "seo-and-keywords",
+        "count": 370
+      },
+      {
+        "key": "healthcare",
+        "count": 322
+      },
+      {
+        "key": "hr-and-recruiting",
+        "count": 321
+      },
+      {
+        "key": "legal",
+        "count": 293
+      },
+      {
+        "key": "customer-support",
+        "count": 280
+      },
+      {
+        "key": "data-and-analytics",
+        "count": 279
+      },
+      {
+        "key": "code-assistant",
+        "count": 269
+      },
+      {
+        "key": "enterprise",
+        "count": 265
+      },
+      {
+        "key": "summarization",
+        "count": 265
+      },
+      {
+        "key": "finance-and-tax",
+        "count": 248
+      },
+      {
+        "key": "open-source",
+        "count": 236
+      },
+      {
+        "key": "music-and-audio",
+        "count": 224
+      },
+      {
+        "key": "api-access",
+        "count": 222
+      },
+      {
+        "key": "templates",
+        "count": 153
+      },
+      {
+        "key": "3d-and-ar-vr",
+        "count": 130
+      },
+      {
+        "key": "email-automation",
+        "count": 129
+      },
+      {
+        "key": "presentation",
+        "count": 126
+      },
+      {
+        "key": "avatar-and-faces",
+        "count": 115
+      },
+      {
+        "key": "mobile-app",
+        "count": 94
+      },
+      {
+        "key": "document-ai",
+        "count": 85
+      },
+      {
+        "key": "desktop-app",
+        "count": 55
+      },
+      {
+        "key": "chatbot",
+        "count": 4
+      },
+      {
+        "key": "coding",
+        "count": 4
+      },
+      {
+        "key": "general-ai-prompts-for",
+        "count": 4
+      },
+      {
+        "key": "general-ai-prompts-for-ai",
+        "count": 4
+      },
+      {
+        "key": "build-ai-chatbots-and-assistants-with",
+        "count": 3
+      },
+      {
+        "key": "conversational-and-chatbot-prompts-for-gpt",
+        "count": 3
+      },
+      {
+        "key": "design",
+        "count": 3
+      },
+      {
+        "key": "developer",
+        "count": 3
+      },
+      {
+        "key": "free-trial",
+        "count": 3
+      }
+    ]
+  },
+  "notes": [
+    "This overlay is additive and non-breaking.",
+    "No existing build artifact is replaced in this step.",
+    "subcategory and microcategory are intentionally left null until explicit mapping rules are defined.",
+    "The next safe integration step is to switch build-authority-datasets.mjs and/or build-seo-datasets.mjs from tools_production.json to tools-normalized.json after inspection."
+  ]
+}
