@@ -1,0 +1,184 @@
+AI_Experts_Repo/
+│
+├─ package.json
+├─ astro.config.mjs
+├─ tsconfig.json
+├─ README.md
+├─ .env.example
+│
+├─ public/
+│  ├─ favicon.svg
+│  ├─ robots.txt
+│  ├─ site.webmanifest
+│  ├─ images/
+│  │  ├─ brand/
+│  │  ├─ ui/
+│  │  ├─ placeholders/
+│  │  └─ og/
+│  └─ icons/
+│
+├─ src/
+│  ├─ components/
+│  │  ├─ ui/
+│  │  │  ├─ Button.astro
+│  │  │  ├─ Badge.astro
+│  │  │  ├─ Pill.astro
+│  │  │  ├─ TagList.astro
+│  │  │  ├─ EmptyState.astro
+│  │  │  ├─ SearchInput.astro
+│  │  │  ├─ SectionHeading.astro
+│  │  │  ├─ InfoNotice.astro
+│  │  │  └─ StatChip.astro
+│  │  ├─ layout/
+│  │  │  ├─ SiteHeader.astro
+│  │  │  ├─ SiteFooter.astro
+│  │  │  ├─ MainContainer.astro
+│  │  │  ├─ SectionShell.astro
+│  │  │  ├─ SidebarShell.astro
+│  │  │  ├─ PageHero.astro
+│  │  │  └─ GridShell.astro
+│  │  ├─ navigation/
+│  │  │  ├─ Breadcrumbs.astro
+│  │  │  ├─ TabsNav.astro
+│  │  │  ├─ Pagination.astro
+│  │  │  ├─ FooterLinks.astro
+│  │  │  └─ MegaMenu.astro
+│  │  ├─ cards/
+│  │  │  ├─ ToolCard.astro
+│  │  │  ├─ ToolCompactCard.astro
+│  │  │  ├─ CategoryCard.astro
+│  │  │  ├─ CompareCard.astro
+│  │  │  ├─ BestOfCard.astro
+│  │  │  ├─ ArticleCard.astro
+│  │  │  ├─ TopicCard.astro
+│  │  │  ├─ CompanyCard.astro
+│  │  │  └─ TrendCard.astro
+│  │  ├─ sections/
+│  │  │  ├─ HeroSection.astro
+│  │  │  ├─ FeaturedToolsSection.astro
+│  │  │  ├─ FeaturedCategoriesSection.astro
+│  │  │  ├─ TrendingSection.astro
+│  │  │  ├─ LatestArticlesSection.astro
+│  │  │  ├─ InternalLinkSection.astro
+│  │  │  ├─ RelatedLinksSection.astro
+│  │  │  ├─ CompareSuggestionsSection.astro
+│  │  │  ├─ AlternativesSection.astro
+│  │  │  ├─ FAQSection.astro
+│  │  │  └─ CTASection.astro
+│  │  ├─ tools/
+│  │  │  ├─ ToolHero.astro
+│  │  │  ├─ ToolOverview.astro
+│  │  │  ├─ ToolFeatures.astro
+│  │  │  ├─ ToolPricing.astro
+│  │  │  ├─ ToolUseCases.astro
+│  │  │  ├─ ToolAlternatives.astro
+│  │  │  ├─ ToolComparisons.astro
+│  │  │  ├─ ToolMetaRow.astro
+│  │  │  └─ ToolProsCons.astro
+│  │  ├─ insights/
+│  │  │  ├─ InsightsHero.astro
+│  │  │  ├─ NewsCard.astro
+│  │  │  ├─ TutorialCard.astro
+│  │  │  ├─ TopicGrid.astro
+│  │  │  ├─ TrendingToolCard.astro
+│  │  │  ├─ SourceBadge.astro
+│  │  │  └─ ArticleMetaRow.astro
+│  │  ├─ seo/
+│  │  │  ├─ SchemaInjector.astro
+│  │  │  ├─ FAQBlock.astro
+│  │  │  ├─ TOC.astro
+│  │  │  ├─ MetaInfoRow.astro
+│  │  │  └─ CanonicalHead.astro
+│  │  └─ legal/
+│  │     ├─ LegalSidebar.astro
+│  │     ├─ LegalSectionList.astro
+│  │     └─ DisclosureNotice.astro
+│  ├─ layouts/
+│  │  ├─ BaseLayout.astro
+│  │  ├─ HubLayout.astro
+│  │  ├─ ToolPageLayout.astro
+│  │  ├─ ContentPageLayout.astro
+│  │  ├─ InsightsHubLayout.astro
+│  │  ├─ InsightArticleLayout.astro
+│  │  └─ LegalLayout.astro
+│  ├─ lib/
+│  │  ├─ tools/
+│  │  ├─ insights/
+│  │  └─ seo/
+│  ├─ pages/
+│  │  ├─ index.astro
+│  │  ├─ about.astro
+│  │  ├─ contact.astro
+│  │  ├─ privacy-policy.astro
+│  │  ├─ terms.astro
+│  │  ├─ cookie-policy.astro
+│  │  ├─ disclaimer.astro
+│  │  ├─ affiliate-disclosure.astro
+│  │  ├─ advertising-disclosure.astro
+│  │  ├─ editorial-policy.astro
+│  │  ├─ how-we-review-ai-tools.astro
+│  │  ├─ ai-usage-policy.astro
+│  │  ├─ tools/
+│  │  │  ├─ index.astro
+│  │  │  ├─ [slug].astro
+│  │  │  └─ page/[page].astro
+│  │  ├─ categories/
+│  │  │  ├─ [slug].astro
+│  │  │  └─ [slug]/page/[page].astro
+│  │  ├─ best/[slug].astro
+│  │  ├─ compare/[slug].astro
+│  │  ├─ alternatives/[slug].astro
+│  │  ├─ prompts/
+│  │  │  ├─ index.astro
+│  │  │  └─ [slug].astro
+│  │  ├─ workflows/
+│  │  │  ├─ index.astro
+│  │  │  └─ [slug].astro
+│  │  ├─ insights/
+│  │  │  ├─ index.astro
+│  │  │  ├─ news/
+│  │  │  ├─ tutorials/
+│  │  │  ├─ analysis/
+│  │  │  ├─ trends/
+│  │  │  ├─ research/
+│  │  │  ├─ tool-releases/
+│  │  │  ├─ market/
+│  │  │  ├─ case-studies/
+│  │  │  ├─ topic/[slug].astro
+│  │  │  ├─ company/[slug].astro
+│  │  │  ├─ model/[slug].astro
+│  │  │  ├─ tool/[slug].astro
+│  │  │  ├─ source/[slug].astro
+│  │  │  ├─ tag/[slug].astro
+│  │  │  ├─ trending-ai-tools.astro
+│  │  │  ├─ trending-ai-companies.astro
+│  │  │  └─ trending-ai-topics.astro
+│  │  └─ submit-tool.astro
+│  ├─ data/
+│  │  ├─ raw/
+│  │  ├─ enriched/
+│  │  ├─ build/
+│  │  └─ taxonomy/
+│  ├─ styles/
+│  │  ├─ base/
+│  │  ├─ themes/
+│  │  ├─ layout/
+│  │  ├─ components/
+│  │  └─ pages/
+│  └─ content/
+│     ├─ prompts/
+│     └─ workflows/
+│
+├─ scripts/
+│  ├─ taxonomy/
+│  ├─ enrichment/
+│  ├─ datasets/
+│  ├─ insights/
+│  ├─ audit/
+│  └─ migration/
+│
+└─ docs/
+   ├─ architecture/
+   ├─ pipelines/
+   ├─ taxonomy/
+   └─ qa/

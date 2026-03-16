@@ -45,16 +45,49 @@ const {
 const resolvedHandle = tool?.handle || tool?.slug || "tool";
 const resolvedName = tool?.name || resolvedHandle;
 const resolvedPricing = String(tool?.pricing_tier || tool?.pricing || "unknown").toLowerCase();
-const resolvedTags = (Array.isArray(tool?.feature_tags) && tool.feature_tags.length ? tool.feature_tags : tool?.tags || []).slice(0, 3);
-const resolvedDescription = String(tool?.tagline || tool?.short || tool?.desc || tool?.description || "").slice(0, 120);
-const categorySlug = tool?.category_slug || String(tool?.category || "other-ai-tools").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const resolvedTags = (
+  Array.isArray(tool?.feature_tags) && tool.feature_tags.length
+    ? tool.feature_tags
+    : tool?.tags || []
+).slice(0, 3);
+
+const resolvedDescription = String(
+  tool?.tagline || tool?.short || tool?.desc || tool?.description || ""
+).slice(0, 120);
+
+const categorySlug =
+  tool?.category_slug ||
+  String(tool?.category || "other-ai-tools").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
 const href = tool?.affiliate_url || `/ai-tools/${resolvedHandle}`;
 const isAffiliate = !!tool?.affiliate_url;
 
-let logoSrc = tool?.logo_url || "";
-if (!logoSrc && tool?.logo_domain) {
-  logoSrc = `https://www.google.com/s2/favicons?domain=${tool.logo_domain}&sz=128`;
+function getDomainFromUrl(input?: string) {
+  if (!input || typeof input !== "string") return "";
+
+  try {
+    const normalized =
+      input.startsWith("http://") || input.startsWith("https://")
+        ? input
+        : `https://${input}`;
+
+    return new URL(normalized).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
 }
+
+const resolvedLogoDomain =
+  tool?.logo_domain ||
+  getDomainFromUrl(tool?.website_url);
+
+const logoSrc =
+  tool?.logo_url ||
+  (resolvedLogoDomain
+    ? `https://logo.clearbit.com/${resolvedLogoDomain}?size=128`
+    : "");
+
+const fallbackLetter = resolvedName.charAt(0).toUpperCase();
 
 const classes = [
   "tool-card",
@@ -74,29 +107,56 @@ const pricingLabel: Record<string, string> = {
 <article class={classes}>
   {typeof rank === "number" ? <span class="tool-card__rank">#{rank}</span> : null}
 
-  <a href={href} class="tool-card__link" target={isAffiliate ? "_blank" : undefined} rel={isAffiliate ? "noopener sponsored" : undefined}>
+  <a
+    href={href}
+    class="tool-card__link"
+    target={isAffiliate ? "_blank" : undefined}
+    rel={isAffiliate ? "noopener sponsored" : undefined}
+  >
     <header class="tool-card__header">
       <div class="tool-card__logo-wrapper">
         {logoSrc ? (
           <>
-            <img src={logoSrc} alt={`${resolvedName} logo`} width="48" height="48" loading="lazy" decoding="async" class="tool-card__logo-img" onerror="this.remove(); this.nextElementSibling?.classList.remove('is-hidden');" />
-            <span class="tool-card__logo-fallback is-hidden">{resolvedName.charAt(0).toUpperCase()}</span>
+            <img
+              src={logoSrc}
+              alt={`${resolvedName} logo`}
+              width="48"
+              height="48"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              class="tool-card__logo-img"
+              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            <span class="tool-card__logo-fallback" style="display:none;">
+              {fallbackLetter}
+            </span>
           </>
         ) : (
-          <span class="tool-card__logo-fallback">{resolvedName.charAt(0).toUpperCase()}</span>
+          <span class="tool-card__logo-fallback">{fallbackLetter}</span>
         )}
       </div>
 
       <div class="tool-card__info">
         <h3 class="tool-card__name">{resolvedName}</h3>
-        {showCategory && tool?.category ? <span class="tool-card__category">{tool.category}</span> : null}
+
+        {showCategory && tool?.category ? (
+          <span class="tool-card__category">{tool.category}</span>
+        ) : null}
       </div>
 
-      {showPricing ? <span class={`badge badge--${resolvedPricing}`}>{pricingLabel[resolvedPricing] || "Unknown"}</span> : null}
+      {showPricing ? (
+        <span class={`badge badge--${resolvedPricing}`}>
+          {pricingLabel[resolvedPricing] || "Unknown"}
+        </span>
+      ) : null}
     </header>
 
     {showDescription && resolvedDescription && variant !== "row" ? (
-      <p class="tool-card__desc">{resolvedDescription}{resolvedDescription.length >= 120 ? "…" : ""}</p>
+      <p class="tool-card__desc">
+        {resolvedDescription}
+        {resolvedDescription.length >= 120 ? "…" : ""}
+      </p>
     ) : null}
 
     {variant !== "row" && !compact && resolvedTags.length > 0 ? (
@@ -110,9 +170,18 @@ const pricingLabel: Record<string, string> = {
         {showCTA ? (
           <span class="tool-card__cta">Visit {resolvedName}</span>
         ) : (
-          <span class="tool-card__hint">{tool?.category ? <a href={`/ai-tools/category/${categorySlug}`} class="tool-card__category-link">Open category</a> : "View details"}</span>
+          <span class="tool-card__hint">
+            {tool?.category ? (
+              <a href={`/ai-tools/category/${categorySlug}`} class="tool-card__category-link">
+                Open category
+              </a>
+            ) : (
+              "View details"
+            )}
+          </span>
         )}
       </div>
+
       {tool?.is_featured ? <span class="tool-card__featured-dot"></span> : null}
     </footer>
   </a>

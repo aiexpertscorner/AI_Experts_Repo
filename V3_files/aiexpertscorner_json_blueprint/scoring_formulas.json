@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-14T18:07:26+00:00",
+    "version": "1.0.0",
+    "notes": [
+      "All formulas output 0-100 normalized scores.",
+      "Use min-max normalization or capped transforms before blending.",
+      "Do not use invented review or pricing values; missing values should reduce confidence."
+    ]
+  },
+  "normalization_rules": {
+    "binary_true_false": "true=100,false=0",
+    "ratings_5_scale": "score = value * 20",
+    "percent_already_100": "use as-is but clamp to 0..100",
+    "price_inverse": "lower prices score higher only within same market segment",
+    "count_log_scaled": "apply log transform before normalization for reviews, stars, and community size"
+  },
+  "formulas": {
+    "score_feature_depth": {
+      "weights": {
+        "core_features_count": 25,
+        "headline_features_count": 15,
+        "unique_features_count": 15,
+        "integrations_count": 10,
+        "templates_available": 5,
+        "template_count": 5,
+        "api_access": 5,
+        "workflow_builder": 5,
+        "agent_builder": 5,
+        "supported_file_types_count": 5,
+        "platforms_count": 5
+      },
+      "notes": "Measures functional breadth and depth."
+    },
+    "score_value_for_money": {
+      "weights": {
+        "money_value_score": 35,
+        "pricing_transparency_score": 15,
+        "freemium": 10,
+        "free_trial": 10,
+        "starting_price_inverse_within_segment": 15,
+        "feature_depth_adjusted_value": 15
+      },
+      "notes": "Never compare prices across fundamentally different product categories without segment normalization."
+    },
+    "score_ease_of_use": {
+      "weights": {
+        "skill_level_beginner_fit": 25,
+        "workflow_complexity_inverse": 20,
+        "templates_available": 15,
+        "browser_extension_or_web_app": 10,
+        "short_time_to_value_proxy": 15,
+        "review_sentiment_proxy": 15
+      }
+    },
+    "score_integration_strength": {
+      "weights": {
+        "integrations_count": 45,
+        "api_access": 20,
+        "automation_trigger_support": 10,
+        "automation_action_support": 10,
+        "workflow_builder": 5,
+        "ecosystem_quality_proxy": 10
+      }
+    },
+    "score_trust": {
+      "weights": {
+        "rating_average": 20,
+        "review_count_total": 20,
+        "g2_presence": 10,
+        "capterra_presence": 10,
+        "company_maturity_proxy": 10,
+        "notable_customers": 10,
+        "case_study_count": 10,
+        "pricing_transparency_score": 10
+      }
+    },
+    "score_workflow_fit": {
+      "weights": {
+        "use_cases_count": 20,
+        "workflow_examples_count": 15,
+        "integrations_count": 15,
+        "workflow_builder": 10,
+        "automation_trigger_support": 10,
+        "automation_action_support": 10,
+        "workflow_roles_supported_count": 10,
+        "workflow_outputs_count": 10
+      }
+    },
+    "score_beginner_fit": {
+      "weights": {
+        "skill_levels_beginner": 30,
+        "score_ease_of_use": 30,
+        "free_trial_or_freemium": 10,
+        "pricing_entry_affordability": 15,
+        "workflow_complexity_inverse": 15
+      }
+    },
+    "score_compare_value": {
+      "weights": {
+        "primary_competitors_count": 20,
+        "compare_candidates_count": 20,
+        "comparison_axes_count": 15,
+        "feature_depth": 15,
+        "pricing_truth_completeness": 10,
+        "review_signal_presence": 10,
+        "search_intent_compare_presence": 10
+      }
+    },
+    "score_bestof_value": {
+      "weights": {
+        "score_overall": 35,
+        "score_trust": 15,
+        "score_value_for_money": 15,
+        "score_feature_depth": 15,
+        "score_beginner_fit": 10,
+        "score_workflow_fit": 10
+      }
+    },
+    "score_alternatives_value": {
+      "weights": {
+        "alternatives_count": 25,
+        "primary_competitors_count": 20,
+        "feature_overlap_with_category_leaders": 20,
+        "search_intent_alternatives_presence": 15,
+        "pricing_truth_completeness": 10,
+        "taxonomy_specificity": 10
+      }
+    },
+    "score_seo_value": {
+      "weights": {
+        "primary_keyword_value_proxy": 25,
+        "secondary_keywords_count": 15,
+        "semantic_keyword_cluster_count": 10,
+        "entity_keywords_count": 10,
+        "serp_intents_coverage": 10,
+        "faq_items_count": 10,
+        "snippet_candidates_count": 10,
+        "content_uniqueness_score": 10
+      }
+    },
+    "score_aeo_value": {
+      "weights": {
+        "faq_items_count": 20,
+        "snippet_candidates_count": 20,
+        "llm_answer_targets_count": 20,
+        "entity_keywords_count": 10,
+        "schema_types_coverage": 10,
+        "conciseness_and_structure_proxy": 20
+      }
+    },
+    "score_geo_value": {
+      "weights": {
+        "entity_keywords_count": 20,
+        "llm_answer_targets_count": 20,
+        "faq_items_count": 10,
+        "content_uniqueness_score": 15,
+        "trust_signal_presence": 15,
+        "taxonomy_specificity": 10,
+        "semantic_keyword_cluster_count": 10
+      }
+    },
+    "score_overall": {
+      "weights": {
+        "score_feature_depth": 20,
+        "score_value_for_money": 15,
+        "score_ease_of_use": 10,
+        "score_integration_strength": 10,
+        "score_workflow_fit": 10,
+        "score_trust": 15,
+        "score_uniqueness": 10,
+        "score_popularity": 10
+      }
+    }
+  }
+}

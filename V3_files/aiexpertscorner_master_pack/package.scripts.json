@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build:normalize": "node scripts/normalize/01-normalize-tools.mjs",
+    "build:taxonomy-registry": "node scripts/taxonomy/02-build-taxonomy-registry.mjs",
+    "build:taxonomy-assign": "node scripts/taxonomy/03-assign-taxonomy.mjs",
+    "build:enrich": "node scripts/enrich/04-enrich-tools.mjs",
+    "build:validate": "node scripts/validate/05-validate-build-inputs.mjs",
+    "build:graphs": "node scripts/graphs/06-build-graph-layer.mjs",
+    "build:manifest": "node scripts/manifests/07-build-page-manifest.mjs",
+    "build:payloads": "node scripts/payloads/08-build-page-payloads.mjs",
+    "enrich:full": "node scripts/pipeline/97-run-full-enrichment.mjs",
+    "enrich:incremental": "node scripts/pipeline/96-run-incremental-enrichment.mjs",
+    "build:fast:data": "node scripts/pipeline/98-run-fast-data-build.mjs",
+    "build:fast": "npm run build:fast:data && astro build",
+    "pipeline:release:data": "node scripts/pipeline/99-run-release-data-pipeline.mjs",
+    "pipeline:release": "npm run pipeline:release:data && astro build"
+  }
+}

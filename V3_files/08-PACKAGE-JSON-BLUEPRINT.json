@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "taxonomy": "node scripts/taxonomy/build-taxonomy-master.mjs",
+    "enrich:full": "node scripts/enrichment/build-tools-master.mjs",
+    "enrich:incremental": "node scripts/enrichment/build-tools-incremental.mjs",
+    "datasets:full": "node scripts/datasets/build-all-page-datasets.mjs",
+    "datasets:incremental": "node scripts/datasets/build-incremental-page-datasets.mjs",
+    "audit:data": "node scripts/audit/audit-data-health.mjs",
+    "audit:links": "node scripts/audit/audit-internal-links.mjs",
+    "audit:site": "node scripts/audit/audit-site-output.mjs",
+    "build:test": "npm run taxonomy && npm run enrich:full && npm run datasets:full && npm run audit:data && npm run audit:links && astro build",
+    "build:live": "npm run taxonomy && npm run enrich:incremental && npm run datasets:incremental && astro build",
+    "insights:news": "node scripts/insights/fetch-news-feeds.mjs && node scripts/insights/normalize-news-items.mjs && node scripts/insights/dedupe-news-items.mjs && node scripts/insights/score-news-items.mjs && node scripts/insights/enrich-news-items.mjs && node scripts/insights/generate-news-articles.mjs && node scripts/insights/build-insights-indexes.mjs",
+    "insights:v2": "node scripts/insights/ai-rewrite-articles.mjs && node scripts/insights/entity-detection.mjs && node scripts/insights/tool-linking.mjs",
+    "insights:v3:signals": "node scripts/insights/fetch-producthunt-signals.mjs && node scripts/insights/fetch-reddit-signals.mjs && node scripts/insights/fetch-hn-signals.mjs && node scripts/insights/import-google-trends-signals.mjs && node scripts/insights/merge-signal-sources.mjs && node scripts/insights/build-breakout-signals.mjs && node scripts/insights/generate-ideation-queue.mjs"
+  }
+}

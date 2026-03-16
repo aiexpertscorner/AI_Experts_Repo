@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "marketers",
+    "label": "Marketers"
+  },
+  {
+    "slug": "developers",
+    "label": "Developers"
+  },
+  {
+    "slug": "founders",
+    "label": "Founders"
+  },
+  {
+    "slug": "agencies",
+    "label": "Agencies"
+  },
+  {
+    "slug": "creators",
+    "label": "Creators"
+  },
+  {
+    "slug": "students",
+    "label": "Students"
+  },
+  {
+    "slug": "enterprise-teams",
+    "label": "Enterprise Teams"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "ai-tools",
+    "label": "AI Tools"
+  },
+  {
+    "slug": "ai-business",
+    "label": "AI Business"
+  },
+  {
+    "slug": "ai-models",
+    "label": "AI Models"
+  },
+  {
+    "slug": "ai-research",
+    "label": "AI Research"
+  },
+  {
+    "slug": "ai-startups",
+    "label": "AI Startups"
+  },
+  {
+    "slug": "ai-policy",
+    "label": "AI Policy"
+  }
+]

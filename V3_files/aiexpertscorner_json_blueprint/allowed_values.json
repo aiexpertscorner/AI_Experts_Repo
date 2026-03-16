@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-14T18:05:38Z",
+    "source": "AIExpertsCorner blueprint generated from current top100 schema + taxonomy blueprint",
+    "notes": [
+      "Categories are based on the uploaded taxonomy blueprint.",
+      "Many vocabularies below are normalized starter registries and should be expanded over time.",
+      "Use slug-first normalized values in the dataset and map display labels in the frontend."
+    ]
+  },
+  "categories": [
+    {
+      "slug": "ai-audio-voice",
+      "name": "AI Audio & Voice",
+      "description": "Speech, voice cloning, music, dubbing, and audio enhancement tools."
+    },
+    {
+      "slug": "ai-automation-agents",
+      "name": "AI Automation & Agents",
+      "description": "Agent builders, orchestration tools, no-code automation, and autonomous workflows."
+    },
+    {
+      "slug": "ai-business-operations",
+      "name": "AI Business Operations",
+      "description": "Automation and intelligence tools for finance, HR, legal, and internal processes."
+    },
+    {
+      "slug": "ai-coding",
+      "name": "AI Coding",
+      "description": "Coding assistants, code generation, debugging, testing, and developer productivity tools."
+    },
+    {
+      "slug": "ai-customer-support",
+      "name": "AI Customer Support",
+      "description": "AI chatbots, helpdesk automation, knowledge assistants, and support QA tools."
+    },
+    {
+      "slug": "ai-data-analytics",
+      "name": "AI Data & Analytics",
+      "description": "Analytics assistants, BI copilots, data querying, dashboards, and forecasting tools."
+    },
+    {
+      "slug": "ai-design",
+      "name": "AI Design",
+      "description": "Design generation, prototyping, UI, brand assets, and creative workflow tools."
+    },
+    {
+      "slug": "ai-education-learning",
+      "name": "AI Education & Learning",
+      "description": "Tutoring, learning assistants, course tools, and educational productivity products."
+    },
+    {
+      "slug": "ai-image-generation",
+      "name": "AI Image Generation",
+      "description": "Image generators, editors, background tools, upscalers, and visual asset tools."
+    },
+    {
+      "slug": "ai-marketing",
+      "name": "AI Marketing",
+      "description": "SEO, ads, social, email, content strategy, and growth workflow tools."
+    },
+    {
+      "slug": "ai-productivity",
+      "name": "AI Productivity",
+      "description": "Meeting, note-taking, summarization, task, and personal productivity tools."
+    },
+    {
+      "slug": "ai-research",
+      "name": "AI Research",
+      "description": "Search, document analysis, deep research, summarization, and insight extraction tools."
+    },
+    {
+      "slug": "ai-sales",
+      "name": "AI Sales",
+      "description": "Prospecting, outreach, CRM enrichment, call intelligence, and revenue workflow tools."
+    },
+    {
+      "slug": "ai-video",
+      "name": "AI Video",
+      "description": "Video generation, editing, clipping, avatars, dubbing, and post-production tools."
+    },
+    {
+      "slug": "ai-writing",
+      "name": "AI Writing",
+      "description": "Writing assistants, copy tools, content drafting, rewriting, and document generation tools."
+    }
+  ],
+  "subcategories_registry_status": "placeholder_expand_from_master_taxonomy",
+  "microcategories_registry_status": "placeholder_expand_from_master_taxonomy",
+  "roles": [
+    "marketer",
+    "founder",
+    "content_writer",
+    "seo_specialist",
+    "social_media_manager",
+    "copywriter",
+    "agency",
+    "sales_rep",
+    "sales_manager",
+    "support_agent",
+    "customer_success",
+    "designer",
+    "video_editor",
+    "developer",
+    "data_analyst",
+    "researcher",
+    "product_manager",
+    "teacher",
+    "student",
+    "hr_team",
+    "finance_team",
+    "legal_team",
+    "operations_team"
+  ],
+  "personas": [
+    "solopreneur",
+    "creator",
+    "small_business",
+    "startup_team",
+    "agency",
+    "enterprise_team",
+    "freelancer",
+    "student",
+    "educator",
+    "developer_team"
+  ],
+  "departments": [
+    "marketing",
+    "sales",
+    "support",
+    "customer_success",
+    "product",
+    "engineering",
+    "design",
+    "operations",
+    "hr",
+    "finance",
+    "legal",
+    "education"
+  ],
+  "platforms": [
+    "web",
+    "api",
+    "chrome_extension",
+    "firefox_extension",
+    "ios",
+    "android",
+    "desktop_mac",
+    "desktop_windows",
+    "desktop_linux",
+    "slack",
+    "wordpress",
+    "figma",
+    "notion",
+    "shopify"
+  ],
+  "pricing_models": [
+    "freemium",
+    "free_trial",
+    "paid_subscription",
+    "usage_based",
+    "enterprise_quote",
+    "seat_based",
+    "credit_based",
+    "api_metered",
+    "lifetime_deal",
+    "open_source",
+    "custom"
+  ],
+  "skill_levels": [
+    "beginner",
+    "intermediate",
+    "advanced",
+    "technical",
+    "enterprise"
+  ],
+  "ai_type": [
+    "generative_ai",
+    "predictive_ai",
+    "conversational_ai",
+    "multimodal_ai",
+    "workflow_ai",
+    "agent_ai",
+    "hybrid"
+  ],
+  "funding_stage": [
+    "bootstrapped",
+    "seed",
+    "series_a",
+    "series_b",
+    "series_c_plus",
+    "public",
+    "acquired",
+    "unknown"
+  ],
+  "public_private_status": [
+    "public",
+    "private",
+    "acquired",
+    "unknown"
+  ],
+  "ownership_type": [
+    "independent",
+    "subsidiary",
+    "acquired",
+    "open_source_project",
+    "unknown"
+  ],
+  "company_size_range": [
+    "solo",
+    "2_10",
+    "11_50",
+    "51_200",
+    "201_1000",
+    "1000_plus",
+    "unknown"
+  ],
+  "workflow_complexity": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "serp_intents": [
+    "review",
+    "pricing",
+    "alternatives",
+    "compare",
+    "tutorial",
+    "best_of",
+    "features",
+    "login",
+    "integrations",
+    "use_cases"
+  ],
+  "data_health": [
+    "poor",
+    "fair",
+    "good",
+    "excellent"
+  ],
+  "stack_role": [
+    "generator",
+    "editor",
+    "distributor",
+    "analyzer",
+    "orchestrator",
+    "assistant",
+    "search",
+    "automation",
+    "unknown"
+  ],
+  "common_capabilities": [
+    "text_generation",
+    "rewriting",
+    "summarization",
+    "keyword_clustering",
+    "outline_generation",
+    "brief_generation",
+    "translation",
+    "transcription",
+    "voice_cloning",
+    "image_generation",
+    "image_editing",
+    "video_generation",
+    "video_editing",
+    "avatar_generation",
+    "research_assistant",
+    "document_qa",
+    "spreadsheet_analysis",
+    "sql_generation",
+    "code_generation",
+    "debugging",
+    "test_generation",
+    "workflow_automation",
+    "agent_orchestration",
+    "chatbot_builder",
+    "meeting_notes",
+    "email_writing",
+    "social_post_generation",
+    "ad_copy_generation",
+    "presentation_generation",
+    "knowledge_base_search",
+    "data_visualization"
+  ],
+  "common_use_cases": [
+    "write_blog_posts",
+    "generate_seo_briefs",
+    "rewrite_articles",
+    "create_social_posts",
+    "generate_ad_copy",
+    "transcribe_meetings",
+    "summarize_documents",
+    "build_chatbots",
+    "automate_workflows",
+    "edit_short_form_video",
+    "generate_product_images",
+    "debug_code",
+    "answer_support_tickets",
+    "personalize_sales_outreach",
+    "analyze_spreadsheets",
+    "research_topics"
+  ],
+  "common_integrations": [
+    "google_docs",
+    "google_drive",
+    "notion",
+    "slack",
+    "zapier",
+    "make",
+    "hubspot",
+    "salesforce",
+    "shopify",
+    "wordpress",
+    "figma",
+    "github",
+    "jira",
+    "airtable",
+    "canva",
+    "youtube",
+    "linkedin",
+    "gmail",
+    "google_sheets",
+    "loom",
+    "dropbox"
+  ],
+  "common_content_types": [
+    "blog_posts",
+    "landing_pages",
+    "emails",
+    "ad_copy",
+    "social_posts",
+    "images",
+    "videos",
+    "presentations",
+    "documents",
+    "code",
+    "audio",
+    "reports"
+  ],
+  "common_agent_types": [
+    "chat_agent",
+    "research_agent",
+    "workflow_agent",
+    "sales_agent",
+    "support_agent",
+    "coding_agent",
+    "meeting_agent",
+    "knowledge_agent"
+  ],
+  "common_comparison_axes": [
+    "pricing",
+    "ease_of_use",
+    "output_quality",
+    "feature_depth",
+    "templates",
+    "integrations",
+    "speed",
+    "team_features",
+    "api_access",
+    "workflow_fit",
+    "beginner_friendliness"
+  ],
+  "schema_types": [
+    "SoftwareApplication",
+    "Product",
+    "FAQPage",
+    "ItemList",
+    "Review"
+  ],
+  "source_types": [
+    "official_site",
+    "pricing_page",
+    "docs",
+    "product_ui",
+    "review_sites",
+    "app_stores",
+    "chrome_store",
+    "github",
+    "product_hunt",
+    "taxonomy_registry",
+    "derived_formula",
+    "llm_inference"
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "ai-writing",
+    "label": "AI Writing"
+  },
+  {
+    "slug": "ai-video",
+    "label": "AI Video"
+  },
+  {
+    "slug": "ai-agents",
+    "label": "AI Agents"
+  },
+  {
+    "slug": "ai-automation",
+    "label": "AI Automation"
+  }
+]

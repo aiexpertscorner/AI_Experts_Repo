@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "ai-agents",
+    "label": "AI Agents",
+    "parent": "automation"
+  },
+  {
+    "slug": "ai-video",
+    "label": "AI Video",
+    "parent": "creative-ai"
+  },
+  {
+    "slug": "ai-image-generation",
+    "label": "AI Image Generation",
+    "parent": "creative-ai"
+  },
+  {
+    "slug": "ai-writing",
+    "label": "AI Writing",
+    "parent": "content-ai"
+  },
+  {
+    "slug": "ai-coding",
+    "label": "AI Coding",
+    "parent": "developer-ai"
+  },
+  {
+    "slug": "ai-search",
+    "label": "AI Search",
+    "parent": "knowledge-ai"
+  },
+  {
+    "slug": "ai-automation",
+    "label": "AI Automation",
+    "parent": "automation"
+  },
+  {
+    "slug": "ai-chatbots",
+    "label": "AI Chatbots",
+    "parent": "customer-ai"
+  },
+  {
+    "slug": "ai-voice",
+    "label": "AI Voice",
+    "parent": "creative-ai"
+  },
+  {
+    "slug": "ai-business",
+    "label": "AI Business",
+    "parent": "business"
+  }
+]

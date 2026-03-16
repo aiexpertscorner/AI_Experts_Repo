@@ -1,0 +1,4566 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-14T18:07:26+00:00",
+    "version": "1.0.0",
+    "field_count": 197,
+    "target_dataset": "aiexpertscorner_top100_tools_schema",
+    "notes": [
+      "This file defines the current 197 fields from the top100 schema.",
+      "Priority P0 = mandatory for top100 hero tools; P1 = strongly recommended; P2 = later/long-tail enrichment.",
+      "Use derived page payloads rather than passing the full record to every Astro page."
+    ]
+  },
+  "fields": {
+    "id": {
+      "field": "id",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Canonical internal tool identifier. Must stay stable once assigned.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "field": "name",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Raw official product name from the vendor.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "slug": {
+      "field": "slug",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Canonical URL-safe slug used across the site.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "display_name": {
+      "field": "display_name",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Human-facing product name shown in headings and cards.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "aliases": {
+      "field": "aliases",
+      "group": "identity",
+      "priority": "P1",
+      "type": "string",
+      "description": "Alternate names, abbreviations, or previous brand names.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "tagline": {
+      "field": "tagline",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Short factual positioning statement.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "short_description": {
+      "field": "short_description",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Concise description for cards, intros, and snippets.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "long_description": {
+      "field": "long_description",
+      "group": "identity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Richer description for tool pages and intro sections.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "logo_url": {
+      "field": "logo_url",
+      "group": "identity",
+      "priority": "P1",
+      "type": "string",
+      "description": "Primary logo asset URL.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "icon_url": {
+      "field": "icon_url",
+      "group": "identity",
+      "priority": "P2",
+      "type": "string",
+      "description": "Compact icon or favicon-style asset URL.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "trusted_third_party",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "cards",
+        "best_of_snippets",
+        "compare_snippets"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "homepage_url": {
+      "field": "homepage_url",
+      "group": "urls",
+      "priority": "P0",
+      "type": "string",
+      "description": "Canonical official marketing site.",
+      "source_priority": [
+        "official_site",
+        "docs"
+      ],
+      "generation_method": "manual_or_rules",
+      "page_uses": [
+        "tool_page",
+        "cta_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "app_url": {
+      "field": "app_url",
+      "group": "urls",
+      "priority": "P2",
+      "type": "string",
+      "description": "Direct application or login URL.",
+      "source_priority": [
+        "official_site",
+        "docs"
+      ],
+      "generation_method": "manual_or_rules",
+      "page_uses": [
+        "tool_page",
+        "cta_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "docs_url": {
+      "field": "docs_url",
+      "group": "urls",
+      "priority": "P1",
+      "type": "string",
+      "description": "Official documentation or help center URL.",
+      "source_priority": [
+        "official_site",
+        "docs"
+      ],
+      "generation_method": "manual_or_rules",
+      "page_uses": [
+        "tool_page",
+        "cta_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "signup_url": {
+      "field": "signup_url",
+      "group": "urls",
+      "priority": "P1",
+      "type": "string",
+      "description": "Direct signup or free-trial URL.",
+      "source_priority": [
+        "official_site",
+        "docs"
+      ],
+      "generation_method": "manual_or_rules",
+      "page_uses": [
+        "tool_page",
+        "cta_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "pricing_url": {
+      "field": "pricing_url",
+      "group": "urls",
+      "priority": "P0",
+      "type": "string",
+      "description": "Official pricing page URL.",
+      "source_priority": [
+        "official_site",
+        "docs"
+      ],
+      "generation_method": "manual_or_rules",
+      "page_uses": [
+        "tool_page",
+        "cta_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "company_name": {
+      "field": "company_name",
+      "group": "company_trust",
+      "priority": "P0",
+      "type": "string",
+      "description": "Operating company name behind the product.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "parent_company": {
+      "field": "parent_company",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Parent company.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "hq_country": {
+      "field": "hq_country",
+      "group": "company_trust",
+      "priority": "P1",
+      "type": "string",
+      "description": "Hq country.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "hq_city": {
+      "field": "hq_city",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Hq city.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "founded_year": {
+      "field": "founded_year",
+      "group": "company_trust",
+      "priority": "P1",
+      "type": "string",
+      "description": "Founded year.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "employee_count_estimate": {
+      "field": "employee_count_estimate",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Employee count estimate.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "funding_stage": {
+      "field": "funding_stage",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Funding stage.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "funding_stage"
+      }
+    },
+    "total_funding": {
+      "field": "total_funding",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Total funding.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "investors": {
+      "field": "investors",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Investors.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "public_private_status": {
+      "field": "public_private_status",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Public private status.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "public_private_status"
+      }
+    },
+    "ownership_type": {
+      "field": "ownership_type",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Ownership type.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "ownership_type"
+      }
+    },
+    "company_size_range": {
+      "field": "company_size_range",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Company size range.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "company_size_range"
+      }
+    },
+    "category": {
+      "field": "category",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Primary category slug.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "taxonomy_categories"
+      }
+    },
+    "subcategory": {
+      "field": "subcategory",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Primary subcategory slug.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "taxonomy_subcategories"
+      }
+    },
+    "microcategory": {
+      "field": "microcategory",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Primary microcategory slug.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "taxonomy_microcategories"
+      }
+    },
+    "categories": {
+      "field": "categories",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Allowed multi-category assignments for discovery and linking.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "categories"
+      }
+    },
+    "subcategories": {
+      "field": "subcategories",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Allowed multi-subcategory assignments for discovery and linking.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "subcategories"
+      }
+    },
+    "microcategories": {
+      "field": "microcategories",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Fine-grained taxonomy labels used for long-tail directory pages.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "microcategories"
+      }
+    },
+    "tags": {
+      "field": "tags",
+      "group": "taxonomy",
+      "priority": "P0",
+      "type": "string",
+      "description": "Curated flexible discovery labels; avoid spammy over-tagging.",
+      "source_priority": [
+        "taxonomy_registry",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "directory_pages",
+        "breadcrumbs",
+        "internal_linking",
+        "tool_page"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "use_cases": {
+      "field": "use_cases",
+      "group": "audience_intent",
+      "priority": "P0",
+      "type": "string",
+      "description": "Specific outcome-driven user tasks the tool helps complete.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "tool_page",
+        "best_of_pages",
+        "capability_pages",
+        "use_case_pages",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "capabilities": {
+      "field": "capabilities",
+      "group": "audience_intent",
+      "priority": "P0",
+      "type": "string",
+      "description": "Normalized product capabilities used for discovery and compare logic.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "tool_page",
+        "best_of_pages",
+        "capability_pages",
+        "use_case_pages",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "industries": {
+      "field": "industries",
+      "group": "audience_intent",
+      "priority": "P0",
+      "type": "string",
+      "description": "Industries where the tool has a credible fit.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "tool_page",
+        "best_of_pages",
+        "capability_pages",
+        "use_case_pages",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "roles": {
+      "field": "roles",
+      "group": "audience_intent",
+      "priority": "P0",
+      "type": "string",
+      "description": "Roles that directly benefit from the tool.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "tool_page",
+        "best_of_pages",
+        "capability_pages",
+        "use_case_pages",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "personas": {
+      "field": "personas",
+      "group": "audience_intent",
+      "priority": "P1",
+      "type": "string",
+      "description": "Softer audience labels such as agencies, creators, or students.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "tool_page",
+        "best_of_pages",
+        "capability_pages",
+        "use_case_pages",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "departments": {
+      "field": "departments",
+      "group": "audience_intent",
+      "priority": "P1",
+      "type": "string",
+      "description": "Business departments where the tool is relevant.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "tool_page",
+        "best_of_pages",
+        "capability_pages",
+        "use_case_pages",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "ai_models": {
+      "field": "ai_models",
+      "group": "ai_stack",
+      "priority": "P0",
+      "type": "string",
+      "description": "Named AI or LLM models supported or used by the product.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "integrations": {
+      "field": "integrations",
+      "group": "ai_stack",
+      "priority": "P0",
+      "type": "string",
+      "description": "Normalized integration slugs for ecosystem and workflow pages.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "platforms": {
+      "field": "platforms",
+      "group": "ai_stack",
+      "priority": "P0",
+      "type": "string",
+      "description": "Supported platforms like web, API, iOS, Android, Chrome extension, desktop.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "pricing_models": {
+      "field": "pricing_models",
+      "group": "ai_stack",
+      "priority": "P0",
+      "type": "string",
+      "description": "All applicable billing models.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "pricing_models"
+      },
+      "examples": []
+    },
+    "skill_levels": {
+      "field": "skill_levels",
+      "group": "ai_stack",
+      "priority": "P0",
+      "type": "string",
+      "description": "Normalized difficulty or maturity fit labels.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "skill_levels"
+      },
+      "examples": []
+    },
+    "content_types": {
+      "field": "content_types",
+      "group": "ai_stack",
+      "priority": "P1",
+      "type": "string",
+      "description": "Content types.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "agent_types": {
+      "field": "agent_types",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Agent types.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "workflows": {
+      "field": "workflows",
+      "group": "ai_stack",
+      "priority": "P1",
+      "type": "string",
+      "description": "Workflows.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "automation_recipes": {
+      "field": "automation_recipes",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Automation recipes.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "stacks": {
+      "field": "stacks",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Stacks.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "toolkits": {
+      "field": "toolkits",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Toolkits.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "playbooks": {
+      "field": "playbooks",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Playbooks.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "core_features": {
+      "field": "core_features",
+      "group": "product_features",
+      "priority": "P0",
+      "type": "string",
+      "description": "Neutral core features the product offers.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "headline_features": {
+      "field": "headline_features",
+      "group": "product_features",
+      "priority": "P0",
+      "type": "string",
+      "description": "Most important standout features shown high on page.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "unique_features": {
+      "field": "unique_features",
+      "group": "product_features",
+      "priority": "P0",
+      "type": "string",
+      "description": "Genuinely differentiating features, not generic claims.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "templates_available": {
+      "field": "templates_available",
+      "group": "product_features",
+      "priority": "P1",
+      "type": "string",
+      "description": "Templates available.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "template_count": {
+      "field": "template_count",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Template count.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "automation_templates_count": {
+      "field": "automation_templates_count",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Automation templates count.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "api_access": {
+      "field": "api_access",
+      "group": "product_features",
+      "priority": "P1",
+      "type": "string",
+      "description": "Api access.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "browser_extension": {
+      "field": "browser_extension",
+      "group": "product_features",
+      "priority": "P1",
+      "type": "string",
+      "description": "Browser extension.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "mobile_app": {
+      "field": "mobile_app",
+      "group": "product_features",
+      "priority": "P1",
+      "type": "string",
+      "description": "Mobile app.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "desktop_app": {
+      "field": "desktop_app",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Desktop app.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "collaboration_features": {
+      "field": "collaboration_features",
+      "group": "product_features",
+      "priority": "P1",
+      "type": "string",
+      "description": "Collaboration features.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "analytics_dashboard": {
+      "field": "analytics_dashboard",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Analytics dashboard.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "custom_branding": {
+      "field": "custom_branding",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Custom branding.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "white_label": {
+      "field": "white_label",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "White label.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "marketplace_available": {
+      "field": "marketplace_available",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Marketplace available.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "prompt_library": {
+      "field": "prompt_library",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Prompt library.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "model_switching": {
+      "field": "model_switching",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Model switching.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "rag_support": {
+      "field": "rag_support",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Rag support.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "vector_search_support": {
+      "field": "vector_search_support",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Vector search support.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "agent_builder": {
+      "field": "agent_builder",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Agent builder.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "workflow_builder": {
+      "field": "workflow_builder",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Workflow builder.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "knowledge_base": {
+      "field": "knowledge_base",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Knowledge base.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "team_workspace": {
+      "field": "team_workspace",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Team workspace.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "export_options": {
+      "field": "export_options",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Export options.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "supported_file_types": {
+      "field": "supported_file_types",
+      "group": "product_features",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supported file types.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "ai_type": {
+      "field": "ai_type",
+      "group": "ai_stack",
+      "priority": "P1",
+      "type": "string",
+      "description": "Ai type.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "ai_type"
+      },
+      "examples": [
+        "generative_ai",
+        "multimodal_ai",
+        "workflow_ai"
+      ]
+    },
+    "llm_provider": {
+      "field": "llm_provider",
+      "group": "ai_stack",
+      "priority": "P1",
+      "type": "string",
+      "description": "Llm provider.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "foundation_models": {
+      "field": "foundation_models",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Foundation models.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "supports_gpt": {
+      "field": "supports_gpt",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports gpt.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_claude": {
+      "field": "supports_claude",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports claude.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_gemini": {
+      "field": "supports_gemini",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports gemini.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_llama": {
+      "field": "supports_llama",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports llama.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_mistral": {
+      "field": "supports_mistral",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports mistral.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_flux": {
+      "field": "supports_flux",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports flux.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_sdxl": {
+      "field": "supports_sdxl",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports sdxl.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "supports_dalle": {
+      "field": "supports_dalle",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Supports dalle.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "fine_tuning_support": {
+      "field": "fine_tuning_support",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Fine tuning support.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "bring_your_own_model": {
+      "field": "bring_your_own_model",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Bring your own model.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "bring_your_own_key": {
+      "field": "bring_your_own_key",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Bring your own key.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "inference_provider": {
+      "field": "inference_provider",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Inference provider.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "hosting_provider": {
+      "field": "hosting_provider",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Hosting provider.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "cloud_provider": {
+      "field": "cloud_provider",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Cloud provider.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "open_source": {
+      "field": "open_source",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Open source.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "api_first": {
+      "field": "api_first",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Api first.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "tech_stack_labels": {
+      "field": "tech_stack_labels",
+      "group": "ai_stack",
+      "priority": "P2",
+      "type": "string",
+      "description": "Tech stack labels.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "integration_pages",
+        "model_pages",
+        "platform_pages",
+        "filters"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "pricing_model": {
+      "field": "pricing_model",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Primary displayed pricing model.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": null
+      },
+      "examples": [
+        "freemium",
+        "paid_subscription",
+        "usage_based"
+      ]
+    },
+    "freemium": {
+      "field": "freemium",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Whether a free plan exists.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "free_trial": {
+      "field": "free_trial",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Whether a free trial exists.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "trial_days": {
+      "field": "trial_days",
+      "group": "pricing",
+      "priority": "P1",
+      "type": "string",
+      "description": "Trial duration in days where clearly stated.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "starting_price": {
+      "field": "starting_price",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Lowest meaningful paid entry price.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "entry_price_monthly": {
+      "field": "entry_price_monthly",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Cheapest monthly comparable plan.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "entry_price_annual": {
+      "field": "entry_price_annual",
+      "group": "pricing",
+      "priority": "P1",
+      "type": "string",
+      "description": "Entry price annual.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "pro_price_monthly": {
+      "field": "pro_price_monthly",
+      "group": "pricing",
+      "priority": "P1",
+      "type": "string",
+      "description": "Typical best-fit plan for solo pros.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "team_price_monthly": {
+      "field": "team_price_monthly",
+      "group": "pricing",
+      "priority": "P1",
+      "type": "string",
+      "description": "Typical collaboration or team plan price.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "enterprise_price": {
+      "field": "enterprise_price",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Enterprise price.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "usage_based_pricing": {
+      "field": "usage_based_pricing",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Usage based pricing.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "seat_based_pricing": {
+      "field": "seat_based_pricing",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Seat based pricing.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "credit_based_pricing": {
+      "field": "credit_based_pricing",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Credit based pricing.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "lifetime_deal_available": {
+      "field": "lifetime_deal_available",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Lifetime deal available.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "annual_discount_percent": {
+      "field": "annual_discount_percent",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Annual discount percent.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "refund_policy": {
+      "field": "refund_policy",
+      "group": "pricing",
+      "priority": "P2",
+      "type": "string",
+      "description": "Refund policy.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "pricing_last_checked": {
+      "field": "pricing_last_checked",
+      "group": "pricing",
+      "priority": "P1",
+      "type": "string",
+      "description": "Pricing last checked.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "pricing_notes": {
+      "field": "pricing_notes",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Important caveats like limits, credits, or hidden add-ons.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "money_value_score": {
+      "field": "money_value_score",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "Derived estimate of value for money.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "pricing_transparency_score": {
+      "field": "pricing_transparency_score",
+      "group": "pricing",
+      "priority": "P0",
+      "type": "string",
+      "description": "How clear and understandable the pricing is.",
+      "source_priority": [
+        "pricing_page",
+        "official_site",
+        "docs",
+        "llm_inference"
+      ],
+      "generation_method": "manual_plus_rules",
+      "page_uses": [
+        "tool_page",
+        "pricing_pages",
+        "comparison_tables",
+        "best_of_pages"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "rating_average": {
+      "field": "rating_average",
+      "group": "reviews_popularity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Blended or primary average rating.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "rating_count": {
+      "field": "rating_count",
+      "group": "reviews_popularity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Primary rating count used with rating_average.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "review_count_total": {
+      "field": "review_count_total",
+      "group": "reviews_popularity",
+      "priority": "P0",
+      "type": "string",
+      "description": "Total review count aggregated across trusted sources where possible.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "g2_rating": {
+      "field": "g2_rating",
+      "group": "reviews_popularity",
+      "priority": "P1",
+      "type": "string",
+      "description": "G2 rating.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "g2_reviews": {
+      "field": "g2_reviews",
+      "group": "reviews_popularity",
+      "priority": "P1",
+      "type": "string",
+      "description": "G2 reviews.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "capterra_rating": {
+      "field": "capterra_rating",
+      "group": "reviews_popularity",
+      "priority": "P1",
+      "type": "string",
+      "description": "Capterra rating.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "capterra_reviews": {
+      "field": "capterra_reviews",
+      "group": "reviews_popularity",
+      "priority": "P1",
+      "type": "string",
+      "description": "Capterra reviews.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "producthunt_votes": {
+      "field": "producthunt_votes",
+      "group": "reviews_popularity",
+      "priority": "P2",
+      "type": "string",
+      "description": "Producthunt votes.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "github_stars": {
+      "field": "github_stars",
+      "group": "reviews_popularity",
+      "priority": "P2",
+      "type": "string",
+      "description": "Github stars.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "chrome_store_rating": {
+      "field": "chrome_store_rating",
+      "group": "reviews_popularity",
+      "priority": "P2",
+      "type": "string",
+      "description": "Chrome store rating.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "app_store_rating": {
+      "field": "app_store_rating",
+      "group": "reviews_popularity",
+      "priority": "P2",
+      "type": "string",
+      "description": "App store rating.",
+      "source_priority": [
+        "review_sites",
+        "app_stores",
+        "chrome_store",
+        "product_hunt",
+        "github"
+      ],
+      "generation_method": "rules_or_manual",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "ranking_context"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0
+      }
+    },
+    "notable_customers": {
+      "field": "notable_customers",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Notable customers.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "case_study_count": {
+      "field": "case_study_count",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Case study count.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "community_size": {
+      "field": "community_size",
+      "group": "company_trust",
+      "priority": "P2",
+      "type": "string",
+      "description": "Community size.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "brand_awareness_score": {
+      "field": "brand_awareness_score",
+      "group": "company_trust",
+      "priority": "P1",
+      "type": "string",
+      "description": "Brand awareness score.",
+      "source_priority": [
+        "official_site",
+        "trusted_third_party",
+        "review_sites",
+        "llm_inference"
+      ],
+      "generation_method": "manual_or_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "comparison_tables",
+        "eeat_blocks"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_overall": {
+      "field": "score_overall",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "Master blended ranking score.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_popularity": {
+      "field": "score_popularity",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Momentum or awareness proxy score.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_feature_depth": {
+      "field": "score_feature_depth",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "Depth and breadth of functionality.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_ease_of_use": {
+      "field": "score_ease_of_use",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Score ease of use.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_integration_strength": {
+      "field": "score_integration_strength",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "Depth and breadth of integration ecosystem.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_value_for_money": {
+      "field": "score_value_for_money",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "Relative value considering price, output, and limits.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_workflow_fit": {
+      "field": "score_workflow_fit",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "How useful the tool is inside real workflows.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_beginner_fit": {
+      "field": "score_beginner_fit",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Suitability for beginners.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_enterprise_fit": {
+      "field": "score_enterprise_fit",
+      "group": "scoring",
+      "priority": "P2",
+      "type": "string",
+      "description": "Score enterprise fit.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_uniqueness": {
+      "field": "score_uniqueness",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "How differentiated the product is.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_trust": {
+      "field": "score_trust",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "Trust score from company and review signals.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_growth": {
+      "field": "score_growth",
+      "group": "scoring",
+      "priority": "P2",
+      "type": "string",
+      "description": "Score growth.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_stability": {
+      "field": "score_stability",
+      "group": "scoring",
+      "priority": "P2",
+      "type": "string",
+      "description": "Score stability.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_monetization": {
+      "field": "score_monetization",
+      "group": "scoring",
+      "priority": "P2",
+      "type": "string",
+      "description": "Score monetization.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_geo_value": {
+      "field": "score_geo_value",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Expected value for generative engine citation/discovery.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_aeo_value": {
+      "field": "score_aeo_value",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Expected answer-engine value.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_seo_value": {
+      "field": "score_seo_value",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Expected SEO traffic value.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_compare_value": {
+      "field": "score_compare_value",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "How worthwhile this tool is in compare-page programs.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_bestof_value": {
+      "field": "score_bestof_value",
+      "group": "scoring",
+      "priority": "P0",
+      "type": "string",
+      "description": "How suitable the tool is for best-of list inclusion.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "score_alternatives_value": {
+      "field": "score_alternatives_value",
+      "group": "scoring",
+      "priority": "P1",
+      "type": "string",
+      "description": "Expected alternatives-page value.",
+      "source_priority": [
+        "derived_formula"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "best_of_pages",
+        "compare_pages",
+        "filters",
+        "prioritization"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "primary_keyword": {
+      "field": "primary_keyword",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Core keyword target for the tool page.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "secondary_keywords": {
+      "field": "secondary_keywords",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "High-intent support terms around the core keyword.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "longtail_keywords": {
+      "field": "longtail_keywords",
+      "group": "seo_geo_aeo",
+      "priority": "P1",
+      "type": "string",
+      "description": "Long-tail and modifier keywords.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "semantic_keyword_cluster": {
+      "field": "semantic_keyword_cluster",
+      "group": "seo_geo_aeo",
+      "priority": "P1",
+      "type": "string",
+      "description": "Semantically related terms and entities.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "entity_keywords": {
+      "field": "entity_keywords",
+      "group": "seo_geo_aeo",
+      "priority": "P1",
+      "type": "string",
+      "description": "Entity-rich labels for SEO, GEO, and AI citation relevance.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "serp_intents": {
+      "field": "serp_intents",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Search intents the content should satisfy.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "serp_intents"
+      },
+      "examples": []
+    },
+    "seo_title": {
+      "field": "seo_title",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Title tag seed.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "meta_description": {
+      "field": "meta_description",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Meta description seed.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "breadcrumbs": {
+      "field": "breadcrumbs",
+      "group": "seo_geo_aeo",
+      "priority": "P1",
+      "type": "string",
+      "description": "Structured breadcrumb path derived from taxonomy.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "schema_types": {
+      "field": "schema_types",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Structured-data schema types to render.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "faq_items": {
+      "field": "faq_items",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Fact-grounded FAQ items for tool pages.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "paa_questions": {
+      "field": "paa_questions",
+      "group": "seo_geo_aeo",
+      "priority": "P1",
+      "type": "string",
+      "description": "People-also-ask style question seeds.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "snippet_candidates": {
+      "field": "snippet_candidates",
+      "group": "seo_geo_aeo",
+      "priority": "P1",
+      "type": "string",
+      "description": "Short answer-style statements for featured snippets and AI overviews.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "content_uniqueness_score": {
+      "field": "content_uniqueness_score",
+      "group": "seo_geo_aeo",
+      "priority": "P2",
+      "type": "string",
+      "description": "Content uniqueness score.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "llm_answer_targets": {
+      "field": "llm_answer_targets",
+      "group": "seo_geo_aeo",
+      "priority": "P0",
+      "type": "string",
+      "description": "Specific questions the page should answer well for answer engines.",
+      "source_priority": [
+        "derived_intent",
+        "taxonomy_registry",
+        "llm_inference"
+      ],
+      "generation_method": "templated_plus_llm_assisted",
+      "page_uses": [
+        "tool_page",
+        "meta_generation",
+        "faq_blocks",
+        "structured_data"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "primary_competitors": {
+      "field": "primary_competitors",
+      "group": "competitive_graph",
+      "priority": "P0",
+      "type": "string",
+      "description": "Closest direct competitors by intent and buyer overlap.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "secondary_competitors": {
+      "field": "secondary_competitors",
+      "group": "competitive_graph",
+      "priority": "P1",
+      "type": "string",
+      "description": "Broader competitors or adjacent substitutes.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "compare_candidates": {
+      "field": "compare_candidates",
+      "group": "competitive_graph",
+      "priority": "P0",
+      "type": "string",
+      "description": "Tools that should be prioritized for direct compare pages.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "alternatives": {
+      "field": "alternatives",
+      "group": "competitive_graph",
+      "priority": "P0",
+      "type": "string",
+      "description": "Tools suitable for alternatives lists and related widgets.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "similar_tools": {
+      "field": "similar_tools",
+      "group": "competitive_graph",
+      "priority": "P1",
+      "type": "string",
+      "description": "Related tools for recommendation widgets.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "comparison_axes": {
+      "field": "comparison_axes",
+      "group": "competitive_graph",
+      "priority": "P1",
+      "type": "string",
+      "description": "Most relevant dimensions for comparisons.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "unique_selling_points": {
+      "field": "unique_selling_points",
+      "group": "competitive_graph",
+      "priority": "P1",
+      "type": "string",
+      "description": "Short differentiators used in intros and comparison blurbs.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "switching_reasons": {
+      "field": "switching_reasons",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Switching reasons.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "migration_from_tools": {
+      "field": "migration_from_tools",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Migration from tools.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "migration_to_tools": {
+      "field": "migration_to_tools",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Migration to tools.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "replacement_candidates": {
+      "field": "replacement_candidates",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Replacement candidates.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "similarity_score_global": {
+      "field": "similarity_score_global",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Similarity score global.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "compare_page_priority": {
+      "field": "compare_page_priority",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Compare page priority.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "alternatives_page_priority": {
+      "field": "alternatives_page_priority",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Alternatives page priority.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "string",
+        "min": 0,
+        "max": 100
+      }
+    },
+    "best_of_eligibility": {
+      "field": "best_of_eligibility",
+      "group": "competitive_graph",
+      "priority": "P2",
+      "type": "string",
+      "description": "Best of eligibility.",
+      "source_priority": [
+        "taxonomy_overlap",
+        "serp_overlap",
+        "feature_overlap",
+        "official_site",
+        "llm_inference"
+      ],
+      "generation_method": "rules_plus_manual_review",
+      "page_uses": [
+        "compare_pages",
+        "alternatives_pages",
+        "related_tools",
+        "internal_linking"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "workflow_roles_supported": {
+      "field": "workflow_roles_supported",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Workflow roles supported.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "workflow_inputs": {
+      "field": "workflow_inputs",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Workflow inputs.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "workflow_outputs": {
+      "field": "workflow_outputs",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Workflow outputs.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string"
+      },
+      "examples": []
+    },
+    "workflow_examples": {
+      "field": "workflow_examples",
+      "group": "workflow_automation",
+      "priority": "P1",
+      "type": "string",
+      "description": "Workflow examples.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "workflow_templates_available": {
+      "field": "workflow_templates_available",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Workflow templates available.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "workflow_time_saved_estimate": {
+      "field": "workflow_time_saved_estimate",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Workflow time saved estimate.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "workflow_complexity": {
+      "field": "workflow_complexity",
+      "group": "workflow_automation",
+      "priority": "P1",
+      "type": "string",
+      "description": "Workflow complexity.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "workflow_complexity"
+      },
+      "examples": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "automation_trigger_support": {
+      "field": "automation_trigger_support",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Automation trigger support.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "automation_action_support": {
+      "field": "automation_action_support",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Automation action support.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "stack_role": {
+      "field": "stack_role",
+      "group": "workflow_automation",
+      "priority": "P2",
+      "type": "string",
+      "description": "Stack role.",
+      "source_priority": [
+        "official_site",
+        "docs",
+        "product_ui",
+        "llm_inference"
+      ],
+      "generation_method": "llm_assisted_plus_manual_review",
+      "page_uses": [
+        "workflow_pages",
+        "tool_page",
+        "playbooks",
+        "comparison_tables"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "stack_role"
+      }
+    },
+    "data_health": {
+      "field": "data_health",
+      "group": "operations_qa",
+      "priority": "P0",
+      "type": "string",
+      "description": "Overall completeness and reliability bucket.",
+      "source_priority": [
+        "derived_formula",
+        "build_pipeline"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "build_pipeline",
+        "rollout_gating",
+        "qa_dashboards"
+      ],
+      "validation": {
+        "type": "string",
+        "enum_ref": "data_health"
+      }
+    },
+    "needs_enrichment": {
+      "field": "needs_enrichment",
+      "group": "operations_qa",
+      "priority": "P0",
+      "type": "boolean",
+      "description": "Whether the tool still needs significant data work.",
+      "source_priority": [
+        "derived_formula",
+        "build_pipeline"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "build_pipeline",
+        "rollout_gating",
+        "qa_dashboards"
+      ],
+      "validation": {
+        "type": "boolean"
+      }
+    },
+    "schema_version": {
+      "field": "schema_version",
+      "group": "operations_qa",
+      "priority": "P0",
+      "type": "string",
+      "description": "Schema version used for the record.",
+      "source_priority": [
+        "derived_formula",
+        "build_pipeline"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "build_pipeline",
+        "rollout_gating",
+        "qa_dashboards"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "last_updated_at": {
+      "field": "last_updated_at",
+      "group": "operations_qa",
+      "priority": "P0",
+      "type": "string",
+      "description": "Most recent record update timestamp.",
+      "source_priority": [
+        "derived_formula",
+        "build_pipeline"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "build_pipeline",
+        "rollout_gating",
+        "qa_dashboards"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    },
+    "source_priority": {
+      "field": "source_priority",
+      "group": "operations_qa",
+      "priority": "P1",
+      "type": "string",
+      "description": "Source provenance by field or source group.",
+      "source_priority": [
+        "derived_formula",
+        "build_pipeline"
+      ],
+      "generation_method": "derived",
+      "page_uses": [
+        "build_pipeline",
+        "rollout_gating",
+        "qa_dashboards"
+      ],
+      "validation": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "tools",
+    "label": "AI Tools"
+  },
+  {
+    "slug": "categories",
+    "label": "Categories"
+  },
+  {
+    "slug": "best",
+    "label": "Best Of"
+  },
+  {
+    "slug": "compare",
+    "label": "Compare"
+  },
+  {
+    "slug": "alternatives",
+    "label": "Alternatives"
+  },
+  {
+    "slug": "prompts",
+    "label": "Prompts"
+  },
+  {
+    "slug": "workflows",
+    "label": "Workflows"
+  },
+  {
+    "slug": "insights",
+    "label": "AI Insights"
+  },
+  {
+    "slug": "legal",
+    "label": "Legal"
+  }
+]

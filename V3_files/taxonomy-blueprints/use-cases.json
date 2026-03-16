@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "content-creation",
+    "label": "Content Creation"
+  },
+  {
+    "slug": "seo",
+    "label": "SEO"
+  },
+  {
+    "slug": "social-media",
+    "label": "Social Media"
+  },
+  {
+    "slug": "video-creation",
+    "label": "Video Creation"
+  },
+  {
+    "slug": "coding",
+    "label": "Coding"
+  },
+  {
+    "slug": "customer-support",
+    "label": "Customer Support"
+  },
+  {
+    "slug": "sales-automation",
+    "label": "Sales Automation"
+  },
+  {
+    "slug": "education",
+    "label": "Education"
+  },
+  {
+    "slug": "productivity",
+    "label": "Productivity"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "id": "string",
+  "slug": "string",
+  "name": "string",
+  "description_short": "string",
+  "description_long": "string",
+  "website_url": "string",
+  "logo_url": "string",
+  "taxonomy": {
+    "primary_category": "string",
+    "subcategories": [],
+    "master_topics": [],
+    "use_cases": [],
+    "audiences": [],
+    "capabilities": []
+  },
+  "commercial": {
+    "pricing_model": "string",
+    "has_free_plan": false,
+    "affiliate_status": "string",
+    "partner_networks": [],
+    "commercial_priority": 0
+  },
+  "seo": {
+    "authority_score": 0,
+    "trend_score": 0,
+    "comparison_worthy": false,
+    "best_of_eligible": false,
+    "alternatives_eligible": false,
+    "index_priority": 0
+  },
+  "linking": {
+    "related_tools": [],
+    "related_categories": [],
+    "related_topics": [],
+    "related_best_pages": [],
+    "related_compare_pages": []
+  },
+  "content": {
+    "review_status": "string",
+    "data_health": "string",
+    "last_enriched_at": "string"
+  }
+}

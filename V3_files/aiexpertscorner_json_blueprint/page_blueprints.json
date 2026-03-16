@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-14T18:07:26+00:00",
+    "version": "1.0.0",
+    "notes": [
+      "These blueprints show which fields should feed which page types.",
+      "Use them to generate derived page payloads instead of sending the full 197-field object to every page."
+    ]
+  },
+  "page_types": {
+    "tool_page": {
+      "required_fields": [
+        "display_name",
+        "tagline",
+        "short_description",
+        "long_description",
+        "homepage_url",
+        "pricing_url",
+        "category",
+        "subcategory",
+        "microcategory",
+        "use_cases",
+        "capabilities",
+        "integrations",
+        "platforms",
+        "pricing_model",
+        "freemium",
+        "free_trial",
+        "starting_price",
+        "core_features",
+        "headline_features",
+        "unique_features",
+        "primary_competitors",
+        "compare_candidates",
+        "alternatives",
+        "seo_title",
+        "meta_description",
+        "faq_items",
+        "schema_types",
+        "score_overall",
+        "score_trust",
+        "score_value_for_money"
+      ],
+      "optional_fields": [
+        "docs_url",
+        "signup_url",
+        "roles",
+        "industries",
+        "ai_models",
+        "reviews_popularity",
+        "workflow_examples",
+        "rating_average",
+        "rating_count",
+        "g2_rating",
+        "capterra_rating",
+        "notable_customers",
+        "case_study_count"
+      ],
+      "blocks": {
+        "hero": [
+          "display_name",
+          "tagline",
+          "short_description",
+          "logo_url",
+          "homepage_url",
+          "signup_url"
+        ],
+        "taxonomy": [
+          "category",
+          "subcategory",
+          "microcategory",
+          "tags"
+        ],
+        "pricing": [
+          "pricing_model",
+          "freemium",
+          "free_trial",
+          "trial_days",
+          "starting_price",
+          "entry_price_monthly",
+          "pricing_notes"
+        ],
+        "features": [
+          "core_features",
+          "headline_features",
+          "unique_features"
+        ],
+        "fit": [
+          "use_cases",
+          "capabilities",
+          "roles",
+          "industries",
+          "skill_levels"
+        ],
+        "ecosystem": [
+          "integrations",
+          "platforms",
+          "api_access",
+          "browser_extension",
+          "mobile_app"
+        ],
+        "proof": [
+          "rating_average",
+          "rating_count",
+          "g2_rating",
+          "g2_reviews",
+          "notable_customers",
+          "case_study_count"
+        ],
+        "related": [
+          "compare_candidates",
+          "alternatives",
+          "similar_tools"
+        ],
+        "faq": [
+          "faq_items",
+          "paa_questions"
+        ],
+        "seo": [
+          "seo_title",
+          "meta_description",
+          "schema_types",
+          "llm_answer_targets"
+        ]
+      }
+    },
+    "category_page": {
+      "required_fields": [
+        "category",
+        "display_name",
+        "short_description",
+        "score_overall",
+        "score_bestof_value"
+      ],
+      "tool_selection_logic": "Select top tools from same category, sorted by score_bestof_value then score_overall.",
+      "grouping_fields": [
+        "subcategory",
+        "microcategory",
+        "pricing_model",
+        "skill_levels",
+        "use_cases",
+        "capabilities"
+      ]
+    },
+    "subcategory_page": {
+      "required_fields": [
+        "category",
+        "subcategory",
+        "display_name",
+        "short_description",
+        "score_overall",
+        "score_bestof_value"
+      ],
+      "tool_selection_logic": "Select tools in same subcategory; expose compare and alternatives blocks."
+    },
+    "microcategory_page": {
+      "required_fields": [
+        "category",
+        "subcategory",
+        "microcategory",
+        "display_name",
+        "short_description",
+        "score_overall"
+      ],
+      "tool_selection_logic": "Only build when unique intent and enough tools exist."
+    },
+    "best_of_page": {
+      "required_fields": [
+        "display_name",
+        "short_description",
+        "pricing_model",
+        "freemium",
+        "starting_price",
+        "score_overall",
+        "score_bestof_value",
+        "score_value_for_money",
+        "score_beginner_fit",
+        "score_workflow_fit"
+      ],
+      "ranking_fields": [
+        "score_bestof_value",
+        "score_overall",
+        "score_value_for_money",
+        "score_feature_depth",
+        "score_trust"
+      ],
+      "comparison_summary_fields": [
+        "headline_features",
+        "unique_selling_points",
+        "pricing_notes",
+        "integrations",
+        "use_cases"
+      ]
+    },
+    "compare_page": {
+      "required_fields": [
+        "display_name",
+        "short_description",
+        "pricing_model",
+        "starting_price",
+        "headline_features",
+        "unique_features",
+        "integrations",
+        "score_compare_value",
+        "score_feature_depth",
+        "score_ease_of_use",
+        "score_value_for_money",
+        "score_workflow_fit",
+        "score_trust"
+      ],
+      "table_fields": [
+        "pricing_model",
+        "starting_price",
+        "free_trial",
+        "freemium",
+        "api_access",
+        "integrations",
+        "templates_available",
+        "browser_extension",
+        "mobile_app"
+      ],
+      "summary_fields": [
+        "unique_selling_points",
+        "comparison_axes",
+        "pricing_notes",
+        "use_cases",
+        "skill_levels"
+      ]
+    },
+    "alternatives_page": {
+      "required_fields": [
+        "display_name",
+        "short_description",
+        "alternatives",
+        "primary_competitors",
+        "unique_selling_points",
+        "pricing_model",
+        "starting_price",
+        "score_alternatives_value"
+      ],
+      "selection_logic": "Leader tool + strongest direct substitutes by taxonomy overlap, feature overlap, and buyer overlap."
+    },
+    "use_case_page": {
+      "required_fields": [
+        "use_cases",
+        "display_name",
+        "short_description",
+        "score_workflow_fit",
+        "score_value_for_money",
+        "pricing_model"
+      ],
+      "selection_logic": "Tools explicitly tagged with the exact use case; fallback to capability overlap."
+    },
+    "capability_page": {
+      "required_fields": [
+        "capabilities",
+        "display_name",
+        "short_description",
+        "score_feature_depth",
+        "score_compare_value",
+        "integrations"
+      ],
+      "selection_logic": "Tools tagged with the exact normalized capability."
+    },
+    "integration_page": {
+      "required_fields": [
+        "integrations",
+        "display_name",
+        "short_description",
+        "api_access",
+        "workflow_builder",
+        "score_integration_strength"
+      ],
+      "selection_logic": "Tools with confirmed integration support."
+    }
+  }
+}

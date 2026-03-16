@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "ai-writing",
+    "label": "AI Writing"
+  },
+  {
+    "slug": "ai-video",
+    "label": "AI Video"
+  },
+  {
+    "slug": "ai-image",
+    "label": "AI Image"
+  },
+  {
+    "slug": "ai-coding",
+    "label": "AI Coding"
+  },
+  {
+    "slug": "ai-agents",
+    "label": "AI Agents"
+  },
+  {
+    "slug": "ai-automation",
+    "label": "AI Automation"
+  },
+  {
+    "slug": "ai-search",
+    "label": "AI Search"
+  },
+  {
+    "slug": "ai-productivity",
+    "label": "AI Productivity"
+  },
+  {
+    "slug": "ai-marketing",
+    "label": "AI Marketing"
+  },
+  {
+    "slug": "ai-chatbots",
+    "label": "AI Chatbots"
+  }
+]

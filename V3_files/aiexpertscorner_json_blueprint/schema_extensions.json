@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-14T18:07:26+00:00",
+    "version": "1.0.0"
+  },
+  "recommended_new_fields": [
+    {
+      "field": "data_confidence_score",
+      "type": "number",
+      "priority": "P1",
+      "description": "Overall confidence in the structured record based on source quality and consistency."
+    },
+    {
+      "field": "taxonomy_confidence_score",
+      "type": "number",
+      "priority": "P1",
+      "description": "Confidence that the assigned category, subcategory, and microcategory are correct."
+    },
+    {
+      "field": "pricing_confidence_score",
+      "type": "number",
+      "priority": "P1",
+      "description": "Confidence in pricing truth and plan extraction."
+    },
+    {
+      "field": "competitive_confidence_score",
+      "type": "number",
+      "priority": "P1",
+      "description": "Confidence in compare candidates, alternatives, and competitor graph."
+    },
+    {
+      "field": "content_readiness_score",
+      "type": "number",
+      "priority": "P0",
+      "description": "Whether the record is ready to build indexed content pages."
+    },
+    {
+      "field": "monetization_readiness_score",
+      "type": "number",
+      "priority": "P1",
+      "description": "Commercial value proxy for affiliate and buying-intent pages."
+    },
+    {
+      "field": "manual_review_status",
+      "type": "string",
+      "priority": "P1",
+      "description": "QA workflow state such as pending, reviewed, approved, blocked."
+    },
+    {
+      "field": "affiliate_program_status",
+      "type": "string",
+      "priority": "P1",
+      "description": "Affiliate availability state such as unknown, available, applied, approved, rejected."
+    },
+    {
+      "field": "affiliate_network",
+      "type": "string",
+      "priority": "P1",
+      "description": "Network like PartnerStack, Impact, Rewardful, FirstPromoter, direct."
+    },
+    {
+      "field": "affiliate_url",
+      "type": "string",
+      "priority": "P1",
+      "description": "Canonical affiliate or deep-link URL once approved."
+    },
+    {
+      "field": "affiliate_commission_type",
+      "type": "string",
+      "priority": "P1",
+      "description": "Revenue share, CPA, hybrid, recurring, one-time."
+    },
+    {
+      "field": "affiliate_cookie_days",
+      "type": "integer",
+      "priority": "P2",
+      "description": "Cookie duration in days."
+    },
+    {
+      "field": "source_urls",
+      "type": "array",
+      "priority": "P1",
+      "description": "Per-record provenance URLs used for validation and refresh."
+    },
+    {
+      "field": "last_verified_at",
+      "type": "string",
+      "priority": "P1",
+      "description": "Timestamp of the last full human or trusted-system verification."
+    }
+  ]
+}

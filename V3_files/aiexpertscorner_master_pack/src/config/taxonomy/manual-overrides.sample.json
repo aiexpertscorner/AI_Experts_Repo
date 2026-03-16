@@ -1,0 +1,14 @@
+{
+  "chatgpt": {
+    "category": "ai-chatbots",
+    "subcategory": "general-ai-assistants",
+    "microcategory": "llm-chat-assistants",
+    "use_cases": ["brainstorming", "research-assistance"],
+    "capabilities": ["text-generation", "question-answering"]
+  },
+  "midjourney": {
+    "category": "image-generation",
+    "subcategory": "art-generators",
+    "microcategory": "text-to-image-generators"
+  }
+}

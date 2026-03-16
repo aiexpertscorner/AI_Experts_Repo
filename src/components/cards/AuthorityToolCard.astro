@@ -1,4 +1,3 @@
-```astro
 ---
 import ToolCard from "@/components/cards/ToolCard.astro";
 
@@ -27,34 +26,3 @@ const mergedTool = {
   showCategory={true}
   showCTA={true}
 />
-```
-
----
-
-# 3) Vervang volledig: `src/components/cards/ToolRow.astro`
-
-Ook dit wordt nu een wrapper.
-
-```astro
----
-import ToolCard from "@/components/cards/ToolCard.astro";
-
-interface Props {
-  tool: any;
-  rank?: number;
-}
-
-const { tool, rank } = Astro.props;
----
-
-<ToolCard
-  tool={tool}
-  rank={rank}
-  variant="row"
-  compact={false}
-  showDescription={false}
-  showPricing={true}
-  showCategory={false}
-  showCTA={false}
-/>
-```

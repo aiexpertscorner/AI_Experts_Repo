@@ -1,0 +1,312 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-14T18:07:26+00:00",
+    "version": "1.0.0",
+    "target_project": "AIExpertsCorner",
+    "goal": "Define how fields should be enriched, validated, and rolled out from top100 to full dataset."
+  },
+  "source_priority_framework": {
+    "S1": "Official vendor site, pricing page, documentation, and product UI.",
+    "S2": "Official help center, changelog, onboarding, app store listings, browser extension listing.",
+    "S3": "Trusted third-party signals such as G2, Capterra, Product Hunt, GitHub, public company data.",
+    "S4": "LLM-assisted inference only when grounded in S1-S3 facts."
+  },
+  "generation_methods": {
+    "manual": "Human-curated entry or correction.",
+    "rules": "Deterministic transformation, normalization, mapping, or extraction.",
+    "llm_assisted": "LLM-generated draft grounded in source facts.",
+    "derived": "Formula-based score or field inferred from other structured values."
+  },
+  "tiers": {
+    "tier_a_top100": {
+      "description": "Highest-traffic and highest-commercial-value tools. Treat as hero dataset.",
+      "minimum_completeness_score": 85,
+      "required_priorities": [
+        "P0",
+        "P1"
+      ],
+      "manual_review_required": true,
+      "index_ready_threshold": 90
+    },
+    "tier_b_top1000": {
+      "description": "Money tools and broad category coverage.",
+      "minimum_completeness_score": 65,
+      "required_priorities": [
+        "P0"
+      ],
+      "manual_review_required": false,
+      "index_ready_threshold": 75
+    },
+    "tier_c_long_tail": {
+      "description": "Discovery layer for full-scale directory coverage.",
+      "minimum_completeness_score": 40,
+      "required_priorities": [
+        "P0_subset"
+      ],
+      "manual_review_required": false,
+      "index_ready_threshold": 55
+    }
+  },
+  "p0_subset_for_long_tail": [
+    "id",
+    "name",
+    "slug",
+    "display_name",
+    "short_description",
+    "homepage_url",
+    "category",
+    "subcategory",
+    "microcategory",
+    "use_cases",
+    "capabilities",
+    "pricing_model",
+    "primary_keyword",
+    "seo_title",
+    "meta_description",
+    "data_health",
+    "needs_enrichment",
+    "schema_version",
+    "last_updated_at"
+  ],
+  "enrichment_order": [
+    "identity_and_urls",
+    "taxonomy",
+    "audience_and_intent",
+    "core_features",
+    "ai_stack_and_integrations",
+    "pricing",
+    "reviews_and_trust",
+    "competitive_graph",
+    "seo_geo_aeo",
+    "workflow_automation",
+    "scores_and_qc"
+  ],
+  "completeness_weights": {
+    "identity": 10,
+    "urls": 6,
+    "taxonomy": 16,
+    "audience_intent": 12,
+    "ai_stack": 10,
+    "product_features": 10,
+    "pricing": 12,
+    "reviews_popularity": 6,
+    "competitive_graph": 8,
+    "seo_geo_aeo": 6,
+    "workflow_automation": 2,
+    "operations_qa": 2
+  },
+  "rollout_gates": {
+    "build_index": {
+      "min_content_readiness_score": 80,
+      "min_data_health": "good",
+      "requires": [
+        "category",
+        "use_cases",
+        "capabilities",
+        "pricing_model",
+        "seo_title",
+        "meta_description"
+      ],
+      "forbid_if": [
+        "homepage_url_missing",
+        "slug_duplicate"
+      ]
+    },
+    "build_noindex": {
+      "min_content_readiness_score": 55,
+      "allows_missing": [
+        "faq_items",
+        "workflow_examples",
+        "secondary_competitors"
+      ],
+      "forbid_if": [
+        "homepage_url_missing",
+        "slug_duplicate",
+        "category_missing"
+      ]
+    },
+    "skip": {
+      "when_any": [
+        "name_missing",
+        "slug_missing",
+        "category_missing",
+        "short_description_missing"
+      ]
+    }
+  },
+  "qa_rules": [
+    {
+      "rule_id": "no_empty_primary_taxonomy",
+      "fields": [
+        "category",
+        "subcategory"
+      ],
+      "severity": "high"
+    },
+    {
+      "rule_id": "short_description_word_range",
+      "fields": [
+        "short_description"
+      ],
+      "min_words": 18,
+      "max_words": 35,
+      "severity": "medium"
+    },
+    {
+      "rule_id": "long_description_word_range",
+      "fields": [
+        "long_description"
+      ],
+      "min_words": 80,
+      "max_words": 180,
+      "severity": "medium"
+    },
+    {
+      "rule_id": "seo_title_char_range",
+      "fields": [
+        "seo_title"
+      ],
+      "min_chars": 45,
+      "max_chars": 65,
+      "severity": "medium"
+    },
+    {
+      "rule_id": "meta_description_char_range",
+      "fields": [
+        "meta_description"
+      ],
+      "min_chars": 130,
+      "max_chars": 160,
+      "severity": "medium"
+    },
+    {
+      "rule_id": "compare_candidates_min_for_tier_a",
+      "fields": [
+        "compare_candidates"
+      ],
+      "min_items": 3,
+      "severity": "high"
+    },
+    {
+      "rule_id": "use_cases_specificity",
+      "fields": [
+        "use_cases"
+      ],
+      "min_items": 3,
+      "severity": "high"
+    },
+    {
+      "rule_id": "capabilities_specificity",
+      "fields": [
+        "capabilities"
+      ],
+      "min_items": 3,
+      "severity": "high"
+    },
+    {
+      "rule_id": "pricing_truth_required_for_paid_tools",
+      "fields": [
+        "pricing_model",
+        "starting_price"
+      ],
+      "severity": "high"
+    }
+  ],
+  "source_priority_by_group": {
+    "identity": [
+      "official_site",
+      "docs",
+      "product_ui",
+      "trusted_third_party",
+      "llm_inference"
+    ],
+    "urls": [
+      "official_site",
+      "docs"
+    ],
+    "company_trust": [
+      "official_site",
+      "trusted_third_party",
+      "review_sites",
+      "llm_inference"
+    ],
+    "taxonomy": [
+      "taxonomy_registry",
+      "official_site",
+      "docs",
+      "llm_inference"
+    ],
+    "audience_intent": [
+      "official_site",
+      "docs",
+      "product_ui",
+      "llm_inference"
+    ],
+    "ai_stack": [
+      "official_site",
+      "docs",
+      "product_ui",
+      "llm_inference"
+    ],
+    "product_features": [
+      "official_site",
+      "docs",
+      "product_ui",
+      "llm_inference"
+    ],
+    "pricing": [
+      "pricing_page",
+      "official_site",
+      "docs",
+      "llm_inference"
+    ],
+    "reviews_popularity": [
+      "review_sites",
+      "app_stores",
+      "chrome_store",
+      "product_hunt",
+      "github"
+    ],
+    "scoring": [
+      "derived_formula"
+    ],
+    "seo_geo_aeo": [
+      "derived_intent",
+      "taxonomy_registry",
+      "llm_inference"
+    ],
+    "competitive_graph": [
+      "taxonomy_overlap",
+      "serp_overlap",
+      "feature_overlap",
+      "official_site",
+      "llm_inference"
+    ],
+    "workflow_automation": [
+      "official_site",
+      "docs",
+      "product_ui",
+      "llm_inference"
+    ],
+    "operations_qa": [
+      "derived_formula",
+      "build_pipeline"
+    ]
+  },
+  "generation_method_by_group": {
+    "identity": "manual_or_llm_assisted",
+    "urls": "manual_or_rules",
+    "company_trust": "manual_or_llm_assisted",
+    "taxonomy": "rules_plus_manual_review",
+    "audience_intent": "llm_assisted_plus_manual_review",
+    "ai_stack": "manual_or_llm_assisted",
+    "product_features": "manual_or_llm_assisted",
+    "pricing": "manual_plus_rules",
+    "reviews_popularity": "rules_or_manual",
+    "scoring": "derived",
+    "seo_geo_aeo": "templated_plus_llm_assisted",
+    "competitive_graph": "rules_plus_manual_review",
+    "workflow_automation": "llm_assisted_plus_manual_review",
+    "operations_qa": "derived"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "categories": {
+    "ai-writing": ["ai writing", "writing ai", "copywriting", "blog writing"],
+    "image-generation": ["image ai", "text to image", "ai art generator"]
+  },
+  "subcategories": {
+    "blog-writers": ["blog writer", "seo blog writer", "article writer"]
+  },
+  "microcategories": {
+    "seo-blog-writers": ["seo blog writer", "seo article generator"]
+  },
+  "use_cases": {
+    "write-blog-posts": ["blog posts", "blog writing", "seo articles"]
+  },
+  "capabilities": {
+    "text-generation": ["generate text", "write content", "text generation"]
+  },
+  "industries": {},
+  "integrations": {},
+  "ai_models": {},
+  "tags": {}
+}
