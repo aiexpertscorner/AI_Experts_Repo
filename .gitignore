@@ -1,6 +1,142 @@
+############################################
+# NODE / PACKAGE
+############################################
+
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################################
+# ASTRO BUILD
+############################################
+
 dist/
-.env
 .astro/
+
+############################################
+# ENV
+############################################
+
+.env
+.env.*
+!.env.example
+
+############################################
+# OS / EDITOR
+############################################
+
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+############################################
+# LOGS
+############################################
+
+logs
+*.log
+
+############################################
+# LARGE DATASETS (SOURCE)
+############################################
+
 src/data/tools_production.json
 src/data/tools_search_index.json
+src/data/tools_source.json
+
+############################################
+# DATA PIPELINE OUTPUT
+############################################
+
+data/raw/*.json
+data/staging/**/*.json
+data/master/*.json
+data/build/**/*.json
+data/page-payloads/**/*.json
+data/reports/**/*.json
+
+############################################
+# GENERATED SEO DATASETS
+############################################
+
+src/data/build/*.json
+src/data/build/**/*.json
+
+############################################
+# GENERATED PAGE DATA
+############################################
+
+src/data/page-data/*.json
+src/data/page-data/**/*.json
+
+############################################
+# GENERATED INDEXES
+############################################
+
+src/data/indexes/*.json
+src/data/indexes/**/*.json
+
+############################################
+# TEMP FILES
+############################################
+
+tmp/
+temp/
+.cache/
+
+############################################
+# ARCHIVE FILES
+############################################
+
+*.zip
+*.tar
+*.gz
+*.7z
+
+############################################
+# BACKUPS
+############################################
+
+*.backup
+*.bak
+
+############################################
+# SYSTEM
+############################################
+
+*.pid
+*.seed
+
+############################################
+# LARGE EXPORTS
+############################################
+
+exports/
+exports/**/*.json
+
+############################################
+# OPTIONAL: IGNORE ALL LARGE JSON
+############################################
+
+# Uncomment if repo grows too large
+# *.json
+# !schemas/*.json
+# !blueprints/*.json
+# !config/*.json
+
+############################################
+# ALLOW IMPORTANT JSON
+############################################
+
+!schemas/*.json
+!schemas/**/*.json
+
+!blueprints/*.json
+!blueprints/**/*.json
+
+!config/*.json
+!config/**/*.json
