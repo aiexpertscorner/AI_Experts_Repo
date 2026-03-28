@@ -1,17 +1,19 @@
+import { defineConfig } from "astro/config";
+
 export default defineConfig({
-  output: 'static',
+  output: "static",
   build: {
-    inlineStylesheets: 'always',  // CSS inline ipv losse files
-    assets: '_assets',
+    inlineStylesheets: "always",
+    assets: "_assets",
   },
   vite: {
     build: {
-      cssCodeSplit: false,         // 1 CSS file ipv vele
+      cssCodeSplit: false,
       rollupOptions: {
         output: {
-          manualChunks: undefined, // geen JS splitting
-        }
-      }
-    }
-  }
+          manualChunks: undefined,
+        },
+      },
+    },
+  },
 });
