@@ -54,7 +54,7 @@
   width: 80px; height: 80px;
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: var(--c-bg-card);
+  background: #ffffff;
   border: 1px solid var(--c-border-soft);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
