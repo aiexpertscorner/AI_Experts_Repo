@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-10T20:34:51.353Z",
+  "generated_at": "2026-03-16T23:20:04.643Z",
   "script_version": "v6",
-  "source_file": "E:\\2026_AI_EXPERT\\src\\data\\tools_source.json",
-  "output_file": "E:\\2026_AI_EXPERT\\src\\data\\tools_production.json",
-  "search_index_file": "E:\\2026_AI_EXPERT\\src\\data\\tools_search_index.json",
+  "source_file": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\tools_source.json",
+  "output_file": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\tools_production.json",
+  "search_index_file": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\tools_search_index.json",
   "total_tools": 19466,
   "public_tools": 19067,
   "hidden_tools": 399,
@@ -12,48 +12,47 @@
   "canonical_tools": 19068,
   "duplicate_tools": 1475,
   "non_canonical_duplicates": 398,
-  "ready_tools": 18511,
-  "needs_review_tools": 556,
+  "ready_tools": 18640,
+  "needs_review_tools": 427,
   "thin_tools": 1,
   "dead_tools": 0,
   "invalid_tools": 0,
   "partnerstack_matches": 0,
-  "prompt_library_candidates": 5646,
-  "news_relevant_tools": 3018,
-  "other_ai_tools_public_count": 2299,
-  "productivity_public_count": 354,
+  "prompt_library_candidates": 4449,
+  "news_relevant_tools": 2085,
+  "other_ai_tools_public_count": 0,
+  "productivity_public_count": 9185,
   "poor_data_health_count": 1,
   "fair_data_health_count": 899,
   "good_data_health_count": 18334,
   "strong_data_health_count": 232,
   "category_distribution": {
-    "Other AI Tools": 2299,
-    "Writing & Content": 1758,
-    "Chatbots & LLMs": 1714,
-    "3D & AR": 1509,
-    "Design & UI": 1273,
-    "Coding & Dev": 1019,
-    "Research & Education": 968,
-    "Audio & Music": 939,
-    "Data & Analytics": 883,
-    "HR & Recruiting": 720,
-    "SEO & Marketing": 717,
-    "AI Agents": 687,
-    "Image Generation": 652,
-    "Sales & CRM": 481,
-    "Social Media": 447,
-    "Legal & Finance": 447,
-    "Video Generation": 429,
-    "Translation": 429,
+    "Productivity": 9185,
+    "Writing & Content": 1296,
+    "Chatbots & LLMs": 1236,
+    "Research & Education": 693,
+    "Image Generation": 616,
+    "Audio & Music": 568,
+    "SEO & Marketing": 406,
+    "Video Generation": 404,
+    "AI Agents": 395,
+    "Translation": 394,
+    "Sales & CRM": 391,
+    "HR & Recruiting": 390,
+    "Social Media": 384,
     "E-Commerce": 381,
-    "Productivity": 354,
-    "Health & Wellness": 337,
-    "Customer Service": 320,
-    "Photo Editing": 304
+    "Legal & Finance": 375,
+    "Coding & Dev": 318,
+    "Health & Wellness": 312,
+    "Customer Service": 310,
+    "Design & UI": 306,
+    "Photo Editing": 301,
+    "Data & Analytics": 285,
+    "3D & AR": 121
   },
   "average_display_score": 42,
-  "average_prompt_library_score": 35,
-  "average_news_relevance_score": 16,
+  "average_prompt_library_score": 34,
+  "average_news_relevance_score": 13,
   "top_tools": [
     {
       "handle": "presbot",
@@ -570,11 +569,6 @@
       "prompt_library_score": 72
     },
     {
-      "handle": "letterdrop",
-      "name": "Letterdrop",
-      "prompt_library_score": 72
-    },
-    {
       "handle": "posterstudio",
       "name": "Posterstudio",
       "prompt_library_score": 72
@@ -623,6 +617,11 @@
       "handle": "fyli",
       "name": "Fyli",
       "prompt_library_score": 72
+    },
+    {
+      "handle": "getmax",
+      "name": "Getmax",
+      "prompt_library_score": 72
     }
   ],
   "top_news_candidates": [
@@ -644,11 +643,6 @@
     {
       "handle": "orionox",
       "name": "Orionox",
-      "news_relevance_score": 59
-    },
-    {
-      "handle": "goless-extension-automation",
-      "name": "Goless Extension Automation",
       "news_relevance_score": 59
     },
     {
@@ -697,34 +691,39 @@
       "news_relevance_score": 59
     },
     {
-      "handle": "live-minder",
-      "name": "Live Minder",
-      "news_relevance_score": 59
-    },
-    {
-      "handle": "podulateai",
-      "name": "Podulateai",
-      "news_relevance_score": 59
-    },
-    {
       "handle": "testnut",
       "name": "Testnut",
       "news_relevance_score": 59
     },
     {
-      "handle": "usechatgpt-ai",
-      "name": "Usechatgpt Ai",
-      "news_relevance_score": 59
+      "handle": "docmonster",
+      "name": "Docmonster",
+      "news_relevance_score": 57
     },
     {
-      "handle": "lunabot",
-      "name": "Lunabot",
-      "news_relevance_score": 59
+      "handle": "teamsmart",
+      "name": "Teamsmart",
+      "news_relevance_score": 57
     },
     {
-      "handle": "replyio-com",
-      "name": "Replyio",
-      "news_relevance_score": 59
+      "handle": "devwrits",
+      "name": "Devwrits",
+      "news_relevance_score": 57
+    },
+    {
+      "handle": "supermemory-1",
+      "name": "Supermemory 1",
+      "news_relevance_score": 57
+    },
+    {
+      "handle": "rdmc-ai-digital-marketing-agency",
+      "name": "Rdmc Ai Digital Marketing Agency",
+      "news_relevance_score": 51
+    },
+    {
+      "handle": "botdistrikt",
+      "name": "Botdistrikt",
+      "news_relevance_score": 51
     }
   ],
   "top_duplicate_groups": [
@@ -746,7 +745,7 @@
     {
       "duplicate_group": "humanizer",
       "count": 5,
-      "canonical_handle": "ai-humanizer-by-hummanizerpro"
+      "canonical_handle": "humanizer-ai"
     },
     {
       "duplicate_group": "undress",
@@ -771,7 +770,7 @@
     {
       "duplicate_group": "viva",
       "count": 3,
-      "canonical_handle": "viva-labs"
+      "canonical_handle": "viva"
     },
     {
       "duplicate_group": "cowriter",
@@ -806,7 +805,7 @@
     {
       "duplicate_group": "anime generator",
       "count": 3,
-      "canonical_handle": "ai-anime-generator"
+      "canonical_handle": "anime-ai-generator"
     },
     {
       "duplicate_group": "socratic",

@@ -140,3 +140,4 @@ exports/**/*.json
 
 !config/*.json
 !config/**/*.json
+/live-versie
