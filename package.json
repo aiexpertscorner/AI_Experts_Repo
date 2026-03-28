@@ -5,9 +5,7 @@
   "scripts": {
     "dev":         "astro dev",
     "split":       "node scripts/split-tool-map.mjs",
-    "prebuild":    "node scripts/split-tool-map.mjs",
-    "build":       "astro build",
-    "build:prod":  "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
+    "build":       "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
     "preview":     "astro preview",
 
     "enrich":      "node scripts/enrich-tools-v6.mjs --skip-http",
@@ -17,13 +15,13 @@
     "featured":    "node scripts/build-featured.mjs",
     "master:build":"node scripts/build-tools-master.mjs",
 
-    "datasets":         "node scripts/build-seo-datasets.mjs",
-    "datasets:medium":  "cross-env TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
-    "datasets:full":    "cross-env TOOL_PAGE_LIMIT=19088 COMPARE_PAGE_LIMIT=10000 ALT_PAGE_LIMIT=19088 node scripts/build-seo-datasets.mjs",
+    "datasets":        "node scripts/build-seo-datasets.mjs",
+    "datasets:medium": "cross-env TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
+    "datasets:full":   "cross-env TOOL_PAGE_LIMIT=19088 COMPARE_PAGE_LIMIT=10000 ALT_PAGE_LIMIT=19088 node scripts/build-seo-datasets.mjs",
 
-    "pipeline":         "node scripts/inject-canonical-tools.mjs && node scripts/build-seo-datasets.mjs && node scripts/build-authority-datasets.mjs",
-    "pipeline:medium":  "node scripts/inject-canonical-tools.mjs && npm run datasets:medium && node scripts/build-authority-datasets.mjs",
-    "pipeline:full":    "node scripts/inject-canonical-tools.mjs && npm run datasets:full && node scripts/build-authority-datasets.mjs",
+    "pipeline":        "node scripts/inject-canonical-tools.mjs && node scripts/build-seo-datasets.mjs && node scripts/build-authority-datasets.mjs",
+    "pipeline:medium": "node scripts/inject-canonical-tools.mjs && npm run datasets:medium && node scripts/build-authority-datasets.mjs",
+    "pipeline:full":   "node scripts/inject-canonical-tools.mjs && npm run datasets:full && node scripts/build-authority-datasets.mjs",
 
     "audit:data-layers":  "node scripts/audit-data-layers.mjs",
     "audit:project-data": "node scripts/audit-project-data-landscape.mjs"
