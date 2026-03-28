@@ -5,7 +5,13 @@
   "scripts": {
     "dev":         "astro dev",
     "split":       "node scripts/split-tool-map.mjs",
+<<<<<<< Updated upstream
     "build":       "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
+=======
+    "prebuild":     "node scripts/trim-for-build.mjs",
+    "build":       "astro build",
+    "build:prod":  "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
+>>>>>>> Stashed changes
     "preview":     "astro preview",
 
     "enrich":      "node scripts/enrich-tools-v6.mjs --skip-http",
