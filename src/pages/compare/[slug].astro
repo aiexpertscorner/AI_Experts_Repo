@@ -1,15 +1,14 @@
 ---
 /**
  * src/pages/compare/[slug].astro
- * Compare two AI tools side by side.
  */
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header     from "@/components/site/Header.astro";
 import Footer     from "@/components/site/Footer.astro";
-import ToolCard   from "@/components/cards/ToolCard.astro";
 import ToolLogo   from "@/components/ui/ToolLogo.astro";
 import Badge      from "@/components/ui/Badge.astro";
 import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/pages.css";
 
 import comparePagesRaw from "@/data/build/page-payloads/compare-pages-rich.json";
 
@@ -30,7 +29,7 @@ const b = page.tool_b;
 const nameA = a.name || a.slug;
 const nameB = b.name || b.slug;
 
-const title       = page.seo?.title       || `${nameA} vs ${nameB} — Full Comparison 2026`;
+const title       = page.seo?.title       || `${nameA} vs ${nameB} — Full Comparison ${new Date().getFullYear()}`;
 const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: features, pricing, pros & cons.`;
 ---
 
@@ -60,45 +59,22 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
         <p class="compare-page__subtitle">Side-by-side comparison — features, pricing, pros & cons.</p>
 
         <div class="compare-page__heroes">
-
           <!-- Tool A -->
           <div class="compare-hero-card">
-            <div class="compare-hero-card__logo">
-              <ToolLogo
-                slug={a.slug}
-                name={nameA}
-                logoUrl={a.logo_url}
-                logoDomain={a.logo_domain}
-                size={72}
-                loading="eager"
-              />
-            </div>
+            <ToolLogo slug={a.slug} name={nameA} logoUrl={a.logo_url} size={72} loading="eager" />
             <h2 class="compare-hero-card__name">{nameA}</h2>
             <Badge tier={a.pricing_tier || "unknown"} />
-            <a href={`/tools/${a.slug}`} class="compare-hero-card__cta btn btn--secondary btn--sm">
-              View {nameA}
-            </a>
+            <a href={`/tools/${a.slug}`} class="btn btn--secondary btn--sm">View {nameA}</a>
           </div>
 
           <div class="compare-page__vs">VS</div>
 
           <!-- Tool B -->
           <div class="compare-hero-card">
-            <div class="compare-hero-card__logo">
-              <ToolLogo
-                slug={b.slug}
-                name={nameB}
-                logoUrl={b.logo_url}
-                logoDomain={b.logo_domain}
-                size={72}
-                loading="eager"
-              />
-            </div>
+            <ToolLogo slug={b.slug} name={nameB} logoUrl={b.logo_url} size={72} loading="eager" />
             <h2 class="compare-hero-card__name">{nameB}</h2>
             <Badge tier={b.pricing_tier || "unknown"} />
-            <a href={`/tools/${b.slug}`} class="compare-hero-card__cta btn btn--secondary btn--sm">
-              View {nameB}
-            </a>
+            <a href={`/tools/${b.slug}`} class="btn btn--secondary btn--sm">View {nameB}</a>
           </div>
         </div>
       </div>
@@ -117,18 +93,18 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
     )}
 
     <!-- Overview -->
-    {(a.long_description || b.long_description) && (
+    {(a.description || b.description) && (
       <section class="compare-page__section">
         <div class="container">
           <h2 class="compare-section__title">Overview</h2>
           <div class="compare-page__cols">
             <div class="compare-col">
               <h3>{nameA}</h3>
-              <p>{a.long_description || a.description || a.name}</p>
+              <p>{a.long_description || a.description || ""}</p>
             </div>
             <div class="compare-col">
               <h3>{nameB}</h3>
-              <p>{b.long_description || b.description || b.name}</p>
+              <p>{b.long_description || b.description || ""}</p>
             </div>
           </div>
         </div>
@@ -136,7 +112,7 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
     )}
 
     <!-- Pros & Cons -->
-    {(a.pros?.length || b.pros?.length) && (
+    {(a.pros?.length > 0 || b.pros?.length > 0) && (
       <section class="compare-page__section">
         <div class="container">
           <h2 class="compare-section__title">Pros & Cons</h2>
@@ -149,7 +125,7 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
                 </ul>
               )}
               {a.cons?.length > 0 && (
-                <ul class="compare-list compare-list--cons">
+                <ul class="compare-list compare-list--cons" style="margin-top:.75rem">
                   {a.cons.map((c: string) => <li>{c}</li>)}
                 </ul>
               )}
@@ -162,7 +138,7 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
                 </ul>
               )}
               {b.cons?.length > 0 && (
-                <ul class="compare-list compare-list--cons">
+                <ul class="compare-list compare-list--cons" style="margin-top:.75rem">
                   {b.cons.map((c: string) => <li>{c}</li>)}
                 </ul>
               )}
@@ -180,17 +156,27 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
           <div class="compare-col">
             <h3>{nameA}</h3>
             <Badge tier={a.pricing_tier || "unknown"} />
+            {a.website_url && (
+              <a href={a.website_url} class="btn btn--primary" target="_blank" rel="noopener noreferrer" style="margin-top:1rem">
+                Visit {nameA} →
+              </a>
+            )}
           </div>
           <div class="compare-col">
             <h3>{nameB}</h3>
             <Badge tier={b.pricing_tier || "unknown"} />
+            {b.website_url && (
+              <a href={b.website_url} class="btn btn--primary" target="_blank" rel="noopener noreferrer" style="margin-top:1rem">
+                Visit {nameB} →
+              </a>
+            )}
           </div>
         </div>
       </div>
     </section>
 
     <!-- Best For -->
-    {(a.best_for_profiles?.length || b.best_for_profiles?.length) && (
+    {(a.best_for_profiles?.length > 0 || b.best_for_profiles?.length > 0) && (
       <section class="compare-page__section">
         <div class="container">
           <h2 class="compare-section__title">Best For</h2>
@@ -248,6 +234,7 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
       </div>
     </section>
 
+    <!-- SEO footer links -->
     <div class="container">
       <div class="seo-links">
         <a href="/compare">All comparisons</a>
@@ -255,6 +242,7 @@ const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: feat
         <a href="/best">Best-of lists</a>
         <a href={`/tools/${a.slug}`}>{nameA}</a>
         <a href={`/tools/${b.slug}`}>{nameB}</a>
+        {a.category && <a href={`/tools/category/${a.category}`}>More {nameA.split(" ")[0]} tools</a>}
       </div>
     </div>
 
