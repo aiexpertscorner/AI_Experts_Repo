@@ -1,0 +1,97 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import ToolCard   from "@/components/cards/ToolCard.astro";
+import "@/styles/taxonomy.css";
+
+import pagesRaw   from "@/data/build/page-payloads/model-pages.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+export async function getStaticPaths() {
+  const pages = (pagesRaw as any[]).filter((p: any) => p && (p.slug || p.entity_slug || p.primary));
+  return pages.map((page: any) => ({
+    params: { slug: (page.slug || page.entity_slug || page.primary) as string },
+    props:  { page },
+  }));
+}
+
+const { page }  = Astro.props as { page: any };
+const logoMap    = logoMapRaw as Record<string, string>;
+const slug       = page.slug || page.entity_slug || page.primary || Astro.params.slug;
+
+const seo   = page.seo  || {};
+const meta  = page.meta || {};
+const name  = meta.name || seo.name || (slug as string).replace(/-/g," ").replace(/\b\w/g,(l:string)=>l.toUpperCase());
+const desc  = meta.description || seo.description || "";
+
+const rawTools = (page.top_tools || page.tools || []) as any[];
+const tools = rawTools
+  .filter((t:any) => t?.slug || t?.handle)
+  .map((t:any) => ({
+    ...t,
+    slug: t.slug || t.handle,
+    logo_url: t.logo_url || logoMap[t.slug||t.handle] || null,
+  }));
+
+const toolCount = page.count || tools.length;
+const pageTitle = seo.title || `Best ${name} AI Tools 2026`;
+const pageDesc  = seo.description || desc || `Discover ${toolCount}+ AI tools for ${name}.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Header slot="header" />
+  <div class="tax">
+    <nav class="tax__bc" aria-label="Breadcrumb">
+      <div class="tax__c">
+        <a href="/">Home</a><span>›</span>
+        <a href="/tools">AI Tools</a><span>›</span>
+        <span>›</span><span>{name}</span>
+      </div>
+    </nav>
+    <section class="tax__hero">
+      <div class="tax__c">
+        <span class="tax__eyebrow tax__eyebrow--violet">AI Model</span>
+        <h1 class="tax__h1">Best AI Tools for <span style="color:#3B82F6">{name}</span></h1>
+        {desc && <p class="tax__desc">{desc}</p>}
+        <div class="tax__meta">
+          <div class="tax__meta-item"><strong>{toolCount}</strong> tools</div>
+          <div class="tax__meta-item">Updated 2026</div>
+        </div>
+      </div>
+    </section>
+    <div class="tax__c tax__body">
+      <div class="tax__main">
+        {tools.length > 0 ? (
+          <>
+            <p class="tax__main-title">{toolCount} AI tools for {name}</p>
+            <div class="tools-grid">
+              {tools.map((t:any) => (
+                <ToolCard tool={t} showDescription={true} showPricing={true} showCategory={true} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <div class="tax__empty">
+            <strong>No tools found yet</strong>
+            <a href="/tools" class="tax__sb-link">Browse all AI tools →</a>
+          </div>
+        )}
+        
+      </div>
+      <aside class="tax__sidebar">
+        <div class="tax__sb-card">
+          <p class="tax__sb-title">Explore more</p>
+          <div class="tax__sb-links">
+            
+            <a href="/tools" class="tax__sb-link">All AI tools →</a>
+            <a href="/compare" class="tax__sb-link">Compare tools →</a>
+            <a href="/best" class="tax__sb-link">Best-of lists →</a>
+            <a href="/alternatives" class="tax__sb-link">Find alternatives →</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <Footer slot="footer" />
+</BaseLayout>

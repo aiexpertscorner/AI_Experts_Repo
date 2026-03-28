@@ -1,0 +1,140 @@
+---
+/**
+ * src/pages/tools/category/[slug].astro
+ * Geen inline <style> — alle CSS in components.css + layout.css
+ */
+import BaseLayout    from "@/layouts/BaseLayout.astro";
+import Header        from "@/components/site/Header.astro";
+import Footer        from "@/components/site/Footer.astro";
+import ToolCard      from "@/components/cards/ToolCard.astro";
+import Breadcrumb    from "@/components/ui/Breadcrumb.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import EmptyState    from "@/components/ui/EmptyState.astro";
+
+import slugData   from "@/data/build/category-paths.json";
+import mapData    from "@/data/build/category-map.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+
+export function getStaticPaths() {
+  return (slugData as string[]).filter(Boolean).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const entry    = (mapData as any)[slug!];
+if (!entry) return Astro.redirect("/tools");
+
+const { name = slug, tools = [], count, description = "", seo_title, seo_description } = entry;
+
+const enrichedTools = (tools as any[]).map((t: any) => ({
+  ...t,
+  logo_url: logoMap[t.slug || t.handle] || t.logo_url || null,
+}));
+
+const totalCount    = Number(count ?? enrichedTools.length);
+const freeCount     = enrichedTools.filter(t => (t.pricing_tier || "").toLowerCase() === "free").length;
+const freemiumCount = enrichedTools.filter(t => (t.pricing_tier || "").toLowerCase() === "freemium").length;
+
+const pageTitle = seo_title       || `Best ${name} AI Tools 2026`;
+const pageDesc  = seo_description || `Discover the ${totalCount} best ${(name as string).toLowerCase()} tools. Compare pricing, features and find the right fit.`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": pageTitle,
+  "description": pageDesc,
+  "url": `https://aiexpertscorner.com/tools/category/${slug}`,
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <Header slot="header" />
+
+  <div class="page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[
+        { label: "Home",     href: "/" },
+        { label: "AI Tools", href: "/tools" },
+        { label: name as string },
+      ]} />
+
+      <div class="cat-page-hero">
+        <span class="hub-hero-badge">Category</span>
+        <h1 class="hub-hero-title">{pageTitle}</h1>
+        {description && <p class="hub-hero-desc">{description}</p>}
+        <div class="cat-stats">
+          <div class="cat-stat">
+            <strong>{totalCount.toLocaleString()}</strong>
+            <span>Tools</span>
+          </div>
+          {freeCount > 0 && (
+            <div class="cat-stat">
+              <strong class="stat-free">{freeCount}</strong>
+              <span>Free</span>
+            </div>
+          )}
+          {freemiumCount > 0 && (
+            <div class="cat-stat">
+              <strong class="stat-frm">{freemiumCount}</strong>
+              <span>Freemium</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <section class="section">
+        <SectionHeader
+          eyebrow={name as string}
+          title={`${totalCount}+ ${name} AI Tools`}
+        />
+        {enrichedTools.length > 0 ? (
+          <div class="grid-tools">
+            {enrichedTools.slice(0, 48).map((t: any, i: number) => (
+              <ToolCard tool={t} rank={i + 1} showDescription={true} showPricing={true} showCategory={false} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState message={`No tools found for ${name}.`} />
+        )}
+      </section>
+
+      <div class="related-browse">
+        <h2 class="section-title" style="margin-bottom:var(--sp-4)">Browse Related</h2>
+        <div class="chips">
+          <a href="/tools"              class="chip">← All AI Tools</a>
+          <a href="/tools/pricing/free" class="chip">🆓 Free Tools</a>
+          <a href="/tools/pricing/freemium" class="chip">✨ Freemium</a>
+          <a href={`/best/${slug}`}     class="chip">🏆 Best of {name}</a>
+          <a href="/compare"            class="chip">⚔️ Compare Tools</a>
+          <a href="/alternatives"       class="chip">🔀 Alternatives</a>
+        </div>
+      </div>
+
+      <div class="seo-links">
+        <a href="/tools">All AI Tools</a>
+        <a href="/compare">Compare Tools</a>
+        <a href="/best">Best-Of Lists</a>
+        <a href="/alternatives">Find Alternatives</a>
+        <a href="/use-case">By Use Case</a>
+        <a href="/industry">By Industry</a>
+        <a href={`/best/${slug}`}>Best {name} Tools</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+.cat-page-hero {
+  padding: var(--sp-8) 0 var(--sp-10);
+  border-bottom: 1px solid var(--c-border);
+  margin-bottom: var(--sp-10);
+}
+</style>

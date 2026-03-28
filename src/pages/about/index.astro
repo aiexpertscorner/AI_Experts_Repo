@@ -1,0 +1,128 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/trust-pages.css";
+
+const title = "About AIExpertsCorner — The #1 AI Tools Directory";
+const desc  = "We help professionals and builders discover, compare and choose the right AI tools for every workflow.";
+---
+
+<BaseLayout title={title} description={desc}>
+  <Header slot="header" />
+
+  <div class="trust-page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[{ label:"Home", href:"/" }, { label:"About" }]} />
+
+      <div class="trust-hero">
+        <span class="trust-hero__icon">🧭</span>
+        <h1 class="trust-hero__title">About AIExpertsCorner</h1>
+        <p class="trust-hero__sub">
+          We help professionals, teams and builders discover, compare and choose the right AI tools — for free, without bias.
+        </p>
+        <span class="trust-hero__meta">Founded 2024 · Amsterdam, NL</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat__value">19K+</span>
+          <span class="about-stat__label">AI Tools</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat__value">23</span>
+          <span class="about-stat__label">Categories</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat__value">3K+</span>
+          <span class="about-stat__label">Comparisons</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat__value">Daily</span>
+          <span class="about-stat__label">Updated</span>
+        </div>
+      </div>
+
+      <div class="trust-content">
+
+        <section class="trust-section">
+          <h2 class="trust-section__title">Our mission</h2>
+          <div class="trust-section__body">
+            <p>The AI tools landscape is exploding. There are tens of thousands of tools across hundreds of categories — and the number is growing every week. Finding the right tool for your workflow shouldn't require hours of research, Reddit threads and YouTube reviews.</p>
+            <p>AIExpertsCorner exists to solve that problem. We index, categorize and compare AI tools so you can find the best option for your specific need in minutes, not hours.</p>
+          </div>
+        </section>
+
+        <section class="trust-section">
+          <h2 class="trust-section__title">What we do</h2>
+          <div class="trust-section__body">
+            <ul>
+              <li><strong>Index and categorize</strong> 19,000+ AI tools across 23 categories, 80 subcategories and 240 microcategories.</li>
+              <li><strong>Side-by-side comparisons</strong> for 3,000+ tool pairs — pricing, features, pros and cons.</li>
+              <li><strong>Best-of lists</strong> for every category, use case and industry — expert-ranked and regularly updated.</li>
+              <li><strong>Taxonomy discovery</strong> — find tools by capability, industry, workflow stage, integration and more.</li>
+              <li><strong>Alternatives</strong> — for every popular tool, we surface the best alternatives with clear reasons to switch.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Values -->
+        <section class="trust-section">
+          <h2 class="trust-section__title">Our values</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <span class="value-card__icon">🔍</span>
+              <div class="value-card__title">Completeness</div>
+              <div class="value-card__desc">We aim to index every meaningful AI tool, not just the popular ones. Long-tail tools matter too.</div>
+            </div>
+            <div class="value-card">
+              <span class="value-card__icon">⚖️</span>
+              <div class="value-card__title">Impartiality</div>
+              <div class="value-card__desc">Our rankings are based on objective signals. We never accept payment to boost a tool's position.</div>
+            </div>
+            <div class="value-card">
+              <span class="value-card__icon">🔄</span>
+              <div class="value-card__title">Freshness</div>
+              <div class="value-card__desc">The AI space moves fast. We update our database and rankings daily to reflect the current state.</div>
+            </div>
+            <div class="value-card">
+              <span class="value-card__icon">🆓</span>
+              <div class="value-card__title">Free access</div>
+              <div class="value-card__desc">Every tool listing, comparison and best-of list is freely accessible — no account, no paywall.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-section">
+          <h2 class="trust-section__title">Affiliate disclosure</h2>
+          <div class="trust-section__body">
+            <div class="trust-callout">
+              Some links on AIExpertsCorner are affiliate links. When you click a sponsored link and make a purchase, we may earn a commission at no additional cost to you. This helps us keep the directory free.
+            </div>
+            <p>Affiliate relationships do not influence tool rankings or editorial content. Tools are evaluated on objective criteria regardless of whether they have an affiliate program.</p>
+          </div>
+        </section>
+
+        <section class="trust-section">
+          <h2 class="trust-section__title">Contact us</h2>
+          <div class="trust-section__body">
+            <p>Have a question, found an error, or want to submit a tool? We'd love to hear from you.</p>
+            <p><a href="/contact">Go to the contact page →</a></p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="trust-back">
+        <a href="/">← Back to home</a>
+        <a href="/tools">Browse AI tools →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

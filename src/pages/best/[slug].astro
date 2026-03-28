@@ -1,39 +1,152 @@
 ---
+/**
+ * src/pages/best/[slug].astro
+ * Handles BOTH best-pages.json (518) AND best-cluster-pages.json (562)
+ * Total: 1080 best-of pages
+ */
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/site/Header.astro";
-import Footer from "@/components/site/Footer.astro";
-import Breadcrumbs from "@/components/site/Breadcrumbs.astro";
-import ToolCard from "@/components/cards/ToolCard.astro";
-import bestMap from "@/data/build/best-of-map.json";
-import bestPaths from "@/data/build/best-of-paths.json";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import ToolCard   from "@/components/cards/ToolCard.astro";
+import "@/styles/taxonomy.css";
 
-export function getStaticPaths() {
-  return (bestPaths as string[]).map(slug => ({ params: { slug } }));
+import bestPagesRaw    from "@/data/build/page-payloads/best-pages.json";
+import clusterPagesRaw from "@/data/build/page-payloads/best-cluster-pages.json";
+import logoMapRaw      from "@/data/build/logo-map.json";
+
+export async function getStaticPaths() {
+  const logoMap = logoMapRaw as Record<string,string>;
+
+  function enrichTools(tools: any[]) {
+    return (tools || [])
+      .filter((t:any) => t?.slug || t?.handle)
+      .map((t:any) => ({
+        ...t,
+        slug: t.slug || t.handle,
+        logo_url: t.logo_url || logoMap[t.slug||t.handle] || null,
+      }));
+  }
+
+  const best = (bestPagesRaw as any[])
+    .filter((p:any) => p?.slug || p?.route)
+    .map((p:any) => {
+      const slug = p.slug || (p.route || "").replace("/best/","");
+      return { params: { slug }, props: { page: { ...p, slug, top_tools: enrichTools(p.top_tools||[]), is_cluster: false } } };
+    });
+
+  const clusters = (clusterPagesRaw as any[])
+    .filter((p:any) => p?.primary || p?.slug)
+    .map((p:any) => {
+      const slug = p.slug || p.primary;
+      // Avoid duplicates with best-pages
+      if (best.some(b => b.params.slug === slug)) return null;
+      return { params: { slug }, props: { page: { ...p, slug, top_tools: enrichTools(p.top_tools||[]), is_cluster: true } } };
+    })
+    .filter(Boolean);
+
+  return [...best, ...clusters];
 }
 
-const { slug } = Astro.params;
-const entry = (bestMap as any)[slug!];
-if (!entry) return Astro.redirect('/best');
-const { name, tools=[], description, count } = entry;
+const { page }   = Astro.props as { page: any };
+const logoMap    = logoMapRaw as Record<string,string>;
+const slug       = page.slug || Astro.params.slug;
+
+const seo        = page.seo || {};
+const meta       = page.meta || {};
+const tools      = page.top_tools || [];
+const toolCount  = page.count || tools.length;
+const isCluster  = page.is_cluster || false;
+
+function tc(s: string) {
+  return (s||"").replace(/-/g," ").replace(/\b\w/g,(l:string)=>l.toUpperCase());
+}
+
+const name       = meta.name || seo.name || tc(slug);
+const desc       = meta.description || seo.description || page.intro || "";
+const dimensions = [page.primary, page.secondary, page.tertiary].filter(Boolean).map(tc);
+
+const pageTitle  = seo.title      || `Best ${name} Tools 2026 — Top ${toolCount} AI Tools`;
+const pageDesc   = seo.description || desc || `The best AI tools for ${name}. Expert-ranked list of ${toolCount}+ options.`;
+
+// Related best-of links from clusters
+const relatedSlugs = (page.related_slugs || page.related || []).slice(0,6) as string[];
 ---
-<BaseLayout title={`Best ${name} — Top AI Tools`} description={description ?? `The best AI tools for ${name}, ranked and reviewed.`}>
-  <Header slot="header"/>
-  <div class="container">
-    <Breadcrumbs crumbs={[{label:"Best Of", href:"/best"}, {label:`Best ${name}`}]}/>
-    <div class="dim-header">
-      <span class="badge badge-featured">🏆 Best Of</span>
-      <h1>Best {name}</h1>
-      <p>{description ?? `The top-ranked AI tools for ${name}.`}</p>
-      <div class="dim-meta">
-        <div class="dim-meta-item"><strong>{count ?? tools.length}</strong> tools ranked</div>
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context":"https://schema.org","@type":"ItemList",
+      "name": pageTitle, "description": pageDesc,
+      "url": `https://aiexpertscorner.com/best/${slug}`,
+      "numberOfItems": toolCount,
+    })} />
+  </Fragment>
+  <Header slot="header" />
+
+  <div class="tax">
+    <nav class="tax__bc" aria-label="Breadcrumb">
+      <div class="tax__c">
+        <a href="/">Home</a><span>›</span>
+        <a href="/best">Best Of</a>
+        <span>›</span><span>{name}</span>
       </div>
-    </div>
-    <div class="grid-tools">
-      {tools.slice(0,24).map((t:any, i:number) => <ToolCard tool={t} rank={i+1}/>)}
+    </nav>
+
+    <section class="tax__hero">
+      <div class="tax__c">
+        <span class="tax__eyebrow tax__eyebrow--amber">🏆 Best Of</span>
+        <h1 class="tax__h1">Best {name} Tools</h1>
+        {dimensions.length > 1 && (
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+            {dimensions.map((d:string) => (
+              <span class="tax-tag">{d}</span>
+            ))}
+          </div>
+        )}
+        {desc && <p class="tax__desc">{desc}</p>}
+        <div class="tax__meta">
+          <div class="tax__meta-item"><strong>{toolCount}</strong>&nbsp;tools ranked</div>
+          <div class="tax__meta-item">Updated 2026</div>
+          {isCluster && <div class="tax__meta-item" style="color:#8B5CF6">Cross-category list</div>}
+        </div>
+      </div>
+    </section>
+
+    <div class="tax__c tax__body">
+      <div class="tax__main">
+        {tools.length > 0 ? (
+          <>
+            <p class="tax__main-title">Top {toolCount} AI tools for {name}</p>
+            <div class="tools-grid">
+              {tools.map((t:any, i:number) => (
+                <ToolCard tool={t} rank={i+1} showDescription={true} showPricing={true} showCategory={true} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <div class="tax__empty">
+            <strong>List coming soon</strong>
+            <a href="/best" class="tax__sb-link">Browse all best-of lists →</a>
+          </div>
+        )}
+      </div>
+
+      <aside class="tax__sidebar">
+        <div class="tax__sb-card">
+          <p class="tax__sb-title">Explore more</p>
+          <div class="tax__sb-links">
+            <a href="/best" class="tax__sb-link">All best-of lists →</a>
+            <a href="/compare" class="tax__sb-link">Compare tools →</a>
+            <a href="/alternatives" class="tax__sb-link">Find alternatives →</a>
+            <a href="/tools" class="tax__sb-link">Browse all tools →</a>
+            {relatedSlugs.map((s:string) => (
+              <a href={`/best/${s}`} class="tax__sb-link">Best {tc(s)} tools →</a>
+            ))}
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
-  <Footer slot="footer"/>
+
+  <Footer slot="footer" />
 </BaseLayout>
-<style is:global>
-@import "@/styles/dimension-page.css";
-</style>

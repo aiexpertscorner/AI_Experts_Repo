@@ -1,1 +1,1193 @@
-{"generated_at":"2026-03-12T23:40:30.179Z","total_tools":19088,"total_cats":23,"total_compare":73216,"total_bestof":95,"featured_tools":[{"handle":"chatgpt","slug":"chatgpt","name":"ChatGPT","tagline":"ChatGPT — AI Chatbot by OpenAI","description":"ChatGPT is OpenAI's conversational AI assistant used by millions for writing, coding, research, and more.","pricing_tier":"freemium","logo_domain":"openai.com","logo_url":"","website_url":"https://chatgpt.com","affiliate_url":"","category":"Chatbots & LLMs","category_slug":"chatbots-and-llms","feature_tags":["chatbot","llm","writing","coding","research"],"use_cases":[],"industries":[],"display_score":99999,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"ChatGPT — AI Chatbot by OpenAI","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99999,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"google-gemini","slug":"google-gemini","name":"Google Gemini","tagline":"Google Gemini — AI Assistant by Google","description":"Google Gemini is Google's multimodal AI assistant, deeply integrated with Google Workspace and Search.","pricing_tier":"freemium","logo_domain":"google.com","logo_url":"","website_url":"https://gemini.google.com","affiliate_url":"","category":"Chatbots & LLMs","category_slug":"chatbots-and-llms","feature_tags":["chatbot","llm","multimodal","google"],"use_cases":[],"industries":[],"display_score":99998,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Google Gemini — AI Assistant by Google","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99998,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"claude","slug":"claude","name":"Claude","tagline":"Claude — AI Assistant by Anthropic","description":"Claude is Anthropic's AI assistant, known for nuanced reasoning, long context windows, and safety-focused design.","pricing_tier":"freemium","logo_domain":"anthropic.com","logo_url":"","website_url":"https://claude.ai","affiliate_url":"","category":"Chatbots & LLMs","category_slug":"chatbots-and-llms","feature_tags":["chatbot","llm","writing","safety","reasoning"],"use_cases":[],"industries":[],"display_score":99997,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Claude — AI Assistant by Anthropic","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99997,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"microsoft-copilot","slug":"microsoft-copilot","name":"Microsoft Copilot","tagline":"Microsoft Copilot — AI Assistant by Microsoft","description":"Microsoft Copilot is an AI assistant built into Windows, Edge, and Microsoft 365, powered by OpenAI models.","pricing_tier":"freemium","logo_domain":"microsoft.com","logo_url":"","website_url":"https://copilot.microsoft.com","affiliate_url":"","category":"Chatbots & LLMs","category_slug":"chatbots-and-llms","feature_tags":["chatbot","productivity","microsoft","windows","office"],"use_cases":[],"industries":[],"display_score":99996,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Microsoft Copilot — AI Assistant by Microsoft","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99996,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"github-copilot","slug":"github-copilot","name":"GitHub Copilot","tagline":"GitHub Copilot — AI Code Assistant by GitHub","description":"GitHub Copilot is an AI pair programmer that suggests code completions and entire functions directly in your editor.","pricing_tier":"paid","logo_domain":"github.com","logo_url":"","website_url":"https://github.com/features/copilot","affiliate_url":"","category":"Coding & Dev","category_slug":"coding-and-dev","feature_tags":["coding","developer","autocomplete","github","vscode"],"use_cases":[],"industries":[],"display_score":99995,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"GitHub Copilot — AI Code Assistant by GitHub","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99995,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"canva-ai","slug":"canva-ai","name":"Canva AI","tagline":"Canva AI — AI Design Tools by Canva","description":"Canva AI brings powerful AI features to Canva's design platform — generate images, write copy, and create presentations.","pricing_tier":"freemium","logo_domain":"canva.com","logo_url":"","website_url":"https://www.canva.com/ai-image-generator/","affiliate_url":"","category":"Design & UI","category_slug":"design-and-ui","feature_tags":["design","image-generation","presentations","marketing"],"use_cases":[],"industries":[],"display_score":99994,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Canva AI — AI Design Tools by Canva","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99994,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"notebooklm","slug":"notebooklm","name":"NotebookLM","tagline":"NotebookLM — AI Research Tool by Google","description":"NotebookLM is Google's AI-powered research tool that lets you ask questions and generate summaries from your own documents.","pricing_tier":"free","logo_domain":"notebooklm.google.com","logo_url":"","website_url":"https://notebooklm.google.com","affiliate_url":"","category":"Research & Education","category_slug":"research-and-education","feature_tags":["research","documents","summarization","google","education"],"use_cases":[],"industries":[],"display_score":99993,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"NotebookLM — AI Research Tool by Google","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99993,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"dall-e-3","slug":"dall-e-3","name":"DALL-E 3","tagline":"DALL-E 3 — AI Image Generator by OpenAI","description":"DALL-E 3 is OpenAI's text-to-image model, capable of generating highly detailed and creative images from natural language prompts.","pricing_tier":"freemium","logo_domain":"openai.com","logo_url":"","website_url":"https://openai.com/dall-e-3","affiliate_url":"","category":"Image Generation","category_slug":"image-generation","feature_tags":["image-generation","text-to-image","openai","creative"],"use_cases":[],"industries":[],"display_score":99992,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"DALL-E 3 — AI Image Generator by OpenAI","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99992,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"ideogram","slug":"ideogram","name":"Ideogram","tagline":"Ideogram — AI Image Generator with Text Rendering","description":"Ideogram is an AI image generator specializing in accurate text rendering within images — ideal for logos, posters, and social media.","pricing_tier":"freemium","logo_domain":"ideogram.ai","logo_url":"","website_url":"https://ideogram.ai","affiliate_url":"","category":"Image Generation","category_slug":"image-generation","feature_tags":["image-generation","text-in-image","logo","design"],"use_cases":[],"industries":[],"display_score":99991,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Ideogram — AI Image Generator with Text Rendering","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99991,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"opusclip","slug":"opusclip","name":"OpusClip","tagline":"OpusClip — AI Video Clipping Tool","description":"OpusClip uses AI to automatically clip long videos into viral short-form content for TikTok, Reels, and YouTube Shorts.","pricing_tier":"freemium","logo_domain":"opus.pro","logo_url":"","website_url":"https://www.opus.pro","affiliate_url":"","category":"Video Generation","category_slug":"video-generation","feature_tags":["video","social-media","shorts","reels","repurposing"],"use_cases":[],"industries":[],"display_score":99990,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"OpusClip — AI Video Clipping Tool","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99990,"prompt_score":0,"company":"","company_slug":"","added_date":""}],"new_tools":[{"handle":"notebooklm","slug":"notebooklm","name":"NotebookLM","tagline":"NotebookLM — AI Research Tool by Google","description":"NotebookLM is Google's AI-powered research tool that lets you ask questions and generate summaries from your own documents.","pricing_tier":"free","logo_domain":"notebooklm.google.com","logo_url":"","website_url":"https://notebooklm.google.com","affiliate_url":"","category":"Research & Education","category_slug":"research-and-education","feature_tags":["research","documents","summarization","google","education"],"use_cases":[],"industries":[],"display_score":99993,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"NotebookLM — AI Research Tool by Google","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99993,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"dall-e-3","slug":"dall-e-3","name":"DALL-E 3","tagline":"DALL-E 3 — AI Image Generator by OpenAI","description":"DALL-E 3 is OpenAI's text-to-image model, capable of generating highly detailed and creative images from natural language prompts.","pricing_tier":"freemium","logo_domain":"openai.com","logo_url":"","website_url":"https://openai.com/dall-e-3","affiliate_url":"","category":"Image Generation","category_slug":"image-generation","feature_tags":["image-generation","text-to-image","openai","creative"],"use_cases":[],"industries":[],"display_score":99992,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"DALL-E 3 — AI Image Generator by OpenAI","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99992,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"ideogram","slug":"ideogram","name":"Ideogram","tagline":"Ideogram — AI Image Generator with Text Rendering","description":"Ideogram is an AI image generator specializing in accurate text rendering within images — ideal for logos, posters, and social media.","pricing_tier":"freemium","logo_domain":"ideogram.ai","logo_url":"","website_url":"https://ideogram.ai","affiliate_url":"","category":"Image Generation","category_slug":"image-generation","feature_tags":["image-generation","text-in-image","logo","design"],"use_cases":[],"industries":[],"display_score":99991,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Ideogram — AI Image Generator with Text Rendering","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99991,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"opusclip","slug":"opusclip","name":"OpusClip","tagline":"OpusClip — AI Video Clipping Tool","description":"OpusClip uses AI to automatically clip long videos into viral short-form content for TikTok, Reels, and YouTube Shorts.","pricing_tier":"freemium","logo_domain":"opus.pro","logo_url":"","website_url":"https://www.opus.pro","affiliate_url":"","category":"Video Generation","category_slug":"video-generation","feature_tags":["video","social-media","shorts","reels","repurposing"],"use_cases":[],"industries":[],"display_score":99990,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"OpusClip — AI Video Clipping Tool","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99990,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"pika-labs","slug":"pika-labs","name":"Pika Labs","tagline":"Pika Labs — AI Video Generator","description":"Pika is an AI video generation platform that transforms text and images into cinematic video clips.","pricing_tier":"freemium","logo_domain":"pika.art","logo_url":"","website_url":"https://pika.art","affiliate_url":"","category":"Video Generation","category_slug":"video-generation","feature_tags":["video-generation","text-to-video","creative"],"use_cases":[],"industries":[],"display_score":99989,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Pika Labs — AI Video Generator","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99989,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"elevenlabs","slug":"elevenlabs","name":"ElevenLabs","tagline":"ElevenLabs — AI Voice Generator & Voice Cloning","description":"ElevenLabs creates ultra-realistic AI voices for voiceovers, audiobooks, dubbing, and voice cloning.","pricing_tier":"freemium","logo_domain":"elevenlabs.io","logo_url":"","website_url":"https://elevenlabs.io","affiliate_url":"","category":"Audio & Music","category_slug":"audio-and-music","feature_tags":["voice","text-to-speech","voice-cloning","audio","dubbing"],"use_cases":[],"industries":[],"display_score":99988,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"ElevenLabs — AI Voice Generator & Voice Cloning","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99988,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"gamma","slug":"gamma","name":"Gamma","tagline":"Gamma — AI Presentation & Document Builder","description":"Gamma is an AI-powered presentation and document tool that creates beautiful slides and pages from a simple text prompt.","pricing_tier":"freemium","logo_domain":"gamma.app","logo_url":"","website_url":"https://gamma.app","affiliate_url":"","category":"Productivity","category_slug":"productivity","feature_tags":["presentations","slides","productivity","design","documents"],"use_cases":[],"industries":[],"display_score":99987,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Gamma — AI Presentation & Document Builder","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99987,"prompt_score":0,"company":"","company_slug":"","added_date":""},{"handle":"codeium","slug":"codeium","name":"Codeium","tagline":"Codeium — Free AI Code Assistant","description":"Codeium is a free AI coding assistant with autocomplete, chat, and search — supporting 70+ programming languages.","pricing_tier":"freemium","logo_domain":"codeium.com","logo_url":"","website_url":"https://codeium.com","affiliate_url":"","category":"Coding & Dev","category_slug":"coding-and-dev","feature_tags":["coding","autocomplete","developer","free","ide"],"use_cases":[],"industries":[],"display_score":99986,"is_featured":true,"is_canonical":true,"has_api":false,"has_mobile":false,"has_chrome_ext":false,"is_open_source":false,"related_tools":[],"compare_targets":[],"seo_title":"Codeium — Free AI Code Assistant","seo_description":"","complexity":"","target_audience":"","workflow_stage":"","commercial_score":0,"homepage_score":99986,"prompt_score":0,"company":"","company_slug":"","added_date":""}],"pricing_dist":{"free":786,"freemium":18297,"paid":5}}
+{
+  "featured_tools": [
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/openai.com",
+      "logo_domain": "openai.com",
+      "website_url": "https://chatgpt.com",
+      "score_overall": 99999,
+      "is_featured": false
+    },
+    {
+      "slug": "google-gemini",
+      "name": "Google Gemini",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/google.com",
+      "logo_domain": "google.com",
+      "website_url": "https://gemini.google.com",
+      "score_overall": 99998,
+      "is_featured": false
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/anthropic.com",
+      "logo_domain": "anthropic.com",
+      "website_url": "https://claude.ai",
+      "score_overall": 99997,
+      "is_featured": false
+    },
+    {
+      "slug": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/microsoft.com",
+      "logo_domain": "microsoft.com",
+      "website_url": "https://copilot.microsoft.com",
+      "score_overall": 99996,
+      "is_featured": false
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "category": "ai-coding",
+      "subcategory": "code-completion",
+      "microcategory": "ide-copilots",
+      "pricing_tier": "paid",
+      "logo_url": "https://logo.clearbit.com/github.com",
+      "logo_domain": "github.com",
+      "website_url": "https://github.com/features/copilot",
+      "score_overall": 99995,
+      "is_featured": false
+    },
+    {
+      "slug": "canva-ai",
+      "name": "Canva AI",
+      "category": "ai-design",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/canva.com",
+      "logo_domain": "canva.com",
+      "website_url": "https://www.canva.com/ai-image-generator/",
+      "score_overall": 99994,
+      "is_featured": false
+    },
+    {
+      "slug": "notebooklm",
+      "name": "NotebookLM",
+      "category": "ai-research",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "free",
+      "logo_url": "https://logo.clearbit.com/notebooklm.google.com",
+      "logo_domain": "notebooklm.google.com",
+      "website_url": "https://notebooklm.google.com",
+      "score_overall": 99993,
+      "is_featured": false
+    },
+    {
+      "slug": "dall-e-3",
+      "name": "DALL-E 3",
+      "category": "ai-image-generation",
+      "subcategory": "text-to-image",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/openai.com",
+      "logo_domain": "openai.com",
+      "website_url": "https://openai.com/dall-e-3",
+      "score_overall": 99992,
+      "is_featured": false
+    },
+    {
+      "slug": "ideogram",
+      "name": "Ideogram",
+      "category": "ai-image-generation",
+      "subcategory": "logo-branding",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/ideogram.ai",
+      "logo_domain": "ideogram.ai",
+      "website_url": "https://ideogram.ai",
+      "score_overall": 99991,
+      "is_featured": false
+    },
+    {
+      "slug": "opusclip",
+      "name": "OpusClip",
+      "category": "ai-video",
+      "subcategory": "short-form-video",
+      "microcategory": "youtube-shorts-tools",
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/opus.pro",
+      "logo_domain": "opus.pro",
+      "website_url": "https://www.opus.pro",
+      "score_overall": 99990,
+      "is_featured": false
+    }
+  ],
+  "popular_tools": [
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/openai.com",
+      "logo_domain": "openai.com",
+      "website_url": "https://chatgpt.com",
+      "score_overall": 99999,
+      "is_featured": false
+    },
+    {
+      "slug": "google-gemini",
+      "name": "Google Gemini",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/google.com",
+      "logo_domain": "google.com",
+      "website_url": "https://gemini.google.com",
+      "score_overall": 99998,
+      "is_featured": false
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/anthropic.com",
+      "logo_domain": "anthropic.com",
+      "website_url": "https://claude.ai",
+      "score_overall": 99997,
+      "is_featured": false
+    },
+    {
+      "slug": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/microsoft.com",
+      "logo_domain": "microsoft.com",
+      "website_url": "https://copilot.microsoft.com",
+      "score_overall": 99996,
+      "is_featured": false
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "category": "ai-coding",
+      "subcategory": "code-completion",
+      "microcategory": "ide-copilots",
+      "pricing_tier": "paid",
+      "logo_url": "https://logo.clearbit.com/github.com",
+      "logo_domain": "github.com",
+      "website_url": "https://github.com/features/copilot",
+      "score_overall": 99995,
+      "is_featured": false
+    },
+    {
+      "slug": "canva-ai",
+      "name": "Canva AI",
+      "category": "ai-design",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/canva.com",
+      "logo_domain": "canva.com",
+      "website_url": "https://www.canva.com/ai-image-generator/",
+      "score_overall": 99994,
+      "is_featured": false
+    },
+    {
+      "slug": "notebooklm",
+      "name": "NotebookLM",
+      "category": "ai-research",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "free",
+      "logo_url": "https://logo.clearbit.com/notebooklm.google.com",
+      "logo_domain": "notebooklm.google.com",
+      "website_url": "https://notebooklm.google.com",
+      "score_overall": 99993,
+      "is_featured": false
+    },
+    {
+      "slug": "dall-e-3",
+      "name": "DALL-E 3",
+      "category": "ai-image-generation",
+      "subcategory": "text-to-image",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/openai.com",
+      "logo_domain": "openai.com",
+      "website_url": "https://openai.com/dall-e-3",
+      "score_overall": 99992,
+      "is_featured": false
+    },
+    {
+      "slug": "ideogram",
+      "name": "Ideogram",
+      "category": "ai-image-generation",
+      "subcategory": "logo-branding",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/ideogram.ai",
+      "logo_domain": "ideogram.ai",
+      "website_url": "https://ideogram.ai",
+      "score_overall": 99991,
+      "is_featured": false
+    },
+    {
+      "slug": "opusclip",
+      "name": "OpusClip",
+      "category": "ai-video",
+      "subcategory": "short-form-video",
+      "microcategory": "youtube-shorts-tools",
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/opus.pro",
+      "logo_domain": "opus.pro",
+      "website_url": "https://www.opus.pro",
+      "score_overall": 99990,
+      "is_featured": false
+    },
+    {
+      "slug": "pika-labs",
+      "name": "Pika Labs",
+      "category": "ai-video",
+      "subcategory": "text-to-video",
+      "microcategory": "cinematic-video-generators",
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/pika.art",
+      "logo_domain": "pika.art",
+      "website_url": "https://pika.art",
+      "score_overall": 99989,
+      "is_featured": false
+    },
+    {
+      "slug": "elevenlabs",
+      "name": "ElevenLabs",
+      "category": "ai-audio-voice",
+      "subcategory": "voice-cloning",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/elevenlabs.io",
+      "logo_domain": "elevenlabs.io",
+      "website_url": "https://elevenlabs.io",
+      "score_overall": 99988,
+      "is_featured": false
+    },
+    {
+      "slug": "gamma",
+      "name": "Gamma",
+      "category": "ai-productivity",
+      "subcategory": "presentation-tools",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/gamma.app",
+      "logo_domain": "gamma.app",
+      "website_url": "https://gamma.app",
+      "score_overall": 99987,
+      "is_featured": false
+    },
+    {
+      "slug": "codeium",
+      "name": "Codeium",
+      "category": "ai-coding",
+      "subcategory": "code-completion",
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/codeium.com",
+      "logo_domain": "codeium.com",
+      "website_url": "https://codeium.com",
+      "score_overall": 99986,
+      "is_featured": false
+    },
+    {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "category": "ai-coding",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "paid",
+      "logo_url": "https://logo.clearbit.com/anthropic.com",
+      "logo_domain": "anthropic.com",
+      "website_url": "https://claude.ai/code",
+      "score_overall": 99985,
+      "is_featured": false
+    },
+    {
+      "slug": "n8n",
+      "name": "n8n",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/n8n.io",
+      "logo_domain": "n8n.io",
+      "website_url": "https://n8n.io",
+      "score_overall": 99984,
+      "is_featured": false
+    },
+    {
+      "slug": "semrush",
+      "name": "Semrush",
+      "category": "ai-marketing",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "paid",
+      "logo_url": "https://logo.clearbit.com/semrush.com",
+      "logo_domain": "semrush.com",
+      "website_url": "https://www.semrush.com",
+      "score_overall": 99983,
+      "is_featured": false
+    },
+    {
+      "slug": "brandwatch-ai",
+      "name": "Brandwatch AI",
+      "category": "ai-marketing",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "paid",
+      "logo_url": "https://logo.clearbit.com/brandwatch.com",
+      "logo_domain": "brandwatch.com",
+      "website_url": "https://www.brandwatch.com",
+      "score_overall": 99982,
+      "is_featured": false
+    },
+    {
+      "slug": "zoom-ai-companion",
+      "name": "Zoom AI Companion",
+      "category": "ai-productivity",
+      "subcategory": "summarization",
+      "microcategory": "meeting-summary-tools",
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/zoom.us",
+      "logo_domain": "zoom.us",
+      "website_url": "https://www.zoom.com/en/ai-assistant/",
+      "score_overall": 99980,
+      "is_featured": false
+    },
+    {
+      "slug": "asana-ai",
+      "name": "Asana AI",
+      "category": "ai-productivity",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/asana.com",
+      "logo_domain": "asana.com",
+      "website_url": "https://asana.com/product/ai",
+      "score_overall": 99979,
+      "is_featured": false
+    },
+    {
+      "slug": "salesforce-einstein",
+      "name": "Salesforce Einstein",
+      "category": "ai-sales",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "paid",
+      "logo_url": "https://logo.clearbit.com/salesforce.com",
+      "logo_domain": "salesforce.com",
+      "website_url": "https://www.salesforce.com/products/einstein/",
+      "score_overall": 99978,
+      "is_featured": false
+    },
+    {
+      "slug": "shopify-magic",
+      "name": "Shopify Magic",
+      "category": "ai-marketing",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/shopify.com",
+      "logo_domain": "shopify.com",
+      "website_url": "https://www.shopify.com/magic",
+      "score_overall": 99977,
+      "is_featured": false
+    },
+    {
+      "slug": "presbot",
+      "name": "Presbot",
+      "category": "ai-automation-agents",
+      "subcategory": null,
+      "microcategory": null,
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/presbot.com",
+      "logo_domain": "presbot.com",
+      "website_url": "https://www.presbot.com",
+      "score_overall": 60,
+      "is_featured": false
+    },
+    {
+      "slug": "humanic-ai",
+      "name": "Humanic Ai",
+      "category": "ai-marketing",
+      "subcategory": "email-marketing",
+      "microcategory": "email-sequencing",
+      "pricing_tier": "freemium",
+      "logo_url": "https://logo.clearbit.com/humanic.ai",
+      "logo_domain": "humanic.ai",
+      "website_url": "https://humanic.ai",
+      "score_overall": 59,
+      "is_featured": false
+    }
+  ],
+  "trending_tools": [],
+  "categories": [
+    {
+      "slug": "ai-audio-voice",
+      "name": "AI Audio & Voice",
+      "url": "/tools/ai-audio-voice",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "elevenlabs",
+          "name": "ElevenLabs",
+          "category": "ai-audio-voice",
+          "subcategory": "voice-cloning",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/elevenlabs.io",
+          "logo_domain": "elevenlabs.io",
+          "website_url": "https://elevenlabs.io",
+          "score_overall": 99988,
+          "is_featured": false
+        },
+        {
+          "slug": "social-tooling",
+          "name": "Social Tooling",
+          "category": "ai-audio-voice",
+          "subcategory": "speech-to-text",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/socialtooling.com",
+          "logo_domain": "socialtooling.com",
+          "website_url": "https://www.socialtooling.com",
+          "score_overall": 49,
+          "is_featured": false
+        },
+        {
+          "slug": "aitoolbox",
+          "name": "Aitoolbox",
+          "category": "ai-audio-voice",
+          "subcategory": "text-to-speech",
+          "microcategory": "narration-tools",
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/com.sa",
+          "logo_domain": "com.sa",
+          "website_url": "https://ai-toolbox.com.sa",
+          "score_overall": 48,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-automation-agents",
+      "name": "AI Automation & Agents",
+      "url": "/tools/ai-automation-agents",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "category": "ai-automation-agents",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/openai.com",
+          "logo_domain": "openai.com",
+          "website_url": "https://chatgpt.com",
+          "score_overall": 99999,
+          "is_featured": false
+        },
+        {
+          "slug": "google-gemini",
+          "name": "Google Gemini",
+          "category": "ai-automation-agents",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/google.com",
+          "logo_domain": "google.com",
+          "website_url": "https://gemini.google.com",
+          "score_overall": 99998,
+          "is_featured": false
+        },
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "category": "ai-automation-agents",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/anthropic.com",
+          "logo_domain": "anthropic.com",
+          "website_url": "https://claude.ai",
+          "score_overall": 99997,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-business-operations",
+      "name": "AI Business Operations",
+      "url": "/tools/ai-business-operations",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "gpt4sales",
+          "name": "Gpt4sales",
+          "category": "ai-business-operations",
+          "subcategory": "hr-recruiting",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/gpt4sales.ai",
+          "logo_domain": "gpt4sales.ai",
+          "website_url": "https://www.gpt4sales.ai",
+          "score_overall": 52,
+          "is_featured": false
+        },
+        {
+          "slug": "marbleflows",
+          "name": "Marbleflows",
+          "category": "ai-business-operations",
+          "subcategory": "hr-recruiting",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/marbleflows.com",
+          "logo_domain": "marbleflows.com",
+          "website_url": "https://www.marbleflows.com",
+          "score_overall": 49,
+          "is_featured": false
+        },
+        {
+          "slug": "swellai-com",
+          "name": "Swellai",
+          "category": "ai-business-operations",
+          "subcategory": "hr-recruiting",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/swellai.com",
+          "logo_domain": "swellai.com",
+          "website_url": "https://swellai.com/",
+          "score_overall": 47,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-coding",
+      "name": "AI Coding",
+      "url": "/tools/ai-coding",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "github-copilot",
+          "name": "GitHub Copilot",
+          "category": "ai-coding",
+          "subcategory": "code-completion",
+          "microcategory": "ide-copilots",
+          "pricing_tier": "paid",
+          "logo_url": "https://logo.clearbit.com/github.com",
+          "logo_domain": "github.com",
+          "website_url": "https://github.com/features/copilot",
+          "score_overall": 99995,
+          "is_featured": false
+        },
+        {
+          "slug": "codeium",
+          "name": "Codeium",
+          "category": "ai-coding",
+          "subcategory": "code-completion",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/codeium.com",
+          "logo_domain": "codeium.com",
+          "website_url": "https://codeium.com",
+          "score_overall": 99986,
+          "is_featured": false
+        },
+        {
+          "slug": "claude-code",
+          "name": "Claude Code",
+          "category": "ai-coding",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "paid",
+          "logo_url": "https://logo.clearbit.com/anthropic.com",
+          "logo_domain": "anthropic.com",
+          "website_url": "https://claude.ai/code",
+          "score_overall": 99985,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-customer-support",
+      "name": "AI Customer Support",
+      "url": "/tools/ai-customer-support",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "atochat-chatbot-marketing-software",
+          "name": "Atochat Chatbot Marketing",
+          "category": "ai-customer-support",
+          "subcategory": "support-chatbots",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/atochat.com",
+          "logo_domain": "atochat.com",
+          "website_url": "https://app.atochat.com/",
+          "score_overall": 52,
+          "is_featured": false
+        },
+        {
+          "slug": "askleaf",
+          "name": "Askleaf",
+          "category": "ai-customer-support",
+          "subcategory": "support-chatbots",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/askleaf.in",
+          "logo_domain": "askleaf.in",
+          "website_url": "https://askleaf.in",
+          "score_overall": 51,
+          "is_featured": false
+        },
+        {
+          "slug": "chatling",
+          "name": "Chatling",
+          "category": "ai-customer-support",
+          "subcategory": "support-chatbots",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/chatling.ai",
+          "logo_domain": "chatling.ai",
+          "website_url": "https://chatling.ai/",
+          "score_overall": 50,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-data-analytics",
+      "name": "AI Data & Analytics",
+      "url": "/tools/ai-data-analytics",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "quickseo",
+          "name": "Quickseo",
+          "category": "ai-data-analytics",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/quickseo.io",
+          "logo_domain": "quickseo.io",
+          "website_url": "https://quickseo.io",
+          "score_overall": 49,
+          "is_featured": false
+        },
+        {
+          "slug": "leadar",
+          "name": "Leadar",
+          "category": "ai-data-analytics",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/leadar.info",
+          "logo_domain": "leadar.info",
+          "website_url": "https://www.leadar.info",
+          "score_overall": 48,
+          "is_featured": false
+        },
+        {
+          "slug": "spreadsite",
+          "name": "Spreadsite",
+          "category": "ai-data-analytics",
+          "subcategory": "bi-copilots",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/spreadsite.ai",
+          "logo_domain": "spreadsite.ai",
+          "website_url": "https://www.spreadsite.ai",
+          "score_overall": 47,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-design",
+      "name": "AI Design",
+      "url": "/tools/ai-design",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "canva-ai",
+          "name": "Canva AI",
+          "category": "ai-design",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/canva.com",
+          "logo_domain": "canva.com",
+          "website_url": "https://www.canva.com/ai-image-generator/",
+          "score_overall": 99994,
+          "is_featured": false
+        },
+        {
+          "slug": "financial-flow",
+          "name": "Financial Flow",
+          "category": "ai-design",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/financialflow.ai",
+          "logo_domain": "financialflow.ai",
+          "website_url": "https://financialflow.ai",
+          "score_overall": 51,
+          "is_featured": false
+        },
+        {
+          "slug": "xno-ai",
+          "name": "Xno Ai",
+          "category": "ai-design",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/xno.ai",
+          "logo_domain": "xno.ai",
+          "website_url": "https://xno.ai",
+          "score_overall": 49,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-education-learning",
+      "name": "AI Education & Learning",
+      "url": "/tools/ai-education-learning",
+      "count": 0,
+      "top_tools": []
+    },
+    {
+      "slug": "ai-image-generation",
+      "name": "AI Image Generation",
+      "url": "/tools/ai-image-generation",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "dall-e-3",
+          "name": "DALL-E 3",
+          "category": "ai-image-generation",
+          "subcategory": "text-to-image",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/openai.com",
+          "logo_domain": "openai.com",
+          "website_url": "https://openai.com/dall-e-3",
+          "score_overall": 99992,
+          "is_featured": false
+        },
+        {
+          "slug": "ideogram",
+          "name": "Ideogram",
+          "category": "ai-image-generation",
+          "subcategory": "logo-branding",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/ideogram.ai",
+          "logo_domain": "ideogram.ai",
+          "website_url": "https://ideogram.ai",
+          "score_overall": 99991,
+          "is_featured": false
+        },
+        {
+          "slug": "arvow",
+          "name": "Arvow",
+          "category": "ai-image-generation",
+          "subcategory": "text-to-image",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/arvow.com",
+          "logo_domain": "arvow.com",
+          "website_url": "https://arvow.com",
+          "score_overall": 51,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-marketing",
+      "name": "AI Marketing",
+      "url": "/tools/ai-marketing",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "semrush",
+          "name": "Semrush",
+          "category": "ai-marketing",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "paid",
+          "logo_url": "https://logo.clearbit.com/semrush.com",
+          "logo_domain": "semrush.com",
+          "website_url": "https://www.semrush.com",
+          "score_overall": 99983,
+          "is_featured": false
+        },
+        {
+          "slug": "brandwatch-ai",
+          "name": "Brandwatch AI",
+          "category": "ai-marketing",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "paid",
+          "logo_url": "https://logo.clearbit.com/brandwatch.com",
+          "logo_domain": "brandwatch.com",
+          "website_url": "https://www.brandwatch.com",
+          "score_overall": 99982,
+          "is_featured": false
+        },
+        {
+          "slug": "shopify-magic",
+          "name": "Shopify Magic",
+          "category": "ai-marketing",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/shopify.com",
+          "logo_domain": "shopify.com",
+          "website_url": "https://www.shopify.com/magic",
+          "score_overall": 99977,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-productivity",
+      "name": "AI Productivity",
+      "url": "/tools/ai-productivity",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "gamma",
+          "name": "Gamma",
+          "category": "ai-productivity",
+          "subcategory": "presentation-tools",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/gamma.app",
+          "logo_domain": "gamma.app",
+          "website_url": "https://gamma.app",
+          "score_overall": 99987,
+          "is_featured": false
+        },
+        {
+          "slug": "zoom-ai-companion",
+          "name": "Zoom AI Companion",
+          "category": "ai-productivity",
+          "subcategory": "summarization",
+          "microcategory": "meeting-summary-tools",
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/zoom.us",
+          "logo_domain": "zoom.us",
+          "website_url": "https://www.zoom.com/en/ai-assistant/",
+          "score_overall": 99980,
+          "is_featured": false
+        },
+        {
+          "slug": "asana-ai",
+          "name": "Asana AI",
+          "category": "ai-productivity",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/asana.com",
+          "logo_domain": "asana.com",
+          "website_url": "https://asana.com/product/ai",
+          "score_overall": 99979,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-research",
+      "name": "AI Research",
+      "url": "/tools/ai-research",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "notebooklm",
+          "name": "NotebookLM",
+          "category": "ai-research",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "free",
+          "logo_url": "https://logo.clearbit.com/notebooklm.google.com",
+          "logo_domain": "notebooklm.google.com",
+          "website_url": "https://notebooklm.google.com",
+          "score_overall": 99993,
+          "is_featured": false
+        },
+        {
+          "slug": "analyzr",
+          "name": "Analyzr",
+          "category": "ai-research",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/analyzr.ai",
+          "logo_domain": "analyzr.ai",
+          "website_url": "https://analyzr.ai",
+          "score_overall": 51,
+          "is_featured": false
+        },
+        {
+          "slug": "video-summary-ai",
+          "name": "Video Summary Ai",
+          "category": "ai-research",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/videosummaryai.co",
+          "logo_domain": "videosummaryai.co",
+          "website_url": "https://videosummaryai.co",
+          "score_overall": 49,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-sales",
+      "name": "AI Sales",
+      "url": "/tools/ai-sales",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "salesforce-einstein",
+          "name": "Salesforce Einstein",
+          "category": "ai-sales",
+          "subcategory": null,
+          "microcategory": null,
+          "pricing_tier": "paid",
+          "logo_url": "https://logo.clearbit.com/salesforce.com",
+          "logo_domain": "salesforce.com",
+          "website_url": "https://www.salesforce.com/products/einstein/",
+          "score_overall": 99978,
+          "is_featured": false
+        },
+        {
+          "slug": "agent-ai-chat-bot-powered-by-openai-and-anthropic",
+          "name": "Agent Ai Chat Bot",
+          "category": "ai-sales",
+          "subcategory": "lead-generation",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/theineedagent.ai",
+          "logo_domain": "theineedagent.ai",
+          "website_url": "https://www.theineedagent.ai",
+          "score_overall": 56,
+          "is_featured": false
+        },
+        {
+          "slug": "zyfo-ai",
+          "name": "Zyfo Ai",
+          "category": "ai-sales",
+          "subcategory": "lead-generation",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/zyfo.ai",
+          "logo_domain": "zyfo.ai",
+          "website_url": "https://zyfo.ai",
+          "score_overall": 56,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-video",
+      "name": "AI Video",
+      "url": "/tools/ai-video",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "opusclip",
+          "name": "OpusClip",
+          "category": "ai-video",
+          "subcategory": "short-form-video",
+          "microcategory": "youtube-shorts-tools",
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/opus.pro",
+          "logo_domain": "opus.pro",
+          "website_url": "https://www.opus.pro",
+          "score_overall": 99990,
+          "is_featured": false
+        },
+        {
+          "slug": "pika-labs",
+          "name": "Pika Labs",
+          "category": "ai-video",
+          "subcategory": "text-to-video",
+          "microcategory": "cinematic-video-generators",
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/pika.art",
+          "logo_domain": "pika.art",
+          "website_url": "https://pika.art",
+          "score_overall": 99989,
+          "is_featured": false
+        },
+        {
+          "slug": "flux-ai",
+          "name": "Flux Ai",
+          "category": "ai-video",
+          "subcategory": "text-to-video",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/flux1.ai",
+          "logo_domain": "flux1.ai",
+          "website_url": "https://flux1.ai",
+          "score_overall": 54,
+          "is_featured": false
+        }
+      ]
+    },
+    {
+      "slug": "ai-writing",
+      "name": "AI Writing",
+      "url": "/tools/ai-writing",
+      "count": 24,
+      "top_tools": [
+        {
+          "slug": "beebzi-ai",
+          "name": "Beebzi Ai",
+          "category": "ai-writing",
+          "subcategory": "blog-writers",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/beebzi.ai",
+          "logo_domain": "beebzi.ai",
+          "website_url": "https://beebzi.ai//",
+          "score_overall": 55,
+          "is_featured": false
+        },
+        {
+          "slug": "blogfast",
+          "name": "Blogfast",
+          "category": "ai-writing",
+          "subcategory": "blog-writers",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/blogfa.st",
+          "logo_domain": "blogfa.st",
+          "website_url": "https://blogfa.st",
+          "score_overall": 55,
+          "is_featured": false
+        },
+        {
+          "slug": "writesonic",
+          "name": "Writesonic",
+          "category": "ai-writing",
+          "subcategory": "blog-writers",
+          "microcategory": null,
+          "pricing_tier": "freemium",
+          "logo_url": "https://logo.clearbit.com/writesonic.com",
+          "logo_domain": "writesonic.com",
+          "website_url": "https://writesonic.com",
+          "score_overall": 55,
+          "is_featured": false
+        }
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "slug": "analyze-spreadsheets",
+      "name": "analyze spreadsheets",
+      "url": "/use-case/analyze-spreadsheets",
+      "count": 6
+    },
+    {
+      "slug": "automate-browser-tasks",
+      "name": "automate browser tasks",
+      "url": "/use-case/automate-browser-tasks",
+      "count": 10
+    },
+    {
+      "slug": "automate-customer-support",
+      "name": "automate customer support",
+      "url": "/use-case/automate-customer-support",
+      "count": 21
+    },
+    {
+      "slug": "automate-social-posting",
+      "name": "automate social posting",
+      "url": "/use-case/automate-social-posting",
+      "count": 11
+    },
+    {
+      "slug": "build-ai-agents",
+      "name": "build ai agents",
+      "url": "/use-case/build-ai-agents",
+      "count": 15
+    },
+    {
+      "slug": "build-full-stack-apps",
+      "name": "build full-stack apps",
+      "url": "/use-case/build-full-stack-apps",
+      "count": 24
+    },
+    {
+      "slug": "build-landing-pages",
+      "name": "build landing pages",
+      "url": "/use-case/build-landing-pages",
+      "count": 24
+    },
+    {
+      "slug": "build-quizzes",
+      "name": "build quizzes",
+      "url": "/use-case/build-quizzes",
+      "count": 24
+    },
+    {
+      "slug": "build-website-chatbot",
+      "name": "build website chatbot",
+      "url": "/use-case/build-website-chatbot",
+      "count": 24
+    },
+    {
+      "slug": "clean-datasets",
+      "name": "clean datasets",
+      "url": "/use-case/clean-datasets",
+      "count": 6
+    },
+    {
+      "slug": "clone-brand-voice",
+      "name": "clone brand voice",
+      "url": "/use-case/clone-brand-voice",
+      "count": 13
+    },
+    {
+      "slug": "coach-sales-calls",
+      "name": "coach sales calls",
+      "url": "/use-case/coach-sales-calls",
+      "count": 5
+    }
+  ],
+  "total_tools": 19487,
+  "total_categories": 15,
+  "total_pages": 24806
+}

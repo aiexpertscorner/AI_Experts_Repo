@@ -1,0 +1,649 @@
+---
+/**
+ * src/pages/tools/[slug].astro
+ *
+ * FIXES over previous version:
+ *   - related.related_tools → related.alternatives  (was never populated)
+ *   - hasFAQ >= 1 (was >= 2, FAQ never showed)
+ *   - capabilities now link to /capability/[slug]
+ *   - industries now link to /industry/[slug]
+ *   - integrations now link to /integration/[slug]
+ *   - subcategory now links to /subcategory/[slug]
+ *   - microcategory now linked + shown
+ *   - workflow snippets link to /workflow/[slug] when available
+ *   - OG image set to tool logo
+ *   - scores section used for has_deep indicator
+ */
+
+import fs   from "node:fs";
+import path from "node:path";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import "@/styles/tool-detail.css";
+import Header   from "@/components/site/Header.astro";
+import Footer   from "@/components/site/Footer.astro";
+import ToolCard from "@/components/cards/ToolCard.astro";
+
+import slugsRaw   from "@/data/build/tool-slugs.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+export async function getStaticPaths() {
+  return (slugsRaw as string[]).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const logoMap  = logoMapRaw as Record<string, string>;
+
+const toolFile = path.join(process.cwd(), "src/data/build/tools", `${slug}.json`);
+let p: any = {};
+try { p = JSON.parse(fs.readFileSync(toolFile, "utf8")); } catch {}
+
+// ── Nested payload structure ───────────────────────────────────────
+const hero       = p.hero       || {};
+const seo        = p.seo        || {};
+const taxonomy   = p.taxonomy   || {};
+const commercial = p.commercial || {};
+const reviews    = p.reviews    || {};
+const content    = p.content    || {};
+const related    = p.related    || {};
+const discovery  = p.discovery  || {};
+const audience   = p.audience   || {};
+const scores     = p.scores     || {};
+
+// ── Core ──────────────────────────────────────────────────────────
+const name         = hero.name        || slug;
+const tagline      = hero.tagline     || "";
+const description  = content.long_description || content.description || "";
+const pricingRaw   = (commercial.pricing_tier || hero.pricing_tier || "unknown").toLowerCase();
+const websiteUrl   = hero.website_url || null;
+const affiliateUrl = commercial.affiliate_url || null;
+const ctaUrl       = affiliateUrl || websiteUrl;
+const isAffiliate  = !!affiliateUrl;
+const hasDeep      = !!(p.has_deep || (content.pros?.length > 0));
+
+// ── Logo ──────────────────────────────────────────────────────────
+const logoUrl = logoMap[slug] || hero.logo_url || null;
+
+// ── Taxonomy ──────────────────────────────────────────────────────
+const category      = taxonomy.category      || null;
+const subcategory   = taxonomy.subcategory   || null;
+const microcategory = taxonomy.microcategory || null;
+const useCases      = (taxonomy.use_cases    || []) as string[];
+const capabilities  = (taxonomy.capabilities || []) as string[];
+const industries    = (taxonomy.industries   || []) as string[];
+const integrations  = (taxonomy.integrations || []) as string[];
+const platforms     = (taxonomy.platforms    || []) as string[];
+const skillLevels   = (taxonomy.skill_levels || []) as string[];
+const tags          = (content.tags          || []) as string[];
+
+// ── Deep content ──────────────────────────────────────────────────
+const faqItems         = (discovery.faq_items         || []) as any[];
+const workflowSnippets = (discovery.workflow_snippets || []) as any[];
+const uniqueFeatures   = (content.unique_features     || []) as string[];
+const coreFeatures     = (content.core_features || content.feature_tags || []) as string[];
+const pros             = (content.pros || []) as string[];
+const cons             = (content.cons || []) as string[];
+const bestForProfiles  = (audience.best_for_profiles  || []) as any[];
+
+// ── Related ───────────────────────────────────────────────────────
+function enrichCard(c: any) {
+  if (!c) return null;
+  const s    = typeof c === "string" ? c : c.slug;
+  const base = typeof c === "string" ? { slug: s, name: s } : c;
+  return { ...base, logo_url: base.logo_url || logoMap[s] || null };
+}
+
+// FIX: was related.related_tools (field does not exist) → use related.alternatives
+const compareCandidates = (related.compare_candidates || []).slice(0, 6).map(enrichCard).filter(Boolean);
+const alternatives      = (related.alternatives       || []).slice(0, 6).map(enrichCard).filter(Boolean);
+// Bottom grid: show alternatives as rich ToolCards (different presentation from sidebar mini-list)
+const similarTools      = (related.alternatives       || []).slice(0, 6).map(enrichCard).filter(Boolean);
+
+// ── Flags ─────────────────────────────────────────────────────────
+// FIX: was >= 2 — FAQ section never showed because most tools have 1 FAQ
+const hasFAQ       = faqItems.length >= 1;
+const hasWorkflows = workflowSnippets.length >= 1;
+const hasPros      = pros.length >= 1;
+const hasCons      = cons.length >= 1;
+const hasBestFor   = bestForProfiles.length >= 1;
+const hasFeatures  = uniqueFeatures.length >= 1 || coreFeatures.length >= 1;
+const hasCompare   = compareCandidates.length >= 1;
+const hasAlts      = alternatives.length >= 1;
+const hasSimilar   = similarTools.length >= 1;
+const hasIndustries= industries.length >= 1;
+const hasIntegrations = integrations.length >= 1;
+const hasCapabilities = capabilities.length >= 1;
+
+// ── Pricing ───────────────────────────────────────────────────────
+const PM: Record<string, { label: string; cls: string }> = {
+  free:        { label: "Free",         cls: "badge--free"        },
+  freemium:    { label: "Freemium",     cls: "badge--freemium"    },
+  paid:        { label: "Paid",         cls: "badge--paid"        },
+  enterprise:  { label: "Enterprise",   cls: "badge--enterprise"  },
+  open_source: { label: "Open Source",  cls: "badge--open_source" },
+  unknown:     { label: "Unknown",      cls: "badge--unknown"     },
+};
+const pricing = PM[pricingRaw] || PM.unknown;
+
+function tc(s: string) {
+  return (s || "").replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase());
+}
+function slugify(s: string) {
+  return (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+function altLogo(a: any): string | null {
+  return a?.logo_url || null;
+}
+
+// ── SEO ───────────────────────────────────────────────────────────
+const pageTitle = seo.title       || `${name} — Features, Pricing & Alternatives ${new Date().getFullYear()}`;
+const pageDesc  = seo.description || (tagline ? tagline.slice(0, 155) : `${name} — AI tool review.`);
+
+const schemaSW: any = {
+  "@context": "https://schema.org", "@type": "SoftwareApplication",
+  "name": name, "description": (description || "").slice(0, 300),
+  "applicationCategory": "BusinessApplication",
+  "url": websiteUrl || `https://aiexpertscorner.com/tools/${slug}`,
+  "offers": { "@type": "Offer", "price": pricingRaw === "free" ? "0" : undefined, "priceCurrency": "USD" },
+  ...(reviews.rating_average ? {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": reviews.rating_average,
+      "reviewCount": reviews.review_count_total || 1,
+    }
+  } : {}),
+};
+const schemaFAQ = hasFAQ ? {
+  "@context": "https://schema.org", "@type": "FAQPage",
+  "mainEntity": faqItems.map((f: any) => ({
+    "@type": "Question", "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+  })),
+} : null;
+const schemaBc = {
+  "@context": "https://schema.org", "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://aiexpertscorner.com" },
+    { "@type": "ListItem", "position": 2, "name": "AI Tools", "item": "https://aiexpertscorner.com/tools" },
+    ...(category ? [{ "@type": "ListItem", "position": 3, "name": tc(category), "item": `https://aiexpertscorner.com/tools/category/${category}` }] : []),
+    { "@type": "ListItem", "position": category ? 4 : 3, "name": name },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} ogImage={logoUrl || undefined}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaSW)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBc)} />
+    {hasFAQ && <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />}
+  </Fragment>
+  <Header slot="header" />
+
+  <article class="td">
+
+    <!-- Breadcrumb -->
+    <nav class="td__bc" aria-label="Breadcrumb">
+      <div class="td__c">
+        <a href="/">Home</a><span>›</span>
+        <a href="/tools">AI Tools</a>
+        {category && <><span>›</span><a href={`/tools/category/${category}`}>{tc(category)}</a></>}
+        <span>›</span><span>{name}</span>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="td__hero">
+      <div class="td__c td__hg">
+
+        <!-- Logo -->
+        <div class="td__logo">
+          {logoUrl ? (
+            <>
+              <img src={logoUrl} alt={`${name} logo`} width="80" height="80"
+                loading="eager" decoding="async"
+                onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.removeProperty('display')" />
+              <span class="td__logo-fb" style="display:none">{name}</span>
+            </>
+          ) : (
+            <span class="td__logo-fb">{name}</span>
+          )}
+        </div>
+
+        <!-- Name + tagline + CTAs -->
+        <div class="td__hb">
+          <div class="td__badges">
+            <span class={`badge ${pricing.cls}`}>{pricing.label}</span>
+            {commercial.freemium   && <span class="badge badge--free">Free plan</span>}
+            {commercial.free_trial && <span class="badge badge--freemium">Free trial</span>}
+            {hero.is_featured      && <span class="td__feat">⭐ Featured</span>}
+          </div>
+          <h1 class="td__name">{name}</h1>
+          {tagline && <p class="td__tl">{tagline}</p>}
+          <div class="td__ctas">
+            {ctaUrl && (
+              <a href={ctaUrl} class="td-btn td-btn--p" target="_blank"
+                rel={isAffiliate ? "noopener sponsored" : "noopener noreferrer"}>
+                Visit {name} →
+              </a>
+            )}
+            {commercial.pricing_url && (
+              <a href={commercial.pricing_url} class="td-btn td-btn--s" target="_blank" rel="noopener noreferrer">
+                See Pricing
+              </a>
+            )}
+            {hasAlts && (
+              <a href={`/alternatives/${slug}`} class="td-btn td-btn--s">
+                Alternatives
+              </a>
+            )}
+            {hasCompare && (
+              <a href={`/compare/${[slug, compareCandidates[0].slug].sort().join("-vs-")}`} class="td-btn td-btn--g">
+                Compare →
+              </a>
+            )}
+          </div>
+        </div>
+
+        <!-- Quick facts sidebar (hero right column) -->
+        <aside class="td__sc">
+          <dl class="td__sl">
+            <div class="td__s">
+              <dt>Pricing</dt>
+              <dd><span class={`badge ${pricing.cls}`}>{pricing.label}</span></dd>
+            </div>
+            {reviews.rating_average && (
+              <div class="td__s">
+                <dt>Rating</dt>
+                <dd class="td__rat">
+                  ★ {Number(reviews.rating_average).toFixed(1)}
+                  {reviews.review_count_total && <span>({Number(reviews.review_count_total).toLocaleString()})</span>}
+                </dd>
+              </div>
+            )}
+            {category && (
+              <div class="td__s">
+                <dt>Category</dt>
+                <dd><a href={`/tools/category/${category}`} class="td__sl-a">{tc(category)}</a></dd>
+              </div>
+            )}
+            {subcategory && (
+              <div class="td__s">
+                <dt>Subcategory</dt>
+                <dd><a href={`/subcategory/${slugify(subcategory)}`} class="td__sl-a">{tc(subcategory)}</a></dd>
+              </div>
+            )}
+            {microcategory && (
+              <div class="td__s">
+                <dt>Type</dt>
+                <dd><a href={`/microcategory/${slugify(microcategory)}`} class="td__sl-a">{tc(microcategory)}</a></dd>
+              </div>
+            )}
+            {platforms.length > 0 && (
+              <div class="td__s">
+                <dt>Platforms</dt>
+                <dd>{platforms.join(", ")}</dd>
+              </div>
+            )}
+            {skillLevels.length > 0 && (
+              <div class="td__s">
+                <dt>Skill level</dt>
+                <dd>{skillLevels.map((s: string) => tc(s)).join(", ")}</dd>
+              </div>
+            )}
+            {integrations.length > 0 && (
+              <div class="td__s">
+                <dt>Integrations</dt>
+                <dd>
+                  {integrations.slice(0, 3).map((intg: string, i: number) => (
+                    <>
+                      <a href={`/integration/${slugify(intg)}`} class="td__sl-a">{tc(intg)}</a>
+                      {i < Math.min(integrations.length, 3) - 1 && <span>, </span>}
+                    </>
+                  ))}
+                  {integrations.length > 3 && <span> +{integrations.length - 3} more</span>}
+                </dd>
+              </div>
+            )}
+          </dl>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- Main content + sidebar -->
+    <div class="td__c td__body">
+      <div class="td__main">
+
+        <!-- Overview -->
+        {description && (
+          <section class="td__sec" id="overview">
+            <h2 class="td__st">What is {name}?</h2>
+            <p class="td__prose">{description}</p>
+          </section>
+        )}
+
+        <!-- Key Features -->
+        {hasFeatures && (
+          <section class="td__sec" id="features">
+            <h2 class="td__st">Key Features</h2>
+            {uniqueFeatures.length > 0 && (
+              <ul class="td__fl">
+                {uniqueFeatures.map((f: string) => <li><span class="td__fd">✦</span>{f}</li>)}
+              </ul>
+            )}
+            {coreFeatures.length > 0 && (
+              <div class="td__tr" style="margin-top:1rem">
+                {coreFeatures.map((f: string) => <span class="td-tag">{f}</span>)}
+              </div>
+            )}
+          </section>
+        )}
+
+        <!-- Pros & Cons -->
+        {(hasPros || hasCons) && (
+          <section class="td__sec" id="pros-cons">
+            <h2 class="td__st">Pros & Cons</h2>
+            <div class="td__pc">
+              {hasPros && (
+                <div class="td__pb">
+                  <p class="td__pl td__pl--p">Pros</p>
+                  <ul class="td__plist">
+                    {pros.map((x: string) => <li class="td__pro">{x}</li>)}
+                  </ul>
+                </div>
+              )}
+              {hasCons && (
+                <div class="td__cb">
+                  <p class="td__pl td__pl--c">Cons</p>
+                  <ul class="td__plist">
+                    {cons.map((x: string) => <li class="td__con">{x}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        <!-- Who is it best for -->
+        {hasBestFor && (
+          <section class="td__sec" id="best-for">
+            <h2 class="td__st">Who is {name} best for?</h2>
+            <div class="td__profs">
+              {bestForProfiles.map((x: any) => (
+                <div class="td__prof">
+                  <strong>{x.profile}</strong>
+                  <p>{x.reason}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Workflows / How to use -->
+        {hasWorkflows && (
+          <section class="td__sec" id="workflows">
+            <h2 class="td__st">How to use {name}</h2>
+            <div class="td__wfs">
+              {workflowSnippets.map((wf: any) => (
+                <div class="td__wf">
+                  <div class="td__wfh">
+                    <h3>{wf.title}</h3>
+                    {wf.time_saved && <span class="td__wfb">⏱ {wf.time_saved}</span>}
+                  </div>
+                  {wf.steps?.length > 0 && (
+                    <ol class="td__wfsteps">
+                      {wf.steps.map((s: string) => <li>{s}</li>)}
+                    </ol>
+                  )}
+                  <div class="td__wflinks">
+                    {wf.use_case && (
+                      <a href={`/use-case/${wf.use_case}`} class="td__lnk">
+                        More {tc(wf.use_case)} tools →
+                      </a>
+                    )}
+                    {wf.workflow_slug && (
+                      <a href={`/workflow/${wf.workflow_slug}`} class="td__lnk">
+                        View full workflow →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Use Cases & Capabilities -->
+        {(useCases.length > 0 || hasCapabilities) && (
+          <section class="td__sec" id="use-cases">
+            <h2 class="td__st">Use Cases & Capabilities</h2>
+            {useCases.length > 0 && (
+              <div style="margin-bottom:1rem">
+                <p class="td__lbl">Use cases</p>
+                <div class="td__tr">
+                  {useCases.map((uc: string) => (
+                    <a href={`/use-case/${slugify(uc)}`} class="td-tag td-tag--link">{tc(uc)}</a>
+                  ))}
+                </div>
+              </div>
+            )}
+            {hasCapabilities && (
+              <div>
+                <p class="td__lbl">Capabilities</p>
+                <div class="td__tr">
+                  {capabilities.map((cap: string) => (
+                    <a href={`/capability/${slugify(cap)}`} class="td-tag td-tag--link">{tc(cap)}</a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
+
+        <!-- Industries -->
+        {hasIndustries && (
+          <section class="td__sec" id="industries">
+            <h2 class="td__st">{name} by Industry</h2>
+            <p class="td__lbl">Used in</p>
+            <div class="td__tr">
+              {industries.map((ind: string) => (
+                <a href={`/industry/${slugify(ind)}`} class="td-tag td-tag--link">{tc(ind)}</a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Compare with alternatives -->
+        {hasCompare && (
+          <section class="td__sec" id="compare">
+            <h2 class="td__st">Compare {name} with alternatives</h2>
+            <div class="td__cl">
+              {compareCandidates.map((alt: any) => {
+                const an   = alt.name || alt.slug;
+                const al   = altLogo(alt);
+                const pair = [slug, alt.slug].sort().join("-vs-");
+                return (
+                  <a href={`/compare/${pair}`} class="td__cp">
+                    <span class="td__cplogos">
+                      {logoUrl && <img src={logoUrl} alt="" width="20" height="20" loading="lazy" onerror="this.style.display='none'" />}
+                      {al      && <img src={al}      alt="" width="20" height="20" loading="lazy" onerror="this.style.display='none'" />}
+                    </span>
+                    <span>{name} vs {an}</span>
+                    <span class="td__ca">→</span>
+                  </a>
+                );
+              })}
+            </div>
+            {hasAlts && (
+              <a href={`/alternatives/${slug}`} class="td__lnk" style="margin-top:.75rem;display:inline-block">
+                View all {name} alternatives →
+              </a>
+            )}
+          </section>
+        )}
+
+        <!-- FAQ -->
+        {hasFAQ && (
+          <section class="td__sec" id="faq">
+            <h2 class="td__st">Frequently Asked Questions</h2>
+            <div class="td__faq">
+              {faqItems.map((faq: any) => (
+                <details class="td__fi">
+                  <summary class="td__fq">{faq.question}</summary>
+                  <p class="td__fa">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+
+      </div>
+
+      <!-- Right sidebar -->
+      <aside class="td__sidebar">
+
+        <!-- CTA card -->
+        {ctaUrl && (
+          <div class="td__card td__card--cta">
+            {logoUrl && (
+              <img src={logoUrl} alt={`${name} logo`} width="52" height="52"
+                class="td__sbl" loading="lazy" onerror="this.style.display='none'" />
+            )}
+            <p class="td__sbn">{name}</p>
+            <span class={`badge ${pricing.cls}`}>{pricing.label}</span>
+            <a href={ctaUrl} class="td-btn td-btn--p td-btn--full" target="_blank"
+              rel={isAffiliate ? "noopener sponsored" : "noopener noreferrer"}>
+              Visit {name} →
+            </a>
+            {commercial.freemium   && <p class="td__sbnote">✓ Free plan available</p>}
+            {commercial.free_trial && <p class="td__sbnote">✓ Free trial available</p>}
+          </div>
+        )}
+
+        <!-- Explore more -->
+        <div class="td__card">
+          <h3 class="td__sbh">Explore more</h3>
+
+          {category && (
+            <div class="td__sbg">
+              <p class="td__lbl">Category</p>
+              <a href={`/tools/category/${category}`} class="td__sba">All {tc(category)} tools →</a>
+              <a href={`/best/${category}`}           class="td__sba">Best {tc(category)} tools →</a>
+            </div>
+          )}
+
+          {subcategory && (
+            <div class="td__sbg">
+              <p class="td__lbl">Subcategory</p>
+              <a href={`/subcategory/${slugify(subcategory)}`} class="td__sba">{tc(subcategory)} tools →</a>
+              <a href={`/best/${slugify(subcategory)}`}        class="td__sba">Best {tc(subcategory)} tools →</a>
+            </div>
+          )}
+
+          {microcategory && (
+            <div class="td__sbg">
+              <p class="td__lbl">Type</p>
+              <a href={`/microcategory/${slugify(microcategory)}`} class="td__sba">{tc(microcategory)} tools →</a>
+            </div>
+          )}
+
+          {useCases.length > 0 && (
+            <div class="td__sbg">
+              <p class="td__lbl">Use cases</p>
+              {useCases.slice(0, 4).map((uc: string) => (
+                <a href={`/use-case/${slugify(uc)}`} class="td__sba">{tc(uc)} →</a>
+              ))}
+            </div>
+          )}
+
+          {industries.length > 0 && (
+            <div class="td__sbg">
+              <p class="td__lbl">Industries</p>
+              {industries.slice(0, 3).map((ind: string) => (
+                <a href={`/industry/${slugify(ind)}`} class="td__sba">{tc(ind)} →</a>
+              ))}
+            </div>
+          )}
+
+          {integrations.length > 0 && (
+            <div class="td__sbg">
+              <p class="td__lbl">Works with</p>
+              {integrations.slice(0, 3).map((intg: string) => (
+                <a href={`/integration/${slugify(intg)}`} class="td__sba">{tc(intg)} →</a>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <!-- Alternatives mini-list -->
+        {hasAlts && (
+          <div class="td__card">
+            <h3 class="td__sbh">{name} alternatives</h3>
+            <div class="td__al">
+              {alternatives.map((alt: any) => {
+                const an = alt.name || alt.slug;
+                const al = altLogo(alt);
+                return (
+                  <a href={`/tools/${alt.slug}`} class="td__ai">
+                    {al ? (
+                      <img src={al} alt="" width="28" height="28" loading="lazy"
+                        onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.removeProperty('display')" />
+                    ) : null}
+                    <span class="td__aii" style={al ? "display:none" : ""}>{an.charAt(0)}</span>
+                    <span class="td__ain">{an}</span>
+                    {alt.pricing_tier && (
+                      <span class={`badge badge--${alt.pricing_tier.toLowerCase()} td__aib`}>
+                        {alt.pricing_tier}
+                      </span>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+            <a href={`/alternatives/${slug}`} class="td__lnk" style="margin-top:.5rem;display:block">
+              View all alternatives →
+            </a>
+          </div>
+        )}
+
+      </aside>
+    </div>
+
+    <!-- Similar tools grid — FIX: was related.related_tools (never existed) → now related.alternatives -->
+    {hasSimilar && (
+      <section class="td__rel">
+        <div class="td__c">
+          <h2 class="td__st">Similar {category ? tc(category) : "AI"} tools</h2>
+          <div class="tools-grid">
+            {similarTools.map((t: any) => (
+              <ToolCard tool={t} showDescription={true} showPricing={true} showCategory={false} />
+            ))}
+          </div>
+          {category && (
+            <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+              <a href={`/tools/category/${category}`}  class="td__lnk">Browse all {tc(category)} tools →</a>
+              <a href={`/alternatives/${slug}`}         class="td__lnk">All {name} alternatives →</a>
+              {hasCompare && (
+                <a href={`/compare/${[slug, compareCandidates[0].slug].sort().join("-vs-")}`} class="td__lnk">
+                  Compare {name} →
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <!-- Tag footer -->
+    {tags.length > 0 && (
+      <div class="td__c">
+        <div class="td__tf">
+          {tags.map((tag: string) => (
+            <a href={`/tools/tag/${slugify(tag)}`} class="td-tag td-tag--link">{tag}</a>
+          ))}
+        </div>
+      </div>
+    )}
+
+  </article>
+  <Footer slot="footer" />
+</BaseLayout>

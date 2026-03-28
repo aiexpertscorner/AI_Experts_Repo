@@ -1,0 +1,191 @@
+---
+/**
+ * src/pages/tools/index.astro
+ * AI Tools hub — geen inline styles, alle CSS extern.
+ */
+import BaseLayout    from "@/layouts/BaseLayout.astro";
+import Header        from "@/components/site/Header.astro";
+import Footer        from "@/components/site/Footer.astro";
+import ToolCard      from "@/components/cards/ToolCard.astro";
+import Breadcrumb    from "@/components/ui/Breadcrumb.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+
+import catMapRaw   from "@/data/build/category-map.json";
+import featuredRaw from "@/data/build/featured-tools.json";
+import homepageRaw from "@/data/build/homepage-data.json";
+import logoMapRaw  from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+const hp      = homepageRaw as any;
+
+const categories = Object.entries(catMapRaw as any)
+  .map(([slug, cat]: [string, any]) => ({ slug, name: cat.name || slug, count: cat.count || 0 }))
+  .filter(c => c.count > 0)
+  .sort((a, b) => b.count - a.count);
+
+const rawTools = (featuredRaw as any)?.global_top ?? hp?.featured_tools ?? hp?.popular_tools ?? [];
+const featuredTools = (rawTools as any[])
+  .filter((t: any) => t?.slug || t?.handle)
+  .map((t: any) => ({
+    ...t,
+    logo_url: logoMap[t.slug || t.handle] || t.logo_url || null,
+  }))
+  .slice(0, 9);
+
+const totalTools = Number(hp?.total_tools ?? hp?.total_count ?? 19088);
+
+const CAT_EMOJI: Record<string,string> = {
+  "chatbots-and-llms":"💬","writing-and-content":"✍️","image-generation":"🎨",
+  "video-generation":"🎬","audio-and-music":"🎵","coding-and-dev":"💻",
+  "seo-and-marketing":"📈","design-and-ui":"🖌️","productivity":"⚡",
+  "research-and-education":"🎓","data-and-analytics":"📊","customer-service":"🎧",
+  "hr-and-recruiting":"👥","legal-and-finance":"⚖️","health-and-wellness":"❤️",
+  "sales-and-crm":"💼","translation":"🌍","ai-agents":"🤖",
+  "photo-editing":"📸","3d-and-ar":"🧊","e-commerce":"🛒",
+  "social-media":"📱","other-ai-tools":"🔧",
+};
+
+const filterChips = [
+  { label:"🆓 Free",          href:"/tools/pricing/free" },
+  { label:"✨ Freemium",       href:"/tools/pricing/freemium" },
+  { label:"💼 Paid",           href:"/tools/pricing/paid" },
+  { label:"🔓 Open Source",    href:"/tools/feature/open-source" },
+  { label:"🧩 No-Code",        href:"/tools/feature/no-code" },
+  { label:"🔌 API Access",     href:"/tools/feature/api-access" },
+  { label:"📱 Mobile App",     href:"/tools/feature/mobile-app" },
+  { label:"👥 Team Features",  href:"/tools/feature/team-features" },
+];
+
+const industryLinks = [
+  ["🏥","Healthcare",     "/industry/healthcare"],
+  ["⚖️","Finance & Legal","/industry/finance"],
+  ["📚","Education",      "/industry/education"],
+  ["🛒","E-Commerce",     "/industry/e-commerce"],
+  ["💻","Software Dev",   "/industry/software-development"],
+  ["🎭","Media",          "/industry/media-and-publishing"],
+  ["🏗️","Real Estate",   "/industry/real-estate"],
+  ["📣","Marketing",      "/industry/marketing"],
+  ["🎮","Gaming",         "/industry/gaming"],
+  ["🏨","Hospitality",    "/industry/hospitality"],
+  ["🏭","Manufacturing",  "/industry/manufacturing"],
+  ["☁️","SaaS",           "/industry/saas"],
+];
+
+const exploreCards = [
+  { icon:"⚔️",  label:"Compare Tools",     sub:"Side-by-side comparisons",  href:"/compare",      accent:"blue" },
+  { icon:"🔀",  label:"Find Alternatives", sub:"Switch from any AI tool",    href:"/alternatives", accent:"green" },
+  { icon:"🏆",  label:"Best-Of Lists",      sub:"Expert-ranked picks",        href:"/best",         accent:"amber" },
+  { icon:"🎯",  label:"By Use Case",        sub:"What you want to do",        href:"/use-case",     accent:"violet" },
+  { icon:"🏭",  label:"By Industry",        sub:"Tools for your field",       href:"/industry",     accent:"amber" },
+  { icon:"⚙️", label:"Workflows",          sub:"Step-by-step AI guides",     href:"/workflow",     accent:"violet" },
+  { icon:"🔬",  label:"By Capability",      sub:"Filter by AI feature",       href:"/capability",   accent:"green" },
+  { icon:"🗂️", label:"Subcategories",      sub:"Drill into any niche",       href:"/subcategory",  accent:"blue" },
+];
+---
+
+<BaseLayout
+  title="AI Tools Directory — Browse 19,000+ AI Tools"
+  description={`Discover and compare ${totalTools.toLocaleString()}+ AI tools. Updated daily.`}
+>
+  <Header slot="header" />
+
+  <div class="page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[{ label:"Home", href:"/" }, { label:"AI Tools" }]} />
+
+      <div class="hub-hero hub-hero--split">
+        <div class="hub-hero__left">
+          <span class="eyebrow">Directory</span>
+          <h1 class="hub-hero-title">AI Tools Directory</h1>
+          <p class="hub-hero-desc">Discover, compare and find the best AI tools for every workflow. {totalTools.toLocaleString()}+ tools, updated daily.</p>
+          <div class="chips">
+            {filterChips.map(c => <a href={c.href} class="chip">{c.label}</a>)}
+          </div>
+        </div>
+        <div class="hub-hero__stats stats-box">
+          <div class="stat-item">
+            <span class="stat-item__value">{totalTools.toLocaleString()}+</span>
+            <span class="stat-item__label">AI Tools</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item__value">{categories.length}</span>
+            <span class="stat-item__label">Categories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item__value">Daily</span>
+            <span class="stat-item__label">Updates</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <SectionHeader eyebrow="Discover" title="Browse by Category" meta={`${categories.length} categories`} />
+        <div class="grid-cards-sm">
+          {categories.map(cat => (
+            <a href={`/tools/category/${cat.slug}`} class="cat-card">
+              <span class="cat-card__emoji">{CAT_EMOJI[cat.slug] || "🤖"}</span>
+              <span class="cat-card__name">{cat.name}</span>
+              {cat.count > 0 && <span class="cat-card__count">{cat.count.toLocaleString()}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {featuredTools.length > 0 && (
+        <section class="section">
+          <SectionHeader eyebrow="Top Rated" title="Most Popular AI Tools" seeAllHref="/tools" seeAllLabel="View all →" />
+          <div class="grid-tools">
+            {featuredTools.map((tool: any, i: number) => (
+              <ToolCard tool={tool} rank={i + 1} showDescription={true} showPricing={true} showCategory={true} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section class="section">
+        <SectionHeader eyebrow="By Industry" title="AI Tools for Your Industry" seeAllHref="/industry" seeAllLabel="All industries →" />
+        <div class="grid-cards-md">
+          {industryLinks.map(([em, label, href]) => (
+            <a href={href} class="ind-card">
+              <span class="ind-card__emoji">{em}</span>
+              <span class="ind-card__label">{label}</span>
+              <svg class="ind-card__arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <SectionHeader eyebrow="Explore" title="More ways to find AI tools" />
+        <div class="grid-cards-lg">
+          {exploreCards.map(card => (
+            <a href={card.href} class={`exp-card exp-card--${card.accent}`}>
+              <span class="exp-card__icon">{card.icon}</span>
+              <strong class="exp-card__title">{card.label}</strong>
+              <span class="exp-card__sub">{card.sub}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <div class="seo-links">
+        <a href="/tools/pricing/free">Free AI tools</a>
+        <a href="/tools/pricing/freemium">Freemium AI tools</a>
+        <a href="/compare">Compare AI tools</a>
+        <a href="/best">Best-of lists</a>
+        <a href="/alternatives">Find alternatives</a>
+        <a href="/use-case">By use case</a>
+        <a href="/workflow">Workflows</a>
+        <a href="/capability">By capability</a>
+        <a href="/industry">By industry</a>
+        <a href="/subcategory">Subcategories</a>
+        <a href="/tag">Browse tags</a>
+        <a href="/submit-tool">Submit a tool</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

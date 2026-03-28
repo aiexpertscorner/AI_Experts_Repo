@@ -1,69 +1,121 @@
 ---
+/**
+ * src/pages/alternatives/[slug].astro
+ * Best alternatives for a specific AI tool.
+ */
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/site/Header.astro";
-import Footer from "@/components/site/Footer.astro";
-import ToolCard from "@/components/cards/ToolCard.astro";
-import altPageData from "@/data/build/alternatives-page-data.json";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import ToolCard   from "@/components/cards/ToolCard.astro";
+import ToolLogo   from "@/components/ui/ToolLogo.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
 
-// ── Props patroon: één slim bestand (<8MB), data per tool als prop ──
-export function getStaticPaths() {
-  return Object.values(altPageData as Record<string,any>).map((entry: any) => ({
-    params: { slug: entry.handle },
-    props:  { entry },
-  }));
+import altPagesRaw from "@/data/build/page-payloads/alternatives-pages.json";
+
+export async function getStaticPaths() {
+  const pages = altPagesRaw as any[];
+  return pages
+    .filter(p => p?.seed_tool?.slug && p?.alternatives?.length >= 3)
+    .map(page => ({
+      params: { slug: page.seed_tool.slug },
+      props:  { page },
+    }));
 }
 
-interface Props { entry: any }
-const { entry } = Astro.props;
-if (!entry) return Astro.redirect('/ai-tools');
+const { page }  = Astro.props as any;
+const seed      = page.seed_tool;
+const alts      = page.alternatives || [];
+const seedName  = seed.name || seed.slug;
 
-const { handle, name, tagline, pricing_tier="unknown", category="", category_slug="", alts=[] } = entry;
-const catSlug = category_slug || category.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+const title       = page.seo?.title       || `Best ${seedName} Alternatives 2026 — Top ${alts.length} Picks`;
+const description = page.seo?.description || `Looking for ${seedName} alternatives? Compare ${alts.length} similar tools with features, pricing and expert picks.`;
 ---
-<BaseLayout
-  title={`Best Alternatives to ${name} in ${new Date().getFullYear()}`}
-  description={`Looking for alternatives to ${name}? Discover ${alts.length} top alternatives with similar features and use cases.`}
->
-  <Header slot="header"/>
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      <a href="/ai-tools">AI Tools</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      <a href={`/ai-tools/${handle}`}>{name}</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      <span>Alternatives</span>
-    </nav>
 
-    <div class="alt-header">
-      <span class="alt-badge">🔄 Alternatives</span>
-      <h1>Best Alternatives to {name}</h1>
-      <p>Discover {alts.length} top alternatives to {name} with similar features and use cases.</p>
-      <div class="alt-meta">
-        <span><strong>{alts.length}</strong> alternatives found</span>
-        {pricing_tier && <span>Original pricing: <strong>{pricing_tier}</strong></span>}
-      </div>
-      <a href={`/ai-tools/${handle}`} class="btn btn-ghost btn-sm">← Back to {name}</a>
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <div class="alternatives-page">
+
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: "Home",         href: "/" },
+        { label: "Alternatives", href: "/alternatives" },
+        { label: `${seedName} Alternatives` },
+      ]} />
     </div>
 
-    {alts.length > 0
-      ? <div class="grid-tools">{alts.map((t:any, i:number) => <ToolCard tool={t} rank={i+1}/>)}</div>
-      : <p class="empty">No alternatives found yet.</p>
-    }
-  </div>
-  <Footer slot="footer"/>
-</BaseLayout>
+    <!-- Hero -->
+    <section class="alternatives-page__hero">
+      <div class="container">
+        <div class="alternatives-seed">
+          <ToolLogo
+            slug={seed.slug}
+            name={seedName}
+            logoUrl={seed.logo_url}
+            logoDomain={seed.logo_domain}
+            size={64}
+            loading="eager"
+          />
+          <div>
+            <p class="alternatives-seed__label">Finding alternatives for</p>
+            <h1 class="alternatives-seed__name">{seedName}</h1>
+          </div>
+        </div>
 
-<style>
-.breadcrumb{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--text-xs);color:var(--c-text-3);padding:var(--sp-6) 0 0;margin-bottom:var(--sp-6);flex-wrap:wrap}
-.breadcrumb a{color:var(--c-text-3);text-decoration:none;transition:color var(--t-fast)}
-.breadcrumb a:hover{color:var(--c-brand-light)}
-.alt-header{padding:var(--sp-6) 0 var(--sp-10)}
-.alt-badge{display:inline-block;font-size:var(--text-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-brand-light);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);padding:4px 12px;border-radius:var(--r-full);margin-bottom:var(--sp-4)}
-.alt-header h1{font-size:clamp(var(--text-2xl),4vw,var(--text-4xl));margin-bottom:var(--sp-3)}
-.alt-header p{font-size:var(--text-base);color:var(--c-text-2);margin-bottom:var(--sp-4);max-width:560px}
-.alt-meta{display:flex;gap:var(--sp-6);font-size:var(--text-sm);color:var(--c-text-3);margin-bottom:var(--sp-6)}
-.alt-meta strong{color:var(--c-text);font-family:var(--font-display)}
-.empty{text-align:center;color:var(--c-text-3);padding:4rem 0}
-</style>
+        <p class="alternatives-page__intro">
+          We found <strong>{alts.length} alternatives</strong> to {seedName}.
+          Compare features, pricing and find the best fit for your workflow.
+        </p>
+      </div>
+    </section>
+
+    <!-- Alternatives grid -->
+    <section class="alternatives-page__list">
+      <div class="container">
+        <div class="grid-tools">
+          {alts.map((tool: any, i: number) => (
+            <ToolCard
+              tool={tool}
+              rank={i + 1}
+              showDescription={true}
+              showPricing={true}
+              showCategory={true}
+              showCTA={false}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare CTA -->
+    <section class="alternatives-page__compare-cta">
+      <div class="container">
+        <h2>Compare {seedName} directly</h2>
+        <p>See a detailed side-by-side comparison with top alternatives.</p>
+        <div class="alternatives-page__compare-links">
+          {alts.slice(0, 4).map((alt: any) => {
+            const altName = alt.name || alt.slug;
+            const [a, b] = [seed.slug, alt.slug].sort();
+            return (
+              <a href={`/compare/${a}-vs-${b}`} class="btn btn--secondary">
+                {seedName} vs {altName}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="seo-links" style="margin-top: var(--sp-8)">
+        <a href="/alternatives">All alternatives</a>
+        <a href={`/tools/${seed.slug}`}>← Back to {seedName}</a>
+        <a href="/compare">Compare tools</a>
+        <a href="/best">Best-of lists</a>
+      </div>
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import logoMapRaw from "@/data/build/logo-map.json";
+import pagesRaw from "@/data/build/page-payloads/tag-pages.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+const pages   = (pagesRaw as any[]).filter((p:any)=>p?.slug);
+const total   = (pagesRaw as any[]).length;
+
+function tc(s: string) {
+  return (s||"").replace(/-/g," ").replace(/\b\w/g,(l:string)=>l.toUpperCase());
+}
+
+const pageTitle = "AI Tag — Browse AI Tools by Tag";
+const pageDesc  = "Browse AI tools by tag — chatbot, image generation, open source, API access and more. " + total + "+ entries.";
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Header slot="header" />
+  <div class="hub"><div class="hub__c">
+
+    <nav class="hub__bc">
+      <a href="/">Home</a><span>&#8250;</span><span>Tag</span>
+    </nav>
+
+    <div class="hub__hero">
+      <span class="hub__ew" style="color:#EC4899">Tag</span>
+      <h1 class="hub__title">Browse AI Tools by Tag</h1>
+      <p class="hub__desc">{pageDesc}</p>
+    </div>
+
+    <div class="hub__grid">
+      {(pages as any[]).map((p: any) => {
+        const href  = `/tag/${p.slug}`;
+        const title = p.name||tc(p.slug);
+        const count = p.top_tools?.length||p.tool_count;
+        const logo  = null;
+        return (
+          <a href={href} class="hub__card">
+            {logo && <img src={logo} alt="" width="22" height="22" class="hub__logo" loading="lazy" onerror="this.style.display='none'" />}
+            <span class="hub__card-title">{title}</span>
+            {count != null && Number(count) > 0 && <span class="hub__card-count">{count} tools</span>}
+            <span class="hub__arr">&#8594;</span>
+          </a>
+        );
+      })}
+    </div>
+
+    <div class="hub__related">
+      <a href="/tools">All AI Tools</a>
+        <a href="/subcategory">Subcategories</a>
+    </div>
+
+  </div></div>
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+.hub{min-height:100vh}.hub__c{max-width:1280px;margin:0 auto;padding:0 1.5rem 4rem}
+.hub__bc{padding:.875rem 0;font-size:.8125rem;color:#64748B;display:flex;gap:.4rem;align-items:center;border-bottom:1px solid #1E293B;margin-bottom:2.5rem}
+.hub__bc a{color:#64748B;text-decoration:none}.hub__bc a:hover{color:#94A3B8}
+.hub__hero{padding:2rem 0 2.5rem;border-bottom:1px solid #1E293B;margin-bottom:2.5rem}
+.hub__ew{display:block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;font-weight:600}
+.hub__title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:#F8FAFC;margin:0 0 .75rem;letter-spacing:-.02em}
+.hub__desc{color:#94A3B8;font-size:1.0625rem;margin:0;max-width:600px;line-height:1.6}
+.hub__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin-bottom:3rem}
+.hub__card{display:flex;align-items:center;gap:.625rem;padding:.875rem 1rem;background:#0F172A;border:1px solid #1E293B;border-radius:.875rem;text-decoration:none;transition:all .15s}
+.hub__card:hover{border-color:#EC4899;background:#0A1628}
+.hub__logo{width:22px;height:22px;border-radius:4px;object-fit:contain;flex-shrink:0}
+.hub__card-title{flex:1;font-size:.875rem;font-weight:600;color:#F8FAFC;line-height:1.35}
+.hub__card-count{font-size:.75rem;color:#64748B;white-space:nowrap;flex-shrink:0}
+.hub__arr{color:#475569;font-size:.875rem;flex-shrink:0}
+.hub__card:hover .hub__arr{color:#EC4899}
+.hub__related{display:flex;gap:1rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid #1E293B}
+.hub__related a{font-size:.875rem;color:#3B82F6;text-decoration:none;padding:.375rem .875rem;background:#0F172A;border:1px solid #1E293B;border-radius:.5rem;transition:all .15s}
+.hub__related a:hover{background:#1E293B;color:#F8FAFC}
+</style>

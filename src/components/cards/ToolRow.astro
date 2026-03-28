@@ -1,39 +1,23 @@
+```astro
 ---
+import ToolCard from "@/components/cards/ToolCard.astro";
+
 interface Props {
-  tool: { name:string; handle:string; tagline?:string; pricing_tier?:string; logo_domain?:string; affiliate_url?:string };
+  tool: any;
   rank?: number;
 }
+
 const { tool, rank } = Astro.props;
-const { name, handle, tagline, pricing_tier="unknown", logo_domain, affiliate_url } = tool;
-const tier = pricing_tier.toLowerCase();
-const logoSrc = logo_domain ? `https://logo.clearbit.com/${logo_domain}?size=40` : `https://www.google.com/s2/favicons?domain=${handle}.com&sz=40`;
-const pricingClass: Record<string,string> = { free:"badge-free", freemium:"badge-freemium", paid:"badge-paid" };
-const pricingLabel: Record<string,string> = { free:"Free", freemium:"Freemium", paid:"Paid" };
-const href = affiliate_url ?? `/ai-tools/${handle}`;
 ---
-<a href={href} class="tool-row" target={affiliate_url ? "_blank" : undefined} rel={affiliate_url ? "noopener sponsored" : undefined}>
-  {rank && <span class="tr-rank">#{rank}</span>}
-  <div class="tr-logo">
-    <img src={logoSrc} alt={name} width="28" height="28" loading="lazy"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-    <span class="tr-fb" style="display:none">{name.charAt(0)}</span>
-  </div>
-  <div class="tr-info">
-    <span class="tr-name">{name}</span>
-    {tagline && <span class="tr-tagline">{tagline}</span>}
-  </div>
-  <span class:list={["badge", pricingClass[tier] ?? "badge-unknown"]}>{pricingLabel[tier] ?? tier}</span>
-  <svg class="tr-arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-</a>
-<style>
-.tool-row { display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);border-radius:var(--r-md);background:var(--c-bg-2);border:1px solid var(--c-border);text-decoration:none;transition:all var(--t-fast) }
-.tool-row:hover { border-color:var(--c-border-hover);background:var(--c-bg-3) }
-.tr-rank { font-family:var(--font-mono);font-size:var(--text-xs);color:var(--c-text-3);font-weight:600;min-width:24px }
-.tr-logo { width:28px;height:28px;border-radius:4px;overflow:hidden;flex-shrink:0;background:var(--c-bg-3);display:flex;align-items:center;justify-content:center }
-.tr-logo img { width:28px;height:28px;object-fit:contain }
-.tr-fb { font-size:12px;font-weight:700;color:var(--c-brand) }
-.tr-info { flex:1;min-width:0;display:flex;flex-direction:column }
-.tr-name { font-size:var(--text-sm);font-weight:600;color:var(--c-text);font-family:var(--font-display) }
-.tr-tagline { font-size:10px;color:var(--c-text-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap }
-.tr-arr { color:var(--c-text-3);flex-shrink:0 }
-</style>
+
+<ToolCard
+  tool={tool}
+  rank={rank}
+  variant="row"
+  compact={false}
+  showDescription={false}
+  showPricing={true}
+  showCategory={false}
+  showCTA={false}
+/>
+```

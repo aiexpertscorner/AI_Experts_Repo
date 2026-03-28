@@ -1,0 +1,123 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import ToolCard   from "@/components/cards/ToolCard.astro";
+import pagesRaw   from "@/data/build/page-payloads/workflow-pages-rich.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+// ── Config ────────────────────────────────────────────────────────
+const HUB_ROUTE     = "/workflow";
+const HUB_LABEL     = "Workflows";
+const EYEBROW_COLOR = "#8B5CF6";
+const TYPE_LABEL    = "Workflow";
+
+// ── getStaticPaths — uses import directly (Astro scope requirement) ──
+export function getStaticPaths() {
+  return (pagesRaw as any[])
+    .filter((p: any) => p?.slug || p?.route || p?.primary)
+    .map((p: any) => ({
+      params: { slug: p.slug || p.primary || (p.route || "").split("/").pop() || "" },
+      props:  { page: p },
+    }));
+}
+
+// ── Per-page data ─────────────────────────────────────────────────
+const logoMap = logoMapRaw as Record<string, string>;
+const { page } = Astro.props as { page: any };
+const { slug }  = Astro.params;
+
+function tc(s: string) {
+  return (s || "").replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase());
+}
+
+const seo         = page?.seo        || {};
+const topTools    = (page?.top_tools || []).filter(Boolean);
+const related     = page?.related_links || page?.related || [];
+const entityName  = page?.name || page?.entity_name || tc(slug || "");
+const description = page?.description || seo.description || "";
+const pageTitle   = seo.title || `Best ${entityName} AI Tools 2026`;
+const pageDesc    = seo.description || `Discover the best AI tools for ${entityName}.`;
+
+const enrichedTools = topTools.map((t: any) => {
+  const s = typeof t === "string" ? t : (t.slug || "");
+  if (typeof t === "string") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };
+  return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearbit.com/${t.logo_domain}?size=96` : null) };
+});
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Header slot="header" />
+  <div class="tx"><div class="tx__c">
+
+    <nav class="tx__bc">
+      <a href="/">Home</a> <span>&#8250;</span>
+      <a href={HUB_ROUTE}>{HUB_LABEL}</a>
+      <span>&#8250;</span> <span>{entityName}</span>
+    </nav>
+
+    <div class="tx__hero">
+      <span class="tx__ew" style={`color:${EYEBROW_COLOR}`}>{TYPE_LABEL}</span>
+      <h1 class="tx__title">Best {entityName} AI Tools</h1>
+      {description && <p class="tx__desc">{description}</p>}
+      <p class="tx__meta">{enrichedTools.length} tools &middot; Updated 2026</p>
+    </div>
+
+    {enrichedTools.length > 0 ? (
+      <div class="tx__grid">
+        {enrichedTools.map((t: any, i: number) => (
+          <div class="tx__item">
+            {i < 3 && <span class="tx__rank">Top {i + 1}</span>}
+            <ToolCard tool={t} showDescription={true} showPricing={true} showCategory={true} />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="tx__empty">
+        <p>No tools found for this {TYPE_LABEL.toLowerCase()}.</p>
+        <a href="/tools">Browse all AI tools</a>
+      </div>
+    )}
+
+    {related.length > 0 && (
+      <section class="tx__related">
+        <h2>Related {HUB_LABEL}</h2>
+        <div class="tx__rel">
+          {(related as any[]).slice(0, 12).map((l: any) => {
+            const rs = typeof l === "string" ? l : l.slug;
+            const rl = typeof l === "string" ? tc(l) : (l.name || tc(l.slug));
+            return <a href={`${HUB_ROUTE}/${rs}`} class="tx__rl">{rl}</a>;
+          })}
+        </div>
+      </section>
+    )}
+
+    <div class="tx__back">
+      <a href={HUB_ROUTE}>&larr; All {HUB_LABEL}</a>
+      <a href="/tools">Browse all AI tools &rarr;</a>
+    </div>
+
+  </div></div>
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+.tx{min-height:100vh}.tx__c{max-width:1280px;margin:0 auto;padding:0 1.5rem 4rem}
+.tx__bc{padding:.875rem 0;font-size:.8125rem;color:#64748B;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;border-bottom:1px solid #1E293B;margin-bottom:2.5rem}
+.tx__bc a{color:#64748B;text-decoration:none}.tx__bc a:hover{color:#94A3B8}
+.tx__hero{padding:2rem 0 2.5rem;border-bottom:1px solid #1E293B;margin-bottom:2.5rem}
+.tx__ew{display:block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;font-weight:600}
+.tx__title{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;color:#F8FAFC;margin:0 0 .75rem;letter-spacing:-.02em}
+.tx__desc{color:#94A3B8;font-size:1.0625rem;margin:0 0 1rem;max-width:640px;line-height:1.6}
+.tx__meta{font-size:.875rem;color:#64748B;margin:0}
+.tx__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:3rem}
+.tx__item{position:relative}
+.tx__rank{position:absolute;top:.75rem;right:.75rem;z-index:1;font-size:.6875rem;font-weight:700;color:#64748B;background:#1E293B;border-radius:9999px;padding:.125rem .5rem}
+.tx__empty{text-align:center;padding:4rem 0;color:#64748B}.tx__empty a{color:#3B82F6;text-decoration:none}
+.tx__related{margin-bottom:2.5rem}.tx__related h2{font-size:1.125rem;font-weight:700;color:#F8FAFC;margin:0 0 1rem}
+.tx__rel{display:flex;flex-wrap:wrap;gap:.5rem}
+.tx__rl{font-size:.875rem;color:#3B82F6;text-decoration:none;padding:.375rem .875rem;background:#0F172A;border:1px solid #1E293B;border-radius:.5rem;transition:all .15s}
+.tx__rl:hover{background:#1E293B;color:#F8FAFC}
+.tx__back{display:flex;gap:1.5rem;padding-top:1.5rem;border-top:1px solid #1E293B}
+.tx__back a{font-size:.875rem;color:#3B82F6;text-decoration:none}.tx__back a:hover{text-decoration:underline}
+</style>

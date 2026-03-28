@@ -1,0 +1,181 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/trust-pages.css";
+
+const title = "Privacy Policy — AIExpertsCorner";
+const desc  = "How AIExpertsCorner collects, uses and protects your personal data.";
+const updated = "March 2026";
+---
+
+<BaseLayout title={title} description={desc}>
+  <Header slot="header" />
+
+  <div class="trust-page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[{ label:"Home", href:"/" }, { label:"Privacy Policy" }]} />
+
+      <div class="trust-hero">
+        <span class="trust-hero__icon">🔒</span>
+        <h1 class="trust-hero__title">Privacy Policy</h1>
+        <p class="trust-hero__sub">How we collect, use and protect your personal information.</p>
+        <span class="trust-hero__meta">Last updated: {updated}</span>
+      </div>
+
+      <!-- TOC -->
+      <nav class="trust-toc" aria-label="Contents">
+        <p class="trust-toc__title">Contents</p>
+        <ol class="trust-toc__list">
+          <li><a href="#information">1. Information we collect</a></li>
+          <li><a href="#use">2. How we use your information</a></li>
+          <li><a href="#cookies">3. Cookies and tracking</a></li>
+          <li><a href="#sharing">4. Data sharing and third parties</a></li>
+          <li><a href="#affiliate">5. Affiliate links</a></li>
+          <li><a href="#retention">6. Data retention</a></li>
+          <li><a href="#rights">7. Your rights</a></li>
+          <li><a href="#security">8. Security</a></li>
+          <li><a href="#children">9. Children's privacy</a></li>
+          <li><a href="#changes">10. Changes to this policy</a></li>
+          <li><a href="#contact-privacy">11. Contact</a></li>
+        </ol>
+      </nav>
+
+      <div class="trust-content">
+
+        <section class="trust-section" id="information">
+          <h2 class="trust-section__title">1. Information we collect</h2>
+          <div class="trust-section__body">
+            <p><strong>Information you provide:</strong> When you submit a tool, contact us, or sign up for our newsletter, we collect the information you provide such as your name, email address and any message content.</p>
+            <p><strong>Automatically collected:</strong> When you visit AIExpertsCorner, we automatically collect certain technical information including your IP address, browser type, operating system, referring URLs, pages viewed and time spent on pages.</p>
+            <p><strong>Cookies:</strong> We use cookies and similar tracking technologies to improve your experience. See section 3 for details.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="use">
+          <h2 class="trust-section__title">2. How we use your information</h2>
+          <div class="trust-section__body">
+            <p>We use the information we collect to:</p>
+            <ul>
+              <li>Operate and improve the AIExpertsCorner directory and website</li>
+              <li>Respond to your inquiries and support requests</li>
+              <li>Send newsletters and product updates (only if you opted in)</li>
+              <li>Analyse usage patterns to improve content and user experience</li>
+              <li>Detect and prevent fraud or abuse</li>
+              <li>Comply with legal obligations</li>
+            </ul>
+            <p>We do not sell your personal data to third parties.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="cookies">
+          <h2 class="trust-section__title">3. Cookies and tracking</h2>
+          <div class="trust-section__body">
+            <p>We use the following types of cookies:</p>
+            <ul>
+              <li><strong>Essential cookies:</strong> Required for the website to function correctly. Cannot be disabled.</li>
+              <li><strong>Analytics cookies:</strong> We use privacy-respecting analytics (such as Plausible or similar) to understand how visitors use the site. These do not track you across other websites.</li>
+              <li><strong>Advertising cookies:</strong> We may use Google AdSense to display ads. Google may use cookies to show you relevant ads based on your browsing history. You can opt out at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</li>
+            </ul>
+            <p>You can control cookies through your browser settings. Disabling cookies may affect site functionality.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="sharing">
+          <h2 class="trust-section__title">4. Data sharing and third parties</h2>
+          <div class="trust-section__body">
+            <p>We may share your data with trusted third-party services that help us operate the website, including:</p>
+            <ul>
+              <li><strong>Hosting and infrastructure:</strong> Cloudflare Pages (hosting), Cloudflare (CDN and DDoS protection)</li>
+              <li><strong>Analytics:</strong> Privacy-focused analytics providers that process anonymised data</li>
+              <li><strong>Email:</strong> Newsletter and transactional email providers</li>
+              <li><strong>Advertising:</strong> Google AdSense for serving advertisements</li>
+            </ul>
+            <p>All third-party providers are required to handle your data in accordance with applicable privacy laws.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="affiliate">
+          <h2 class="trust-section__title">5. Affiliate links</h2>
+          <div class="trust-section__body">
+            <div class="trust-callout">
+              AIExpertsCorner participates in affiliate programs. When you click an affiliate link, the linked website may set cookies on your browser to track the referral. We earn a commission if you make a purchase through these links.
+            </div>
+            <p>Affiliate links are marked where required by law. Participation in affiliate programs does not influence our editorial content or tool rankings.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="retention">
+          <h2 class="trust-section__title">6. Data retention</h2>
+          <div class="trust-section__body">
+            <p>We retain your personal data only as long as necessary to fulfil the purpose for which it was collected, or as required by law.</p>
+            <ul>
+              <li>Contact form submissions: 2 years</li>
+              <li>Newsletter subscriptions: Until you unsubscribe</li>
+              <li>Analytics data: 26 months (anonymised)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="trust-section" id="rights">
+          <h2 class="trust-section__title">7. Your rights</h2>
+          <div class="trust-section__body">
+            <p>Under GDPR and applicable privacy laws, you have the right to:</p>
+            <ul>
+              <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+              <li><strong>Rectification:</strong> Request correction of inaccurate data</li>
+              <li><strong>Erasure:</strong> Request deletion of your personal data</li>
+              <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format</li>
+              <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+              <li><strong>Restriction:</strong> Request that we limit how we process your data</li>
+            </ul>
+            <p>To exercise these rights, contact us at <a href="mailto:privacy@aiexpertscorner.com">privacy@aiexpertscorner.com</a>.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="security">
+          <h2 class="trust-section__title">8. Security</h2>
+          <div class="trust-section__body">
+            <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure or destruction. All data is transmitted over HTTPS.</p>
+            <p>However, no method of transmission over the internet is 100% secure. We cannot guarantee the absolute security of your data.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="children">
+          <h2 class="trust-section__title">9. Children's privacy</h2>
+          <div class="trust-section__body">
+            <p>AIExpertsCorner is not directed at children under the age of 16. We do not knowingly collect personal data from children. If you believe we have inadvertently collected data from a child, please contact us immediately.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="changes">
+          <h2 class="trust-section__title">10. Changes to this policy</h2>
+          <div class="trust-section__body">
+            <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "last updated" date at the top of this page. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="contact-privacy">
+          <h2 class="trust-section__title">11. Contact</h2>
+          <div class="trust-section__body">
+            <p>For privacy-related questions or requests, contact us at:</p>
+            <p><strong>AIExpertsCorner</strong><br />
+            Email: <a href="mailto:privacy@aiexpertscorner.com">privacy@aiexpertscorner.com</a><br />
+            Amsterdam, Netherlands</p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="trust-back">
+        <a href="/">← Back to home</a>
+        <a href="/terms">Terms of Service →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,104 @@
+---
+/**
+ * /use-case/[slug].astro
+ * Discovery page per use case with rich cluster content.
+ * Data: src/data/build/page-payloads/use-case-cluster-pages.json
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import ToolCard   from "@/components/cards/ToolCard.astro";
+import useCasePagesRaw from "@/data/build/page-payloads/use-case-cluster-pages.json";
+
+export async function getStaticPaths() {
+  const pages = useCasePagesRaw as any[];
+  return pages
+    .filter(p => p?.slug && p?.top_tools?.length >= 3)
+    .map(page => ({
+      params: { slug: page.slug },
+      props:  { page },
+    }));
+}
+
+const { page } = Astro.props as any;
+const tools    = page.top_tools || [];
+const name     = page.name || page.slug;
+
+const title       = page.seo?.title       || `Best AI Tools for ${name} 2026`;
+const description = page.seo?.description || `Compare the best AI tools for ${name.toLowerCase()}. Features, pricing & expert picks.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {page.seo?.schema_faq && (
+      <script type="application/ld+json" set:html={JSON.stringify(page.seo.schema_faq)} />
+    )}
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="usecase-page">
+
+    <nav class="usecase-page__breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="/">Home</a>
+        <span>›</span>
+        <a href="/use-case">Use Cases</a>
+        <span>›</span>
+        <span>{name}</span>
+      </div>
+    </nav>
+
+    <section class="usecase-page__hero">
+      <div class="container">
+        <div class="usecase-page__eyebrow">Use Case</div>
+        <h1 class="usecase-page__title">Best AI Tools for {name}</h1>
+        <p class="usecase-page__intro">
+          {tools.length} AI tools to help you {name.toLowerCase()}. 
+          Compare features, pricing and find the right fit.
+        </p>
+      </div>
+    </section>
+
+    <section class="usecase-page__list">
+      <div class="container">
+        <div class="tools-grid tools-grid--usecase">
+          {tools.map((tool: any, i: number) => (
+            <div class="usecase-tool">
+              <ToolCard
+                tool={tool}
+                rank={i + 1}
+                showDescription={true}
+                showPricing={true}
+                showCategory={true}
+              />
+              {tool.use_case_description && (
+                <p class="usecase-tool__context">{tool.use_case_description}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-tool FAQs -->
+    {page.cross_tool_faqs?.length >= 2 && (
+      <section class="usecase-page__faq">
+        <div class="container">
+          <h2>Common Questions</h2>
+          <div class="faq-list">
+            {page.cross_tool_faqs.map((faq: any) => (
+              <details class="faq-item">
+                <summary class="faq-item__question">{faq.question}</summary>
+                <p class="faq-item__answer">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
