@@ -1,0 +1,266 @@
+[
+  {
+    "slug": "browser-agent",
+    "route": "/agents/browser-agent",
+    "meta": {
+      "slug": "browser-agent",
+      "name": "browser agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best browser agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best browser agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "coding-agent",
+    "route": "/agents/coding-agent",
+    "meta": {
+      "slug": "coding-agent",
+      "name": "coding agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best coding agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best coding agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "content-agent",
+    "route": "/agents/content-agent",
+    "meta": {
+      "slug": "content-agent",
+      "name": "content agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best content agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best content agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "data-analyst-agent",
+    "route": "/agents/data-analyst-agent",
+    "meta": {
+      "slug": "data-analyst-agent",
+      "name": "data analyst agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best data analyst agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best data analyst agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "finance-agent",
+    "route": "/agents/finance-agent",
+    "meta": {
+      "slug": "finance-agent",
+      "name": "finance agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best finance agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best finance agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "marketing-agent",
+    "route": "/agents/marketing-agent",
+    "meta": {
+      "slug": "marketing-agent",
+      "name": "marketing agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best marketing agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best marketing agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "operations-agent",
+    "route": "/agents/operations-agent",
+    "meta": {
+      "slug": "operations-agent",
+      "name": "operations agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best operations agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best operations agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "personal-assistant-agent",
+    "route": "/agents/personal-assistant-agent",
+    "meta": {
+      "slug": "personal-assistant-agent",
+      "name": "personal assistant agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best personal assistant agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best personal assistant agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "recruiting-agent",
+    "route": "/agents/recruiting-agent",
+    "meta": {
+      "slug": "recruiting-agent",
+      "name": "recruiting agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best recruiting agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best recruiting agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "research-agent",
+    "route": "/agents/research-agent",
+    "meta": {
+      "slug": "research-agent",
+      "name": "research agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best research agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best research agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "sales-agent",
+    "route": "/agents/sales-agent",
+    "meta": {
+      "slug": "sales-agent",
+      "name": "sales agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best sales agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best sales agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "support-agent",
+    "route": "/agents/support-agent",
+    "meta": {
+      "slug": "support-agent",
+      "name": "support agent",
+      "description": "",
+      "url_pattern": "/agents/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best support agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best support agent AI tools. Compare features, pricing and reviews."
+    }
+  }
+]

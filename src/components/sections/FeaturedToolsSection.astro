@@ -1,11 +1,27 @@
+```astro
 ---
 import ToolCard from "@/components/cards/ToolCard.astro";
-interface Props { tools: any[]; showRank?: boolean }
-const { tools, showRank = false } = Astro.props;
-if (!tools?.length) return;
+
+interface Props {
+  tools: any[];
+  showRank?: boolean;
+}
+
+const { tools = [], showRank = false } = Astro.props;
+
+if (!tools?.length) return null;
 ---
+
 <div class="grid-tools">
-  {tools.map((t: any, i: number) => (
-    <ToolCard tool={t} rank={showRank ? i + 1 : undefined}/>
+  {tools.map((tool: any, i: number) => (
+    <ToolCard
+      tool={tool}
+      rank={showRank ? i + 1 : undefined}
+      variant="default"
+      showDescription={true}
+      showPricing={true}
+      showCategory={true}
+      showCTA={false}
+    />
   ))}
 </div>

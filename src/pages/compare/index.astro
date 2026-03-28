@@ -1,0 +1,259 @@
+---
+/**
+ * src/pages/compare/index.astro
+ * Hub index for all AI tool comparison pages.
+ * Data: compare-pairs.json (flat list of pairs)
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/hub-listings.css";
+
+import pairsRaw  from "@/data/build/compare-pairs.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+const allPairs = (pairsRaw as any[]).filter(p => p?.tool_a && p?.tool_b);
+const total    = allPairs.length;
+
+// ── Hot pairs shown in hero ────────────────────────────────────────────────────
+const HOT = [
+  { a: "chatgpt",       b: "claude" },
+  { a: "chatgpt",       b: "google-gemini" },
+  { a: "github-copilot",b: "codeium" },
+  { a: "midjourney",    b: "dall-e-3" },
+  { a: "elevenlabs",    b: "murf-ai" },
+  { a: "jasper",        b: "copy-ai" },
+];
+
+function tc(s: string) {
+  return (s || "").replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase());
+}
+function slug(a: string, b: string) {
+  return [a, b].sort().join("-vs-");
+}
+
+const hotPairs = HOT.map(({ a, b }) => {
+  const found = allPairs.find(p =>
+    (p.tool_a === a && p.tool_b === b) || (p.tool_a === b && p.tool_b === a)
+  );
+  return {
+    href:  `/compare/${slug(a, b)}`,
+    nameA: found?.name_a || tc(a),
+    nameB: found?.name_b || tc(b),
+    logoA: logoMap[a] || null,
+    logoB: logoMap[b] || null,
+  };
+});
+
+// ── All pairs for grid ─────────────────────────────────────────────────────────
+// Show top 120 sorted; JS client-side filter handles search
+const displayed = allPairs
+  .slice(0, 120)
+  .map(p => ({
+    href:  `/compare/${slug(p.tool_a, p.tool_b)}`,
+    nameA: p.name_a || tc(p.tool_a),
+    nameB: p.name_b || tc(p.tool_b),
+    logoA: logoMap[p.tool_a] || null,
+    logoB: logoMap[p.tool_b] || null,
+  }));
+
+const pageTitle = `AI Tool Comparisons — ${total.toLocaleString()}+ Side-by-Side Comparisons`;
+const pageDesc  = `Compare any two AI tools side by side. Features, pricing, pros & cons. ${total.toLocaleString()}+ comparison pages.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": pageTitle,
+      "description": pageDesc,
+      "url": "https://aiexpertscorner.com/compare",
+    })} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="hub hub--blue">
+    <div class="hub__c">
+
+      <Breadcrumb crumbs={[
+        { label: "Home",    href: "/" },
+        { label: "Compare" },
+      ]} />
+
+      <!-- Hero -->
+      <div class="hub__hero">
+        <span class="hub__ew">Compare</span>
+        <h1 class="hub__title">AI Tool Comparisons</h1>
+        <p class="hub__desc">
+          Side-by-side comparisons of features, pricing and pros &amp; cons.
+          Find out which tool wins for your workflow.
+        </p>
+        <div class="hub__stats">
+          <div class="hub__stat">
+            <strong>{total.toLocaleString()}+</strong>
+            <span>Comparisons</span>
+          </div>
+          <div class="hub__stat">
+            <strong>Daily</strong>
+            <span>Updated</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hot comparisons strip -->
+      <section class="hub-section">
+        <h2 class="hub-section__title">🔥 Most Popular Comparisons</h2>
+        <div class="hub-hot-grid">
+          {hotPairs.map(p => (
+            <a href={p.href} class="hub-hot-card">
+              <span class="hub-hot-card__logos">
+                {p.logoA
+                  ? <img src={p.logoA} alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" />
+                  : <span class="hub-logo-fb">{p.nameA.charAt(0)}</span>}
+                <span class="hub-vs-sep">vs</span>
+                {p.logoB
+                  ? <img src={p.logoB} alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" />
+                  : <span class="hub-logo-fb">{p.nameB.charAt(0)}</span>}
+              </span>
+              <span class="hub-hot-card__label">{p.nameA} vs {p.nameB}</span>
+              <span class="hub__arr">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Search -->
+      <div class="hub__search-wrap">
+        <input
+          id="cmp-search"
+          type="search"
+          class="hub__search-input"
+          placeholder={`Search ${total.toLocaleString()}+ comparisons...`}
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- All comparisons grid -->
+      <section class="hub-section">
+        <h2 class="hub-section__title">All Comparisons</h2>
+        <div class="hub__grid" id="cmp-grid">
+          {displayed.map(p => (
+            <a href={p.href} class="hub__card">
+              {p.logoA
+                ? <img src={p.logoA} alt="" width="22" height="22" class="hub__logo" loading="lazy" onerror="this.style.display='none'" />
+                : <span class="hub__logo-fb">{p.nameA.charAt(0)}</span>}
+              {p.logoB
+                ? <img src={p.logoB} alt="" width="18" height="18" class="hub__logo hub__logo--sm" loading="lazy" onerror="this.style.display='none'" style="margin-left:-6px" />
+                : null}
+              <span class="hub__card-title">{p.nameA} vs {p.nameB}</span>
+              <span class="hub__arr">→</span>
+            </a>
+          ))}
+        </div>
+        {total > 120 && (
+          <p class="hub__more-note">
+            Showing 120 of {total.toLocaleString()} — use search to find any comparison.
+          </p>
+        )}
+      </section>
+
+      <div class="hub__related">
+        <a href="/alternatives">Find Alternatives</a>
+        <a href="/best">Best-Of Lists</a>
+        <a href="/tools">All AI Tools</a>
+        <a href="/use-case">By Use Case</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const input = document.getElementById("cmp-search") as HTMLInputElement | null;
+  const grid  = document.getElementById("cmp-grid");
+  if (input && grid) {
+    input.addEventListener("input", () => {
+      const q = input.value.toLowerCase();
+      grid.querySelectorAll<HTMLAnchorElement>(".hub__card").forEach(card => {
+        const text = card.textContent?.toLowerCase() || "";
+        card.style.display = !q || text.includes(q) ? "" : "none";
+      });
+    });
+  }
+</script>
+
+<style>
+/* ── Hot comparisons strip ─────────────────────────────────────────── */
+.hub-section { margin-bottom: var(--sp-10); }
+.hub-section__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0 0 var(--sp-4);
+  font-family: var(--font-display);
+}
+
+.hub-hot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: var(--sp-8);
+}
+.hub-hot-card {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.hub-hot-card:hover { border-color: var(--c-primary); background: var(--c-bg-card-alt); }
+.hub-hot-card__logos {
+  display: flex; align-items: center; gap: 4px; flex-shrink: 0;
+}
+.hub-hot-card__logos img { width: 22px; height: 22px; border-radius: 4px; object-fit: contain; }
+.hub-vs-sep { font-size: var(--text-xs); color: var(--c-text-4); font-weight: 700; }
+.hub-logo-fb {
+  width: 22px; height: 22px; border-radius: 4px;
+  background: var(--c-bg-hover);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--text-xs); font-weight: 700; color: var(--c-primary);
+}
+.hub-hot-card__label { flex: 1; font-size: var(--text-sm); font-weight: 600; color: var(--c-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Search ────────────────────────────────────────────────────────── */
+.hub__search-wrap { margin-bottom: var(--sp-6); }
+.hub__search-input {
+  width: 100%; max-width: 480px;
+  background: var(--c-bg-card); border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg); color: var(--c-text);
+  font-size: var(--text-sm); padding: 0.625rem 1rem;
+  outline: none; transition: border-color var(--t-base);
+}
+.hub__search-input:focus { border-color: var(--c-primary); }
+.hub__search-input::placeholder { color: var(--c-text-4); }
+
+/* ── Logo fallback in grid ─────────────────────────────────────────── */
+.hub__logo--sm { flex-shrink: 0; }
+.hub__logo-fb {
+  width: 22px; height: 22px; border-radius: 4px; flex-shrink: 0;
+  background: var(--c-bg-hover);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--text-xs); font-weight: 700; color: var(--c-primary);
+}
+
+/* ── More note ─────────────────────────────────────────────────────── */
+.hub__more-note {
+  font-size: var(--text-sm); color: var(--c-text-4);
+  margin-top: var(--sp-4); text-align: center;
+}
+</style>

@@ -1,0 +1,2937 @@
+{
+  "meta": {
+    "root": "e:\\2026_Github\\AI_Experts_V3_PROD\\AI_Experts_Repo",
+    "generatedAt": "2026-03-24T23:30:32.451Z",
+    "totalFilesScanned": 43728,
+    "totalTextFilesScanned": 19701
+  },
+  "target": {
+    "route": "src/pages/tools/index.astro",
+    "exists": true
+  },
+  "toolsIndex": {
+    "file": "src/pages/tools/index.astro",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/sections/CategoryGrid.astro",
+      "@/components/sections/FeaturedToolsSection.astro",
+      "@/data/build/category-map.json",
+      "@/data/build/featured-tools.json",
+      "@/data/build/homepage-data.json"
+    ],
+    "slugRelatedLines": [
+      {
+        "line": 51,
+        "text": "{dims.map(d => ("
+      },
+      {
+        "line": 119,
+        "text": "].map(([em, label, href]) => ("
+      }
+    ]
+  },
+  "imports": [
+    "@/layouts/BaseLayout.astro",
+    "@/components/site/Header.astro",
+    "@/components/site/Footer.astro",
+    "@/components/sections/CategoryGrid.astro",
+    "@/components/sections/FeaturedToolsSection.astro",
+    "@/data/build/category-map.json",
+    "@/data/build/featured-tools.json",
+    "@/data/build/homepage-data.json"
+  ],
+  "resolvedImports": [
+    {
+      "spec": "@/layouts/BaseLayout.astro",
+      "resolved": null
+    },
+    {
+      "spec": "@/components/site/Header.astro",
+      "resolved": null
+    },
+    {
+      "spec": "@/components/site/Footer.astro",
+      "resolved": null
+    },
+    {
+      "spec": "@/components/sections/CategoryGrid.astro",
+      "resolved": null
+    },
+    {
+      "spec": "@/components/sections/FeaturedToolsSection.astro",
+      "resolved": null
+    },
+    {
+      "spec": "@/data/build/category-map.json",
+      "resolved": null
+    },
+    {
+      "spec": "@/data/build/featured-tools.json",
+      "resolved": null
+    },
+    {
+      "spec": "@/data/build/homepage-data.json",
+      "resolved": null
+    }
+  ],
+  "slugAccessHits": [
+    {
+      "file": "data/reports/validation/tools_master_summary.md",
+      "hits": [
+        {
+          "line": 21,
+          "text": "- slug: **4** duplicate values"
+        }
+      ]
+    },
+    {
+      "file": "deep-site-audit.mjs",
+      "hits": [
+        {
+          "line": 153,
+          "text": "slug: s,"
+        }
+      ]
+    },
+    {
+      "file": "diagnose.mjs",
+      "hits": [
+        {
+          "line": 77,
+          "text": "console.log(`  tool_a slug:    ${c.tool_a?.slug}`);"
+        },
+        {
+          "line": 80,
+          "text": "console.log(`  tool_b slug:    ${c.tool_b?.slug}`);"
+        },
+        {
+          "line": 90,
+          "text": "console.log(`  seed tool:      ${a.seed_tool?.name || a.seed_tool?.slug}`);"
+        },
+        {
+          "line": 101,
+          "text": "console.log(`  entity:         ${b.slug}`);"
+        },
+        {
+          "line": 116,
+          "text": "console.log(`  sample tool:    ${t0.name||t0.slug}`);"
+        },
+        {
+          "line": 128,
+          "text": "const t = tools.find(t => t.slug === \"chatgpt\") || tools[0];"
+        }
+      ]
+    },
+    {
+      "file": "dist/chunks/category-map_Dk1f0-ZJ.mjs",
+      "hits": [
+        {
+          "line": 2,
+          "text": "slug: \"translation\","
+        },
+        {
+          "line": 8,
+          "text": "slug: \"type-in-write-emails-in-seconds\","
+        },
+        {
+          "line": 67,
+          "text": "slug: \"cuckoo\","
+        },
+        {
+          "line": 125,
+          "text": "slug: \"falcocut\","
+        },
+        {
+          "line": 185,
+          "text": "slug: \"file-transcribe\","
+        },
+        {
+          "line": 244,
+          "text": "slug: \"jotme-for-google-meet\","
+        },
+        {
+          "line": 301,
+          "text": "slug: \"aiglot\","
+        },
+        {
+          "line": 358,
+          "text": "slug: \"chatgpt-markdown-translate\","
+        },
+        {
+          "line": 413,
+          "text": "slug: \"csc-voice-ai\","
+        },
+        {
+          "line": 471,
+          "text": "slug: \"editby\","
+        },
+        {
+          "line": 528,
+          "text": "slug: \"editby-2-0\","
+        },
+        {
+          "line": 585,
+          "text": "slug: \"filepower-ai\","
+        },
+        {
+          "line": 643,
+          "text": "slug: \"talkstack-ai\","
+        },
+        {
+          "line": 700,
+          "text": "slug: \"vtopia\","
+        },
+        {
+          "line": 758,
+          "text": "slug: \"echodocs-ai\","
+        },
+        {
+          "line": 815,
+          "text": "slug: \"flyrank\","
+        },
+        {
+          "line": 871,
+          "text": "slug: \"getgloby-app\","
+        },
+        {
+          "line": 927,
+          "text": "slug: \"globalseo\","
+        },
+        {
+          "line": 984,
+          "text": "slug: \"linguana\","
+        },
+        {
+          "line": 1041,
+          "text": "slug: \"motonai\","
+        },
+        {
+          "line": 1096,
+          "text": "slug: \"multilipi\","
+        },
+        {
+          "line": 1153,
+          "text": "slug: \"voiceling\","
+        },
+        {
+          "line": 1209,
+          "text": "slug: \"whisperback\","
+        },
+        {
+          "line": 1265,
+          "text": "slug: \"anytalk-ai\","
+        },
+        {
+          "line": 1321,
+          "text": "slug: \"babystoryai\","
+        },
+        {
+          "line": 1377,
+          "text": "slug: \"clonedub\","
+        },
+        {
+          "line": 1433,
+          "text": "slug: \"doctransgpt\","
+        },
+        {
+          "line": 1487,
+          "text": "slug: \"gpt-subtitler\","
+        },
+        {
+          "line": 1544,
+          "text": "slug: \"haiva\","
+        },
+        {
+          "line": 1600,
+          "text": "slug: \"happyscribe-com\","
+        }
+      ]
+    },
+    {
+      "file": "dist/chunks/homepage-data_DxYVo0MU.mjs",
+      "hits": [
+        {
+          "line": 10,
+          "text": "const markup = getCategoryIconMarkup(props.slug || props.category || \"\");"
+        },
+        {
+          "line": 20,
+          "text": "return renderTemplate`${maybeRenderHead()}<a${addAttribute(`/tools/category/${category.slug}`, \"href\")} class=\"group relative flex flex-col p-6 rounded-2xl border border-ai-border bg-ai-surface/50 hover:bg-ai-surface-elevated hover:border-ai-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20\"> <!-- Icon Well: Maakt het icoon beheersbaar en stijlvol --> <div class=\"mb-6 flex items-center justify-between\"> <div class=\"w-14 h-14 flex items-center justify-center rounded-xl bg-ai-dark border border-ai-border group-hover:border-ai-primary/30 transition-colors\"> ${renderComponent($$result, \"CategoryIcon\", $$CategoryIcon, { \"slug\": category.slug, \"class\": \"w-7 h-7 text-ai-text-secondary group-hover:text-ai-primary transition-colors\" })} </div> <span class=\"text-[10px] font-bold uppercase tracking-widest text-ai-text-faint bg-ai-dark px-2 py-1 rounded-md border border-ai-border\"> ${category.count.toLocaleString()} Tools"
+        },
+        {
+          "line": 30,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 77,
+          "text": "slug: \"google-gemini\","
+        },
+        {
+          "line": 123,
+          "text": "slug: \"claude\","
+        },
+        {
+          "line": 170,
+          "text": "slug: \"microsoft-copilot\","
+        },
+        {
+          "line": 217,
+          "text": "slug: \"github-copilot\","
+        },
+        {
+          "line": 264,
+          "text": "slug: \"canva-ai\","
+        },
+        {
+          "line": 310,
+          "text": "slug: \"notebooklm\","
+        },
+        {
+          "line": 357,
+          "text": "slug: \"dall-e-3\","
+        },
+        {
+          "line": 403,
+          "text": "slug: \"ideogram\","
+        },
+        {
+          "line": 449,
+          "text": "slug: \"opusclip\","
+        }
+      ]
+    },
+    {
+      "file": "dist/chunks/ToolCard_vm_hicAD.mjs",
+      "hits": [
+        {
+          "line": 18,
+          "text": "const resolvedHandle = tool?.slug || tool?.handle || \"tool\";"
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/alternatives/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 10,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 13,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 27,
+          "text": "slug: \"ai-spaceship\","
+        },
+        {
+          "line": 40,
+          "text": "slug: \"chatbond-free-ai-chatbot-builder\","
+        },
+        {
+          "line": 53,
+          "text": "slug: \"cpa-pilot\","
+        },
+        {
+          "line": 66,
+          "text": "slug: \"gpt-unbound\","
+        },
+        {
+          "line": 79,
+          "text": "slug: \"hexomatic\","
+        },
+        {
+          "line": 92,
+          "text": "slug: \"knibble-ai\","
+        },
+        {
+          "line": 105,
+          "text": "slug: \"legal-assist-ai-2-0\","
+        },
+        {
+          "line": 118,
+          "text": "slug: \"linq-api-for-rag\","
+        },
+        {
+          "line": 131,
+          "text": "slug: \"nri-gpt\","
+        },
+        {
+          "line": 144,
+          "text": "slug: \"octavia-ai\","
+        },
+        {
+          "line": 164,
+          "text": "slug: \"google-gemini\","
+        },
+        {
+          "line": 167,
+          "text": "slug: \"google-gemini\","
+        },
+        {
+          "line": 181,
+          "text": "slug: \"ai-spaceship\","
+        },
+        {
+          "line": 194,
+          "text": "slug: \"chatbond-free-ai-chatbot-builder\","
+        },
+        {
+          "line": 207,
+          "text": "slug: \"cpa-pilot\","
+        },
+        {
+          "line": 220,
+          "text": "slug: \"gpt-unbound\","
+        },
+        {
+          "line": 233,
+          "text": "slug: \"hexomatic\","
+        },
+        {
+          "line": 246,
+          "text": "slug: \"knibble-ai\","
+        },
+        {
+          "line": 259,
+          "text": "slug: \"legal-assist-ai-2-0\","
+        },
+        {
+          "line": 272,
+          "text": "slug: \"linq-api-for-rag\","
+        },
+        {
+          "line": 285,
+          "text": "slug: \"nri-gpt\","
+        },
+        {
+          "line": 298,
+          "text": "slug: \"octavia-ai\","
+        },
+        {
+          "line": 318,
+          "text": "slug: \"claude\","
+        },
+        {
+          "line": 321,
+          "text": "slug: \"claude\","
+        },
+        {
+          "line": 335,
+          "text": "slug: \"1000-happy-dads\","
+        },
+        {
+          "line": 348,
+          "text": "slug: \"10xwinners-okr\","
+        },
+        {
+          "line": 361,
+          "text": "slug: \"1page\","
+        },
+        {
+          "line": 374,
+          "text": "slug: \"200-chatgpt-mega-prompts-for-business\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/best/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 10,
+          "text": "slug: \"ai-audio-voice\","
+        },
+        {
+          "line": 13,
+          "text": "slug: \"ai-audio-voice\","
+        },
+        {
+          "line": 20,
+          "text": "slug: \"elevenlabs\","
+        },
+        {
+          "line": 33,
+          "text": "slug: \"social-tooling\","
+        },
+        {
+          "line": 46,
+          "text": "slug: \"aitoolbox\","
+        },
+        {
+          "line": 59,
+          "text": "slug: \"contacted-io\","
+        },
+        {
+          "line": 72,
+          "text": "slug: \"dialogai\","
+        },
+        {
+          "line": 85,
+          "text": "slug: \"firebay-studios\","
+        },
+        {
+          "line": 98,
+          "text": "slug: \"laxis\","
+        },
+        {
+          "line": 111,
+          "text": "slug: \"meetingly\","
+        },
+        {
+          "line": 124,
+          "text": "slug: \"videosum\","
+        },
+        {
+          "line": 137,
+          "text": "slug: \"wondera-ai\","
+        },
+        {
+          "line": 150,
+          "text": "slug: \"youtube-transcript\","
+        },
+        {
+          "line": 163,
+          "text": "slug: \"fithex\","
+        },
+        {
+          "line": 176,
+          "text": "slug: \"chadview\","
+        },
+        {
+          "line": 189,
+          "text": "slug: \"clipto-com\","
+        },
+        {
+          "line": 202,
+          "text": "slug: \"hintscribe\","
+        },
+        {
+          "line": 215,
+          "text": "slug: \"swiftfox-ai\","
+        },
+        {
+          "line": 228,
+          "text": "slug: \"tactiq\","
+        },
+        {
+          "line": 241,
+          "text": "slug: \"vocalreplica\","
+        },
+        {
+          "line": 254,
+          "text": "slug: \"whisperbot\","
+        },
+        {
+          "line": 267,
+          "text": "slug: \"tiktok-voice-tiktok\","
+        },
+        {
+          "line": 280,
+          "text": "slug: \"your-business-ai\","
+        },
+        {
+          "line": 293,
+          "text": "slug: \"ai-audio-kit\","
+        },
+        {
+          "line": 306,
+          "text": "slug: \"audiotype-org\","
+        },
+        {
+          "line": 319,
+          "text": "slug: \"avoma-ai-meeting-assistant\","
+        },
+        {
+          "line": 339,
+          "text": "slug: \"ai-automation-agents\","
+        },
+        {
+          "line": 342,
+          "text": "slug: \"ai-automation-agents\","
+        },
+        {
+          "line": 349,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 362,
+          "text": "slug: \"google-gemini\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/compare/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 9,
+          "text": "slug: \"chatgpt__google-gemini\","
+        },
+        {
+          "line": 48,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 90,
+          "text": "slug: \"google-gemini\","
+        },
+        {
+          "line": 152,
+          "text": "slug: \"chatgpt__claude\","
+        },
+        {
+          "line": 191,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 233,
+          "text": "slug: \"claude\","
+        },
+        {
+          "line": 291,
+          "text": "slug: \"chatgpt__microsoft-copilot\","
+        },
+        {
+          "line": 330,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 372,
+          "text": "slug: \"microsoft-copilot\","
+        },
+        {
+          "line": 438,
+          "text": "slug: \"chatgpt__n8n\","
+        },
+        {
+          "line": 477,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 519,
+          "text": "slug: \"n8n\","
+        },
+        {
+          "line": 577,
+          "text": "slug: \"chatgpt__presbot\","
+        },
+        {
+          "line": 616,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 658,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 724,
+          "text": "slug: \"chatgpt__learn-prompting-pro\","
+        },
+        {
+          "line": 763,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 805,
+          "text": "slug: \"learn-prompting-pro\","
+        },
+        {
+          "line": 871,
+          "text": "slug: \"blogbud-ai__chatgpt\","
+        },
+        {
+          "line": 910,
+          "text": "slug: \"blogbud-ai\","
+        },
+        {
+          "line": 956,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 1018,
+          "text": "slug: \"botdistrikt__chatgpt\","
+        },
+        {
+          "line": 1057,
+          "text": "slug: \"botdistrikt\","
+        },
+        {
+          "line": 1103,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 1165,
+          "text": "slug: \"chatgpt__chatrank\","
+        },
+        {
+          "line": 1204,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 1246,
+          "text": "slug: \"chatrank\","
+        },
+        {
+          "line": 1312,
+          "text": "slug: \"claude__google-gemini\","
+        },
+        {
+          "line": 1351,
+          "text": "slug: \"claude\","
+        },
+        {
+          "line": 1389,
+          "text": "slug: \"google-gemini\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/index.astro.mjs",
+      "hits": [
+        {
+          "line": 116,
+          "text": "slug: cat.slug,"
+        },
+        {
+          "line": 119,
+          "text": "url: cat.url || `/tools/${cat.slug}`,"
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/sitemap.xml.astro.mjs",
+      "hits": [
+        {
+          "line": 19097,
+          "text": "slug: \"chatgpt-vs-google-gemini\","
+        },
+        {
+          "line": 19104,
+          "text": "slug: \"chatgpt-vs-claude\","
+        },
+        {
+          "line": 19111,
+          "text": "slug: \"chatgpt-vs-microsoft-copilot\","
+        },
+        {
+          "line": 19118,
+          "text": "slug: \"chatgpt-vs-n8n\","
+        },
+        {
+          "line": 19125,
+          "text": "slug: \"chatgpt-vs-presbot\","
+        },
+        {
+          "line": 19132,
+          "text": "slug: \"chatgpt-vs-learn-prompting-pro\","
+        },
+        {
+          "line": 19139,
+          "text": "slug: \"blogbud-ai-vs-chatgpt\","
+        },
+        {
+          "line": 19146,
+          "text": "slug: \"botdistrikt-vs-chatgpt\","
+        },
+        {
+          "line": 19153,
+          "text": "slug: \"chatgpt-vs-chatrank\","
+        },
+        {
+          "line": 19160,
+          "text": "slug: \"claude-vs-google-gemini\","
+        },
+        {
+          "line": 19167,
+          "text": "slug: \"google-gemini-vs-microsoft-copilot\","
+        },
+        {
+          "line": 19174,
+          "text": "slug: \"google-gemini-vs-n8n\","
+        },
+        {
+          "line": 19181,
+          "text": "slug: \"google-gemini-vs-presbot\","
+        },
+        {
+          "line": 19188,
+          "text": "slug: \"google-gemini-vs-learn-prompting-pro\","
+        },
+        {
+          "line": 19195,
+          "text": "slug: \"blogbud-ai-vs-google-gemini\","
+        },
+        {
+          "line": 19202,
+          "text": "slug: \"botdistrikt-vs-google-gemini\","
+        },
+        {
+          "line": 19209,
+          "text": "slug: \"chatrank-vs-google-gemini\","
+        },
+        {
+          "line": 19216,
+          "text": "slug: \"claude-vs-microsoft-copilot\","
+        },
+        {
+          "line": 19223,
+          "text": "slug: \"claude-vs-n8n\","
+        },
+        {
+          "line": 19230,
+          "text": "slug: \"claude-vs-presbot\","
+        },
+        {
+          "line": 19237,
+          "text": "slug: \"claude-vs-learn-prompting-pro\","
+        },
+        {
+          "line": 19244,
+          "text": "slug: \"blogbud-ai-vs-claude\","
+        },
+        {
+          "line": 19251,
+          "text": "slug: \"botdistrikt-vs-claude\","
+        },
+        {
+          "line": 19258,
+          "text": "slug: \"chatrank-vs-claude\","
+        },
+        {
+          "line": 19265,
+          "text": "slug: \"microsoft-copilot-vs-n8n\","
+        },
+        {
+          "line": 19272,
+          "text": "slug: \"microsoft-copilot-vs-presbot\","
+        },
+        {
+          "line": 19279,
+          "text": "slug: \"learn-prompting-pro-vs-microsoft-copilot\","
+        },
+        {
+          "line": 19286,
+          "text": "slug: \"blogbud-ai-vs-microsoft-copilot\","
+        },
+        {
+          "line": 19293,
+          "text": "slug: \"botdistrikt-vs-microsoft-copilot\","
+        },
+        {
+          "line": 19300,
+          "text": "slug: \"chatrank-vs-microsoft-copilot\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/feature/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 25,
+          "text": "slug: \"automation\","
+        },
+        {
+          "line": 31,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 92,
+          "text": "slug: \"yourleads\","
+        },
+        {
+          "line": 154,
+          "text": "slug: \"backlink-management\","
+        },
+        {
+          "line": 214,
+          "text": "slug: \"leadgensheet\","
+        },
+        {
+          "line": 274,
+          "text": "slug: \"rdmc-ai-digital-marketing-agency\","
+        },
+        {
+          "line": 332,
+          "text": "slug: \"voxwave-ai\","
+        },
+        {
+          "line": 393,
+          "text": "slug: \"10xbeast\","
+        },
+        {
+          "line": 452,
+          "text": "slug: \"botdistrikt\","
+        },
+        {
+          "line": 510,
+          "text": "slug: \"collider-ai\","
+        },
+        {
+          "line": 568,
+          "text": "slug: \"conversion-blitz\","
+        },
+        {
+          "line": 626,
+          "text": "slug: \"emailflow-ai-b2b-lead-generation\","
+        },
+        {
+          "line": 686,
+          "text": "slug: \"mailgo\","
+        },
+        {
+          "line": 746,
+          "text": "slug: \"notbot\","
+        },
+        {
+          "line": 803,
+          "text": "slug: \"octomail\","
+        },
+        {
+          "line": 861,
+          "text": "slug: \"visiomera\","
+        },
+        {
+          "line": 917,
+          "text": "slug: \"200-chatgpt-mega-prompts-for-seo\","
+        },
+        {
+          "line": 974,
+          "text": "slug: \"agent-ai-chat-bot-powered-by-openai-and-anthropic\","
+        },
+        {
+          "line": 1034,
+          "text": "slug: \"b2b-rocket\","
+        },
+        {
+          "line": 1092,
+          "text": "slug: \"groweasy\","
+        },
+        {
+          "line": 1150,
+          "text": "slug: \"hexomatic\","
+        },
+        {
+          "line": 1209,
+          "text": "slug: \"hustle-ai\","
+        },
+        {
+          "line": 1267,
+          "text": "slug: \"letterdrop\","
+        },
+        {
+          "line": 1324,
+          "text": "slug: \"omneky\","
+        },
+        {
+          "line": 1384,
+          "text": "slug: \"pipelime\","
+        },
+        {
+          "line": 1442,
+          "text": "slug: \"200-chatgpt-mega-prompts-for-sales\","
+        },
+        {
+          "line": 1498,
+          "text": "slug: \"ai-blogs\","
+        },
+        {
+          "line": 1557,
+          "text": "slug: \"aigency-labs\","
+        },
+        {
+          "line": 1614,
+          "text": "slug: \"autotext-ai\","
+        },
+        {
+          "line": 1673,
+          "text": "slug: \"aysa-ai\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/industry/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 28,
+          "text": "slug: \"marketing\","
+        },
+        {
+          "line": 34,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 94,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 155,
+          "text": "slug: \"learn-prompting-pro\","
+        },
+        {
+          "line": 213,
+          "text": "slug: \"yourleads\","
+        },
+        {
+          "line": 275,
+          "text": "slug: \"atonce\","
+        },
+        {
+          "line": 335,
+          "text": "slug: \"backlink-management\","
+        },
+        {
+          "line": 395,
+          "text": "slug: \"blogbud-ai\","
+        },
+        {
+          "line": 453,
+          "text": "slug: \"igleads\","
+        },
+        {
+          "line": 514,
+          "text": "slug: \"leadgensheet\","
+        },
+        {
+          "line": 574,
+          "text": "slug: \"neurologic-com-br\","
+        },
+        {
+          "line": 634,
+          "text": "slug: \"rdmc-ai-digital-marketing-agency\","
+        },
+        {
+          "line": 692,
+          "text": "slug: \"voxwave-ai\","
+        },
+        {
+          "line": 753,
+          "text": "slug: \"vplate-video-ads-chat-gpt-plugin\","
+        },
+        {
+          "line": 813,
+          "text": "slug: \"zarla-com\","
+        },
+        {
+          "line": 872,
+          "text": "slug: \"10xbeast\","
+        },
+        {
+          "line": 931,
+          "text": "slug: \"botdistrikt\","
+        },
+        {
+          "line": 989,
+          "text": "slug: \"coachingleads-io\","
+        },
+        {
+          "line": 1048,
+          "text": "slug: \"collider-ai\","
+        },
+        {
+          "line": 1106,
+          "text": "slug: \"conversion-blitz\","
+        },
+        {
+          "line": 1164,
+          "text": "slug: \"emailflow-ai-b2b-lead-generation\","
+        },
+        {
+          "line": 1224,
+          "text": "slug: \"latent-workers\","
+        },
+        {
+          "line": 1284,
+          "text": "slug: \"leadsgenerator-ai\","
+        },
+        {
+          "line": 1345,
+          "text": "slug: \"leedgen\","
+        },
+        {
+          "line": 1404,
+          "text": "slug: \"mailgo\","
+        },
+        {
+          "line": 1464,
+          "text": "slug: \"notbot\","
+        },
+        {
+          "line": 1521,
+          "text": "slug: \"octomail\","
+        },
+        {
+          "line": 1579,
+          "text": "slug: \"visiomera\","
+        },
+        {
+          "line": 1635,
+          "text": "slug: \"200-chatgpt-mega-prompts-for-seo\","
+        },
+        {
+          "line": 1692,
+          "text": "slug: \"agent-ai-chat-bot-powered-by-openai-and-anthropic\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/pricing/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 17,
+          "text": "slug: \"free\","
+        },
+        {
+          "line": 23,
+          "text": "slug: \"notebooklm\","
+        },
+        {
+          "line": 70,
+          "text": "slug: \"x-detector-ai-content-detector\","
+        },
+        {
+          "line": 126,
+          "text": "slug: \"chatgpt-fran-ais-french\","
+        },
+        {
+          "line": 182,
+          "text": "slug: \"ai-math-solver-by-gpt-4o-free-online\","
+        },
+        {
+          "line": 238,
+          "text": "slug: \"chat100-ai\","
+        },
+        {
+          "line": 293,
+          "text": "slug: \"experience-chatgpt-free-online-with-openai-chatgpt-4o\","
+        },
+        {
+          "line": 349,
+          "text": "slug: \"free-google-gemini-ai-chatbot\","
+        },
+        {
+          "line": 405,
+          "text": "slug: \"gpt-4o\","
+        },
+        {
+          "line": 461,
+          "text": "slug: \"yeschat-gpt4v-dalle3-claude-2-all-in-one\","
+        },
+        {
+          "line": 516,
+          "text": "slug: \"botpenguin-chatbot\","
+        },
+        {
+          "line": 571,
+          "text": "slug: \"chat100-ai-free-chatgpt-4o-and-claude-3-5-sonnet\","
+        },
+        {
+          "line": 626,
+          "text": "slug: \"chatgpt-svenska\","
+        },
+        {
+          "line": 681,
+          "text": "slug: \"chatgptjapan-com\","
+        },
+        {
+          "line": 737,
+          "text": "slug: \"chatgptsora\","
+        },
+        {
+          "line": 792,
+          "text": "slug: \"chattyui\","
+        },
+        {
+          "line": 848,
+          "text": "slug: \"freeadcopy-com\","
+        },
+        {
+          "line": 904,
+          "text": "slug: \"gg-rewriter\","
+        },
+        {
+          "line": 961,
+          "text": "slug: \"gptpanda\","
+        },
+        {
+          "line": 1017,
+          "text": "slug: \"online-llama-3-1-405b-chat\","
+        },
+        {
+          "line": 1073,
+          "text": "slug: \"the-complete-giude-of-mistral-7b\","
+        },
+        {
+          "line": 1129,
+          "text": "slug: \"ai-web-page-analyzer-ai-wpa\","
+        },
+        {
+          "line": 1185,
+          "text": "slug: \"aichatru-ru-free-chat-with-gpt-and-claude-ai\","
+        },
+        {
+          "line": 1240,
+          "text": "slug: \"chat-gpt-demo\","
+        },
+        {
+          "line": 1296,
+          "text": "slug: \"chatgpt-dansk\","
+        },
+        {
+          "line": 1351,
+          "text": "slug: \"chatgpt-online-chatgptxonline\","
+        },
+        {
+          "line": 1406,
+          "text": "slug: \"chatgpt-polsku\","
+        },
+        {
+          "line": 1461,
+          "text": "slug: \"emaildojo\","
+        },
+        {
+          "line": 1517,
+          "text": "slug: \"gist-ai\","
+        },
+        {
+          "line": 1574,
+          "text": "slug: \"go-summarize\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/tag/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 51,
+          "text": "slug: \"translation\","
+        },
+        {
+          "line": 57,
+          "text": "slug: \"yourleads\","
+        },
+        {
+          "line": 119,
+          "text": "slug: \"monica-ai\","
+        },
+        {
+          "line": 176,
+          "text": "slug: \"word-express\","
+        },
+        {
+          "line": 235,
+          "text": "slug: \"bot3-ai\","
+        },
+        {
+          "line": 291,
+          "text": "slug: \"eleo-ai\","
+        },
+        {
+          "line": 349,
+          "text": "slug: \"giti-ai\","
+        },
+        {
+          "line": 406,
+          "text": "slug: \"luna-speak\","
+        },
+        {
+          "line": 463,
+          "text": "slug: \"type-in-write-emails-in-seconds\","
+        },
+        {
+          "line": 522,
+          "text": "slug: \"blipcut-ai-video-translator\","
+        },
+        {
+          "line": 579,
+          "text": "slug: \"diyva\","
+        },
+        {
+          "line": 635,
+          "text": "slug: \"estsoft-co-kr\","
+        },
+        {
+          "line": 692,
+          "text": "slug: \"kreado-ai-video-creation-platform\","
+        },
+        {
+          "line": 749,
+          "text": "slug: \"mypipio-com\","
+        },
+        {
+          "line": 806,
+          "text": "slug: \"replican-ai-talk-to-ai-in-any-language\","
+        },
+        {
+          "line": 862,
+          "text": "slug: \"rewritebar\","
+        },
+        {
+          "line": 917,
+          "text": "slug: \"chatscribe-pro\","
+        },
+        {
+          "line": 975,
+          "text": "slug: \"cuckoo\","
+        },
+        {
+          "line": 1033,
+          "text": "slug: \"dubvid\","
+        },
+        {
+          "line": 1090,
+          "text": "slug: \"haye\","
+        },
+        {
+          "line": 1145,
+          "text": "slug: \"lingban-ai-free-ai-assistant\","
+        },
+        {
+          "line": 1200,
+          "text": "slug: \"mo\","
+        },
+        {
+          "line": 1255,
+          "text": "slug: \"showhype\","
+        },
+        {
+          "line": 1312,
+          "text": "slug: \"smodin\","
+        },
+        {
+          "line": 1370,
+          "text": "slug: \"textie-ai\","
+        },
+        {
+          "line": 1429,
+          "text": "slug: \"write-breeze\","
+        },
+        {
+          "line": 1486,
+          "text": "slug: \"ai-video-dubbing\","
+        },
+        {
+          "line": 1541,
+          "text": "slug: \"deadale-language-translation\","
+        },
+        {
+          "line": 1596,
+          "text": "slug: \"deepshot\","
+        },
+        {
+          "line": 1651,
+          "text": "slug: \"dubly-io\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/tool-type/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 37,
+          "text": "slug: \"translation\","
+        },
+        {
+          "line": 43,
+          "text": "slug: \"type-in-write-emails-in-seconds\","
+        },
+        {
+          "line": 102,
+          "text": "slug: \"cuckoo\","
+        },
+        {
+          "line": 160,
+          "text": "slug: \"falcocut\","
+        },
+        {
+          "line": 220,
+          "text": "slug: \"file-transcribe\","
+        },
+        {
+          "line": 279,
+          "text": "slug: \"jotme-for-google-meet\","
+        },
+        {
+          "line": 336,
+          "text": "slug: \"aiglot\","
+        },
+        {
+          "line": 393,
+          "text": "slug: \"chatgpt-markdown-translate\","
+        },
+        {
+          "line": 448,
+          "text": "slug: \"csc-voice-ai\","
+        },
+        {
+          "line": 506,
+          "text": "slug: \"editby\","
+        },
+        {
+          "line": 563,
+          "text": "slug: \"editby-2-0\","
+        },
+        {
+          "line": 620,
+          "text": "slug: \"filepower-ai\","
+        },
+        {
+          "line": 678,
+          "text": "slug: \"talkstack-ai\","
+        },
+        {
+          "line": 735,
+          "text": "slug: \"vtopia\","
+        },
+        {
+          "line": 793,
+          "text": "slug: \"echodocs-ai\","
+        },
+        {
+          "line": 850,
+          "text": "slug: \"flyrank\","
+        },
+        {
+          "line": 906,
+          "text": "slug: \"getgloby-app\","
+        },
+        {
+          "line": 962,
+          "text": "slug: \"globalseo\","
+        },
+        {
+          "line": 1019,
+          "text": "slug: \"linguana\","
+        },
+        {
+          "line": 1076,
+          "text": "slug: \"motonai\","
+        },
+        {
+          "line": 1131,
+          "text": "slug: \"multilipi\","
+        },
+        {
+          "line": 1188,
+          "text": "slug: \"voiceling\","
+        },
+        {
+          "line": 1244,
+          "text": "slug: \"whisperback\","
+        },
+        {
+          "line": 1300,
+          "text": "slug: \"anytalk-ai\","
+        },
+        {
+          "line": 1356,
+          "text": "slug: \"babystoryai\","
+        },
+        {
+          "line": 1412,
+          "text": "slug: \"clonedub\","
+        },
+        {
+          "line": 1468,
+          "text": "slug: \"doctransgpt\","
+        },
+        {
+          "line": 1522,
+          "text": "slug: \"gpt-subtitler\","
+        },
+        {
+          "line": 1579,
+          "text": "slug: \"haiva\","
+        },
+        {
+          "line": 1635,
+          "text": "slug: \"happyscribe-com\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/use-case/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 21,
+          "text": "slug: \"build-and-deploy-ai-chatbots-with\","
+        },
+        {
+          "line": 27,
+          "text": "slug: \"文心一言\","
+        },
+        {
+          "line": 83,
+          "text": "slug: \"次元通讯\","
+        },
+        {
+          "line": 141,
+          "text": "slug: \"build-ai-chatbots-and-assistants-with\","
+        },
+        {
+          "line": 147,
+          "text": "slug: \"文心一言\","
+        },
+        {
+          "line": 203,
+          "text": "slug: \"次元通讯\","
+        },
+        {
+          "line": 258,
+          "text": "slug: \"旅行脑袋\","
+        },
+        {
+          "line": 315,
+          "text": "slug: \"write-blog-posts-and-articles-with-ai\","
+        },
+        {
+          "line": 321,
+          "text": "slug: \"包阅ai-免费读文档-翻译-改写\","
+        },
+        {
+          "line": 377,
+          "text": "slug: \"笔尖ai-十分钟生成毕业论文\","
+        },
+        {
+          "line": 432,
+          "text": "slug: \"多种草ai\","
+        },
+        {
+          "line": 490,
+          "text": "slug: \"create-and-optimise-ad-campaigns-with-ai\","
+        },
+        {
+          "line": 496,
+          "text": "slug: \"包阅ai-免费读文档-翻译-改写\","
+        },
+        {
+          "line": 552,
+          "text": "slug: \"ai论文初稿写作-学境思源\","
+        },
+        {
+          "line": 612,
+          "text": "slug: \"create-written-content-faster-with-ai\","
+        },
+        {
+          "line": 618,
+          "text": "slug: \"笔尖ai-十分钟生成毕业论文\","
+        },
+        {
+          "line": 673,
+          "text": "slug: \"多种草ai\","
+        },
+        {
+          "line": 731,
+          "text": "slug: \"speed-up-research-and-fact-checking-with-ai\","
+        },
+        {
+          "line": 737,
+          "text": "slug: \"ai论文初稿写作-学境思源\","
+        },
+        {
+          "line": 794,
+          "text": "slug: \"秘塔ai\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 47546,
+          "text": "const s = typeof c === \"string\" ? c : c.slug;"
+        },
+        {
+          "line": 47547,
+          "text": "const base = typeof c === \"string\" ? { slug: s, name: s } : c;"
+        },
+        {
+          "line": 47608,
+          "text": "</a>`} ${hasCompare && renderTemplate`<a${addAttribute(`/compare/${[slug, compareCandidates[0].slug].sort().join(\"-vs-\")}`, \"href\")} class=\"td-btn td-btn--g\" data-astro-cid-hof4g4vy>"
+        },
+        {
+          "line": 47611,
+          "text": "const an = alt.name || alt.slug;"
+        },
+        {
+          "line": 47613,
+          "text": "const pair = [slug, alt.slug].sort().join(\"-vs-\");"
+        },
+        {
+          "line": 47618,
+          "text": "const an = alt.name || alt.slug;"
+        },
+        {
+          "line": 47620,
+          "text": "return renderTemplate`<a${addAttribute(`/tools/${alt.slug}`, \"href\")} class=\"td__ai\" data-astro-cid-hof4g4vy> ${al ? renderTemplate`<img${addAttribute(al, \"src\")} alt=\"\" width=\"28\" height=\"28\" loading=\"lazy\" onerror=\"this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'\" data-astro-cid-hof4g4vy>` : null} <span class=\"td__aii\"${addAttribute(al ? \"display:none\" : \"\", \"style\")} data-astro-cid-hof4g4vy>${an.charAt(0)}</span> <span class=\"td__ain\" data-astro-cid-hof4g4vy>${an}</span> ${alt.pricing_tier && renderTemplate`<span${addAttribute(`badge badge--${alt.pricing_tier.toLowerCase()} td__aib`, \"class\")} data-astro-cid-hof4g4vy>${alt.pricing_tier}</span>`} </a>`;"
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/tools.astro.mjs",
+      "hits": [
+        {
+          "line": 17,
+          "text": "return renderTemplate`${maybeRenderHead()}<div class=\"cat-grid\" data-astro-cid-pxdzy6rs> ${shown.map((c) => renderTemplate`${renderComponent($$result, \"CategoryCard\", $$CategoryCard, { \"name\": c.name, \"slug\": c.slug, \"count\": c.count, \"description\": c.description, \"data-astro-cid-pxdzy6rs\": true })}`)} </div> ${!showAll && categories.length > limit && renderTemplate`<div class=\"cat-more\" data-astro-cid-pxdzy6rs> <a href=\"/tools\" class=\"btn btn-ghost\" data-astro-cid-pxdzy6rs>Browse all ${categories.length} categories →</a> </div>`} `;"
+        },
+        {
+          "line": 56,
+          "text": "slug: \"chatgpt\","
+        },
+        {
+          "line": 103,
+          "text": "slug: \"google-gemini\","
+        },
+        {
+          "line": 149,
+          "text": "slug: \"claude\","
+        },
+        {
+          "line": 196,
+          "text": "slug: \"microsoft-copilot\","
+        },
+        {
+          "line": 243,
+          "text": "slug: \"github-copilot\","
+        },
+        {
+          "line": 290,
+          "text": "slug: \"canva-ai\","
+        },
+        {
+          "line": 336,
+          "text": "slug: \"notebooklm\","
+        },
+        {
+          "line": 383,
+          "text": "slug: \"dall-e-3\","
+        },
+        {
+          "line": 429,
+          "text": "slug: \"ideogram\","
+        },
+        {
+          "line": 475,
+          "text": "slug: \"opusclip\","
+        },
+        {
+          "line": 522,
+          "text": "slug: \"pika-labs\","
+        },
+        {
+          "line": 567,
+          "text": "slug: \"elevenlabs\","
+        },
+        {
+          "line": 614,
+          "text": "slug: \"gamma\","
+        },
+        {
+          "line": 661,
+          "text": "slug: \"codeium\","
+        },
+        {
+          "line": 708,
+          "text": "slug: \"claude-code\","
+        },
+        {
+          "line": 755,
+          "text": "slug: \"n8n\","
+        },
+        {
+          "line": 802,
+          "text": "slug: \"semrush\","
+        },
+        {
+          "line": 848,
+          "text": "slug: \"brandwatch-ai\","
+        },
+        {
+          "line": 894,
+          "text": "slug: \"zoom-ai-companion\","
+        },
+        {
+          "line": 940,
+          "text": "slug: \"asana-ai\","
+        },
+        {
+          "line": 986,
+          "text": "slug: \"salesforce-einstein\","
+        },
+        {
+          "line": 1033,
+          "text": "slug: \"shopify-magic\","
+        },
+        {
+          "line": 1079,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 1139,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 1200,
+          "text": "slug: \"learn-prompting-pro\","
+        },
+        {
+          "line": 1258,
+          "text": "slug: \"yourleads\","
+        },
+        {
+          "line": 1320,
+          "text": "slug: \"blogbud-ai\","
+        },
+        {
+          "line": 1378,
+          "text": "slug: \"leadgensheet\","
+        },
+        {
+          "line": 1438,
+          "text": "slug: \"neurologic-com-br\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/use-case/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 10,
+          "text": "slug: \"analyze-spreadsheets\","
+        },
+        {
+          "line": 20,
+          "text": "slug: \"gptexcel\","
+        },
+        {
+          "line": 38,
+          "text": "slug: \"facturasaexcel\","
+        },
+        {
+          "line": 56,
+          "text": "slug: \"chatyourexcel\","
+        },
+        {
+          "line": 74,
+          "text": "slug: \"formtoexcel-com\","
+        },
+        {
+          "line": 92,
+          "text": "slug: \"manyexcel\","
+        },
+        {
+          "line": 110,
+          "text": "slug: \"askexcel\","
+        },
+        {
+          "line": 133,
+          "text": "slug: \"automate-browser-tasks\","
+        },
+        {
+          "line": 143,
+          "text": "slug: \"goless-extension-automation\","
+        },
+        {
+          "line": 161,
+          "text": "slug: \"browserbear-com\","
+        },
+        {
+          "line": 179,
+          "text": "slug: \"axiom\","
+        },
+        {
+          "line": 197,
+          "text": "slug: \"airtop\","
+        },
+        {
+          "line": 215,
+          "text": "slug: \"nfig-ai\","
+        },
+        {
+          "line": 233,
+          "text": "slug: \"propolis\","
+        },
+        {
+          "line": 251,
+          "text": "slug: \"taskmagic-com\","
+        },
+        {
+          "line": 269,
+          "text": "slug: \"browseragent\","
+        },
+        {
+          "line": 287,
+          "text": "slug: \"browserless\","
+        },
+        {
+          "line": 305,
+          "text": "slug: \"prompt-perfekt\","
+        },
+        {
+          "line": 328,
+          "text": "slug: \"automate-customer-support\","
+        },
+        {
+          "line": 338,
+          "text": "slug: \"atochat-chatbot-marketing-software\","
+        },
+        {
+          "line": 356,
+          "text": "slug: \"soof-ai\","
+        },
+        {
+          "line": 374,
+          "text": "slug: \"mansaibots\","
+        },
+        {
+          "line": 392,
+          "text": "slug: \"ai-chatbot-support\","
+        },
+        {
+          "line": 410,
+          "text": "slug: \"chatbotworld-ai-engagement-suite\","
+        },
+        {
+          "line": 428,
+          "text": "slug: \"ai-score-my-site\","
+        },
+        {
+          "line": 446,
+          "text": "slug: \"chatcare\","
+        },
+        {
+          "line": 464,
+          "text": "slug: \"chaticket\","
+        },
+        {
+          "line": 482,
+          "text": "slug: \"chatio-ai\","
+        },
+        {
+          "line": 500,
+          "text": "slug: \"echofox\","
+        },
+        {
+          "line": 518,
+          "text": "slug: \"intaali\","
+        }
+      ]
+    },
+    {
+      "file": "dist/pages/vs/_slug_.astro.mjs",
+      "hits": [
+        {
+          "line": 10,
+          "text": "slug: \"chatfuel-vs-presbot\","
+        },
+        {
+          "line": 13,
+          "text": "slug: \"chatfuel\","
+        },
+        {
+          "line": 33,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 56,
+          "text": "slug: \"askcory-ai-vs-presbot\","
+        },
+        {
+          "line": 59,
+          "text": "slug: \"askcory-ai\","
+        },
+        {
+          "line": 79,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 102,
+          "text": "slug: \"cherrytree-ai-vs-presbot\","
+        },
+        {
+          "line": 105,
+          "text": "slug: \"cherrytree-ai\","
+        },
+        {
+          "line": 125,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 148,
+          "text": "slug: \"cpa-pilot-vs-presbot\","
+        },
+        {
+          "line": 151,
+          "text": "slug: \"cpa-pilot\","
+        },
+        {
+          "line": 172,
+          "text": "slug: \"presbot\","
+        },
+        {
+          "line": 195,
+          "text": "slug: \"autotext-ai-vs-humanic-ai\","
+        },
+        {
+          "line": 198,
+          "text": "slug: \"autotext-ai\","
+        },
+        {
+          "line": 219,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 243,
+          "text": "slug: \"boostrbot-vs-humanic-ai\","
+        },
+        {
+          "line": 246,
+          "text": "slug: \"boostrbot\","
+        },
+        {
+          "line": 267,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 291,
+          "text": "slug: \"collider-ai-vs-humanic-ai\","
+        },
+        {
+          "line": 294,
+          "text": "slug: \"collider-ai\","
+        },
+        {
+          "line": 314,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 338,
+          "text": "slug: \"humanic-ai-vs-posterstudio\","
+        },
+        {
+          "line": 341,
+          "text": "slug: \"humanic-ai\","
+        },
+        {
+          "line": 363,
+          "text": "slug: \"posterstudio\","
+        },
+        {
+          "line": 386,
+          "text": "slug: \"cherrytree-ai-vs-learn-prompting-pro\","
+        },
+        {
+          "line": 389,
+          "text": "slug: \"cherrytree-ai\","
+        },
+        {
+          "line": 409,
+          "text": "slug: \"learn-prompting-pro\","
+        },
+        {
+          "line": 432,
+          "text": "slug: \"go-charlie-vs-learn-prompting-pro\","
+        },
+        {
+          "line": 435,
+          "text": "slug: \"go-charlie\","
+        },
+        {
+          "line": 455,
+          "text": "slug: \"learn-prompting-pro\","
+        }
+      ]
+    },
+    {
+      "file": "scripts/audit-data-layers.mjs",
+      "hits": [
+        {
+          "line": 259,
+          "text": "const slugDups = duplicates.slug?.duplicateValueCount || 0;"
+        }
+      ]
+    },
+    {
+      "file": "scripts/audit-tools-index-slug.mjs",
+      "hits": [
+        {
+          "line": 291,
+          "text": "const slug = row.slug ?? row.tool_slug ?? row.category_slug ?? null;"
+        },
+        {
+          "line": 306,
+          "text": "slug: row.slug ?? null,"
+        },
+        {
+          "line": 323,
+          "text": "slug: row.slug ?? null,"
+        },
+        {
+          "line": 463,
+          "text": "/\\.slug\\b/,"
+        },
+        {
+          "line": 484,
+          "text": "/\\.slug\\b/,"
+        },
+        {
+          "line": 536,
+          "text": "hasSlugAccess: !!txt && !txt.startsWith(\"__\") && /\\.slug\\b/.test(txt),"
+        }
+      ]
+    },
+    {
+      "file": "scripts/audit-tools-production.mjs",
+      "hits": [
+        {
+          "line": 251,
+          "text": "const uglySlugs = tools.filter((t) => hasUglySlug(t.slug || t.handle));"
+        },
+        {
+          "line": 293,
+          "text": "hasUglySlug(t.slug || t.handle) ||"
+        }
+      ]
+    },
+    {
+      "file": "scripts/build-seo-datasets.mjs",
+      "hits": [
+        {
+          "line": 80,
+          "text": "const handle = safeStr(item?.handle || item?.slug);"
+        },
+        {
+          "line": 90,
+          "text": "if (!item.handle && item.slug) item.handle = item.slug;"
+        },
+        {
+          "line": 101,
+          "text": "const handle = safeStr(t.handle || t.slug);"
+        },
+        {
+          "line": 111,
+          "text": "slug:            handle,"
+        },
+        {
+          "line": 150,
+          "text": "const toolPaths    = toolsByScore.map(t => safeStr(t.handle || t.slug));"
+        },
+        {
+          "line": 154,
+          "text": "const toolMap = Object.fromEntries(tools.map(t => [safeStr(t.handle || t.slug), toolShape(t)]));"
+        },
+        {
+          "line": 166,
+          "text": "const categoryPaths = sortedCats.map(c => c.slug);"
+        },
+        {
+          "line": 171,
+          "text": "return [cat.slug, {"
+        },
+        {
+          "line": 172,
+          "text": "slug: cat.slug, name: cat.name, count: cat.tools.length,"
+        },
+        {
+          "line": 181,
+          "text": "cat.slug,"
+        },
+        {
+          "line": 188,
+          "text": "safeStr(t.handle || t.slug),"
+        },
+        {
+          "line": 190,
+          "text": "handle: h, slug: h, name: toolMap[h].name, tagline: toolMap[h].tagline,"
+        },
+        {
+          "line": 198,
+          "text": "const compareMap   = Object.fromEntries(tools.map(t => [safeStr(t.handle||t.slug), safeArr(t.comparison_targets).slice(0,6)]));"
+        },
+        {
+          "line": 207,
+          "text": "comparePairs.push({ a, b, slug: `${a}-vs-${b}` });"
+        },
+        {
+          "line": 216,
+          "text": "const handle = safeStr(t.handle || t.slug);"
+        },
+        {
+          "line": 219,
+          "text": ".map(h => ({ handle:h, slug:h, name:toolMap[h].name, tagline:toolMap[h].tagline,"
+        },
+        {
+          "line": 255,
+          "text": "const promptPaths = promptTools.map(t => safeStr(t.handle || t.slug));"
+        },
+        {
+          "line": 338,
+          "text": "return [tier, { slug:tier, name:label, count:tTools.length, tools:tTools,"
+        },
+        {
+          "line": 387,
+          "text": "cat.slug,"
+        },
+        {
+          "line": 440,
+          "text": "...comparePairs.slice(0,10000).map(p => ({ path:`/vs/${p.slug}`,priority:0.5, changefreq:\"monthly\" })),"
+        },
+        {
+          "line": 468,
+          "text": "return { handle:t.handle, slug:t.handle, name:t.name, tagline:t.tagline,"
+        },
+        {
+          "line": 487,
+          "text": "return [h, { handle:t.handle, slug:t.handle, name:t.name, tagline:t.tagline,"
+        },
+        {
+          "line": 504,
+          "text": "return [p.slug, { slug:p.slug, toolA:enrich(ta), toolB:enrich(tb),"
+        },
+        {
+          "line": 513,
+          "text": "h: safeStr(t.handle||t.slug), n: safeStr(t.name_clean||t.name),"
+        }
+      ]
+    },
+    {
+      "file": "scripts/build-tools-master.mjs",
+      "hits": [
+        {
+          "line": 187,
+          "text": "if (!isEmpty(out.slug)) out.slug = normalizeSlug(out.slug);"
+        },
+        {
+          "line": 216,
+          "text": "if (!isEmpty(record.slug)) ids.push(\"slug:\" + normalizeSlug(record.slug));"
+        },
+        {
+          "line": 243,
+          "text": "slug: record.slug || null,"
+        },
+        {
+          "line": 419,
+          "text": "if (!isEmpty(record.slug) && String(record.slug).includes(\" \")) {"
+        },
+        {
+          "line": 539,
+          "text": "slug: merged.slug || null,"
+        },
+        {
+          "line": 550,
+          "text": "slug: merged.slug || null,"
+        },
+        {
+          "line": 561,
+          "text": "const ah = normalizeText(a.handle || a.slug || a.name);"
+        },
+        {
+          "line": 562,
+          "text": "const bh = normalizeText(b.handle || b.slug || b.name);"
+        }
+      ]
+    },
+    {
+      "file": "scripts/deep-audit-site.mjs",
+      "hits": [
+        {
+          "line": 67,
+          "text": "const slug = normalize(tool.slug || slugify(tool.name));"
+        },
+        {
+          "line": 96,
+          "text": "if (!tool.slug) issues.missingSlug.push(tool.name || \"(unknown)\");"
+        }
+      ]
+    },
+    {
+      "file": "scripts/enrich-tools-v6.mjs",
+      "hits": [
+        {
+          "line": 934,
+          "text": "if (tool.slug)   aliases.add(tool.slug.replace(/-/g, \" \"));"
+        },
+        {
+          "line": 1163,
+          "text": "if (tool.slug)                        score += 5;"
+        },
+        {
+          "line": 1513,
+          "text": "safeString(tool.slug).replace(/-/g, \" \"),"
+        },
+        {
+          "line": 1623,
+          "text": "slug:         safeString(tool.slug   || suggestedSlug || slugify(rawName)),"
+        }
+      ]
+    },
+    {
+      "file": "scripts/export-audit-json.mjs",
+      "hits": [
+        {
+          "line": 156,
+          "text": "const slug = normalize(tool.slug || slugify(tool.name));"
+        },
+        {
+          "line": 184,
+          "text": "if (!tool.slug) issues.missing_slug.push(tool.name || \"(unknown)\");"
+        }
+      ]
+    },
+    {
+      "file": "scripts/inject-canonical-tools.mjs",
+      "hits": [
+        {
+          "line": 465,
+          "text": "const enriched = { ...tool, slug: tool.handle };"
+        }
+      ]
+    },
+    {
+      "file": "src/components/cards/CategoryCard.astro",
+      "hits": [
+        {
+          "line": 6,
+          "text": "slug: string;"
+        },
+        {
+          "line": 17,
+          "text": "href={`/tools/category/${category.slug}`}"
+        },
+        {
+          "line": 23,
+          "text": "<CategoryIcon slug={category.slug} class=\"w-7 h-7 text-ai-text-secondary group-hover:text-ai-primary transition-colors\" />"
+        }
+      ]
+    },
+    {
+      "file": "src/components/cards/ToolCard.astro",
+      "hits": [
+        {
+          "line": 48,
+          "text": "const resolvedHandle  = tool?.slug || tool?.handle || \"tool\";"
+        }
+      ]
+    },
+    {
+      "file": "src/components/sections/CategoryGrid.astro",
+      "hits": [
+        {
+          "line": 3,
+          "text": "interface Cat { name: string; slug: string; count: number; description?: string }"
+        },
+        {
+          "line": 10,
+          "text": "<CategoryCard name={c.name} slug={c.slug} count={c.count} description={c.description}/>"
+        }
+      ]
+    },
+    {
+      "file": "src/components/site/CategoryIcon.astro",
+      "hits": [
+        {
+          "line": 11,
+          "text": "const markup = getCategoryIconMarkup(props.slug || props.category || \"\");"
+        }
+      ]
+    },
+    {
+      "file": "src/data/categoryIcons.ts",
+      "hits": [
+        {
+          "line": 30,
+          "text": "export function getCategoryIconBySlug(slug: string): string {"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/alternatives/[slug].astro",
+      "hits": [
+        {
+          "line": 16,
+          "text": ".filter(p => p?.seed_tool?.slug && p?.alternatives?.length >= 3)"
+        },
+        {
+          "line": 18,
+          "text": "params: { slug: page.seed_tool.slug },"
+        },
+        {
+          "line": 26,
+          "text": "const seedName = seed.name || seed.slug;"
+        },
+        {
+          "line": 104,
+          "text": "const altName = alt.name || alt.slug;"
+        },
+        {
+          "line": 105,
+          "text": "const [a, b] = [seed.slug, alt.slug].sort();"
+        },
+        {
+          "line": 119,
+          "text": "<a href={`/tools/${seed.slug}`} class=\"btn btn--primary\">"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/best/[slug].astro",
+      "hits": [
+        {
+          "line": 16,
+          "text": "const standard = (bestPagesRaw    as any[]).filter(p => p?.slug && p?.top_tools?.length >= 3);"
+        },
+        {
+          "line": 20,
+          "text": "params: { slug: page.slug },"
+        },
+        {
+          "line": 26,
+          "text": "params: { slug: page.route?.replace(\"/best/\", \"\") || page.slug },"
+        },
+        {
+          "line": 31,
+          "text": "const seen = new Set(standardPaths.map(p => p.params.slug));"
+        },
+        {
+          "line": 32,
+          "text": "const uniqueCluster = clusterPaths.filter(p => !seen.has(p.params.slug));"
+        },
+        {
+          "line": 39,
+          "text": "const pageTitle   = page.seo?.title || page.page_title || `Best ${page.meta?.name || page.slug} Tools 2026`;"
+        },
+        {
+          "line": 41,
+          "text": "const entityName  = page.meta?.name || page.page_title || page.slug;"
+        },
+        {
+          "line": 111,
+          "text": "const name = tool.name || tool.slug;"
+        },
+        {
+          "line": 113,
+          "text": "<a href={`/alternatives/${tool.slug}`} class=\"related-link\">"
+        },
+        {
+          "line": 119,
+          "text": "const [a, b] = [tools[0].slug, tools[1].slug].sort();"
+        },
+        {
+          "line": 120,
+          "text": "const nameA = tools[0].name || tools[0].slug;"
+        },
+        {
+          "line": 121,
+          "text": "const nameB = tools[1].name || tools[1].slug;"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/compare/[slug].astro",
+      "hits": [
+        {
+          "line": 16,
+          "text": ".filter(p => p?.tool_a?.slug && p?.tool_b?.slug)"
+        },
+        {
+          "line": 18,
+          "text": "params: { slug: `${page.tool_a.slug}-vs-${page.tool_b.slug}` },"
+        },
+        {
+          "line": 27,
+          "text": "const nameA = a.name || a.slug;"
+        },
+        {
+          "line": 28,
+          "text": "const nameB = b.name || b.slug;"
+        },
+        {
+          "line": 91,
+          "text": "<a href={`/tools/${a.slug}`} class=\"compare-hero-card__cta\">"
+        },
+        {
+          "line": 111,
+          "text": "<a href={`/tools/${b.slug}`} class=\"compare-hero-card__cta\">"
+        },
+        {
+          "line": 259,
+          "text": "<a href={`/tools/${a.slug}`} class=\"btn btn--primary\">"
+        },
+        {
+          "line": 262,
+          "text": "<a href={`/alternatives/${a.slug}`} class=\"btn btn--secondary\">"
+        },
+        {
+          "line": 265,
+          "text": "<a href={`/tools/${b.slug}`} class=\"btn btn--primary\">"
+        },
+        {
+          "line": 268,
+          "text": "<a href={`/alternatives/${b.slug}`} class=\"btn btn--secondary\">"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/index.astro",
+      "hits": [
+        {
+          "line": 36,
+          "text": "slug:      cat.slug,"
+        },
+        {
+          "line": 39,
+          "text": "url:       cat.url || `/tools/${cat.slug}`,"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/sitemap.xml.ts",
+      "hits": [
+        {
+          "line": 16,
+          "text": "(comparePairs as any[]).forEach(p => urls.push({ loc: `${base}/vs/${p.slug}`, priority: '0.5', changefreq: 'monthly' }));"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/tools/[slug].astro",
+      "hits": [
+        {
+          "line": 78,
+          "text": "const s = typeof c === \"string\" ? c : c.slug;"
+        },
+        {
+          "line": 79,
+          "text": "const base = typeof c === \"string\" ? { slug: s, name: s } : c;"
+        },
+        {
+          "line": 199,
+          "text": "<a href={`/compare/${[slug, compareCandidates[0].slug].sort().join(\"-vs-\")}`} class=\"td-btn td-btn--g\">"
+        },
+        {
+          "line": 309,
+          "text": "const an   = alt.name || alt.slug;"
+        },
+        {
+          "line": 311,
+          "text": "const pair = [slug, alt.slug].sort().join(\"-vs-\");"
+        },
+        {
+          "line": 416,
+          "text": "const an = alt.name || alt.slug;"
+        },
+        {
+          "line": 419,
+          "text": "<a href={`/tools/${alt.slug}`} class=\"td__ai\">"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/use-case/[slug].astro",
+      "hits": [
+        {
+          "line": 16,
+          "text": ".filter(p => p?.slug && p?.top_tools?.length >= 3)"
+        },
+        {
+          "line": 18,
+          "text": "params: { slug: page.slug },"
+        },
+        {
+          "line": 25,
+          "text": "const name     = page.name || page.slug;"
+        }
+      ]
+    },
+    {
+      "file": "src/pages/vs/[slug].astro",
+      "hits": [
+        {
+          "line": 10,
+          "text": "params: { slug: entry.slug },"
+        }
+      ]
+    }
+  ],
+  "candidateDataFiles": [
+    "dist/chunks/category-map_Dk1f0-ZJ.mjs",
+    "dist/chunks/category-paths_GquH9h7V.mjs",
+    "dist/chunks/homepage-data_DxYVo0MU.mjs",
+    "src/data/build/alternatives-page-data.json",
+    "src/data/build/category-map.json",
+    "src/data/build/category-paths.json",
+    "src/data/build/compare-page-data.json",
+    "src/data/build/featured-tools.json",
+    "src/data/build/homepage-data.json",
+    "src/data/build/related-map.json",
+    "src/data/build/tool-page-data.json",
+    "src/data/build/tools/influencer-suchtool-infludata.json"
+  ],
+  "candidateDataInspections": [
+    {
+      "file": "src/data/build/alternatives-page-data.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "chatgpt",
+          "google-gemini",
+          "claude",
+          "microsoft-copilot",
+          "github-copilot",
+          "canva-ai",
+          "notebooklm",
+          "dall-e-3",
+          "ideogram",
+          "opusclip",
+          "pika-labs",
+          "elevenlabs",
+          "gamma",
+          "codeium",
+          "claude-code",
+          "n8n",
+          "semrush",
+          "brandwatch-ai",
+          "zoom-ai-companion",
+          "asana-ai"
+        ]
+      },
+      "arraysInspected": [],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/category-map.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "other-ai-tools",
+          "writing-and-content",
+          "chatbots-and-llms",
+          "3d-and-ar",
+          "design-and-ui",
+          "coding-and-dev",
+          "research-and-education",
+          "audio-and-music",
+          "data-and-analytics",
+          "hr-and-recruiting",
+          "seo-and-marketing",
+          "ai-agents",
+          "image-generation",
+          "sales-and-crm",
+          "legal-and-finance",
+          "social-media",
+          "video-generation",
+          "translation",
+          "e-commerce",
+          "productivity"
+        ]
+      },
+      "arraysInspected": [],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/category-paths.json",
+      "topLevel": {
+        "type": "array",
+        "length": 23
+      },
+      "arraysInspected": [
+        {
+          "label": "top-level-array",
+          "total": 23,
+          "undefinedEntries": 0,
+          "nullEntries": 0,
+          "nonObjectEntries": 23,
+          "missingSlug": 0,
+          "missingHandle": 0,
+          "missingName": 0,
+          "missingSlugAndHandle": 0,
+          "duplicateSlugCount": 0,
+          "duplicateHandleCount": 0,
+          "samples": {
+            "invalidEntries": [
+              {
+                "index": 0,
+                "valueType": "string",
+                "valuePreview": "other-ai-tools"
+              },
+              {
+                "index": 1,
+                "valueType": "string",
+                "valuePreview": "writing-and-content"
+              },
+              {
+                "index": 2,
+                "valueType": "string",
+                "valuePreview": "chatbots-and-llms"
+              },
+              {
+                "index": 3,
+                "valueType": "string",
+                "valuePreview": "3d-and-ar"
+              },
+              {
+                "index": 4,
+                "valueType": "string",
+                "valuePreview": "design-and-ui"
+              }
+            ],
+            "missingSlug": [],
+            "missingHandle": [],
+            "missingSlugAndHandle": [],
+            "duplicateSlugs": [],
+            "duplicateHandles": []
+          }
+        }
+      ],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/compare-page-data.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "chatfuel-vs-presbot",
+          "askcory-ai-vs-presbot",
+          "cherrytree-ai-vs-presbot",
+          "cpa-pilot-vs-presbot",
+          "autotext-ai-vs-humanic-ai",
+          "boostrbot-vs-humanic-ai",
+          "collider-ai-vs-humanic-ai",
+          "humanic-ai-vs-posterstudio",
+          "cherrytree-ai-vs-learn-prompting-pro",
+          "go-charlie-vs-learn-prompting-pro",
+          "askcory-ai-vs-learn-prompting-pro",
+          "chatfuel-vs-learn-prompting-pro",
+          "adlas-io-vs-yourleads",
+          "agentprod-vs-yourleads",
+          "appai-vs-yourleads",
+          "collider-ai-vs-yourleads",
+          "atonce-vs-autotext-ai",
+          "atonce-vs-boostrbot",
+          "atonce-vs-collider-ai",
+          "atonce-vs-dittto"
+        ]
+      },
+      "arraysInspected": [],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/featured-tools.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "generated_at",
+          "global_top",
+          "by_category"
+        ]
+      },
+      "arraysInspected": [
+        {
+          "label": "object.global_top",
+          "total": 50,
+          "undefinedEntries": 0,
+          "nullEntries": 0,
+          "nonObjectEntries": 0,
+          "missingSlug": 0,
+          "missingHandle": 0,
+          "missingName": 0,
+          "missingSlugAndHandle": 0,
+          "duplicateSlugCount": 0,
+          "duplicateHandleCount": 0,
+          "samples": {
+            "invalidEntries": [],
+            "missingSlug": [],
+            "missingHandle": [],
+            "missingSlugAndHandle": [],
+            "duplicateSlugs": [],
+            "duplicateHandles": []
+          }
+        }
+      ],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/homepage-data.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "generated_at",
+          "total_tools",
+          "total_cats",
+          "total_compare",
+          "total_bestof",
+          "featured_tools",
+          "new_tools",
+          "pricing_dist"
+        ]
+      },
+      "arraysInspected": [
+        {
+          "label": "object.featured_tools",
+          "total": 10,
+          "undefinedEntries": 0,
+          "nullEntries": 0,
+          "nonObjectEntries": 0,
+          "missingSlug": 0,
+          "missingHandle": 0,
+          "missingName": 0,
+          "missingSlugAndHandle": 0,
+          "duplicateSlugCount": 0,
+          "duplicateHandleCount": 0,
+          "samples": {
+            "invalidEntries": [],
+            "missingSlug": [],
+            "missingHandle": [],
+            "missingSlugAndHandle": [],
+            "duplicateSlugs": [],
+            "duplicateHandles": []
+          }
+        },
+        {
+          "label": "object.new_tools",
+          "total": 8,
+          "undefinedEntries": 0,
+          "nullEntries": 0,
+          "nonObjectEntries": 0,
+          "missingSlug": 0,
+          "missingHandle": 0,
+          "missingName": 0,
+          "missingSlugAndHandle": 0,
+          "duplicateSlugCount": 0,
+          "duplicateHandleCount": 0,
+          "samples": {
+            "invalidEntries": [],
+            "missingSlug": [],
+            "missingHandle": [],
+            "missingSlugAndHandle": [],
+            "duplicateSlugs": [],
+            "duplicateHandles": []
+          }
+        }
+      ],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/related-map.json",
+      "error": "__SKIPPED_TOO_LARGE__:32498748"
+    },
+    {
+      "file": "src/data/build/tool-page-data.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "chatgpt",
+          "google-gemini",
+          "claude",
+          "microsoft-copilot",
+          "github-copilot",
+          "canva-ai",
+          "notebooklm",
+          "dall-e-3",
+          "ideogram",
+          "opusclip",
+          "pika-labs",
+          "elevenlabs",
+          "gamma",
+          "codeium",
+          "claude-code",
+          "n8n",
+          "semrush",
+          "brandwatch-ai",
+          "zoom-ai-companion",
+          "asana-ai"
+        ]
+      },
+      "arraysInspected": [],
+      "suspicionScore": 0
+    },
+    {
+      "file": "src/data/build/tools/influencer-suchtool-infludata.json",
+      "topLevel": {
+        "type": "object",
+        "keys": [
+          "slug",
+          "route",
+          "index",
+          "seo",
+          "hero",
+          "taxonomy",
+          "commercial",
+          "reviews",
+          "scores",
+          "content",
+          "related"
+        ]
+      },
+      "arraysInspected": [],
+      "suspicionScore": 0
+    }
+  ],
+  "suspiciousDataFiles": [],
+  "buildChunks": [
+    {
+      "file": "dist/chunks/homepage-data_DxYVo0MU.mjs",
+      "hasSlugAccess": true,
+      "line20Context": [
+        {
+          "line": 12,
+          "text": "  return renderTemplate`${maybeRenderHead()}<span${addAttribute(className, \"class\")} aria-hidden=\"true\">${unescapeHTML(markup)}</span>`;"
+        },
+        {
+          "line": 13,
+          "text": "}, \"E:/2026_Github/AI_Experts_V3_PROD/AI_Experts_Repo/src/components/site/CategoryIcon.astro\", void 0);"
+        },
+        {
+          "line": 14,
+          "text": ""
+        },
+        {
+          "line": 15,
+          "text": "const $$Astro = createAstro(\"https://aiexpertscorner.com\");"
+        },
+        {
+          "line": 16,
+          "text": "const $$CategoryCard = createComponent(($$result, $$props, $$slots) => {"
+        },
+        {
+          "line": 17,
+          "text": "  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);"
+        },
+        {
+          "line": 18,
+          "text": "  Astro2.self = $$CategoryCard;"
+        },
+        {
+          "line": 19,
+          "text": "  const { category } = Astro2.props;"
+        },
+        {
+          "line": 20,
+          "text": "  return renderTemplate`${maybeRenderHead()}<a${addAttribute(`/tools/category/${category.slug}`, \"href\")} class=\"group relative flex flex-col p-6 rounded-2xl border border-ai-border bg-ai-surface/50 hover:bg-ai-surface-elevated hover:border-ai-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20\"> <!-- Icon Well: Maakt het icoon beheersbaar en stijlvol --> <div class=\"mb-6 flex items-center justify-between\"> <div class=\"w-14 h-14 flex items-center justify-center rounded-xl bg-ai-dark border border-ai-border group-hover:border-ai-primary/30 transition-colors\"> ${renderComponent($$result, \"CategoryIcon\", $$CategoryIcon, { \"slug\": category.slug, \"class\": \"w-7 h-7 text-ai-text-secondary group-hover:text-ai-primary transition-colors\" })} </div> <span class=\"text-[10px] font-bold uppercase tracking-widest text-ai-text-faint bg-ai-dark px-2 py-1 rounded-md border border-ai-border\"> ${category.count.toLocaleString()} Tools"
+        },
+        {
+          "line": 21,
+          "text": "</span> </div> <div class=\"flex-1\"> <h3 class=\"text-xl font-bold text-white mb-2 group-hover:text-ai-primary transition-colors\"> ${category.name} </h3> <p class=\"text-sm text-ai-text-secondary leading-relaxed line-clamp-3\"> ${category.description || `Explore the best ${category.name.toLowerCase()} tools, compare features and optimize your workflow.`} </p> </div> <div class=\"mt-6 pt-4 border-t border-ai-border flex items-center justify-between\"> <span class=\"text-xs font-bold text-ai-primary uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity\">"
+        },
+        {
+          "line": 22,
+          "text": "Explore Hub"
+        },
+        {
+          "line": 23,
+          "text": "</span> <svg class=\"w-5 h-5 text-ai-text-faint group-hover:text-ai-primary transition-colors\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"> <path d=\"M7 17 17 7M7 7h10v10\"></path> </svg> </div> </a>`;"
+        },
+        {
+          "line": 24,
+          "text": "}, \"E:/2026_Github/AI_Experts_V3_PROD/AI_Experts_Repo/src/components/cards/CategoryCard.astro\", void 0);"
+        },
+        {
+          "line": 25,
+          "text": ""
+        },
+        {
+          "line": 26,
+          "text": "const total_tools = 19088;"
+        },
+        {
+          "line": 27,
+          "text": "const featured_tools = ["
+        },
+        {
+          "line": 28,
+          "text": "\t{"
+        }
+      ]
+    }
+  ],
+  "distHomepageChunkContext": [
+    {
+      "line": 10,
+      "text": "  const markup = getCategoryIconMarkup(props.slug || props.category || \"\");"
+    },
+    {
+      "line": 11,
+      "text": "  const className = [\"category-icon\", props.class].filter(Boolean).join(\" \");"
+    },
+    {
+      "line": 12,
+      "text": "  return renderTemplate`${maybeRenderHead()}<span${addAttribute(className, \"class\")} aria-hidden=\"true\">${unescapeHTML(markup)}</span>`;"
+    },
+    {
+      "line": 13,
+      "text": "}, \"E:/2026_Github/AI_Experts_V3_PROD/AI_Experts_Repo/src/components/site/CategoryIcon.astro\", void 0);"
+    },
+    {
+      "line": 14,
+      "text": ""
+    },
+    {
+      "line": 15,
+      "text": "const $$Astro = createAstro(\"https://aiexpertscorner.com\");"
+    },
+    {
+      "line": 16,
+      "text": "const $$CategoryCard = createComponent(($$result, $$props, $$slots) => {"
+    },
+    {
+      "line": 17,
+      "text": "  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);"
+    },
+    {
+      "line": 18,
+      "text": "  Astro2.self = $$CategoryCard;"
+    },
+    {
+      "line": 19,
+      "text": "  const { category } = Astro2.props;"
+    },
+    {
+      "line": 20,
+      "text": "  return renderTemplate`${maybeRenderHead()}<a${addAttribute(`/tools/category/${category.slug}`, \"href\")} class=\"group relative flex flex-col p-6 rounded-2xl border border-ai-border bg-ai-surface/50 hover:bg-ai-surface-elevated hover:border-ai-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20\"> <!-- Icon Well: Maakt het icoon beheersbaar en stijlvol --> <div class=\"mb-6 flex items-center justify-between\"> <div class=\"w-14 h-14 flex items-center justify-center rounded-xl bg-ai-dark border border-ai-border group-hover:border-ai-primary/30 transition-colors\"> ${renderComponent($$result, \"CategoryIcon\", $$CategoryIcon, { \"slug\": category.slug, \"class\": \"w-7 h-7 text-ai-text-secondary group-hover:text-ai-primary transition-colors\" })} </div> <span class=\"text-[10px] font-bold uppercase tracking-widest text-ai-text-faint bg-ai-dark px-2 py-1 rounded-md border border-ai-border\"> ${category.count.toLocaleString()} Tools"
+    },
+    {
+      "line": 21,
+      "text": "</span> </div> <div class=\"flex-1\"> <h3 class=\"text-xl font-bold text-white mb-2 group-hover:text-ai-primary transition-colors\"> ${category.name} </h3> <p class=\"text-sm text-ai-text-secondary leading-relaxed line-clamp-3\"> ${category.description || `Explore the best ${category.name.toLowerCase()} tools, compare features and optimize your workflow.`} </p> </div> <div class=\"mt-6 pt-4 border-t border-ai-border flex items-center justify-between\"> <span class=\"text-xs font-bold text-ai-primary uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity\">"
+    },
+    {
+      "line": 22,
+      "text": "Explore Hub"
+    },
+    {
+      "line": 23,
+      "text": "</span> <svg class=\"w-5 h-5 text-ai-text-faint group-hover:text-ai-primary transition-colors\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"> <path d=\"M7 17 17 7M7 7h10v10\"></path> </svg> </div> </a>`;"
+    },
+    {
+      "line": 24,
+      "text": "}, \"E:/2026_Github/AI_Experts_V3_PROD/AI_Experts_Repo/src/components/cards/CategoryCard.astro\", void 0);"
+    },
+    {
+      "line": 25,
+      "text": ""
+    },
+    {
+      "line": 26,
+      "text": "const total_tools = 19088;"
+    },
+    {
+      "line": 27,
+      "text": "const featured_tools = ["
+    },
+    {
+      "line": 28,
+      "text": "\t{"
+    },
+    {
+      "line": 29,
+      "text": "\t\thandle: \"chatgpt\","
+    },
+    {
+      "line": 30,
+      "text": "\t\tslug: \"chatgpt\","
+    }
+  ],
+  "likelyNextFilesToOpen": [
+    "src/pages/tools/index.astro",
+    "dist/chunks/homepage-data_DxYVo0MU.mjs"
+  ]
+}

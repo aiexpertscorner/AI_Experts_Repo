@@ -1,0 +1,254 @@
+---
+/**
+ * src/pages/best/index.astro
+ * Hub index for all best-of pages (best-pages + best-cluster-pages).
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/hub-listings.css";
+
+import bestRaw    from "@/data/build/page-payloads/best-pages.json";
+import clusterRaw from "@/data/build/page-payloads/best-cluster-pages.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+
+function tc(s: string) {
+  return (s || "").replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase());
+}
+
+// ── Merge best-pages + cluster-pages ──────────────────────────────────────────
+const bestPages = (bestRaw as any[]).filter(p => p?.slug || p?.route);
+const clusterPages = (clusterRaw as any[])
+  .filter(p => p?.slug || p?.primary)
+  .filter(p => {
+    const s = p.slug || p.primary;
+    return !bestPages.some(b => (b.slug || b.route?.replace("/best/", "")) === s);
+  });
+
+function normalizeEntry(p: any, isCluster: boolean) {
+  const slug  = p.slug || p.primary || (p.route || "").replace("/best/", "");
+  const name  = p.meta?.name || p.seo?.name || tc(slug);
+  const count = p.top_tools?.length || p.count || 0;
+  const href  = p.route || `/best/${slug}`;
+  const title = (p.seo?.title || `Best ${name} Tools`)
+    .replace(" 2026 —", " —").replace(" 2026", "");
+  // Get first tool logo for card
+  const firstTool = p.top_tools?.[0];
+  const firstSlug = firstTool?.slug || firstTool?.handle || (typeof firstTool === "string" ? firstTool : null);
+  const logo      = firstSlug ? logoMap[firstSlug] : null;
+  return { slug, name, count, href, title, logo, isCluster };
+}
+
+const allEntries = [
+  ...bestPages.map(p => normalizeEntry(p, false)),
+  ...clusterPages.map(p => normalizeEntry(p, true)),
+];
+const total = allEntries.length;
+
+// ── Category groups (editorial) ───────────────────────────────────────────────
+const GROUPS = [
+  { label: "✍️  Writing & Content", slugs: ["ai-writing","write-blog-posts","write-seo-articles","content-creation","copywriting"] },
+  { label: "💻 Coding & Dev",       slugs: ["ai-coding","generate-code","code-review","ai-agents-for-developers","debugging"] },
+  { label: "🎨 Image & Design",     slugs: ["ai-image-generation","ai-design","logo-creation","photo-editing","ai-art"] },
+  { label: "📈 Marketing & SEO",    slugs: ["ai-marketing","ai-seo","social-media","email-marketing","ad-copy"] },
+  { label: "🎬 Video & Audio",      slugs: ["ai-video","text-to-speech","ai-music","voice-cloning","video-editing"] },
+  { label: "💼 Business & HR",      slugs: ["ai-hr","ai-recruiting","ai-sales","ai-crm","ai-finance"] },
+];
+
+const grouped = GROUPS.map(g => ({
+  label:   g.label,
+  entries: g.slugs
+    .map(s => allEntries.find(e => e.slug === s))
+    .filter(Boolean) as typeof allEntries,
+})).filter(g => g.entries.length > 0);
+
+// ── Featured (high tool count) ─────────────────────────────────────────────────
+const featured = [...allEntries]
+  .sort((a, b) => b.count - a.count)
+  .slice(0, 8);
+
+const pageTitle = `Best AI Tools — ${total.toLocaleString()} Expert-Ranked Lists`;
+const pageDesc  = `Expert-ranked AI tool lists for every workflow, use case and industry. ${total.toLocaleString()}+ curated best-of pages.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": pageTitle,
+      "description": pageDesc,
+      "url": "https://aiexpertscorner.com/best",
+    })} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="hub hub--amber">
+    <div class="hub__c">
+
+      <Breadcrumb crumbs={[
+        { label: "Home",    href: "/" },
+        { label: "Best Of" },
+      ]} />
+
+      <!-- Hero -->
+      <div class="hub__hero">
+        <span class="hub__ew">Best Of</span>
+        <h1 class="hub__title">Best AI Tool Lists</h1>
+        <p class="hub__desc">
+          Expert-ranked picks for every AI tool category, use case and industry.
+          Find the top tools for your exact workflow.
+        </p>
+        <div class="hub__stats">
+          <div class="hub__stat">
+            <strong>{total.toLocaleString()}+</strong>
+            <span>Curated lists</span>
+          </div>
+          <div class="hub__stat">
+            <strong>{bestPages.length}</strong>
+            <span>Core best-of</span>
+          </div>
+          <div class="hub__stat">
+            <strong>{clusterPages.length}</strong>
+            <span>Cross-category</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured (most tools) -->
+      <section class="hub-section">
+        <h2 class="hub-section__title">🏆 Top Ranked Lists</h2>
+        <div class="best-featured-grid">
+          {featured.map(e => (
+            <a href={e.href} class="best-feat-card">
+              {e.logo && (
+                <img src={e.logo} alt="" width="20" height="20" loading="lazy"
+                  onerror="this.style.display='none'" />
+              )}
+              <span class="best-feat-card__title">{e.title}</span>
+              {e.count > 0 && <span class="best-feat-card__count">{e.count} tools</span>}
+              <span class="hub__arr">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Grouped by category -->
+      {grouped.map(group => (
+        <section class="hub-section">
+          <h2 class="hub-section__title">{group.label}</h2>
+          <div class="hub__grid hub__grid--tight">
+            {group.entries.map(e => (
+              <a href={e.href} class="hub__card">
+                {e.logo && (
+                  <img src={e.logo} alt="" width="22" height="22" class="hub__logo" loading="lazy"
+                    onerror="this.style.display='none'" />
+                )}
+                <span class="hub__card-title">{e.title}</span>
+                {e.count > 0 && <span class="hub__card-count">{e.count}</span>}
+                <span class="hub__arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <!-- Search -->
+      <section class="hub-section">
+        <h2 class="hub-section__title">All Lists</h2>
+        <div class="hub__search-wrap">
+          <input
+            id="best-search"
+            type="search"
+            class="hub__search-input"
+            placeholder={`Search ${total.toLocaleString()}+ lists...`}
+            autocomplete="off"
+          />
+        </div>
+        <div class="hub__grid" id="best-grid">
+          {allEntries.map(e => (
+            <a href={e.href} class="hub__card">
+              {e.logo && (
+                <img src={e.logo} alt="" width="22" height="22" class="hub__logo" loading="lazy"
+                  onerror="this.style.display='none'" />
+              )}
+              <span class="hub__card-title">{e.title}</span>
+              {e.count > 0 && <span class="hub__card-count">{e.count} tools</span>}
+              <span class="hub__arr">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <div class="hub__related">
+        <a href="/compare">Compare Tools</a>
+        <a href="/alternatives">Find Alternatives</a>
+        <a href="/tools">All AI Tools</a>
+        <a href="/use-case">By Use Case</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const input = document.getElementById("best-search") as HTMLInputElement | null;
+  const grid  = document.getElementById("best-grid");
+  if (input && grid) {
+    input.addEventListener("input", () => {
+      const q = input.value.toLowerCase();
+      grid.querySelectorAll<HTMLAnchorElement>(".hub__card").forEach(card => {
+        const text = card.textContent?.toLowerCase() || "";
+        card.style.display = !q || text.includes(q) ? "" : "none";
+      });
+    });
+  }
+</script>
+
+<style>
+.hub-section { margin-bottom: var(--sp-10); }
+.hub-section__title {
+  font-size: var(--text-lg); font-weight: 700; color: var(--c-text);
+  margin: 0 0 var(--sp-4); font-family: var(--font-display);
+}
+
+/* ── Featured list cards ───────────────────────────────────────────── */
+.best-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: var(--sp-8);
+}
+.best-feat-card {
+  display: flex; align-items: center; gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  background: var(--c-bg-card); border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg); text-decoration: none;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.best-feat-card:hover { border-color: var(--c-amber); background: var(--c-bg-card-alt); }
+.best-feat-card img { border-radius: 4px; object-fit: contain; flex-shrink: 0; }
+.best-feat-card__title { flex: 1; font-size: var(--text-sm); font-weight: 600; color: var(--c-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.best-feat-card__count { font-size: var(--text-xs); color: var(--c-text-4); white-space: nowrap; flex-shrink: 0; background: var(--c-bg-hover); padding: 0.15rem 0.5rem; border-radius: var(--r-full); }
+
+/* ── Tight grid ────────────────────────────────────────────────────── */
+.hub__grid--tight { gap: 0.5rem; }
+
+/* ── Search ────────────────────────────────────────────────────────── */
+.hub__search-wrap { margin-bottom: var(--sp-4); }
+.hub__search-input {
+  width: 100%; max-width: 480px;
+  background: var(--c-bg-card); border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg); color: var(--c-text);
+  font-size: var(--text-sm); padding: 0.625rem 1rem;
+  outline: none; transition: border-color var(--t-base);
+}
+.hub__search-input:focus { border-color: var(--c-amber); }
+.hub__search-input::placeholder { color: var(--c-text-4); }
+</style>

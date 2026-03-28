@@ -103,7 +103,7 @@ const toolShape = (t) => {
     t.logo_domain || t.canonical_domain ||
     (t.logo_url?.match(/clearbit\.com\/([^?&]+)/)?.[1]) || ""
   );
-  const catSlugRaw = safeStr(t.catSlug || t.cat_slug || slugify(t.cat || t.category || "other-ai-tools"));
+  const catSlugRaw = safeStr(t.catSlug || t.cat_slug || slugify(t.cat || t.category || "other-tools"));
   const description = safeStr(t.desc || t.description || t.short || t.tagline || "");
   const year = new Date().getFullYear();
   return {
@@ -157,7 +157,7 @@ writeJson(path.join(OUT_DIR, "tool-map.json"), toolMap);
 // ─── 3. CATEGORY PATHS & MAP ─────────────────────────────────────
 const catGroups = new Map();
 for (const t of tools) {
-  const slug = safeStr(t.catSlug || t.cat_slug || slugify(t.cat || t.category || "other-ai-tools"));
+  const slug = safeStr(t.catSlug || t.cat_slug || slugify(t.cat || t.category || "other-tools"));
   const name = safeStr(t.cat || t.category, "Other AI Tools");
   if (!catGroups.has(slug)) catGroups.set(slug, { slug, name, tools: [] });
   catGroups.get(slug).tools.push(t);
@@ -423,20 +423,20 @@ const sitemapData = {
   generated_at: new Date().toISOString(),
   urls: [
     { path:"/",          priority:1.0, changefreq:"daily"   },
-    { path:"/ai-tools",  priority:0.9, changefreq:"daily"   },
+    { path:"/tools",  priority:0.9, changefreq:"daily"   },
     { path:"/vs",        priority:0.7, changefreq:"weekly"  },
     { path:"/best",      priority:0.7, changefreq:"weekly"  },
     { path:"/prompts",   priority:0.7, changefreq:"weekly"  },
     { path:"/ai-news",   priority:0.6, changefreq:"daily"   },
-    ...categoryPaths.map(s  => ({ path:`/ai-tools/category/${s}`,  priority:0.8, changefreq:"weekly"  })),
-    ...tagPaths.map(s       => ({ path:`/ai-tools/tag/${s}`,        priority:0.6, changefreq:"weekly"  })),
-    ...indPaths.map(s       => ({ path:`/ai-tools/industry/${s}`,   priority:0.6, changefreq:"weekly"  })),
-    ...ucPaths.map(s        => ({ path:`/ai-tools/use-case/${s}`,   priority:0.6, changefreq:"weekly"  })),
-    ...pricingPaths.map(s   => ({ path:`/ai-tools/pricing/${s}`,    priority:0.7, changefreq:"weekly"  })),
+    ...categoryPaths.map(s  => ({ path:`/tools/category/${s}`,  priority:0.8, changefreq:"weekly"  })),
+    ...tagPaths.map(s       => ({ path:`/tools/tag/${s}`,        priority:0.6, changefreq:"weekly"  })),
+    ...indPaths.map(s       => ({ path:`/tools/industry/${s}`,   priority:0.6, changefreq:"weekly"  })),
+    ...ucPaths.map(s        => ({ path:`/tools/use-case/${s}`,   priority:0.6, changefreq:"weekly"  })),
+    ...pricingPaths.map(s   => ({ path:`/tools/pricing/${s}`,    priority:0.7, changefreq:"weekly"  })),
     ...bestOfPaths.map(s    => ({ path:`/best/${s}`,                 priority:0.65,changefreq:"weekly"  })),
-    ...companyPaths.map(s   => ({ path:`/ai-tools/company/${s}`,    priority:0.6, changefreq:"monthly" })),
-    ...toolPaths.slice(0,500).map(h  => ({ path:`/ai-tools/${h}`,   priority:0.7, changefreq:"monthly" })),
-    ...toolPaths.slice(500).map(h    => ({ path:`/ai-tools/${h}`,   priority:0.5, changefreq:"monthly" })),
+    ...companyPaths.map(s   => ({ path:`/tools/company/${s}`,    priority:0.6, changefreq:"monthly" })),
+    ...toolPaths.slice(0,500).map(h  => ({ path:`/tools/${h}`,   priority:0.7, changefreq:"monthly" })),
+    ...toolPaths.slice(500).map(h    => ({ path:`/tools/${h}`,   priority:0.5, changefreq:"monthly" })),
     ...comparePairs.slice(0,10000).map(p => ({ path:`/vs/${p.slug}`,priority:0.5, changefreq:"monthly" })),
   ],
 };

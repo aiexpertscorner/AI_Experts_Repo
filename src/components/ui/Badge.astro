@@ -1,0 +1,7 @@
+---
+interface Props { tier: string; }
+const { tier } = Astro.props;
+const n = String(tier || "unknown").toLowerCase().replace(/\s+/g, "_");
+const LABELS: Record<string,string> = { free:"Free", freemium:"Freemium", paid:"Paid", enterprise:"Enterprise", open_source:"Open Source", unknown:"Unknown" };
+---
+<span class={`badge badge--${n}`}>{LABELS[n] || LABELS.unknown}</span>

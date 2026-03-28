@@ -1,0 +1,371 @@
+/* ================================================================
+   src/styles/hub-listings.css
+   Shared styles for hub index pages:
+     /compare/index.astro      → .hub + .hub--blue accent
+     /alternatives/index.astro → .hub + .hub--green accent
+     /best/index.astro         → .hub + .hub--amber accent
+     /use-case/index.astro     → .uc-hub + .uc-card
+   
+   Import in each hub index page. Replaces all inline <style> blocks.
+   Zero hardcoded values — only tokens.css variables.
+   ================================================================ */
+
+/* ════════════════════════════════════════════════════════════════
+   SHARED HUB SHELL — compare, alternatives, best
+   ════════════════════════════════════════════════════════════════ */
+
+.hub { min-height: 100vh; }
+.hub__c {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-px) var(--sp-20);
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────── */
+.hub__bc {
+  padding: 0.875rem 0;
+  font-size: var(--text-sm);
+  color: var(--c-text-4);
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  border-bottom: 1px solid var(--c-border-soft);
+  margin-bottom: var(--sp-10);
+}
+.hub__bc a { color: var(--c-text-4); text-decoration: none; transition: color var(--t-fast); }
+.hub__bc a:hover { color: var(--c-text-3); }
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.hub__hero {
+  padding: var(--sp-8) 0 var(--sp-10);
+  border-bottom: 1px solid var(--c-border-soft);
+  margin-bottom: var(--sp-10);
+  position: relative;
+  overflow: hidden;
+}
+.hub__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 0% 50%, var(--glow-brand-sm) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hub__hero > * { position: relative; z-index: 1; }
+
+.hub__ew {
+  display: block;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+/* Accent colours per hub — set on .hub__ew via inline style or modifier */
+.hub--blue   .hub__ew { color: var(--c-primary); }
+.hub--green  .hub__ew { color: var(--c-green); }
+.hub--amber  .hub__ew { color: var(--c-amber); }
+.hub--violet .hub__ew { color: var(--c-secondary); }
+
+.hub__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--c-text);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+}
+.hub__desc {
+  color: var(--c-text-3);
+  font-size: 1.0625rem;
+  margin: 0;
+  max-width: 600px;
+  line-height: var(--lh-base);
+}
+
+/* ── Stats strip ─────────────────────────────────────────────── */
+.hub__stats {
+  display: flex;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+  margin-top: var(--sp-6);
+}
+.hub__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hub__stat strong {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--c-text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.hub__stat span {
+  font-size: var(--text-xs);
+  color: var(--c-text-4);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Cards grid ──────────────────────────────────────────────── */
+.hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: var(--sp-12);
+}
+
+.hub__card {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+/* Per-hub hover accent */
+.hub--blue   .hub__card:hover { border-color: var(--c-primary);   background: var(--c-bg-card-alt); }
+.hub--green  .hub__card:hover { border-color: var(--c-green);     background: var(--c-bg-card-alt); }
+.hub--amber  .hub__card:hover { border-color: var(--c-amber);     background: var(--c-bg-card-alt); }
+.hub--violet .hub__card:hover { border-color: var(--c-secondary); background: var(--c-bg-card-alt); }
+
+.hub__logo {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: var(--c-bg-hover);
+}
+
+.hub__card-title {
+  flex: 1;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hub__card-count {
+  font-size: var(--text-xs);
+  color: var(--c-text-4);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hub__arr {
+  color: var(--c-text-5);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+  transition: color var(--t-fast);
+}
+.hub--blue   .hub__card:hover .hub__arr { color: var(--c-primary); }
+.hub--green  .hub__card:hover .hub__arr { color: var(--c-green); }
+.hub--amber  .hub__card:hover .hub__arr { color: var(--c-amber); }
+.hub--violet .hub__card:hover .hub__arr { color: var(--c-secondary); }
+
+/* ── Related links footer ────────────────────────────────────── */
+.hub__related {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  padding-top: var(--sp-8);
+  border-top: 1px solid var(--c-border-soft);
+}
+.hub__related a {
+  font-size: var(--text-sm);
+  color: var(--c-primary);
+  text-decoration: none;
+  padding: 0.375rem 0.875rem;
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-sm);
+  transition: all var(--t-fast);
+}
+.hub__related a:hover {
+  background: var(--c-bg-hover);
+  color: var(--c-text);
+  border-color: var(--c-border-med);
+}
+
+/* ── Search bar (optional, for hub pages that add search) ────── */
+.hub__search {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg);
+  padding: 0 var(--sp-4);
+  height: 44px;
+  max-width: 480px;
+  margin: var(--sp-6) 0 0;
+  transition: border-color var(--t-base);
+}
+.hub__search:focus-within { border-color: var(--c-primary); }
+.hub__search input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: var(--c-text); font-size: var(--text-sm);
+}
+.hub__search input::placeholder { color: var(--c-text-4); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hub__grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+@media (max-width: 480px) {
+  .hub__grid { grid-template-columns: 1fr; }
+  .hub__stats { gap: var(--sp-5); }
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   USE-CASE HUB — /use-case/index.astro
+   Separate class namespace to avoid conflicts.
+   ════════════════════════════════════════════════════════════════ */
+
+.uc-hub { min-height: 100vh; }
+
+.uc-hub__container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-px) var(--sp-20);
+}
+
+/* Breadcrumb */
+.uc-hub__bc {
+  padding: 0.875rem 0;
+  font-size: var(--text-sm);
+  color: var(--c-text-4);
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  border-bottom: 1px solid var(--c-border-soft);
+  margin-bottom: var(--sp-10);
+}
+.uc-hub__bc a { color: var(--c-text-4); text-decoration: none; transition: color var(--t-fast); }
+.uc-hub__bc a:hover { color: var(--c-text-3); }
+
+/* Hero */
+.uc-hub__hero { padding: var(--sp-8) 0 var(--sp-10); }
+
+.uc-hub__eyebrow {
+  display: block;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-secondary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.uc-hub__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--c-text);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+}
+
+.uc-hub__desc {
+  color: var(--c-text-3);
+  font-size: 1.0625rem;
+  margin: 0 0 var(--sp-8);
+  max-width: 560px;
+  line-height: var(--lh-base);
+}
+
+/* Grid */
+.uc-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ── Use-case card ───────────────────────────────────────────── */
+.uc-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.uc-card:hover {
+  border-color: var(--c-secondary);
+  background: var(--c-bg-card-alt);
+}
+
+/* Mini tool logos inside card */
+.uc-card__logos {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.uc-card__logos img {
+  width: 20px; height: 20px;
+  border-radius: 4px;
+  object-fit: contain;
+  background: var(--c-bg-hover);
+}
+.uc-card__logo-fb {
+  width: 20px; height: 20px;
+  border-radius: 4px;
+  background: var(--c-bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--c-secondary);
+}
+
+.uc-card__title {
+  flex: 1;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uc-card__count {
+  font-size: var(--text-xs);
+  color: var(--c-text-4);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.uc-card__arr {
+  color: var(--c-text-5);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+  transition: color var(--t-fast);
+}
+.uc-card:hover .uc-card__arr { color: var(--c-secondary); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .uc-hub__grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+@media (max-width: 480px) {
+  .uc-hub__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,19 @@
+---
+interface Props {
+  eyebrow?:     string;
+  title:        string;
+  seeAllHref?:  string;
+  seeAllLabel?: string;
+  meta?:        string;
+  eyebrowColor?:"blue"|"amber"|"green"|"violet";
+}
+const { eyebrow, title, seeAllHref, seeAllLabel = "View all →", meta, eyebrowColor = "blue" } = Astro.props;
+---
+<div class="section__head">
+  <div>
+    {eyebrow && <span class={`eyebrow eyebrow--${eyebrowColor}`}>{eyebrow}</span>}
+    <h2 class="section-title">{title}</h2>
+  </div>
+  {meta       && <span style="font-size:var(--text-sm);color:var(--c-text-4)">{meta}</span>}
+  {seeAllHref && <a href={seeAllHref} class="see-all-link">{seeAllLabel}</a>}
+</div>

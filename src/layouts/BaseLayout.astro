@@ -1,70 +1,60 @@
 ---
-import { SITE_NAME, SITE_URL, SITE_DESC } from "@/data/homeConfig";
+/**
+ * src/layouts/BaseLayout.astro
+ * CSS import volgorde: tokens → base → layout → components
+ * Importeer home.css alleen in pages/index.astro zelf.
+ */
+import "@/styles/tokens.css";
 import "@/styles/base.css";
+import "@/styles/layout.css";
+import "@/styles/components.css";
 
 interface Props {
   title?:       string;
   description?: string;
-  canonical?:   string;
-  ogImage?:     string;
   noindex?:     boolean;
-  lang?:        string;
 }
+
 const {
-  title,
-  description = SITE_DESC,
-  canonical,
-  ogImage      = "/logos/logo_dark.png",
-  noindex      = false,
-  lang         = "en",
+  title       = "AIExpertsCorner — Leading AI Tools Discovery Engine",
+  description = "Discover 19,000+ AI tools, compare pricing, and find the right tool for any workflow.",
+  noindex     = false,
 } = Astro.props;
 
-const pageTitle    = title
-  ? `${title} | ${SITE_NAME}`
-  : `${SITE_NAME} — AI Tools Directory`;
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).href;
-const ogImageUrl   = new URL(ogImage, SITE_URL).href;
+const SITE     = "AIExpertsCorner";
+const fullTitle = title.includes(SITE) ? title : `${title} | ${SITE}`;
+const canonical = new URL(Astro.url.pathname, Astro.site || "https://aiexpertscorner.com");
 ---
-<!DOCTYPE html>
-<html lang={lang}>
+
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="theme-color" content="#070d18"/>
-
-  <title>{pageTitle}</title>
-  <meta name="description" content={description}/>
-  {noindex && <meta name="robots" content="noindex,nofollow"/>}
-  <link rel="canonical" href={canonicalUrl}/>
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website"/>
-  <meta property="og:title"       content={pageTitle}/>
-  <meta property="og:description" content={description}/>
-  <meta property="og:url"         content={canonicalUrl}/>
-  <meta property="og:image"       content={ogImageUrl}/>
-  <meta property="og:site_name"   content={SITE_NAME}/>
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card"        content="summary_large_image"/>
-  <meta name="twitter:title"       content={pageTitle}/>
-  <meta name="twitter:description" content={description}/>
-  <meta name="twitter:image"       content={ogImageUrl}/>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-
-  <!-- Font preconnect + load -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Inter:wght@400;500;600&display=swap"/>
-
-  <!-- Structured data / extra head slot -->
-  <slot name="head"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{fullTitle}</title>
+  <meta name="title"       content={fullTitle} />
+  <meta name="description" content={description} />
+  <link rel="canonical"    href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <slot name="head" />
 </head>
 <body>
-  <slot name="header"/>
-  <main id="main" tabindex="-1"><slot/></main>
-  <slot name="footer"/>
+  <slot name="header" />
+  <main id="main-content"><slot /></main>
+  <slot name="footer" />
+  <script>
+    window.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        const el = document.querySelector<HTMLInputElement>('input[type="search"],.hp-search__input');
+        el?.focus();
+      }
+    });
+  </script>
 </body>
 </html>

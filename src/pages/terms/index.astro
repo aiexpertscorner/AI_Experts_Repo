@@ -1,0 +1,158 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/trust-pages.css";
+
+const title   = "Terms of Service — AIExpertsCorner";
+const desc    = "The terms and conditions governing your use of AIExpertsCorner.com.";
+const updated = "March 2026";
+---
+
+<BaseLayout title={title} description={desc}>
+  <Header slot="header" />
+
+  <div class="trust-page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[{ label:"Home", href:"/" }, { label:"Terms of Service" }]} />
+
+      <div class="trust-hero">
+        <span class="trust-hero__icon">📋</span>
+        <h1 class="trust-hero__title">Terms of Service</h1>
+        <p class="trust-hero__sub">Please read these terms carefully before using AIExpertsCorner.</p>
+        <span class="trust-hero__meta">Last updated: {updated}</span>
+      </div>
+
+      <!-- TOC -->
+      <nav class="trust-toc" aria-label="Contents">
+        <p class="trust-toc__title">Contents</p>
+        <ol class="trust-toc__list">
+          <li><a href="#acceptance">1. Acceptance of terms</a></li>
+          <li><a href="#service">2. Description of service</a></li>
+          <li><a href="#use">3. Acceptable use</a></li>
+          <li><a href="#content">4. Content and accuracy</a></li>
+          <li><a href="#affiliate-terms">5. Affiliate links and advertising</a></li>
+          <li><a href="#ip">6. Intellectual property</a></li>
+          <li><a href="#disclaimer">7. Disclaimer of warranties</a></li>
+          <li><a href="#liability">8. Limitation of liability</a></li>
+          <li><a href="#termination">9. Termination</a></li>
+          <li><a href="#governing">10. Governing law</a></li>
+          <li><a href="#contact-terms">11. Contact</a></li>
+        </ol>
+      </nav>
+
+      <div class="trust-content">
+
+        <section class="trust-section" id="acceptance">
+          <h2 class="trust-section__title">1. Acceptance of terms</h2>
+          <div class="trust-section__body">
+            <p>By accessing or using AIExpertsCorner.com ("the Site"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Site.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="service">
+          <h2 class="trust-section__title">2. Description of service</h2>
+          <div class="trust-section__body">
+            <p>AIExpertsCorner is an AI tools directory that provides information about AI software tools, including descriptions, pricing information, comparisons and category listings. The Site is provided for informational purposes only.</p>
+            <p>We reserve the right to modify, suspend or discontinue any part of the Service at any time without notice.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="use">
+          <h2 class="trust-section__title">3. Acceptable use</h2>
+          <div class="trust-section__body">
+            <p>You agree not to:</p>
+            <ul>
+              <li>Use the Site in any way that violates applicable laws or regulations</li>
+              <li>Scrape, crawl or use automated means to access the Site without our prior written consent</li>
+              <li>Attempt to gain unauthorised access to any part of the Site</li>
+              <li>Use the Site to distribute spam, malware or harmful content</li>
+              <li>Reproduce, distribute or create derivative works from our content without permission</li>
+              <li>Impersonate AIExpertsCorner or misrepresent your affiliation with us</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="trust-section" id="content">
+          <h2 class="trust-section__title">4. Content and accuracy</h2>
+          <div class="trust-section__body">
+            <div class="trust-callout trust-callout--amber">
+              Tool information, pricing and features on this Site may not always be current or accurate. Always verify information directly with the tool provider before making purchasing decisions.
+            </div>
+            <p>We strive to keep tool information accurate and up to date, but the AI tools landscape changes rapidly. We do not guarantee the completeness, accuracy or timeliness of any information on the Site.</p>
+            <p>Tool descriptions, pricing tiers and feature lists are provided for informational purposes. Pricing and availability may change without notice.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="affiliate-terms">
+          <h2 class="trust-section__title">5. Affiliate links and advertising</h2>
+          <div class="trust-section__body">
+            <p>The Site may contain affiliate links. When you click an affiliate link and make a qualifying purchase, we may earn a commission. This does not affect the price you pay.</p>
+            <p>The Site may display advertisements served by Google AdSense and other advertising networks. We are not responsible for the content of these advertisements.</p>
+            <p>Affiliate relationships do not influence our editorial decisions, tool rankings or comparison results.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="ip">
+          <h2 class="trust-section__title">6. Intellectual property</h2>
+          <div class="trust-section__body">
+            <p>All content on AIExpertsCorner — including text, graphics, logos, and data — is the property of AIExpertsCorner or its content suppliers and is protected by applicable intellectual property laws.</p>
+            <p>Tool names, logos and trademarks belong to their respective owners. Their appearance on this Site does not imply endorsement.</p>
+            <p>You may share links to individual pages, but reproduction of substantial portions of content without written permission is prohibited.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="disclaimer">
+          <h2 class="trust-section__title">7. Disclaimer of warranties</h2>
+          <div class="trust-section__body">
+            <p>THE SITE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, AIEXPERTSCORNER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.</p>
+            <p>We do not warrant that the Site will be uninterrupted, error-free or free of viruses or other harmful components.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="liability">
+          <h2 class="trust-section__title">8. Limitation of liability</h2>
+          <div class="trust-section__body">
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, AIEXPERTSCORNER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SITE.</p>
+            <p>Our total liability for any claim arising from use of the Site shall not exceed €100.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="termination">
+          <h2 class="trust-section__title">9. Termination</h2>
+          <div class="trust-section__body">
+            <p>We reserve the right to terminate or restrict your access to the Site at any time, without notice, for any reason including violation of these Terms.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="governing">
+          <h2 class="trust-section__title">10. Governing law</h2>
+          <div class="trust-section__body">
+            <p>These Terms are governed by the laws of the Netherlands. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Amsterdam, Netherlands.</p>
+          </div>
+        </section>
+
+        <section class="trust-section" id="contact-terms">
+          <h2 class="trust-section__title">11. Contact</h2>
+          <div class="trust-section__body">
+            <p>For questions about these Terms of Service:</p>
+            <p><strong>AIExpertsCorner</strong><br />
+            Email: <a href="mailto:legal@aiexpertscorner.com">legal@aiexpertscorner.com</a><br />
+            Amsterdam, Netherlands</p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="trust-back">
+        <a href="/">← Back to home</a>
+        <a href="/privacy">Privacy Policy →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

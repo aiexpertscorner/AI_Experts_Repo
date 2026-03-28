@@ -315,7 +315,7 @@ const CATEGORY_TOP10 = {
     ["consensus","Consensus","consensus.app"],["otter-ai","Otter.ai","otter.ai"],
     ["murf-ai","Murf AI","murf.ai"],["notion-ai","Notion AI","notion.so"],
   ]},
-  "other-ai-tools": { name: "Other AI Tools", tools: [
+  "other-tools": { name: "Other AI Tools", tools: [
     ["character-ai","Character.ai","character.ai"],["janitorai","Janitor AI","janitorai.com"],
     ["hugging-face","Hugging Face","huggingface.co"],["poe","Poe","poe.com"],
     ["eightify","Eightify","eightify.app"],["lovo-ai","Lovo.ai","lovo.ai"],

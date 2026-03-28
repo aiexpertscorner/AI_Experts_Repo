@@ -1,0 +1,872 @@
+{
+  "generated": "2026-03-26T23:47:30.713Z",
+  "summary": {
+    "scanned_files": 100,
+    "clearbit_files": [
+      "src/pages/capability/[slug].astro",
+      "src/pages/industry/[slug].astro",
+      "src/pages/integration/[slug].astro",
+      "src/pages/microcategory/[slug].astro",
+      "src/pages/subcategory/[slug].astro",
+      "src/pages/tag/[slug].astro",
+      "src/pages/tools/[slug].astro",
+      "src/pages/workflow/[slug].astro"
+    ],
+    "logo_dev_files": [],
+    "charAt_fallback_files": [
+      "src/pages/alle index/alternatiives-index.astro",
+      "src/pages/alle index/compare-index.astro",
+      "src/pages/alle index/use-case-index.astro"
+    ],
+    "logo_map_imported_files": [
+      "src/pages/ai-model/[slug].astro",
+      "src/pages/alle index/alternatiives-index.astro",
+      "src/pages/alle index/compare-index.astro",
+      "src/pages/alle index/use-case-index.astro",
+      "src/pages/alternatives/index.astro",
+      "src/pages/best/index.astro",
+      "src/pages/best/[slug].astro",
+      "src/pages/capability/index.astro",
+      "src/pages/capability/[slug].astro",
+      "src/pages/compare/index.astro",
+      "src/pages/index.astro",
+      "src/pages/industry/index.astro",
+      "src/pages/industry/[slug].astro",
+      "src/pages/integration/[slug].astro",
+      "src/pages/microcategory/[slug].astro",
+      "src/pages/subcategory/index.astro",
+      "src/pages/subcategory/[slug].astro",
+      "src/pages/tag/index.astro",
+      "src/pages/tag/[slug].astro",
+      "src/pages/tools/category/[slug].astro",
+      "src/pages/tools/index.astro",
+      "src/pages/tools/[slug].astro",
+      "src/pages/use-case/index.astro",
+      "src/pages/workflow/index.astro",
+      "src/pages/workflow/[slug].astro",
+      "src/components/ui/ToolLogo.astro"
+    ],
+    "needs_fix": []
+  },
+  "details": {
+    "src/pages/ai-model/[slug].astro": {
+      "file": "src/pages/ai-model/[slug].astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L34: logo_url: t.logo_url || logoMap[t.slug||t.handle] || null,"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L9: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L34: logo_url: t.logo_url || logoMap[t.slug||t.handle] || null,"
+          ]
+        }
+      ]
+    },
+    "src/pages/alle index/alternatiives-index.astro": {
+      "file": "src/pages/alle index/alternatiives-index.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L41: const seedLogo = logo(seed.slug) || seed.logo_url;"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw  from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L15: return logoMap[slug] || null;"
+          ]
+        },
+        {
+          "label": "charAt(0) fallback",
+          "count": 1,
+          "lines": [
+            "L48: : <span class=\"alt-card__initial\">{seedName.charAt(0)}</span>}"
+          ]
+        }
+      ]
+    },
+    "src/pages/alle index/compare-index.astro": {
+      "file": "src/pages/alle index/compare-index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw      from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L17: return logoMap[slug] || null;"
+          ]
+        },
+        {
+          "label": "charAt(0) fallback",
+          "count": 2,
+          "lines": [
+            "L63: : <span class=\"cmp-card__initial\">{nameA.charAt(0)}</span>}",
+            "L67: : <span class=\"cmp-card__initial\">{nameB.charAt(0)}</span>}"
+          ]
+        }
+      ]
+    },
+    "src/pages/alle index/use-case-index.astro": {
+      "file": "src/pages/alle index/use-case-index.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L57: const logo  = logoMap[tSlug] || t?.logo_url || null;"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L9: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L57: const logo  = logoMap[tSlug] || t?.logo_url || null;"
+          ]
+        },
+        {
+          "label": "charAt(0) fallback",
+          "count": 1,
+          "lines": [
+            "L60: : <span class=\"uc-card__logo-fb\">{(tSlug||\"?\").charAt(0).toUpperCase()}</span>;"
+          ]
+        }
+      ]
+    },
+    "src/pages/alternatives/index.astro": {
+      "file": "src/pages/alternatives/index.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L39: const logo  = logoMap[p.seed_tool.slug]||p.seed_tool.logo_url||null;"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L39: const logo  = logoMap[p.seed_tool.slug]||p.seed_tool.logo_url||null;"
+          ]
+        }
+      ]
+    },
+    "src/pages/alternatives/[slug].astro": {
+      "file": "src/pages/alternatives/[slug].astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L54: logoUrl={seed.logo_url}"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L55: logoDomain={seed.logo_domain}"
+          ]
+        }
+      ]
+    },
+    "src/pages/best/index.astro": {
+      "file": "src/pages/best/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        }
+      ]
+    },
+    "src/pages/best/[slug].astro": {
+      "file": "src/pages/best/[slug].astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L26: logo_url: t.logo_url || logoMap[t.slug||t.handle] || null,"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L15: import logoMapRaw      from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L26: logo_url: t.logo_url || logoMap[t.slug||t.handle] || null,"
+          ]
+        }
+      ]
+    },
+    "src/pages/capability/index.astro": {
+      "file": "src/pages/capability/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        }
+      ]
+    },
+    "src/pages/capability/[slug].astro": {
+      "file": "src/pages/capability/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/pages/compare/index.astro": {
+      "file": "src/pages/compare/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L39: const logo  = logoMap[p.tool_a]||null;"
+          ]
+        }
+      ]
+    },
+    "src/pages/compare/[slug].astro": {
+      "file": "src/pages/compare/[slug].astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L70: logoUrl={a.logo_url}",
+            "L91: logoUrl={b.logo_url}"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 2,
+          "lines": [
+            "L71: logoDomain={a.logo_domain}",
+            "L92: logoDomain={b.logo_domain}"
+          ]
+        }
+      ]
+    },
+    "src/pages/index.astro": {
+      "file": "src/pages/index.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L25: logo_url: logoMap[t.slug] || t.logo_url || null,"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L15: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L25: logo_url: logoMap[t.slug] || t.logo_url || null,",
+            "L60: logoA: logoMap[a]||null, logoB: logoMap[b]||null,"
+          ]
+        }
+      ]
+    },
+    "src/pages/industry/index.astro": {
+      "file": "src/pages/industry/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        }
+      ]
+    },
+    "src/pages/industry/[slug].astro": {
+      "file": "src/pages/industry/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/pages/integration/[slug].astro": {
+      "file": "src/pages/integration/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/pages/microcategory/[slug].astro": {
+      "file": "src/pages/microcategory/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/pages/subcategory/index.astro": {
+      "file": "src/pages/subcategory/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        }
+      ]
+    },
+    "src/pages/subcategory/[slug].astro": {
+      "file": "src/pages/subcategory/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/pages/tag/index.astro": {
+      "file": "src/pages/tag/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        }
+      ]
+    },
+    "src/pages/tag/[slug].astro": {
+      "file": "src/pages/tag/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/pages/tools/category/[slug].astro": {
+      "file": "src/pages/tools/category/[slug].astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L32: logo_url: logoMap[t.slug || t.handle] || t.logo_url || null,"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L16: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L32: logo_url: logoMap[t.slug || t.handle] || t.logo_url || null,"
+          ]
+        }
+      ]
+    },
+    "src/pages/tools/index.astro": {
+      "file": "src/pages/tools/index.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L31: logo_url: logoMap[t.slug || t.handle] || t.logo_url || null,"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L16: import logoMapRaw  from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L31: logo_url: logoMap[t.slug || t.handle] || t.logo_url || null,"
+          ]
+        }
+      ]
+    },
+    "src/pages/tools/[slug].astro": {
+      "file": "src/pages/tools/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L112: return a?.logo_url || (a?.logo_domain ? `https://logo.clearbit.com/${a.logo_domain}?size=4"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 3,
+          "lines": [
+            "L52: || hero.logo_url",
+            "L80: return { ...base, logo_url: base.logo_url || logoMap[s] || null };",
+            "L112: return a?.logo_url || (a?.logo_domain ? `https://logo.clearbit.com/${a.logo_domain}?size=4"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L112: return a?.logo_url || (a?.logo_domain ? `https://logo.clearbit.com/${a.logo_domain}?size=4"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L15: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L51: const logoUrl = logoMap[slug]",
+            "L80: return { ...base, logo_url: base.logo_url || logoMap[s] || null };"
+          ]
+        }
+      ]
+    },
+    "src/pages/use-case/index.astro": {
+      "file": "src/pages/use-case/index.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L57: const logo  = logoMap[tSlug] || t?.logo_url || null;"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L9: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L57: const logo  = logoMap[tSlug] || t?.logo_url || null;"
+          ]
+        }
+      ]
+    },
+    "src/pages/workflow/index.astro": {
+      "file": "src/pages/workflow/index.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L5: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        }
+      ]
+    },
+    "src/pages/workflow/[slug].astro": {
+      "file": "src/pages/workflow/[slug].astro",
+      "matches": [
+        {
+          "label": "Clearbit",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_url field",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        },
+        {
+          "label": "logo-map.json import",
+          "count": 1,
+          "lines": [
+            "L7: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 2,
+          "lines": [
+            "L44: if (typeof t === \"string\") return { slug: s, name: tc(s), logo_url: logoMap[s] || null };",
+            "L45: return { ...t, logo_url: t.logo_url || logoMap[s] || (t.logo_domain ? `https://logo.clearb"
+          ]
+        }
+      ]
+    },
+    "src/components/cards/ToolCard.astro": {
+      "file": "src/components/cards/ToolCard.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 1,
+          "lines": [
+            "L37: const logoUrl      = tool?.logo_url     || tool?.hero?.logo_url;"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 1,
+          "lines": [
+            "L36: const logoDomain   = tool?.logo_domain  || tool?.hero?.logo_domain;"
+          ]
+        }
+      ]
+    },
+    "src/components/sections/AuthorityToolCard.astro": {
+      "file": "src/components/sections/AuthorityToolCard.astro",
+      "matches": [
+        {
+          "label": "logo_url field",
+          "count": 3,
+          "lines": [
+            "L10: logo_url?:    string;",
+            "L25: logo_url,",
+            "L39: const logoSrc = logo_url || null;"
+          ]
+        },
+        {
+          "label": "logo_domain field",
+          "count": 2,
+          "lines": [
+            "L11: logo_domain?: string;",
+            "L26: logo_domain,"
+          ]
+        }
+      ]
+    },
+    "src/components/sections/FlagshipToolsSection.astro": {
+      "file": "src/components/sections/FlagshipToolsSection.astro",
+      "matches": [
+        {
+          "label": "logo_domain field",
+          "count": 3,
+          "lines": [
+            "L8: logo_domain?: string;",
+            "L45: {tool.logo_domain ? (",
+            "L47: src={`https://www.google.com/s2/favicons?domain=${tool.logo_domain}&sz=128`}"
+          ]
+        }
+      ]
+    },
+    "src/components/ui/ToolLogo.astro": {
+      "file": "src/components/ui/ToolLogo.astro",
+      "matches": [
+        {
+          "label": "logo-map.json import",
+          "count": 2,
+          "lines": [
+            "L8: *   1. logo-map.json[slug]   ← verified, 100% coverage",
+            "L13: import logoMapRaw from \"@/data/build/logo-map.json\";"
+          ]
+        },
+        {
+          "label": "logoMap[] lookup",
+          "count": 1,
+          "lines": [
+            "L41: (slug && logoMap[slug] && logoMap[slug].length > 5 ? logoMap[slug] : null) ||"
+          ]
+        }
+      ]
+    }
+  }
+}

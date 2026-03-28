@@ -1,172 +1,186 @@
-/* ═══════════════════════════════════════════════════════════════
-   AIExpertsCorner — Design Tokens v3
-   Single source of truth for the entire design system.
-   Dark theme default. Light theme: override :root in light.css.
-   ═══════════════════════════════════════════════════════════════ */
-
+/* ================================================================
+   src/styles/tokens.css — Design token system
+   ALLE andere CSS bestanden gebruiken uitsluitend deze variabelen.
+   ================================================================ */
 :root {
+  /* ── Backgrounds ─────────────────────────────────────────── */
+  --c-bg:          #060913;
+  --c-bg-card:     #0F172A;
+  --c-bg-card-alt: #0A1120;
+  --c-bg-hover:    #111827;
+  --c-bg-subtle:   rgba(255,255,255,0.03);
 
-  /* ── Backgrounds ─────────────────────────────────────────────
-     bg (page) → bg-2 (card) → bg-3 (card-hover / input)
-     → bg-4 (elevated fill) → bg-5 (strong fill)              */
-  --c-bg:            #070d18;
-  --c-bg-2:          #0b1422;
-  --c-bg-3:          #0f1c2e;
-  --c-bg-4:          #142238;
-  --c-bg-5:          #192c47;
-  --c-bg-glass:      rgba(11,20,34,.82);
-  --c-bg-glass-sm:   rgba(11,20,34,.60);
+  /* ── Borders ─────────────────────────────────────────────── */
+  --c-border:        rgba(255,255,255,0.07);
+  --c-border-soft:   rgba(255,255,255,0.10);
+  --c-border-med:    rgba(255,255,255,0.14);
+  --c-border-strong: rgba(59,130,246,0.35);
 
-  /* ── Brand system ─────────────────────────────────────────────
-     primary: electric indigo-blue
-     violet:  secondary accent
-     cyan:    highlight / info                                  */
-  --c-brand:         #4f6ef7;
-  --c-brand-light:   #7b93ff;
-  --c-brand-bright:  #6078ff;
-  --c-brand-dim:     #3450cc;
-  --c-violet:        #7c3aed;
-  --c-violet-light:  #a78bfa;
-  --c-cyan:          #06b6d4;
-  --c-cyan-light:    #22d3ee;
+  /* ── Brand ───────────────────────────────────────────────── */
+  --c-primary:        #3B82F6;
+  --c-primary-dark:   #2563EB;
+  --c-primary-glow:   rgba(59,130,246,0.22);
+  --c-secondary:      #8B5CF6;
+  --c-secondary-glow: rgba(139,92,246,0.20);
+  --c-cyan:           #22D3EE;
+  --c-amber:          #F59E0B;
+  --c-green:          #22C55E;
+  --c-red:            #EF4444;
+  --c-pink:           #EC4899;
 
-  /* Gradient shortcuts */
-  --g-brand:         linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-bright) 100%);
-  --g-brand-rich:    linear-gradient(135deg, var(--c-brand-dim) 0%, var(--c-brand) 55%, var(--c-violet) 100%);
-  --g-text:          linear-gradient(120deg, #fff 0%, var(--c-brand-light) 45%, var(--c-cyan) 100%);
-  --g-text-brand:    linear-gradient(120deg, var(--c-brand-light) 0%, var(--c-cyan) 100%);
+  /* ── Text ────────────────────────────────────────────────── */
+  --c-text:   #F8FAFC;
+  --c-text-2: #CBD5E1;
+  --c-text-3: #94A3B8;
+  --c-text-4: #64748B;
+  --c-text-5: #475569;
 
-  /* Glow helpers */
-  --glow-brand:      rgba(79,110,247,.18);
-  --glow-brand-sm:   rgba(79,110,247,.10);
-  --glow-brand-xs:   rgba(79,110,247,.05);
-  --glow-violet:     rgba(124,58,237,.14);
-  --glow-cyan:       rgba(6,182,212,.10);
+  /* ── Semantic pricing ────────────────────────────────────── */
+  --c-free:              #22C55E;
+  --c-free-bg:           rgba(34,197,94,0.10);
+  --c-free-border:       rgba(34,197,94,0.25);
+  --c-freemium:          #60A5FA;
+  --c-freemium-bg:       rgba(59,130,246,0.10);
+  --c-freemium-border:   rgba(59,130,246,0.25);
+  --c-paid:              #A78BFA;
+  --c-paid-bg:           rgba(139,92,246,0.10);
+  --c-paid-border:       rgba(139,92,246,0.25);
+  --c-enterprise:        #F59E0B;
+  --c-enterprise-bg:     rgba(245,158,11,0.10);
+  --c-enterprise-border: rgba(245,158,11,0.25);
 
-  /* Legacy aliases — keep for backwards compatibility */
-  --c-brand-glow:    var(--glow-brand);
-  --c-brand-glow-s:  var(--glow-brand-sm);
-  --c-brand-glow-xs: var(--glow-brand-xs);
-  --c-violet-glow:   var(--glow-violet);
-  --c-cyan-glow:     var(--glow-cyan);
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-sans:    "Plus Jakarta Sans","Inter",system-ui,sans-serif;
+  --font-body:    "Inter",system-ui,-apple-system,sans-serif;
+  --font-mono:    "JetBrains Mono",ui-monospace,monospace;
+  --font-display: var(--font-sans);
 
-  /* ── Text ─────────────────────────────────────────────────────
-     4-step hierarchy                                           */
-  --c-text:          #edf1ff;
-  --c-text-2:        #8b9dc3;
-  --c-text-3:        #4f6585;
-  --c-text-4:        #2d3f5c;
-
-  /* ── Borders ──────────────────────────────────────────────────
-     Increasing opacity toward brand                           */
-  --c-border-subtle: rgba(100,130,200,.06);
-  --c-border:        rgba(100,130,200,.12);
-  --c-border-strong: rgba(100,130,200,.22);
-  --c-border-hover:  rgba(79,110,247,.32);
-  --c-border-brand:  rgba(79,110,247,.50);
-
-  /* ── Semantic / status ───────────────────────────────────────*/
-  --c-free:          #10b981;
-  --c-freemium:      #4f6ef7;
-  --c-paid:          #f59e0b;
-  --c-unknown:       var(--c-text-3);
-  --c-hot:           #f43f5e;
-  --c-success:       #10b981;
-  --c-warning:       #f59e0b;
-  --c-error:         #f43f5e;
-  --c-info:          var(--c-cyan);
-  --c-new:           var(--c-cyan);
-
-  /* ── Card system ─────────────────────────────────────────────
-     Semantic aliases so card styles are self-documenting      */
-  --card-bg:           var(--c-bg-2);
-  --card-border:       var(--c-border);
-  --card-radius:       var(--r-xl);
-  --card-hover-border: var(--c-border-hover);
-  --card-hover-shadow: 0 0 0 1px rgba(79,110,247,.14), 0 8px 40px rgba(79,110,247,.09);
-  --card-hover-lift:   translateY(-2px);
-
-  /* ── Typography ──────────────────────────────────────────────*/
-  --font-display:    'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-body:       'Inter', system-ui, sans-serif;
-  --font-mono:       'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-
-  /* Type scale */
-  --text-2xs:  .625rem;     /* 10px */
-  --text-xs:   .6875rem;    /* 11px */
-  --text-sm:   .8125rem;    /* 13px */
-  --text-base: 1rem;        /* 16px */
-  --text-lg:   1.125rem;    /* 18px */
-  --text-xl:   1.25rem;     /* 20px */
-  --text-2xl:  1.5rem;      /* 24px */
-  --text-3xl:  1.875rem;    /* 30px */
-  --text-4xl:  2.25rem;     /* 36px */
-  --text-5xl:  3rem;        /* 48px */
-  --text-6xl:  3.75rem;     /* 60px */
+  --text-2xs:  0.6875rem;
+  --text-xs:   0.75rem;
+  --text-sm:   0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md:   1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.75rem;
+  --text-3xl:  2.25rem;
+  --text-4xl:  3rem;
 
   /* Line heights */
-  --lh-none:   1;
-  --lh-tight:  1.15;
-  --lh-snug:   1.3;
-  --lh-base:   1.625;
-  --lh-loose:  1.8;
+  --lh-tight: 1.15;
+  --lh-snug:  1.4;
+  --lh-base:  1.6;
+  --lh-loose: 1.8;
 
-  /* ── Spacing — 4px base unit ─────────────────────────────────*/
-  --sp-1:    .25rem;    /*   4px */
-  --sp-2:    .5rem;     /*   8px */
-  --sp-3:    .75rem;    /*  12px */
-  --sp-4:    1rem;      /*  16px */
-  --sp-5:    1.25rem;   /*  20px */
-  --sp-6:    1.5rem;    /*  24px */
-  --sp-8:    2rem;      /*  32px */
-  --sp-10:   2.5rem;    /*  40px */
-  --sp-12:   3rem;      /*  48px */
-  --sp-16:   4rem;      /*  64px */
-  --sp-20:   5rem;      /*  80px */
-  --sp-24:   6rem;      /*  96px */
-  --sp-32:   8rem;      /* 128px */
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;
+  --sp-4: 1rem;     --sp-5: 1.25rem;  --sp-6: 1.5rem;
+  --sp-7: 1.75rem;  --sp-8: 2rem;     --sp-10: 2.5rem;
+  --sp-12: 3rem;    --sp-14: 3.5rem;  --sp-16: 4rem;
+  --sp-20: 5rem;
 
-  /* Section vertical padding — fluid */
-  --pad-section-sm:  clamp(var(--sp-10), 5vw, var(--sp-16));
-  --pad-section:     clamp(var(--sp-16), 7vw, var(--sp-24));
-  --pad-section-lg:  clamp(var(--sp-20), 9vw, var(--sp-32));
-
-  /* ── Layout ──────────────────────────────────────────────────*/
-  --max-w:        1280px;
-  --max-w-text:   720px;
-  --max-w-sm:     900px;
-  --gutter:       clamp(1rem, 4vw, 2rem);
-  --header-h:     64px;
-
-  /* ── Border radius ───────────────────────────────────────────*/
-  --r-xs:   4px;
-  --r-sm:   8px;
-  --r-md:   12px;
-  --r-lg:   16px;
-  --r-xl:   22px;
-  --r-2xl:  32px;
+  /* ── Radius ──────────────────────────────────────────────── */
+  --r-xs:   0.25rem;
+  --r-sm:   0.5rem;  --r-md:   0.75rem;
+  --r-lg:   1rem;    --r-xl:   1.25rem;
+  --r-2xl:  1.5rem;
   --r-full: 9999px;
 
-  /* ── Shadows ─────────────────────────────────────────────────*/
-  --shadow-xs:    0 1px 3px rgba(0,0,0,.22);
-  --shadow-sm:    0 2px 12px rgba(0,0,0,.28);
-  --shadow-md:    0 4px 28px rgba(0,0,0,.38);
-  --shadow-lg:    0 8px 56px rgba(0,0,0,.48);
-  --shadow-card:  0 2px 12px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.03);
-  --shadow-brand: 0 0 0 1px var(--c-border-brand), 0 6px 36px var(--glow-brand);
-  --shadow-hover: var(--card-hover-shadow);
+  /* ── Transitions ─────────────────────────────────────────── */
+  --t-fast: 0.15s ease;
+  --t-base: 0.2s ease;
+  --t-slow: 0.3s ease;
 
-  /* ── Transitions ─────────────────────────────────────────────*/
-  --t-fast:    100ms ease;
-  --t-base:    180ms ease;
-  --t-slow:    300ms ease;
-  --t-spring:  240ms cubic-bezier(.34,1.56,.64,1);
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.2);
+  --shadow-md:    0 4px 20px rgba(0,0,0,0.3);
+  --shadow-lg:    0 8px 40px rgba(0,0,0,0.4);
+  --shadow-glow:  0 0 24px var(--c-primary-glow);
+  --shadow-brand: 0 0 24px var(--c-primary-glow);
 
-  /* ── Z-index ─────────────────────────────────────────────────*/
-  --z-base:    1;
-  --z-raised:  10;
-  --z-overlay: 100;
-  --z-header:  200;
-  --z-modal:   300;
-  --z-toast:   400;
+  /* ── Gradients ───────────────────────────────────────────── */
+  --g-brand: linear-gradient(135deg, var(--c-primary) 0%, var(--c-secondary) 100%);
+
+  /* ── Glows ───────────────────────────────────────────────── */
+  --glow-brand:    rgba(59,130,246,0.15);
+  --glow-brand-sm: rgba(59,130,246,0.08);
+  --glow-violet:   rgba(139,92,246,0.12);
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --max-w:   1280px;
+  --page-px: 1.5rem;
+
+  /* ════════════════════════════════════════════════════════════
+     LEGACY ALIASES
+     Backwards compat with older pages, components and CSS files.
+     All point at canonical token above — no new values here.
+     ════════════════════════════════════════════════════════════ */
+
+  /* Naming variations used across older files */
+  --c-brand:           var(--c-primary);
+  --c-brand-light:     var(--c-primary);
+  --c-violet:          var(--c-secondary);
+  --c-heading:         var(--c-text);
+
+  /* Background scale used by old design pack */
+  --c-bg-2:            var(--c-bg-card);
+  --c-bg-3:            var(--c-bg-hover);
+  --c-bg-4:            #131E31;
+  --c-bg-5:            #1A2535;
+  --c-bg-card-2:       var(--c-bg-card-alt);
+  --c-bg-glass:        rgba(15,23,42,0.82);
+
+  /* Border variations */
+  --c-border-subtle:   var(--c-border);
+  --c-border-hover:    var(--c-border-strong);
+  --c-border-brand:    var(--c-border-strong);
+
+  /* Old Tailwind-era names */
+  --font-heading:      var(--font-display);
+  --font-family-sans:  var(--font-sans);
+  --font-family-mono:  var(--font-mono);
+  --color-bg-main:     var(--c-bg);
+  --color-bg-card:     var(--c-bg-card);
+  --color-bg-card-hover: var(--c-bg-hover);
+  --color-border:      var(--c-border);
+  --color-border-strong: var(--c-border-strong);
+  --color-primary:     var(--c-primary);
+  --color-primary-strong: var(--c-primary-dark);
+  --color-primary-glow:   var(--c-primary-glow);
+  --color-secondary:   var(--c-secondary);
+  --color-text-main:   var(--c-text);
+  --color-text-soft:   var(--c-text-2);
+  --color-text-muted:  var(--c-text-3);
+  --color-text-faint:  var(--c-text-4);
+  --color-success:     var(--c-free);
+  --color-success-bg:  var(--c-free-bg);
+  --color-success-border: var(--c-free-border);
+  --color-warning:     var(--c-amber);
+  --color-warning-bg:  var(--c-enterprise-bg);
+  --color-warning-border: var(--c-enterprise-border);
+  --color-danger:      #F87171;
+  --color-danger-bg:   rgba(239,68,68,0.10);
+  --color-danger-border: rgba(239,68,68,0.25);
+
+  /* Old accent system (tools-index.css, category-detail.css) */
+  --accent:    var(--c-primary);
+  --accent2:   var(--c-secondary);
+  --muted:     var(--c-text-4);
+  --border:    var(--c-border-soft);
+  --surface2:  var(--c-bg-hover);
+  --text:      var(--c-text);
+
+  /* Radius aliases */
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+
+  /* Spacing aliases */
+  --space-xs:  var(--sp-2);  --space-sm: var(--sp-3);
+  --space-md:  var(--sp-5);  --space-lg: var(--sp-7);
+  --space-xl:  var(--sp-10); --space-2xl: var(--sp-16);
+
+  /* Duration aliases */
+  --duration-fast: var(--t-fast);
+  --duration-base: var(--t-base);
 }

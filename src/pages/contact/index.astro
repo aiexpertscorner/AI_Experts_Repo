@@ -1,0 +1,149 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/trust-pages.css";
+
+const title = "Contact — AIExpertsCorner";
+const desc  = "Get in touch with the AIExpertsCorner team. Submit a tool, report an issue or ask a question.";
+---
+
+<BaseLayout title={title} description={desc}>
+  <Header slot="header" />
+
+  <div class="trust-page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[{ label:"Home", href:"/" }, { label:"Contact" }]} />
+
+      <div class="trust-hero">
+        <span class="trust-hero__icon">✉️</span>
+        <h1 class="trust-hero__title">Get in Touch</h1>
+        <p class="trust-hero__sub">Questions, feedback, tool submissions or partnership enquiries — we read everything.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: contact info -->
+        <div class="contact-info-card">
+
+          <div class="contact-method">
+            <span class="contact-method__icon">🛠️</span>
+            <div>
+              <span class="contact-method__label">Submit a tool</span>
+              <span class="contact-method__value"><a href="/submit-tool">Use the submission form</a></span>
+              <span class="contact-method__sub">For listing a new AI tool in our directory</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <span class="contact-method__icon">🐛</span>
+            <div>
+              <span class="contact-method__label">Report an issue</span>
+              <span class="contact-method__value"><a href="mailto:support@aiexpertscorner.com">support@aiexpertscorner.com</a></span>
+              <span class="contact-method__sub">Wrong data, broken links or errors</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <span class="contact-method__icon">🤝</span>
+            <div>
+              <span class="contact-method__label">Partnerships</span>
+              <span class="contact-method__value"><a href="mailto:partners@aiexpertscorner.com">partners@aiexpertscorner.com</a></span>
+              <span class="contact-method__sub">Affiliate programs, sponsorships, integrations</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <span class="contact-method__icon">🔒</span>
+            <div>
+              <span class="contact-method__label">Privacy requests</span>
+              <span class="contact-method__value"><a href="mailto:privacy@aiexpertscorner.com">privacy@aiexpertscorner.com</a></span>
+              <span class="contact-method__sub">Data requests, GDPR, erasure</span>
+            </div>
+          </div>
+
+          <div class="trust-callout">
+            We aim to respond to all enquiries within 2 business days.
+          </div>
+
+        </div>
+
+        <!-- Right: contact form -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xreobqln"
+          method="POST"
+        >
+          <div class="form-field">
+            <label for="contact-name" class="form-label">Your name</label>
+            <input type="text" id="contact-name" name="name" class="form-input" placeholder="Jane Smith" required />
+          </div>
+
+          <div class="form-field">
+            <label for="contact-email" class="form-label">Email address</label>
+            <input type="email" id="contact-email" name="email" class="form-input" placeholder="jane@company.com" required />
+          </div>
+
+          <div class="form-field">
+            <label for="contact-subject" class="form-label">Subject</label>
+            <select id="contact-subject" name="subject" class="form-select">
+              <option value="">Select a topic…</option>
+              <option value="submit-tool">Submit / update a tool</option>
+              <option value="data-issue">Data error or correction</option>
+              <option value="partnership">Partnership enquiry</option>
+              <option value="privacy">Privacy / data request</option>
+              <option value="other">General question</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-message" class="form-label">Message</label>
+            <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell us what's on your mind…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Send message →</button>
+
+          <p style="font-size:var(--text-xs);color:var(--c-text-4);margin-top:var(--sp-2)">
+            By submitting this form you agree to our <a href="/privacy" style="color:var(--c-primary)">Privacy Policy</a>.
+          </p>
+        </form>
+
+      </div>
+
+      <div class="trust-back" style="margin-top:var(--sp-16)">
+        <a href="/">← Back to home</a>
+        <a href="/submit-tool">Submit a tool →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  // Minimal form submission feedback
+  const form = document.querySelector("form.contact-form");
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (btn) btn.textContent = "Sending…";
+    try {
+      const res = await fetch((form as HTMLFormElement).action, {
+        method: "POST",
+        body: new FormData(form as HTMLFormElement),
+        headers: { "Accept": "application/json" },
+      });
+      if (res.ok) {
+        (form as HTMLElement).innerHTML = '<div class="trust-callout trust-callout--green" style="margin-top:var(--sp-4)">✅ Message sent! We\'ll get back to you within 2 business days.</div>';
+      } else {
+        if (btn) btn.textContent = "Send message →";
+        alert("Something went wrong. Please email us directly.");
+      }
+    } catch {
+      if (btn) btn.textContent = "Send message →";
+    }
+  });
+</script>

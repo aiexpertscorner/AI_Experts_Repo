@@ -1,0 +1,112 @@
+---
+/**
+ * src/components/ui/ToolLogo.astro
+ * ─────────────────────────────────────────────────────────────────
+ * DE logo component — gebruik altijd dit, nooit inline logo logica.
+ *
+ * Prioriteit:
+ *   1. logo-map.json[slug]   ← verified, 100% coverage
+ *   2. logoUrl prop          ← direct meegegeven URL
+ *   3. Volledige tool naam   ← nooit een letter, altijd leesbaar
+ * ─────────────────────────────────────────────────────────────────
+ */
+import logoMapRaw from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+
+interface Props {
+  slug:       string;
+  name:       string;
+  logoUrl?:   string | null;
+  logoDomain?: string | null;
+  size?:      number;
+  radius?:    string;
+  loading?:   "lazy" | "eager";
+  class?:     string;
+}
+
+const {
+  slug,
+  name,
+  logoUrl:   directUrl = null,
+  logoDomain = null,
+  size       = 48,
+  radius     = "var(--r-md, 12px)",
+  loading    = "lazy",
+  class: cls = "",
+} = Astro.props;
+
+// Logo volgorde: logo-map → directe URL → null (nooit Clearbit)
+const resolvedSrc =
+  (slug && logoMap[slug] && logoMap[slug].length > 5 ? logoMap[slug] : null) ||
+  (directUrl && directUrl.length > 5 ? directUrl : null) ||
+  null;
+
+// Fallback: volledige naam, geen eerste letter
+const fallbackName = (name || slug || "?").trim();
+const ariaLabel    = `${name} logo`;
+---
+
+<div
+  class:list={["tool-logo", cls]}
+  style={`--logo-size:${size}px; --logo-radius:${radius};`}
+  aria-label={ariaLabel}
+>
+  {resolvedSrc ? (
+    <>
+      <img
+        src={resolvedSrc}
+        alt={ariaLabel}
+        width={size}
+        height={size}
+        loading={loading}
+        decoding="async"
+        onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.removeAttribute('hidden');"
+      />
+      <span class="tool-logo__fb tool-logo__fb--name" hidden>{fallbackName}</span>
+    </>
+  ) : (
+    <span class="tool-logo__fb tool-logo__fb--name">{fallbackName}</span>
+  )}
+</div>
+
+<style>
+.tool-logo {
+  width:            var(--logo-size);
+  height:           var(--logo-size);
+  flex-shrink:      0;
+  border-radius:    var(--logo-radius);
+  overflow:         hidden;
+  background:       var(--c-bg-card, #0F172A);
+  border:           1px solid var(--c-border, rgba(255,255,255,0.08));
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+}
+
+.tool-logo img {
+  width:        var(--logo-size);
+  height:       var(--logo-size);
+  object-fit:   contain;
+  border-radius:calc(var(--logo-radius) - 2px);
+}
+
+/* Fallback: volledige naam, klein en gecentreerd */
+.tool-logo__fb--name {
+  font-family:  var(--font-display, system-ui, sans-serif);
+  font-weight:  700;
+  color:        var(--c-primary, #3B82F6);
+  font-size:    calc(var(--logo-size) * 0.18);
+  line-height:  1.2;
+  text-align:   center;
+  padding:      0 4px;
+  word-break:   break-word;
+  overflow:     hidden;
+  display:      flex;
+  align-items:  center;
+  justify-content: center;
+  width:        100%;
+  height:       100%;
+  user-select:  none;
+}
+</style>

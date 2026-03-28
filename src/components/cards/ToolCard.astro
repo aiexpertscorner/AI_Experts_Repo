@@ -1,293 +1,441 @@
 ---
-interface Props {
-  tool:    any;
-  rank?:   number;
-  compact?: boolean;
-  featured?: boolean;
+interface ToolShape {
+  name?: string;
+  handle?: string;
+  slug?: string;
+  tagline?: string;
+  short?: string;
+  desc?: string;
+  description?: string;
+  pricing_tier?: string;
+  pricing?: string;
+  logo_domain?: string;
+  logo_url?: string;
+  feature_tags?: string[];
+  tags?: string[];
+  category?: string;
+  category_slug?: string;
+  is_featured?: boolean;
+  affiliate_url?: string;
+  website_url?: string;
 }
-const { tool, rank, compact = false, featured = false } = Astro.props;
+
+interface Props {
+  tool: ToolShape;
+  rank?: number;
+  compact?: boolean;
+  variant?: "default" | "authority" | "row";
+  showDescription?: boolean;
+  showPricing?: boolean;
+  showCategory?: boolean;
+  showCTA?: boolean;
+}
 
 const {
-  name          = "",
-  handle        = "",
-  tagline       = "",
-  description   = "",
-  pricing_tier  = "unknown",
-  logo_domain   = "",
-  feature_tags  = [],
-  category      = "",
-  category_slug = "",
-  is_featured   = false,
-  affiliate_url = "",
-  website_url   = "",
-  logo_url      = "",
-} = tool;
+  tool,
+  rank,
+  compact = false,
+  variant = "default",
+  showDescription = true,
+  showPricing = true,
+  showCategory = true,
+  showCTA = false,
+} = Astro.props;
 
-const pricingLabel: Record<string,string> = {
-  free: "Free", freemium: "Freemium", paid: "Paid"
+const resolvedHandle = tool?.handle || tool?.slug || "tool";
+const resolvedName = tool?.name || resolvedHandle;
+const resolvedPricing = String(tool?.pricing_tier || tool?.pricing || "unknown").toLowerCase();
+const resolvedTags = (
+  Array.isArray(tool?.feature_tags) && tool.feature_tags.length
+    ? tool.feature_tags
+    : tool?.tags ||[]
+).slice(0, 3);
+
+const resolvedDescription = String(
+  tool?.tagline || tool?.short || tool?.desc || tool?.description || ""
+).slice(0, 120);
+
+const categorySlug =
+  tool?.category_slug ||
+  String(tool?.category || "other-ai-tools").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+const href = tool?.affiliate_url || `/tools/${resolvedHandle}`;
+const isAffiliate = !!tool?.affiliate_url;
+
+/* Logo afhandeling */
+const resolvedLogoDomain =
+  tool?.logo_domain ||
+  tool?.website_url?.replace(/^https?:\/\//, "").replace(/^www\./, "").split("/")[0] ||
+  "";
+const logoSrc =
+  tool?.logo_url ||
+  (resolvedLogoDomain ? `https://logo.clearbit.com/${resolvedLogoDomain}?size=64` : null);
+
+const fallbackLetter = (resolvedName || "A").charAt(0).toUpperCase();
+
+const classes =[
+  "tc-card",
+  `tc-card--${variant}`,
+  compact ? "tc-card--compact" : "",
+  tool?.is_featured ? "tc-card--featured" : "",
+].filter(Boolean).join(" ");
+
+const pricingLabel: Record<string, string> = {
+  free: "Free",
+  freemium: "Freemium",
+  paid: "Paid",
+  unknown: "Unknown",
 };
-const tier      = (pricing_tier || "unknown").toLowerCase();
-const logoSrc   = logo_url || (logo_domain ? `https://logo.clearbit.com/${logo_domain}?size=64` : null);
-const fallback  = (name || "A").charAt(0).toUpperCase();
-const tags      = (Array.isArray(feature_tags) ? feature_tags : []).slice(0, 3);
-const href      = affiliate_url || `/ai-tools/${handle}`;
-const isAff     = !!affiliate_url;
-const catSlug   = category_slug || (category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
-const desc      = (tagline || description || "").slice(0, 108);
-const showFeat  = is_featured || featured;
 ---
-<article class:list={["tc", { "tc--compact": compact, "tc--featured": showFeat }]}>
-  {rank && <span class="tc-rank">#{rank}</span>}
 
-  <a
-    href={href}
-    class="tc-link"
-    target={isAff ? "_blank" : undefined}
-    rel={isAff ? "noopener sponsored" : undefined}
-  >
-    <!-- Top row: logo + name + pricing -->
-    <div class="tc-top">
-      <div class="tc-logo">
-        {logoSrc ? (
+<article class={classes}>
+  <div class="tc-content">
+    
+    <!-- Lichte, uitspringende logo wrapper -->
+    <div class="tc-logo-wrapper">
+      {logoSrc ? (
+        <>
           <img
             src={logoSrc}
-            alt=""
-            width="44"
-            height="44"
+            alt={`${resolvedName} logo`}
+            width="48"
+            height="48"
             loading="lazy"
             decoding="async"
             class="tc-logo-img"
-            onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'"
+            onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
-        ) : null}
-        <span class="tc-logo-fallback" style={logoSrc ? "display:none" : ""}>{fallback}</span>
-      </div>
-
-      <div class="tc-info">
-        <strong class="tc-name">{name}</strong>
-        {category && (
-          <a
-            href={`/ai-tools/category/${catSlug}`}
-            class="tc-cat"
-            onclick="event.stopPropagation()"
-          >{category}</a>
-        )}
-      </div>
-
-      <span class:list={["badge", `badge-${tier}`]}>
-        {pricingLabel[tier] || pricing_tier}
-      </span>
+          <span class="tc-logo-fallback" style="display:none;">
+            {fallbackLetter}
+          </span>
+        </>
+      ) : (
+        <span class="tc-logo-fallback">{fallbackLetter}</span>
+      )}
     </div>
 
-    <!-- Description -->
-    {!compact && desc && (
-      <p class="tc-desc">{desc}{desc.length >= 108 ? "…" : ""}</p>
-    )}
+    <!-- Titel & Badge in één rij, zoals in je design -->
+    <header class="tc-header">
+      <h3 class="tc-name">
+        <a
+          href={href}
+          class="tc-main-link"
+          target={isAffiliate ? "_blank" : undefined}
+          rel={isAffiliate ? "noopener sponsored" : undefined}
+        >
+          {resolvedName}
+        </a>
+      </h3>
 
-    <!-- Tags -->
-    {!compact && tags.length > 0 && (
+      {showPricing ? (
+        <span class={`tc-badge tc-badge--${resolvedPricing}`}>
+          {pricingLabel[resolvedPricing] || "Unknown"}
+        </span>
+      ) : null}
+    </header>
+
+    {/* Categorie in strakke uppercase style */}
+    {showCategory && tool?.category ? (
+      <span class="tc-category">{tool.category}</span>
+    ) : null}
+
+    {showDescription && resolvedDescription && variant !== "row" ? (
+      <p class="tc-desc">
+        {resolvedDescription}
+        {resolvedDescription.length >= 120 ? "…" : ""}
+      </p>
+    ) : null}
+
+    {variant !== "row" && !compact && resolvedTags.length > 0 ? (
       <div class="tc-tags">
-        {tags.map((t: string) => <span class="tag">{t}</span>)}
+        {resolvedTags.map((tag) => <span class="tc-tag">{tag}</span>)}
       </div>
-    )}
+    ) : null}
+  </div>
 
-    <!-- Footer -->
-    <div class="tc-foot">
-      <span class="tc-cta">
-        Visit {name}
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-      </span>
-      {showFeat && <span class="tc-featured-dot" title="Featured" aria-label="Featured tool"></span>}
+  <footer class="tc-footer">
+    <div class="tc-footer-left">
+      {showCTA ? (
+        <span class="tc-action-link">
+          Visit {resolvedName} 
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </span>
+      ) : (
+        <span class="tc-action-link">
+          {tool?.category ? (
+            <a href={`/tools/category/${categorySlug}`} class="tc-category-link">
+              More in {tool.category} 
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          ) : (
+             <>View details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></>
+          )}
+        </span>
+      )}
     </div>
-  </a>
+
+    <!-- Rank badge rechtsonderin (zoals in bijlage 2) -->
+    {typeof rank === "number" ? <span class="tc-rank">#{rank}</span> : null}
+    
+    {tool?.is_featured && typeof rank !== "number" ? (
+       <div class="tc-featured-indicator" title="Featured Tool">
+         <span class="tc-dot tc-dot-ping"></span>
+         <span class="tc-dot tc-dot-static"></span>
+       </div>
+    ) : null}
+  </footer>
 </article>
 
 <style>
-/* ── Base card ─────────────────────────────────────────────────*/
-.tc {
-  position: relative;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
-}
+  /* --- High-End Dark Theme Integration Variables --- */
+  article {
+    /* Base colors that match your dark background (e.g. #0B0F1C) */
+    --tc-bg: #111624; /* Subtiel lichtere blauw/zwarte tint voor de kaart */
+    --tc-border: #1e293b; 
+    --tc-hover-border: #3b82f640; /* Subtiele blauwe gloed op hover */
+    --tc-text-main: #f8fafc;
+    --tc-text-muted: #94a3b8;
+    --tc-primary: #60a5fa; /* Lichtere blauw voor links in dark mode */
+    --tc-radius: 16px;
+    --tc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-/* Ambient glow — always present, subtle */
-.tc::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 55% at 10% 0%, var(--glow-brand-xs) 0%, transparent 65%);
-  pointer-events: none;
-  border-radius: inherit;
-  transition: opacity var(--t-base);
-  opacity: 1;
-}
+  /* Inherit fonts van je website */
+  .tc-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--tc-bg);
+    border: 1px solid var(--tc-border);
+    border-radius: var(--tc-radius);
+    overflow: hidden;
+    transition: var(--tc-transition);
+    font-family: inherit; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
 
-/* Hover state */
-.tc:hover {
-  border-color: var(--card-hover-border);
-  box-shadow: var(--card-hover-shadow);
-  transform: var(--card-hover-lift);
-}
-.tc:hover::before { opacity: 2.5 }
+  .tc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(59, 130, 246, 0.05);
+    border-color: var(--tc-hover-border);
+  }
 
-/* Featured variant — slightly more prominent border */
-.tc--featured {
-  border-color: rgba(79,110,247,.20);
-}
-.tc--featured::before {
-  background: radial-gradient(ellipse 70% 55% at 10% 0%, rgba(79,110,247,.08) 0%, transparent 65%);
-}
+  /* Maakt de hele kaart klikbaar o.b.v. de main link */
+  .tc-main-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
 
-/* Rank badge */
-.tc-rank {
-  position: absolute;
-  top: 10px; right: 10px;
-  z-index: 2;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .03em;
-  color: var(--c-text-4);
-  background: var(--c-bg-4);
-  border: 1px solid var(--c-border);
-  padding: 2px 7px;
-  border-radius: var(--r-full);
-  line-height: 1.5;
-}
+  .tc-content {
+    padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* ── Inner link ────────────────────────────────────────────────*/
-.tc-link {
-  padding: var(--sp-5);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-  text-decoration: none;
-  flex: 1;
-}
+  /* --- Logo Wrapper (Licht & Diepte, zoals gevraagd) --- */
+  .tc-logo-wrapper {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    /* Lichte achtergrond met subtiele gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    /* Harde schaduw naar buiten (diepte) + Witte rand naar binnen (bevel effect) */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 1.25rem; /* Ruimte tussen logo en titel */
+  }
 
-/* ── Top row ───────────────────────────────────────────────────*/
-.tc-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
+  .tc-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #ffffff; /* Zorgt dat transparante PNGs mooi blijven */
+  }
 
-/* ── Logo ──────────────────────────────────────────────────────*/
-.tc-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--r-sm);
-  flex-shrink: 0;
-  background: var(--c-bg-4);
-  border: 1px solid var(--c-border-subtle);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color var(--t-fast);
-}
-.tc:hover .tc-logo { border-color: var(--c-border) }
-.tc-logo-img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-}
-.tc-logo-fallback {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 800;
-  font-family: var(--font-display);
-  color: var(--c-brand-light);
-  background: linear-gradient(135deg, var(--glow-brand) 0%, var(--glow-violet) 100%);
-}
+  .tc-logo-fallback {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a; /* Donkere fallback letter omdat de bg licht is */
+  }
 
-/* ── Name + category ───────────────────────────────────────────*/
-.tc-info   { flex: 1; min-width: 0 }
-.tc-name {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--c-text);
-  letter-spacing: -.015em;
-  line-height: 1.3;
-  margin-bottom: 3px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.tc-cat {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  color: var(--c-text-4);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color var(--t-fast);
-}
-.tc-cat:hover { color: var(--c-brand-light) }
+  /* --- Header (Titel + Badge op één rij) --- */
+  .tc-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
 
-/* ── Description ───────────────────────────────────────────────*/
-.tc-desc {
-  font-size: var(--text-sm);
-  color: var(--c-text-2);
-  line-height: var(--lh-snug);
-  flex: 1;
-  margin: 0;
-}
+  .tc-name {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--tc-text-main);
+    line-height: 1.2;
+  }
 
-/* ── Tags ──────────────────────────────────────────────────────*/
-.tc-tags { display: flex; flex-wrap: wrap; gap: 4px }
+  .tc-main-link {
+    text-decoration: none;
+    color: inherit;
+  }
 
-/* ── Footer ────────────────────────────────────────────────────*/
-.tc-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--sp-3);
-  border-top: 1px solid var(--c-border-subtle);
-  margin-top: auto;
-}
+  /* --- Categorie (Strakke dark mode styling) --- */
+  .tc-category {
+    font-size: 0.65rem;
+    color: var(--tc-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
 
-.tc-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--c-brand-light);
-  opacity: 0;
-  transition: opacity var(--t-fast), gap var(--t-fast);
-  letter-spacing: .01em;
-}
-.tc:hover .tc-cta { opacity: 1 }
-.tc:hover .tc-cta svg { transform: translate(1px, -1px) }
+  /* --- Dark Theme Pricing Badges --- */
+  .tc-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
 
-.tc-featured-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--c-brand);
-  box-shadow: 0 0 6px rgba(79,110,247,.6);
-  flex-shrink: 0;
-}
+  /* Transparante donkere badges met neon/gekleurde tekst (zoals in je design) */
+  .tc-badge--free { background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2); }
+  .tc-badge--freemium { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+  .tc-badge--paid { background: rgba(249, 115, 22, 0.1); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.2); }
+  .tc-badge--unknown { background: rgba(148, 163, 184, 0.1); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.2); }
 
-/* ── Compact variant ───────────────────────────────────────────*/
-.tc--compact .tc-link { padding: var(--sp-3) var(--sp-4); gap: var(--sp-2) }
-.tc--compact .tc-foot { display: none }
+  /* --- Description & Tags --- */
+  .tc-desc {
+    margin: 0 0 1rem 0;
+    font-size: 0.875rem;
+    color: var(--tc-text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+  }
+
+  .tc-tag {
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--tc-text-muted);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  /* --- Footer --- */
+  .tc-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border-top: 1px solid var(--tc-border);
+    margin-top: auto;
+  }
+
+  .tc-action-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--tc-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .tc-category-link {
+    position: relative;
+    z-index: 2; 
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .tc-category-link:hover {
+    color: #93c5fd;
+  }
+
+  /* --- Rank Badge rechtsonder --- */
+  .tc-rank {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #1e293b;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    z-index: 2;
+  }
+
+  /* --- Featured State --- */
+  .tc-card--featured {
+    border: 1px solid var(--tc-primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+  }
+
+  .tc-featured-indicator {
+    position: relative;
+    display: flex;
+    height: 10px;
+    width: 10px;
+  }
+
+  .tc-dot {
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: var(--tc-primary);
+  }
+
+  .tc-dot-ping {
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    opacity: 0.75;
+  }
+
+  @keyframes ping {
+    75%, 100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  /* --- Compact Variant --- */
+  .tc-card--compact .tc-content {
+    padding: 1.25rem 1rem 1rem 1rem;
+  }
+  
+  .tc-card--compact .tc-logo-wrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+
+  .tc-card--compact .tc-footer {
+    padding: 0.75rem 1rem;
+  }
 </style>

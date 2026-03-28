@@ -1,0 +1,57 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import "@/styles/taxonomy.css";
+
+import pagesRaw from "@/data/build/page-payloads/integration-pages.json";
+
+const pages = (pagesRaw as any[])
+  .filter((p:any) => p && (p.slug || p.slug))
+  .slice(0, 200);
+
+function tc(s:string) {
+  return (s||"").replace(/-/g," ").replace(/\b\w/g,(l:string)=>l.toUpperCase());
+}
+---
+
+<BaseLayout
+  title="AI Tools by Integration — Find Tools That Connect With Your Stack"
+  description="Find AI tools that integrate with Slack, Notion, Google Workspace, Zapier and 20+ platforms."
+>
+  <Header slot="header" />
+  <div class="tax">
+    <nav class="tax__bc" aria-label="Breadcrumb">
+      <div class="tax__c">
+        <a href="/">Home</a><span>›</span>
+        <span>AI Tools by Integration</span>
+      </div>
+    </nav>
+    <section class="tax__hero">
+      <div class="tax__c">
+        <span class="tax__eyebrow tax__eyebrow--amber">Integration</span>
+        <h1 class="tax__h1">AI Tools by Integration</h1>
+        <p class="tax__desc">Find AI tools that integrate with Slack, Notion, Google Workspace, Zapier and 20+ platforms.</p>
+        <div class="tax__meta">
+          <div class="tax__meta-item"><strong>{pages.length}</strong> entries</div>
+        </div>
+      </div>
+    </section>
+    <div class="tax__c" style="padding-bottom:4rem">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem">
+        {pages.map((p:any) => {
+          const slug = p.slug || p.slug;
+          const name = p.meta?.name || p.seo?.name || p.slug || tc(slug);
+          const count = p.count || p.top_tools?.length || 0;
+          return (
+            <a href={`/integration/${slug}`} style="display:flex;flex-direction:column;gap:.375rem;padding:1rem 1.125rem;background:#0F172A;border:1px solid #1E293B;border-radius:.75rem;text-decoration:none;transition:all .15s" onmouseover="this.style.borderColor='#3B82F6'" onmouseout="this.style.borderColor='#1E293B'">
+              <span style="font-size:.875rem;font-weight:600;color:#F8FAFC;line-height:1.3">{name}</span>
+              {count > 0 && <span style="font-size:.75rem;color:#475569">{count} tools</span>}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+  <Footer slot="footer" />
+</BaseLayout>

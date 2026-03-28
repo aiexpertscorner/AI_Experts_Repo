@@ -1,0 +1,724 @@
+{
+  "generatedAt": "2026-03-25T23:23:21.935Z",
+  "root": "E:\\2026_Github\\AI_Experts_V3_PROD\\AI_Experts_Repo",
+  "config": {
+    "srcDir": "src",
+    "pagesDir": "src/pages",
+    "dataDir": "src/data/build",
+    "rawDataDir": "src/data",
+    "outDir": "audit-output",
+    "includeDist": false
+  },
+  "scoring": {
+    "overall": 35.74,
+    "routeCoverageScore": 100,
+    "linkHealthScore": 44.26,
+    "orphanRiskScore": 23.53,
+    "enrichmentAvg": 1.39,
+    "datasetUseRatio": 0.17,
+    "codeUsageCoverageScore": 30.56
+  },
+  "architecture": {
+    "directories": {
+      "src": true,
+      "pages": true,
+      "components": true,
+      "layouts": true,
+      "buildData": true,
+      "rawData": true,
+      "dist": true
+    },
+    "counts": {
+      "allFiles": 47610,
+      "srcFiles": 19676,
+      "pageFiles": 51,
+      "componentFiles": 37,
+      "layoutFiles": 1,
+      "buildJsonFiles": 19563,
+      "rawJsonFiles": 1,
+      "distFiles": 0
+    },
+    "routeDepthDistribution": {
+      "0": 1,
+      "1": 19,
+      "2": 24,
+      "3": 7
+    },
+    "routesWithNoJsonImports": [
+      "/ai-news",
+      "/ai-workflows",
+      "/alle index/learn-ai-index",
+      "/learn-ai",
+      "/prompts",
+      "/resources",
+      "/submit-tool"
+    ],
+    "pagesUsingMostDatasets": [
+      {
+        "route": "/tools",
+        "file": "src/pages/tools/index.astro",
+        "datasetImportCount": 4
+      },
+      {
+        "route": "/best/[slug]",
+        "file": "src/pages/best/[slug].astro",
+        "datasetImportCount": 3
+      },
+      {
+        "route": "/",
+        "file": "src/pages/index.astro",
+        "datasetImportCount": 3
+      },
+      {
+        "route": "/ai-model/[slug]",
+        "file": "src/pages/ai-model/[slug].astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/alle index/alternatiives-index",
+        "file": "src/pages/alle index/alternatiives-index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/alle index/best-index",
+        "file": "src/pages/alle index/best-index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/alle index/compare-index",
+        "file": "src/pages/alle index/compare-index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/alle index/use-case-index",
+        "file": "src/pages/alle index/use-case-index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/alternatives",
+        "file": "src/pages/alternatives/index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/best",
+        "file": "src/pages/best/index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/capability",
+        "file": "src/pages/capability/index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/capability/[slug]",
+        "file": "src/pages/capability/[slug].astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/compare",
+        "file": "src/pages/compare/index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/industry",
+        "file": "src/pages/industry/index.astro",
+        "datasetImportCount": 2
+      },
+      {
+        "route": "/industry/[slug]",
+        "file": "src/pages/industry/[slug].astro",
+        "datasetImportCount": 2
+      }
+    ]
+  },
+  "clusterAnalysis": {
+    "totalPageFiles": 51,
+    "pageTypes": {
+      "homepage": 5,
+      "other": 10,
+      "news": 1,
+      "workflow": 4,
+      "comparison": 3,
+      "industry": 4,
+      "learn": 2,
+      "alternatives": 2,
+      "best-of": 2,
+      "microcategory": 2,
+      "prompt": 1,
+      "resource": 1,
+      "subcategory": 2,
+      "submit": 1,
+      "tag": 3,
+      "category": 1,
+      "feature": 1,
+      "pricing": 1,
+      "tool-type": 1,
+      "use-case": 3,
+      "tool-detail": 1
+    },
+    "highIntentFamilies": {
+      "toolDetail": 1,
+      "comparison": 3,
+      "alternatives": 2,
+      "bestOf": 2,
+      "useCase": 3,
+      "workflow": 4,
+      "category": 1,
+      "feature": 1,
+      "industry": 4,
+      "pricing": 1,
+      "tag": 3,
+      "toolType": 1
+    },
+    "likelyMissingFamilies": []
+  },
+  "routeCounts": {
+    "homepage": 5,
+    "other": 10,
+    "news": 1,
+    "workflow": 4,
+    "comparison": 3,
+    "industry": 4,
+    "learn": 2,
+    "alternatives": 2,
+    "best-of": 2,
+    "microcategory": 2,
+    "prompt": 1,
+    "resource": 1,
+    "subcategory": 2,
+    "submit": 1,
+    "tag": 3,
+    "category": 1,
+    "feature": 1,
+    "pricing": 1,
+    "tool-type": 1,
+    "use-case": 3,
+    "tool-detail": 1
+  },
+  "totals": {
+    "routes": 51,
+    "datasets": 19564,
+    "internalLinks": 235,
+    "orphanRiskRoutes": 39,
+    "deadTargetLinks": 131
+  },
+  "topUnusedDatasets": [
+    "src/data/build/alternatives-map.json",
+    "src/data/build/alternatives-page-data.json",
+    "src/data/build/authority-tool-map.json",
+    "src/data/build/best-of-map.json",
+    "src/data/build/best-of-paths.json",
+    "src/data/build/build-meta.json",
+    "src/data/build/category-stats.json",
+    "src/data/build/category-top10.json",
+    "src/data/build/company-map.json",
+    "src/data/build/company-paths.json",
+    "src/data/build/compare-map.json",
+    "src/data/build/compare-page-data.json",
+    "src/data/build/global-top100.json",
+    "src/data/build/navigation-data.json",
+    "src/data/build/page-manifest.json",
+    "src/data/build/page-payloads/agent-type-pages.json",
+    "src/data/build/page-payloads/ai-model-pages.json",
+    "src/data/build/page-payloads/automation-pages.json",
+    "src/data/build/page-payloads/automation-recipe-pages.json",
+    "src/data/build/page-payloads/compare-pages.json"
+  ],
+  "topOrphanRiskRoutes": [
+    "/ai-model",
+    "/ai-model/[slug]",
+    "/ai-news",
+    "/ai-workflows",
+    "/alle index/alternatiives-index",
+    "/alle index/best-index",
+    "/alle index/capability-index",
+    "/alle index/compare-index",
+    "/alle index/industry-index",
+    "/alle index/learn-ai-index",
+    "/alle index/microcategory-index",
+    "/alle index/subcategory-index",
+    "/alle index/tag-index",
+    "/alle index/use-case-index",
+    "/alle index/workflow-index",
+    "/alternatives/[slug]",
+    "/best/[slug]",
+    "/capability/[slug]",
+    "/compare/[slug]",
+    "/industry/[slug]",
+    "/integration",
+    "/integration/[slug]",
+    "/learn-ai",
+    "/microcategory",
+    "/microcategory/[slug]",
+    "/prompts",
+    "/resources",
+    "/subcategory/[slug]",
+    "/tag/[slug]",
+    "/tools/category/[slug]",
+    "/tools/feature/[slug]",
+    "/tools/industry/[slug]",
+    "/tools/pricing/[slug]",
+    "/tools/tag/[slug]",
+    "/tools/tool-type/[slug]",
+    "/tools/use-case/[slug]",
+    "/tools/[slug]",
+    "/use-case/[slug]",
+    "/workflow/[slug]"
+  ],
+  "topDeadLinks": [
+    {
+      "from": "/ai-model",
+      "to": "/ai-model/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/ai-tools",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/alternatiives-index",
+      "to": "/alternatives/${seed.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/alternatiives-index",
+      "to": "/alternatives-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/best-index",
+      "to": "/best-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/best-index",
+      "to": "/best-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/best-index",
+      "to": "/best/ai-",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/capability-index",
+      "to": "/capability/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/compare-index",
+      "to": "/compare-pairs.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/compare-index",
+      "to": "/compare/${[slugA,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/industry-index",
+      "to": "/industry/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/industry-index",
+      "to": "/industry-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/microcategory-index",
+      "to": "/microcategory/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/subcategory-index",
+      "to": "/subcategory/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/tag-index",
+      "to": "/tag/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/tag-index",
+      "to": "/tag-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case/index.astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case/",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/workflow-index",
+      "to": "/workflow/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/workflow-index",
+      "to": "/workflow-pages-rich.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives",
+      "to": "/alternatives-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives",
+      "to": "/alternatives/${p.seed_tool.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/compare/${a",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/tools/${seed.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/alternatives/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/alternatives-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best",
+      "to": "/best-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best",
+      "to": "/best/${p.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/${s",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare",
+      "to": "/compare-pairs.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare",
+      "to": "/compare/${[p.tool_a,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/tools/${a.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/tools/${b.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/alternatives/${a.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/alternatives/${b.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/compare/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/compare-pages-rich.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/ai-tools/category/${cat.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/tools/pricing/free",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/tools/pricing/freemium",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/category-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/compare/${[a,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-writing",
+      "existsAsRoute": false
+    }
+  ],
+  "mostUsedFieldsInCode": [
+    {
+      "field": "astro",
+      "count": 63
+    },
+    {
+      "field": "json",
+      "count": 45
+    },
+    {
+      "field": "props",
+      "count": 40
+    },
+    {
+      "field": "slug",
+      "count": 39
+    },
+    {
+      "field": "name",
+      "count": 28
+    },
+    {
+      "field": "style",
+      "count": 26
+    },
+    {
+      "field": "top_tools",
+      "count": 21
+    },
+    {
+      "field": "css",
+      "count": 19
+    },
+    {
+      "field": "seo",
+      "count": 19
+    },
+    {
+      "field": "params",
+      "count": 17
+    },
+    {
+      "field": "logo_url",
+      "count": 16
+    },
+    {
+      "field": "clearbit",
+      "count": 16
+    },
+    {
+      "field": "count",
+      "count": 15
+    },
+    {
+      "field": "logo_domain",
+      "count": 15
+    },
+    {
+      "field": "description",
+      "count": 14
+    },
+    {
+      "field": "title",
+      "count": 14
+    },
+    {
+      "field": "primary",
+      "count": 12
+    },
+    {
+      "field": "route",
+      "count": 12
+    },
+    {
+      "field": "meta",
+      "count": 11
+    },
+    {
+      "field": "href",
+      "count": 10
+    },
+    {
+      "field": "label",
+      "count": 8
+    },
+    {
+      "field": "redirect",
+      "count": 7
+    },
+    {
+      "field": "handle",
+      "count": 6
+    },
+    {
+      "field": "charAt",
+      "count": 6
+    },
+    {
+      "field": "com",
+      "count": 6
+    },
+    {
+      "field": "pricing_tier",
+      "count": 6
+    },
+    {
+      "field": "stringify",
+      "count": 5
+    },
+    {
+      "field": "desc",
+      "count": 5
+    },
+    {
+      "field": "alternatives",
+      "count": 4
+    },
+    {
+      "field": "page_title",
+      "count": 4
+    },
+    {
+      "field": "url",
+      "count": 4
+    },
+    {
+      "field": "onerror",
+      "count": 4
+    },
+    {
+      "field": "nextElementSibling",
+      "count": 4
+    },
+    {
+      "field": "display",
+      "count": 4
+    },
+    {
+      "field": "category",
+      "count": 4
+    },
+    {
+      "field": "seed_tool",
+      "count": 3
+    },
+    {
+      "field": "tool_a",
+      "count": 3
+    },
+    {
+      "field": "tool_b",
+      "count": 3
+    },
+    {
+      "field": "org",
+      "count": 3
+    },
+    {
+      "field": "question",
+      "count": 3
+    }
+  ],
+  "advice": [
+    {
+      "priority": "high",
+      "area": "dataset-usage",
+      "message": "There are 19531 JSON datasets not referenced by pages/components. Either wire them into templates or remove/merge them to reduce maintenance overhead."
+    },
+    {
+      "priority": "high",
+      "area": "internal-linking",
+      "message": "39 routes have zero detected internal in-links. Add hub → subhub → detail links, breadcrumbs, related blocks, and footer lattice links."
+    },
+    {
+      "priority": "high",
+      "area": "link-health",
+      "message": "131 internal links point to targets not found in src/pages route inventory. Check renamed routes, legacy paths, and page-family prefixes."
+    },
+    {
+      "priority": "medium",
+      "area": "enrichment-utilization",
+      "message": "Several enriched fields exist in datasets but appear unused in templates: seo_title, seo_description. Surface them in cards, detail pages, comparison blocks, schema, filters, and internal-link modules."
+    },
+    {
+      "priority": "medium",
+      "area": "dataset-pipeline",
+      "message": "Known build datasets with zero detected usage: alternatives-page-data (src/data/build/alternatives-map.json); alternatives-page-data (src/data/build/alternatives-page-data.json); authority-map (src/data/build/authority-tool-map.json); path-list (src/data/build/best-of-paths.json); authority-map (src/data/build/category-top10.json); path-list (src/data/build/company-paths.json); compare-page-data (src/data/build/compare-page-data.json); authority-map (src/data/build/global-top100.json). Verify import paths and whether the live build is still using legacy structures instead of the new dataset layer."
+    },
+    {
+      "priority": "high",
+      "area": "architecture",
+      "message": "Target a strict lattice: homepage → main hubs → subhubs → page families → detail pages, plus reverse links (breadcrumbs, related, same-cluster, same-use-case, same-workflow, same-pricing, same-industry)."
+    },
+    {
+      "priority": "high",
+      "area": "content-strategy",
+      "message": "For each tool detail page, expose at least: alternatives, comparisons, best-for use cases, pricing bucket, feature cluster, industry relevance, related workflows, and 3–8 contextual internal links generated from dataset relationships."
+    },
+    {
+      "priority": "medium",
+      "area": "build-pipeline",
+      "message": "Split pipeline into: enrich → normalize → authority → cluster-map → page-data → audit → build. The audit should fail CI when key datasets are missing, route families drop unexpectedly, or orphan/dead-link thresholds are exceeded."
+    }
+  ]
+}

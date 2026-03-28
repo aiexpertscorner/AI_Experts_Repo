@@ -1,316 +1,446 @@
 ---
-import { SITE_NAME, MAIN_NAV } from "@/data/homeConfig";
-const path = Astro.url.pathname;
+/**
+ * src/components/site/Header.astro
+ * ─────────────────────────────────────────────────────────────────
+ * Volledige nav met:
+ *  - Logo + wordmark
+ *  - Desktop nav met dropdown mega-menus voor Tools en Explore
+ *  - Mobile menu (toggle)
+ *  - Submit Tool CTA
+ *
+ * Interne links — alle routes die gebouwd zijn:
+ *   /tools                    → AI Tools hub
+ *   /compare                  → Compare hub
+ *   /best                     → Best-of hub
+ *   /alternatives             → Alternatives hub
+ *   /use-case                 → Use Case hub
+ *   /workflow                 → Workflow hub
+ *   /industry                 → Industry hub
+ *   /capability               → Capability hub
+ *   /subcategory              → Subcategory hub
+ *   /tools/pricing/free       → Free tools
+ *   /tools/category/[slug]    → Category pagina's
+ * ─────────────────────────────────────────────────────────────────
+ */
+import { SITE_NAME } from "@/data/homeConfig";
+
+const pathname = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+}
+
+const toolsCategories = [
+  { label: "Chatbots & LLMs",       href: "/tools/category/chatbots-and-llms",       emoji: "💬" },
+  { label: "Writing & Content",     href: "/tools/category/writing-and-content",     emoji: "✍️" },
+  { label: "Image Generation",      href: "/tools/category/image-generation",        emoji: "🎨" },
+  { label: "Coding & Dev",          href: "/tools/category/coding-and-dev",          emoji: "💻" },
+  { label: "Video Generation",      href: "/tools/category/video-generation",        emoji: "🎬" },
+  { label: "Audio & Music",         href: "/tools/category/audio-and-music",         emoji: "🎵" },
+  { label: "SEO & Marketing",       href: "/tools/category/seo-and-marketing",       emoji: "📈" },
+  { label: "Design & UI",           href: "/tools/category/design-and-ui",           emoji: "🖌️" },
+  { label: "Productivity",          href: "/tools/category/productivity",            emoji: "⚡" },
+  { label: "AI Agents",             href: "/tools/category/ai-agents",              emoji: "🤖" },
+  { label: "Data & Analytics",      href: "/tools/category/data-and-analytics",      emoji: "📊" },
+  { label: "Research & Education",  href: "/tools/category/research-and-education",  emoji: "🎓" },
+];
+
+const exploreLinks = [
+  {
+    group: "Find & Compare",
+    items: [
+      { label: "Compare Tools",       href: "/compare",      icon: "⚔️",  desc: "Side-by-side comparisons" },
+      { label: "Find Alternatives",   href: "/alternatives", icon: "🔀",  desc: "Switch from any tool" },
+      { label: "Best-Of Lists",       href: "/best",         icon: "🏆",  desc: "Expert-ranked picks" },
+    ]
+  },
+  {
+    group: "Browse by",
+    items: [
+      { label: "Use Case",            href: "/use-case",     icon: "🎯",  desc: "What you want to do" },
+      { label: "Industry",            href: "/industry",     icon: "🏭",  desc: "Your field of work" },
+      { label: "Workflow",            href: "/workflow",     icon: "⚙️",  desc: "Step-by-step guides" },
+      { label: "Capability",          href: "/capability",   icon: "🔬",  desc: "AI features & skills" },
+    ]
+  },
+  {
+    group: "Filter by",
+    items: [
+      { label: "Free Tools",          href: "/tools/pricing/free",     icon: "🆓",  desc: "No credit card needed" },
+      { label: "Freemium Tools",      href: "/tools/pricing/freemium", icon: "✨",  desc: "Free + paid tiers" },
+      { label: "Submit a Tool",       href: "/submit-tool",            icon: "➕",  desc: "Add your AI tool" },
+    ]
+  }
+];
 ---
-<header class="site-header" id="site-header">
-  <div class="container hdr">
+
+<header class="hdr" id="site-header">
+  <div class="hdr__inner">
 
     <!-- Logo -->
-    <a href="/" class="hdr-logo" aria-label={`${SITE_NAME} — Home`}>
-      <div class="hdr-logo-icon" aria-hidden="true">
-        <img src="/logos/Logo_icon_dark.png" alt="" width="20" height="20" loading="eager" decoding="async"/>
+    <a href="/" class="hdr__logo" aria-label={`${SITE_NAME} home`}>
+      <div class="hdr__logo-icon">
+        <div class="hdr__logo-icon-inner">
+          <img src="/logos/Logo_icon_dark.png" alt="" width="22" height="22" loading="eager" />
+        </div>
+        <div class="hdr__logo-glow" aria-hidden="true"></div>
       </div>
-      <span class="hdr-logo-text">
-        <span class="logo-ai">AI</span><span class="logo-experts">Experts</span><span class="logo-corner">Corner</span><span class="logo-tld">.com</span>
+      <span class="hdr__logo-text">
+        <span class="hdr__logo-ai">AI</span>ExpertsCorner<span class="hdr__logo-com">.com</span>
       </span>
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hdr-nav" aria-label="Main navigation">
-      {MAIN_NAV.map(n => {
-        const isActive = n.href !== "/" && path.startsWith(n.href);
-        return (
-          <a
-            href={n.soon ? undefined : n.href}
-            class:list={["hnl", { active: isActive, soon: n.soon }]}
-            aria-disabled={n.soon ? "true" : undefined}
-            aria-current={isActive ? "page" : undefined}
-          >
-            {n.label}
-            {n.soon && <span class="hub-soon">Soon</span>}
-          </a>
-        );
-      })}
+    <nav class="hdr__nav" aria-label="Main navigation">
+
+      <!-- Tools (met dropdown) -->
+      <div class="hdr__item hdr__item--dropdown" data-dropdown="tools">
+        <a
+          href="/tools"
+          class:list={["hdr__link", isActive("/tools") && "hdr__link--active"]}
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Tools
+          <svg class="hdr__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+          {isActive("/tools") && <span class="hdr__active-dot" aria-hidden="true"></span>}
+        </a>
+        <!-- Tools mega dropdown -->
+        <div class="hdr__dropdown hdr__dropdown--tools" role="menu">
+          <div class="hdr__dropdown-header">
+            <a href="/tools" class="hdr__dropdown-all">Browse all {toolsCategories.length + 11} categories →</a>
+          </div>
+          <div class="hdr__cat-grid">
+            {toolsCategories.map(cat => (
+              <a href={cat.href} class="hdr__cat-item" role="menuitem">
+                <span class="hdr__cat-emoji">{cat.emoji}</span>
+                <span class="hdr__cat-label">{cat.label}</span>
+              </a>
+            ))}
+          </div>
+          <div class="hdr__dropdown-footer">
+            <a href="/tools/pricing/free">🆓 Free tools</a>
+            <a href="/tools/pricing/freemium">✨ Freemium</a>
+            <a href="/tools/feature/open-source">🔓 Open source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compare -->
+      <a
+        href="/compare"
+        class:list={["hdr__link", isActive("/compare") && "hdr__link--active"]}
+      >
+        Compare
+        {isActive("/compare") && <span class="hdr__active-dot" aria-hidden="true"></span>}
+      </a>
+
+      <!-- Best Of -->
+      <a
+        href="/best"
+        class:list={["hdr__link", isActive("/best") && "hdr__link--active"]}
+      >
+        Best Of
+        {isActive("/best") && <span class="hdr__active-dot" aria-hidden="true"></span>}
+      </a>
+
+      <!-- Explore (met dropdown) -->
+      <div class="hdr__item hdr__item--dropdown" data-dropdown="explore">
+        <button
+          class:list={["hdr__link hdr__link--btn", (isActive("/use-case") || isActive("/industry") || isActive("/workflow") || isActive("/capability") || isActive("/alternatives")) && "hdr__link--active"]}
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Explore
+          <svg class="hdr__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <!-- Explore mega dropdown -->
+        <div class="hdr__dropdown hdr__dropdown--explore" role="menu">
+          <div class="hdr__explore-grid">
+            {exploreLinks.map(group => (
+              <div class="hdr__explore-group">
+                <p class="hdr__explore-group-label">{group.group}</p>
+                {group.items.map(item => (
+                  <a href={item.href} class="hdr__explore-item" role="menuitem">
+                    <span class="hdr__explore-icon">{item.icon}</span>
+                    <span class="hdr__explore-body">
+                      <span class="hdr__explore-label">{item.label}</span>
+                      <span class="hdr__explore-desc">{item.desc}</span>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </nav>
 
-    <!-- Right actions -->
-    <div class="hdr-right">
-      <a href="/ai-tools" class="hdr-search" aria-label="Search AI tools">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <span class="hdr-search-text">Search tools…</span>
-        <span class="hdr-search-kbd">
-          <kbd class="kbd">⌘</kbd><kbd class="kbd">K</kbd>
-        </span>
-      </a>
-      <a href="/submit-tool" class="btn btn-primary btn-sm">Submit Tool</a>
-      <button class="hdr-mbtn" id="hdr-mbtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="hdr-mobile-nav">
-        <span class="hdr-mbtn-bar"></span>
-        <span class="hdr-mbtn-bar"></span>
-        <span class="hdr-mbtn-bar"></span>
+    <!-- Right side -->
+    <div class="hdr__right">
+      <a href="/submit-tool" class="hdr__cta">Submit Tool</a>
+      <!-- Mobile toggle -->
+      <button class="hdr__mobile-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <svg id="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
       </button>
     </div>
 
   </div>
 
-  <!-- Mobile nav -->
-  <nav class="hdr-mobile" id="hdr-mobile-nav" aria-label="Mobile navigation" hidden>
-    <div class="container hdr-mobile-inner">
-      {MAIN_NAV.map(n => (
-        <a
-          href={n.soon ? undefined : n.href}
-          class:list={["hmnl", { active: path.startsWith(n.href) }]}
-        >
-          {n.label}
-          {n.soon && <span class="hub-soon">Soon</span>}
-        </a>
-      ))}
-      <div class="hdr-mobile-ctas">
-        <a href="/ai-tools" class="btn btn-secondary btn-sm" style="flex:1">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-          Search
-        </a>
-        <a href="/submit-tool" class="btn btn-primary btn-sm" style="flex:1">Submit Tool</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Mobile menu -->
+  <div class="hdr__mobile" id="mobile-menu" aria-hidden="true">
+    <nav class="hdr__mobile-nav">
+      <a href="/tools"        class="hdr__mobile-link">🔧 AI Tools</a>
+      <a href="/compare"      class="hdr__mobile-link">⚔️ Compare</a>
+      <a href="/best"         class="hdr__mobile-link">🏆 Best Of</a>
+      <a href="/alternatives" class="hdr__mobile-link">🔀 Alternatives</a>
+      <a href="/use-case"     class="hdr__mobile-link">🎯 By Use Case</a>
+      <a href="/industry"     class="hdr__mobile-link">🏭 By Industry</a>
+      <a href="/workflow"     class="hdr__mobile-link">⚙️ Workflows</a>
+      <a href="/capability"   class="hdr__mobile-link">🔬 By Capability</a>
+
+      <div class="hdr__mobile-div"></div>
+      <p class="hdr__mobile-section">Filter</p>
+      <a href="/tools/pricing/free"     class="hdr__mobile-link">🆓 Free Tools</a>
+      <a href="/tools/pricing/freemium" class="hdr__mobile-link">✨ Freemium Tools</a>
+
+      <div class="hdr__mobile-div"></div>
+      <a href="/submit-tool" class="hdr__mobile-cta">➕ Submit a Tool</a>
+    </nav>
+  </div>
 </header>
 
 <style>
-/* ── Shell ─────────────────────────────────────────────────────*/
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-header);
-  /* Gradient top accent line */
-  border-top: 1px solid transparent;
-  background-image:
-    linear-gradient(var(--c-bg-glass), var(--c-bg-glass)),
-    linear-gradient(90deg, transparent 0%, rgba(79,110,247,.38) 30%, rgba(124,58,237,.28) 70%, transparent 100%);
-  background-origin: padding-box, border-box;
-  background-clip: padding-box, border-box;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid var(--c-border-subtle);
-}
-
-/* Scrolled state — slightly more opaque */
-.site-header.scrolled {
-  background-image:
-    linear-gradient(rgba(11,20,34,.92), rgba(11,20,34,.92)),
-    linear-gradient(90deg, transparent 0%, rgba(79,110,247,.38) 30%, rgba(124,58,237,.28) 70%, transparent 100%);
-}
-
-/* ── Row ───────────────────────────────────────────────────────*/
+/* ── Header shell ────────────────────────────────────────────────── */
 .hdr {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-4);
-  height: var(--header-h);
+  position: sticky; top: 0; z-index: 50;
+  width: 100%;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid #1E293B;
+}
+.hdr__inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex; align-items: center;
+  height: 4.5rem; gap: 1rem;
 }
 
-/* ── Logo ──────────────────────────────────────────────────────*/
-.hdr-logo {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: opacity var(--t-fast);
+/* ── Logo ──────────────────────────────────────────────────────── */
+.hdr__logo {
+  display: flex; align-items: center; gap: .75rem;
+  text-decoration: none; flex-shrink: 0;
+  transition: transform .2s;
 }
-.hdr-logo:hover { opacity: .82 }
+.hdr__logo:hover { transform: scale(1.02); }
+.hdr__logo-icon {
+  position: relative; width: 2.25rem; height: 2.25rem;
+  border-radius: .625rem; flex-shrink: 0;
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  padding: 1px;
+}
+.hdr__logo-icon-inner {
+  width: 100%; height: 100%; border-radius: .5625rem;
+  background: #0B0F19;
+  display: flex; align-items: center; justify-content: center;
+}
+.hdr__logo-glow {
+  position: absolute; inset: 0; border-radius: .625rem;
+  background: rgba(59,130,246,.2); filter: blur(8px);
+  transition: background .2s;
+}
+.hdr__logo:hover .hdr__logo-glow { background: rgba(59,130,246,.4); }
+.hdr__logo-text { font-size: 1.125rem; font-weight: 700; letter-spacing: -.01em; color: #F8FAFC; }
+.hdr__logo-ai   { background: linear-gradient(to right, #3B82F6, #22D3EE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hdr__logo-com  { color: #64748B; font-size: .8125rem; font-weight: 500; }
 
-.hdr-logo-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: var(--r-sm);
-  background: linear-gradient(135deg, rgba(79,110,247,.18) 0%, rgba(124,58,237,.12) 100%);
-  border: 1px solid rgba(79,110,247,.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* ── Desktop nav ────────────────────────────────────────────────── */
+.hdr__nav {
+  display: flex; align-items: center; gap: .125rem;
+  flex: 1; margin-left: 1rem;
 }
-.hdr-logo-icon img { width: 20px; height: 20px; object-fit: contain }
+@media (max-width: 768px) { .hdr__nav { display: none; } }
 
-.hdr-logo-text {
-  font-family: var(--font-display);
-  font-size: .9375rem;
-  font-weight: 400;
-  letter-spacing: -.022em;
-  line-height: 1;
-}
-.logo-ai      { font-weight: 800; color: var(--c-brand-light) }
-.logo-experts { font-weight: 700; color: var(--c-text)        }
-.logo-corner  { font-weight: 500; color: var(--c-text-2)      }
-.logo-tld     { font-weight: 400; color: var(--c-text-3)      }
+.hdr__item { position: relative; }
+.hdr__item--dropdown { display: flex; align-items: center; }
 
-/* ── Desktop nav ───────────────────────────────────────────────*/
-.hdr-nav {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  flex: 1;
+.hdr__link, .hdr__link--btn {
+  display: flex; align-items: center; gap: .3rem;
+  padding: .5rem .875rem; border-radius: .5rem;
+  font-size: .875rem; font-weight: 500;
+  color: #94A3B8; text-decoration: none;
+  cursor: pointer; background: none; border: none;
+  transition: color .15s, background .15s;
+  position: relative; white-space: nowrap;
 }
-.hnl {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--c-text-3);
-  padding: 6px 11px;
-  border-radius: var(--r-md);
-  text-decoration: none;
-  transition: color var(--t-fast), background var(--t-fast);
-  letter-spacing: -.01em;
-  white-space: nowrap;
+.hdr__link:hover, .hdr__link--btn:hover {
+  color: #F8FAFC; background: #1E293B;
 }
-.hnl:hover { color: var(--c-text-2); background: rgba(255,255,255,.04) }
-.hnl.active { color: var(--c-text) }
+.hdr__link--active {
+  color: #3B82F6 !important; background: rgba(59,130,246,.1) !important;
+}
+.hdr__active-dot {
+  position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+  width: 16px; height: 2px; background: #3B82F6; border-radius: 9999px;
+  box-shadow: 0 0 8px #3B82F6;
+}
+.hdr__chevron { opacity: .5; transition: transform .2s; flex-shrink: 0; }
+.hdr__item--dropdown:hover .hdr__chevron { transform: rotate(180deg); opacity: 1; }
 
-/* Active indicator dot */
-.hnl.active::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--c-brand-light);
+/* ── Dropdowns ──────────────────────────────────────────────────── */
+.hdr__dropdown {
+  position: absolute; top: calc(100% + .5rem); left: 0;
+  background: #0B1120; border: 1px solid #1E293B;
+  border-radius: 1rem; box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity .2s, transform .2s, visibility .2s;
+  z-index: 100;
 }
-.hnl.soon { opacity: .38; cursor: default; pointer-events: none }
-
-/* ── Search button ─────────────────────────────────────────────*/
-.hdr-right {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-  margin-left: auto;
-  flex-shrink: 0;
+.hdr__item--dropdown:hover .hdr__dropdown,
+.hdr__item--dropdown:focus-within .hdr__dropdown {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
 }
 
-.hdr-search {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--c-text-4);
-  background: var(--c-bg-3);
-  border: 1px solid var(--c-border);
-  padding: 7px 10px 7px 12px;
-  border-radius: var(--r-full);
-  text-decoration: none;
-  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
-  white-space: nowrap;
+/* Tools dropdown */
+.hdr__dropdown--tools { width: 520px; padding: 1.25rem; }
+.hdr__dropdown-header { margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #1E293B; }
+.hdr__dropdown-all { font-size: .8125rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
+.hdr__dropdown-all:hover { text-decoration: underline; }
+.hdr__cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; margin-bottom: 1rem; }
+.hdr__cat-item {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .5rem .625rem; border-radius: .5rem;
+  text-decoration: none; font-size: .8125rem; color: #94A3B8;
+  transition: all .15s;
 }
-.hdr-search:hover {
-  border-color: var(--c-border-strong);
-  color: var(--c-text-3);
-  background: var(--c-bg-4);
-  color: var(--c-text-3);
+.hdr__cat-item:hover { background: #1E293B; color: #F8FAFC; }
+.hdr__cat-emoji { font-size: .875rem; flex-shrink: 0; }
+.hdr__cat-label { font-weight: 500; }
+.hdr__dropdown-footer {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+  padding-top: .75rem; border-top: 1px solid #1E293B;
 }
-.hdr-search svg { flex-shrink: 0; color: var(--c-text-3) }
-.hdr-search-text { color: var(--c-text-3) }
-.hdr-search-kbd { display: flex; align-items: center; gap: 2px; margin-left: 4px }
+.hdr__dropdown-footer a {
+  font-size: .75rem; color: #64748B; text-decoration: none;
+  padding: .25rem .625rem; background: #1E293B; border-radius: .375rem;
+  transition: all .15s;
+}
+.hdr__dropdown-footer a:hover { color: #F8FAFC; background: #273548; }
 
-/* ── Hamburger ─────────────────────────────────────────────────*/
-.hdr-mbtn {
+/* Explore dropdown */
+.hdr__dropdown--explore { right: 0; left: auto; width: 560px; padding: 1.25rem; }
+.hdr__explore-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+.hdr__explore-group-label { font-size: .6875rem; text-transform: uppercase; letter-spacing: .08em; color: #475569; margin: 0 0 .5rem; font-weight: 600; }
+.hdr__explore-item {
+  display: flex; align-items: flex-start; gap: .625rem;
+  padding: .5rem .375rem; border-radius: .5rem;
+  text-decoration: none; transition: background .15s;
+}
+.hdr__explore-item:hover { background: #1E293B; }
+.hdr__explore-icon { font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
+.hdr__explore-body { display: flex; flex-direction: column; gap: .125rem; }
+.hdr__explore-label { font-size: .875rem; font-weight: 600; color: #F8FAFC; }
+.hdr__explore-desc  { font-size: .75rem; color: #64748B; }
+
+/* ── Right side ─────────────────────────────────────────────────── */
+.hdr__right { display: flex; align-items: center; gap: .75rem; margin-left: auto; flex-shrink: 0; }
+
+.hdr__cta {
+  display: inline-flex; align-items: center;
+  padding: .5rem 1.125rem;
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  color: #fff; border-radius: .625rem;
+  font-size: .875rem; font-weight: 600; text-decoration: none;
+  transition: all .2s;
+}
+.hdr__cta:hover { box-shadow: 0 0 20px rgba(59,130,246,.4); transform: translateY(-1px); }
+@media (max-width: 1024px) { .hdr__cta { display: none; } }
+
+.hdr__mobile-btn {
+  display: none; padding: .5rem; background: none; border: none;
+  color: #94A3B8; cursor: pointer; border-radius: .5rem;
+  transition: color .15s, background .15s;
+}
+.hdr__mobile-btn:hover { color: #F8FAFC; background: #1E293B; }
+@media (max-width: 768px) { .hdr__mobile-btn { display: flex; align-items: center; justify-content: center; } }
+
+/* ── Mobile menu ────────────────────────────────────────────────── */
+.hdr__mobile {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  width: 34px;
-  height: 34px;
-  background: none;
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-md);
-  cursor: pointer;
-  transition: border-color var(--t-fast);
-  padding: 0;
+  border-top: 1px solid #1E293B;
+  max-height: 0; overflow: hidden;
+  transition: max-height .3s ease;
 }
-.hdr-mbtn:hover { border-color: var(--c-border-strong) }
-.hdr-mbtn-bar {
-  display: block;
-  width: 14px;
-  height: 1.5px;
-  background: var(--c-text-2);
-  border-radius: 1px;
-  transition: opacity var(--t-fast), transform var(--t-fast);
-}
-.hdr-mbtn[aria-expanded="true"] .hdr-mbtn-bar:nth-child(1) { transform: translateY(5.5px) rotate(45deg) }
-.hdr-mbtn[aria-expanded="true"] .hdr-mbtn-bar:nth-child(2) { opacity: 0 }
-.hdr-mbtn[aria-expanded="true"] .hdr-mbtn-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg) }
+.hdr__mobile.is-open { max-height: 600px; }
+@media (max-width: 768px) { .hdr__mobile { display: block; } }
 
-/* ── Mobile nav ────────────────────────────────────────────────*/
-.hdr-mobile {
-  border-top: 1px solid var(--c-border-subtle);
-  background: var(--c-bg-2);
+.hdr__mobile-nav {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex; flex-direction: column; gap: .25rem;
 }
-.hdr-mobile-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: var(--sp-3) 0 var(--sp-4);
+.hdr__mobile-link {
+  display: block; padding: .625rem .75rem; border-radius: .5rem;
+  font-size: .9375rem; font-weight: 500; color: #94A3B8;
+  text-decoration: none; transition: all .15s;
 }
-.hmnl {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px var(--sp-2);
-  color: var(--c-text-2);
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: var(--r-md);
-  transition: background var(--t-fast), color var(--t-fast);
+.hdr__mobile-link:hover { background: #1E293B; color: #F8FAFC; }
+.hdr__mobile-div { height: 1px; background: #1E293B; margin: .5rem 0; }
+.hdr__mobile-section { font-size: .6875rem; text-transform: uppercase; letter-spacing: .08em; color: #475569; padding: .25rem .75rem 0; margin: 0; }
+.hdr__mobile-cta {
+  display: block; padding: .75rem 1rem; margin-top: .25rem;
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  color: #fff; border-radius: .625rem;
+  font-size: .9375rem; font-weight: 600; text-decoration: none;
+  text-align: center; transition: all .2s;
 }
-.hmnl:hover  { background: var(--c-bg-3); color: var(--c-text) }
-.hmnl.active { color: var(--c-text) }
-.hdr-mobile-ctas { display: flex; gap: var(--sp-3); padding-top: var(--sp-3) }
-
-/* ── Responsive ────────────────────────────────────────────────*/
-@media (max-width: 960px) {
-  .hdr-nav { display: none }
-}
-@media (max-width: 820px) {
-  .hdr-search-text { display: none }
-  .hdr-search-kbd  { display: none }
-  .hdr-search { padding: 8px 10px; border-radius: var(--r-md) }
-  .hdr-mbtn   { display: flex }
-}
-@media (max-width: 480px) {
-  .hdr-search { display: none }
-}
+.hdr__mobile-cta:hover { box-shadow: 0 0 16px rgba(59,130,246,.4); }
 </style>
 
 <script>
-const btn = document.getElementById('hdr-mbtn');
-const nav = document.getElementById('hdr-mobile-nav');
-btn?.addEventListener('click', () => {
-  const open = nav?.hasAttribute('hidden');
-  open ? nav?.removeAttribute('hidden') : nav?.setAttribute('hidden', '');
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+// Mobile menu toggle
+const btn  = document.getElementById("mobile-menu-btn");
+const menu = document.getElementById("mobile-menu");
+const iconMenu  = document.getElementById("icon-menu");
+const iconClose = document.getElementById("icon-close");
+
+btn?.addEventListener("click", () => {
+  const open = menu?.classList.toggle("is-open");
+  if (btn)  btn.setAttribute("aria-expanded", String(open));
+  if (menu) menu.setAttribute("aria-hidden", String(!open));
+  if (iconMenu)  iconMenu.style.display  = open ? "none"  : "block";
+  if (iconClose) iconClose.style.display = open ? "block" : "none";
 });
 
-// Scrolled state for slightly more opaque header
-const header = document.getElementById('site-header');
-let ticking = false;
-const onScroll = () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      header?.classList.toggle('scrolled', window.scrollY > 20);
-      ticking = false;
+// Close mobile menu on link click
+menu?.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", () => {
+    menu.classList.remove("is-open");
+    btn?.setAttribute("aria-expanded", "false");
+    if (iconMenu)  iconMenu.style.display  = "block";
+    if (iconClose) iconClose.style.display = "none";
+  });
+});
+
+// Close dropdowns on outside click
+document.addEventListener("click", (e) => {
+  const target = e.target as Element;
+  if (!target.closest(".hdr__item--dropdown")) {
+    document.querySelectorAll(".hdr__dropdown").forEach(d => {
+      (d as HTMLElement).style.cssText = "";
     });
-    ticking = true;
   }
-};
-window.addEventListener('scroll', onScroll, { passive: true });
+});
 </script>

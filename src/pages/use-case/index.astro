@@ -1,0 +1,78 @@
+---
+/**
+ * src/pages/use-case/index.astro
+ * Hub voor /use-case/ — linkt naar alle 52 use-case cluster pagina's
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import logoMapRaw from "@/data/build/logo-map.json";
+import pagesRaw   from "@/data/build/page-payloads/use-case-cluster-pages.json";
+import "@/styles/hub-listings.css";
+
+const logoMap = logoMapRaw as Record<string, string>;
+const pages   = (pagesRaw as any[]).filter(p => p?.route || p?.slug);
+
+function tc(s: string) {
+  return (s || "").replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase());
+}
+
+const pageTitle = "AI Tools by Use Case — Find the Right Tool for Every Task";
+const pageDesc  = `Browse ${pages.length}+ AI use-case guides. Find the best AI tools for writing, coding, marketing, design and more.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Header slot="header" />
+
+  <div class="uc-hub">
+    <div class="uc-hub__container">
+
+      <nav class="uc-hub__bc">
+        <a href="/">Home</a><span>›</span><span>Use Cases</span>
+      </nav>
+
+      <div class="uc-hub__hero">
+        <span class="uc-hub__eyebrow">Use Cases</span>
+        <h1 class="uc-hub__title">AI Tools by Use Case</h1>
+        <p class="uc-hub__desc">
+          Find the best AI tools for every task — from writing and coding to marketing and design.
+          {pages.length}+ curated use-case guides.
+        </p>
+      </div>
+
+      <div class="uc-hub__grid">
+        {pages.map((p: any) => {
+          const slug      = p.slug || p.primary || "";
+          const route     = p.route || `/use-case/${slug}`;
+          const title     = p.page_title || p.seo?.title || tc(slug);
+          const toolCount = p.top_tools?.length || 0;
+          const topTools  = (p.top_tools || []).slice(0, 3);
+
+          return (
+            <a href={route} class="uc-card">
+              <!-- Mini logos -->
+              {topTools.length > 0 && (
+                <div class="uc-card__logos">
+                  {topTools.map((t: any) => {
+                    const tSlug = typeof t === "string" ? t : t.slug;
+                    const logo  = logoMap[tSlug] || t?.logo_url || null;
+                    return logo
+                      ? <img src={logo} alt="" width="20" height="20" loading="lazy" onerror="this.style.display='none'" />
+                      : <span class="uc-card__logo-fb">{tSlug || "?"}</span>;
+                  })}
+                </div>
+              )}
+              <span class="uc-card__title">{title.replace(" 2026 —", " —").replace(" 2026", "")}</span>
+              {toolCount > 0 && <span class="uc-card__count">{toolCount} tools</span>}
+              <span class="uc-card__arr">→</span>
+            </a>
+          );
+        })}
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+

@@ -1,0 +1,1943 @@
+[
+  {
+    "file": "src/pages/ai-model/index.astro",
+    "route": "/ai-model",
+    "pageType": "homepage",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/model-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/model-pages.json"
+    ],
+    "internalLinks": [
+      "/ai-model/${slug",
+      "/"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/ai-model/[slug].astro",
+    "route": "/ai-model/[slug]",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/model-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/model-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/ai-tools",
+      "/tools",
+      "/compare",
+      "/best",
+      "/alternatives"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "entity_slug",
+      "primary",
+      "props",
+      "params",
+      "seo",
+      "meta",
+      "name",
+      "description",
+      "top_tools",
+      "tools",
+      "handle",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "count",
+      "title"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/ai-news/index.astro",
+    "route": "/ai-news",
+    "pageType": "news",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/ai-workflows/index.astro",
+    "route": "/ai-workflows",
+    "pageType": "workflow",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/alle index/alternatiives-index.astro",
+    "route": "/alle index/alternatiives-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/page-payloads/alternatives-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/alternatives-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/alternatives/${seed.slug",
+      "/alternatives-pages.json"
+    ],
+    "propsUsed": [
+      "slug",
+      "astro",
+      "json",
+      "seed_tool",
+      "logo_url",
+      "name",
+      "style",
+      "charAt",
+      "alternatives"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/alle index/best-index.astro",
+    "route": "/alle index/best-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/page-payloads/best-pages.json",
+      "@/data/build/page-payloads/best-cluster-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/best-pages.json",
+      "@/data/build/page-payloads/best-cluster-pages.json"
+    ],
+    "internalLinks": [
+      "/best-pages.json",
+      "/best-cluster-pages.json",
+      "/best/ai-"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "route",
+      "seo",
+      "slug",
+      "top_tools",
+      "page_title",
+      "primary"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/alle index/capability-index.astro",
+    "route": "/alle index/capability-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/capability-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/capability-pages.json"
+    ],
+    "internalLinks": [
+      "/capability/${slug",
+      "/"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/alle index/compare-index.astro",
+    "route": "/alle index/compare-index",
+    "pageType": "comparison",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/compare-pairs.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/compare-pairs.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/compare-pairs.json",
+      "/compare/${[slugA,"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "cluster_type",
+      "toLocaleString",
+      "tool_a",
+      "tool_b",
+      "style",
+      "charAt"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/alle index/industry-index.astro",
+    "route": "/alle index/industry-index",
+    "pageType": "industry",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/industry-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/industry-pages.json"
+    ],
+    "internalLinks": [
+      "/industry/${slug",
+      "/",
+      "/industry-pages.json"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/alle index/learn-ai-index.astro",
+    "route": "/alle index/learn-ai-index",
+    "pageType": "learn",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/alle index/microcategory-index.astro",
+    "route": "/alle index/microcategory-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/microcategory-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/microcategory-pages.json"
+    ],
+    "internalLinks": [
+      "/microcategory/${slug",
+      "/"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/alle index/subcategory-index.astro",
+    "route": "/alle index/subcategory-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/subcategory-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/subcategory-pages.json"
+    ],
+    "internalLinks": [
+      "/subcategory/${slug",
+      "/"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/alle index/tag-index.astro",
+    "route": "/alle index/tag-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/tag-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/tag-pages.json"
+    ],
+    "internalLinks": [
+      "/tag/${slug",
+      "/",
+      "/tag-pages.json"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/alle index/use-case-index.astro",
+    "route": "/alle index/use-case-index",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/use-case-cluster-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/use-case-cluster-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/use-case/index.astro",
+      "/use-case/",
+      "/use-case-cluster-pages.json",
+      "/use-case/${slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "page_title",
+      "seo",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/alle index/workflow-index.astro",
+    "route": "/alle index/workflow-index",
+    "pageType": "workflow",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/workflow-pages-rich.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/workflow-pages-rich.json"
+    ],
+    "internalLinks": [
+      "/workflow/${slug",
+      "/",
+      "/workflow-pages-rich.json"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/alternatives/index.astro",
+    "route": "/alternatives",
+    "pageType": "alternatives",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/alternatives-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/alternatives-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/compare",
+      "/best",
+      "/alternatives-pages.json",
+      "/alternatives/${p.seed_tool.slug"
+    ],
+    "propsUsed": [
+      "slug",
+      "astro",
+      "json",
+      "seed_tool",
+      "page_title",
+      "alternatives",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/alternatives/[slug].astro",
+    "route": "/alternatives/[slug]",
+    "pageType": "alternatives",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/alternatives-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/alternatives-pages.json"
+    ],
+    "internalLinks": [
+      "/compare/${a",
+      "/tools/${seed.slug",
+      "/",
+      "/alternatives",
+      "/alternatives/[slug].astro",
+      "/alternatives-pages.json"
+    ],
+    "propsUsed": [
+      "slug",
+      "logo_url",
+      "logo_domain",
+      "json",
+      "astro",
+      "seed_tool",
+      "props",
+      "alternatives",
+      "name",
+      "seo",
+      "clearbit",
+      "charAt"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/best/index.astro",
+    "route": "/best",
+    "pageType": "best-of",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/best-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/best-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/compare",
+      "/alternatives",
+      "/best-pages.json",
+      "/best/${p.slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "route",
+      "slug",
+      "seo",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/best/[slug].astro",
+    "route": "/best/[slug]",
+    "pageType": "best-of",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/best-pages.json",
+      "@/data/build/page-payloads/best-cluster-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/best-pages.json",
+      "@/data/build/page-payloads/best-cluster-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/best/${s",
+      "/",
+      "/best",
+      "/compare",
+      "/alternatives",
+      "/tools",
+      "/best/[slug].astro",
+      "/best-pages.json",
+      "/best-cluster-pages.json",
+      "/best/",
+      "/best/${slug"
+    ],
+    "propsUsed": [
+      "json",
+      "astro",
+      "css",
+      "slug",
+      "handle",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "route",
+      "top_tools",
+      "primary",
+      "some",
+      "params",
+      "props",
+      "seo",
+      "meta",
+      "count",
+      "is_cluster",
+      "name",
+      "description",
+      "intro",
+      "secondary",
+      "tertiary",
+      "title",
+      "related_slugs",
+      "related",
+      "stringify",
+      "org",
+      "com"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 3
+  },
+  {
+    "file": "src/pages/capability/index.astro",
+    "route": "/capability",
+    "pageType": "homepage",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/capability-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/capability-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/industry",
+      "/workflow"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "name",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/capability/[slug].astro",
+    "route": "/capability/[slug]",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/capability-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/capability-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/compare/index.astro",
+    "route": "/compare",
+    "pageType": "comparison",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/compare-pairs.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/compare-pairs.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/alternatives",
+      "/best",
+      "/compare-pairs.json",
+      "/compare/${[p.tool_a,"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "tool_a",
+      "tool_b",
+      "name_a",
+      "name_b",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/compare/[slug].astro",
+    "route": "/compare/[slug]",
+    "pageType": "comparison",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/compare-pages-rich.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/compare-pages-rich.json"
+    ],
+    "internalLinks": [
+      "/tools/${a.slug",
+      "/tools/${b.slug",
+      "/alternatives/${a.slug",
+      "/alternatives/${b.slug",
+      "/",
+      "/compare",
+      "/compare/[slug].astro",
+      "/compare-pages-rich.json"
+    ],
+    "propsUsed": [
+      "logo_url",
+      "logo_domain",
+      "json",
+      "astro",
+      "tool_a",
+      "tool_b",
+      "props",
+      "name",
+      "slug",
+      "seo",
+      "clearbit",
+      "stringify",
+      "charAt",
+      "pricing_tier",
+      "comparison",
+      "long_description",
+      "pros",
+      "cons",
+      "best_for_profiles",
+      "profile",
+      "reason",
+      "question",
+      "answer"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/index.astro",
+    "route": "/",
+    "pageType": "homepage",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/home.css",
+      "@/data/build/homepage-data.json",
+      "@/data/build/category-map.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/homepage-data.json",
+      "@/data/build/category-map.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/ai-tools/category/${cat.slug",
+      "/tools",
+      "/compare",
+      "/best",
+      "/alternatives",
+      "/use-case",
+      "/tools/pricing/free",
+      "/tools/pricing/freemium",
+      "/submit-tool",
+      "/category-map.json",
+      "/compare/${[a,",
+      "/best/ai-writing",
+      "/best/ai-image-generation",
+      "/best/ai-coding",
+      "/best/ai-marketing",
+      "/best/ai-video",
+      "/best/write-blog-posts",
+      "/best/generate-code",
+      "/best/write-seo-articles",
+      "/best/ai-design",
+      "/tools?q={q",
+      "/tools/${t.slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "css",
+      "logo_url",
+      "trim",
+      "startsWith",
+      "hostname",
+      "clearbit",
+      "featured_tools",
+      "website_url",
+      "website",
+      "url",
+      "final_url",
+      "slug",
+      "logo_domain",
+      "total_tools",
+      "total_compare",
+      "total_bestof",
+      "total_cats",
+      "pricing_dist",
+      "count",
+      "toLocaleString",
+      "stringify",
+      "org",
+      "com",
+      "toString",
+      "pricing_tier",
+      "unknown",
+      "affiliate_url",
+      "name",
+      "_logo",
+      "onerror",
+      "style",
+      "nextElementSibling",
+      "display",
+      "cls",
+      "label",
+      "description",
+      "isArray",
+      "feature_tags",
+      "emoji",
+      "charAt",
+      "href"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 3
+  },
+  {
+    "file": "src/pages/industry/index.astro",
+    "route": "/industry",
+    "pageType": "industry",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/industry-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/industry-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/capability",
+      "/workflow",
+      "/industry-pages.json",
+      "/industry/${p.slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "name",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/industry/[slug].astro",
+    "route": "/industry/[slug]",
+    "pageType": "industry",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/industry-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/industry-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools",
+      "/industry-pages.json",
+      "/industry"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/integration/index.astro",
+    "route": "/integration",
+    "pageType": "homepage",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/integration-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/integration-pages.json"
+    ],
+    "internalLinks": [
+      "/integration/${slug",
+      "/"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/integration/[slug].astro",
+    "route": "/integration/[slug]",
+    "pageType": "other",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/integration-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/integration-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/learn-ai/index.astro",
+    "route": "/learn-ai",
+    "pageType": "learn",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/microcategory/index.astro",
+    "route": "/microcategory",
+    "pageType": "microcategory",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/styles/taxonomy.css",
+      "@/data/build/page-payloads/microcategory-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/microcategory-pages.json"
+    ],
+    "internalLinks": [
+      "/microcategory/${slug",
+      "/"
+    ],
+    "propsUsed": [
+      "astro",
+      "css",
+      "json",
+      "slug",
+      "meta",
+      "seo",
+      "count",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/microcategory/[slug].astro",
+    "route": "/microcategory/[slug]",
+    "pageType": "microcategory",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/microcategory-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/microcategory-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/prompts/index.astro",
+    "route": "/prompts",
+    "pageType": "prompt",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/resources/index.astro",
+    "route": "/resources",
+    "pageType": "resource",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/subcategory/index.astro",
+    "route": "/subcategory",
+    "pageType": "subcategory",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/subcategory-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/subcategory-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools",
+      "/capability"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "name",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/subcategory/[slug].astro",
+    "route": "/subcategory/[slug]",
+    "pageType": "subcategory",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/subcategory-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/subcategory-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/submit-tool/index.astro",
+    "route": "/submit-tool",
+    "pageType": "submit",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro"
+    ],
+    "jsonImports": [],
+    "internalLinks": [
+      "/"
+    ],
+    "propsUsed": [
+      "astro"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 0
+  },
+  {
+    "file": "src/pages/tag/index.astro",
+    "route": "/tag",
+    "pageType": "tag",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/tag-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/tag-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools",
+      "/subcategory",
+      "/tag-pages.json",
+      "/tag/${p.slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "name",
+      "top_tools",
+      "tool_count",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tag/[slug].astro",
+    "route": "/tag/[slug]",
+    "pageType": "tag",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/tag-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/tag-pages.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools",
+      "/tag-pages.json",
+      "/tag"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/category/[slug].astro",
+    "route": "/tools/category/[slug]",
+    "pageType": "category",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/category-paths.json",
+      "@/data/build/category-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/category-paths.json",
+      "@/data/build/category-map.json"
+    ],
+    "internalLinks": [
+      "/best/${slug",
+      "/",
+      "/tools",
+      "/tools/pricing/free",
+      "/tools/pricing/freemium",
+      "/vs",
+      "/category-paths.json",
+      "/category-map.json"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "pricing_tier"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/feature/[slug].astro",
+    "route": "/tools/feature/[slug]",
+    "pageType": "feature",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/site/Breadcrumbs.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/feature-paths.json",
+      "@/data/build/feature-map.json",
+      "@/styles/dimension-page.css"
+    ],
+    "jsonImports": [
+      "@/data/build/feature-paths.json",
+      "@/data/build/feature-map.json"
+    ],
+    "internalLinks": [
+      "/feature-paths.json",
+      "/feature-map.json",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "css"
+    ],
+    "componentCount": 4,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/index.astro",
+    "route": "/tools",
+    "pageType": "homepage",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/category-map.json",
+      "@/data/build/featured-tools.json",
+      "@/data/build/homepage-data.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/category-map.json",
+      "@/data/build/featured-tools.json",
+      "@/data/build/homepage-data.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/tools/category/${cat.slug",
+      "/",
+      "/tools",
+      "/industry",
+      "/tools/pricing/free",
+      "/tools/pricing/freemium",
+      "/compare",
+      "/best",
+      "/alternatives",
+      "/use-case",
+      "/workflow",
+      "/capability",
+      "/subcategory",
+      "/tag",
+      "/submit-tool",
+      "/tools/index.astro",
+      "/category-map.json",
+      "/featured-tools.json",
+      "/tools/pricing/paid",
+      "/tools/feature/open-source",
+      "/tools/feature/no-code",
+      "/tools/feature/api-access",
+      "/tools/feature/mobile-app",
+      "/tools/feature/team-features",
+      "/industry/",
+      "/industry/healthcare",
+      "/industry/finance",
+      "/industry/education",
+      "/industry/e-commerce",
+      "/industry/software-development",
+      "/industry/media-and-publishing",
+      "/industry/real-estate",
+      "/industry/marketing",
+      "/industry/gaming",
+      "/industry/hospitality",
+      "/industry/manufacturing",
+      "/industry/saas"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "name",
+      "count",
+      "slug",
+      "handle",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "toLocaleString",
+      "href",
+      "label",
+      "color",
+      "icon",
+      "sub"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 4
+  },
+  {
+    "file": "src/pages/tools/industry/[slug].astro",
+    "route": "/tools/industry/[slug]",
+    "pageType": "industry",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/site/Breadcrumbs.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/industry-paths.json",
+      "@/data/build/industry-map.json",
+      "@/styles/dimension-page.css"
+    ],
+    "jsonImports": [
+      "@/data/build/industry-paths.json",
+      "@/data/build/industry-map.json"
+    ],
+    "internalLinks": [
+      "/industry-paths.json",
+      "/industry-map.json",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "css"
+    ],
+    "componentCount": 4,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/pricing/[slug].astro",
+    "route": "/tools/pricing/[slug]",
+    "pageType": "pricing",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/site/Breadcrumbs.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/pricing-paths.json",
+      "@/data/build/pricing-map.json",
+      "@/styles/dimension-page.css"
+    ],
+    "jsonImports": [
+      "@/data/build/pricing-paths.json",
+      "@/data/build/pricing-map.json"
+    ],
+    "internalLinks": [
+      "/pricing-paths.json",
+      "/pricing-map.json",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "css"
+    ],
+    "componentCount": 4,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/tag/[slug].astro",
+    "route": "/tools/tag/[slug]",
+    "pageType": "tag",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/site/Breadcrumbs.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/tag-paths.json",
+      "@/data/build/tag-map.json",
+      "@/styles/dimension-page.css"
+    ],
+    "jsonImports": [
+      "@/data/build/tag-paths.json",
+      "@/data/build/tag-map.json"
+    ],
+    "internalLinks": [
+      "/tag-paths.json",
+      "/tag-map.json",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "css"
+    ],
+    "componentCount": 4,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/tool-type/[slug].astro",
+    "route": "/tools/tool-type/[slug]",
+    "pageType": "tool-type",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/site/Breadcrumbs.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/tool-type-paths.json",
+      "@/data/build/tool-type-map.json",
+      "@/styles/dimension-page.css"
+    ],
+    "jsonImports": [
+      "@/data/build/tool-type-paths.json",
+      "@/data/build/tool-type-map.json"
+    ],
+    "internalLinks": [
+      "/tool-type-paths.json",
+      "/tool-type-map.json",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "css"
+    ],
+    "componentCount": 4,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/use-case/[slug].astro",
+    "route": "/tools/use-case/[slug]",
+    "pageType": "use-case",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/site/Breadcrumbs.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/use-case-paths.json",
+      "@/data/build/use-case-map.json",
+      "@/styles/dimension-page.css"
+    ],
+    "jsonImports": [
+      "@/data/build/use-case-paths.json",
+      "@/data/build/use-case-map.json"
+    ],
+    "internalLinks": [
+      "/use-case-paths.json",
+      "/use-case-map.json",
+      "/tools"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "params",
+      "redirect",
+      "css"
+    ],
+    "componentCount": 4,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/tools/[slug].astro",
+    "route": "/tools/[slug]",
+    "pageType": "tool-detail",
+    "imports": [
+      "node:fs",
+      "node:path",
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/tool-slugs.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/tool-slugs.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/tools/category/${category",
+      "/compare/${[slug,",
+      "/use-case/${wf.use_case",
+      "/compare/${pair",
+      "/alternatives/${slug",
+      "/use-case/${uc",
+      "/best/${category",
+      "/best/${subcategory",
+      "/tools/${alt.slug",
+      "/tools/tag/${tag",
+      "/",
+      "/tools",
+      "/tools/[slug].astro",
+      "/tools/${slug"
+    ],
+    "propsUsed": [
+      "name",
+      "category",
+      "pricing_tier",
+      "astro",
+      "json",
+      "params",
+      "cwd",
+      "parse",
+      "readFileSync",
+      "hero",
+      "seo",
+      "taxonomy",
+      "commercial",
+      "reviews",
+      "content",
+      "related",
+      "discovery",
+      "audience",
+      "tagline",
+      "long_description",
+      "description",
+      "website_url",
+      "affiliate_url",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "subcategory",
+      "use_cases",
+      "capabilities",
+      "industries",
+      "integrations",
+      "platforms",
+      "skill_levels",
+      "tags",
+      "faq_items",
+      "workflow_snippets",
+      "unique_features",
+      "core_features",
+      "feature_tags",
+      "pros",
+      "cons",
+      "best_for_profiles",
+      "slug",
+      "compare_candidates",
+      "alternatives",
+      "related_tools",
+      "unknown",
+      "title",
+      "schema_software",
+      "org",
+      "com",
+      "rating_average",
+      "review_count_total",
+      "schema_faq",
+      "question",
+      "answer",
+      "stringify",
+      "onerror",
+      "style",
+      "nextElementSibling",
+      "display",
+      "charAt",
+      "cls",
+      "label",
+      "freemium",
+      "free_trial",
+      "is_featured",
+      "pricing_url",
+      "profile",
+      "reason",
+      "time_saved",
+      "steps",
+      "use_case"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/use-case/index.astro",
+    "route": "/use-case",
+    "pageType": "use-case",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/use-case-cluster-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/use-case-cluster-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/use-case/index.astro",
+      "/use-case/",
+      "/use-case-cluster-pages.json",
+      "/use-case/${slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "page_title",
+      "seo",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/use-case/[slug].astro",
+    "route": "/use-case/[slug]",
+    "pageType": "use-case",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/use-case-cluster-pages.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/use-case-cluster-pages.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/use-case",
+      "/use-case/[slug].astro",
+      "/use-case-cluster-pages.json"
+    ],
+    "propsUsed": [
+      "json",
+      "astro",
+      "slug",
+      "props",
+      "top_tools",
+      "name",
+      "seo",
+      "stringify",
+      "use_case_description",
+      "cross_tool_faqs",
+      "question",
+      "answer"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 1
+  },
+  {
+    "file": "src/pages/workflow/index.astro",
+    "route": "/workflow",
+    "pageType": "workflow",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/workflow-pages-rich.json"
+    ],
+    "jsonImports": [
+      "@/data/build/logo-map.json",
+      "@/data/build/page-payloads/workflow-pages-rich.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/use-case",
+      "/capability",
+      "/workflow-pages-rich.json",
+      "/workflow/${p.slug"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "name",
+      "title",
+      "top_tools",
+      "style"
+    ],
+    "componentCount": 2,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  },
+  {
+    "file": "src/pages/workflow/[slug].astro",
+    "route": "/workflow/[slug]",
+    "pageType": "workflow",
+    "imports": [
+      "@/layouts/BaseLayout.astro",
+      "@/components/site/Header.astro",
+      "@/components/site/Footer.astro",
+      "@/components/cards/ToolCard.astro",
+      "@/data/build/page-payloads/workflow-pages-rich.json",
+      "@/data/build/logo-map.json"
+    ],
+    "jsonImports": [
+      "@/data/build/page-payloads/workflow-pages-rich.json",
+      "@/data/build/logo-map.json"
+    ],
+    "internalLinks": [
+      "/",
+      "/tools",
+      "/workflow-pages-rich.json",
+      "/workflow"
+    ],
+    "propsUsed": [
+      "astro",
+      "json",
+      "slug",
+      "primary",
+      "route",
+      "props",
+      "params",
+      "description",
+      "title",
+      "logo_url",
+      "logo_domain",
+      "clearbit",
+      "name"
+    ],
+    "componentCount": 3,
+    "layoutCount": 1,
+    "datasetImportCount": 2
+  }
+]

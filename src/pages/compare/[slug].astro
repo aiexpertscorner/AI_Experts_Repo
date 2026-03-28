@@ -1,0 +1,264 @@
+---
+/**
+ * src/pages/compare/[slug].astro
+ * Compare two AI tools side by side.
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import ToolCard   from "@/components/cards/ToolCard.astro";
+import ToolLogo   from "@/components/ui/ToolLogo.astro";
+import Badge      from "@/components/ui/Badge.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+
+import comparePagesRaw from "@/data/build/page-payloads/compare-pages-rich.json";
+
+export async function getStaticPaths() {
+  const pages = comparePagesRaw as any[];
+  return pages
+    .filter(p => p?.tool_a?.slug && p?.tool_b?.slug)
+    .map(page => ({
+      params: { slug: `${page.tool_a.slug}-vs-${page.tool_b.slug}` },
+      props:  { page },
+    }));
+}
+
+const { page } = Astro.props as any;
+const a = page.tool_a;
+const b = page.tool_b;
+
+const nameA = a.name || a.slug;
+const nameB = b.name || b.slug;
+
+const title       = page.seo?.title       || `${nameA} vs ${nameB} — Full Comparison 2026`;
+const description = page.seo?.description || `Compare ${nameA} vs ${nameB}: features, pricing, pros & cons.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {page.seo?.schema_faq && (
+      <script type="application/ld+json" set:html={JSON.stringify(page.seo.schema_faq)} />
+    )}
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="compare-page">
+
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: "Home",    href: "/" },
+        { label: "Compare", href: "/compare" },
+        { label: `${nameA} vs ${nameB}` },
+      ]} />
+    </div>
+
+    <!-- Hero -->
+    <section class="compare-page__hero">
+      <div class="container">
+        <h1 class="compare-page__title">{nameA} vs {nameB}</h1>
+        <p class="compare-page__subtitle">Side-by-side comparison — features, pricing, pros & cons.</p>
+
+        <div class="compare-page__heroes">
+
+          <!-- Tool A -->
+          <div class="compare-hero-card">
+            <div class="compare-hero-card__logo">
+              <ToolLogo
+                slug={a.slug}
+                name={nameA}
+                logoUrl={a.logo_url}
+                logoDomain={a.logo_domain}
+                size={72}
+                loading="eager"
+              />
+            </div>
+            <h2 class="compare-hero-card__name">{nameA}</h2>
+            <Badge tier={a.pricing_tier || "unknown"} />
+            <a href={`/tools/${a.slug}`} class="compare-hero-card__cta btn btn--secondary btn--sm">
+              View {nameA}
+            </a>
+          </div>
+
+          <div class="compare-page__vs">VS</div>
+
+          <!-- Tool B -->
+          <div class="compare-hero-card">
+            <div class="compare-hero-card__logo">
+              <ToolLogo
+                slug={b.slug}
+                name={nameB}
+                logoUrl={b.logo_url}
+                logoDomain={b.logo_domain}
+                size={72}
+                loading="eager"
+              />
+            </div>
+            <h2 class="compare-hero-card__name">{nameB}</h2>
+            <Badge tier={b.pricing_tier || "unknown"} />
+            <a href={`/tools/${b.slug}`} class="compare-hero-card__cta btn btn--secondary btn--sm">
+              View {nameB}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    {page.comparison?.verdict && (
+      <section class="compare-page__verdict">
+        <div class="container">
+          <div class="compare-verdict">
+            <span class="compare-verdict__label">Quick Verdict</span>
+            <p class="compare-verdict__text">{page.comparison.verdict}</p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Overview -->
+    {(a.long_description || b.long_description) && (
+      <section class="compare-page__section">
+        <div class="container">
+          <h2 class="compare-section__title">Overview</h2>
+          <div class="compare-page__cols">
+            <div class="compare-col">
+              <h3>{nameA}</h3>
+              <p>{a.long_description || a.description || a.name}</p>
+            </div>
+            <div class="compare-col">
+              <h3>{nameB}</h3>
+              <p>{b.long_description || b.description || b.name}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Pros & Cons -->
+    {(a.pros?.length || b.pros?.length) && (
+      <section class="compare-page__section">
+        <div class="container">
+          <h2 class="compare-section__title">Pros & Cons</h2>
+          <div class="compare-page__cols">
+            <div class="compare-col">
+              <h3>{nameA}</h3>
+              {a.pros?.length > 0 && (
+                <ul class="compare-list compare-list--pros">
+                  {a.pros.map((p: string) => <li>{p}</li>)}
+                </ul>
+              )}
+              {a.cons?.length > 0 && (
+                <ul class="compare-list compare-list--cons">
+                  {a.cons.map((c: string) => <li>{c}</li>)}
+                </ul>
+              )}
+            </div>
+            <div class="compare-col">
+              <h3>{nameB}</h3>
+              {b.pros?.length > 0 && (
+                <ul class="compare-list compare-list--pros">
+                  {b.pros.map((p: string) => <li>{p}</li>)}
+                </ul>
+              )}
+              {b.cons?.length > 0 && (
+                <ul class="compare-list compare-list--cons">
+                  {b.cons.map((c: string) => <li>{c}</li>)}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Pricing -->
+    <section class="compare-page__section">
+      <div class="container">
+        <h2 class="compare-section__title">Pricing</h2>
+        <div class="compare-page__cols">
+          <div class="compare-col">
+            <h3>{nameA}</h3>
+            <Badge tier={a.pricing_tier || "unknown"} />
+          </div>
+          <div class="compare-col">
+            <h3>{nameB}</h3>
+            <Badge tier={b.pricing_tier || "unknown"} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best For -->
+    {(a.best_for_profiles?.length || b.best_for_profiles?.length) && (
+      <section class="compare-page__section">
+        <div class="container">
+          <h2 class="compare-section__title">Best For</h2>
+          <div class="compare-page__cols">
+            <div class="compare-col">
+              <h3>{nameA}</h3>
+              {a.best_for_profiles?.map((p: any) => (
+                <div class="compare-profile">
+                  <strong>{p.profile}</strong>
+                  <p>{p.reason}</p>
+                </div>
+              ))}
+            </div>
+            <div class="compare-col">
+              <h3>{nameB}</h3>
+              {b.best_for_profiles?.map((p: any) => (
+                <div class="compare-profile">
+                  <strong>{p.profile}</strong>
+                  <p>{p.reason}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- FAQ -->
+    {page.comparison?.faqs?.length > 0 && (
+      <section class="compare-page__section compare-page__faq">
+        <div class="container">
+          <h2 class="compare-section__title">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {page.comparison.faqs.map((faq: any) => (
+              <details class="faq-item">
+                <summary class="faq-item__question">{faq.question}</summary>
+                <p class="faq-item__answer">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- CTA -->
+    <section class="compare-page__cta">
+      <div class="container">
+        <h2>Make your choice</h2>
+        <div class="compare-page__cta-btns">
+          <a href={`/tools/${a.slug}`}        class="btn btn--primary">View {nameA} →</a>
+          <a href={`/alternatives/${a.slug}`} class="btn btn--secondary">{nameA} Alternatives</a>
+          <a href={`/tools/${b.slug}`}        class="btn btn--primary">View {nameB} →</a>
+          <a href={`/alternatives/${b.slug}`} class="btn btn--secondary">{nameB} Alternatives</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="seo-links">
+        <a href="/compare">All comparisons</a>
+        <a href="/alternatives">Find alternatives</a>
+        <a href="/best">Best-of lists</a>
+        <a href={`/tools/${a.slug}`}>{nameA}</a>
+        <a href={`/tools/${b.slug}`}>{nameB}</a>
+      </div>
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

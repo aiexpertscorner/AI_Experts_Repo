@@ -1,0 +1,165 @@
+---
+/**
+ * src/pages/alternatives/index.astro
+ * Hub index for all AI tool alternatives pages.
+ * Data: page-payloads/alternatives-pages.json
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header     from "@/components/site/Header.astro";
+import Footer     from "@/components/site/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import "@/styles/hub-listings.css";
+
+import pagesRaw  from "@/data/build/page-payloads/alternatives-pages.json";
+import logoMapRaw from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+const allPages = (pagesRaw as any[]).filter(p => p?.seed_tool?.slug);
+const total    = allPages.length;
+
+function tc(s: string) {
+  return (s || "").replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase());
+}
+
+// ── Sort: most alternatives first ─────────────────────────────────────────────
+const sorted = [...allPages].sort((a, b) =>
+  (b.alternatives?.length || 0) - (a.alternatives?.length || 0)
+);
+
+// ── Enrich each entry ──────────────────────────────────────────────────────────
+const entries = sorted.map(p => {
+  const slug    = p.seed_tool.slug;
+  const name    = p.seed_tool.name || tc(slug);
+  const logo    = logoMap[slug] || p.seed_tool.logo_url || null;
+  const count   = p.alternatives?.length || 0;
+  const title   = p.page_title || `${name} Alternatives`;
+  const href    = `/alternatives/${slug}`;
+  return { slug, name, logo, count, title, href };
+});
+
+// ── Popular tools (high alternative count) ────────────────────────────────────
+const popular = entries.slice(0, 12);
+
+const pageTitle = `Find AI Tool Alternatives — ${total.toLocaleString()}+ Tools`;
+const pageDesc  = `Find the best alternatives to ${total.toLocaleString()}+ popular AI tools. Compare features, pricing and find your perfect switch.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": pageTitle,
+      "description": pageDesc,
+      "url": "https://aiexpertscorner.com/alternatives",
+    })} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="hub hub--green">
+    <div class="hub__c">
+
+      <Breadcrumb crumbs={[
+        { label: "Home",         href: "/" },
+        { label: "Alternatives" },
+      ]} />
+
+      <!-- Hero -->
+      <div class="hub__hero">
+        <span class="hub__ew">Alternatives</span>
+        <h1 class="hub__title">Find AI Tool Alternatives</h1>
+        <p class="hub__desc">
+          Not happy with your current AI tool? Find better alternatives with
+          similar features — compare pricing, capabilities and switch with confidence.
+        </p>
+        <div class="hub__stats">
+          <div class="hub__stat">
+            <strong>{total.toLocaleString()}+</strong>
+            <span>Tools covered</span>
+          </div>
+          <div class="hub__stat">
+            <strong>{entries.reduce((s, e) => s + e.count, 0).toLocaleString()}+</strong>
+            <span>Alternative picks</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular tools strip -->
+      <section class="hub-section">
+        <h2 class="hub-section__title">🔥 Most-Searched Alternatives</h2>
+        <div class="alt-popular-grid">
+          {popular.map(e => (
+            <a href={e.href} class="alt-pop-card">
+              {e.logo
+                ? <img src={e.logo} alt="" width="32" height="32" loading="lazy"
+                    onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.removeProperty('display')" />
+                : null}
+              <span class="alt-pop-fb" style={e.logo ? "display:none" : undefined}>
+                {e.name.charAt(0)}
+              </span>
+              <div class="alt-pop-card__body">
+                <span class="alt-pop-card__name">{e.name}</span>
+                <span class="alt-pop-card__count">{e.count} alternatives</span>
+              </div>
+              <span class="hub__arr">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Search -->
+      <div class="hub__search-wrap">
+        <input
+          id="alt-search"
+          type="search"
+          class="hub__search-input"
+          placeholder={`Search ${total.toLocaleString()}+ tools...`}
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- All tools grid -->
+      <section class="hub-section">
+        <h2 class="hub-section__title">All Tools</h2>
+        <div class="hub__grid" id="alt-grid">
+          {entries.map(e => (
+            <a href={e.href} class="hub__card">
+              {e.logo
+                ? <img src={e.logo} alt="" width="22" height="22" class="hub__logo" loading="lazy"
+                    onerror="this.style.display='none'" />
+                : <span class="hub__logo-fb">{e.name.charAt(0)}</span>}
+              <span class="hub__card-title">{e.title}</span>
+              {e.count > 0 && <span class="hub__card-count">{e.count} tools</span>}
+              <span class="hub__arr">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <div class="hub__related">
+        <a href="/compare">Compare Tools</a>
+        <a href="/best">Best-Of Lists</a>
+        <a href="/tools">All AI Tools</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const input = document.getElementById("alt-search") as HTMLInputElement | null;
+  const grid  = document.getElementById("alt-grid");
+  if (input && grid) {
+    input.addEventListener("input", () => {
+      const q = input.value.toLowerCase();
+      grid.querySelectorAll<HTMLAnchorElement>(".hub__card").forEach(card => {
+        const text = card.textContent?.toLowerCase() || "";
+        card.style.display = !q || text.includes(q) ? "" : "none";
+      });
+    });
+  }
+</script>
+

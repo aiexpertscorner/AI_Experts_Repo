@@ -1,0 +1,491 @@
+{
+  "priorityFields": [
+    {
+      "field": "id",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "handle",
+      "usedInCodeFiles": 6,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json"
+      ]
+    },
+    {
+      "field": "slug",
+      "usedInCodeFiles": 39,
+      "presentInDatasetCount": 19519,
+      "presentInDatasets": [
+        "src/data/build/best-of-map.json",
+        "src/data/build/category-map.json",
+        "src/data/build/compare-page-data.json",
+        "src/data/build/compare-pairs.json",
+        "src/data/build/feature-map.json",
+        "src/data/build/industry-map.json",
+        "src/data/build/page-manifest.json",
+        "src/data/build/page-payloads/agent-type-pages.json",
+        "src/data/build/page-payloads/alternatives-pages.json",
+        "src/data/build/page-payloads/automation-pages.json",
+        "src/data/build/page-payloads/automation-recipe-pages.json",
+        "src/data/build/page-payloads/best-cluster-pages.json",
+        "src/data/build/page-payloads/best-pages.json",
+        "src/data/build/page-payloads/capability-pages.json",
+        "src/data/build/page-payloads/category-pages.json",
+        "src/data/build/page-payloads/compare-pages.json",
+        "src/data/build/page-payloads/faq-hub-pages.json",
+        "src/data/build/page-payloads/industry-pages.json",
+        "src/data/build/page-payloads/integration-pages.json",
+        "src/data/build/page-payloads/microcategory-pages.json"
+      ]
+    },
+    {
+      "field": "name",
+      "usedInCodeFiles": 28,
+      "presentInDatasetCount": 12,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json",
+        "src/data/build/best-of-map.json",
+        "src/data/build/category-map.json",
+        "src/data/build/feature-map.json",
+        "src/data/build/industry-map.json",
+        "src/data/build/page-payloads/faq-hub-pages.json",
+        "src/data/build/page-payloads/use-case-cluster-pages.json",
+        "src/data/build/page-payloads/workflow-pages-rich.json",
+        "src/data/build/pricing-map.json",
+        "src/data/build/tag-map.json",
+        "src/data/build/tool-type-map.json",
+        "src/data/build/use-case-map.json"
+      ]
+    },
+    {
+      "field": "url",
+      "usedInCodeFiles": 4,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "final_url",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "canonical_url",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "canonical_domain",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "brand_name_normalized",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "logo_url",
+      "usedInCodeFiles": 16,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json"
+      ]
+    },
+    {
+      "field": "logo_domain",
+      "usedInCodeFiles": 15,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json"
+      ]
+    },
+    {
+      "field": "favicon_url",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "desc",
+      "usedInCodeFiles": 5,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "short",
+      "usedInCodeFiles": 2,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "tagline",
+      "usedInCodeFiles": 3,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json"
+      ]
+    },
+    {
+      "field": "seo_title",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 6,
+      "presentInDatasets": [
+        "src/data/build/best-of-map.json",
+        "src/data/build/category-map.json",
+        "src/data/build/compare-page-data.json",
+        "src/data/build/pricing-map.json",
+        "src/data/build/tag-map.json",
+        "src/data/build/use-case-map.json"
+      ]
+    },
+    {
+      "field": "seo_description",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/compare-page-data.json"
+      ]
+    },
+    {
+      "field": "cat",
+      "usedInCodeFiles": 3,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "category",
+      "usedInCodeFiles": 4,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json"
+      ]
+    },
+    {
+      "field": "category_slug",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "subcategory",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "microcategory",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "pricing",
+      "usedInCodeFiles": 4,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "pricing_tier",
+      "usedInCodeFiles": 6,
+      "presentInDatasetCount": 1,
+      "presentInDatasets": [
+        "src/data/build/authority-tool-map.json"
+      ]
+    },
+    {
+      "field": "pricing_model",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "pricing_models",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "platforms",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "integrations",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "feature_flags",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "highlights",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "tags",
+      "usedInCodeFiles": 3,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "input_types",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "output_types",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "target_audience",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "industries",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "workflow_stage",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "use_cases",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "prompt_use_cases",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "best_for_queries",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "search_intents",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "related_tools",
+      "usedInCodeFiles": 1,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "comparison_targets",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "comparison_cluster",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "content_cluster",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "affiliate_networks",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "affiliate_priority_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "commercial_intent_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "quality_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "trust_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "popularity_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "freshness_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "editorial_priority_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "review_readiness_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "homepage_priority_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "display_score",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "visibility",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "indexable",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "is_active",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "is_canonical",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "canonical_handle",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "http_status",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "last_checked_at",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "tool_status",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "data_health",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "duplicate_group",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "duplicate_count",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "needs_manual_review",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "category_confidence",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "category_source",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "category_evidence",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "primary_use_case",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    },
+    {
+      "field": "monetization_paths",
+      "usedInCodeFiles": 0,
+      "presentInDatasetCount": 0,
+      "presentInDatasets": []
+    }
+  ]
+}

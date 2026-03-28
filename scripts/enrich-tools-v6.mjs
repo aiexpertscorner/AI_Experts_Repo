@@ -964,7 +964,7 @@ function inferContentCluster(tool) {
     "E-Commerce":           "ai-ecommerce",
     "Social Media":         "ai-social-media",
   };
-  return map[tool.cat] || "ai-tools";
+  return map[tool.cat] || "tools";
 }
 
 function inferComparisonCluster(tool) {
