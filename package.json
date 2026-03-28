@@ -3,24 +3,32 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev":              "astro dev",
-    "build":            "astro build",
-    "preview":          "astro preview",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
 
-    "enrich":           "node scripts/enrich-tools-v6.mjs --skip-http",
-    "enrich:full":      "node scripts/enrich-tools-v6.mjs",
-    "inject":           "node scripts/inject-canonical-tools.mjs",
-    "authority":        "node scripts/build-authority-datasets.mjs",
-    "featured":         "node scripts/build-featured.mjs",
+    "enrich": "node scripts/enrich-tools-v6.mjs --skip-http",
+    "enrich:full": "node scripts/enrich-tools-v6.mjs",
+    "inject": "node scripts/inject-canonical-tools.mjs",
+    "authority": "node scripts/build-authority-datasets.mjs",
+    "featured": "node scripts/build-featured.mjs",
+    "master:build": "node scripts/build-tools-master.mjs",
+    "audit:json-intelligence": "node scripts/audit-json-intelligence.mjs",
 
-    "datasets":         "node scripts/build-seo-datasets.mjs",
-    "datasets:medium":  "TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
-    "datasets:full":    "TOOL_PAGE_LIMIT=19088 COMPARE_PAGE_LIMIT=10000 ALT_PAGE_LIMIT=19088 node scripts/build-seo-datasets.mjs",
+    "datasets": "node scripts/build-seo-datasets.mjs",
+    "datasets:medium": "TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
+    "datasets:full": "TOOL_PAGE_LIMIT=19088 COMPARE_PAGE_LIMIT=10000 ALT_PAGE_LIMIT=19088 node scripts/build-seo-datasets.mjs",
 
-    "pipeline":         "node scripts/inject-canonical-tools.mjs && node scripts/build-seo-datasets.mjs && node scripts/build-authority-datasets.mjs",
-    "pipeline:medium":  "node scripts/inject-canonical-tools.mjs && npm run datasets:medium && node scripts/build-authority-datasets.mjs",
-    "pipeline:full":    "node scripts/inject-canonical-tools.mjs && npm run datasets:full && node scripts/build-authority-datasets.mjs"
+    "pipeline": "node scripts/inject-canonical-tools.mjs && node scripts/build-seo-datasets.mjs && node scripts/build-authority-datasets.mjs",
+    "pipeline:medium": "node scripts/inject-canonical-tools.mjs && npm run datasets:medium && node scripts/build-authority-datasets.mjs",
+    "pipeline:full": "node scripts/inject-canonical-tools.mjs && npm run datasets:full && node scripts/build-authority-datasets.mjs",
+
+    "audit:data-layers": "node scripts/audit-data-layers.mjs",
+    "audit:project-data": "node scripts/audit-project-data-landscape.mjs"
   },
-  "dependencies":    { "astro": "^4.16.0" },
-  "devDependencies": { "@astrojs/tailwind": "^5.1.0", "tailwindcss": "^3.4.0" }
+  "dependencies": { "astro": "^4.16.0" },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "tailwindcss": "^3.4.0"
+  }
 }

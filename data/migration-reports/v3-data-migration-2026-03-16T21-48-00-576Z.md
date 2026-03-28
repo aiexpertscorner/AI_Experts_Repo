@@ -1,0 +1,327 @@
+# V3 Data Migration Report
+
+Generated at: 2026-03-16T21:48:00.575Z
+Mode: apply
+Overwrite: true
+
+## Directories
+
+- `data/raw` → created
+- `data/staging/normalized` → created
+- `data/staging/enriched` → created
+- `data/master` → created
+- `data/build/authority` → created
+- `data/build/maps` → created
+- `data/build/listings` → created
+- `data/build/comparisons` → created
+- `data/build/alternatives` → created
+- `data/build/homepage` → created
+- `data/build/prompts` → created
+- `data/build/workflows` → created
+- `data/build/insights` → created
+- `data/page-payloads/search` → created
+- `data/page-payloads/tools` → created
+- `data/page-payloads/compare` → created
+- `data/page-payloads/alternatives` → created
+- `data/page-payloads/homepage` → created
+- `data/reports/audits` → created
+- `data/reports/inspections` → created
+- `data/reports/validation` → created
+
+## Migration summary
+
+- copied: **30**
+
+## Category summary
+
+- **raw**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **normalized**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **enriched-current**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **master-seed**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **page-payload-search**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **build-authority**: total=3, copied=3, overwritten=0, skipped=0, missing=0, conflicts=0
+- **build-maps**: total=7, copied=7, overwritten=0, skipped=0, missing=0, conflicts=0
+- **build-listings**: total=6, copied=6, overwritten=0, skipped=0, missing=0, conflicts=0
+- **build-homepage**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **build-comparisons**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **page-payload-compare**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **page-payload-alternatives**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **page-payload-tools**: total=1, copied=1, overwritten=0, skipped=0, missing=0, conflicts=0
+- **reports-audits**: total=4, copied=4, overwritten=0, skipped=0, missing=0, conflicts=0
+
+## File decisions
+
+### src/data/tools_source.json → data/raw/tools_source.json
+- category: `raw`
+- required: true
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- notes: Canonical raw source candidate
+- source size: 8004944 bytes, records=19466
+- target size: 8004944 bytes, records=19466
+
+### src/data/build/tools-normalized.json → data/staging/normalized/tools_normalized.json
+- category: `normalized`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- notes: Promote misplaced normalized file into staging/normalized
+- source size: 228865206 bytes, records=19488
+- target size: 228865206 bytes, records=19488
+
+### src/data/tools_production.json → data/staging/enriched/tools_production.current.json
+- category: `enriched-current`
+- required: true
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- notes: Current enriched transitional dataset
+- source size: 71246726 bytes, records=19488
+- target size: 71246726 bytes, records=19488
+
+### src/data/build/tools-master-mapped.json → data/master/tools_master.seed.json
+- category: `master-seed`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- notes: Strongest current master seed candidate
+- source size: 151679934 bytes, records=19488
+- target size: 151679934 bytes, records=19488
+
+### src/data/tools_search_index.json → data/page-payloads/search/tools_search_index.json
+- category: `page-payload-search`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- notes: Derived search payload
+- source size: 4679715 bytes, records=19088
+- target size: 4679715 bytes, records=19088
+
+### src/data/build/authority-tool-map.json → data/build/authority/authority-tool-map.json
+- category: `build-authority`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 56431 bytes
+- target size: 56431 bytes
+
+### src/data/build/global-top100.json → data/build/authority/global-top100.json
+- category: `build-authority`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 43914 bytes, records=100
+- target size: 43914 bytes, records=100
+
+### src/data/build/category-top10.json → data/build/authority/category-top10.json
+- category: `build-authority`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 119914 bytes
+- target size: 119914 bytes
+
+### src/data/build/tool-map.json → data/build/maps/tool-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 24970629 bytes
+- target size: 24970629 bytes
+
+### src/data/build/category-map.json → data/build/maps/category-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 1822236 bytes
+- target size: 1822236 bytes
+
+### src/data/build/tag-map.json → data/build/maps/tag-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 2010758 bytes
+- target size: 2010758 bytes
+
+### src/data/build/feature-map.json → data/build/maps/feature-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 713483 bytes
+- target size: 713483 bytes
+
+### src/data/build/industry-map.json → data/build/maps/industry-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 928730 bytes
+- target size: 928730 bytes
+
+### src/data/build/use-case-map.json → data/build/maps/use-case-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 22606 bytes
+- target size: 22606 bytes
+
+### src/data/build/prompt-library-map.json → data/build/maps/prompt-library-map.json
+- category: `build-maps`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 8754107 bytes
+- target size: 8754107 bytes
+
+### src/data/build/category-paths.json → data/build/listings/category-paths.json
+- category: `build-listings`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 409 bytes, records=23
+- target size: 409 bytes, records=23
+
+### src/data/build/tag-paths.json → data/build/listings/tag-paths.json
+- category: `build-listings`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 573 bytes, records=37
+- target size: 573 bytes, records=37
+
+### src/data/build/feature-paths.json → data/build/listings/feature-paths.json
+- category: `build-listings`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 148 bytes, records=11
+- target size: 148 bytes, records=11
+
+### src/data/build/industry-paths.json → data/build/listings/industry-paths.json
+- category: `build-listings`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 201 bytes, records=14
+- target size: 201 bytes, records=14
+
+### src/data/build/use-case-paths.json → data/build/listings/use-case-paths.json
+- category: `build-listings`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 246 bytes, records=6
+- target size: 246 bytes, records=6
+
+### src/data/build/prompt-library-paths.json → data/build/listings/prompt-library-paths.json
+- category: `build-listings`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 85393 bytes, records=5553
+- target size: 85393 bytes, records=5553
+
+### src/data/build/homepage-data.json → data/build/homepage/homepage-data.json
+- category: `build-homepage`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 17594 bytes
+- target size: 17594 bytes
+
+### src/data/build/compare-pairs.json → data/build/comparisons/compare-pairs.json
+- category: `build-comparisons`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 5864849 bytes, records=73216
+- target size: 5864849 bytes, records=73216
+
+### src/data/build/compare-page-data.json → data/page-payloads/compare/compare-page-data.json
+- category: `page-payload-compare`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 3861355 bytes
+- target size: 3861355 bytes
+
+### src/data/build/alternatives-page-data.json → data/page-payloads/alternatives/alternatives-page-data.json
+- category: `page-payload-alternatives`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 9262302 bytes
+- target size: 9262302 bytes
+
+### src/data/build/tool-page-data.json → data/page-payloads/tools/tool-page-data.json
+- category: `page-payload-tools`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 19465850 bytes
+- target size: 19465850 bytes
+
+### src/data/build/data-layer-audit.json → data/reports/audits/data-layer-audit.json
+- category: `reports-audits`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 56794 bytes
+- target size: 56794 bytes
+
+### src/data/build/data-layer-audit.md → data/reports/audits/data-layer-audit.md
+- category: `reports-audits`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 3098 bytes
+- target size: 3098 bytes
+
+### src/data/build/project-data-inventory.json → data/reports/audits/project-data-inventory.json
+- category: `reports-audits`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 290595 bytes
+- target size: 290595 bytes
+
+### src/data/build/project-data-inventory.md → data/reports/audits/project-data-inventory.md
+- category: `reports-audits`
+- required: false
+- decision: **copy**
+- execution: **copied**
+- reason: Target does not exist yet.
+- source size: 8179 bytes
+- target size: 8179 bytes

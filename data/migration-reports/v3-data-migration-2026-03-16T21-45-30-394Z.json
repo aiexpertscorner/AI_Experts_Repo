@@ -1,0 +1,1120 @@
+{
+  "generatedAt": "2026-03-16T21:45:30.393Z",
+  "apply": false,
+  "overwrite": false,
+  "rootDir": "E:/2026_Github/AI_Experts_Repo",
+  "directories": {
+    "planned": 21,
+    "results": [
+      {
+        "relative": "data/raw",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\raw",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/staging/normalized",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\staging\\normalized",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/staging/enriched",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\staging\\enriched",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/master",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\master",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/authority",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\authority",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/maps",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/listings",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/comparisons",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\comparisons",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/alternatives",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\alternatives",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/homepage",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\homepage",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/prompts",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\prompts",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/workflows",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\workflows",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/build/insights",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\insights",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/page-payloads/search",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\search",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/page-payloads/tools",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\tools",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/page-payloads/compare",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\compare",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/page-payloads/alternatives",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\alternatives",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/page-payloads/homepage",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\homepage",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/reports/audits",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\audits",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/reports/inspections",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\inspections",
+        "exists": false,
+        "action": "would_create"
+      },
+      {
+        "relative": "data/reports/validation",
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\validation",
+        "exists": false,
+        "action": "would_create"
+      }
+    ]
+  },
+  "summary": {
+    "executionCounts": {
+      "would_copy": 30
+    },
+    "byCategory": {
+      "raw": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "normalized": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "enriched-current": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "master-seed": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "page-payload-search": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "build-authority": {
+        "total": 3,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "build-maps": {
+        "total": 7,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "build-listings": {
+        "total": 6,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "build-homepage": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "build-comparisons": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "page-payload-compare": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "page-payload-alternatives": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "page-payload-tools": {
+        "total": 1,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      },
+      "reports-audits": {
+        "total": 4,
+        "copied": 0,
+        "overwritten": 0,
+        "skipped": 0,
+        "missing": 0,
+        "conflicts": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "category": "raw",
+      "action": "copy",
+      "required": true,
+      "notes": "Canonical raw source candidate",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\tools_source.json",
+        "relative": "src/data/tools_source.json",
+        "stat": {
+          "size": 8004944,
+          "mtimeMs": 1773174774572.85
+        },
+        "sha1": "3db7859102b1bd1998e16272e81b82baf1a55754",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 19466
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\raw\\tools_source.json",
+        "relative": "data/raw/tools_source.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "normalized",
+      "action": "copy",
+      "required": false,
+      "notes": "Promote misplaced normalized file into staging/normalized",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\tools-normalized.json",
+        "relative": "src/data/build/tools-normalized.json",
+        "stat": {
+          "size": 228865206,
+          "mtimeMs": 1773433670738.068
+        },
+        "sha1": "62fa52c2bb968dded86f86340fca8435a214a67d",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 19488
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\staging\\normalized\\tools_normalized.json",
+        "relative": "data/staging/normalized/tools_normalized.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "enriched-current",
+      "action": "copy",
+      "required": true,
+      "notes": "Current enriched transitional dataset",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\tools_production.json",
+        "relative": "src/data/tools_production.json",
+        "stat": {
+          "size": 71246726,
+          "mtimeMs": 1773358792041.9548
+        },
+        "sha1": "b7bdcb711e6e28c61ef163dd0ef0257da5f1f2b0",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 19488
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\staging\\enriched\\tools_production.current.json",
+        "relative": "data/staging/enriched/tools_production.current.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "master-seed",
+      "action": "copy",
+      "required": false,
+      "notes": "Strongest current master seed candidate",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\tools-master-mapped.json",
+        "relative": "src/data/build/tools-master-mapped.json",
+        "stat": {
+          "size": 151679934,
+          "mtimeMs": 1773436453400.472
+        },
+        "sha1": "fbb8a941ab1629dade8e66ae43dff4e7a9760d3f",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 19488
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\master\\tools_master.seed.json",
+        "relative": "data/master/tools_master.seed.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "page-payload-search",
+      "action": "copy",
+      "required": false,
+      "notes": "Derived search payload",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\tools_search_index.json",
+        "relative": "src/data/tools_search_index.json",
+        "stat": {
+          "size": 4679715,
+          "mtimeMs": 1773437909910.218
+        },
+        "sha1": "bd983ee9604f3a05a7dd8f2045a29a8761d8cd3c",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 19088
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\search\\tools_search_index.json",
+        "relative": "data/page-payloads/search/tools_search_index.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-authority",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\authority-tool-map.json",
+        "relative": "src/data/build/authority-tool-map.json",
+        "stat": {
+          "size": 56431,
+          "mtimeMs": 1773358844002.1416
+        },
+        "sha1": "a08458d37b1751ca73dd6558fc7729d4d11c9c69",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 99
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\authority\\authority-tool-map.json",
+        "relative": "data/build/authority/authority-tool-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-authority",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\global-top100.json",
+        "relative": "src/data/build/global-top100.json",
+        "stat": {
+          "size": 43914,
+          "mtimeMs": 1773358843996.1567
+        },
+        "sha1": "73643405b4cbe8be190d680e48b03e08cc34426a",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "recordCount": 100
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\authority\\global-top100.json",
+        "relative": "data/build/authority/global-top100.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-authority",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\category-top10.json",
+        "relative": "src/data/build/category-top10.json",
+        "stat": {
+          "size": 119914,
+          "mtimeMs": 1773691146960.682
+        },
+        "sha1": "efc2dbc5c6d201fa0a4e376248693dcd0a6bbb08",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 3
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\authority\\category-top10.json",
+        "relative": "data/build/authority/category-top10.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\tool-map.json",
+        "relative": "src/data/build/tool-map.json",
+        "stat": {
+          "size": 24970629,
+          "mtimeMs": 1773691147842.9585
+        },
+        "sha1": "d15034257e08c39aed3809fa6c4f6e43f290e6f9",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 19088
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\tool-map.json",
+        "relative": "data/build/maps/tool-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\category-map.json",
+        "relative": "src/data/build/category-map.json",
+        "stat": {
+          "size": 1822236,
+          "mtimeMs": 1773691146926.14
+        },
+        "sha1": "53d40af8d939bfbbbc38f74763b8c02a3b89ad9a",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 23
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\category-map.json",
+        "relative": "data/build/maps/category-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\tag-map.json",
+        "relative": "src/data/build/tag-map.json",
+        "stat": {
+          "size": 2010758,
+          "mtimeMs": 1773691147681.766
+        },
+        "sha1": "b7a7bb584c09ec5b07c527f642235314b18ca7e6",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 37
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\tag-map.json",
+        "relative": "data/build/maps/tag-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\feature-map.json",
+        "relative": "src/data/build/feature-map.json",
+        "stat": {
+          "size": 713483,
+          "mtimeMs": 1773691147102.6904
+        },
+        "sha1": "aa343d92eb2b30076a97563cc9fdfbf9c48dfa31",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 11
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\feature-map.json",
+        "relative": "data/build/maps/feature-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\industry-map.json",
+        "relative": "src/data/build/industry-map.json",
+        "stat": {
+          "size": 928730,
+          "mtimeMs": 1773691147193.1914
+        },
+        "sha1": "850359438ec8e3e964bf3fe360d31396a8abd03d",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 14
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\industry-map.json",
+        "relative": "data/build/maps/industry-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\use-case-map.json",
+        "relative": "src/data/build/use-case-map.json",
+        "stat": {
+          "size": 22606,
+          "mtimeMs": 1773691148081.0686
+        },
+        "sha1": "6e664c18fb959405c240d68637870e662d32bdfe",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 6
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\use-case-map.json",
+        "relative": "data/build/maps/use-case-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-maps",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\prompt-library-map.json",
+        "relative": "src/data/build/prompt-library-map.json",
+        "stat": {
+          "size": 8754107,
+          "mtimeMs": 1773691147340.798
+        },
+        "sha1": "7f385085d9e56ca55f679dcc6402a7a45e0ea0ba",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 5553
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\maps\\prompt-library-map.json",
+        "relative": "data/build/maps/prompt-library-map.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-listings",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\category-paths.json",
+        "relative": "src/data/build/category-paths.json",
+        "stat": {
+          "size": 409,
+          "mtimeMs": 1773691146936.084
+        },
+        "sha1": "6458414e92308d4a921ccd2f42f31bc398ae036c",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 23
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings\\category-paths.json",
+        "relative": "data/build/listings/category-paths.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-listings",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\tag-paths.json",
+        "relative": "src/data/build/tag-paths.json",
+        "stat": {
+          "size": 573,
+          "mtimeMs": 1773691147689.6758
+        },
+        "sha1": "90789c54b2737d508f31f67d596b6d733e4c078b",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 37
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings\\tag-paths.json",
+        "relative": "data/build/listings/tag-paths.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-listings",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\feature-paths.json",
+        "relative": "src/data/build/feature-paths.json",
+        "stat": {
+          "size": 148,
+          "mtimeMs": 1773437908211.7317
+        },
+        "sha1": "12ba5ac419f87bf8e5ccfb142c3366bd06484bfa",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 11
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings\\feature-paths.json",
+        "relative": "data/build/listings/feature-paths.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-listings",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\industry-paths.json",
+        "relative": "src/data/build/industry-paths.json",
+        "stat": {
+          "size": 201,
+          "mtimeMs": 1773691147205.16
+        },
+        "sha1": "393bac30bbe47c2474ee867a8d46963702193fe3",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 14
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings\\industry-paths.json",
+        "relative": "data/build/listings/industry-paths.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-listings",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\use-case-paths.json",
+        "relative": "src/data/build/use-case-paths.json",
+        "stat": {
+          "size": 246,
+          "mtimeMs": 1773691148092.0298
+        },
+        "sha1": "d7acf7203bca4fe950aec379bec104803607e22e",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 6
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings\\use-case-paths.json",
+        "relative": "data/build/listings/use-case-paths.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-listings",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\prompt-library-paths.json",
+        "relative": "src/data/build/prompt-library-paths.json",
+        "stat": {
+          "size": 85393,
+          "mtimeMs": 1773437907137.6052
+        },
+        "sha1": "a5d64b14fe90cc587e60c19c87365119b9728d6c",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 5553
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\listings\\prompt-library-paths.json",
+        "relative": "data/build/listings/prompt-library-paths.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-homepage",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\homepage-data.json",
+        "relative": "src/data/build/homepage-data.json",
+        "stat": {
+          "size": 17594,
+          "mtimeMs": 1773691147141.712
+        },
+        "sha1": "9901414ddca5d0f4b5254c06ed5b3526ecd29259",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 8
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\homepage\\homepage-data.json",
+        "relative": "data/build/homepage/homepage-data.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "build-comparisons",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\compare-pairs.json",
+        "relative": "src/data/build/compare-pairs.json",
+        "stat": {
+          "size": 5864849,
+          "mtimeMs": 1773437905755.301
+        },
+        "sha1": "664a93fb83033a76a58a1e598dd9a8c6b70a821e",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "array",
+          "recordCount": 73216
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\build\\comparisons\\compare-pairs.json",
+        "relative": "data/build/comparisons/compare-pairs.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "page-payload-compare",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\compare-page-data.json",
+        "relative": "src/data/build/compare-page-data.json",
+        "stat": {
+          "size": 3861355,
+          "mtimeMs": 1773691147060.805
+        },
+        "sha1": "982d7746ae437c01ae3242fc2ee0875651a9c0fd",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 3000
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\compare\\compare-page-data.json",
+        "relative": "data/page-payloads/compare/compare-page-data.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "page-payload-alternatives",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\alternatives-page-data.json",
+        "relative": "src/data/build/alternatives-page-data.json",
+        "stat": {
+          "size": 9262302,
+          "mtimeMs": 1773691146810.1975
+        },
+        "sha1": "a169fed04aff6a33374c459406ef9bd38b59cc3a",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 5000
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\alternatives\\alternatives-page-data.json",
+        "relative": "data/page-payloads/alternatives/alternatives-page-data.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "page-payload-tools",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\tool-page-data.json",
+        "relative": "src/data/build/tool-page-data.json",
+        "stat": {
+          "size": 19465850,
+          "mtimeMs": 1773691147963.1577
+        },
+        "sha1": "dfd8cefef6a6d6dce7f0a83c908323e8148aaafb",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 5000
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\page-payloads\\tools\\tool-page-data.json",
+        "relative": "data/page-payloads/tools/tool-page-data.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "reports-audits",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\data-layer-audit.json",
+        "relative": "src/data/build/data-layer-audit.json",
+        "stat": {
+          "size": 56794,
+          "mtimeMs": 1773693489008.2224
+        },
+        "sha1": "9a19636a64da8fd34eba2a2ee8e4d207e5aaf955",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 4
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\audits\\data-layer-audit.json",
+        "relative": "data/reports/audits/data-layer-audit.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "reports-audits",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\data-layer-audit.md",
+        "relative": "src/data/build/data-layer-audit.md",
+        "stat": {
+          "size": 3098,
+          "mtimeMs": 1773693489008.2224
+        },
+        "sha1": "187b0cdf15f89d0b6129089061b437bf62ce05d3",
+        "jsonInfo": null
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\audits\\data-layer-audit.md",
+        "relative": "data/reports/audits/data-layer-audit.md"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "reports-audits",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\project-data-inventory.json",
+        "relative": "src/data/build/project-data-inventory.json",
+        "stat": {
+          "size": 290595,
+          "mtimeMs": 1773695224186.9307
+        },
+        "sha1": "703e7ceaea69f6b7d982e6b504c47da855636be7",
+        "jsonInfo": {
+          "validJson": true,
+          "topLevelType": "object",
+          "topLevelKeyCount": 5
+        }
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\audits\\project-data-inventory.json",
+        "relative": "data/reports/audits/project-data-inventory.json"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    },
+    {
+      "category": "reports-audits",
+      "action": "copy",
+      "required": false,
+      "notes": "",
+      "source": {
+        "exists": true,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\src\\data\\build\\project-data-inventory.md",
+        "relative": "src/data/build/project-data-inventory.md",
+        "stat": {
+          "size": 8179,
+          "mtimeMs": 1773695224186.9307
+        },
+        "sha1": "554d0cbdab6a9900838b0a2e407347d839b1c726",
+        "jsonInfo": null
+      },
+      "target": {
+        "exists": false,
+        "absolute": "E:\\2026_Github\\AI_Experts_Repo\\data\\reports\\audits\\project-data-inventory.md",
+        "relative": "data/reports/audits/project-data-inventory.md"
+      },
+      "decision": "copy",
+      "reason": "Target does not exist yet.",
+      "execution": "would_copy"
+    }
+  ]
+}
