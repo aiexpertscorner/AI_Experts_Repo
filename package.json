@@ -13,6 +13,7 @@
     "authority": "node scripts/build-authority-datasets.mjs",
     "featured": "node scripts/build-featured.mjs",
     "master:build": "node scripts/build-tools-master.mjs",
+    "audit:json-intelligence": "node scripts/audit-json-intelligence.mjs",
 
     "datasets": "node scripts/build-seo-datasets.mjs",
     "datasets:medium": "TOOL_PAGE_LIMIT=10000 COMPARE_PAGE_LIMIT=5000 ALT_PAGE_LIMIT=10000 node scripts/build-seo-datasets.mjs",
