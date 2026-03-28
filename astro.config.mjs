@@ -1,7 +1,17 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 export default defineConfig({
-  integrations: [tailwind()],
   output: 'static',
-  site: 'https://aiexpertscorner.com',
+  build: {
+    inlineStylesheets: 'always',  // CSS inline ipv losse files
+    assets: '_assets',
+  },
+  vite: {
+    build: {
+      cssCodeSplit: false,         // 1 CSS file ipv vele
+      rollupOptions: {
+        output: {
+          manualChunks: undefined, // geen JS splitting
+        }
+      }
+    }
+  }
 });
