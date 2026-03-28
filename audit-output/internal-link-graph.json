@@ -1,0 +1,1338 @@
+{
+  "nodes": [
+    "/ai-model",
+    "/ai-model/[slug]",
+    "/ai-news",
+    "/ai-workflows",
+    "/alle index/alternatiives-index",
+    "/alle index/best-index",
+    "/alle index/capability-index",
+    "/alle index/compare-index",
+    "/alle index/industry-index",
+    "/alle index/learn-ai-index",
+    "/alle index/microcategory-index",
+    "/alle index/subcategory-index",
+    "/alle index/tag-index",
+    "/alle index/use-case-index",
+    "/alle index/workflow-index",
+    "/alternatives",
+    "/alternatives/[slug]",
+    "/best",
+    "/best/[slug]",
+    "/capability",
+    "/capability/[slug]",
+    "/compare",
+    "/compare/[slug]",
+    "/",
+    "/industry",
+    "/industry/[slug]",
+    "/integration",
+    "/integration/[slug]",
+    "/learn-ai",
+    "/microcategory",
+    "/microcategory/[slug]",
+    "/prompts",
+    "/resources",
+    "/subcategory",
+    "/subcategory/[slug]",
+    "/submit-tool",
+    "/tag",
+    "/tag/[slug]",
+    "/tools/category/[slug]",
+    "/tools/feature/[slug]",
+    "/tools",
+    "/tools/industry/[slug]",
+    "/tools/pricing/[slug]",
+    "/tools/tag/[slug]",
+    "/tools/tool-type/[slug]",
+    "/tools/use-case/[slug]",
+    "/tools/[slug]",
+    "/use-case",
+    "/use-case/[slug]",
+    "/workflow",
+    "/workflow/[slug]"
+  ],
+  "edges": [
+    {
+      "from": "/ai-model",
+      "to": "/ai-model/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/ai-model",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/ai-tools",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/best",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-model/[slug]",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-news",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/ai-workflows",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/alternatiives-index",
+      "to": "/alternatives/${seed.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/alternatiives-index",
+      "to": "/alternatives-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/best-index",
+      "to": "/best-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/best-index",
+      "to": "/best-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/best-index",
+      "to": "/best/ai-",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/capability-index",
+      "to": "/capability/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/capability-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/compare-index",
+      "to": "/compare-pairs.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/compare-index",
+      "to": "/compare/${[slugA,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/industry-index",
+      "to": "/industry/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/industry-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/industry-index",
+      "to": "/industry-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/learn-ai-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/microcategory-index",
+      "to": "/microcategory/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/microcategory-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/subcategory-index",
+      "to": "/subcategory/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/subcategory-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/tag-index",
+      "to": "/tag/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/tag-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/tag-index",
+      "to": "/tag-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case/index.astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case/",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/use-case-index",
+      "to": "/use-case/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/workflow-index",
+      "to": "/workflow/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alle index/workflow-index",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alle index/workflow-index",
+      "to": "/workflow-pages-rich.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alternatives",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alternatives",
+      "to": "/best",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alternatives",
+      "to": "/alternatives-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives",
+      "to": "/alternatives/${p.seed_tool.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/compare/${a",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/tools/${seed.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/alternatives/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/alternatives/[slug]",
+      "to": "/alternatives-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best",
+      "to": "/best-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best",
+      "to": "/best/${p.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/${s",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/best/[slug]",
+      "to": "/best/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/capability",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/capability",
+      "to": "/industry",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/capability",
+      "to": "/workflow",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/capability/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/capability/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/compare",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/compare",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/compare",
+      "to": "/best",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/compare",
+      "to": "/compare-pairs.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare",
+      "to": "/compare/${[p.tool_a,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/tools/${a.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/tools/${b.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/alternatives/${a.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/alternatives/${b.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/compare/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/compare/[slug]",
+      "to": "/compare-pages-rich.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/ai-tools/category/${cat.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/best",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/use-case",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/tools/pricing/free",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/tools/pricing/freemium",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/submit-tool",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/category-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/compare/${[a,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-writing",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-image-generation",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-coding",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-marketing",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-video",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/write-blog-posts",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/generate-code",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/write-seo-articles",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/best/ai-design",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/",
+      "to": "/tools/${t.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/industry",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/industry",
+      "to": "/capability",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/industry",
+      "to": "/workflow",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/industry",
+      "to": "/industry-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/industry",
+      "to": "/industry/${p.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/industry/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/industry/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/industry/[slug]",
+      "to": "/industry-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/industry/[slug]",
+      "to": "/industry",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/integration",
+      "to": "/integration/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/integration",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/integration/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/integration/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/learn-ai",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/microcategory",
+      "to": "/microcategory/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/microcategory",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/microcategory/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/microcategory/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/prompts",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/resources",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/subcategory",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/subcategory",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/subcategory",
+      "to": "/capability",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/subcategory/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/subcategory/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/submit-tool",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tag",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tag",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tag",
+      "to": "/subcategory",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tag",
+      "to": "/tag-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tag",
+      "to": "/tag/${p.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tag/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tag/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tag/[slug]",
+      "to": "/tag-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tag/[slug]",
+      "to": "/tag",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/best/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/tools/pricing/free",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/tools/pricing/freemium",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/vs",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/category-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/category/[slug]",
+      "to": "/category-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/feature/[slug]",
+      "to": "/feature-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/feature/[slug]",
+      "to": "/feature-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/feature/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/category/${cat.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/industry",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/pricing/free",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/pricing/freemium",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/compare",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/best",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/alternatives",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/use-case",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/workflow",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/capability",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/subcategory",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/tag",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/submit-tool",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/index.astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/category-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/featured-tools.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/pricing/paid",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/feature/open-source",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/feature/no-code",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/feature/api-access",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/feature/mobile-app",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/tools/feature/team-features",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/healthcare",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/finance",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/education",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/e-commerce",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/software-development",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/media-and-publishing",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/real-estate",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/marketing",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/gaming",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/hospitality",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/manufacturing",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools",
+      "to": "/industry/saas",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/industry/[slug]",
+      "to": "/industry-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/industry/[slug]",
+      "to": "/industry-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/industry/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/pricing/[slug]",
+      "to": "/pricing-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/pricing/[slug]",
+      "to": "/pricing-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/pricing/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/tag/[slug]",
+      "to": "/tag-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/tag/[slug]",
+      "to": "/tag-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/tag/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/tool-type/[slug]",
+      "to": "/tool-type-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/tool-type/[slug]",
+      "to": "/tool-type-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/tool-type/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/use-case/[slug]",
+      "to": "/use-case-paths.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/use-case/[slug]",
+      "to": "/use-case-map.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/use-case/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/tools/category/${category",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/compare/${[slug,",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/use-case/${wf.use_case",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/compare/${pair",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/alternatives/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/use-case/${uc",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/best/${category",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/best/${subcategory",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/tools/${alt.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/tools/tag/${tag",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/tools/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/tools/[slug]",
+      "to": "/tools/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/use-case",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/use-case",
+      "to": "/use-case/index.astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/use-case",
+      "to": "/use-case/",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/use-case",
+      "to": "/use-case-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/use-case",
+      "to": "/use-case/${slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/use-case/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/use-case/[slug]",
+      "to": "/use-case",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/use-case/[slug]",
+      "to": "/use-case/[slug].astro",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/use-case/[slug]",
+      "to": "/use-case-cluster-pages.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/workflow",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/workflow",
+      "to": "/use-case",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/workflow",
+      "to": "/capability",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/workflow",
+      "to": "/workflow-pages-rich.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/workflow",
+      "to": "/workflow/${p.slug",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/workflow/[slug]",
+      "to": "/",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/workflow/[slug]",
+      "to": "/tools",
+      "existsAsRoute": true
+    },
+    {
+      "from": "/workflow/[slug]",
+      "to": "/workflow-pages-rich.json",
+      "existsAsRoute": false
+    },
+    {
+      "from": "/workflow/[slug]",
+      "to": "/workflow",
+      "existsAsRoute": true
+    }
+  ],
+  "inDegree": {
+    "/ai-model": 0,
+    "/ai-model/[slug]": 0,
+    "/ai-news": 0,
+    "/ai-workflows": 0,
+    "/alle index/alternatiives-index": 0,
+    "/alle index/best-index": 0,
+    "/alle index/capability-index": 0,
+    "/alle index/compare-index": 0,
+    "/alle index/industry-index": 0,
+    "/alle index/learn-ai-index": 0,
+    "/alle index/microcategory-index": 0,
+    "/alle index/subcategory-index": 0,
+    "/alle index/tag-index": 0,
+    "/alle index/use-case-index": 0,
+    "/alle index/workflow-index": 0,
+    "/alternatives": 7,
+    "/alternatives/[slug]": 0,
+    "/best": 6,
+    "/best/[slug]": 0,
+    "/capability": 4,
+    "/capability/[slug]": 0,
+    "/compare": 7,
+    "/compare/[slug]": 0,
+    "/": 41,
+    "/industry": 3,
+    "/industry/[slug]": 0,
+    "/integration": 0,
+    "/integration/[slug]": 0,
+    "/learn-ai": 0,
+    "/microcategory": 0,
+    "/microcategory/[slug]": 0,
+    "/prompts": 0,
+    "/resources": 0,
+    "/subcategory": 2,
+    "/subcategory/[slug]": 0,
+    "/submit-tool": 2,
+    "/tag": 2,
+    "/tag/[slug]": 0,
+    "/tools/category/[slug]": 0,
+    "/tools/feature/[slug]": 0,
+    "/tools": 22,
+    "/tools/industry/[slug]": 0,
+    "/tools/pricing/[slug]": 0,
+    "/tools/tag/[slug]": 0,
+    "/tools/tool-type/[slug]": 0,
+    "/tools/use-case/[slug]": 0,
+    "/tools/[slug]": 0,
+    "/use-case": 4,
+    "/use-case/[slug]": 0,
+    "/workflow": 4,
+    "/workflow/[slug]": 0
+  },
+  "outDegree": {
+    "/ai-model": 2,
+    "/ai-model/[slug]": 6,
+    "/ai-news": 1,
+    "/ai-workflows": 1,
+    "/alle index/alternatiives-index": 2,
+    "/alle index/best-index": 3,
+    "/alle index/capability-index": 2,
+    "/alle index/compare-index": 2,
+    "/alle index/industry-index": 3,
+    "/alle index/learn-ai-index": 1,
+    "/alle index/microcategory-index": 2,
+    "/alle index/subcategory-index": 2,
+    "/alle index/tag-index": 3,
+    "/alle index/use-case-index": 5,
+    "/alle index/workflow-index": 3,
+    "/alternatives": 5,
+    "/alternatives/[slug]": 6,
+    "/best": 5,
+    "/best/[slug]": 11,
+    "/capability": 3,
+    "/capability/[slug]": 2,
+    "/compare": 5,
+    "/compare/[slug]": 8,
+    "/": 22,
+    "/industry": 5,
+    "/industry/[slug]": 4,
+    "/integration": 2,
+    "/integration/[slug]": 2,
+    "/learn-ai": 1,
+    "/microcategory": 2,
+    "/microcategory/[slug]": 2,
+    "/prompts": 1,
+    "/resources": 1,
+    "/subcategory": 3,
+    "/subcategory/[slug]": 2,
+    "/submit-tool": 1,
+    "/tag": 5,
+    "/tag/[slug]": 4,
+    "/tools/category/[slug]": 8,
+    "/tools/feature/[slug]": 3,
+    "/tools": 37,
+    "/tools/industry/[slug]": 3,
+    "/tools/pricing/[slug]": 3,
+    "/tools/tag/[slug]": 3,
+    "/tools/tool-type/[slug]": 3,
+    "/tools/use-case/[slug]": 3,
+    "/tools/[slug]": 14,
+    "/use-case": 5,
+    "/use-case/[slug]": 4,
+    "/workflow": 5,
+    "/workflow/[slug]": 4
+  }
+}

@@ -1,0 +1,8 @@
+---
+interface Props { message?: string; linkHref?: string; linkLabel?: string; }
+const { message = "No results found.", linkHref = "/tools", linkLabel = "Browse all AI tools →" } = Astro.props;
+---
+<div class="empty-state">
+  <p>{message}</p>
+  {linkHref && <a href={linkHref} class="btn btn--ghost">{linkLabel}</a>}
+</div>

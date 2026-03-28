@@ -1,0 +1,122 @@
+{
+  "categories": [
+    {
+      "slug": "ai-audio-voice",
+      "name": "AI Audio & Voice",
+      "url": "/tools/ai-audio-voice"
+    },
+    {
+      "slug": "ai-automation-agents",
+      "name": "AI Automation & Agents",
+      "url": "/tools/ai-automation-agents"
+    },
+    {
+      "slug": "ai-business-operations",
+      "name": "AI Business Operations",
+      "url": "/tools/ai-business-operations"
+    },
+    {
+      "slug": "ai-coding",
+      "name": "AI Coding",
+      "url": "/tools/ai-coding"
+    },
+    {
+      "slug": "ai-customer-support",
+      "name": "AI Customer Support",
+      "url": "/tools/ai-customer-support"
+    },
+    {
+      "slug": "ai-data-analytics",
+      "name": "AI Data & Analytics",
+      "url": "/tools/ai-data-analytics"
+    },
+    {
+      "slug": "ai-design",
+      "name": "AI Design",
+      "url": "/tools/ai-design"
+    },
+    {
+      "slug": "ai-education-learning",
+      "name": "AI Education & Learning",
+      "url": "/tools/ai-education-learning"
+    },
+    {
+      "slug": "ai-image-generation",
+      "name": "AI Image Generation",
+      "url": "/tools/ai-image-generation"
+    },
+    {
+      "slug": "ai-marketing",
+      "name": "AI Marketing",
+      "url": "/tools/ai-marketing"
+    },
+    {
+      "slug": "ai-productivity",
+      "name": "AI Productivity",
+      "url": "/tools/ai-productivity"
+    },
+    {
+      "slug": "ai-research",
+      "name": "AI Research",
+      "url": "/tools/ai-research"
+    },
+    {
+      "slug": "ai-sales",
+      "name": "AI Sales",
+      "url": "/tools/ai-sales"
+    },
+    {
+      "slug": "ai-video",
+      "name": "AI Video",
+      "url": "/tools/ai-video"
+    },
+    {
+      "slug": "ai-writing",
+      "name": "AI Writing",
+      "url": "/tools/ai-writing"
+    }
+  ],
+  "top_use_cases": [
+    {
+      "slug": "analyze-spreadsheets",
+      "name": "analyze spreadsheets",
+      "url": "/use-case/analyze-spreadsheets"
+    },
+    {
+      "slug": "automate-browser-tasks",
+      "name": "automate browser tasks",
+      "url": "/use-case/automate-browser-tasks"
+    },
+    {
+      "slug": "automate-customer-support",
+      "name": "automate customer support",
+      "url": "/use-case/automate-customer-support"
+    },
+    {
+      "slug": "automate-social-posting",
+      "name": "automate social posting",
+      "url": "/use-case/automate-social-posting"
+    },
+    {
+      "slug": "build-ai-agents",
+      "name": "build ai agents",
+      "url": "/use-case/build-ai-agents"
+    },
+    {
+      "slug": "build-full-stack-apps",
+      "name": "build full-stack apps",
+      "url": "/use-case/build-full-stack-apps"
+    },
+    {
+      "slug": "build-landing-pages",
+      "name": "build landing pages",
+      "url": "/use-case/build-landing-pages"
+    },
+    {
+      "slug": "build-quizzes",
+      "name": "build quizzes",
+      "url": "/use-case/build-quizzes"
+    }
+  ],
+  "hubs": []
+}

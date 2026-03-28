@@ -1,0 +1,2811 @@
+[
+  {
+    "slug": "claude-3",
+    "route": "/models/claude-3",
+    "meta": {
+      "slug": "claude-3",
+      "name": "claude-3",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "haechi-ai",
+        "name": "Haechi Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/haechiai.com",
+        "logo_domain": "haechiai.com",
+        "website_url": "https://haechiai.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "chat100-ai",
+        "name": "Chat100 Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/chat100.ai",
+        "logo_domain": "chat100.ai",
+        "website_url": "https://chat100.ai",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "chat100-ai-free-chatgpt-4o-and-claude-3-5-sonnet",
+        "name": "Chat100 Ai Free Chatgpt 4o And Claude 3",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/chat100.ai",
+        "logo_domain": "chat100.ai",
+        "website_url": "https://chat100.ai",
+        "score_overall": 50,
+        "is_featured": false
+      }
+    ],
+    "count": 3,
+    "seo": {
+      "title": "Best claude-3 Tools 2026 — 3+ AI Tools",
+      "description": "Discover the best claude-3 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "claude-3.5",
+    "route": "/models/claude-3.5",
+    "meta": {
+      "slug": "claude-3.5",
+      "name": "claude-3.5",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "chat100-ai",
+        "name": "Chat100 Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/chat100.ai",
+        "logo_domain": "chat100.ai",
+        "website_url": "https://chat100.ai",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "chat100-ai-free-chatgpt-4o-and-claude-3-5-sonnet",
+        "name": "Chat100 Ai Free Chatgpt 4o And Claude 3",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/chat100.ai",
+        "logo_domain": "chat100.ai",
+        "website_url": "https://chat100.ai",
+        "score_overall": 50,
+        "is_featured": false
+      }
+    ],
+    "count": 2,
+    "seo": {
+      "title": "Best claude-3.5 Tools 2026 — 2+ AI Tools",
+      "description": "Discover the best claude-3.5 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "claude-3.7",
+    "route": "/models/claude-3.7",
+    "meta": {
+      "slug": "claude-3.7",
+      "name": "claude-3.7",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best claude-3.7 Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best claude-3.7 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "dall-e",
+    "route": "/models/dall-e",
+    "meta": {
+      "slug": "dall-e",
+      "name": "dall-e",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "dall-e-3",
+        "name": "DALL-E 3",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/openai.com",
+        "logo_domain": "openai.com",
+        "website_url": "https://openai.com/dall-e-3",
+        "score_overall": 99992,
+        "is_featured": false
+      },
+      {
+        "slug": "gptsidekick",
+        "name": "Gptsidekick",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gptsidekick.ai",
+        "logo_domain": "gptsidekick.ai",
+        "website_url": "https://gptsidekick.ai",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "repromptify",
+        "name": "Repromptify",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/repromptify.com",
+        "logo_domain": "repromptify.com",
+        "website_url": "https://repromptify.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-design-training",
+        "name": "Ai Design Training",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aidesigntraining.com",
+        "logo_domain": "aidesigntraining.com",
+        "website_url": "https://aidesigntraining.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "promptpadawan",
+        "name": "Promptpadawan",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/promptpadawan.fr",
+        "logo_domain": "promptpadawan.fr",
+        "website_url": "https://promptpadawan.fr",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "promptrr-ai-prompt-marketplace",
+        "name": "Promptrr Ai Prompt Marketplace",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/promptrr.io",
+        "logo_domain": "promptrr.io",
+        "website_url": "https://promptrr.io",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "ciel",
+        "name": "Ciel",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/ciel.chat",
+        "logo_domain": "ciel.chat",
+        "website_url": "https://ciel.chat",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "solvemigo-chatgpt-for-telegram",
+        "name": "Solvemigo Chatgpt For Telegram",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/solvemigo.com",
+        "logo_domain": "solvemigo.com",
+        "website_url": "https://solvemigo.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "splend-ai-art-generator-nft",
+        "name": "Splend Ai Art Generator Nft",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/splend.ai",
+        "logo_domain": "splend.ai",
+        "website_url": "https://splend.ai",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "mini-dalle-3-online",
+        "name": "Mini Dalle 3 Online",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/dalle3.org",
+        "logo_domain": "dalle3.org",
+        "website_url": "https://dalle3.org",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "infinite-adversaries",
+        "name": "Infinite Adversaries",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/infiniteadversaries.com",
+        "logo_domain": "infiniteadversaries.com",
+        "website_url": "https://infiniteadversaries.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "textgpt",
+        "name": "Textgpt",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/textgpt.net",
+        "logo_domain": "textgpt.net",
+        "website_url": "https://textgpt.net",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "free-3d-social-media-profiles-maker",
+        "name": "Free 3d Social Media Profiles Maker",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/fusionartai.com",
+        "logo_domain": "fusionartai.com",
+        "website_url": "https://www.fusionartai.com/3d-social-media-profiles-maker",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "yeschat-gpt4v-dalle3-claude-2-all-in-one",
+        "name": "Yeschat Gpt4v Dalle3 Claude 2 All In One",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/yeschat.ai",
+        "logo_domain": "yeschat.ai",
+        "website_url": "https://www.yeschat.ai",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "aidle-wordle-dall-e",
+        "name": "Aidle Wordle Dall E",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aidle.co",
+        "logo_domain": "aidle.co",
+        "website_url": "https://aidle.co",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-stuff",
+        "name": "Ai Stuff",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aiandstuff.com",
+        "logo_domain": "aiandstuff.com",
+        "website_url": "https://aiandstuff.com",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "charades-ai-1",
+        "name": "Charades Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/charades.ai",
+        "logo_domain": "charades.ai",
+        "website_url": "https://charades.ai",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "dall-e-cli",
+        "name": "Dall E Cli",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/dallecli.com",
+        "logo_domain": "dallecli.com",
+        "website_url": "https://dallecli.com",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "opensource-ai-stories-generator",
+        "name": "Opensource Ai Stories Generator",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/storiesgenerator.com",
+        "logo_domain": "storiesgenerator.com",
+        "website_url": "https://storiesgenerator.com",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "mammoth-for-mastodon",
+        "name": "Mammoth For Mastodon",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/mammothsocial.app",
+        "logo_domain": "mammothsocial.app",
+        "website_url": "https://www.mammothsocial.app",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "yeschat",
+        "name": "Yeschat",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/yeschat.ai",
+        "logo_domain": "yeschat.ai",
+        "website_url": "https://yeschat.ai",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "salvador-dall-e-3-ui",
+        "name": "Salvador Dall E 3 Ui",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/salvadorui.com",
+        "logo_domain": "salvadorui.com",
+        "website_url": "https://salvadorui.com",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "dalle-dapper",
+        "name": "Dalle Dapper",
+        "category": "ai-image-generation",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/dalle-dapper.com",
+        "logo_domain": "dalle-dapper.com",
+        "website_url": "https://dalle-dapper.com",
+        "score_overall": 38,
+        "is_featured": false
+      }
+    ],
+    "count": 23,
+    "seo": {
+      "title": "Best dall-e Tools 2026 — 23+ AI Tools",
+      "description": "Discover the best dall-e AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "deepseek",
+    "route": "/models/deepseek",
+    "meta": {
+      "slug": "deepseek",
+      "name": "deepseek",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "side-reader",
+        "name": "Side Reader",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/side-reader.com",
+        "logo_domain": "side-reader.com",
+        "website_url": "https://www.side-reader.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "kie-ai-affordable-secure-deepseek-r1-api",
+        "name": "Kie Ai Affordable Secure Deepseek R1 Api",
+        "category": "ai-video",
+        "subcategory": "short-form-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/kie.ai",
+        "logo_domain": "kie.ai",
+        "website_url": "https://kie.ai",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "gptbox",
+        "name": "Gptbox",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gptbox.app",
+        "logo_domain": "gptbox.app",
+        "website_url": "https://www.gptbox.app",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek-v3",
+        "name": "Deepseek",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/deepseekv3.org",
+        "logo_domain": "deepseekv3.org",
+        "website_url": "https://deepseekv3.org",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "janus-pro-ai-pro",
+        "name": "Janus Pro Ai Pro",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/janusproai.pro",
+        "logo_domain": "janusproai.pro",
+        "website_url": "https://janusproai.pro",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek-nederlands",
+        "name": "Deepseek Nederlands",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/deepseeknederlands.nl",
+        "logo_domain": "deepseeknederlands.nl",
+        "website_url": "https://deepseeknederlands.nl",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek-online",
+        "name": "Deepseek Online",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/deepseekv3.net",
+        "logo_domain": "deepseekv3.net",
+        "website_url": "https://www.deepseekv3.net",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek-r1",
+        "name": "Deepseek R1",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/deepseek-r1.com",
+        "logo_domain": "deepseek-r1.com",
+        "website_url": "https://deepseek-r1.com",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek-v3-1",
+        "name": "Deepseek",
+        "category": "ai-sales",
+        "subcategory": "outreach",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/deepseekv3.vip",
+        "logo_domain": "deepseekv3.vip",
+        "website_url": "https://deepseekv3.vip",
+        "score_overall": 39,
+        "is_featured": false
+      },
+      {
+        "slug": "translateimg",
+        "name": "Translateimg",
+        "category": "ai-writing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/translateimg.com",
+        "logo_domain": "translateimg.com",
+        "website_url": "https://translateimg.com",
+        "score_overall": 43,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek",
+        "name": "Deepseek",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/deepseek.com",
+        "logo_domain": "deepseek.com",
+        "website_url": "https://www.deepseek.com",
+        "score_overall": 40,
+        "is_featured": false
+      },
+      {
+        "slug": "deepseek-r1-free",
+        "name": "Deepseek R1 Free",
+        "category": "ai-writing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/deepseekfree.ai",
+        "logo_domain": "deepseekfree.ai",
+        "website_url": "http://deepseekfree.ai",
+        "score_overall": 38,
+        "is_featured": false
+      },
+      {
+        "slug": "janus-pro",
+        "name": "Janus Pro",
+        "category": "ai-productivity",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/janusai.pro",
+        "logo_domain": "janusai.pro",
+        "website_url": "https://janusai.pro",
+        "score_overall": 37,
+        "is_featured": false
+      }
+    ],
+    "count": 13,
+    "seo": {
+      "title": "Best deepseek Tools 2026 — 13+ AI Tools",
+      "description": "Discover the best deepseek AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "elevenlabs",
+    "route": "/models/elevenlabs",
+    "meta": {
+      "slug": "elevenlabs",
+      "name": "elevenlabs",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "elevenlabs",
+        "name": "ElevenLabs",
+        "category": "ai-audio-voice",
+        "subcategory": "voice-cloning",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/elevenlabs.io",
+        "logo_domain": "elevenlabs.io",
+        "website_url": "https://elevenlabs.io",
+        "score_overall": 99988,
+        "is_featured": false
+      },
+      {
+        "slug": "overvoice",
+        "name": "Overvoice",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/overvoice.ai",
+        "logo_domain": "overvoice.ai",
+        "website_url": "https://overvoice.ai",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "elevenlabs-io",
+        "name": "Elevenlabs",
+        "category": "ai-audio-voice",
+        "subcategory": "voice-cloning",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/elevenlabs.io",
+        "logo_domain": "elevenlabs.io",
+        "website_url": "https://elevenlabs.io",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "wavflow-io",
+        "name": "Wavflow",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/wavflow.io",
+        "logo_domain": "wavflow.io",
+        "website_url": "https://wavflow.io",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-engineer-pack",
+        "name": "Ai Engineer Pack",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aiengineerpack.com",
+        "logo_domain": "aiengineerpack.com",
+        "website_url": "https://www.aiengineerpack.com",
+        "score_overall": 41,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-suite-azen",
+        "name": "Ai Suite Azen",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/azen.app",
+        "logo_domain": "azen.app",
+        "website_url": "https://www.azen.app",
+        "score_overall": 45,
+        "is_featured": false
+      }
+    ],
+    "count": 6,
+    "seo": {
+      "title": "Best elevenlabs Tools 2026 — 6+ AI Tools",
+      "description": "Discover the best elevenlabs AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "flux",
+    "route": "/models/flux",
+    "meta": {
+      "slug": "flux",
+      "name": "flux",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "flux-ai",
+        "name": "Flux Ai",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux1.ai",
+        "logo_domain": "flux1.ai",
+        "website_url": "https://flux1.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-ai-ai",
+        "name": "Flux Ai Ai",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux-ai.io",
+        "logo_domain": "flux-ai.io",
+        "website_url": "https://flux-ai.io",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "fluxy-ai",
+        "name": "Fluxy Ai",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxyai.com",
+        "logo_domain": "fluxyai.com",
+        "website_url": "https://www.fluxyai.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-video-ai",
+        "name": "Flux Video Ai",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxvid.com",
+        "logo_domain": "fluxvid.com",
+        "website_url": "https://www.fluxvid.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-ai-lab",
+        "name": "Flux Ai Lab",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxailab.com",
+        "logo_domain": "fluxailab.com",
+        "website_url": "https://fluxailab.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "fluxr-ai",
+        "name": "Fluxr Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxrai.com",
+        "logo_domain": "fluxrai.com",
+        "website_url": "https://fluxrai.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "outreach-ai-assistant-connectflux-ai",
+        "name": "Outreach Ai Assistant Connectflux Ai",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/connectflux.ai",
+        "logo_domain": "connectflux.ai",
+        "website_url": "https://connectflux.ai",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "fluxai-pro",
+        "name": "Fluxai Pro",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxai.pro",
+        "logo_domain": "fluxai.pro",
+        "website_url": "https://fluxai.pro",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "fluximagegenerators",
+        "name": "Fluximagegenerators",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluximagegenerators.com",
+        "logo_domain": "fluximagegenerators.com",
+        "website_url": "https://www.fluximagegenerators.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "open-source-flux-ai-image-generator",
+        "name": "Open Source Flux Ai Image Generator",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxaipro.art",
+        "logo_domain": "fluxaipro.art",
+        "website_url": "https://fluxaipro.art",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-image-ai-empowered-prompt-by-gpt",
+        "name": "Flux Image Ai Empowered Prompt",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluximage-ai.com",
+        "logo_domain": "fluximage-ai.com",
+        "website_url": "https://fluximage-ai.com",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "fluxai-art-ai-image-generator-free-online",
+        "name": "Fluxai Art Ai Image Generator Free Online",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxai.art",
+        "logo_domain": "fluxai.art",
+        "website_url": "https://fluxai.art",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "fluxpro-ai",
+        "name": "Fluxpro Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxpro.ai",
+        "logo_domain": "fluxpro.ai",
+        "website_url": "https://fluxpro.ai",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "fluxaigen",
+        "name": "Fluxaigen",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxaigen.com",
+        "logo_domain": "fluxaigen.com",
+        "website_url": "https://fluxaigen.com",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "flux1-one",
+        "name": "Flux1 One",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux1.one",
+        "logo_domain": "flux1.one",
+        "website_url": "https://flux1.one",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-ai-proweb",
+        "name": "Flux Ai Proweb",
+        "category": "ai-video",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluxproweb.com",
+        "logo_domain": "fluxproweb.com",
+        "website_url": "https://fluxproweb.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-flux-1",
+        "name": "Ai Flux",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux1.org",
+        "logo_domain": "flux1.org",
+        "website_url": "https://flux1.org",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-1-ai",
+        "name": "Flux 1 Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux1ai.com",
+        "logo_domain": "flux1ai.com",
+        "website_url": "https://flux1ai.com",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-1-image-schnell-realism-lora",
+        "name": "Flux 1 Image Schnell Realism Lora",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluximage.app",
+        "logo_domain": "fluximage.app",
+        "website_url": "https://fluximage.app",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-1-pro",
+        "name": "Flux 1 Pro",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux-1.net",
+        "logo_domain": "flux-1.net",
+        "website_url": "https://flux-1.net",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-ai-custom-model",
+        "name": "Flux Ai Custom Model",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux1ai.ai",
+        "logo_domain": "flux1ai.ai",
+        "website_url": "https://flux1ai.ai",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-image-ai-generator-flux-1-ai-image",
+        "name": "Flux Image Ai Generator Flux 1 Ai Image",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluximage.co",
+        "logo_domain": "fluximage.co",
+        "website_url": "https://fluximage.co",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-kontext",
+        "name": "Flux Kontext",
+        "category": "ai-image-generation",
+        "subcategory": "image-editing",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux-kontext.app",
+        "logo_domain": "flux-kontext.app",
+        "website_url": "https://flux-kontext.app",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "flux1-kontext",
+        "name": "Flux1 Kontext",
+        "category": "ai-image-generation",
+        "subcategory": "image-editing",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fluximage.co",
+        "logo_domain": "fluximage.co",
+        "website_url": "https://fluximage.co",
+        "score_overall": 46,
+        "is_featured": false
+      }
+    ],
+    "count": 24,
+    "seo": {
+      "title": "Best flux Tools 2026 — 24+ AI Tools",
+      "description": "Discover the best flux AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gemini-1.5",
+    "route": "/models/gemini-1.5",
+    "meta": {
+      "slug": "gemini-1.5",
+      "name": "gemini-1.5",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best gemini-1.5 Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best gemini-1.5 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gemini-2.0",
+    "route": "/models/gemini-2.0",
+    "meta": {
+      "slug": "gemini-2.0",
+      "name": "gemini-2.0",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best gemini-2.0 Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best gemini-2.0 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gpt-4",
+    "route": "/models/gpt-4",
+    "meta": {
+      "slug": "gpt-4",
+      "name": "gpt-4",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "learn-prompting-pro",
+        "name": "Learn Prompting Pro",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/learnprompting.pro",
+        "logo_domain": "learnprompting.pro",
+        "website_url": "https://learnprompting.pro",
+        "score_overall": 59,
+        "is_featured": false
+      },
+      {
+        "slug": "blogbud-ai",
+        "name": "Blogbud Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/blogbud.ai",
+        "logo_domain": "blogbud.ai",
+        "website_url": "https://blogbud.ai",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt-4-ai-content-creator",
+        "name": "Gpt 4 Ai Content Creator",
+        "category": "ai-marketing",
+        "subcategory": "social-media",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/metrotechs.io",
+        "logo_domain": "metrotechs.io",
+        "website_url": "https://metrotechs.io",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "overvoice",
+        "name": "Overvoice",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/overvoice.ai",
+        "logo_domain": "overvoice.ai",
+        "website_url": "https://overvoice.ai",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "videogpt",
+        "name": "Videogpt",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/video-gpt.io",
+        "logo_domain": "video-gpt.io",
+        "website_url": "https://video-gpt.io",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "my-ai-ninja",
+        "name": "My Ai Ninja",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/myai.ninja",
+        "logo_domain": "myai.ninja",
+        "website_url": "https://www.myai.ninja",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "transcope-io",
+        "name": "Transcope",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/transcope.io",
+        "logo_domain": "transcope.io",
+        "website_url": "https://transcope.io",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpt-email",
+        "name": "Chatgpt Email",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatgptemail.ai",
+        "logo_domain": "chatgptemail.ai",
+        "website_url": "https://chatgptemail.ai",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpr",
+        "name": "Chatgpr",
+        "category": "ai-marketing",
+        "subcategory": "social-media",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/robowriterai.com",
+        "logo_domain": "robowriterai.com",
+        "website_url": "https://www.robowriterai.com",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpt-fran-ais-french",
+        "name": "Chatgpt Fran Ais French",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/chatgptfrench.org",
+        "logo_domain": "chatgptfrench.org",
+        "website_url": "https://chatgptfrench.org",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt4sales",
+        "name": "Gpt4sales",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gpt4sales.ai",
+        "logo_domain": "gpt4sales.ai",
+        "website_url": "https://www.gpt4sales.ai",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "gptsidekick",
+        "name": "Gptsidekick",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gptsidekick.ai",
+        "logo_domain": "gptsidekick.ai",
+        "website_url": "https://gptsidekick.ai",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "scholarturbo",
+        "name": "Scholarturbo",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/scholarturbo.com",
+        "logo_domain": "scholarturbo.com",
+        "website_url": "https://scholarturbo.com",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "repromptify",
+        "name": "Repromptify",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/repromptify.com",
+        "logo_domain": "repromptify.com",
+        "website_url": "https://repromptify.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "socialpostgpt",
+        "name": "Socialpostgpt",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/socialpostgpt.xyz",
+        "logo_domain": "socialpostgpt.xyz",
+        "website_url": "https://socialpostgpt.xyz",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "your-ai",
+        "name": "Your Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/your-ai.net",
+        "logo_domain": "your-ai.net",
+        "website_url": "https://your-ai.net",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "mailbuddy-chatgpt-ai-email-assistant",
+        "name": "Mailbuddy Chatgpt Ai Email Assistant",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/mailbuddy.ai",
+        "logo_domain": "mailbuddy.ai",
+        "website_url": "https://mailbuddy.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt-unbound",
+        "name": "Gpt Unbound",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gptunbound.com",
+        "logo_domain": "gptunbound.com",
+        "website_url": "https://gptunbound.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-content-idea-generator",
+        "name": "Ai Content Idea Generator",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/lazywrite.com",
+        "logo_domain": "lazywrite.com",
+        "website_url": "https://lazywrite.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "brrrwrite",
+        "name": "Brrrwrite",
+        "category": "ai-sales",
+        "subcategory": "outreach",
+        "microcategory": "cold-email-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/brrrwrite.com",
+        "logo_domain": "brrrwrite.com",
+        "website_url": "https://brrrwrite.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "free-ai-for-work",
+        "name": "Free Ai For Work",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatchat.bio",
+        "logo_domain": "chatchat.bio",
+        "website_url": "https://www.chatchat.bio",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "freeadcopy-com",
+        "name": "Freeadcopy",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/freeadcopy.com",
+        "logo_domain": "freeadcopy.com",
+        "website_url": "https://freeadcopy.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "wordsmith-studio",
+        "name": "Wordsmith Studio",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/wordsmith.studio",
+        "logo_domain": "wordsmith.studio",
+        "website_url": "https://wordsmith.studio",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "zecoba-ai-chat",
+        "name": "Zecoba Ai Chat",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/zai.chat",
+        "logo_domain": "zai.chat",
+        "website_url": "https://zai.chat",
+        "score_overall": 50,
+        "is_featured": false
+      }
+    ],
+    "count": 24,
+    "seo": {
+      "title": "Best gpt-4 Tools 2026 — 24+ AI Tools",
+      "description": "Discover the best gpt-4 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gpt-4.1",
+    "route": "/models/gpt-4.1",
+    "meta": {
+      "slug": "gpt-4.1",
+      "name": "gpt-4.1",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "transcope-io",
+        "name": "Transcope",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/transcope.io",
+        "logo_domain": "transcope.io",
+        "website_url": "https://transcope.io",
+        "score_overall": 54,
+        "is_featured": false
+      }
+    ],
+    "count": 1,
+    "seo": {
+      "title": "Best gpt-4.1 Tools 2026 — 1+ AI Tools",
+      "description": "Discover the best gpt-4.1 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gpt-4o",
+    "route": "/models/gpt-4o",
+    "meta": {
+      "slug": "gpt-4o",
+      "name": "gpt-4o",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "blogbud-ai",
+        "name": "Blogbud Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/blogbud.ai",
+        "logo_domain": "blogbud.ai",
+        "website_url": "https://blogbud.ai",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "overvoice",
+        "name": "Overvoice",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/overvoice.ai",
+        "logo_domain": "overvoice.ai",
+        "website_url": "https://overvoice.ai",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "omnitrain-ai",
+        "name": "Omnitrain Ai",
+        "category": "ai-marketing",
+        "subcategory": "social-media",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/omnitrain.ai",
+        "logo_domain": "omnitrain.ai",
+        "website_url": "https://omnitrain.ai",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "talkr",
+        "name": "Talkr",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/talkr.ai",
+        "logo_domain": "talkr.ai",
+        "website_url": "https://www.talkr.ai",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "dockyai-chatgpt-sidebar-chrome-extension",
+        "name": "Dockyai Chatgpt Sidebar Chrome Extension",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/docky.ai",
+        "logo_domain": "docky.ai",
+        "website_url": "https://docky.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt-4o-click-to-start",
+        "name": "Gpt 4o Click To Start",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gpt-4o.click",
+        "logo_domain": "gpt-4o.click",
+        "website_url": "https://www.gpt-4o.click",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "learnfast-ai-free-ai-physics-solver",
+        "name": "Learnfast Ai Free Ai Physics Solver",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/learnfast.ai",
+        "logo_domain": "learnfast.ai",
+        "website_url": "https://learnfast.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "novaapp-ai",
+        "name": "Novaapp Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/novaapp.ai",
+        "logo_domain": "novaapp.ai",
+        "website_url": "https://novaapp.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "maxychat",
+        "name": "Maxychat",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/maxychat.com",
+        "logo_domain": "maxychat.com",
+        "website_url": "https://maxychat.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "omnichannel",
+        "name": "Omnichannel",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/omni.us",
+        "logo_domain": "omni.us",
+        "website_url": "https://www.omni.us",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpt4o",
+        "name": "Chatgpt4o",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatgpt4o.ai",
+        "logo_domain": "chatgpt4o.ai",
+        "website_url": "https://chatgpt4o.ai",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpt4omini",
+        "name": "Chatgpt4omini",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatgpt4omini.net",
+        "logo_domain": "chatgpt4omini.net",
+        "website_url": "https://chatgpt4omini.net",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "chatmate-ai",
+        "name": "Chatmate Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatmate.ai",
+        "logo_domain": "chatmate.ai",
+        "website_url": "https://chatmate.ai",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt-4o-news",
+        "name": "Gpt 4o News",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gpt4o.life",
+        "logo_domain": "gpt4o.life",
+        "website_url": "https://gpt4o.life",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt4o-so-chatgpt-4o-free-online",
+        "name": "Gpt4o So Chatgpt 4o Free Online",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gpt4o.so",
+        "logo_domain": "gpt4o.so",
+        "website_url": "https://gpt4o.so",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "testimonialeasy",
+        "name": "Testimonialeasy",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/testimonialeasy.com",
+        "logo_domain": "testimonialeasy.com",
+        "website_url": "https://testimonialeasy.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "the-guide-of-gpt-4o",
+        "name": "The Guide Of Gpt 4o",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/the-gpt-4o.com",
+        "logo_domain": "the-gpt-4o.com",
+        "website_url": "https://www.the-gpt-4o.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "ecomail",
+        "name": "Ecomail",
+        "category": "ai-marketing",
+        "subcategory": "email-marketing",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/ecomail.app",
+        "logo_domain": "ecomail.app",
+        "website_url": "https://ecomail.app",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "gpt4omini-app",
+        "name": "Gpt4omini",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/gpt4omini.app",
+        "logo_domain": "gpt4omini.app",
+        "website_url": "https://gpt4omini.app",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "omniai-club",
+        "name": "Omniai Club",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/omniai.club",
+        "logo_domain": "omniai.club",
+        "website_url": "https://omniai.club",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "omnis",
+        "name": "Omnis",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/tryomnis.com",
+        "logo_domain": "tryomnis.com",
+        "website_url": "https://www.tryomnis.com",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "omnidock",
+        "name": "Omnidock",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/omnidock.io",
+        "logo_domain": "omnidock.io",
+        "website_url": "https://omnidock.io",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-math-solver-by-gpt-4o-free-online",
+        "name": "Ai Math Solver",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/mymathsolver.ai",
+        "logo_domain": "mymathsolver.ai",
+        "website_url": "https://mymathsolver.ai",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "chat100-ai",
+        "name": "Chat100 Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/chat100.ai",
+        "logo_domain": "chat100.ai",
+        "website_url": "https://chat100.ai",
+        "score_overall": 51,
+        "is_featured": false
+      }
+    ],
+    "count": 24,
+    "seo": {
+      "title": "Best gpt-4o Tools 2026 — 24+ AI Tools",
+      "description": "Discover the best gpt-4o AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gpt-5",
+    "route": "/models/gpt-5",
+    "meta": {
+      "slug": "gpt-5",
+      "name": "gpt-5",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "i10x-chatgpt-500-ai-models-tools-full-access-from-just-8",
+        "name": "I10x Chatgpt 500 Ai Models Tools Full Access",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/i10x.ai",
+        "logo_domain": "i10x.ai",
+        "website_url": "https://www.i10x.ai",
+        "score_overall": 51,
+        "is_featured": false
+      }
+    ],
+    "count": 1,
+    "seo": {
+      "title": "Best gpt-5 Tools 2026 — 1+ AI Tools",
+      "description": "Discover the best gpt-5 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "llama-3",
+    "route": "/models/llama-3",
+    "meta": {
+      "slug": "llama-3",
+      "name": "llama-3",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "mybot-chat",
+        "name": "Mybot Chat",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/mybot.chat",
+        "logo_domain": "mybot.chat",
+        "website_url": "https://mybot.chat",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpt4omini",
+        "name": "Chatgpt4omini",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatgpt4omini.net",
+        "logo_domain": "chatgpt4omini.net",
+        "website_url": "https://chatgpt4omini.net",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "online-llama-3-1-405b-chat",
+        "name": "Online Llama 3 1 405b Chat",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/llamaai.online",
+        "logo_domain": "llamaai.online",
+        "website_url": "https://llamaai.online",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "yosunai",
+        "name": "Yosunai",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/yosunai.com",
+        "logo_domain": "yosunai.com",
+        "website_url": "https://yosunai.com",
+        "score_overall": 40,
+        "is_featured": false
+      }
+    ],
+    "count": 4,
+    "seo": {
+      "title": "Best llama-3 Tools 2026 — 4+ AI Tools",
+      "description": "Discover the best llama-3 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "llama-3.1",
+    "route": "/models/llama-3.1",
+    "meta": {
+      "slug": "llama-3.1",
+      "name": "llama-3.1",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "chatgpt4omini",
+        "name": "Chatgpt4omini",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatgpt4omini.net",
+        "logo_domain": "chatgpt4omini.net",
+        "website_url": "https://chatgpt4omini.net",
+        "score_overall": 53,
+        "is_featured": false
+      }
+    ],
+    "count": 1,
+    "seo": {
+      "title": "Best llama-3.1 Tools 2026 — 1+ AI Tools",
+      "description": "Discover the best llama-3.1 AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "mistral",
+    "route": "/models/mistral",
+    "meta": {
+      "slug": "mistral",
+      "name": "mistral",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "the-complete-giude-of-mistral-7b",
+        "name": "The Complete Giude Of Mistral 7b",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/mistral-7b.com",
+        "logo_domain": "mistral-7b.com",
+        "website_url": "https://mistral-7b.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "conversease",
+        "name": "Conversease",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/conversease.com",
+        "logo_domain": "conversease.com",
+        "website_url": "https://conversease.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "mistral",
+        "name": "Mistral",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/usemistral.com",
+        "logo_domain": "usemistral.com",
+        "website_url": "https://www.usemistral.com",
+        "score_overall": 41,
+        "is_featured": false
+      }
+    ],
+    "count": 3,
+    "seo": {
+      "title": "Best mistral Tools 2026 — 3+ AI Tools",
+      "description": "Discover the best mistral AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "mixtral",
+    "route": "/models/mixtral",
+    "meta": {
+      "slug": "mixtral",
+      "name": "mixtral",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best mixtral Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best mixtral AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "sdxl",
+    "route": "/models/sdxl",
+    "meta": {
+      "slug": "sdxl",
+      "name": "sdxl",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "haechi-ai",
+        "name": "Haechi Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/haechiai.com",
+        "logo_domain": "haechiai.com",
+        "website_url": "https://haechiai.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "ares-creative",
+        "name": "Ares Creative",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/arescreative.fr",
+        "logo_domain": "arescreative.fr",
+        "website_url": "https://arescreative.fr",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "sdxl-turbo-online",
+        "name": "Sdxl Turbo Online",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/sdxlturbo.top",
+        "logo_domain": "sdxlturbo.top",
+        "website_url": "https://www.sdxlturbo.top",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "sdxl-turbo-playground",
+        "name": "Sdxl Turbo Playground",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/sdxlturbo.ai",
+        "logo_domain": "sdxlturbo.ai",
+        "website_url": "https://sdxlturbo.ai",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "stable-diffusion-web",
+        "name": "Stable Diffusion Web",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/stablediffusionweb.com",
+        "logo_domain": "stablediffusionweb.com",
+        "website_url": "https://stablediffusionweb.com",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "artimator",
+        "name": "Artimator",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/artimator.io",
+        "logo_domain": "artimator.io",
+        "website_url": "https://artimator.io",
+        "score_overall": 43,
+        "is_featured": false
+      }
+    ],
+    "count": 6,
+    "seo": {
+      "title": "Best sdxl Tools 2026 — 6+ AI Tools",
+      "description": "Discover the best sdxl AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "stable-diffusion",
+    "route": "/models/stable-diffusion",
+    "meta": {
+      "slug": "stable-diffusion",
+      "name": "stable-diffusion",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "promptpadawan",
+        "name": "Promptpadawan",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/promptpadawan.fr",
+        "logo_domain": "promptpadawan.fr",
+        "website_url": "https://promptpadawan.fr",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "whizi",
+        "name": "Whizi",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whizi.io",
+        "logo_domain": "whizi.io",
+        "website_url": "https://whizi.io",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-prompt-search",
+        "name": "Ai Prompt Search",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aipromptsearch.net",
+        "logo_domain": "aipromptsearch.net",
+        "website_url": "https://www.aipromptsearch.net",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "coldreach-yc-w23",
+        "name": "Coldreach Yc W23",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/coldreach.ai",
+        "logo_domain": "coldreach.ai",
+        "website_url": "https://coldreach.ai",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "haechi-ai",
+        "name": "Haechi Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/haechiai.com",
+        "logo_domain": "haechiai.com",
+        "website_url": "https://haechiai.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "stable-diffusion-3-online",
+        "name": "Stable Diffusion 3 Online",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/stablediffusion3.app",
+        "logo_domain": "stablediffusion3.app",
+        "website_url": "https://stablediffusion3.app",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "tresdotsai",
+        "name": "Tresdotsai",
+        "category": "ai-marketing",
+        "subcategory": "social-media",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/tresdotsai.com",
+        "logo_domain": "tresdotsai.com",
+        "website_url": "https://tresdotsai.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "vidmaskpro",
+        "name": "Vidmaskpro",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/vidmask.pro",
+        "logo_domain": "vidmask.pro",
+        "website_url": "https://www.vidmask.pro",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "ogen-ai",
+        "name": "Ogen Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/ogen.ai",
+        "logo_domain": "ogen.ai",
+        "website_url": "https://ogen.ai",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "promptogy",
+        "name": "Promptogy",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/promptogy.com",
+        "logo_domain": "promptogy.com",
+        "website_url": "https://promptogy.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "soreal-ai-studio",
+        "name": "Soreal Ai Studio",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/soreal.ai",
+        "logo_domain": "soreal.ai",
+        "website_url": "https://www.soreal.ai",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "stability-ai-video-generater",
+        "name": "Stability Ai Video Generater",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/stability-ai-video-generater.com",
+        "logo_domain": "stability-ai-video-generater.com",
+        "website_url": "https://stability-ai-video-generater.com",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "agentprod",
+        "name": "Agentprod",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/agentprod.com",
+        "logo_domain": "agentprod.com",
+        "website_url": "https://agentprod.com",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-sdr-kit",
+        "name": "Ai Sdr Kit",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aisdrkit.dev",
+        "logo_domain": "aisdrkit.dev",
+        "website_url": "https://aisdrkit.dev",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "ares-creative",
+        "name": "Ares Creative",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/arescreative.fr",
+        "logo_domain": "arescreative.fr",
+        "website_url": "https://arescreative.fr",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "kirsch-ai",
+        "name": "Kirsch Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/kirsch.ai",
+        "logo_domain": "kirsch.ai",
+        "website_url": "https://www.kirsch.ai",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-emoji-generator",
+        "name": "Ai Emoji Generator",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aiemojigenerator.org",
+        "logo_domain": "aiemojigenerator.org",
+        "website_url": "https://aiemojigenerator.org",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "barbie-ai-generator",
+        "name": "Barbie Ai Generator",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/barbieaigenerator.com",
+        "logo_domain": "barbieaigenerator.com",
+        "website_url": "https://barbieaigenerator.com",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "imagetopromptai",
+        "name": "Imagetopromptai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/imagetopromptai.com",
+        "logo_domain": "imagetopromptai.com",
+        "website_url": "https://buy.imagetopromptai.com",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "latent-labs",
+        "name": "Latent Labs",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/latentlabs.art",
+        "logo_domain": "latentlabs.art",
+        "website_url": "https://www.latentlabs.art",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "pixela-ai",
+        "name": "Pixela Ai",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/pixela.ai",
+        "logo_domain": "pixela.ai",
+        "website_url": "https://pixela.ai",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "runware",
+        "name": "Runware",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/runware.ai",
+        "logo_domain": "runware.ai",
+        "website_url": "https://runware.ai",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "stable-diffusion-model",
+        "name": "Stable Diffusion Model",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/stablediffusion.in",
+        "logo_domain": "stablediffusion.in",
+        "website_url": "https://stablediffusion.in",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "feng-my-shui",
+        "name": "Feng My Shui",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fengmyshui.com",
+        "logo_domain": "fengmyshui.com",
+        "website_url": "https://fengmyshui.com",
+        "score_overall": 46,
+        "is_featured": false
+      }
+    ],
+    "count": 24,
+    "seo": {
+      "title": "Best stable-diffusion Tools 2026 — 24+ AI Tools",
+      "description": "Discover the best stable-diffusion AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "whisper",
+    "route": "/models/whisper",
+    "meta": {
+      "slug": "whisper",
+      "name": "whisper",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [
+      {
+        "slug": "whisperai",
+        "name": "Whisperai",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisperai.co",
+        "logo_domain": "whisperai.co",
+        "website_url": "https://whisperai.co",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "solvemigo-chatgpt-for-telegram",
+        "name": "Solvemigo Chatgpt For Telegram",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/solvemigo.com",
+        "logo_domain": "solvemigo.com",
+        "website_url": "https://solvemigo.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "whispertranscribe",
+        "name": "Whispertranscribe",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whispertranscribe.com",
+        "logo_domain": "whispertranscribe.com",
+        "website_url": "https://whispertranscribe.com/",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "whisperbot",
+        "name": "Whisperbot",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisperize.me",
+        "logo_domain": "whisperize.me",
+        "website_url": "https://whisperize.me",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-audio-kit",
+        "name": "Ai Audio Kit",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": "podcast-transcription",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/pages.dev",
+        "logo_domain": "pages.dev",
+        "website_url": "https://aiaudiokit.pages.dev",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "whisper-wizard",
+        "name": "Whisper Wizard",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisperwizard.com",
+        "logo_domain": "whisperwizard.com",
+        "website_url": "https://whisperwizard.com",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "gowhisper",
+        "name": "Gowhisper",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": "podcast-transcription",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gowhisper.io",
+        "logo_domain": "gowhisper.io",
+        "website_url": "https://gowhisper.io",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "whisper-memos",
+        "name": "Whisper Memos",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whispermemos.com",
+        "logo_domain": "whispermemos.com",
+        "website_url": "https://whispermemos.com",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "recos",
+        "name": "Recos",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/recos.studio",
+        "logo_domain": "recos.studio",
+        "website_url": "https://recos.studio",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "studywhisperer",
+        "name": "Studywhisperer",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/studywhisperer.online",
+        "logo_domain": "studywhisperer.online",
+        "website_url": "https://www.studywhisperer.online",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "whisperui-text-to-speech",
+        "name": "Whisperui Text To Speech",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisperui.com",
+        "logo_domain": "whisperui.com",
+        "website_url": "https://whisperui.com",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "webwhisper",
+        "name": "Webwhisper",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/web-whisper.com",
+        "logo_domain": "web-whisper.com",
+        "website_url": "https://www.web-whisper.com",
+        "score_overall": 42,
+        "is_featured": false
+      },
+      {
+        "slug": "whisper",
+        "name": "Whisper",
+        "category": "ai-sales",
+        "subcategory": "outreach",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisper.fans",
+        "logo_domain": "whisper.fans",
+        "website_url": "https://www.whisper.fans/",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "whisperback",
+        "name": "Whisperback",
+        "category": "ai-writing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisperback.com",
+        "logo_domain": "whisperback.com",
+        "website_url": "https://whisperback.com",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "buddy-whisperer-ai-best-ai-best-friend",
+        "name": "Buddy Whisperer Ai Best Ai Best Friend",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/buddywhisperer.com",
+        "logo_domain": "buddywhisperer.com",
+        "website_url": "https://buddywhisperer.com",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "superwhisper",
+        "name": "Superwhisper",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/superwhisper.com",
+        "logo_domain": "superwhisper.com",
+        "website_url": "https://superwhisper.com",
+        "score_overall": 42,
+        "is_featured": false
+      },
+      {
+        "slug": "web-whisper",
+        "name": "Web Whisper",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/webwhisper.online",
+        "logo_domain": "webwhisper.online",
+        "website_url": "https://webwhisper.online",
+        "score_overall": 42,
+        "is_featured": false
+      },
+      {
+        "slug": "whisperit",
+        "name": "Whisperit",
+        "category": "ai-business-operations",
+        "subcategory": "legal",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisperit.ai",
+        "logo_domain": "whisperit.ai",
+        "website_url": "https://www.whisperit.ai",
+        "score_overall": 41,
+        "is_featured": false
+      },
+      {
+        "slug": "interview-whisper",
+        "name": "Interview Whisper",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/interviewwhisper.com",
+        "logo_domain": "interviewwhisper.com",
+        "website_url": "https://interviewwhisper.com",
+        "score_overall": 43,
+        "is_featured": false
+      },
+      {
+        "slug": "trendwhisperer",
+        "name": "Trendwhisperer",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/trendwhisperer.ai",
+        "logo_domain": "trendwhisperer.ai",
+        "website_url": "https://trendwhisperer.ai",
+        "score_overall": 40,
+        "is_featured": false
+      },
+      {
+        "slug": "type-whisperer-ai",
+        "name": "Type Whisperer Ai",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/typewhisperer.com",
+        "logo_domain": "typewhisperer.com",
+        "website_url": "https://typewhisperer.com",
+        "score_overall": 40,
+        "is_featured": false
+      },
+      {
+        "slug": "whisper-ai",
+        "name": "Whisper Ai",
+        "category": "ai-image-generation",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/whisper.ai",
+        "logo_domain": "whisper.ai",
+        "website_url": "https://whisper.ai",
+        "score_overall": 37,
+        "is_featured": false
+      }
+    ],
+    "count": 22,
+    "seo": {
+      "title": "Best whisper Tools 2026 — 22+ AI Tools",
+      "description": "Discover the best whisper AI tools. Compare features, pricing and reviews."
+    }
+  }
+]

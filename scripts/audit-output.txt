@@ -1,0 +1,352 @@
+╔══════════════════════════════════════════════════════════╗
+║  AIExpertsCorner — Master Audit                         ║
+╚══════════════════════════════════════════════════════════╝
+Root: e:\2026_Github\AI_Experts_V3_PROD\AI_Experts_Repo
+
+GIT BRANCH: clean-build-v3
+
+── PACKAGE.JSON ─────────────────────────────────────────
+  name:    aiexpertscorner
+  astro:   ^4.16.0
+  tailwind: ✅
+  scripts: dev, split, prebuild, build, build:prod, preview, enrich, enrich:full, inject, authority, featured, master:build, datasets, datasets:medium, datasets:full, pipeline, pipeline:medium, pipeline:full, audit:data-layers, audit:project-data
+
+── ASTRO CONFIG ─────────────────────────────────────────
+  tailwind:  ✅
+  output:    static
+  site:      https://aiexpertscorner.com
+
+── DIRECTORY STRUCTURE ──────────────────────────────────
+  ✅ src/pages
+  ✅ src/components
+  ✅ src/layouts
+  ✅ src/styles
+  ✅ src/data
+  ✅ src/data/build
+  ✅ src/data/build/page-payloads
+  ✅ public
+  ✅ scripts
+
+── PAGES (src/pages/) ───────────────────────────────────
+  ai-model/index.astro  (58 lines)
+  ai-model/[slug].astro  (98 lines)
+  ai-news/index.astro  (24 lines)
+  ai-workflows/index.astro  (24 lines)
+  alternatives/index.astro  (93 lines)
+  alternatives/[slug].astro  (129 lines)
+  best/index.astro  (116 lines)
+  best/[slug].astro  (153 lines)
+  capability/index.astro  (58 lines)
+  capability/[slug].astro  (98 lines)
+  compare/index.astro  (107 lines)
+  compare/[slug].astro  (279 lines)
+  index.astro  (461 lines)
+  index_backup.astro  (115 lines)
+  industry/index.astro  (58 lines)
+  industry/[slug].astro  (98 lines)
+  integration/index.astro  (58 lines)
+  integration/[slug].astro  (98 lines)
+  learn-ai/index.astro  (24 lines)
+  microcategory/index.astro  (58 lines)
+  microcategory/[slug].astro  (98 lines)
+  prompts/index.astro  (24 lines)
+  resources/index.astro  (24 lines)
+  robots.txt.ts  (8 lines)
+  sitemap.xml.ts  (25 lines)
+  subcategory/index.astro  (58 lines)
+  subcategory/[slug].astro  (98 lines)
+  submit-tool/index.astro  (24 lines)
+  tag/index.astro  (58 lines)
+  tag/[slug].astro  (98 lines)
+  tools/category/[slug].astro  (111 lines)
+  tools/feature/[slug].astro  (41 lines)
+  tools/index.astro  (303 lines)
+  tools/industry/[slug].astro  (41 lines)
+  tools/pricing/[slug].astro  (41 lines)
+  tools/tag/[slug].astro  (41 lines)
+  tools/tool-type/[slug].astro  (41 lines)
+  tools/use-case/[slug].astro  (41 lines)
+  tools/[slug].astro  (564 lines)
+  use-case/[slug].astro  (105 lines)
+  vs/[slug].astro  (118 lines)
+  workflow/index.astro  (58 lines)
+  workflow/[slug].astro  (108 lines)
+
+── COMPONENTS (src/components/) ─────────────────────────
+  cards/
+    - AuthorityToolCard.astro
+    - CategoryCard.astro
+    - ToolCard.astro
+    - ToolRow.astro
+    - TopicCard.astro
+  sections/
+    - AudienceSection.astro
+    - AuthorityToolCard.astro
+    - BestOfSection.astro
+    - CategoryDiscoverySection.astro
+    - CategoryGrid.astro
+    - FeaturedToolsRail.astro
+    - FeaturedToolsSection.astro
+    - FlagshipToolsSection.astro
+    - HeroSection.astro
+    - HomeEditorialSection.astro
+    - HubNavigator.astro
+    - HubNavSection.astro
+    - NewsletterSection.astro
+    - NewToolsSection.astro
+    - PopularToolsSection.astro
+    - TrendingTopicsSection.astro
+  site/
+    - Breadcrumbs.astro
+    - CategoryHero.astro
+    - CategoryIcon.astro
+    - FilterStrip.astro
+    - Footer.astro
+    - Header.astro
+    - NewsletterCard.astro
+    - Pagination.astro
+    - SearchHero.astro
+    - SectionHeader.astro
+    - StatsBar.astro
+    - ToolHero.astro
+    - ToolQuickFacts.astro
+    - ToolsFilters.astro
+    - ToolsHero.astro
+    - ToolsToolbar.astro
+
+── LAYOUTS ──────────────────────────────────────────────
+  src/layouts/BaseLayout.astro  (83 lines)
+
+── STYLES ───────────────────────────────────────────────
+  src/styles/base.css  (22 lines, 1 KB)
+  src/styles/category-detail.css  (27 lines, 1 KB)
+  src/styles/components.css  (146 lines, 10 KB)
+  src/styles/dimension-page.css  (144 lines, 5 KB)
+  src/styles/home.css  (264 lines, 14 KB)
+  src/styles/homepage.css  (137 lines, 3 KB)
+  src/styles/hub-index.css  (5 lines, 0 KB)
+  src/styles/layout.css  (9 lines, 0 KB)
+  src/styles/pages.css  (206 lines, 13 KB)
+  src/styles/taxonomy.css  (45 lines, 4 KB)
+  src/styles/tokens.css  (52 lines, 2 KB)
+  src/styles/tool-detail.css  (161 lines, 5 KB)
+  src/styles/tools-index.css  (499 lines, 9 KB)
+
+── DATA BUILD (src/data/build/) ─────────────────────────
+  alternatives-map.json               31737 KB  19088 records
+  alternatives-page-data.json         9045 KB  5000 records
+  authority-tool-map.json             57 KB  99 records
+  best-of-map.json                    2718 KB  95 records
+  best-of-paths.json                  2 KB  95 records
+  build-meta.json                     0 KB  16 records
+  category-map.json                   1780 KB  23 records
+  category-paths.json                 0 KB  23 records
+  category-stats.json                 0 KB  23 records
+  category-top10.json                 117 KB  3 records
+  company-map.json                    0 KB  0 records
+  company-paths.json                  0 KB  0 records
+  compare-map.json                    1512 KB  19088 records
+  compare-page-data.json              3771 KB  3000 records
+  compare-pairs.json                  554 KB  3053 records
+  feature-map.json                    697 KB  11 records
+  feature-paths.json                  0 KB  11 records
+  featured-tools.json                 364 KB  3 records
+  global-top100.json                  44 KB  4 records
+  homepage-data.json                  17 KB  8 records
+  industry-map.json                   907 KB  14 records
+  industry-paths.json                 0 KB  14 records
+  logo-map.json                       1080 KB  19487 records
+  navigation-data.json                3 KB  3 records
+  page-manifest.json                  4429 KB  24806 records
+  pricing-map.json                    538 KB  3 records
+  pricing-paths.json                  0 KB  3 records
+  pricing-stats.json                  0 KB  4 records
+  prompt-library-map.json             8549 KB  5553 records
+  prompt-library-paths.json           83 KB  5553 records
+  related-map.json                    31737 KB  19088 records
+  sitemap-data.json                   2180 KB  2 records
+  skipped-records.json                9 KB  3 records
+  tag-map.json                        1964 KB  37 records
+  tag-paths.json                      1 KB  37 records
+  tool-enrichment-report.json         22 KB  36 records
+  tool-map.json                       222182 KB  19487 records
+  tool-page-data.json                 19010 KB  5000 records
+  tool-paths.json                     283 KB  19088 records
+  tool-slugs.json                     288 KB  19487 records
+  tool-type-map.json                  1471 KB  23 records
+  tool-type-paths.json                0 KB  23 records
+  tools-audit-report.json             335 KB  11 records
+  use-case-map.json                   22 KB  6 records
+  use-case-paths.json                 0 KB  6 records
+  page-payloads/
+    agent-type-pages.json                    6 KB  12 records
+    ai-model-pages.json                      0 KB  0 records
+    alternatives-pages.json                  2703 KB  538 records
+    automation-pages.json                    4 KB  12 records
+    automation-recipe-pages.json             7 KB  12 records
+    best-cluster-pages.json                  4338 KB  562 records
+    best-pages.json                          2237 KB  518 records
+    capability-pages.json                    358 KB  45 records
+    category-pages.json                      141 KB  14 records
+    compare-pages-rich.json                  11104 KB  3053 records
+    compare-pages.json                       3568 KB  3053 records
+    content-type-pages.json                  0 KB  0 records
+    faq-hub-pages.json                       83 KB  14 records
+    industry-pages.json                      256 KB  24 records
+    integration-pages.json                   186 KB  27 records
+    microcategory-pages.json                 429 KB  240 records
+    model-pages.json                         88 KB  20 records
+    platform-pages.json                      4 KB  8 records
+    playbook-pages.json                      0 KB  0 records
+    pricing-model-pages.json                 0 KB  0 records
+    skill-level-pages.json                   0 KB  0 records
+    stack-pages.json                         0 KB  0 records
+    subcategory-pages.json                   551 KB  80 records
+    tag-pages.json                           47 KB  93 records
+    tool-pages-rich.json                     156322 KB  19487 records
+    tool-pages.json                          221875 KB  19487 records
+    toolkit-pages.json                       0 KB  0 records
+    use-case-cluster-pages.json              370 KB  52 records
+    use-case-pages.json                      424 KB  61 records
+    workflow-pages-rich.json                 227 KB  60 records
+    workflow-pages.json                      8 KB  12 records
+
+── DATA IMPORTS IN PAGES ────────────────────────────────
+  ai-model/index.astro
+    ✅ @/data/build/page-payloads/model-pages.json
+  ai-model/[slug].astro
+    ✅ @/data/build/page-payloads/model-pages.json
+    ✅ @/data/build/logo-map.json
+  alternatives/index.astro
+    ✅ @/data/build/page-payloads/alternatives-pages.json
+    ✅ @/data/build/logo-map.json
+  alternatives/[slug].astro
+    ✅ @/data/build/page-payloads/alternatives-pages.json
+  best/index.astro
+    ✅ @/data/build/page-payloads/best-pages.json
+    ✅ @/data/build/page-payloads/best-cluster-pages.json
+  best/[slug].astro
+    ✅ @/data/build/page-payloads/best-pages.json
+    ✅ @/data/build/page-payloads/best-cluster-pages.json
+    ✅ @/data/build/logo-map.json
+  capability/index.astro
+    ✅ @/data/build/page-payloads/capability-pages.json
+  capability/[slug].astro
+    ✅ @/data/build/page-payloads/capability-pages.json
+    ✅ @/data/build/logo-map.json
+  compare/index.astro
+    ✅ @/data/build/compare-pairs.json
+    ✅ @/data/build/logo-map.json
+  compare/[slug].astro
+    ✅ @/data/build/page-payloads/compare-pages-rich.json
+  index.astro
+    ✅ @/data/build/homepage-data.json
+    ✅ @/data/build/category-map.json
+    ✅ @/data/build/logo-map.json
+  index_backup.astro
+    ✅ @/data/build/homepage-data.json
+    ✅ @/data/build/navigation-data.json
+  industry/index.astro
+    ✅ @/data/build/page-payloads/industry-pages.json
+  industry/[slug].astro
+    ✅ @/data/build/page-payloads/industry-pages.json
+    ✅ @/data/build/logo-map.json
+  integration/index.astro
+    ✅ @/data/build/page-payloads/integration-pages.json
+  integration/[slug].astro
+    ✅ @/data/build/page-payloads/integration-pages.json
+    ✅ @/data/build/logo-map.json
+  microcategory/index.astro
+    ✅ @/data/build/page-payloads/microcategory-pages.json
+  microcategory/[slug].astro
+    ✅ @/data/build/page-payloads/microcategory-pages.json
+    ✅ @/data/build/logo-map.json
+  sitemap.xml.ts
+    ✅ @/data/build/tool-paths.json
+    ✅ @/data/build/category-paths.json
+    ✅ @/data/build/compare-pairs.json
+  subcategory/index.astro
+    ✅ @/data/build/page-payloads/subcategory-pages.json
+  subcategory/[slug].astro
+    ✅ @/data/build/page-payloads/subcategory-pages.json
+    ✅ @/data/build/logo-map.json
+  tag/index.astro
+    ✅ @/data/build/page-payloads/tag-pages.json
+  tag/[slug].astro
+    ✅ @/data/build/page-payloads/tag-pages.json
+    ✅ @/data/build/logo-map.json
+  tools/category/[slug].astro
+    ✅ @/data/build/category-paths.json
+    ✅ @/data/build/category-map.json
+  tools/feature/[slug].astro
+    ✅ @/data/build/feature-paths.json
+    ✅ @/data/build/feature-map.json
+  tools/index.astro
+    ✅ @/data/build/category-map.json
+    ✅ @/data/build/featured-tools.json
+    ✅ @/data/build/homepage-data.json
+  tools/industry/[slug].astro
+    ✅ @/data/build/industry-paths.json
+    ✅ @/data/build/industry-map.json
+  tools/pricing/[slug].astro
+    ✅ @/data/build/pricing-paths.json
+    ✅ @/data/build/pricing-map.json
+  tools/tag/[slug].astro
+    ✅ @/data/build/tag-paths.json
+    ✅ @/data/build/tag-map.json
+  tools/tool-type/[slug].astro
+    ✅ @/data/build/tool-type-paths.json
+    ✅ @/data/build/tool-type-map.json
+  tools/use-case/[slug].astro
+    ✅ @/data/build/use-case-paths.json
+    ✅ @/data/build/use-case-map.json
+  tools/[slug].astro
+    ✅ @/data/build/tool-slugs.json
+    ✅ @/data/build/logo-map.json
+  use-case/[slug].astro
+    ✅ @/data/build/page-payloads/use-case-cluster-pages.json
+  vs/[slug].astro
+    ✅ @/data/build/compare-page-data.json
+  workflow/index.astro
+    ✅ @/data/build/page-payloads/workflow-pages-rich.json
+  workflow/[slug].astro
+    ✅ @/data/build/page-payloads/workflow-pages-rich.json
+    ✅ @/data/build/logo-map.json
+
+── TAILWIND ─────────────────────────────────────────────
+  ✅ tailwind config found (7 lines)
+  Custom colors (ai-dark/ai-primary): ❌
+
+── PUBLIC ASSETS ────────────────────────────────────────
+  _redirects: ✅
+  robots.txt: ✅
+  favicon:    ✅
+  logos dir:  ✅
+
+── HOME CONFIG ──────────────────────────────────────────
+  ✅ homeConfig found
+  Nav links: /tools, /compare, /best, /ai-workflows, /learn-ai, /ai-news, /tools, /tools/pricing/free, /tools/pricing/freemium, /tools/category/ai-agents, /tools/category/writing-and-content, /tools/category/image-generation, /submit-tool, /compare, /alternatives, /best, /use-case, /prompts, /tools/industry, /about, /privacy, /terms, /contact
+
+── MISSING CRITICAL FILES ───────────────────────────────
+  ✅ src/pages/compare/[slug].astro
+  ✅ src/pages/alternatives/[slug].astro
+  ✅ src/pages/best/[slug].astro
+  ✅ src/pages/use-case/[slug].astro
+  ✅ src/pages/tools/[slug].astro
+  ✅ src/data/build/page-payloads/compare-pages-rich.json
+  ✅ src/data/build/page-payloads/alternatives-pages.json
+  ✅ src/data/build/page-payloads/best-pages.json
+  ✅ src/data/build/homepage-data.json
+  ✅ public/_redirects
+  ✅ src/styles/pages.css
+  All critical files present!
+
+══════════════════════════════════════════════════════════
+SAMENVATTING
+──────────────────────────────────────────────────────────
+  Pages:      43
+  Components: 37
+  Data files: 45 build JSONs
+
+  Upload audit-output.txt aan Claude voor analyse.
+══════════════════════════════════════════════════════════

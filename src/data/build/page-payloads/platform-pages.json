@@ -1,0 +1,178 @@
+[
+  {
+    "slug": "android",
+    "route": "/platform/android",
+    "meta": {
+      "slug": "android",
+      "name": "android",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best android Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best android AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "api",
+    "route": "/platform/api",
+    "meta": {
+      "slug": "api",
+      "name": "api",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best api Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best api AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "chrome-extension",
+    "route": "/platform/chrome-extension",
+    "meta": {
+      "slug": "chrome-extension",
+      "name": "chrome-extension",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best chrome-extension Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best chrome-extension AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "ios",
+    "route": "/platform/ios",
+    "meta": {
+      "slug": "ios",
+      "name": "ios",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best ios Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best ios AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "linux",
+    "route": "/platform/linux",
+    "meta": {
+      "slug": "linux",
+      "name": "linux",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best linux Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best linux AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "mac",
+    "route": "/platform/mac",
+    "meta": {
+      "slug": "mac",
+      "name": "mac",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best mac Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best mac AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "web",
+    "route": "/platform/web",
+    "meta": {
+      "slug": "web",
+      "name": "web",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best web Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best web AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "windows",
+    "route": "/platform/windows",
+    "meta": {
+      "slug": "windows",
+      "name": "windows",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best windows Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best windows AI tools. Compare features, pricing and reviews."
+    }
+  }
+]

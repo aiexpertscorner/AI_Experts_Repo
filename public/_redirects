@@ -1,0 +1,31 @@
+# AIExpertsCorner — 301 Redirects
+# Cloudflare Pages format
+
+# /vs/ → /compare/ (oude compare route)
+/vs/:slug                    /compare/:slug               301
+
+# Oude /tools/[slug] tool detail → nieuwe /tools/[slug]
+/tools/:slug              /tools/:slug                 301
+
+# Oude category slugs → nieuwe pipeline slugs
+/tools/category/writing-and-content     /tools/category/ai-writing              301
+/tools/category/chatbots-and-llms       /tools/category/ai-automation-agents    301
+/tools/category/coding-and-dev          /tools/category/ai-coding               301
+/tools/category/image-generation        /tools/category/ai-image-generation     301
+/tools/category/video-generation        /tools/category/ai-video                301
+/tools/category/audio-and-music         /tools/category/ai-audio-voice          301
+/tools/category/seo-and-marketing       /tools/category/ai-marketing            301
+/tools/category/design-and-ui           /tools/category/ai-design               301
+/tools/category/research-and-education  /tools/category/ai-research             301
+/tools/category/data-and-analytics      /tools/category/ai-data-analytics       301
+/tools/category/sales-and-crm           /tools/category/ai-sales                301
+/tools/category/customer-service        /tools/category/ai-customer-support     301
+/tools/category/hr-and-recruiting       /tools/category/ai-business-operations  301
+/tools/category/productivity            /tools/category/ai-productivity         301
+/tools/category/ai-agents               /tools/category/ai-automation-agents    301
+
+# Old use-case routes
+/tools/use-case/:uc       /use-case/:uc                301
+
+# Old tag routes
+/tools/tag/:tag           /tools/tag/:tag           200

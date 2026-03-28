@@ -1,0 +1,2048 @@
+[
+  {
+    "slug": "academic",
+    "route": "/tag/academic",
+    "meta": {
+      "slug": "academic",
+      "name": "academic",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best academic Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best academic AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "agency",
+    "route": "/tag/agency",
+    "meta": {
+      "slug": "agency",
+      "name": "agency",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best agency Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best agency AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "agents",
+    "route": "/tag/agents",
+    "meta": {
+      "slug": "agents",
+      "name": "agents",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best agents Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best agents AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "amazon-listings",
+    "route": "/tag/amazon-listings",
+    "meta": {
+      "slug": "amazon-listings",
+      "name": "amazon listings",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best amazon listings Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best amazon listings AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "analytics",
+    "route": "/tag/analytics",
+    "meta": {
+      "slug": "analytics",
+      "name": "analytics",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best analytics Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best analytics AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "api",
+    "route": "/tag/api",
+    "meta": {
+      "slug": "api",
+      "name": "api",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best api Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best api AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "automation",
+    "route": "/tag/automation",
+    "meta": {
+      "slug": "automation",
+      "name": "automation",
+      "description": "",
+      "url_pattern": "/capability/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best automation Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best automation AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "bi",
+    "route": "/tag/bi",
+    "meta": {
+      "slug": "bi",
+      "name": "bi",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best bi Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best bi AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "branding",
+    "route": "/tag/branding",
+    "meta": {
+      "slug": "branding",
+      "name": "branding",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best branding Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best branding AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "browser-automation",
+    "route": "/tag/browser-automation",
+    "meta": {
+      "slug": "browser-automation",
+      "name": "browser automation",
+      "description": "",
+      "url_pattern": "/capability/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best browser automation Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best browser automation AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "browser-based",
+    "route": "/tag/browser-based",
+    "meta": {
+      "slug": "browser-based",
+      "name": "browser-based",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best browser-based Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best browser-based AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "call-intelligence",
+    "route": "/tag/call-intelligence",
+    "meta": {
+      "slug": "call-intelligence",
+      "name": "call intelligence",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best call intelligence Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best call intelligence AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "chatbot",
+    "route": "/tag/chatbot",
+    "meta": {
+      "slug": "chatbot",
+      "name": "chatbot",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best chatbot Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best chatbot AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "chrome-extension",
+    "route": "/tag/chrome-extension",
+    "meta": {
+      "slug": "chrome-extension",
+      "name": "chrome-extension",
+      "description": "",
+      "url_pattern": "/platform/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best chrome-extension Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best chrome-extension AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "citations",
+    "route": "/tag/citations",
+    "meta": {
+      "slug": "citations",
+      "name": "citations",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best citations Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best citations AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "claude",
+    "route": "/tag/claude",
+    "meta": {
+      "slug": "claude",
+      "name": "claude",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best claude Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best claude AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "compliance",
+    "route": "/tag/compliance",
+    "meta": {
+      "slug": "compliance",
+      "name": "compliance",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best compliance Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best compliance AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "content-marketing",
+    "route": "/tag/content-marketing",
+    "meta": {
+      "slug": "content-marketing",
+      "name": "content marketing",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best content marketing Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best content marketing AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "copywriting",
+    "route": "/tag/copywriting",
+    "meta": {
+      "slug": "copywriting",
+      "name": "copywriting",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best copywriting Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best copywriting AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "creator-economy",
+    "route": "/tag/creator-economy",
+    "meta": {
+      "slug": "creator-economy",
+      "name": "creator economy",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best creator economy Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best creator economy AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "crm",
+    "route": "/tag/crm",
+    "meta": {
+      "slug": "crm",
+      "name": "crm",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best crm Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best crm AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "dall-e",
+    "route": "/tag/dall-e",
+    "meta": {
+      "slug": "dall-e",
+      "name": "dall-e",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best dall-e Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best dall-e AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "dashboards",
+    "route": "/tag/dashboards",
+    "meta": {
+      "slug": "dashboards",
+      "name": "dashboards",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best dashboards Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best dashboards AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "data-cleaning",
+    "route": "/tag/data-cleaning",
+    "meta": {
+      "slug": "data-cleaning",
+      "name": "data cleaning",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best data cleaning Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best data cleaning AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "design",
+    "route": "/tag/design",
+    "meta": {
+      "slug": "design",
+      "name": "design",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best design Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best design AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "developers",
+    "route": "/tag/developers",
+    "meta": {
+      "slug": "developers",
+      "name": "developers",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best developers Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best developers AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "devops",
+    "route": "/tag/devops",
+    "meta": {
+      "slug": "devops",
+      "name": "devops",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best devops Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best devops AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "documentation",
+    "route": "/tag/documentation",
+    "meta": {
+      "slug": "documentation",
+      "name": "documentation",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best documentation Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best documentation AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "ecommerce",
+    "route": "/tag/ecommerce",
+    "meta": {
+      "slug": "ecommerce",
+      "name": "ecommerce",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best ecommerce Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best ecommerce AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "education",
+    "route": "/tag/education",
+    "meta": {
+      "slug": "education",
+      "name": "education",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best education Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best education AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "email-marketing",
+    "route": "/tag/email-marketing",
+    "meta": {
+      "slug": "email-marketing",
+      "name": "email marketing",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best email marketing Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best email marketing AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "enterprise",
+    "route": "/tag/enterprise",
+    "meta": {
+      "slug": "enterprise",
+      "name": "enterprise",
+      "description": "",
+      "url_pattern": "/skill/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best enterprise Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best enterprise AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "faq",
+    "route": "/tag/faq",
+    "meta": {
+      "slug": "faq",
+      "name": "faq",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best faq Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best faq AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "finance",
+    "route": "/tag/finance",
+    "meta": {
+      "slug": "finance",
+      "name": "finance",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best finance Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best finance AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "flux",
+    "route": "/tag/flux",
+    "meta": {
+      "slug": "flux",
+      "name": "flux",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best flux Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best flux AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "forecasting",
+    "route": "/tag/forecasting",
+    "meta": {
+      "slug": "forecasting",
+      "name": "forecasting",
+      "description": "",
+      "url_pattern": "/capability/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best forecasting Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best forecasting AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gemini",
+    "route": "/tag/gemini",
+    "meta": {
+      "slug": "gemini",
+      "name": "gemini",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best gemini Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best gemini AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "gpt",
+    "route": "/tag/gpt",
+    "meta": {
+      "slug": "gpt",
+      "name": "gpt",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best gpt Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best gpt AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "helpdesk",
+    "route": "/tag/helpdesk",
+    "meta": {
+      "slug": "helpdesk",
+      "name": "helpdesk",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best helpdesk Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best helpdesk AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "hr",
+    "route": "/tag/hr",
+    "meta": {
+      "slug": "hr",
+      "name": "hr",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best hr Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best hr AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "javascript",
+    "route": "/tag/javascript",
+    "meta": {
+      "slug": "javascript",
+      "name": "javascript",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best javascript Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best javascript AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "knowledge-base",
+    "route": "/tag/knowledge-base",
+    "meta": {
+      "slug": "knowledge-base",
+      "name": "knowledge base",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best knowledge base Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best knowledge base AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "language-learning",
+    "route": "/tag/language-learning",
+    "meta": {
+      "slug": "language-learning",
+      "name": "language learning",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best language learning Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best language learning AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "lead-generation",
+    "route": "/tag/lead-generation",
+    "meta": {
+      "slug": "lead-generation",
+      "name": "lead generation",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best lead generation Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best lead generation AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "legal",
+    "route": "/tag/legal",
+    "meta": {
+      "slug": "legal",
+      "name": "legal",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best legal Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best legal AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "lesson-plans",
+    "route": "/tag/lesson-plans",
+    "meta": {
+      "slug": "lesson-plans",
+      "name": "lesson plans",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best lesson plans Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best lesson plans AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "llama",
+    "route": "/tag/llama",
+    "meta": {
+      "slug": "llama",
+      "name": "llama",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best llama Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best llama AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "localization",
+    "route": "/tag/localization",
+    "meta": {
+      "slug": "localization",
+      "name": "localization",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best localization Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best localization AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "logo-design",
+    "route": "/tag/logo-design",
+    "meta": {
+      "slug": "logo-design",
+      "name": "logo design",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best logo design Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best logo design AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "low-code",
+    "route": "/tag/low-code",
+    "meta": {
+      "slug": "low-code",
+      "name": "low code",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best low code Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best low code AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "marketing",
+    "route": "/tag/marketing",
+    "meta": {
+      "slug": "marketing",
+      "name": "marketing",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best marketing Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best marketing AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "mobile-app",
+    "route": "/tag/mobile-app",
+    "meta": {
+      "slug": "mobile-app",
+      "name": "mobile app",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best mobile app Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best mobile app AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "mockups",
+    "route": "/tag/mockups",
+    "meta": {
+      "slug": "mockups",
+      "name": "mockups",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best mockups Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best mockups AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "multi-agent",
+    "route": "/tag/multi-agent",
+    "meta": {
+      "slug": "multi-agent",
+      "name": "multi-agent",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best multi-agent Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best multi-agent AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "no-code",
+    "route": "/tag/no-code",
+    "meta": {
+      "slug": "no-code",
+      "name": "no code",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best no code Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best no code AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "open-source",
+    "route": "/tag/open-source",
+    "meta": {
+      "slug": "open-source",
+      "name": "open-source",
+      "description": "",
+      "url_pattern": "/pricing/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best open-source Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best open-source AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "operations",
+    "route": "/tag/operations",
+    "meta": {
+      "slug": "operations",
+      "name": "operations",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best operations Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best operations AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "outreach",
+    "route": "/tag/outreach",
+    "meta": {
+      "slug": "outreach",
+      "name": "outreach",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best outreach Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best outreach AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "pdf",
+    "route": "/tag/pdf",
+    "meta": {
+      "slug": "pdf",
+      "name": "pdf",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best pdf Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best pdf AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "podcast",
+    "route": "/tag/podcast",
+    "meta": {
+      "slug": "podcast",
+      "name": "podcast",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best podcast Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best podcast AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "presentations",
+    "route": "/tag/presentations",
+    "meta": {
+      "slug": "presentations",
+      "name": "presentations",
+      "description": "",
+      "url_pattern": "/content-type/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best presentations Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best presentations AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "privacy",
+    "route": "/tag/privacy",
+    "meta": {
+      "slug": "privacy",
+      "name": "privacy",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best privacy Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best privacy AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "product-descriptions",
+    "route": "/tag/product-descriptions",
+    "meta": {
+      "slug": "product-descriptions",
+      "name": "product descriptions",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best product descriptions Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best product descriptions AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "product-photography",
+    "route": "/tag/product-photography",
+    "meta": {
+      "slug": "product-photography",
+      "name": "product photography",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best product photography Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best product photography AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "prospecting",
+    "route": "/tag/prospecting",
+    "meta": {
+      "slug": "prospecting",
+      "name": "prospecting",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best prospecting Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best prospecting AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "python",
+    "route": "/tag/python",
+    "meta": {
+      "slug": "python",
+      "name": "python",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best python Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best python AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "quizzes",
+    "route": "/tag/quizzes",
+    "meta": {
+      "slug": "quizzes",
+      "name": "quizzes",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best quizzes Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best quizzes AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "research",
+    "route": "/tag/research",
+    "meta": {
+      "slug": "research",
+      "name": "research",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best research Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best research AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "rpa",
+    "route": "/tag/rpa",
+    "meta": {
+      "slug": "rpa",
+      "name": "rpa",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best rpa Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best rpa AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "sales",
+    "route": "/tag/sales",
+    "meta": {
+      "slug": "sales",
+      "name": "sales",
+      "description": "",
+      "url_pattern": "/industry/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best sales Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best sales AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "security",
+    "route": "/tag/security",
+    "meta": {
+      "slug": "security",
+      "name": "security",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best security Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best security AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "seo",
+    "route": "/tag/seo",
+    "meta": {
+      "slug": "seo",
+      "name": "seo",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best seo Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best seo AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "shopify",
+    "route": "/tag/shopify",
+    "meta": {
+      "slug": "shopify",
+      "name": "shopify",
+      "description": "",
+      "url_pattern": "/integrations/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best shopify Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best shopify AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "social-media",
+    "route": "/tag/social-media",
+    "meta": {
+      "slug": "social-media",
+      "name": "social media",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best social media Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best social media AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "spreadsheets",
+    "route": "/tag/spreadsheets",
+    "meta": {
+      "slug": "spreadsheets",
+      "name": "spreadsheets",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best spreadsheets Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best spreadsheets AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "sql",
+    "route": "/tag/sql",
+    "meta": {
+      "slug": "sql",
+      "name": "sql",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best sql Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best sql AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "stable-diffusion",
+    "route": "/tag/stable-diffusion",
+    "meta": {
+      "slug": "stable-diffusion",
+      "name": "stable-diffusion",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best stable-diffusion Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best stable-diffusion AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "startup",
+    "route": "/tag/startup",
+    "meta": {
+      "slug": "startup",
+      "name": "startup",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best startup Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best startup AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "study-tools",
+    "route": "/tag/study-tools",
+    "meta": {
+      "slug": "study-tools",
+      "name": "study tools",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best study tools Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best study tools AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "summaries",
+    "route": "/tag/summaries",
+    "meta": {
+      "slug": "summaries",
+      "name": "summaries",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best summaries Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best summaries AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "support",
+    "route": "/tag/support",
+    "meta": {
+      "slug": "support",
+      "name": "support",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best support Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best support AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "team-collaboration",
+    "route": "/tag/team-collaboration",
+    "meta": {
+      "slug": "team-collaboration",
+      "name": "team collaboration",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best team collaboration Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best team collaboration AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "testing",
+    "route": "/tag/testing",
+    "meta": {
+      "slug": "testing",
+      "name": "testing",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best testing Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best testing AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "ticketing",
+    "route": "/tag/ticketing",
+    "meta": {
+      "slug": "ticketing",
+      "name": "ticketing",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best ticketing Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best ticketing AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "tiktok",
+    "route": "/tag/tiktok",
+    "meta": {
+      "slug": "tiktok",
+      "name": "tiktok",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best tiktok Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best tiktok AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "translation",
+    "route": "/tag/translation",
+    "meta": {
+      "slug": "translation",
+      "name": "translation",
+      "description": "",
+      "url_pattern": "/capability/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best translation Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best translation AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "ui-ux",
+    "route": "/tag/ui-ux",
+    "meta": {
+      "slug": "ui-ux",
+      "name": "ui ux",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best ui ux Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best ui ux AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "video-creation",
+    "route": "/tag/video-creation",
+    "meta": {
+      "slug": "video-creation",
+      "name": "video creation",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best video creation Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best video creation AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "voiceover",
+    "route": "/tag/voiceover",
+    "meta": {
+      "slug": "voiceover",
+      "name": "voiceover",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best voiceover Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best voiceover AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "web-search",
+    "route": "/tag/web-search",
+    "meta": {
+      "slug": "web-search",
+      "name": "web search",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best web search Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best web search AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "whisper",
+    "route": "/tag/whisper",
+    "meta": {
+      "slug": "whisper",
+      "name": "whisper",
+      "description": "",
+      "url_pattern": "/models/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best whisper Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best whisper AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "workflows",
+    "route": "/tag/workflows",
+    "meta": {
+      "slug": "workflows",
+      "name": "workflows",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best workflows Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best workflows AI tools. Compare features, pricing and reviews."
+    }
+  },
+  {
+    "slug": "youtube",
+    "route": "/tag/youtube",
+    "meta": {
+      "slug": "youtube",
+      "name": "youtube",
+      "description": "",
+      "url_pattern": "/tag/[slug]"
+    },
+    "breadcrumb": [
+      {
+        "name": "AI Tools",
+        "url": "/tools"
+      }
+    ],
+    "top_tools": [],
+    "count": 0,
+    "seo": {
+      "title": "Best youtube Tools 2026 — 0+ AI Tools",
+      "description": "Discover the best youtube AI tools. Compare features, pricing and reviews."
+    }
+  }
+]

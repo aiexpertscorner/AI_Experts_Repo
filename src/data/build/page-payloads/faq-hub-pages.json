@@ -1,0 +1,2496 @@
+[
+  {
+    "slug": "ai-audio-voice",
+    "route": "/tools/ai-audio-voice",
+    "name": "AI Audio & Voice",
+    "seo": {
+      "title": "Best AI Audio & Voice Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Audio & Voice AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "elevenlabs",
+        "name": "ElevenLabs",
+        "category": "ai-audio-voice",
+        "subcategory": "voice-cloning",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/elevenlabs.io",
+        "logo_domain": "elevenlabs.io",
+        "website_url": "https://elevenlabs.io",
+        "score_overall": 99988,
+        "is_featured": false
+      },
+      {
+        "slug": "social-tooling",
+        "name": "Social Tooling",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/socialtooling.com",
+        "logo_domain": "socialtooling.com",
+        "website_url": "https://www.socialtooling.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "aitoolbox",
+        "name": "Aitoolbox",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/com.sa",
+        "logo_domain": "com.sa",
+        "website_url": "https://ai-toolbox.com.sa",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "contacted-io",
+        "name": "Contacted",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/contacted.io",
+        "logo_domain": "contacted.io",
+        "website_url": "https://contacted.io",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "dialogai",
+        "name": "Dialogai",
+        "category": "ai-audio-voice",
+        "subcategory": "text-to-speech",
+        "microcategory": "narration-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/dialogai.io",
+        "logo_domain": "dialogai.io",
+        "website_url": "https://dialogai.io",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "firebay-studios",
+        "name": "Firebay Studios",
+        "category": "ai-audio-voice",
+        "subcategory": "voice-cloning",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/firebaystudios.com",
+        "logo_domain": "firebaystudios.com",
+        "website_url": "https://www.firebaystudios.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "laxis",
+        "name": "Laxis",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/laxis.com",
+        "logo_domain": "laxis.com",
+        "website_url": "https://get.laxis.com/85vqw0haf432",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "meetingly",
+        "name": "Meetingly",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": "meeting-transcription",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/meetingly.co",
+        "logo_domain": "meetingly.co",
+        "website_url": "https://meetingly.co",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "videosum",
+        "name": "Videosum",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/videosum.ai",
+        "logo_domain": "videosum.ai",
+        "website_url": "https://www.Videosum.ai",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "wondera-ai",
+        "name": "Wondera Ai",
+        "category": "ai-audio-voice",
+        "subcategory": "speech-to-text",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/wondera.ai",
+        "logo_domain": "wondera.ai",
+        "website_url": "https://www.wondera.ai",
+        "score_overall": 48,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is ElevenLabs free?",
+        "answer": "Yes, ElevenLabs operates on a freemium model, offering access to basic features and limited AI voice generation without cost. For more extensive usage, advanced features, and higher generation limits, paid subscription plans are available.",
+        "tool_slug": "elevenlabs",
+        "tool_name": "ElevenLabs"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-automation-agents",
+    "route": "/tools/ai-automation-agents",
+    "name": "AI Automation & Agents",
+    "seo": {
+      "title": "Best AI Automation & Agents Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Automation & Agents AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is ChatGPT free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ChatGPT operates on a freemium model, meaning a basic version is available for free, while advanced features or higher usage tiers may require a subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Google Gemini free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google Gemini operates on a freemium model, meaning a basic version is available for free. Access to more advanced features or higher usage limits typically requires a paid subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Claude free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Claude operates on a freemium pricing model, offering a free tier for basic usage and paid options for enhanced features or higher volume needs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Microsoft Copilot free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Microsoft Copilot operates on a freemium model, meaning a basic version is available for free, with premium features likely offered through paid subscriptions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is n8n free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "n8n operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid tiers for additional features or scale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Presbot free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Presbot operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid tiers for more advanced features."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Learn Prompting Pro free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Learn Prompting Pro operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid options for more advanced features or content."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Blogbud Ai free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Blogbud Ai operates on a freemium model, meaning it offers a free version with core features, alongside paid plans for more advanced capabilities or higher usage."
+            }
+          }
+        ]
+      }
+    },
+    "top_tools": [
+      {
+        "slug": "chatgpt",
+        "name": "ChatGPT",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/openai.com",
+        "logo_domain": "openai.com",
+        "website_url": "https://chatgpt.com",
+        "score_overall": 99999,
+        "is_featured": false
+      },
+      {
+        "slug": "google-gemini",
+        "name": "Google Gemini",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/google.com",
+        "logo_domain": "google.com",
+        "website_url": "https://gemini.google.com",
+        "score_overall": 99998,
+        "is_featured": false
+      },
+      {
+        "slug": "claude",
+        "name": "Claude",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/anthropic.com",
+        "logo_domain": "anthropic.com",
+        "website_url": "https://claude.ai",
+        "score_overall": 99997,
+        "is_featured": false
+      },
+      {
+        "slug": "microsoft-copilot",
+        "name": "Microsoft Copilot",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/microsoft.com",
+        "logo_domain": "microsoft.com",
+        "website_url": "https://copilot.microsoft.com",
+        "score_overall": 99996,
+        "is_featured": false
+      },
+      {
+        "slug": "n8n",
+        "name": "n8n",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/n8n.io",
+        "logo_domain": "n8n.io",
+        "website_url": "https://n8n.io",
+        "score_overall": 99984,
+        "is_featured": false
+      },
+      {
+        "slug": "presbot",
+        "name": "Presbot",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/presbot.com",
+        "logo_domain": "presbot.com",
+        "website_url": "https://www.presbot.com",
+        "score_overall": 60,
+        "is_featured": false
+      },
+      {
+        "slug": "learn-prompting-pro",
+        "name": "Learn Prompting Pro",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/learnprompting.pro",
+        "logo_domain": "learnprompting.pro",
+        "website_url": "https://learnprompting.pro",
+        "score_overall": 59,
+        "is_featured": false
+      },
+      {
+        "slug": "blogbud-ai",
+        "name": "Blogbud Ai",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/blogbud.ai",
+        "logo_domain": "blogbud.ai",
+        "website_url": "https://blogbud.ai",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "botdistrikt",
+        "name": "Botdistrikt",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/botdistrikt.com",
+        "logo_domain": "botdistrikt.com",
+        "website_url": "https://www.botdistrikt.com",
+        "score_overall": 57,
+        "is_featured": false
+      },
+      {
+        "slug": "chatrank",
+        "name": "Chatrank",
+        "category": "ai-automation-agents",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatrank.ai",
+        "logo_domain": "chatrank.ai",
+        "website_url": "https://chatrank.ai",
+        "score_overall": 56,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is ChatGPT free?",
+        "answer": "ChatGPT operates on a freemium model, meaning a basic version is available for free, while advanced features or higher usage tiers may require a subscription.",
+        "tool_slug": "chatgpt",
+        "tool_name": "ChatGPT"
+      },
+      {
+        "question": "Is Google Gemini free?",
+        "answer": "Google Gemini operates on a freemium model, meaning a basic version is available for free. Access to more advanced features or higher usage limits typically requires a paid subscription.",
+        "tool_slug": "google-gemini",
+        "tool_name": "Google Gemini"
+      },
+      {
+        "question": "Is Claude free?",
+        "answer": "Yes, Claude operates on a freemium pricing model, offering a free tier for basic usage and paid options for enhanced features or higher volume needs.",
+        "tool_slug": "claude",
+        "tool_name": "Claude"
+      },
+      {
+        "question": "Is Microsoft Copilot free?",
+        "answer": "Yes, Microsoft Copilot operates on a freemium model, meaning a basic version is available for free, with premium features likely offered through paid subscriptions.",
+        "tool_slug": "microsoft-copilot",
+        "tool_name": "Microsoft Copilot"
+      },
+      {
+        "question": "Is n8n free?",
+        "answer": "n8n operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid tiers for additional features or scale.",
+        "tool_slug": "n8n",
+        "tool_name": "n8n"
+      },
+      {
+        "question": "Is Presbot free?",
+        "answer": "Yes, Presbot operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid tiers for more advanced features.",
+        "tool_slug": "presbot",
+        "tool_name": "Presbot"
+      },
+      {
+        "question": "Is Learn Prompting Pro free?",
+        "answer": "Learn Prompting Pro operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid options for more advanced features or content.",
+        "tool_slug": "learn-prompting-pro",
+        "tool_name": "Learn Prompting Pro"
+      },
+      {
+        "question": "Is Blogbud Ai free?",
+        "answer": "Yes, Blogbud Ai operates on a freemium model, meaning it offers a free version with core features, alongside paid plans for more advanced capabilities or higher usage.",
+        "tool_slug": "blogbud-ai",
+        "tool_name": "Blogbud Ai"
+      },
+      {
+        "question": "Is Botdistrikt free?",
+        "answer": "Yes, Botdistrikt operates on a freemium model. This means users can access a free version with core functionalities, with options to upgrade for more advanced features and capabilities.",
+        "tool_slug": "botdistrikt",
+        "tool_name": "Botdistrikt"
+      },
+      {
+        "question": "Is Chatrank free?",
+        "answer": "Yes, Chatrank operates on a freemium model. This means it offers a free version with core functionalities, alongside paid tiers that unlock more advanced features and capabilities.",
+        "tool_slug": "chatrank",
+        "tool_name": "Chatrank"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-business-operations",
+    "route": "/tools/ai-business-operations",
+    "name": "AI Business Operations",
+    "seo": {
+      "title": "Best AI Business Operations Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Business Operations AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "gpt4sales",
+        "name": "Gpt4sales",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gpt4sales.ai",
+        "logo_domain": "gpt4sales.ai",
+        "website_url": "https://www.gpt4sales.ai",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "marbleflows",
+        "name": "Marbleflows",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/marbleflows.com",
+        "logo_domain": "marbleflows.com",
+        "website_url": "https://www.marbleflows.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "swellai-com",
+        "name": "Swellai",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/swellai.com",
+        "logo_domain": "swellai.com",
+        "website_url": "https://swellai.com/",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "aisensy",
+        "name": "Aisensy",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aisensy.com",
+        "logo_domain": "aisensy.com",
+        "website_url": "https://wa.aisensy.com/short/aabdl13",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "chatdrive",
+        "name": "Chatdrive",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatdrive.io",
+        "logo_domain": "chatdrive.io",
+        "website_url": "https://chatdrive.io",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "fattura-ai",
+        "name": "Fattura Ai",
+        "category": "ai-business-operations",
+        "subcategory": "finance-accounting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/fattura-ai.app",
+        "logo_domain": "fattura-ai.app",
+        "website_url": "https://www.fattura-ai.app",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "podnotes",
+        "name": "Podnotes",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/podnotes.app",
+        "logo_domain": "podnotes.app",
+        "website_url": "https://podnotes.app",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "wordage-ai",
+        "name": "Wordage Ai",
+        "category": "ai-business-operations",
+        "subcategory": "legal",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/wordage.ai",
+        "logo_domain": "wordage.ai",
+        "website_url": "https://www.wordage.ai",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "finance-brain",
+        "name": "Finance Brain",
+        "category": "ai-business-operations",
+        "subcategory": "finance-accounting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/financebrain.ai",
+        "logo_domain": "financebrain.ai",
+        "website_url": "https://financebrain.ai",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "scoutleadz",
+        "name": "Scoutleadz",
+        "category": "ai-business-operations",
+        "subcategory": "hr-recruiting",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/scoutleadz.com",
+        "logo_domain": "scoutleadz.com",
+        "website_url": "https://Scoutleadz.com",
+        "score_overall": 47,
+        "is_featured": false
+      }
+    ],
+    "faqs": [],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-coding",
+    "route": "/tools/ai-coding",
+    "name": "AI Coding",
+    "seo": {
+      "title": "Best AI Coding Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Coding AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is GitHub Copilot free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, GitHub Copilot is not a free tool. It operates on a paid subscription model, offering its AI pair programming capabilities to users who subscribe."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Codeium free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Codeium operates on a freemium model, meaning its core AI coding assistant features are available for free. There might be premium tiers or advanced features available for a cost, but the essential functionality is free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Claude Code free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, Claude Code is a paid tool. It requires a subscription to access its agentic coding features and terminal-based operations."
+            }
+          }
+        ]
+      }
+    },
+    "top_tools": [
+      {
+        "slug": "github-copilot",
+        "name": "GitHub Copilot",
+        "category": "ai-coding",
+        "subcategory": "code-completion",
+        "microcategory": "ide-copilots",
+        "pricing_tier": "paid",
+        "logo_url": "https://logo.clearbit.com/github.com",
+        "logo_domain": "github.com",
+        "website_url": "https://github.com/features/copilot",
+        "score_overall": 99995,
+        "is_featured": false
+      },
+      {
+        "slug": "codeium",
+        "name": "Codeium",
+        "category": "ai-coding",
+        "subcategory": "code-completion",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/codeium.com",
+        "logo_domain": "codeium.com",
+        "website_url": "https://codeium.com",
+        "score_overall": 99986,
+        "is_featured": false
+      },
+      {
+        "slug": "claude-code",
+        "name": "Claude Code",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "paid",
+        "logo_url": "https://logo.clearbit.com/anthropic.com",
+        "logo_domain": "anthropic.com",
+        "website_url": "https://claude.ai/code",
+        "score_overall": 99985,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-keeda",
+        "name": "Ai Keeda",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aikeeda.com",
+        "logo_domain": "aikeeda.com",
+        "website_url": "https://www.aikeeda.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "devwrits",
+        "name": "Devwrits",
+        "category": "ai-coding",
+        "subcategory": "sql-data-dev",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/devwrits.com",
+        "logo_domain": "devwrits.com",
+        "website_url": "https://devwrits.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "brainboard-co",
+        "name": "Brainboard Co",
+        "category": "ai-coding",
+        "subcategory": "devops-cloud",
+        "microcategory": "infra-assistants",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/brainboard.co",
+        "logo_domain": "brainboard.co",
+        "website_url": "https://brainboard.co",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "geniusmindsai",
+        "name": "Geniusmindsai",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/geniusmindsai.com",
+        "logo_domain": "geniusmindsai.com",
+        "website_url": "https://www.geniusmindsai.com/",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "ideaaize",
+        "name": "Ideaaize",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/ideaaize.com",
+        "logo_domain": "ideaaize.com",
+        "website_url": "https://ideaaize.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "jat-ai-hub",
+        "name": "Jat Ai Hub",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/jat.link",
+        "logo_domain": "jat.link",
+        "website_url": "https://ai.jat.link/locale/en",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "sly-fish-ai",
+        "name": "Sly Fish Ai",
+        "category": "ai-coding",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/sly.fish",
+        "logo_domain": "sly.fish",
+        "website_url": "https://sly.fish",
+        "score_overall": 50,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is GitHub Copilot free?",
+        "answer": "No, GitHub Copilot is not a free tool. It operates on a paid subscription model, offering its AI pair programming capabilities to users who subscribe.",
+        "tool_slug": "github-copilot",
+        "tool_name": "GitHub Copilot"
+      },
+      {
+        "question": "Is Codeium free?",
+        "answer": "Yes, Codeium operates on a freemium model, meaning its core AI coding assistant features are available for free. There might be premium tiers or advanced features available for a cost, but the essential functionality is free.",
+        "tool_slug": "codeium",
+        "tool_name": "Codeium"
+      },
+      {
+        "question": "Is Claude Code free?",
+        "answer": "No, Claude Code is a paid tool. It requires a subscription to access its agentic coding features and terminal-based operations.",
+        "tool_slug": "claude-code",
+        "tool_name": "Claude Code"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-customer-support",
+    "route": "/tools/ai-customer-support",
+    "name": "AI Customer Support",
+    "seo": {
+      "title": "Best AI Customer Support Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Customer Support AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "atochat-chatbot-marketing-software",
+        "name": "Atochat Chatbot Marketing",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/atochat.com",
+        "logo_domain": "atochat.com",
+        "website_url": "https://app.atochat.com/",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "askleaf",
+        "name": "Askleaf",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/askleaf.in",
+        "logo_domain": "askleaf.in",
+        "website_url": "https://askleaf.in",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "chatling",
+        "name": "Chatling",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatling.ai",
+        "logo_domain": "chatling.ai",
+        "website_url": "https://chatling.ai/",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "zaia-app",
+        "name": "Zaia",
+        "category": "ai-customer-support",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/zaia.app",
+        "logo_domain": "zaia.app",
+        "website_url": "https://zaia.app",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "chatwebby-ai",
+        "name": "Chatwebby Ai",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/chatwebby.com",
+        "logo_domain": "chatwebby.com",
+        "website_url": "https://chatwebby.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "engagechat-ai",
+        "name": "Engagechat Ai",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/engagechat.ai",
+        "logo_domain": "engagechat.ai",
+        "website_url": "https://www.engagechat.ai",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "nexxtsupport",
+        "name": "Nexxtsupport",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/nexxtsupport.com",
+        "logo_domain": "nexxtsupport.com",
+        "website_url": "https://nexxtsupport.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "sensi-bot",
+        "name": "Sensi Bot",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/sensibot.io",
+        "logo_domain": "sensibot.io",
+        "website_url": "https://www.sensibot.io",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "virtualspirits-com",
+        "name": "Virtualspirits",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/virtualspirits.com",
+        "logo_domain": "virtualspirits.com",
+        "website_url": "https://virtualspirits.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "boon",
+        "name": "Boon",
+        "category": "ai-customer-support",
+        "subcategory": "support-chatbots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/boonbot.com",
+        "logo_domain": "boonbot.com",
+        "website_url": "https://app.boonbot.com/",
+        "score_overall": 48,
+        "is_featured": false
+      }
+    ],
+    "faqs": [],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-data-analytics",
+    "route": "/tools/ai-data-analytics",
+    "name": "AI Data & Analytics",
+    "seo": {
+      "title": "Best AI Data & Analytics Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Data & Analytics AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "quickseo",
+        "name": "Quickseo",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/quickseo.io",
+        "logo_domain": "quickseo.io",
+        "website_url": "https://quickseo.io",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "leadar",
+        "name": "Leadar",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/leadar.info",
+        "logo_domain": "leadar.info",
+        "website_url": "https://www.leadar.info",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "spreadsite",
+        "name": "Spreadsite",
+        "category": "ai-data-analytics",
+        "subcategory": "bi-copilots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/spreadsite.ai",
+        "logo_domain": "spreadsite.ai",
+        "website_url": "https://www.spreadsite.ai",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "drogoai",
+        "name": "Drogoai",
+        "category": "ai-data-analytics",
+        "subcategory": "bi-copilots",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/drogo.ai",
+        "logo_domain": "drogo.ai",
+        "website_url": "https://www.drogo.ai",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "datagran",
+        "name": "Datagran",
+        "category": "ai-data-analytics",
+        "subcategory": "bi-copilots",
+        "microcategory": "dashboard-assistants",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/datagran.io",
+        "logo_domain": "datagran.io",
+        "website_url": "https://www.datagran.io",
+        "score_overall": 43,
+        "is_featured": false
+      },
+      {
+        "slug": "dgi",
+        "name": "Dgi",
+        "category": "ai-data-analytics",
+        "subcategory": "bi-copilots",
+        "microcategory": "dashboard-assistants",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/dgintelligence.ai",
+        "logo_domain": "dgintelligence.ai",
+        "website_url": "https://www.dgintelligence.ai",
+        "score_overall": 43,
+        "is_featured": false
+      },
+      {
+        "slug": "brandidea-ai",
+        "name": "Brandidea Ai",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/brandidea.ai",
+        "logo_domain": "brandidea.ai",
+        "website_url": "https://brandidea.ai",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "chatgpt-deep-research",
+        "name": "Chatgpt Deep Research",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/deepresearcher.pro",
+        "logo_domain": "deepresearcher.pro",
+        "website_url": "https://deepresearcher.pro",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "mito-ai",
+        "name": "Mito Ai",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/trymito.io",
+        "logo_domain": "trymito.io",
+        "website_url": "https://trymito.io",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "omniaseo",
+        "name": "Omniaseo",
+        "category": "ai-data-analytics",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/omniaseo.com",
+        "logo_domain": "omniaseo.com",
+        "website_url": "https://omniaseo.com",
+        "score_overall": 48,
+        "is_featured": false
+      }
+    ],
+    "faqs": [],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-design",
+    "route": "/tools/ai-design",
+    "name": "AI Design",
+    "seo": {
+      "title": "Best AI Design Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Design AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "canva-ai",
+        "name": "Canva AI",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/canva.com",
+        "logo_domain": "canva.com",
+        "website_url": "https://www.canva.com/ai-image-generator/",
+        "score_overall": 99994,
+        "is_featured": false
+      },
+      {
+        "slug": "financial-flow",
+        "name": "Financial Flow",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/financialflow.ai",
+        "logo_domain": "financialflow.ai",
+        "website_url": "https://financialflow.ai",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "xno-ai",
+        "name": "Xno Ai",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/xno.ai",
+        "logo_domain": "xno.ai",
+        "website_url": "https://xno.ai",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "duply-co",
+        "name": "Duply Co",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/duply.co",
+        "logo_domain": "duply.co",
+        "website_url": "https://duply.co",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "lensai-shoppable-and-contextual",
+        "name": "Lensai Shoppable And Contextual",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/lens-ai.com",
+        "logo_domain": "lens-ai.com",
+        "website_url": "https://lens-ai.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "pi-presentation-intelligence",
+        "name": "Pi Presentation Intelligence",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/pi.inc",
+        "logo_domain": "pi.inc",
+        "website_url": "https://www.pi.inc",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "autoember",
+        "name": "Autoember",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/autoember.com",
+        "logo_domain": "autoember.com",
+        "website_url": "https://autoember.com",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "down-right-design",
+        "name": "Down Right Design",
+        "category": "ai-design",
+        "subcategory": "ui-ux-design",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/downrightdesign.co",
+        "logo_domain": "downrightdesign.co",
+        "website_url": "https://downrightdesign.co",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "lorem-faces",
+        "name": "Lorem Faces",
+        "category": "ai-design",
+        "subcategory": "mockups",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/loremfaces.net",
+        "logo_domain": "loremfaces.net",
+        "website_url": "https://loremfaces.net",
+        "score_overall": 44,
+        "is_featured": false
+      },
+      {
+        "slug": "kartiv",
+        "name": "Kartiv",
+        "category": "ai-design",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/kartiv.com",
+        "logo_domain": "kartiv.com",
+        "website_url": "https://www.kartiv.com",
+        "score_overall": 47,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Canva AI free?",
+        "answer": "Canva AI operates on a freemium model, meaning some AI features are available for free, while more advanced capabilities may require a paid subscription to Canva.",
+        "tool_slug": "canva-ai",
+        "tool_name": "Canva AI"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-image-generation",
+    "route": "/tools/ai-image-generation",
+    "name": "AI Image Generation",
+    "seo": {
+      "title": "Best AI Image Generation Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Image Generation AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "dall-e-3",
+        "name": "DALL-E 3",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/openai.com",
+        "logo_domain": "openai.com",
+        "website_url": "https://openai.com/dall-e-3",
+        "score_overall": 99992,
+        "is_featured": false
+      },
+      {
+        "slug": "ideogram",
+        "name": "Ideogram",
+        "category": "ai-image-generation",
+        "subcategory": "logo-branding",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/ideogram.ai",
+        "logo_domain": "ideogram.ai",
+        "website_url": "https://ideogram.ai",
+        "score_overall": 99991,
+        "is_featured": false
+      },
+      {
+        "slug": "arvow",
+        "name": "Arvow",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/arvow.com",
+        "logo_domain": "arvow.com",
+        "website_url": "https://arvow.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "automate-your-image-with-bannerify",
+        "name": "Automate Your Image With Bannerify",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/bannerify.co",
+        "logo_domain": "bannerify.co",
+        "website_url": "https://bannerify.co",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "repromptify",
+        "name": "Repromptify",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/repromptify.com",
+        "logo_domain": "repromptify.com",
+        "website_url": "https://repromptify.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "swiftbro",
+        "name": "Swiftbro",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/swiftbro.com",
+        "logo_domain": "swiftbro.com",
+        "website_url": "https://www.swiftbro.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "texttovideo-bot",
+        "name": "Texttovideo Bot",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/texttovideo.bot",
+        "logo_domain": "texttovideo.bot",
+        "website_url": "https://www.texttovideo.bot",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "word-express",
+        "name": "Word Express",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gpt4office.com",
+        "logo_domain": "gpt4office.com",
+        "website_url": "https://www.gpt4office.com",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-design-training",
+        "name": "Ai Design Training",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/aidesigntraining.com",
+        "logo_domain": "aidesigntraining.com",
+        "website_url": "https://aidesigntraining.com",
+        "score_overall": 50,
+        "is_featured": false
+      },
+      {
+        "slug": "ai-prompt-library-by-god-of-prompt",
+        "name": "Ai Prompt Library",
+        "category": "ai-image-generation",
+        "subcategory": "text-to-image",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/godofprompt.ai",
+        "logo_domain": "godofprompt.ai",
+        "website_url": "https://godofprompt.ai/prompt-library",
+        "score_overall": 50,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is DALL-E 3 free?",
+        "answer": "DALL-E 3 operates on a freemium model, meaning some features or usage might be available for free, while advanced capabilities or higher usage limits typically require a paid subscription.",
+        "tool_slug": "dall-e-3",
+        "tool_name": "DALL-E 3"
+      },
+      {
+        "question": "Is Ideogram free?",
+        "answer": "Yes, Ideogram operates on a freemium model. This means you can use its core features for free, with options to upgrade for additional functionalities or higher usage limits.",
+        "tool_slug": "ideogram",
+        "tool_name": "Ideogram"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-marketing",
+    "route": "/tools/ai-marketing",
+    "name": "AI Marketing",
+    "seo": {
+      "title": "Best AI Marketing Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Marketing AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Semrush free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, Semrush is a paid platform. While it may offer limited free trials or basic features, full access to its AI-powered SEO and marketing tools requires a subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Semrush do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Semrush is an all-in-one SEO and marketing platform. It provides AI-powered tools for keyword research, competitor analysis, and content optimization to help users improve their online presence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Semrush use AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Semrush incorporates AI-powered tools. These are specifically used for features like keyword research, competitor analysis, and content optimization to deliver advanced insights."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Brandwatch AI free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, Brandwatch AI operates on a paid pricing model. Users will need to subscribe to access its full suite of social listening and consumer intelligence features."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Shopify Magic free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shopify Magic operates on a freemium model, meaning some core features are available for free, while more advanced functionalities may require a paid subscription or be part of a higher Shopify plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Humanic Ai free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Humanic Ai operates on a freemium model, meaning it offers a free version with basic features, alongside paid plans for more advanced functionalities and scale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Yourleads free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Yourleads operates on a freemium model, meaning it offers a free version with basic features and paid plans for more advanced functionalities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Atonce free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Atonce operates on a freemium model, meaning it offers a free version with basic features and paid plans for more advanced functionalities or higher usage."
+            }
+          }
+        ]
+      }
+    },
+    "top_tools": [
+      {
+        "slug": "semrush",
+        "name": "Semrush",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "paid",
+        "logo_url": "https://logo.clearbit.com/semrush.com",
+        "logo_domain": "semrush.com",
+        "website_url": "https://www.semrush.com",
+        "score_overall": 99983,
+        "is_featured": false
+      },
+      {
+        "slug": "brandwatch-ai",
+        "name": "Brandwatch AI",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "paid",
+        "logo_url": "https://logo.clearbit.com/brandwatch.com",
+        "logo_domain": "brandwatch.com",
+        "website_url": "https://www.brandwatch.com",
+        "score_overall": 99982,
+        "is_featured": false
+      },
+      {
+        "slug": "shopify-magic",
+        "name": "Shopify Magic",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/shopify.com",
+        "logo_domain": "shopify.com",
+        "website_url": "https://www.shopify.com/magic",
+        "score_overall": 99977,
+        "is_featured": false
+      },
+      {
+        "slug": "humanic-ai",
+        "name": "Humanic Ai",
+        "category": "ai-marketing",
+        "subcategory": "email-marketing",
+        "microcategory": "email-sequencing",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/humanic.ai",
+        "logo_domain": "humanic.ai",
+        "website_url": "https://humanic.ai",
+        "score_overall": 59,
+        "is_featured": false
+      },
+      {
+        "slug": "yourleads",
+        "name": "Yourleads",
+        "category": "ai-marketing",
+        "subcategory": "email-marketing",
+        "microcategory": "email-sequencing",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/yourleads.ai",
+        "logo_domain": "yourleads.ai",
+        "website_url": "https://yourleads.ai",
+        "score_overall": 59,
+        "is_featured": false
+      },
+      {
+        "slug": "atonce",
+        "name": "Atonce",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/atonce.com",
+        "logo_domain": "atonce.com",
+        "website_url": "https://atonce.com",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "backlink-management",
+        "name": "Backlink Management",
+        "category": "ai-marketing",
+        "subcategory": "social-media",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/backlinkmanagement.io",
+        "logo_domain": "backlinkmanagement.io",
+        "website_url": "https://backlinkmanagement.io",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "igleads",
+        "name": "Igleads",
+        "category": "ai-marketing",
+        "subcategory": "social-media",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/igleads.io",
+        "logo_domain": "igleads.io",
+        "website_url": "https://igleads.io/",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "leadgensheet",
+        "name": "Leadgensheet",
+        "category": "ai-marketing",
+        "subcategory": "email-marketing",
+        "microcategory": "email-sequencing",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/leadgensheet.com",
+        "logo_domain": "leadgensheet.com",
+        "website_url": "http://leadgensheet.com",
+        "score_overall": 58,
+        "is_featured": false
+      },
+      {
+        "slug": "neurologic-com-br",
+        "name": "Neurologic Com Br",
+        "category": "ai-marketing",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/neurologic.com.br",
+        "logo_domain": "neurologic.com.br",
+        "website_url": "https://neurologic.com.br",
+        "score_overall": 58,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Semrush free?",
+        "answer": "No, Semrush is a paid platform. While it may offer limited free trials or basic features, full access to its AI-powered SEO and marketing tools requires a subscription.",
+        "tool_slug": "semrush",
+        "tool_name": "Semrush"
+      },
+      {
+        "question": "What does Semrush do?",
+        "answer": "Semrush is an all-in-one SEO and marketing platform. It provides AI-powered tools for keyword research, competitor analysis, and content optimization to help users improve their online presence.",
+        "tool_slug": "semrush",
+        "tool_name": "Semrush"
+      },
+      {
+        "question": "Does Semrush use AI?",
+        "answer": "Yes, Semrush incorporates AI-powered tools. These are specifically used for features like keyword research, competitor analysis, and content optimization to deliver advanced insights.",
+        "tool_slug": "semrush",
+        "tool_name": "Semrush"
+      },
+      {
+        "question": "Is Brandwatch AI free?",
+        "answer": "No, Brandwatch AI operates on a paid pricing model. Users will need to subscribe to access its full suite of social listening and consumer intelligence features.",
+        "tool_slug": "brandwatch-ai",
+        "tool_name": "Brandwatch AI"
+      },
+      {
+        "question": "Is Shopify Magic free?",
+        "answer": "Shopify Magic operates on a freemium model, meaning some core features are available for free, while more advanced functionalities may require a paid subscription or be part of a higher Shopify plan.",
+        "tool_slug": "shopify-magic",
+        "tool_name": "Shopify Magic"
+      },
+      {
+        "question": "Is Humanic Ai free?",
+        "answer": "Humanic Ai operates on a freemium model, meaning it offers a free version with basic features, alongside paid plans for more advanced functionalities and scale.",
+        "tool_slug": "humanic-ai",
+        "tool_name": "Humanic Ai"
+      },
+      {
+        "question": "Is Yourleads free?",
+        "answer": "Yes, Yourleads operates on a freemium model, meaning it offers a free version with basic features and paid plans for more advanced functionalities.",
+        "tool_slug": "yourleads",
+        "tool_name": "Yourleads"
+      },
+      {
+        "question": "Is Atonce free?",
+        "answer": "Atonce operates on a freemium model, meaning it offers a free version with basic features and paid plans for more advanced functionalities or higher usage.",
+        "tool_slug": "atonce",
+        "tool_name": "Atonce"
+      },
+      {
+        "question": "Is Backlink Management free?",
+        "answer": "Backlink Management operates on a freemium model, meaning it offers a free version with core features, alongside paid plans for more advanced functionalities and scale.",
+        "tool_slug": "backlink-management",
+        "tool_name": "Backlink Management"
+      },
+      {
+        "question": "Is Igleads free?",
+        "answer": "Igleads operates on a freemium model. This means a basic version of the platform is available for free, with advanced features likely requiring a paid subscription.",
+        "tool_slug": "igleads",
+        "tool_name": "Igleads"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-productivity",
+    "route": "/tools/ai-productivity",
+    "name": "AI Productivity",
+    "seo": {
+      "title": "Best AI Productivity Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Productivity AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Gamma free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Gamma operates on a freemium model. This means users can access a basic version of the tool for free, with options to upgrade for additional features or capabilities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Zoom AI Companion free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Zoom AI Companion operates on a freemium model, meaning some core features are available for free, while advanced functionalities may require a paid subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Asana AI free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Asana AI operates on a freemium model, meaning it offers a free version with core features, while more advanced or premium functionalities may require a paid subscription."
+            }
+          }
+        ]
+      }
+    },
+    "top_tools": [
+      {
+        "slug": "gamma",
+        "name": "Gamma",
+        "category": "ai-productivity",
+        "subcategory": "presentation-tools",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/gamma.app",
+        "logo_domain": "gamma.app",
+        "website_url": "https://gamma.app",
+        "score_overall": 99987,
+        "is_featured": false
+      },
+      {
+        "slug": "zoom-ai-companion",
+        "name": "Zoom AI Companion",
+        "category": "ai-productivity",
+        "subcategory": "summarization",
+        "microcategory": "meeting-summary-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/zoom.us",
+        "logo_domain": "zoom.us",
+        "website_url": "https://www.zoom.com/en/ai-assistant/",
+        "score_overall": 99980,
+        "is_featured": false
+      },
+      {
+        "slug": "asana-ai",
+        "name": "Asana AI",
+        "category": "ai-productivity",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/asana.com",
+        "logo_domain": "asana.com",
+        "website_url": "https://asana.com/product/ai",
+        "score_overall": 99979,
+        "is_featured": false
+      },
+      {
+        "slug": "ddevi-com",
+        "name": "Ddevi",
+        "category": "ai-productivity",
+        "subcategory": "calendar-scheduling",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/ddevi.com",
+        "logo_domain": "ddevi.com",
+        "website_url": "https://ddevi.com/",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "photes-io",
+        "name": "Photes",
+        "category": "ai-productivity",
+        "subcategory": "note-taking",
+        "microcategory": "meeting-notes",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/photes.io",
+        "logo_domain": "photes.io",
+        "website_url": "https://photes.io",
+        "score_overall": 46,
+        "is_featured": false
+      },
+      {
+        "slug": "audio-notes-ai",
+        "name": "Audio Notes Ai",
+        "category": "ai-productivity",
+        "subcategory": "note-taking",
+        "microcategory": "meeting-notes",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/audionotesai.com",
+        "logo_domain": "audionotesai.com",
+        "website_url": "https://audionotesai.com",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "audionotes",
+        "name": "Audionotes",
+        "category": "ai-productivity",
+        "subcategory": "note-taking",
+        "microcategory": "meeting-notes",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/audionotes.app",
+        "logo_domain": "audionotes.app",
+        "website_url": "https://audionotes.app",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "audionotes-pro",
+        "name": "Audionotes Pro",
+        "category": "ai-productivity",
+        "subcategory": "note-taking",
+        "microcategory": "meeting-notes",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/audionotes.app",
+        "logo_domain": "audionotes.app",
+        "website_url": "https://www.audionotes.app",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "bluedot",
+        "name": "Bluedot",
+        "category": "ai-productivity",
+        "subcategory": "summarization",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/bluedothq.com",
+        "logo_domain": "bluedothq.com",
+        "website_url": "https://www.bluedothq.com",
+        "score_overall": 45,
+        "is_featured": false
+      },
+      {
+        "slug": "mirtilla",
+        "name": "Mirtilla",
+        "category": "ai-productivity",
+        "subcategory": "note-taking",
+        "microcategory": "meeting-notes",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/mirtilla.org",
+        "logo_domain": "mirtilla.org",
+        "website_url": "https://mirtilla.org",
+        "score_overall": 45,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Gamma free?",
+        "answer": "Yes, Gamma operates on a freemium model. This means users can access a basic version of the tool for free, with options to upgrade for additional features or capabilities.",
+        "tool_slug": "gamma",
+        "tool_name": "Gamma"
+      },
+      {
+        "question": "Is Zoom AI Companion free?",
+        "answer": "Yes, Zoom AI Companion operates on a freemium model, meaning some core features are available for free, while advanced functionalities may require a paid subscription.",
+        "tool_slug": "zoom-ai-companion",
+        "tool_name": "Zoom AI Companion"
+      },
+      {
+        "question": "Is Asana AI free?",
+        "answer": "Asana AI operates on a freemium model, meaning it offers a free version with core features, while more advanced or premium functionalities may require a paid subscription.",
+        "tool_slug": "asana-ai",
+        "tool_name": "Asana AI"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-research",
+    "route": "/tools/ai-research",
+    "name": "AI Research",
+    "seo": {
+      "title": "Best AI Research Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Research AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "notebooklm",
+        "name": "NotebookLM",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "free",
+        "logo_url": "https://logo.clearbit.com/notebooklm.google.com",
+        "logo_domain": "notebooklm.google.com",
+        "website_url": "https://notebooklm.google.com",
+        "score_overall": 99993,
+        "is_featured": false
+      },
+      {
+        "slug": "analyzr",
+        "name": "Analyzr",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/analyzr.ai",
+        "logo_domain": "analyzr.ai",
+        "website_url": "https://analyzr.ai",
+        "score_overall": 51,
+        "is_featured": false
+      },
+      {
+        "slug": "video-summary-ai",
+        "name": "Video Summary Ai",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/videosummaryai.co",
+        "logo_domain": "videosummaryai.co",
+        "website_url": "https://videosummaryai.co",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "vidtoquiz",
+        "name": "Vidtoquiz",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/vidtoquiz.com",
+        "logo_domain": "vidtoquiz.com",
+        "website_url": "https://www.vidtoquiz.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "codevideo",
+        "name": "Codevideo",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/codevideo.io",
+        "logo_domain": "codevideo.io",
+        "website_url": "https://codevideo.io",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "cortex-click",
+        "name": "Cortex Click",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/cortexclick.com",
+        "logo_domain": "cortexclick.com",
+        "website_url": "https://www.cortexclick.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "topicfinder",
+        "name": "Topicfinder",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/topicfinder.com",
+        "logo_domain": "topicfinder.com",
+        "website_url": "https://www.topicfinder.com",
+        "score_overall": 48,
+        "is_featured": false
+      },
+      {
+        "slug": "quizgrowth",
+        "name": "Quizgrowth",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/quizgrowth.com",
+        "logo_domain": "quizgrowth.com",
+        "website_url": "https://quizgrowth.com",
+        "score_overall": 49,
+        "is_featured": false
+      },
+      {
+        "slug": "mindgrasp",
+        "name": "Mindgrasp",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/mindgrasp.ai",
+        "logo_domain": "mindgrasp.ai",
+        "website_url": "https://mindgrasp.ai",
+        "score_overall": 47,
+        "is_featured": false
+      },
+      {
+        "slug": "codesignal",
+        "name": "Codesignal",
+        "category": "ai-research",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/codesignal.com",
+        "logo_domain": "codesignal.com",
+        "website_url": "https://codesignal.com",
+        "score_overall": 47,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is NotebookLM free?",
+        "answer": "Yes, NotebookLM is completely free to use, offering its AI-powered research and summarization capabilities without any cost.",
+        "tool_slug": "notebooklm",
+        "tool_name": "NotebookLM"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-sales",
+    "route": "/tools/ai-sales",
+    "name": "AI Sales",
+    "seo": {
+      "title": "Best AI Sales Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Sales AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Salesforce Einstein free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, Salesforce Einstein is not a free tool. It requires a paid subscription, as it is an advanced AI layer integrated within the Salesforce CRM ecosystem."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Agent Ai Chat Bot free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Agent Ai Chat Bot operates on a freemium model, meaning a free version is available. Access to additional features or higher usage limits may require a paid subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Zyfo Ai free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zyfo Ai operates on a freemium model. This means users can access some features for free, with premium options available for more advanced functionalities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Droxy Ai free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Droxy Ai operates on a freemium model, meaning it offers a free version with core functionalities, with options to upgrade for more advanced features or higher usage limits."
+            }
+          }
+        ]
+      }
+    },
+    "top_tools": [
+      {
+        "slug": "salesforce-einstein",
+        "name": "Salesforce Einstein",
+        "category": "ai-sales",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "paid",
+        "logo_url": "https://logo.clearbit.com/salesforce.com",
+        "logo_domain": "salesforce.com",
+        "website_url": "https://www.salesforce.com/products/einstein/",
+        "score_overall": 99978,
+        "is_featured": false
+      },
+      {
+        "slug": "agent-ai-chat-bot-powered-by-openai-and-anthropic",
+        "name": "Agent Ai Chat Bot",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/theineedagent.ai",
+        "logo_domain": "theineedagent.ai",
+        "website_url": "https://www.theineedagent.ai",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "zyfo-ai",
+        "name": "Zyfo Ai",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/zyfo.ai",
+        "logo_domain": "zyfo.ai",
+        "website_url": "https://zyfo.ai",
+        "score_overall": 56,
+        "is_featured": false
+      },
+      {
+        "slug": "droxy-ai",
+        "name": "Droxy Ai",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/droxy.ai",
+        "logo_domain": "droxy.ai",
+        "website_url": "https://app.droxy.ai/sign-up",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "datasavvy-chat",
+        "name": "Datasavvy Chat",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/datasavvy.chat",
+        "logo_domain": "datasavvy.chat",
+        "website_url": "https://datasavvy.chat",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "feedback-with-chatgpt-by-ai-characters",
+        "name": "Feedback",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/feedbackbyai.com",
+        "logo_domain": "feedbackbyai.com",
+        "website_url": "https://feedbackbyai.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "wisebot-ai",
+        "name": "Wisebot Ai",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/wisebot.app",
+        "logo_domain": "wisebot.app",
+        "website_url": "https://wisebot.app",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "elephant-ai",
+        "name": "Elephant Ai",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/elephant.ai",
+        "logo_domain": "elephant.ai",
+        "website_url": "https://elephant.ai//",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "interactiq",
+        "name": "Interactiq",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/interactiq.co",
+        "logo_domain": "interactiq.co",
+        "website_url": "https://interactiq.co",
+        "score_overall": 52,
+        "is_featured": false
+      },
+      {
+        "slug": "sagui-ai",
+        "name": "Sagui Ai",
+        "category": "ai-sales",
+        "subcategory": "lead-generation",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/sagui.ai",
+        "logo_domain": "sagui.ai",
+        "website_url": "https://sagui.ai",
+        "score_overall": 52,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Salesforce Einstein free?",
+        "answer": "No, Salesforce Einstein is not a free tool. It requires a paid subscription, as it is an advanced AI layer integrated within the Salesforce CRM ecosystem.",
+        "tool_slug": "salesforce-einstein",
+        "tool_name": "Salesforce Einstein"
+      },
+      {
+        "question": "Is Agent Ai Chat Bot free?",
+        "answer": "Yes, Agent Ai Chat Bot operates on a freemium model, meaning a free version is available. Access to additional features or higher usage limits may require a paid subscription.",
+        "tool_slug": "agent-ai-chat-bot-powered-by-openai-and-anthropic",
+        "tool_name": "Agent Ai Chat Bot"
+      },
+      {
+        "question": "Is Zyfo Ai free?",
+        "answer": "Zyfo Ai operates on a freemium model. This means users can access some features for free, with premium options available for more advanced functionalities.",
+        "tool_slug": "zyfo-ai",
+        "tool_name": "Zyfo Ai"
+      },
+      {
+        "question": "Is Droxy Ai free?",
+        "answer": "Yes, Droxy Ai operates on a freemium model, meaning it offers a free version with core functionalities, with options to upgrade for more advanced features or higher usage limits.",
+        "tool_slug": "droxy-ai",
+        "tool_name": "Droxy Ai"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-video",
+    "route": "/tools/ai-video",
+    "name": "AI Video",
+    "seo": {
+      "title": "Best AI Video Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Video AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "opusclip",
+        "name": "OpusClip",
+        "category": "ai-video",
+        "subcategory": "short-form-video",
+        "microcategory": "youtube-shorts-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/opus.pro",
+        "logo_domain": "opus.pro",
+        "website_url": "https://www.opus.pro",
+        "score_overall": 99990,
+        "is_featured": false
+      },
+      {
+        "slug": "pika-labs",
+        "name": "Pika Labs",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": "cinematic-video-generators",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/pika.art",
+        "logo_domain": "pika.art",
+        "website_url": "https://pika.art",
+        "score_overall": 99989,
+        "is_featured": false
+      },
+      {
+        "slug": "flux-ai",
+        "name": "Flux Ai",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/flux1.ai",
+        "logo_domain": "flux1.ai",
+        "website_url": "https://flux1.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "reelfarm",
+        "name": "Reelfarm",
+        "category": "ai-video",
+        "subcategory": "short-form-video",
+        "microcategory": "tiktok-video-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/reel.farm",
+        "logo_domain": "reel.farm",
+        "website_url": "https://reel.farm",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "content-studio-ai",
+        "name": "Content Studio Ai",
+        "category": "ai-video",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/contentstudioai.com",
+        "logo_domain": "contentstudioai.com",
+        "website_url": "https://contentstudioai.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "designtools-ai",
+        "name": "Designtools Ai",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/designtools.ai",
+        "logo_domain": "designtools.ai",
+        "website_url": "https://designtools.ai",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "motionscape",
+        "name": "Motionscape",
+        "category": "ai-video",
+        "subcategory": null,
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/motionscape.co",
+        "logo_domain": "motionscape.co",
+        "website_url": "https://www.motionscape.co",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "shorts-ninja-ai",
+        "name": "Shorts Ninja Ai",
+        "category": "ai-video",
+        "subcategory": "short-form-video",
+        "microcategory": "youtube-shorts-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/shortsninja.ai",
+        "logo_domain": "shortsninja.ai",
+        "website_url": "https://shortsninja.ai",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "talentask",
+        "name": "Talentask",
+        "category": "ai-video",
+        "subcategory": "short-form-video",
+        "microcategory": "tiktok-video-tools",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/talentask.com",
+        "logo_domain": "talentask.com",
+        "website_url": "https://www.talentask.com",
+        "score_overall": 53,
+        "is_featured": false
+      },
+      {
+        "slug": "viral-pulse",
+        "name": "Viral Pulse",
+        "category": "ai-video",
+        "subcategory": "text-to-video",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/viralpulse.app",
+        "logo_domain": "viralpulse.app",
+        "website_url": "https://viralpulse.app",
+        "score_overall": 53,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is OpusClip free?",
+        "answer": "Yes, OpusClip operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid tiers for additional features or usage. Users can start creating short-form video content without an initial investment.",
+        "tool_slug": "opusclip",
+        "tool_name": "OpusClip"
+      },
+      {
+        "question": "Is Pika Labs free?",
+        "answer": "Yes, Pika Labs operates on a freemium model, meaning you can access some of its core features for free. Paid plans are available for more advanced capabilities or higher usage.",
+        "tool_slug": "pika-labs",
+        "tool_name": "Pika Labs"
+      }
+    ],
+    "total_tools": 24
+  },
+  {
+    "slug": "ai-writing",
+    "route": "/tools/ai-writing",
+    "name": "AI Writing",
+    "seo": {
+      "title": "Best AI Writing Tools 2026 — Expert Guide & FAQ",
+      "description": "Discover the best AI Writing AI tools. Expert picks, pricing comparison and answers to the most common questions.",
+      "schema_faq": null
+    },
+    "top_tools": [
+      {
+        "slug": "beebzi-ai",
+        "name": "Beebzi Ai",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/beebzi.ai",
+        "logo_domain": "beebzi.ai",
+        "website_url": "https://beebzi.ai//",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "blogfast",
+        "name": "Blogfast",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/blogfa.st",
+        "logo_domain": "blogfa.st",
+        "website_url": "https://blogfa.st",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "writesonic",
+        "name": "Writesonic",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/writesonic.com",
+        "logo_domain": "writesonic.com",
+        "website_url": "https://writesonic.com",
+        "score_overall": 55,
+        "is_featured": false
+      },
+      {
+        "slug": "clipcast",
+        "name": "Clipcast",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/theclipcast.com",
+        "logo_domain": "theclipcast.com",
+        "website_url": "https://www.theclipcast.com",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "echothreads",
+        "name": "Echothreads",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/echothreads.io",
+        "logo_domain": "echothreads.io",
+        "website_url": "https://www.echothreads.io",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "juice-ai",
+        "name": "Juice Ai",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": "seo-blog-writers",
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/juice.ai",
+        "logo_domain": "juice.ai",
+        "website_url": "https://juice.ai",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "neuroflash",
+        "name": "Neuroflash",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/neuro-flash.com",
+        "logo_domain": "neuro-flash.com",
+        "website_url": "https://app.neuro-flash.com/free",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "summarisethis",
+        "name": "Summarisethis",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/summarisethis.app",
+        "logo_domain": "summarisethis.app",
+        "website_url": "https://summarisethis.app",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "transcope-io",
+        "name": "Transcope",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/transcope.io",
+        "logo_domain": "transcope.io",
+        "website_url": "https://transcope.io",
+        "score_overall": 54,
+        "is_featured": false
+      },
+      {
+        "slug": "writify-ai-1",
+        "name": "Writify Ai",
+        "category": "ai-writing",
+        "subcategory": "blog-writers",
+        "microcategory": null,
+        "pricing_tier": "freemium",
+        "logo_url": "https://logo.clearbit.com/writifyai.com",
+        "logo_domain": "writifyai.com",
+        "website_url": "https://writifyai.com",
+        "score_overall": 54,
+        "is_featured": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Beebzi Ai free?",
+        "answer": "Yes, Beebzi Ai operates on a freemium model. This means you can start using some of its features for free, with options to upgrade for more advanced functionalities.",
+        "tool_slug": "beebzi-ai",
+        "tool_name": "Beebzi Ai"
+      },
+      {
+        "question": "Is Blogfast free?",
+        "answer": "Yes, Blogfast operates on a freemium model, meaning it offers a free version with core functionalities, alongside paid plans for more advanced features.",
+        "tool_slug": "blogfast",
+        "tool_name": "Blogfast"
+      }
+    ],
+    "total_tools": 24
+  }
+]

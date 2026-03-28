@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-03-26T01:44:29.520Z",
+  "phase": "phase_1",
+  "total": 24806,
+  "indexed": 24806,
+  "by_type": {
+    "tool_detail": 19487,
+    "category_page": 14,
+    "best_page": 518,
+    "subcategory_page": 80,
+    "microcategory_page": 240,
+    "tag_page": 93,
+    "capability_page": 45,
+    "use_case_page": 61,
+    "industry_page": 24,
+    "model_page": 20,
+    "integration_page": 27,
+    "platform_page": 8,
+    "workflow_page": 12,
+    "automation_recipe_page": 12,
+    "agent_type_page": 12,
+    "compare_page": 3053,
+    "alternatives_page": 538,
+    "best_cluster_page": 562
+  }
+}
