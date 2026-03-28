@@ -2,7 +2,6 @@
 /**
  * src/layouts/BaseLayout.astro
  * CSS import volgorde: tokens → base → layout → components
- * Importeer home.css alleen in pages/index.astro zelf.
  */
 import "@/styles/tokens.css";
 import "@/styles/base.css";
@@ -12,18 +11,36 @@ import "@/styles/components.css";
 interface Props {
   title?:       string;
   description?: string;
+  ogImage?:     string;
   noindex?:     boolean;
 }
 
 const {
   title       = "AIExpertsCorner — Leading AI Tools Discovery Engine",
   description = "Discover 19,000+ AI tools, compare pricing, and find the right tool for any workflow.",
+  ogImage     = null,
   noindex     = false,
 } = Astro.props;
 
-const SITE     = "AIExpertsCorner";
+const SITE      = "AIExpertsCorner";
+const SITE_URL  = "https://www.aiexpertscorner.com";
 const fullTitle = title.includes(SITE) ? title : `${title} | ${SITE}`;
-const canonical = new URL(Astro.url.pathname, Astro.site || "https://aiexpertscorner.com");
+const canonical = new URL(Astro.url.pathname, Astro.site || SITE_URL).href;
+const ogImg     = ogImage || `${SITE_URL}/og-default.png`;
+
+// Page type voor GA4 tracking
+const path = Astro.url.pathname;
+let pageType = "other";
+if (path === "/")                       pageType = "homepage";
+else if (path.startsWith("/tools/category")) pageType = "category";
+else if (path.startsWith("/tools/"))    pageType = "tool_detail";
+else if (path.startsWith("/compare/"))  pageType = "compare";
+else if (path.startsWith("/alternatives/")) pageType = "alternatives";
+else if (path.startsWith("/best/"))     pageType = "best_of";
+else if (path.startsWith("/use-case/")) pageType = "use_case";
+else if (path.startsWith("/industry/")) pageType = "industry";
+else if (path.startsWith("/insights/")) pageType = "insights";
+else if (path === "/compare" || path === "/alternatives" || path === "/best" || path === "/use-case") pageType = "hub";
 ---
 
 <!doctype html>
@@ -31,28 +48,69 @@ const canonical = new URL(Astro.url.pathname, Astro.site || "https://aiexpertsco
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
   <meta name="generator" content={Astro.generator} />
+
+  <!-- Primary SEO -->
   <title>{fullTitle}</title>
   <meta name="title"       content={fullTitle} />
   <meta name="description" content={description} />
   <link rel="canonical"    href={canonical} />
   {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content={canonical} />
+  <meta property="og:title"       content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image"       content={ogImg} />
+  <meta property="og:site_name"   content={SITE} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={ogImg} />
+
+  <!-- Google Search Console verificatie -->
+  <meta name="google-site-verification" content="PLAK_HIER_JOUW_VERIFICATIE_CODE" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Slot voor page-specifieke head content (schema, CSS, etc.) -->
   <slot name="head" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-215VPCBBP2"></script>
+  <script define:vars={{ pageType, path }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-215VPCBBP2", {
+      anonymize_ip: true,
+      page_path: path,
+    });
+    // Custom event met page type voor segmentatie in GA4
+    gtag("event", "page_view_typed", {
+      page_type: pageType,
+      page_path: path,
+    });
+  </script>
 </head>
 <body>
   <slot name="header" />
   <main id="main-content"><slot /></main>
   <slot name="footer" />
   <script>
+    // Keyboard shortcut: Cmd/Ctrl+K focust de zoekbalk
     window.addEventListener("keydown", (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        const el = document.querySelector<HTMLInputElement>('input[type="search"],.hp-search__input');
-        el?.focus();
+        const el = document.querySelector('input[type="search"],.hp-search__input');
+        if (el) el.focus();
       }
     });
   </script>
