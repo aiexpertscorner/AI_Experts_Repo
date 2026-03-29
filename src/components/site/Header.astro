@@ -1,26 +1,6 @@
 ---
 /**
  * src/components/site/Header.astro
- * ─────────────────────────────────────────────────────────────────
- * Volledige nav met:
- *  - Logo + wordmark
- *  - Desktop nav met dropdown mega-menus voor Tools en Explore
- *  - Mobile menu (toggle)
- *  - Submit Tool CTA
- *
- * Interne links — alle routes die gebouwd zijn:
- *   /tools                    → AI Tools hub
- *   /compare                  → Compare hub
- *   /best                     → Best-of hub
- *   /alternatives             → Alternatives hub
- *   /use-case                 → Use Case hub
- *   /workflow                 → Workflow hub
- *   /industry                 → Industry hub
- *   /capability               → Capability hub
- *   /subcategory              → Subcategory hub
- *   /tools/pricing/free       → Free tools
- *   /tools/category/[slug]    → Category pagina's
- * ─────────────────────────────────────────────────────────────────
  */
 import { SITE_NAME } from "@/data/homeConfig";
 
@@ -32,47 +12,50 @@ function isActive(href: string): boolean {
 }
 
 const toolsCategories = [
-  { label: "Chatbots & LLMs",       href: "/tools/category/chatbots-and-llms",       emoji: "💬" },
-  { label: "Writing & Content",     href: "/tools/category/writing-and-content",     emoji: "✍️" },
-  { label: "Image Generation",      href: "/tools/category/image-generation",        emoji: "🎨" },
-  { label: "Coding & Dev",          href: "/tools/category/coding-and-dev",          emoji: "💻" },
-  { label: "Video Generation",      href: "/tools/category/video-generation",        emoji: "🎬" },
-  { label: "Audio & Music",         href: "/tools/category/audio-and-music",         emoji: "🎵" },
-  { label: "SEO & Marketing",       href: "/tools/category/seo-and-marketing",       emoji: "📈" },
-  { label: "Design & UI",           href: "/tools/category/design-and-ui",           emoji: "🖌️" },
-  { label: "Productivity",          href: "/tools/category/productivity",            emoji: "⚡" },
-  { label: "AI Agents",             href: "/tools/category/ai-agents",              emoji: "🤖" },
-  { label: "Data & Analytics",      href: "/tools/category/data-and-analytics",      emoji: "📊" },
-  { label: "Research & Education",  href: "/tools/category/research-and-education",  emoji: "🎓" },
+  { label: "AI Agents & Automation", href: "/tools/category/ai-automation-agents", emoji: "🤖" },
+  { label: "Writing & Content",      href: "/tools/category/ai-writing",            emoji: "✍️" },
+  { label: "Image Generation",       href: "/tools/category/ai-image-generation",   emoji: "🎨" },
+  { label: "Coding & Dev",           href: "/tools/category/ai-coding",             emoji: "💻" },
+  { label: "Video Generation",       href: "/tools/category/ai-video",              emoji: "🎬" },
+  { label: "Audio & Voice",          href: "/tools/category/ai-audio-voice",        emoji: "🎵" },
+  { label: "Marketing & SEO",        href: "/tools/category/ai-marketing",          emoji: "📈" },
+  { label: "Design & UI",            href: "/tools/category/ai-design",             emoji: "🖌️" },
+  { label: "Productivity",           href: "/tools/category/ai-productivity",       emoji: "⚡" },
+  { label: "Research & Education",   href: "/tools/category/ai-research",           emoji: "🎓" },
+  { label: "Data & Analytics",       href: "/tools/category/ai-data-analytics",     emoji: "📊" },
+  { label: "Customer Support",       href: "/tools/category/ai-customer-support",   emoji: "🎧" },
 ];
 
 const exploreLinks = [
   {
     group: "Find & Compare",
     items: [
-      { label: "Compare Tools",       href: "/compare",      icon: "⚔️",  desc: "Side-by-side comparisons" },
-      { label: "Find Alternatives",   href: "/alternatives", icon: "🔀",  desc: "Switch from any tool" },
-      { label: "Best-Of Lists",       href: "/best",         icon: "🏆",  desc: "Expert-ranked picks" },
+      { label: "Compare Tools",     href: "/compare",      icon: "⚔️", desc: "Side-by-side comparisons" },
+      { label: "Find Alternatives", href: "/alternatives", icon: "🔀", desc: "Switch from any tool" },
+      { label: "Best-Of Lists",     href: "/best",         icon: "🏆", desc: "Expert-ranked picks" },
     ]
   },
   {
     group: "Browse by",
     items: [
-      { label: "Use Case",            href: "/use-case",     icon: "🎯",  desc: "What you want to do" },
-      { label: "Industry",            href: "/industry",     icon: "🏭",  desc: "Your field of work" },
-      { label: "Workflow",            href: "/workflow",     icon: "⚙️",  desc: "Step-by-step guides" },
-      { label: "Capability",          href: "/capability",   icon: "🔬",  desc: "AI features & skills" },
+      { label: "Use Case",  href: "/use-case",  icon: "🎯", desc: "What you want to do" },
+      { label: "Industry",  href: "/industry",  icon: "🏭", desc: "Your field of work" },
+      { label: "Workflow",  href: "/workflow",  icon: "⚙️", desc: "Step-by-step guides" },
+      { label: "Capability",href: "/capability",icon: "🔬", desc: "AI features & skills" },
     ]
   },
   {
     group: "Filter by",
     items: [
-      { label: "Free Tools",          href: "/tools/pricing/free",     icon: "🆓",  desc: "No credit card needed" },
-      { label: "Freemium Tools",      href: "/tools/pricing/freemium", icon: "✨",  desc: "Free + paid tiers" },
-      { label: "Submit a Tool",       href: "/submit-tool",            icon: "➕",  desc: "Add your AI tool" },
+      { label: "Free Tools",     href: "/tools/pricing/free",     icon: "🆓", desc: "No credit card needed" },
+      { label: "Freemium Tools", href: "/tools/pricing/freemium", icon: "✨", desc: "Free + paid tiers" },
+      { label: "Insights",       href: "/insights",               icon: "💡", desc: "Expert guides & analysis" },
     ]
   }
 ];
+
+const isExploreActive = ["/use-case","/industry","/workflow","/capability","/alternatives","/insights"]
+  .some(p => pathname.startsWith(p));
 ---
 
 <header class="hdr" id="site-header">
@@ -82,7 +65,7 @@ const exploreLinks = [
     <a href="/" class="hdr__logo" aria-label={`${SITE_NAME} home`}>
       <div class="hdr__logo-icon">
         <div class="hdr__logo-icon-inner">
-          <img src="/logos/logo-icon-128.png" alt="" width="22" height="22" loading="eager" />
+          <img src="/logos/logo-icon-128.png" alt="" width="24" height="24" loading="eager" decoding="sync" />
         </div>
         <div class="hdr__logo-glow" aria-hidden="true"></div>
       </div>
@@ -94,34 +77,27 @@ const exploreLinks = [
     <!-- Desktop nav -->
     <nav class="hdr__nav" aria-label="Main navigation">
 
-      <!-- Tools (met dropdown) -->
-      <div class="hdr__item hdr__item--dropdown" data-dropdown="tools">
-        <a
-          href="/tools"
-          class:list={["hdr__link", isActive("/tools") && "hdr__link--active"]}
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
+      <!-- Tools dropdown -->
+      <div class="hdr__item hdr__item--dd" data-dd="tools">
+        <a href="/tools" class:list={["hdr__link", isActive("/tools") && "hdr__link--on"]} aria-haspopup="true">
           Tools
-          <svg class="hdr__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-          {isActive("/tools") && <span class="hdr__active-dot" aria-hidden="true"></span>}
+          <svg class="hdr__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          {isActive("/tools") && <span class="hdr__dot" aria-hidden="true"></span>}
         </a>
-        <!-- Tools mega dropdown -->
-        <div class="hdr__dropdown hdr__dropdown--tools" role="menu">
-          <div class="hdr__dropdown-header">
-            <a href="/tools" class="hdr__dropdown-all">Browse all {toolsCategories.length + 11} categories →</a>
+
+        <div class="hdr__dd hdr__dd--tools">
+          <div class="hdr__dd-head">
+            <a href="/tools" class="hdr__dd-all">Browse all categories →</a>
           </div>
           <div class="hdr__cat-grid">
             {toolsCategories.map(cat => (
-              <a href={cat.href} class="hdr__cat-item" role="menuitem">
-                <span class="hdr__cat-emoji">{cat.emoji}</span>
-                <span class="hdr__cat-label">{cat.label}</span>
+              <a href={cat.href} class="hdr__cat-item">
+                <span class="hdr__cat-em">{cat.emoji}</span>
+                <span class="hdr__cat-lbl">{cat.label}</span>
               </a>
             ))}
           </div>
-          <div class="hdr__dropdown-footer">
+          <div class="hdr__dd-foot">
             <a href="/tools/pricing/free">🆓 Free tools</a>
             <a href="/tools/pricing/freemium">✨ Freemium</a>
             <a href="/tools/feature/open-source">🔓 Open source</a>
@@ -130,47 +106,41 @@ const exploreLinks = [
       </div>
 
       <!-- Compare -->
-      <a
-        href="/compare"
-        class:list={["hdr__link", isActive("/compare") && "hdr__link--active"]}
-      >
+      <a href="/compare" class:list={["hdr__link", isActive("/compare") && "hdr__link--on"]}>
         Compare
-        {isActive("/compare") && <span class="hdr__active-dot" aria-hidden="true"></span>}
+        {isActive("/compare") && <span class="hdr__dot" aria-hidden="true"></span>}
       </a>
 
       <!-- Best Of -->
-      <a
-        href="/best"
-        class:list={["hdr__link", isActive("/best") && "hdr__link--active"]}
-      >
+      <a href="/best" class:list={["hdr__link", isActive("/best") && "hdr__link--on"]}>
         Best Of
-        {isActive("/best") && <span class="hdr__active-dot" aria-hidden="true"></span>}
+        {isActive("/best") && <span class="hdr__dot" aria-hidden="true"></span>}
       </a>
 
-      <!-- Explore (met dropdown) -->
-      <div class="hdr__item hdr__item--dropdown" data-dropdown="explore">
-        <button
-          class:list={["hdr__link hdr__link--btn", (isActive("/use-case") || isActive("/industry") || isActive("/workflow") || isActive("/capability") || isActive("/alternatives")) && "hdr__link--active"]}
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
+      <!-- Insights -->
+      <a href="/insights" class:list={["hdr__link", isActive("/insights") && "hdr__link--on"]}>
+        Insights
+        {isActive("/insights") && <span class="hdr__dot" aria-hidden="true"></span>}
+      </a>
+
+      <!-- Explore dropdown -->
+      <div class="hdr__item hdr__item--dd" data-dd="explore">
+        <button class:list={["hdr__link hdr__link--btn", isExploreActive && "hdr__link--on"]} aria-haspopup="true">
           Explore
-          <svg class="hdr__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
+          <svg class="hdr__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <!-- Explore mega dropdown -->
-        <div class="hdr__dropdown hdr__dropdown--explore" role="menu">
-          <div class="hdr__explore-grid">
+
+        <div class="hdr__dd hdr__dd--explore">
+          <div class="hdr__exp-grid">
             {exploreLinks.map(group => (
-              <div class="hdr__explore-group">
-                <p class="hdr__explore-group-label">{group.group}</p>
+              <div class="hdr__exp-group">
+                <p class="hdr__exp-grouplbl">{group.group}</p>
                 {group.items.map(item => (
-                  <a href={item.href} class="hdr__explore-item" role="menuitem">
-                    <span class="hdr__explore-icon">{item.icon}</span>
-                    <span class="hdr__explore-body">
-                      <span class="hdr__explore-label">{item.label}</span>
-                      <span class="hdr__explore-desc">{item.desc}</span>
+                  <a href={item.href} class="hdr__exp-item">
+                    <span class="hdr__exp-icon">{item.icon}</span>
+                    <span class="hdr__exp-body">
+                      <span class="hdr__exp-lbl">{item.label}</span>
+                      <span class="hdr__exp-desc">{item.desc}</span>
                     </span>
                   </a>
                 ))}
@@ -182,13 +152,12 @@ const exploreLinks = [
 
     </nav>
 
-    <!-- Right side -->
+    <!-- Right -->
     <div class="hdr__right">
       <a href="/submit-tool" class="hdr__cta">Submit Tool</a>
-      <!-- Mobile toggle -->
-      <button class="hdr__mobile-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+      <button class="hdr__mob-btn" id="mob-btn" aria-label="Open menu" aria-expanded="false">
         <svg id="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
         <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
           <path d="M18 6L6 18M6 6l12 12"/>
@@ -199,248 +168,286 @@ const exploreLinks = [
   </div>
 
   <!-- Mobile menu -->
-  <div class="hdr__mobile" id="mobile-menu" aria-hidden="true">
-    <nav class="hdr__mobile-nav">
-      <a href="/tools"        class="hdr__mobile-link">🔧 AI Tools</a>
-      <a href="/compare"      class="hdr__mobile-link">⚔️ Compare</a>
-      <a href="/best"         class="hdr__mobile-link">🏆 Best Of</a>
-      <a href="/alternatives" class="hdr__mobile-link">🔀 Alternatives</a>
-      <a href="/use-case"     class="hdr__mobile-link">🎯 By Use Case</a>
-      <a href="/industry"     class="hdr__mobile-link">🏭 By Industry</a>
-      <a href="/workflow"     class="hdr__mobile-link">⚙️ Workflows</a>
-      <a href="/capability"   class="hdr__mobile-link">🔬 By Capability</a>
+  <div class="hdr__mob" id="mob-menu" aria-hidden="true">
+    <nav class="hdr__mob-nav">
 
-      <div class="hdr__mobile-div"></div>
-      <p class="hdr__mobile-section">Filter</p>
-      <a href="/tools/pricing/free"     class="hdr__mobile-link">🆓 Free Tools</a>
-      <a href="/tools/pricing/freemium" class="hdr__mobile-link">✨ Freemium Tools</a>
+      <p class="hdr__mob-section">Discover</p>
+      <a href="/tools"        class="hdr__mob-link">🔧 All AI Tools</a>
+      <a href="/compare"      class="hdr__mob-link">⚔️ Compare Tools</a>
+      <a href="/best"         class="hdr__mob-link">🏆 Best-Of Lists</a>
+      <a href="/alternatives" class="hdr__mob-link">🔀 Find Alternatives</a>
+      <a href="/insights"     class="hdr__mob-link">💡 Insights</a>
 
-      <div class="hdr__mobile-div"></div>
-      <a href="/submit-tool" class="hdr__mobile-cta">➕ Submit a Tool</a>
+      <div class="hdr__mob-div"></div>
+      <p class="hdr__mob-section">Browse</p>
+      <a href="/use-case"     class="hdr__mob-link">🎯 By Use Case</a>
+      <a href="/industry"     class="hdr__mob-link">🏭 By Industry</a>
+      <a href="/workflow"     class="hdr__mob-link">⚙️ Workflows</a>
+      <a href="/capability"   class="hdr__mob-link">🔬 By Capability</a>
+
+      <div class="hdr__mob-div"></div>
+      <p class="hdr__mob-section">Filter</p>
+      <a href="/tools/pricing/free"     class="hdr__mob-link">🆓 Free Tools</a>
+      <a href="/tools/pricing/freemium" class="hdr__mob-link">✨ Freemium Tools</a>
+
+      <div class="hdr__mob-div"></div>
+      <a href="/submit-tool" class="hdr__mob-cta">➕ Submit a Tool</a>
     </nav>
   </div>
 </header>
 
 <style>
-/* ── Header shell ────────────────────────────────────────────────── */
+/* ── Shell ───────────────────────────────────────────────────── */
 .hdr {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: 0; z-index: 100;
   width: 100%;
-  background: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid #1E293B;
+  background: rgba(6, 9, 19, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .hdr__inner {
   max-width: 1280px; margin: 0 auto;
   padding: 0 1.5rem;
   display: flex; align-items: center;
-  height: 4.5rem; gap: 1rem;
+  height: 4.25rem; gap: 0.5rem;
 }
 
-/* ── Logo ──────────────────────────────────────────────────────── */
+/* ── Logo ────────────────────────────────────────────────────── */
 .hdr__logo {
-  display: flex; align-items: center; gap: .75rem;
+  display: flex; align-items: center; gap: 0.625rem;
   text-decoration: none; flex-shrink: 0;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 .hdr__logo:hover { transform: scale(1.02); }
+
 .hdr__logo-icon {
   position: relative; width: 2.25rem; height: 2.25rem;
-  border-radius: .625rem; flex-shrink: 0;
+  border-radius: 0.625rem; flex-shrink: 0;
   background: linear-gradient(135deg, #3B82F6, #8B5CF6);
   padding: 1px;
 }
 .hdr__logo-icon-inner {
-  width: 100%; height: 100%; border-radius: .5625rem;
-  background: #0B0F19;
+  width: 100%; height: 100%; border-radius: 0.5625rem;
+  background: #060913;
   display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hdr__logo-icon-inner img {
+  width: 24px; height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
 }
 .hdr__logo-glow {
-  position: absolute; inset: 0; border-radius: .625rem;
-  background: rgba(59,130,246,.2); filter: blur(8px);
-  transition: background .2s;
+  position: absolute; inset: -2px; border-radius: 0.75rem;
+  background: rgba(59,130,246,0.15);
+  filter: blur(10px); z-index: -1;
+  transition: background 0.2s;
 }
-.hdr__logo:hover .hdr__logo-glow { background: rgba(59,130,246,.4); }
-.hdr__logo-text { font-size: 1.125rem; font-weight: 700; letter-spacing: -.01em; color: #F8FAFC; }
-.hdr__logo-ai   { background: linear-gradient(to right, #3B82F6, #22D3EE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hdr__logo-com  { color: #64748B; font-size: .8125rem; font-weight: 500; }
+.hdr__logo:hover .hdr__logo-glow { background: rgba(59,130,246,0.35); }
 
-/* ── Desktop nav ────────────────────────────────────────────────── */
-.hdr__nav {
-  display: flex; align-items: center; gap: .125rem;
-  flex: 1; margin-left: 1rem;
+.hdr__logo-text { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; color: var(--c-text, #F8FAFC); }
+.hdr__logo-ai {
+  background: linear-gradient(to right, #3B82F6, #22D3EE);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-@media (max-width: 768px) { .hdr__nav { display: none; } }
+.hdr__logo-com { color: var(--c-text-4, #64748B); font-size: 0.8125rem; font-weight: 400; }
+
+/* ── Desktop nav ─────────────────────────────────────────────── */
+.hdr__nav {
+  display: flex; align-items: center; gap: 0.125rem;
+  flex: 1; margin-left: 1.25rem;
+}
+@media (max-width: 900px) { .hdr__nav { display: none; } }
 
 .hdr__item { position: relative; }
-.hdr__item--dropdown { display: flex; align-items: center; }
+.hdr__item--dd { display: flex; align-items: center; }
 
 .hdr__link, .hdr__link--btn {
-  display: flex; align-items: center; gap: .3rem;
-  padding: .5rem .875rem; border-radius: .5rem;
-  font-size: .875rem; font-weight: 500;
-  color: #94A3B8; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.5rem 0.75rem; border-radius: var(--r-md, 0.5rem);
+  font-size: 0.875rem; font-weight: 500;
+  color: var(--c-text-3, #94A3B8); text-decoration: none;
   cursor: pointer; background: none; border: none;
-  transition: color .15s, background .15s;
+  transition: color 0.15s, background 0.15s;
   position: relative; white-space: nowrap;
 }
 .hdr__link:hover, .hdr__link--btn:hover {
-  color: #F8FAFC; background: #1E293B;
+  color: var(--c-text, #F8FAFC);
+  background: rgba(255,255,255,0.05);
 }
-.hdr__link--active {
-  color: #3B82F6 !important; background: rgba(59,130,246,.1) !important;
+.hdr__link--on {
+  color: var(--c-primary, #3B82F6) !important;
+  background: rgba(59,130,246,0.08) !important;
 }
-.hdr__active-dot {
+.hdr__dot {
   position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
-  width: 16px; height: 2px; background: #3B82F6; border-radius: 9999px;
+  width: 16px; height: 2px;
+  background: var(--c-primary, #3B82F6); border-radius: 9999px;
   box-shadow: 0 0 8px #3B82F6;
 }
-.hdr__chevron { opacity: .5; transition: transform .2s; flex-shrink: 0; }
-.hdr__item--dropdown:hover .hdr__chevron { transform: rotate(180deg); opacity: 1; }
+.hdr__chev { opacity: 0.5; transition: transform 0.2s; flex-shrink: 0; }
+.hdr__item--dd:hover .hdr__chev { transform: rotate(180deg); opacity: 1; }
 
-/* ── Dropdowns ──────────────────────────────────────────────────── */
-.hdr__dropdown {
-  position: absolute; top: calc(100% + .5rem); left: 0;
-  background: #0B1120; border: 1px solid #1E293B;
-  border-radius: 1rem; box-shadow: 0 16px 48px rgba(0,0,0,.5);
+/* ── Dropdowns ───────────────────────────────────────────────── */
+.hdr__dd {
+  position: absolute; top: calc(100% + 0.625rem); left: 0;
+  background: #0A0F1E;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-xl, 1rem);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(59,130,246,0.05);
   opacity: 0; visibility: hidden; pointer-events: none;
-  transform: translateY(-8px);
-  transition: opacity .2s, transform .2s, visibility .2s;
-  z-index: 100;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+  z-index: 200;
 }
-.hdr__item--dropdown:hover .hdr__dropdown,
-.hdr__item--dropdown:focus-within .hdr__dropdown {
-  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+.hdr__item--dd:hover .hdr__dd,
+.hdr__item--dd:focus-within .hdr__dd {
+  opacity: 1; visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
 }
 
 /* Tools dropdown */
-.hdr__dropdown--tools { width: 520px; padding: 1.25rem; }
-.hdr__dropdown-header { margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #1E293B; }
-.hdr__dropdown-all { font-size: .8125rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
-.hdr__dropdown-all:hover { text-decoration: underline; }
-.hdr__cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; margin-bottom: 1rem; }
+.hdr__dd--tools { width: 540px; padding: 1.125rem; }
+.hdr__dd-head {
+  margin-bottom: 0.875rem; padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hdr__dd-all {
+  font-size: 0.8125rem; color: var(--c-primary, #3B82F6);
+  text-decoration: none; font-weight: 500;
+}
+.hdr__dd-all:hover { text-decoration: underline; }
+
+.hdr__cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem; margin-bottom: 0.875rem; }
 .hdr__cat-item {
-  display: flex; align-items: center; gap: .5rem;
-  padding: .5rem .625rem; border-radius: .5rem;
-  text-decoration: none; font-size: .8125rem; color: #94A3B8;
-  transition: all .15s;
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 0.625rem; border-radius: 0.5rem;
+  text-decoration: none; font-size: 0.8125rem;
+  color: var(--c-text-3, #94A3B8);
+  transition: all 0.12s;
 }
-.hdr__cat-item:hover { background: #1E293B; color: #F8FAFC; }
-.hdr__cat-emoji { font-size: .875rem; flex-shrink: 0; }
-.hdr__cat-label { font-weight: 500; }
-.hdr__dropdown-footer {
-  display: flex; gap: .5rem; flex-wrap: wrap;
-  padding-top: .75rem; border-top: 1px solid #1E293B;
+.hdr__cat-item:hover { background: rgba(255,255,255,0.05); color: var(--c-text, #F8FAFC); }
+.hdr__cat-em  { font-size: 0.9rem; flex-shrink: 0; }
+.hdr__cat-lbl { font-weight: 500; line-height: 1.3; }
+
+.hdr__dd-foot {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
-.hdr__dropdown-footer a {
-  font-size: .75rem; color: #64748B; text-decoration: none;
-  padding: .25rem .625rem; background: #1E293B; border-radius: .375rem;
-  transition: all .15s;
+.hdr__dd-foot a {
+  font-size: 0.75rem; color: var(--c-text-4, #64748B);
+  text-decoration: none; padding: 0.25rem 0.625rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 0.375rem; transition: all 0.12s;
 }
-.hdr__dropdown-footer a:hover { color: #F8FAFC; background: #273548; }
+.hdr__dd-foot a:hover { color: var(--c-text, #F8FAFC); background: rgba(255,255,255,0.08); }
 
 /* Explore dropdown */
-.hdr__dropdown--explore { right: 0; left: auto; width: 560px; padding: 1.25rem; }
-.hdr__explore-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
-.hdr__explore-group-label { font-size: .6875rem; text-transform: uppercase; letter-spacing: .08em; color: #475569; margin: 0 0 .5rem; font-weight: 600; }
-.hdr__explore-item {
-  display: flex; align-items: flex-start; gap: .625rem;
-  padding: .5rem .375rem; border-radius: .5rem;
-  text-decoration: none; transition: background .15s;
+.hdr__dd--explore { right: 0; left: auto; width: 560px; padding: 1.25rem; }
+.hdr__exp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+.hdr__exp-grouplbl {
+  font-size: 0.6875rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--c-text-5, #475569);
+  margin: 0 0 0.5rem; font-weight: 700;
 }
-.hdr__explore-item:hover { background: #1E293B; }
-.hdr__explore-icon { font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
-.hdr__explore-body { display: flex; flex-direction: column; gap: .125rem; }
-.hdr__explore-label { font-size: .875rem; font-weight: 600; color: #F8FAFC; }
-.hdr__explore-desc  { font-size: .75rem; color: #64748B; }
+.hdr__exp-item {
+  display: flex; align-items: flex-start; gap: 0.625rem;
+  padding: 0.5rem 0.375rem; border-radius: 0.5rem;
+  text-decoration: none; transition: background 0.12s;
+}
+.hdr__exp-item:hover { background: rgba(255,255,255,0.05); }
+.hdr__exp-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+.hdr__exp-body { display: flex; flex-direction: column; gap: 0.125rem; }
+.hdr__exp-lbl  { font-size: 0.875rem; font-weight: 600; color: var(--c-text, #F8FAFC); line-height: 1.3; }
+.hdr__exp-desc { font-size: 0.75rem; color: var(--c-text-4, #64748B); }
 
-/* ── Right side ─────────────────────────────────────────────────── */
-.hdr__right { display: flex; align-items: center; gap: .75rem; margin-left: auto; flex-shrink: 0; }
+/* ── Right side ──────────────────────────────────────────────── */
+.hdr__right { display: flex; align-items: center; gap: 0.625rem; margin-left: auto; flex-shrink: 0; }
 
 .hdr__cta {
   display: inline-flex; align-items: center;
-  padding: .5rem 1.125rem;
+  padding: 0.4375rem 1rem;
   background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-  color: #fff; border-radius: .625rem;
-  font-size: .875rem; font-weight: 600; text-decoration: none;
-  transition: all .2s;
+  color: #fff; border-radius: var(--r-md, 0.5rem);
+  font-size: 0.875rem; font-weight: 600; text-decoration: none;
+  transition: all 0.2s; white-space: nowrap;
 }
-.hdr__cta:hover { box-shadow: 0 0 20px rgba(59,130,246,.4); transform: translateY(-1px); }
-@media (max-width: 1024px) { .hdr__cta { display: none; } }
-
-.hdr__mobile-btn {
-  display: none; padding: .5rem; background: none; border: none;
-  color: #94A3B8; cursor: pointer; border-radius: .5rem;
-  transition: color .15s, background .15s;
+.hdr__cta:hover {
+  box-shadow: 0 0 24px rgba(59,130,246,0.4);
+  transform: translateY(-1px);
 }
-.hdr__mobile-btn:hover { color: #F8FAFC; background: #1E293B; }
-@media (max-width: 768px) { .hdr__mobile-btn { display: flex; align-items: center; justify-content: center; } }
+@media (max-width: 1100px) { .hdr__cta { display: none; } }
 
-/* ── Mobile menu ────────────────────────────────────────────────── */
-.hdr__mobile {
+.hdr__mob-btn {
+  display: none; padding: 0.5rem; background: none; border: none;
+  color: var(--c-text-3, #94A3B8); cursor: pointer;
+  border-radius: 0.5rem; transition: all 0.15s;
+  align-items: center; justify-content: center;
+}
+.hdr__mob-btn:hover { color: var(--c-text, #F8FAFC); background: rgba(255,255,255,0.05); }
+@media (max-width: 900px) { .hdr__mob-btn { display: flex; } }
+
+/* ── Mobile menu ─────────────────────────────────────────────── */
+.hdr__mob {
   display: none;
-  border-top: 1px solid #1E293B;
-  max-height: 0; overflow: hidden;
-  transition: max-height .3s ease;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden; max-height: 0;
+  transition: max-height 0.3s ease;
 }
-.hdr__mobile.is-open { max-height: 600px; }
-@media (max-width: 768px) { .hdr__mobile { display: block; } }
+.hdr__mob.is-open { max-height: 700px; }
+@media (max-width: 900px) { .hdr__mob { display: block; } }
 
-.hdr__mobile-nav {
-  padding: 1rem 1.5rem 1.5rem;
-  display: flex; flex-direction: column; gap: .25rem;
+.hdr__mob-nav {
+  padding: 0.75rem 1.5rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.2rem;
 }
-.hdr__mobile-link {
-  display: block; padding: .625rem .75rem; border-radius: .5rem;
-  font-size: .9375rem; font-weight: 500; color: #94A3B8;
-  text-decoration: none; transition: all .15s;
+.hdr__mob-section {
+  font-size: 0.6875rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--c-text-5, #475569);
+  padding: 0.5rem 0.75rem 0.25rem; margin: 0; font-weight: 700;
 }
-.hdr__mobile-link:hover { background: #1E293B; color: #F8FAFC; }
-.hdr__mobile-div { height: 1px; background: #1E293B; margin: .5rem 0; }
-.hdr__mobile-section { font-size: .6875rem; text-transform: uppercase; letter-spacing: .08em; color: #475569; padding: .25rem .75rem 0; margin: 0; }
-.hdr__mobile-cta {
-  display: block; padding: .75rem 1rem; margin-top: .25rem;
+.hdr__mob-link {
+  display: block; padding: 0.625rem 0.75rem; border-radius: 0.5rem;
+  font-size: 0.9375rem; font-weight: 500;
+  color: var(--c-text-3, #94A3B8); text-decoration: none;
+  transition: all 0.12s;
+}
+.hdr__mob-link:hover { background: rgba(255,255,255,0.05); color: var(--c-text, #F8FAFC); }
+.hdr__mob-div { height: 1px; background: rgba(255,255,255,0.07); margin: 0.5rem 0; }
+.hdr__mob-cta {
+  display: block; padding: 0.75rem 1rem; margin-top: 0.25rem;
   background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-  color: #fff; border-radius: .625rem;
-  font-size: .9375rem; font-weight: 600; text-decoration: none;
-  text-align: center; transition: all .2s;
+  color: #fff; border-radius: 0.625rem;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+  text-align: center; transition: all 0.2s;
 }
-.hdr__mobile-cta:hover { box-shadow: 0 0 16px rgba(59,130,246,.4); }
+.hdr__mob-cta:hover { box-shadow: 0 0 20px rgba(59,130,246,0.4); }
 </style>
 
 <script>
-// Mobile menu toggle
-const btn  = document.getElementById("mobile-menu-btn");
-const menu = document.getElementById("mobile-menu");
-const iconMenu  = document.getElementById("icon-menu");
-const iconClose = document.getElementById("icon-close");
+const btn   = document.getElementById("mob-btn");
+const menu  = document.getElementById("mob-menu");
+const iMenu = document.getElementById("icon-menu");
+const iClose= document.getElementById("icon-close");
 
 btn?.addEventListener("click", () => {
   const open = menu?.classList.toggle("is-open");
-  if (btn)  btn.setAttribute("aria-expanded", String(open));
-  if (menu) menu.setAttribute("aria-hidden", String(!open));
-  if (iconMenu)  iconMenu.style.display  = open ? "none"  : "block";
-  if (iconClose) iconClose.style.display = open ? "block" : "none";
+  btn.setAttribute("aria-expanded", String(!!open));
+  menu?.setAttribute("aria-hidden",  String(!open));
+  if (iMenu)  iMenu.style.display  = open ? "none"  : "block";
+  if (iClose) iClose.style.display = open ? "block" : "none";
 });
 
-// Close mobile menu on link click
 menu?.querySelectorAll("a").forEach(a => {
   a.addEventListener("click", () => {
     menu.classList.remove("is-open");
     btn?.setAttribute("aria-expanded", "false");
-    if (iconMenu)  iconMenu.style.display  = "block";
-    if (iconClose) iconClose.style.display = "none";
+    if (iMenu)  iMenu.style.display  = "block";
+    if (iClose) iClose.style.display = "none";
   });
-});
-
-// Close dropdowns on outside click
-document.addEventListener("click", (e) => {
-  const target = e.target as Element;
-  if (!target.closest(".hdr__item--dropdown")) {
-    document.querySelectorAll(".hdr__dropdown").forEach(d => {
-      (d as HTMLElement).style.cssText = "";
-    });
-  }
 });
 </script>
