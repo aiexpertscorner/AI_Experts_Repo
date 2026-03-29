@@ -67,9 +67,7 @@ const resolvedLogoDomain =
   tool?.logo_domain ||
   tool?.website_url?.replace(/^https?:\/\//, "").replace(/^www\./, "").split("/")[0] ||
   "";
-const logoSrc =
-  tool?.logo_url ||
-  (resolvedLogoDomain ? `https://logo.clearbit.com/${resolvedLogoDomain}?size=64` : null);
+const logoSrc = tool?.logo_url || null;
 
 const fallbackLetter = (resolvedName || "A").charAt(0).toUpperCase();
 

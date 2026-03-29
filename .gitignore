@@ -89,3 +89,7 @@ src/data/build/project-data-inventory.md
 # src/data/build/*-paths.json (all)          ← dimension pages
 # src/data/build/page-payloads/*.json        ← hub pages
 #   (except the tool-pages*.json giants above)
+00upload packs.txt
+*.ps1
+*.zip
+*.zip
