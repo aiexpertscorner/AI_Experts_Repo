@@ -2,61 +2,163 @@
 import { FOOTER_LINKS, SITE_DESC, SITE_NAME } from "@/data/homeConfig";
 ---
 
-<footer class="bg-[#0B0F19] border-t border-[#1E293B] pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-20">
-      <div class="lg:col-span-2">
-        <a href="/" class="flex items-center mb-6" aria-label={`${SITE_NAME} home`}>
-          <span class="text-2xl font-bold tracking-tight text-[#F8FAFC]">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#22D3EE]">AI</span>ExpertsCorner<span class="text-[#64748B] text-lg font-medium">.com</span>
-          </span>
-        </a>
-        <p class="text-[#94A3B8] text-base leading-relaxed max-w-sm mb-8">
-          {SITE_DESC}
-        </p>
-        <div class="flex space-x-4">
-          {[1, 2, 3, 4].map((i) => (
-            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-[#121826] border border-[#1E293B] text-[#94A3B8] hover:text-[#3B82F6] hover:border-[#3B82F6] transition-all duration-300">
-              <span class="sr-only">Social Link {i}</span>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/></svg>
-            </a>
-          ))}
-        </div>
-      </div>
+<footer class="footer">
+  <div class="footer__inner">
 
-      {Object.entries(FOOTER_LINKS).map(([title, links]) => (
-        <div class="lg:col-span-1">
-          <h3 class="text-[#F8FAFC] font-semibold tracking-wider text-sm uppercase mb-6">
-            {title}
-          </h3>
-          <ul class="space-y-4">
-            {links.map((link) => (
-              <li>
-                <a href={link.href} class="text-[#94A3B8] hover:text-[#3B82F6] text-sm transition-colors duration-200 flex items-center group">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6] opacity-0 group-hover:opacity-100 transition-opacity mr-2"></span>
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <!-- Brand column -->
+    <div class="footer__brand">
+      <a href="/" class="footer__logo" aria-label={`${SITE_NAME} home`}>
+        <span class="footer__logo-ai">AI</span>ExpertsCorner<span class="footer__logo-tld">.com</span>
+      </a>
+      <p class="footer__desc">{SITE_DESC}</p>
+      <div class="footer__social">
+        <a href="https://twitter.com/aiexpertscorner" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Twitter / X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/aiexpertscorner" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/aiexpertscorner" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
     </div>
 
-    <div class="pt-10 border-t border-[#1E293B] flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex flex-col items-center md:items-start">
-        <p class="text-[#64748B] text-sm">
-          © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
-        </p>
-        <p class="text-[#64748B] text-xs mt-1">
-          Discovering the future of productivity through artificial intelligence.
-        </p>
+    <!-- Link columns -->
+    {Object.entries(FOOTER_LINKS).map(([title, links]) => (
+      <div class="footer__col">
+        <h3 class="footer__col-title">{title}</h3>
+        <ul class="footer__links">
+          {links.map((link) => (
+            <li>
+              <a href={link.href} class="footer__link">{link.label}</a>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div class="flex items-center space-x-8">
-        <a href="/privacy" class="text-[#64748B] hover:text-[#F8FAFC] text-xs transition-colors">Privacy Policy</a>
-        <a href="/terms" class="text-[#64748B] hover:text-[#F8FAFC] text-xs transition-colors">Terms of Service</a>
-        <a href="/sitemap.xml" class="text-[#64748B] hover:text-[#F8FAFC] text-xs transition-colors">Sitemap</a>
-      </div>
+    ))}
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer__bottom">
+    <p class="footer__copy">© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
+    <div class="footer__bottom-links">
+      <a href="/privacy" class="footer__bottom-link">Privacy</a>
+      <a href="/terms"   class="footer__bottom-link">Terms</a>
+      <a href="/sitemap.xml" class="footer__bottom-link">Sitemap</a>
     </div>
   </div>
 </footer>
+
+<style>
+.footer {
+  border-top: 1px solid var(--c-border-soft);
+  background: var(--c-bg);
+  padding: 4rem 0 0;
+  margin-top: 4rem;
+}
+
+.footer__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-px) 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 540px) {
+  .footer__inner { grid-template-columns: 1fr; }
+}
+
+/* Brand */
+.footer__logo {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-text);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+.footer__logo-ai {
+  background: linear-gradient(135deg, var(--c-primary), #22D3EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer__logo-tld { color: var(--c-text-4); font-size: 1rem; font-weight: 400; }
+
+.footer__desc {
+  color: var(--c-text-3);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+}
+
+/* Social */
+.footer__social { display: flex; gap: 0.625rem; }
+.footer__social-link {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-md);
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  color: var(--c-text-3);
+  text-decoration: none;
+  transition: all var(--t-fast);
+}
+.footer__social-link:hover {
+  color: var(--c-primary);
+  border-color: var(--c-primary);
+  background: var(--c-bg-hover);
+}
+
+/* Link columns */
+.footer__col-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-text);
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+}
+.footer__links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer__link {
+  font-size: var(--text-sm);
+  color: var(--c-text-3);
+  text-decoration: none;
+  transition: color var(--t-fast);
+  line-height: 1.4;
+}
+.footer__link:hover { color: var(--c-primary); }
+
+/* Bottom bar */
+.footer__bottom {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.25rem var(--page-px) 2rem;
+  border-top: 1px solid var(--c-border-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer__copy { font-size: var(--text-xs); color: var(--c-text-4); margin: 0; }
+.footer__bottom-links { display: flex; gap: 1.5rem; }
+.footer__bottom-link { font-size: var(--text-xs); color: var(--c-text-4); text-decoration: none; transition: color var(--t-fast); }
+.footer__bottom-link:hover { color: var(--c-text-3); }
+</style>

@@ -1,11 +1,9 @@
-# AIExpertsCorner — 301 Redirects
+```
+# AIExpertsCorner — Redirects
 # Cloudflare Pages format
 
 # /vs/ → /compare/ (oude compare route)
-/vs/:slug                    /compare/:slug               301
-
-# Oude /tools/[slug] tool detail → nieuwe /tools/[slug]
-/tools/:slug              /tools/:slug                 301
+/vs/:slug                   /compare/:slug              301
 
 # Oude category slugs → nieuwe pipeline slugs
 /tools/category/writing-and-content     /tools/category/ai-writing              301
@@ -25,7 +23,5 @@
 /tools/category/ai-agents               /tools/category/ai-automation-agents    301
 
 # Old use-case routes
-/tools/use-case/:uc       /use-case/:uc                301
-
-# Old tag routes
-/tools/tag/:tag           /tools/tag/:tag           200
+/tools/use-case/:uc         /use-case/:uc               301
+``` 

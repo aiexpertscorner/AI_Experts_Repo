@@ -1,123 +1,99 @@
 // src/pages/sitemap.xml.ts
+// Gefaseerde sitemap — prioriteit op hoogwaardige pages
+// Cloudflare bouwt dit als statisch bestand
+
 import type { APIRoute } from "astro";
+import toolSlugs    from "@/data/build/tool-slugs.json";
+import comparePaths from "@/data/build/compare-paths.json";
+import catPaths     from "@/data/build/category-paths.json";
+import bestPaths    from "@/data/build/best-paths.json";
+import altPaths     from "@/data/build/alt-paths.json";
+import industryP    from "@/data/build/industry-paths.json";
+import featureP     from "@/data/build/feature-paths.json";
+import tagP         from "@/data/build/tag-paths.json";
 
-import toolPathsRaw   from "@/data/build/tool-paths.json";
-import comparePairs   from "@/data/build/compare-pairs.json";
-import bestPagesRaw   from "@/data/build/page-payloads/best-pages.json";
-import bestClusterRaw from "@/data/build/page-payloads/best-cluster-pages.json";
-import altPagesRaw    from "@/data/build/page-payloads/alternatives-pages.json";
-import useCaseRaw     from "@/data/build/page-payloads/use-case-cluster-pages.json";
-import subcatRaw      from "@/data/build/page-payloads/subcategory-pages.json";
-import capabilityRaw  from "@/data/build/page-payloads/capability-pages.json";
-import industryRaw    from "@/data/build/page-payloads/industry-pages.json";
-import workflowRaw    from "@/data/build/page-payloads/workflow-pages-rich.json";
-import integrationRaw from "@/data/build/page-payloads/integration-pages.json";
-import tagPagesRaw    from "@/data/build/page-payloads/tag-pages.json";
-import microcatRaw    from "@/data/build/page-payloads/microcategory-pages.json";
+const BASE = "https://www.aiexpertscorner.com";
+const NOW  = new Date().toISOString().slice(0, 10);
 
-const BASE = "https://aiexpertscorner.com";
-const NOW = new Date().toISOString().split("T")[0];
-
-function u(loc: string, priority = "0.5", changefreq = "weekly") {
-  return `  <url><loc>${BASE}${loc}</loc><lastmod>${NOW}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
-}
-
-function slugs(arr: any[]): string[] {
-  return (arr as any[])
-    .map((p: any) => p?.slug || p?.primary || (p?.route || "").split("/").pop())
-    .filter(Boolean);
+function url(loc: string, priority: number, freq: string) {
+  return `  <url>
+    <loc>${BASE}${loc}</loc>
+    <lastmod>${NOW}</lastmod>
+    <changefreq>${freq}</changefreq>
+    <priority>${priority.toFixed(1)}</priority>
+  </url>`;
 }
 
 export const GET: APIRoute = () => {
   const urls: string[] = [];
 
-  // Static pages
-  urls.push(u("/", "1.0", "daily"));
-  urls.push(u("/tools", "0.9", "daily"));
-  urls.push(u("/compare", "0.8", "weekly"));
-  urls.push(u("/alternatives", "0.8", "weekly"));
-  urls.push(u("/best", "0.8", "weekly"));
-  urls.push(u("/use-case", "0.8", "weekly"));
-  urls.push(u("/subcategory", "0.7", "weekly"));
-  urls.push(u("/capability", "0.7", "weekly"));
-  urls.push(u("/industry", "0.7", "weekly"));
-  urls.push(u("/workflow", "0.7", "weekly"));
-  urls.push(u("/integration", "0.6", "weekly"));
-  urls.push(u("/tag", "0.6", "weekly"));
-  urls.push(u("/submit-tool", "0.4", "monthly"));
+  // ── FASE 1: Statische high-value pages ──────────────────────
+  urls.push(url("/",              1.0, "daily"));
+  urls.push(url("/tools",         0.9, "daily"));
+  urls.push(url("/compare",       0.9, "daily"));
+  urls.push(url("/best",          0.9, "daily"));
+  urls.push(url("/alternatives",  0.9, "daily"));
+  urls.push(url("/use-case",      0.8, "weekly"));
+  urls.push(url("/industry",      0.8, "weekly"));
+  urls.push(url("/about",         0.5, "monthly"));
+  urls.push(url("/contact",       0.5, "monthly"));
+  urls.push(url("/privacy",       0.4, "monthly"));
+  urls.push(url("/terms",         0.4, "monthly"));
+  urls.push(url("/submit-tool",   0.6, "monthly"));
 
-  // Tool pages
-  for (const t of toolPathsRaw as any[]) {
-    const s = t?.slug || t?.handle || t;
-    if (s) urls.push(u(`/tools/${s}`, "0.8", "weekly"));
+  // ── FASE 1: Categories (23 pages, hoge prioriteit) ──────────
+  for (const slug of catPaths as string[]) {
+    urls.push(url(`/tools/category/${slug}`, 0.85, "weekly"));
   }
 
-  // Compare pages
-  for (const p of comparePairs as any[]) {
-    const a = p?.tool_a || p?.a;
-    const b = p?.tool_b || p?.b;
-    if (a && b) {
-      const [sa, sb] = [a, b].sort();
-      urls.push(u(`/compare/${sa}-vs-${sb}`, "0.7", "weekly"));
-    }
+  // ── FASE 2: Best-of pages (hoog commercieel intent) ─────────
+  for (const slug of bestPaths as string[]) {
+    urls.push(url(`/best/${slug}`, 0.75, "weekly"));
   }
 
-  // Alternatives
-  for (const s of slugs(altPagesRaw as any[])) {
-    urls.push(u(`/alternatives/${s}`, "0.7", "weekly"));
+  // ── FASE 2: Industry + Feature dimension pages ───────────────
+  for (const slug of industryP as string[]) {
+    urls.push(url(`/tools/industry/${slug}`, 0.65, "weekly"));
+    urls.push(url(`/industry/${slug}`,       0.65, "weekly"));
+  }
+  for (const slug of featureP as string[]) {
+    urls.push(url(`/tools/feature/${slug}`, 0.60, "weekly"));
   }
 
-  // Best-of
-  for (const s of slugs(bestPagesRaw as any[])) {
-    urls.push(u(`/best/${s}`, "0.7", "weekly"));
+  // ── FASE 3: Top 5000 tool pages (display_score volgorde) ─────
+  // Tool-slugs zijn al gesorteerd op display_score
+  for (const slug of (toolSlugs as string[]).slice(0, 5000)) {
+    urls.push(url(`/tools/${slug}`, 0.70, "monthly"));
   }
-  for (const s of slugs(bestClusterRaw as any[])) {
-    urls.push(u(`/best/${s}`, "0.6", "weekly"));
-  }
-
-  // Use-case
-  for (const s of slugs(useCaseRaw as any[])) {
-    urls.push(u(`/use-case/${s}`, "0.7", "weekly"));
+  // Daarna rest met lagere prioriteit
+  for (const slug of (toolSlugs as string[]).slice(5000)) {
+    urls.push(url(`/tools/${slug}`, 0.50, "monthly"));
   }
 
-  // Taxonomy
-  for (const s of slugs(subcatRaw as any[])) {
-    urls.push(u(`/subcategory/${s}`, "0.6", "weekly"));
+  // ── FASE 3: Compare pages (top 2000) ────────────────────────
+  for (const slug of (comparePaths as string[]).slice(0, 2000)) {
+    urls.push(url(`/compare/${slug}`, 0.60, "monthly"));
   }
-  for (const s of slugs(capabilityRaw as any[])) {
-    urls.push(u(`/capability/${s}`, "0.6", "weekly"));
-  }
-  for (const s of slugs(industryRaw as any[])) {
-    urls.push(u(`/industry/${s}`, "0.7", "weekly"));
-  }
-  for (const s of slugs(workflowRaw as any[])) {
-    urls.push(u(`/workflow/${s}`, "0.7", "weekly"));
-  }
-  for (const s of slugs(integrationRaw as any[])) {
-    urls.push(u(`/integration/${s}`, "0.6", "weekly"));
-  }
-  for (const s of slugs(tagPagesRaw as any[])) {
-    urls.push(u(`/tag/${s}`, "0.5", "weekly"));
-  }
-  for (const s of slugs(microcatRaw as any[])) {
-    urls.push(u(`/microcategory/${s}`, "0.5", "weekly"));
+  for (const slug of (comparePaths as string[]).slice(2000)) {
+    urls.push(url(`/compare/${slug}`, 0.45, "monthly"));
   }
 
-  // Deduplicate
-  const seen = new Set<string>();
-  const deduped = urls.filter((entry) => {
-    const loc = entry.match(/<loc>([^<]+)<\/loc>/)?.[1] || "";
-    if (seen.has(loc)) return false;
-    seen.add(loc);
-    return true;
-  });
+  // ── FASE 4: Alternatives pages ───────────────────────────────
+  for (const slug of altPaths as string[]) {
+    urls.push(url(`/alternatives/${slug}`, 0.60, "monthly"));
+  }
 
-  const body = `<?xml version="1.0" encoding="UTF-8"?>
+  // ── FASE 4: Tag pages ────────────────────────────────────────
+  for (const slug of tagP as string[]) {
+    urls.push(url(`/tools/tag/${slug}`, 0.55, "weekly"));
+  }
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${deduped.join("\n")}
+${urls.join("\n")}
 </urlset>`;
 
-  return new Response(body, {
+  return new Response(xml, {
     headers: { "Content-Type": "application/xml" },
   });
 };
