@@ -1,0 +1,135 @@
+---
+/**
+ * src/pages/insights/category/[slug].astro
+ */
+import BaseLayout    from "@/layouts/BaseLayout.astro";
+import Header        from "@/components/site/Header.astro";
+import Footer        from "@/components/site/Footer.astro";
+import Breadcrumb    from "@/components/ui/Breadcrumb.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import postsRaw      from "@/data/build/posts.json";
+
+const CATEGORIES = [
+  { slug:"tutorials",    label:"Tutorials",    icon:"📖", desc:"Step-by-step guides for AI tools" },
+  { slug:"analysis",     label:"Analysis",     icon:"🔬", desc:"Deep dives and comparisons" },
+  { slug:"news",         label:"News",         icon:"📰", desc:"Latest AI developments" },
+  { slug:"tool-releases",label:"Tool Releases",icon:"🚀", desc:"New launches and updates" },
+  { slug:"trends",       label:"Trends",       icon:"📈", desc:"Where AI is heading" },
+  { slug:"research",     label:"Research",     icon:"🎓", desc:"Studies and data insights" },
+  { slug:"market",       label:"Market",       icon:"💼", desc:"Industry and business AI" },
+  { slug:"case-studies", label:"Case Studies", icon:"🏆", desc:"Real-world AI in practice" },
+];
+
+export function getStaticPaths() {
+  return CATEGORIES.map(cat => ({ params: { slug: cat.slug }, props: { cat } }));
+}
+
+const { cat } = Astro.props as any;
+const allPosts = postsRaw as any[];
+const posts = allPosts
+  .filter(p => p.insights_category === cat.slug)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const otherCats = CATEGORIES.filter(c => c.slug !== cat.slug);
+---
+
+<BaseLayout
+  title={`${cat.label} — AI Insights | AIExpertsCorner`}
+  description={`${cat.desc}. ${posts.length} articles in our ${cat.label} category.`}
+>
+  <Header slot="header" />
+
+  <div class="page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[
+        { label: "Home",    href: "/" },
+        { label: "Insights",href: "/insights" },
+        { label: cat.label },
+      ]} />
+
+      <div class="hub-hero" style="margin-bottom:var(--sp-10)">
+        <span class="hub-hero-badge">{cat.icon} {cat.label}</span>
+        <h1 class="hub-hero-title">{cat.label}</h1>
+        <p class="hub-hero-desc">{cat.desc}. {posts.length} articles.</p>
+      </div>
+
+      {posts.length > 0 ? (
+        <section class="section">
+          <div class="ins-list">
+            {posts.map((post: any) => (
+              <a href={`/insights/${post.slug}`} class="ins-list-item">
+                <div class="ins-list-item__left">
+                  <h3 class="ins-list-item__title">{post.title}</h3>
+                  <p class="ins-list-item__excerpt">{post.excerpt?.slice(0, 140)}…</p>
+                </div>
+                <div class="ins-list-item__right">
+                  {post.tool_slug && (
+                    <a href={`/tools/${post.tool_slug}`} class="ins-list-item__tool-link" onclick="event.stopPropagation()">
+                      {post.tool_name} →
+                    </a>
+                  )}
+                  <span class="ins-list-item__read">{post.reading_time_min} min</span>
+                  <span class="ins-list-item__date">
+                    {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <div class="empty-state">
+          <p>No articles in this category yet.</p>
+          <a href="/insights" class="btn btn--ghost">← Back to Insights</a>
+        </div>
+      )}
+
+      <!-- Other categories -->
+      <section class="section--sm">
+        <SectionHeader eyebrow="Browse" title="Other Topics" />
+        <div class="grid-cards-sm">
+          {otherCats.map(c => (
+            <a href={`/insights/category/${c.slug}`} class="ins-cat-card">
+              <span class="ins-cat-card__icon">{c.icon}</span>
+              <span class="ins-cat-card__label">{c.label}</span>
+              <span class="ins-cat-card__desc">{c.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <div class="seo-links">
+        <a href="/insights">All Insights</a>
+        {CATEGORIES.map(c => <a href={`/insights/category/${c.slug}`}>{c.label}</a>)}
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+.ins-cat-card { display:flex; flex-direction:column; gap:3px; padding:var(--sp-4) var(--sp-5); background:var(--c-bg-card); border:1px solid var(--c-border); border-radius:var(--r-lg); text-decoration:none; transition:all var(--t-fast); }
+.ins-cat-card:hover { border-color:var(--c-primary); background:var(--c-bg-card-alt); transform:translateY(-1px); }
+.ins-cat-card__icon  { font-size:1.375rem; line-height:1; margin-bottom:var(--sp-1); }
+.ins-cat-card__label { font-size:var(--text-base); font-weight:700; color:var(--c-text); }
+.ins-cat-card__desc  { font-size:var(--text-xs); color:var(--c-text-4); line-height:1.4; }
+.ins-list { display:flex; flex-direction:column; }
+.ins-list-item { display:flex; align-items:flex-start; justify-content:space-between; gap:var(--sp-6); padding:var(--sp-5) 0; border-bottom:1px solid var(--c-border); text-decoration:none; transition:background var(--t-fast); }
+.ins-list-item:last-child { border-bottom:none; }
+.ins-list-item:hover .ins-list-item__title { color:var(--c-primary); }
+.ins-list-item__left   { flex:1; min-width:0; }
+.ins-list-item__title  { font-size:var(--text-base); font-weight:700; color:var(--c-text); line-height:1.4; transition:color var(--t-fast); margin-bottom:var(--sp-2); }
+.ins-list-item__excerpt{ font-size:var(--text-sm); color:var(--c-text-4); line-height:1.5; }
+.ins-list-item__right  { flex-shrink:0; display:flex; flex-direction:column; align-items:flex-end; gap:var(--sp-2); min-width:100px; }
+.ins-list-item__tool-link { font-size:var(--text-xs); color:var(--c-primary); text-decoration:none; white-space:nowrap; }
+.ins-list-item__tool-link:hover { text-decoration:underline; }
+.ins-list-item__read,
+.ins-list-item__date   { font-size:var(--text-xs); color:var(--c-text-4); }
+@media (max-width:640px) {
+  .ins-list-item { flex-direction:column; }
+  .ins-list-item__right { flex-direction:row; align-items:center; flex-wrap:wrap; }
+}
+</style>

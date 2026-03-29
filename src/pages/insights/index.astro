@@ -1,0 +1,259 @@
+---
+/**
+ * src/pages/insights/index.astro
+ * AI Insights hub — all posts, category navigation, featured grid
+ */
+import BaseLayout    from "@/layouts/BaseLayout.astro";
+import Header        from "@/components/site/Header.astro";
+import Footer        from "@/components/site/Footer.astro";
+import Breadcrumb    from "@/components/ui/Breadcrumb.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import postsRaw      from "@/data/build/posts.json";
+import byCatRaw      from "@/data/build/posts-by-category.json";
+
+const posts   = postsRaw  as any[];
+const byCat   = byCatRaw  as Record<string, any[]>;
+const allPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const featured = allPosts.filter(p => p.featured).slice(0, 6);
+const recent   = allPosts.slice(0, 12);
+
+const CATEGORIES = [
+  { slug: "tutorials",     label: "Tutorials",      icon: "📖", desc: "Step-by-step guides for AI tools" },
+  { slug: "analysis",      label: "Analysis",       icon: "🔬", desc: "Deep dives and comparisons" },
+  { slug: "news",          label: "News",            icon: "📰", desc: "Latest AI developments" },
+  { slug: "tool-releases", label: "Tool Releases",   icon: "🚀", desc: "New launches and updates" },
+  { slug: "trends",        label: "Trends",          icon: "📈", desc: "Where AI is heading" },
+  { slug: "research",      label: "Research",        icon: "🎓", desc: "Studies and data insights" },
+  { slug: "market",        label: "Market",          icon: "💼", desc: "Industry and business AI" },
+  { slug: "case-studies",  label: "Case Studies",    icon: "🏆", desc: "Real-world AI in practice" },
+];
+
+const totalPosts = posts.length;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "AIExpertsCorner Insights",
+  "description": "Expert analysis, tutorials and news on AI tools and the artificial intelligence industry.",
+  "url": "https://aiexpertscorner.com/insights",
+  "publisher": { "@type": "Organization", "name": "AIExpertsCorner", "url": "https://aiexpertscorner.com" },
+};
+---
+
+<BaseLayout
+  title="AI Insights — Expert Guides, Analysis & News | AIExpertsCorner"
+  description={`Explore ${totalPosts}+ expert articles on AI tools, industry trends, in-depth tutorials and AI market analysis.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <Header slot="header" />
+
+  <div class="page">
+    <div class="container">
+
+      <Breadcrumb crumbs={[{ label: "Home", href: "/" }, { label: "Insights" }]} />
+
+      <!-- Hub hero -->
+      <div class="ins-hero">
+        <span class="eyebrow">AI Insights</span>
+        <h1 class="hub-hero-title">Expert AI Knowledge Hub</h1>
+        <p class="hub-hero-desc">In-depth tutorials, tool comparisons, industry analysis and breaking AI news — written by experts, built for practitioners.</p>
+        <div class="ins-hero__meta">
+          <span>{totalPosts} articles</span>
+          <span class="ins-hero__sep">·</span>
+          <span>{CATEGORIES.length} topics</span>
+          <span class="ins-hero__sep">·</span>
+          <span>Updated weekly</span>
+        </div>
+      </div>
+
+      <!-- Category navigation -->
+      <section class="section--sm">
+        <SectionHeader eyebrow="Browse" title="Topics" />
+        <div class="grid-cards-sm">
+          {CATEGORIES.map(cat => {
+            const count = (byCat[cat.slug] || []).length;
+            return (
+              <a href={`/insights/category/${cat.slug}`} class="ins-cat-card">
+                <span class="ins-cat-card__icon">{cat.icon}</span>
+                <span class="ins-cat-card__label">{cat.label}</span>
+                <span class="ins-cat-card__desc">{cat.desc}</span>
+                {count > 0 && <span class="ins-cat-card__count">{count} articles</span>}
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
+      <!-- Featured posts -->
+      {featured.length > 0 && (
+        <section class="section">
+          <SectionHeader eyebrow="Featured" title="Must-Read Articles" />
+          <div class="ins-featured-grid">
+            {featured.map((post, i) => (
+              <a href={`/insights/${post.slug}`} class={`ins-post-card ins-post-card--${i === 0 ? "hero" : "regular"}`}>
+                <div class="ins-post-card__meta">
+                  <span class="ins-post-card__cat">{post.insights_category}</span>
+                  <span class="ins-post-card__read">{post.reading_time_min} min read</span>
+                </div>
+                <h2 class="ins-post-card__title">{post.title}</h2>
+                <p class="ins-post-card__excerpt">{post.excerpt}</p>
+                <div class="ins-post-card__footer">
+                  {post.tool_slug && (
+                    <span class="ins-post-card__tool">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                      {post.tool_name}
+                    </span>
+                  )}
+                  <span class="ins-post-card__date">{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Recent articles -->
+      <section class="section">
+        <SectionHeader
+          eyebrow="Latest"
+          title="Recent Articles"
+          seeAllHref="/insights/all"
+          seeAllLabel="All articles →"
+        />
+        <div class="ins-list">
+          {recent.map(post => (
+            <a href={`/insights/${post.slug}`} class="ins-list-item">
+              <div class="ins-list-item__left">
+                <span class="ins-list-item__cat badge badge--freemium">{post.insights_category}</span>
+                <h3 class="ins-list-item__title">{post.title}</h3>
+                <p class="ins-list-item__excerpt">{post.excerpt?.slice(0, 120)}…</p>
+              </div>
+              <div class="ins-list-item__right">
+                {post.tool_slug && (
+                  <a href={`/tools/${post.tool_slug}`} class="ins-list-item__tool-link" onclick="event.stopPropagation()">
+                    {post.tool_name} →
+                  </a>
+                )}
+                <span class="ins-list-item__read">{post.reading_time_min} min</span>
+                <span class="ins-list-item__date">{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- SEO links -->
+      <div class="seo-links">
+        {CATEGORIES.map(c => <a href={`/insights/category/${c.slug}`}>{c.label}</a>)}
+        <a href="/tools">AI Tools Directory</a>
+        <a href="/compare">Compare Tools</a>
+        <a href="/best">Best-Of Lists</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+/* Hub hero */
+.ins-hero {
+  padding: var(--sp-10) 0 var(--sp-12);
+  border-bottom: 1px solid var(--c-border);
+  margin-bottom: var(--sp-12);
+}
+.ins-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--text-sm);
+  color: var(--c-text-4);
+  margin-top: var(--sp-5);
+}
+.ins-hero__sep { color: var(--c-border-med); }
+
+/* Category cards */
+.ins-cat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  transition: all var(--t-fast);
+}
+.ins-cat-card:hover { border-color: var(--c-primary); background: var(--c-bg-card-alt); transform: translateY(-1px); }
+.ins-cat-card__icon  { font-size: 1.375rem; line-height: 1; margin-bottom: var(--sp-1); }
+.ins-cat-card__label { font-size: var(--text-base); font-weight: 700; color: var(--c-text); }
+.ins-cat-card__desc  { font-size: var(--text-xs); color: var(--c-text-4); line-height: 1.4; }
+.ins-cat-card__count { font-size: var(--text-xs); color: var(--c-primary); margin-top: var(--sp-1); font-weight: 600; }
+
+/* Featured grid */
+.ins-featured-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--sp-4);
+}
+@media (max-width: 900px) { .ins-featured-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .ins-featured-grid { grid-template-columns: 1fr; } }
+
+/* Post cards */
+.ins-post-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  text-decoration: none;
+  transition: all var(--t-base);
+}
+.ins-post-card:hover { border-color: var(--c-border-med); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.ins-post-card--hero { grid-column: 1; grid-row: 1 / 3; background: linear-gradient(145deg, var(--c-bg-card) 0%, rgba(59,130,246,0.05) 100%); border-color: var(--c-border-soft); }
+.ins-post-card--hero .ins-post-card__title { font-size: var(--text-xl); }
+.ins-post-card--hero .ins-post-card__excerpt { display: block; }
+.ins-post-card:not(.ins-post-card--hero) .ins-post-card__excerpt { display: none; }
+.ins-post-card__meta   { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.ins-post-card__cat    { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--c-primary); background: rgba(59,130,246,0.08); padding: 0.2em 0.6em; border-radius: var(--r-full); }
+.ins-post-card__read   { font-size: var(--text-xs); color: var(--c-text-4); }
+.ins-post-card__title  { font-size: var(--text-md); font-weight: 700; color: var(--c-text); line-height: 1.4; flex: 1; }
+.ins-post-card__excerpt{ font-size: var(--text-sm); color: var(--c-text-3); line-height: 1.6; margin-top: var(--sp-3); flex: 1; }
+.ins-post-card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid var(--c-border); gap: var(--sp-3); }
+.ins-post-card__tool   { display: flex; align-items: center; gap: var(--sp-1); font-size: var(--text-xs); color: var(--c-text-4); }
+.ins-post-card__date   { font-size: var(--text-xs); color: var(--c-text-4); }
+
+/* Article list */
+.ins-list { display: flex; flex-direction: column; gap: 0; }
+.ins-list-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  padding: var(--sp-5) 0;
+  border-bottom: 1px solid var(--c-border);
+  text-decoration: none;
+  transition: background var(--t-fast);
+}
+.ins-list-item:last-child { border-bottom: none; }
+.ins-list-item:hover .ins-list-item__title { color: var(--c-primary); }
+.ins-list-item__left   { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+.ins-list-item__cat    { align-self: flex-start; }
+.ins-list-item__title  { font-size: var(--text-base); font-weight: 700; color: var(--c-text); line-height: 1.4; transition: color var(--t-fast); }
+.ins-list-item__excerpt{ font-size: var(--text-sm); color: var(--c-text-4); line-height: 1.5; }
+.ins-list-item__right  { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: var(--sp-2); min-width: 100px; }
+.ins-list-item__tool-link { font-size: var(--text-xs); color: var(--c-primary); text-decoration: none; white-space: nowrap; }
+.ins-list-item__tool-link:hover { text-decoration: underline; }
+.ins-list-item__read   { font-size: var(--text-xs); color: var(--c-text-4); }
+.ins-list-item__date   { font-size: var(--text-xs); color: var(--c-text-4); }
+
+@media (max-width: 640px) {
+  .ins-list-item { flex-direction: column; }
+  .ins-list-item__right { flex-direction: row; align-items: center; }
+}
+</style>

@@ -1,0 +1,363 @@
+---
+/**
+ * src/pages/insights/[slug].astro
+ * AI Insights post detail — full content with tool links, related posts, schema
+ */
+import BaseLayout  from "@/layouts/BaseLayout.astro";
+import Header      from "@/components/site/Header.astro";
+import Footer      from "@/components/site/Footer.astro";
+import Breadcrumb  from "@/components/ui/Breadcrumb.astro";
+import ToolLogo    from "@/components/ui/ToolLogo.astro";
+import Badge       from "@/components/ui/Badge.astro";
+import postsRaw    from "@/data/build/posts.json";
+import toolMapRaw  from "@/data/build/tool-map.json";
+import logoMapRaw  from "@/data/build/logo-map.json";
+
+const logoMap = logoMapRaw as Record<string, string>;
+const toolMap = Object.fromEntries(
+  (Array.isArray(toolMapRaw) ? toolMapRaw : Object.values(toolMapRaw)).map((t: any) => [t.slug || t.hero?.slug, t])
+);
+
+export function getStaticPaths() {
+  return (postsRaw as any[]).map(post => ({
+    params: { slug: post.slug },
+    props:  { post },
+  }));
+}
+
+const { post } = Astro.props as any;
+
+// Tool data
+const tool = post.tool_slug ? toolMap[post.tool_slug] : null;
+const toolName       = tool?.hero?.name || post.tool_name || null;
+const toolPricing    = tool?.commercial?.pricing_tier || null;
+const toolDesc       = tool?.content?.description || null;
+const toolWebsite    = tool?.hero?.website_url || null;
+
+// Related posts (same category or same tool, exclude self)
+const allPosts = postsRaw as any[];
+const relatedPosts = allPosts
+  .filter(p => p.slug !== post.slug && (
+    p.insights_category === post.insights_category ||
+    (p.tool_slug && p.tool_slug === post.tool_slug)
+  ))
+  .slice(0, 4);
+
+// Related tools from post
+const relatedToolCards = (post.related_tools || [])
+  .map((slug: string) => toolMap[slug])
+  .filter(Boolean)
+  .slice(0, 4);
+
+// Schema
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.title,
+  "description": post.seo?.description || post.excerpt,
+  "datePublished": post.date,
+  "dateModified": post.date_updated || post.date,
+  "author": { "@type": "Person", "name": post.author || "AI Expert" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AIExpertsCorner",
+    "url": "https://aiexpertscorner.com"
+  },
+  "url": post.seo?.canonical,
+  "keywords": post.seo?.keywords,
+  "articleSection": post.insights_category,
+};
+
+const CAT_LABELS: Record<string, string> = {
+  "tutorials":     "Tutorial",
+  "analysis":      "Analysis",
+  "news":          "News",
+  "tool-releases": "Tool Release",
+  "trends":        "Trend",
+  "research":      "Research",
+  "market":        "Market",
+  "case-studies":  "Case Study",
+};
+const catLabel = CAT_LABELS[post.insights_category] || post.insights_category;
+
+function formatDate(d: string) {
+  return new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+}
+---
+
+<BaseLayout title={post.seo?.title || post.title} description={post.seo?.description || post.excerpt}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <meta property="article:published_time" content={post.date} />
+    <meta property="article:section" content={post.insights_category} />
+    {(post.tags || []).map((tag: string) => <meta property="article:tag" content={tag} />)}
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="page">
+    <div class="container container--narrow">
+
+      <Breadcrumb crumbs={[
+        { label: "Home",     href: "/" },
+        { label: "Insights", href: "/insights" },
+        { label: catLabel,   href: `/insights/category/${post.insights_category}` },
+        { label: post.title.slice(0, 40) + (post.title.length > 40 ? "…" : "") },
+      ]} />
+
+      <!-- Article header -->
+      <header class="art-header">
+        <div class="art-header__meta">
+          <a href={`/insights/category/${post.insights_category}`} class="art-header__cat">
+            {catLabel}
+          </a>
+          <span class="art-header__dot">·</span>
+          <span class="art-header__read">{post.reading_time_min} min read</span>
+          <span class="art-header__dot">·</span>
+          <span class="art-header__date">{formatDate(post.date)}</span>
+        </div>
+
+        <h1 class="art-header__title">{post.title}</h1>
+        <p class="art-header__excerpt">{post.excerpt}</p>
+
+        <div class="art-header__byline">
+          <div class="art-header__author">
+            <span class="art-header__avatar">{(post.author || "AI").charAt(0)}</span>
+            <span>{post.author || "AI Expert"}</span>
+          </div>
+          {post.tool_slug && toolName && (
+            <a href={`/tools/${post.tool_slug}`} class="art-header__tool-badge">
+              <ToolLogo
+                slug={post.tool_slug}
+                name={toolName}
+                size={20}
+                loading="eager"
+              />
+              <span>{toolName}</span>
+            </a>
+          )}
+        </div>
+      </header>
+
+      <!-- Tool spotlight (if tool linked) -->
+      {tool && toolName && (
+        <aside class="art-tool-spot">
+          <div class="art-tool-spot__logo">
+            <ToolLogo slug={post.tool_slug} name={toolName} size={48} loading="eager" />
+          </div>
+          <div class="art-tool-spot__info">
+            <span class="art-tool-spot__label">Tool in this article</span>
+            <strong class="art-tool-spot__name">{toolName}</strong>
+            {toolDesc && <p class="art-tool-spot__desc">{toolDesc.slice(0, 100)}…</p>}
+          </div>
+          <div class="art-tool-spot__actions">
+            {toolPricing && <Badge tier={toolPricing} />}
+            <a href={`/tools/${post.tool_slug}`} class="btn btn--secondary btn--sm">View tool →</a>
+            {toolWebsite && (
+              <a href={toolWebsite} class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+                Try {toolName} →
+              </a>
+            )}
+          </div>
+        </aside>
+      )}
+
+      <!-- Article body -->
+      <article class="art-body">
+        {post.content_format === "markdown" ? (
+          <div class="prose" set:html={
+            // Basic markdown → HTML conversion for build time
+            (post.content || "")
+              // Headers
+              .replace(/^### (.+)$/gm, "<h3>$1</h3>")
+              .replace(/^## (.+)$/gm, "<h2>$1</h2>")
+              .replace(/^# (.+)$/gm, "<h1>$1</h1>")
+              // Bold
+              .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+              // Italic
+              .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+              // Inline code
+              .replace(/`([^`]+)`/g, "<code>$1</code>")
+              // Links → replace tool links, keep external as-is
+              .replace(/\[([^\]]+)\]\((\/tools\/[^)]+)\)/g, '<a href="$2" class="art-tool-link">$1</a>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+              // Unordered lists
+              .replace(/(?:^|\n)((?:[-*+] .+\n?)+)/gm, (_, block) =>
+                "<ul>" + block.split("\n").filter((l: string) => /^[-*+] /.test(l)).map((l: string) => `<li>${l.replace(/^[-*+] /, "")}</li>`).join("") + "</ul>"
+              )
+              // Ordered lists
+              .replace(/(?:^|\n)((?:\d+\. .+\n?)+)/gm, (_, block) =>
+                "<ol>" + block.split("\n").filter((l: string) => /^\d+\. /.test(l)).map((l: string) => `<li>${l.replace(/^\d+\. /, "")}</li>`).join("") + "</ol>"
+              )
+              // Blockquotes
+              .replace(/^> (.+)$/gm, "<blockquote>$1</blockquote>")
+              // Paragraphs (double newline)
+              .replace(/\n\n(?!<[uo]l|<h[1-6]|<blockquote)/g, "</p><p>")
+              .replace(/^(?!<)(.)/m, "<p>$1")
+              + "</p>"
+          } />
+        ) : (
+          <div class="prose">
+            {(post.content || "").split("\n\n").map((para: string) => (
+              para.trim().startsWith("Section") || para.length < 3 ? null : <p>{para.trim()}</p>
+            ))}
+          </div>
+        )}
+      </article>
+
+      <!-- Tags -->
+      {(post.tags || []).length > 0 && (
+        <div class="art-tags">
+          <span class="art-tags__label">Tags:</span>
+          <div class="chips">
+            {post.tags.slice(0, 8).map((tag: string) => (
+              <span class="chip">{tag}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Related tools -->
+      {relatedToolCards.length > 0 && (
+        <aside class="art-related-tools">
+          <h2 class="section-title" style="margin-bottom:var(--sp-5)">Tools mentioned in this article</h2>
+          <div class="art-related-tools__grid">
+            {relatedToolCards.map((t: any) => {
+              const s = t.slug || t.hero?.slug;
+              const n = t.hero?.name || t.name || s;
+              const tier = t.commercial?.pricing_tier || "unknown";
+              const desc = t.content?.description || t.description || "";
+              return (
+                <a href={`/tools/${s}`} class="art-tool-card">
+                  <ToolLogo slug={s} name={n} size={40} loading="lazy" />
+                  <div class="art-tool-card__info">
+                    <div class="art-tool-card__row">
+                      <strong>{n}</strong>
+                      <Badge tier={tier} />
+                    </div>
+                    {desc && <p>{desc.slice(0, 80)}…</p>}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </aside>
+      )}
+
+    </div>
+
+    <!-- Related articles (full width) -->
+    {relatedPosts.length > 0 && (
+      <section class="art-related-posts">
+        <div class="container">
+          <h2 class="section-title" style="margin-bottom:var(--sp-6)">Related Articles</h2>
+          <div class="grid-cards-lg">
+            {relatedPosts.map((p: any) => (
+              <a href={`/insights/${p.slug}`} class="ins-post-card">
+                <div class="ins-post-card__meta">
+                  <span class="ins-post-card__cat">{p.insights_category}</span>
+                  <span class="ins-post-card__read">{p.reading_time_min} min read</span>
+                </div>
+                <h3 class="ins-post-card__title">{p.title}</h3>
+                <div class="ins-post-card__footer">
+                  {p.tool_slug && <span class="ins-post-card__tool">{p.tool_name}</span>}
+                  <span class="ins-post-card__date">{new Date(p.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <div class="container">
+      <div class="seo-links" style="margin-top:var(--sp-8)">
+        <a href="/insights">All Insights</a>
+        <a href={`/insights/category/${post.insights_category}`}>{CAT_LABELS[post.insights_category]}</a>
+        {post.tool_slug && <a href={`/tools/${post.tool_slug}`}>{post.tool_name} tool page</a>}
+        {post.tool_slug && <a href={`/alternatives/${post.tool_slug}`}>{post.tool_name} alternatives</a>}
+        {post.tool_slug && <a href={`/best/${post.taxonomy_category}`}>Best {post.taxonomy_category} tools</a>}
+      </div>
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+/* Article header */
+.art-header { padding: var(--sp-8) 0 var(--sp-8); border-bottom: 1px solid var(--c-border); margin-bottom: var(--sp-8); }
+.art-header__meta  { display: flex; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-4); flex-wrap: wrap; }
+.art-header__cat   { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--c-primary); background: rgba(59,130,246,0.08); padding: 0.2em 0.6em; border-radius: var(--r-full); text-decoration: none; }
+.art-header__cat:hover { background: rgba(59,130,246,0.15); }
+.art-header__dot   { color: var(--c-border-med); }
+.art-header__read,
+.art-header__date  { font-size: var(--text-xs); color: var(--c-text-4); }
+.art-header__title { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; color: var(--c-text); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: var(--sp-4); }
+.art-header__excerpt{ font-size: var(--text-md); color: var(--c-text-3); line-height: 1.65; margin-bottom: var(--sp-5); }
+.art-header__byline { display: flex; align-items: center; gap: var(--sp-5); flex-wrap: wrap; }
+.art-header__author { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-text-3); }
+.art-header__avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--c-primary-glow); border: 1px solid var(--c-primary); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: var(--c-primary); flex-shrink: 0; }
+.art-header__tool-badge { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-text-3); background: var(--c-bg-card); border: 1px solid var(--c-border); border-radius: var(--r-full); padding: 0.25rem 0.75rem; text-decoration: none; transition: all var(--t-fast); }
+.art-header__tool-badge:hover { border-color: var(--c-primary); color: var(--c-primary); }
+
+/* Tool spotlight */
+.art-tool-spot {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border-soft);
+  border-left: 3px solid var(--c-primary);
+  border-radius: var(--r-lg);
+  margin-bottom: var(--sp-8);
+  flex-wrap: wrap;
+}
+.art-tool-spot__info  { flex: 1; min-width: 0; }
+.art-tool-spot__label { display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--c-text-4); font-weight: 600; margin-bottom: 3px; }
+.art-tool-spot__name  { display: block; font-size: var(--text-lg); font-weight: 700; color: var(--c-text); margin-bottom: var(--sp-1); }
+.art-tool-spot__desc  { font-size: var(--text-sm); color: var(--c-text-3); margin: 0; }
+.art-tool-spot__actions { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; flex-shrink: 0; }
+
+/* Prose */
+.prose { font-size: var(--text-base); line-height: 1.8; color: var(--c-text-2); }
+.prose :global(h1),
+.prose :global(h2),
+.prose :global(h3) { font-family: var(--font-display); color: var(--c-text); letter-spacing: -0.02em; margin: var(--sp-8) 0 var(--sp-4); line-height: 1.3; }
+.prose :global(h2) { font-size: var(--text-xl); font-weight: 700; padding-bottom: var(--sp-3); border-bottom: 1px solid var(--c-border); }
+.prose :global(h3) { font-size: var(--text-lg); font-weight: 700; }
+.prose :global(p)  { margin: 0 0 var(--sp-5); }
+.prose :global(ul),
+.prose :global(ol) { margin: 0 0 var(--sp-5); padding-left: var(--sp-6); }
+.prose :global(li) { margin-bottom: var(--sp-2); }
+.prose :global(strong) { color: var(--c-text); font-weight: 700; }
+.prose :global(code) { font-family: var(--font-mono); font-size: 0.875em; background: var(--c-bg-card); border: 1px solid var(--c-border); border-radius: var(--r-sm); padding: 0.15em 0.4em; color: var(--c-primary); }
+.prose :global(blockquote) { border-left: 3px solid var(--c-primary); padding: var(--sp-3) var(--sp-5); background: var(--c-bg-card); border-radius: 0 var(--r-md) var(--r-md) 0; margin: var(--sp-6) 0; color: var(--c-text-3); font-style: italic; }
+.prose :global(a) { color: var(--c-primary); text-decoration: underline; }
+.prose :global(a.art-tool-link) { color: var(--c-green); text-decoration: none; border-bottom: 1px solid var(--c-green); }
+.prose :global(a.art-tool-link:hover) { opacity: 0.8; }
+
+/* Tags */
+.art-tags { display: flex; align-items: center; gap: var(--sp-3); margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid var(--c-border); flex-wrap: wrap; }
+.art-tags__label { font-size: var(--text-xs); font-weight: 600; color: var(--c-text-4); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Related tools */
+.art-related-tools { margin-top: var(--sp-10); padding-top: var(--sp-8); border-top: 1px solid var(--c-border); }
+.art-related-tools__grid { display: flex; flex-direction: column; gap: var(--sp-3); }
+.art-tool-card { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4) var(--sp-5); background: var(--c-bg-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); text-decoration: none; transition: all var(--t-fast); }
+.art-tool-card:hover { border-color: var(--c-primary); background: var(--c-bg-card-alt); }
+.art-tool-card__info { flex: 1; min-width: 0; }
+.art-tool-card__row  { display: flex; align-items: center; gap: var(--sp-2); margin-bottom: 3px; }
+.art-tool-card__info strong { font-size: var(--text-base); font-weight: 700; color: var(--c-text); }
+.art-tool-card__info p { font-size: var(--text-sm); color: var(--c-text-4); margin: 0; }
+
+/* Related posts */
+.art-related-posts { margin-top: var(--sp-16); padding: var(--sp-10) 0; border-top: 1px solid var(--c-border); background: var(--c-bg-card-alt); }
+
+@media (max-width: 640px) {
+  .art-tool-spot { flex-direction: column; align-items: flex-start; }
+  .art-header__byline { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+}
+</style>
